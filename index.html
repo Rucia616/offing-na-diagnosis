@@ -449,12 +449,18 @@
       gap: 8px;
     }
 
-    .secondary-action {
+    .secondary-action,
+    .secondary-link {
+      display: grid;
+      place-items: center;
       min-height: 42px;
       border: 1px solid rgba(45, 98, 97, 0.26);
+      border-radius: var(--radius);
       color: var(--sea-dark);
       background: rgba(255, 255, 255, 0.7);
       font-size: 13px;
+      font-weight: 790;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
     }
 
     .report-action {
@@ -477,7 +483,8 @@
 
     [hidden] { display: none !important; }
 
-    .secondary-action:hover {
+    .secondary-action:hover,
+    .secondary-link:hover {
       border-color: rgba(45, 98, 97, 0.48);
       background: #fff;
       transform: translateY(-1px);
@@ -710,7 +717,8 @@
             <div class="job-step" data-step="report"><b>04</b>返回报告链接</div>
           </div>
           <div class="result-actions">
-            <a id="reportLink" class="report-action" href="#" target="_blank" rel="noopener" hidden>打开诊断报告</a>
+            <a id="mailLink" class="report-action" href="#" hidden>发送给远汐</a>
+            <a id="reportLink" class="secondary-link" href="#" target="_blank" rel="noopener" hidden>查看 Ulike 样稿</a>
             <button id="copyPrompt" class="secondary-action" type="button" hidden>复制申请信息</button>
           </div>
         </div>
@@ -763,11 +771,13 @@
     const resultTitle = document.getElementById("resultTitle");
     const resultCopy = document.getElementById("resultCopy");
     const progressBar = document.getElementById("progressBar");
+    const mailLink = document.getElementById("mailLink");
     const reportLink = document.getElementById("reportLink");
     const copyPrompt = document.getElementById("copyPrompt");
     const promptBox = document.getElementById("promptBox");
     const toast = document.getElementById("toast");
     const jobSteps = Array.from(document.querySelectorAll("[data-step]"));
+    const CONTACT_EMAIL = "403275627@qq.com";
     const SAMPLE_REPORT_URL = "./ulike-offing-na-diagnosis-2026-06-12.html";
 
     function cleanBrand(value) {
@@ -818,6 +828,8 @@
     }
 
     function resetResultActions() {
+      mailLink.hidden = true;
+      mailLink.removeAttribute("href");
       reportLink.hidden = true;
       reportLink.removeAttribute("href");
       reportLink.textContent = "查看 Ulike 样稿";
@@ -834,6 +846,32 @@
       const existing = JSON.parse(localStorage.getItem(key) || "[]");
       existing.unshift({ brand, prompt, createdAt: new Date().toISOString() });
       localStorage.setItem(key, JSON.stringify(existing.slice(0, 20)));
+    }
+
+    function buildEmailBody(brand) {
+      return [
+        "远汐 Offing 免费北美业务诊断申请",
+        "",
+        `品牌名：${brand}`,
+        `提交时间：${new Date().toLocaleString("zh-CN", { hour12: false })}`,
+        `来源页面：${window.location.href}`,
+        "",
+        "希望获得：",
+        "1. 北美业务阶段判断",
+        "2. 北美业务总分与三个子分",
+        "3. 品牌、Marketing、电商三大板块诊断",
+        "4. Top 3 关键问题与 90 天进入路径",
+        "",
+        "可补充信息：",
+        "官网：",
+        "联系人 / 微信：",
+        "目前最想诊断的问题："
+      ].join("\n");
+    }
+
+    function buildMailto(brand) {
+      const subject = `远汐 Offing 免费北美业务诊断申请｜${brand}`;
+      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildEmailBody(brand))}`;
     }
 
     async function submitBrand(brand) {
@@ -859,6 +897,8 @@
             100,
             "report"
           );
+          mailLink.href = buildMailto(brand);
+          mailLink.hidden = false;
           reportLink.href = SAMPLE_REPORT_URL;
           reportLink.hidden = false;
           copyPrompt.hidden = false;
