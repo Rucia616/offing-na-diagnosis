@@ -293,6 +293,13 @@
       font-size: 16px;
     }
 
+    .primary-action:disabled {
+      cursor: wait;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(19, 33, 31, 0.72);
+      transform: none;
+    }
+
     .primary-action:hover {
       background: var(--sea-dark);
       transform: translateY(-1px);
@@ -329,7 +336,7 @@
 
     .submit-result {
       display: none;
-      gap: 12px;
+      gap: 14px;
       padding: 14px;
       border: 1px solid rgba(45, 98, 97, 0.22);
       border-radius: var(--radius);
@@ -340,6 +347,35 @@
     }
 
     .submit-result.show { display: grid; }
+    .submit-result.loading { border-color: rgba(169, 149, 86, 0.36); background: rgba(241, 236, 216, 0.72); }
+    .submit-result.done { border-color: rgba(45, 98, 97, 0.34); background: var(--sea-soft); }
+    .submit-result.fallback { border-color: rgba(169, 149, 86, 0.34); background: rgba(241, 236, 216, 0.72); }
+
+    .status-line {
+      display: grid;
+      grid-template-columns: 10px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      margin-top: 7px;
+      border-radius: 999px;
+      background: var(--sea);
+      box-shadow: 0 0 0 5px rgba(45, 98, 97, 0.12);
+    }
+
+    .submit-result.loading .status-dot {
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(169, 149, 86, 0.14);
+    }
+
+    .submit-result.fallback .status-dot {
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(169, 149, 86, 0.14);
+    }
 
     .submit-result strong {
       display: block;
@@ -349,6 +385,70 @@
       font-weight: 800;
     }
 
+    .submit-result.fallback strong { color: #715f28; }
+
+    .progress-track {
+      height: 6px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .progress-track span {
+      display: block;
+      width: var(--progress, 0%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--sea), var(--gold));
+      transition: width 420ms ease;
+    }
+
+    .submit-result.fallback .progress-track span {
+      background: linear-gradient(90deg, var(--sea), var(--gold));
+    }
+
+    .job-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .job-step {
+      min-height: 54px;
+      padding: 9px;
+      border: 1px solid rgba(45, 98, 97, 0.12);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.58);
+      font-size: 11px;
+      line-height: 1.35;
+      font-weight: 720;
+    }
+
+    .job-step b {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 820;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .job-step.done,
+    .job-step.active {
+      color: var(--body);
+      border-color: rgba(45, 98, 97, 0.28);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .job-step.active b,
+    .job-step.done b { color: var(--sea); }
+
+    .result-actions {
+      display: grid;
+      gap: 8px;
+    }
+
     .secondary-action {
       min-height: 42px;
       border: 1px solid rgba(45, 98, 97, 0.26);
@@ -356,6 +456,26 @@
       background: rgba(255, 255, 255, 0.7);
       font-size: 13px;
     }
+
+    .report-action {
+      display: grid;
+      place-items: center;
+      min-height: 42px;
+      border: 1px solid rgba(45, 98, 97, 0.34);
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--sea-dark);
+      font-size: 13px;
+      font-weight: 790;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .report-action:hover {
+      background: var(--sea);
+      transform: translateY(-1px);
+    }
+
+    [hidden] { display: none !important; }
 
     .secondary-action:hover {
       border-color: rgba(45, 98, 97, 0.48);
@@ -520,6 +640,7 @@
       .principles span { min-height: 32px; padding: 0 10px; font-size: 12px; }
       .intake-card { padding: 18px; }
       .brand-input { min-height: 60px; font-size: 20px; }
+      .job-steps { grid-template-columns: 1fr 1fr; }
       .deliverable-grid { grid-template-columns: 1fr; }
       .deliverable-head,
       .deliverable { padding: 18px; }
@@ -565,8 +686,8 @@
           <label for="brandInput">品牌名</label>
           <input id="brandInput" class="brand-input" name="brand" autocomplete="organization" placeholder="例如：Ulike" required>
         </div>
-        <button class="primary-action" type="submit">开始诊断</button>
-        <p class="form-note">不需要先填预算、渠道和联系人。先看公开数据能判断到哪一步。</p>
+        <button id="submitButton" class="primary-action" type="submit">生成诊断报告</button>
+        <p class="form-note">前端已按自动诊断流程设计。接入后端后，报告链接会在本页返回。</p>
         <div class="quick-picks" aria-label="示例品牌">
           <button class="pick-button" type="button" data-brand="Ulike">Ulike</button>
           <button class="pick-button" type="button" data-brand="Anker">Anker</button>
@@ -574,11 +695,24 @@
           <button class="pick-button" type="button" data-brand="Stanley">Stanley</button>
         </div>
         <div id="submitResult" class="submit-result" aria-live="polite">
-          <div>
-            <strong id="resultTitle">已进入诊断</strong>
-            <span id="resultCopy">远汐会先判断阶段、总分、三大板块问题和 90 天路线。</span>
+          <div class="status-line">
+            <span class="status-dot" aria-hidden="true"></span>
+            <div>
+              <strong id="resultTitle">诊断任务已创建</strong>
+              <span id="resultCopy">正在连接远汐诊断引擎。</span>
+            </div>
           </div>
-          <button id="copyPrompt" class="secondary-action" type="button">复制诊断要求</button>
+          <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+          <div class="job-steps" aria-label="诊断生成进度">
+            <div class="job-step" data-step="identify"><b>01</b>识别品牌</div>
+            <div class="job-step" data-step="research"><b>02</b>采集公开证据</div>
+            <div class="job-step" data-step="diagnose"><b>03</b>生成业务诊断</div>
+            <div class="job-step" data-step="report"><b>04</b>返回报告链接</div>
+          </div>
+          <div class="result-actions">
+            <a id="reportLink" class="report-action" href="#" target="_blank" rel="noopener" hidden>打开诊断报告</a>
+            <button id="copyPrompt" class="secondary-action" type="button" hidden>复制诊断要求</button>
+          </div>
         </div>
       </form>
     </section>
@@ -624,12 +758,17 @@
   <script>
     const form = document.getElementById("diagnosisForm");
     const brandInput = document.getElementById("brandInput");
+    const submitButton = document.getElementById("submitButton");
     const submitResult = document.getElementById("submitResult");
     const resultTitle = document.getElementById("resultTitle");
     const resultCopy = document.getElementById("resultCopy");
+    const progressBar = document.getElementById("progressBar");
+    const reportLink = document.getElementById("reportLink");
     const copyPrompt = document.getElementById("copyPrompt");
     const promptBox = document.getElementById("promptBox");
     const toast = document.getElementById("toast");
+    const jobSteps = Array.from(document.querySelectorAll("[data-step]"));
+    const DIAGNOSIS_API = window.OFFING_DIAGNOSIS_API || "/api/diagnosis";
 
     function cleanBrand(value) {
       return value.trim().replace(/\s+/g, " ");
@@ -661,18 +800,118 @@
       showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 1700);
     }
 
-    function submitBrand(brand) {
+    function setResultState(state, title, copy, progress, activeStep) {
+      submitResult.className = `submit-result show ${state}`;
+      resultTitle.textContent = title;
+      resultCopy.textContent = copy;
+      progressBar.style.setProperty("--progress", `${progress}%`);
+      const activeIndex = jobSteps.findIndex((step) => step.dataset.step === activeStep);
+      jobSteps.forEach((step, index) => {
+        step.classList.toggle("done", activeIndex >= 0 && index < activeIndex);
+        step.classList.toggle("active", step.dataset.step === activeStep);
+      });
+    }
+
+    function resetResultActions() {
+      reportLink.hidden = true;
+      reportLink.removeAttribute("href");
+      copyPrompt.hidden = true;
+    }
+
+    function setBusy(isBusy) {
+      submitButton.disabled = isBusy;
+      submitButton.textContent = isBusy ? "正在生成诊断" : "生成诊断报告";
+    }
+
+    function withTimeout(promise, timeoutMs) {
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
+      return {
+        signal: controller.signal,
+        run: promise(controller.signal).finally(() => window.clearTimeout(timeout))
+      };
+    }
+
+    function showStaticFallback() {
+      setResultState(
+        "fallback",
+        "前端预览已准备好，诊断引擎待接入",
+        "这版先完成提交体验和任务状态。接入 Vercel API 后，用户提交品牌名会在这里拿到报告链接；当前可复制诊断要求用于本地或人工测试。",
+        100,
+        "report"
+      );
+      copyPrompt.hidden = false;
+      showToast("当前为前端预览");
+    }
+
+    function handleDiagnosisResponse(data) {
+      if (data && data.reportUrl) {
+        setResultState("done", "诊断报告已生成", "报告已经完成，可以直接打开查看。", 100, "report");
+        reportLink.href = data.reportUrl;
+        reportLink.hidden = false;
+        showToast("报告已生成");
+        return;
+      }
+
+      if (data && data.statusUrl) {
+        setResultState("done", "诊断任务已提交", "报告正在生成中，可以打开任务页查看进度。", 78, "diagnose");
+        reportLink.href = data.statusUrl;
+        reportLink.textContent = "查看生成进度";
+        reportLink.hidden = false;
+        showToast("任务已提交");
+        return;
+      }
+
+      setResultState("done", "诊断任务已提交", "后端已接收请求。报告完成后会在任务页或报告页返回。", 68, "diagnose");
+      copyPrompt.hidden = false;
+      showToast("任务已提交");
+    }
+
+    async function submitBrand(brand) {
       const prompt = buildPrompt(brand);
       promptBox.value = prompt;
-      resultTitle.textContent = `${brand} 已进入诊断`;
-      resultCopy.textContent = "远汐会先判断阶段、总分、三大板块问题和 90 天路线。";
-      submitResult.classList.add("show");
+      resetResultActions();
+      setBusy(true);
+      setResultState("loading", `${brand} 诊断任务已创建`, "正在连接自动诊断服务。", 12, "identify");
+
+      window.setTimeout(() => {
+        if (submitResult.classList.contains("loading")) {
+          setResultState("loading", "正在采集公开数据", "系统会优先看官网、Amazon、零售页、新闻稿和公开口碑。", 38, "research");
+        }
+      }, 520);
+
+      window.setTimeout(() => {
+        if (submitResult.classList.contains("loading")) {
+          setResultState("loading", "正在生成诊断结构", "报告会先判断品牌阶段，再进入总分、板块诊断和关键问题。", 62, "diagnose");
+        }
+      }, 1100);
 
       const bridge = window.RuciaDiagnosisBridge;
       if (bridge && typeof bridge.runDiagnosis === "function") {
         bridge.runDiagnosis({ brand, provider: "Offing", prompt, createdAt: new Date().toISOString() });
+        setResultState("done", "本地诊断已启动", "当前环境检测到本地诊断桥接，任务已交给远汐诊断流程。", 72, "diagnose");
+        copyPrompt.hidden = false;
+        setBusy(false);
+        return;
       }
-      showToast("已进入诊断");
+
+      try {
+        const request = withTimeout((signal) => fetch(DIAGNOSIS_API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ brand, prompt, source: "offing-na-diagnosis-entry", createdAt: new Date().toISOString() }),
+          signal
+        }), 10000);
+
+        const response = await request.run;
+        if (!response.ok) throw new Error(`API ${response.status}`);
+        const data = await response.json();
+        handleDiagnosisResponse(data);
+      } catch (_) {
+        showStaticFallback();
+      } finally {
+        setBusy(false);
+      }
     }
 
     form.addEventListener("submit", (event) => {
