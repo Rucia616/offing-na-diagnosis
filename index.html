@@ -687,7 +687,7 @@
           <input id="brandInput" class="brand-input" name="brand" autocomplete="organization" placeholder="例如：Ulike" required>
         </div>
         <button id="submitButton" class="primary-action" type="submit">生成诊断报告</button>
-        <p class="form-note">前端已按自动诊断流程设计。接入后端后，报告链接会在本页返回。</p>
+        <p class="form-note">提交后会读取公开数据，生成一份可打开的独立 HTML 诊断报告。初版生成通常需要 1 分钟左右。</p>
         <div class="quick-picks" aria-label="示例品牌">
           <button class="pick-button" type="button" data-brand="Ulike">Ulike</button>
           <button class="pick-button" type="button" data-brand="Anker">Anker</button>
@@ -769,6 +769,7 @@
     const toast = document.getElementById("toast");
     const jobSteps = Array.from(document.querySelectorAll("[data-step]"));
     const DIAGNOSIS_API = window.OFFING_DIAGNOSIS_API || "/api/diagnosis";
+    let temporaryReportUrl = null;
 
     function cleanBrand(value) {
       return value.trim().replace(/\s+/g, " ");
@@ -813,8 +814,13 @@
     }
 
     function resetResultActions() {
+      if (temporaryReportUrl) {
+        URL.revokeObjectURL(temporaryReportUrl);
+        temporaryReportUrl = null;
+      }
       reportLink.hidden = true;
       reportLink.removeAttribute("href");
+      reportLink.textContent = "打开诊断报告";
       copyPrompt.hidden = true;
     }
 
@@ -832,11 +838,17 @@
       };
     }
 
-    function showStaticFallback() {
+    function createTemporaryReportUrl(html) {
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      temporaryReportUrl = URL.createObjectURL(blob);
+      return temporaryReportUrl;
+    }
+
+    function showBackendFallback(message) {
       setResultState(
         "fallback",
-        "前端预览已准备好，诊断引擎待接入",
-        "这版先完成提交体验和任务状态。接入 Vercel API 后，用户提交品牌名会在这里拿到报告链接；当前可复制诊断要求用于本地或人工测试。",
+        "诊断引擎还差最后配置",
+        message || "当前页面已经接到 API 入口，但线上环境还没有配置生成密钥或公开存储。你可以先复制诊断要求，用于本地测试。",
         100,
         "report"
       );
@@ -846,10 +858,29 @@
 
     function handleDiagnosisResponse(data) {
       if (data && data.reportUrl) {
-        setResultState("done", "诊断报告已生成", "报告已经完成，可以直接打开查看。", 100, "report");
+        setResultState("done", "诊断报告已生成", data.note || "报告已经完成，可以直接打开查看。", 100, "report");
         reportLink.href = data.reportUrl;
+        reportLink.textContent = "打开诊断报告";
         reportLink.hidden = false;
         showToast("报告已生成");
+        return;
+      }
+
+      if (data && data.reportHtml) {
+        const url = createTemporaryReportUrl(data.reportHtml);
+        const isMock = data.mode === "mock";
+        setResultState(
+          isMock ? "fallback" : "done",
+          isMock ? "演示报告已生成" : "临时诊断报告已生成",
+          data.note || "报告已返回到当前浏览器。配置公开存储后，会自动返回可分享链接。",
+          100,
+          "report"
+        );
+        reportLink.href = url;
+        reportLink.textContent = isMock ? "打开演示报告" : "打开临时报告";
+        reportLink.hidden = false;
+        copyPrompt.hidden = false;
+        showToast(isMock ? "演示报告已生成" : "临时报告已生成");
         return;
       }
 
@@ -901,14 +932,14 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ brand, prompt, source: "offing-na-diagnosis-entry", createdAt: new Date().toISOString() }),
           signal
-        }), 10000);
+        }), 90000);
 
         const response = await request.run;
-        if (!response.ok) throw new Error(`API ${response.status}`);
-        const data = await response.json();
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(data.message || `API ${response.status}`);
         handleDiagnosisResponse(data);
-      } catch (_) {
-        showStaticFallback();
+      } catch (error) {
+        showBackendFallback(error && error.message ? error.message : "");
       } finally {
         setBusy(false);
       }

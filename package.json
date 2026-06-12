@@ -1,0 +1,14 @@
+{
+  "name": "offing-na-diagnosis",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Offing free North America business diagnosis entry and report generation API.",
+  "scripts": {
+    "dev": "npx vercel dev",
+    "deploy": "npx vercel --prod",
+    "test:api": "ALLOW_MOCK_DIAGNOSIS=1 node scripts/test-diagnosis-api.js"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
