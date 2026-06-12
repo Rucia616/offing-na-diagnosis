@@ -672,7 +672,8 @@
       <div class="intro">
         <div class="eyebrow">远汐 Offing 免费北美业务诊断</div>
         <h1>
-          <span class="headline-line">只需输入品牌名</span>
+          <span class="headline-line">输入品牌名</span>
+          <span class="headline-line">和接收邮箱</span>
           <span class="headline-line">即可申请</span>
           <span class="headline-line">北美业务诊断</span>
         </h1>
@@ -687,14 +688,18 @@
       <form id="diagnosisForm" class="intake-card">
         <div class="form-head">
           <strong>免费诊断入口</strong>
-          <span>只填品牌名</span>
+          <span>品牌名 + 邮箱</span>
         </div>
         <div class="field">
           <label for="brandInput">品牌名</label>
           <input id="brandInput" class="brand-input" name="brand" autocomplete="organization" placeholder="例如：Ulike" required>
         </div>
+        <div class="field">
+          <label for="reportEmailInput">报告接收邮箱</label>
+          <input id="reportEmailInput" class="brand-input" name="email" type="email" autocomplete="email" placeholder="例如：name@brand.com" required>
+        </div>
         <button id="submitButton" class="primary-action" type="submit">申请免费诊断</button>
-        <p class="form-note">提交后会生成标准诊断申请。复制给远汐对接人后，远汐会基于公开数据整理可打开的 HTML 诊断报告。</p>
+        <p class="form-note">提交后远汐会收到品牌名和报告接收邮箱。正式报告会以可打开的 HTML 链接返回。</p>
         <div class="quick-picks" aria-label="示例品牌">
           <button class="pick-button" type="button" data-brand="Ulike">Ulike</button>
           <button class="pick-button" type="button" data-brand="Anker">Anker</button>
@@ -706,20 +711,20 @@
             <span class="status-dot" aria-hidden="true"></span>
             <div>
               <strong id="resultTitle">诊断任务已创建</strong>
-              <span id="resultCopy">正在整理诊断申请。</span>
+              <span id="resultCopy">正在提交诊断申请。</span>
             </div>
           </div>
           <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
           <div class="job-steps" aria-label="诊断申请进度">
             <div class="job-step" data-step="identify"><b>01</b>识别品牌</div>
-            <div class="job-step" data-step="research"><b>02</b>整理申请</div>
-            <div class="job-step" data-step="diagnose"><b>03</b>远汐诊断</div>
+            <div class="job-step" data-step="research"><b>02</b>生成编号</div>
+            <div class="job-step" data-step="diagnose"><b>03</b>提交申请</div>
             <div class="job-step" data-step="report"><b>04</b>返回报告链接</div>
           </div>
           <div class="result-actions">
-            <a id="mailLink" class="report-action" href="#" hidden>发送给远汐</a>
+            <a id="mailLink" class="report-action" href="#" hidden>邮件兜底发送</a>
             <a id="reportLink" class="secondary-link" href="#" target="_blank" rel="noopener" hidden>查看 Ulike 样稿</a>
-            <button id="copyPrompt" class="secondary-action" type="button" hidden>复制申请信息</button>
+            <button id="copyPrompt" class="secondary-action" type="button" hidden>复制申请编号</button>
           </div>
         </div>
       </form>
@@ -766,6 +771,7 @@
   <script>
     const form = document.getElementById("diagnosisForm");
     const brandInput = document.getElementById("brandInput");
+    const reportEmailInput = document.getElementById("reportEmailInput");
     const submitButton = document.getElementById("submitButton");
     const submitResult = document.getElementById("submitResult");
     const resultTitle = document.getElementById("resultTitle");
@@ -778,16 +784,54 @@
     const toast = document.getElementById("toast");
     const jobSteps = Array.from(document.querySelectorAll("[data-step]"));
     const CONTACT_EMAIL = "403275627@qq.com";
+    const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
     const SAMPLE_REPORT_URL = "./ulike-offing-na-diagnosis-2026-06-12.html";
 
     function cleanBrand(value) {
       return value.trim().replace(/\s+/g, " ");
     }
 
-    function buildPrompt(brand) {
+    function cleanEmail(value) {
+      return value.trim().replace(/\s+/g, "");
+    }
+
+    function isValidEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function makeRequestCode(brand, email) {
+      const source = `${brand.toLowerCase()}|${email.toLowerCase()}`;
+      const alphabet = "7QK2M9X5N4RT8VY3P6LZ";
+      let hash = 2166136261;
+      for (let index = 0; index < source.length; index += 1) {
+        hash ^= source.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+      }
+
+      let value = hash >>> 0;
+      let code = "";
+      for (let index = 0; index < 8; index += 1) {
+        value = Math.imul(value ^ (value >>> 13), 2246822507) >>> 0;
+        code += alphabet[value % alphabet.length];
+      }
+      return `OF-${code.slice(0, 4)}-${code.slice(4)}`;
+    }
+
+    function buildShortCopy({ requestCode, brand, reportEmail }) {
+      return [
+        "远汐 Offing 北美业务诊断申请",
+        `申请编号：${requestCode}`,
+        `品牌名：${brand}`,
+        `报告接收邮箱：${reportEmail}`
+      ].join("\n");
+    }
+
+    function buildPrompt(brand, reportEmail, requestCode) {
       return [
         `远汐 Offing 免费北美业务诊断申请`,
+        `申请编号：${requestCode}`,
         `品牌名：${brand}`,
+        `报告接收邮箱：${reportEmail}`,
         `提交时间：${new Date().toLocaleString("zh-CN", { hour12: false })}`,
         `来源页面：${window.location.href}`,
         "",
@@ -841,18 +885,20 @@
       submitButton.textContent = isBusy ? "正在整理申请" : "申请免费诊断";
     }
 
-    function storeLead(brand, prompt) {
+    function storeLead(lead) {
       const key = "offingDiagnosisRequests";
       const existing = JSON.parse(localStorage.getItem(key) || "[]");
-      existing.unshift({ brand, prompt, createdAt: new Date().toISOString() });
+      existing.unshift({ ...lead, createdAt: new Date().toISOString() });
       localStorage.setItem(key, JSON.stringify(existing.slice(0, 20)));
     }
 
-    function buildEmailBody(brand) {
+    function buildEmailBody({ brand, reportEmail, requestCode }) {
       return [
         "远汐 Offing 免费北美业务诊断申请",
         "",
+        `申请编号：${requestCode}`,
         `品牌名：${brand}`,
+        `报告接收邮箱：${reportEmail}`,
         `提交时间：${new Date().toLocaleString("zh-CN", { hour12: false })}`,
         `来源页面：${window.location.href}`,
         "",
@@ -869,53 +915,120 @@
       ].join("\n");
     }
 
-    function buildMailto(brand) {
-      const subject = `远汐 Offing 免费北美业务诊断申请｜${brand}`;
-      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildEmailBody(brand))}`;
+    function buildMailto(lead) {
+      const subject = `远汐北美诊断申请 ${lead.requestCode}｜${lead.brand}`;
+      return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildEmailBody(lead))}`;
     }
 
-    async function submitBrand(brand) {
-      const prompt = buildPrompt(brand);
-      promptBox.value = prompt;
+    async function submitLead(lead) {
+      const payload = {
+        request_code: lead.requestCode,
+        brand: lead.brand,
+        report_email: lead.reportEmail,
+        page: window.location.href,
+        submitted_at: new Date().toISOString(),
+        _subject: `远汐北美诊断申请 ${lead.requestCode}｜${lead.brand}`,
+        _replyto: lead.reportEmail,
+        _template: "table",
+        _captcha: "false"
+      };
+
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 10000);
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      }).finally(() => window.clearTimeout(timeout));
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.message || "提交服务暂时不可用");
+      return data;
+    }
+
+    async function submitBrand(brand, reportEmail) {
+      const requestCode = makeRequestCode(brand, reportEmail);
+      const lead = { requestCode, brand, reportEmail };
+      const fullPrompt = buildPrompt(brand, reportEmail, requestCode);
+      promptBox.value = buildShortCopy(lead);
       resetResultActions();
       setBusy(true);
-      setResultState("loading", `${brand} 诊断申请已创建`, "正在整理远汐诊断 brief。", 18, "identify");
+      setResultState("loading", `${brand} 诊断申请已创建`, `申请编号 ${requestCode} 已生成。`, 18, "identify");
 
       window.setTimeout(() => {
         if (submitResult.classList.contains("loading")) {
-          setResultState("loading", "正在整理申请信息", "申请会包含品牌名、诊断口径和报告交付要求。", 54, "research");
+          setResultState("loading", "正在提交申请", `远汐将收到品牌名和报告接收邮箱：${reportEmail}`, 58, "diagnose");
         }
       }, 360);
 
+      try {
+        storeLead({ ...lead, prompt: fullPrompt });
+        await submitLead(lead);
+        setResultState(
+          "done",
+          "申请已提交成功",
+          `申请编号 ${requestCode} 已发送给远汐。正式报告会发送到 ${reportEmail}。`,
+          100,
+          "report"
+        );
+        reportLink.href = SAMPLE_REPORT_URL;
+        reportLink.hidden = false;
+        copyPrompt.hidden = false;
+        showToast("申请已提交");
+      } catch (error) {
+        setResultState(
+          "fallback",
+          "申请已生成，提交需兜底确认",
+          `申请编号 ${requestCode} 已生成。若邮箱服务尚未激活，请用邮件兜底发送或复制编号给远汐。`,
+          100,
+          "report"
+        );
+        mailLink.href = buildMailto(lead);
+        mailLink.hidden = false;
+        reportLink.href = SAMPLE_REPORT_URL;
+        reportLink.hidden = false;
+        copyPrompt.hidden = false;
+        showToast("可用邮件兜底发送");
+      } finally {
+        setBusy(false);
+      }
+
       window.setTimeout(() => {
         if (submitResult.classList.contains("loading")) {
-          storeLead(brand, prompt);
           setResultState(
             "done",
-            "诊断申请已生成",
-            "已生成标准申请信息。复制后发给远汐对接人，正式报告由远汐基于公开数据整理并返回。",
+            "申请已提交成功",
+            `申请编号 ${requestCode} 已发送给远汐。正式报告会发送到 ${reportEmail}。`,
             100,
             "report"
           );
-          mailLink.href = buildMailto(brand);
-          mailLink.hidden = false;
           reportLink.href = SAMPLE_REPORT_URL;
           reportLink.hidden = false;
           copyPrompt.hidden = false;
           setBusy(false);
-          showToast("申请信息已生成");
+          showToast("申请已提交");
         }
-      }, 820);
+      }, 1200);
     }
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const brand = cleanBrand(brandInput.value);
+      const reportEmail = cleanEmail(reportEmailInput.value);
       if (!brand) {
         brandInput.focus();
         return;
       }
-      submitBrand(brand);
+      if (!isValidEmail(reportEmail)) {
+        reportEmailInput.focus();
+        showToast("请填写报告接收邮箱");
+        return;
+      }
+      submitBrand(brand, reportEmail);
     });
 
     document.querySelectorAll("[data-brand]").forEach((button) => {
