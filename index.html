@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>远汐 Offing｜免费北美业务诊断</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8faf6;
+      --surface: #fffffb;
+      --ink: #0d1716;
+      --body: #30413f;
+      --muted: #6f7d78;
+      --line: #d8e2dc;
+      --sea: #2d6261;
+      --sea-dark: #244f4d;
+      --sea-soft: #e6f0ec;
+      --clay: #a76560;
+      --gold: #a99556;
+      --slate: #13211f;
+      --cream: #fbfcf8;
+      --radius: 8px;
+      --shadow: 0 22px 70px rgba(13, 23, 22, 0.08);
+      --shadow-soft: 0 10px 34px rgba(13, 23, 22, 0.05);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(230, 240, 236, 0.4) 0%, rgba(248, 250, 246, 0.96) 30%, rgba(250, 250, 245, 0.98) 100%),
+        linear-gradient(90deg, rgba(45, 98, 97, 0.018) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(45, 98, 97, 0.016) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 64px 64px, 64px 64px;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button,
+    input,
+    textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: var(--sea-dark);
+      background: var(--sea-soft);
+      border: 1px solid rgba(45, 98, 97, 0.2);
+      font-weight: 860;
+      line-height: 1;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      line-height: 1.18;
+    }
+
+    .brand-copy strong {
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 780;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .sample-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      color: var(--sea-dark);
+      font-size: 13px;
+      font-weight: 760;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .sample-link:hover {
+      border-color: rgba(45, 98, 97, 0.22);
+      background: rgba(255, 255, 255, 0.66);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      min-height: calc(100dvh - 88px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
+      gap: clamp(36px, 7vw, 76px);
+      align-items: center;
+      padding: clamp(52px, 8vh, 88px) 0 56px;
+    }
+
+    .intro {
+      display: grid;
+      align-content: center;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--sea);
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
+    h1 {
+      max-width: 700px;
+      color: var(--ink);
+      font-size: clamp(50px, 6.4vw, 82px);
+      line-height: 1.02;
+      font-weight: 860;
+      letter-spacing: 0;
+    }
+
+    .headline-line { display: block; }
+
+    .lead {
+      max-width: 590px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: clamp(16px, 1.55vw, 18px);
+      line-height: 1.72;
+      font-weight: 520;
+    }
+
+    .principles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .principles span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--body);
+      background: rgba(255, 255, 251, 0.64);
+      font-size: 13px;
+      font-weight: 730;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .intake-card {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid rgba(216, 226, 220, 0.9);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 251, 0.92);
+      box-shadow: var(--shadow);
+    }
+
+    .intake-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: linear-gradient(90deg, var(--sea), var(--gold), var(--clay));
+    }
+
+    .form-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding-top: 2px;
+    }
+
+    .form-head strong {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .form-head span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .field {
+      display: grid;
+      gap: 10px;
+    }
+
+    .field label {
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .brand-input {
+      width: 100%;
+      min-height: 66px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      background: var(--cream);
+      outline: none;
+      font-size: 22px;
+      font-weight: 800;
+      transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .brand-input::placeholder { color: rgba(48, 65, 63, 0.38); }
+
+    .brand-input:focus {
+      border-color: rgba(45, 98, 97, 0.76);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(45, 98, 97, 0.14);
+    }
+
+    .primary-action,
+    .secondary-action,
+    .pick-button {
+      border-radius: var(--radius);
+      font-weight: 790;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .primary-action {
+      min-height: 54px;
+      width: 100%;
+      border: 0;
+      color: #fff;
+      background: var(--slate);
+      font-size: 16px;
+    }
+
+    .primary-action:hover {
+      background: var(--sea-dark);
+      transform: translateY(-1px);
+    }
+
+    .primary-action:active { transform: translateY(0); }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .quick-picks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pick-button {
+      min-height: 30px;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      color: var(--body);
+      background: #fff;
+      font-size: 12px;
+    }
+
+    .pick-button:hover {
+      color: var(--sea-dark);
+      border-color: rgba(45, 98, 97, 0.38);
+      background: var(--sea-soft);
+    }
+
+    .submit-result {
+      display: none;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid rgba(45, 98, 97, 0.22);
+      border-radius: var(--radius);
+      color: var(--body);
+      background: var(--sea-soft);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .submit-result.show { display: grid; }
+
+    .submit-result strong {
+      display: block;
+      color: var(--sea-dark);
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .secondary-action {
+      min-height: 42px;
+      border: 1px solid rgba(45, 98, 97, 0.26);
+      color: var(--sea-dark);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+    }
+
+    .secondary-action:hover {
+      border-color: rgba(45, 98, 97, 0.48);
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .deliverables {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .deliverable-head,
+    .deliverable {
+      background: rgba(255, 255, 251, 0.88);
+    }
+
+    .deliverable-head {
+      display: grid;
+      align-content: space-between;
+      min-height: 270px;
+      padding: 26px;
+    }
+
+    .deliverable-head h2 {
+      max-width: 330px;
+      color: var(--ink);
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1.08;
+      font-weight: 840;
+    }
+
+    .deliverable-head p {
+      max-width: 340px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .deliverable-tag {
+      width: fit-content;
+      color: var(--sea);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .deliverable {
+      min-height: 134px;
+      padding: 22px;
+    }
+
+    .deliverable b {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 820;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .deliverable strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 830;
+    }
+
+    .deliverable span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .report-link {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 14px;
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    .hidden-prompt {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      z-index: 20;
+      transform: translate(-50%, 18px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(13, 23, 22, 0.92);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+      font-size: 13px;
+      font-weight: 760;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 940px) {
+      .hero,
+      .deliverables { grid-template-columns: 1fr; }
+
+      .hero {
+        min-height: auto;
+        padding-top: 48px;
+      }
+
+      .intake-card { align-self: start; }
+      .deliverable-head { min-height: auto; gap: 26px; }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100% - 28px, 1120px);
+        padding-top: 18px;
+        padding-bottom: 36px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        padding-bottom: 18px;
+      }
+
+      .sample-link { display: none; }
+      .hero { gap: 30px; padding: 42px 0 38px; }
+      .eyebrow { margin-bottom: 16px; }
+      h1 { font-size: 44px; }
+      .lead { font-size: 15px; line-height: 1.68; }
+      .principles { margin-top: 22px; }
+      .principles span { min-height: 32px; padding: 0 10px; font-size: 12px; }
+      .intake-card { padding: 18px; }
+      .brand-input { min-height: 60px; font-size: 20px; }
+      .deliverable-grid { grid-template-columns: 1fr; }
+      .deliverable-head,
+      .deliverable { padding: 18px; }
+      .deliverable { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">O</span>
+        <span class="brand-copy">
+          <strong>远汐 Offing</strong>
+          <span>在抵达之前，先判断潮水</span>
+        </span>
+      </div>
+      <a class="sample-link" href="./ulike-offing-na-diagnosis-2026-06-12.html">查看 Ulike 诊断样稿</a>
+    </header>
+
+    <section class="hero" aria-label="远汐 Offing 免费北美业务诊断提交">
+      <div class="intro">
+        <div class="eyebrow">远汐 Offing 免费北美业务诊断</div>
+        <h1>
+          <span class="headline-line">只需输入品牌名</span>
+          <span class="headline-line">即可无痛生成</span>
+          <span class="headline-line">北美业务诊断</span>
+        </h1>
+        <p class="lead">先用公开数据看清品牌阶段、市场位置、渠道优先级和最该修的三件事。再决定预算该不该花，先花在哪。</p>
+        <div class="principles" aria-label="远汐判断原则">
+          <span>不代运营</span>
+          <span>不卖执行套餐</span>
+          <span>先判断，再配置资源</span>
+        </div>
+      </div>
+
+      <form id="diagnosisForm" class="intake-card">
+        <div class="form-head">
+          <strong>免费诊断入口</strong>
+          <span>只填品牌名</span>
+        </div>
+        <div class="field">
+          <label for="brandInput">品牌名</label>
+          <input id="brandInput" class="brand-input" name="brand" autocomplete="organization" placeholder="例如：Ulike" required>
+        </div>
+        <button class="primary-action" type="submit">开始诊断</button>
+        <p class="form-note">不需要先填预算、渠道和联系人。先看公开数据能判断到哪一步。</p>
+        <div class="quick-picks" aria-label="示例品牌">
+          <button class="pick-button" type="button" data-brand="Ulike">Ulike</button>
+          <button class="pick-button" type="button" data-brand="Anker">Anker</button>
+          <button class="pick-button" type="button" data-brand="Owala">Owala</button>
+          <button class="pick-button" type="button" data-brand="Stanley">Stanley</button>
+        </div>
+        <div id="submitResult" class="submit-result" aria-live="polite">
+          <div>
+            <strong id="resultTitle">已进入诊断</strong>
+            <span id="resultCopy">远汐会先判断阶段、总分、三大板块问题和 90 天路线。</span>
+          </div>
+          <button id="copyPrompt" class="secondary-action" type="button">复制诊断要求</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="deliverables" aria-label="这份免费诊断会看什么">
+      <div class="deliverable-head">
+        <div>
+          <div class="deliverable-tag">提交后你会拿到什么</div>
+          <h2>不是一份泛泛的市场分析，而是一张北美进入判断单。</h2>
+          <p>远汐先看公开证据，再给阶段、分数、问题和路径。能打开，能给团队复盘，也能继续作为下一轮合作的起点。</p>
+        </div>
+        <a class="report-link" href="./ulike-offing-na-diagnosis-2026-06-12.html">看 Ulike 样稿</a>
+      </div>
+      <div class="deliverable-grid">
+        <article class="deliverable">
+          <b>01</b>
+          <strong>北美业务阶段</strong>
+          <span>判断品牌处在 0-1、1-10、10-100，还是品类领导阶段。</span>
+        </article>
+        <article class="deliverable">
+          <b>02</b>
+          <strong>北美业务总分</strong>
+          <span>五颗星总分，拆成健康度、机会分和问题致命度。</span>
+        </article>
+        <article class="deliverable">
+          <b>03</b>
+          <strong>三大板块诊断</strong>
+          <span>品牌、Marketing、电商分别打分，讲清好在哪里、差在哪里。</span>
+        </article>
+        <article class="deliverable">
+          <b>04</b>
+          <strong>90 天进入路径</strong>
+          <span>给出优先级、动作、证据链接和 Go / No-Go 判断依据。</span>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <textarea id="promptBox" class="hidden-prompt" spellcheck="false"></textarea>
+  <div id="toast" class="toast" role="status">已复制</div>
+
+  <script>
+    const form = document.getElementById("diagnosisForm");
+    const brandInput = document.getElementById("brandInput");
+    const submitResult = document.getElementById("submitResult");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultCopy = document.getElementById("resultCopy");
+    const copyPrompt = document.getElementById("copyPrompt");
+    const promptBox = document.getElementById("promptBox");
+    const toast = document.getElementById("toast");
+
+    function cleanBrand(value) {
+      return value.trim().replace(/\s+/g, " ");
+    }
+
+    function buildPrompt(brand) {
+      return [
+        `请使用 rucia-na-business-diagnosis skill，给「${brand}」做北美业务诊断。`,
+        "",
+        "这是远汐 Offing 给品牌方提供的免费北美业务诊断入口。报告要体现 Offing 的判断逻辑：先判断市场、品牌位置、GTM 和资源配置，再决定预算怎么花。",
+        "语气要克制、专业、有判断力。不要写成普通 AI 报告，不要像低价服务商，不要承诺销售结果。",
+        "默认交付一份可直接打开、分享、复盘的独立 HTML 诊断报告。报告必须体现被诊断品牌 VI，并包含：",
+        "1. 首屏：必须使用品牌真实 logo；标题视觉文案为「北美业务诊断」，语义标题和页面 title 保留「品牌名 北美业务诊断」；展示一句话结论、五颗星总分、业务健康度、业务机会分、问题致命度。",
+        "2. 品牌阶段判断：先判断它处在 0-1、1-10、10-100，还是 100+ 阶段，再判断当前动作是否符合阶段标准。",
+        "3. 销售规模校准：最新公开 units sold 作为底线，美元与人民币双币种，北美年销售额给区间和置信度。",
+        "4. 三大业务板块：品牌、Marketing、电商，先打分，再写做得好的和做得不好的。",
+        "5. Top 3 关键问题：用可视化诊断卡呈现，包含证据微图表、影响路径和具体动作。",
+        "6. 竞品横向对比、11 维度评分、增长机会、90/180 天路线图、风险预警与证据表。",
+        "7. 结尾必须回到 Offing 的判断框架：第一市场、第一人群、第一句话、第一渠道、第一笔预算。",
+        "",
+        "请实时联网确认最新公开信息；如果数据不足，标注数据缺口，不要硬编。"
+      ].join("\n");
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 1700);
+    }
+
+    function submitBrand(brand) {
+      const prompt = buildPrompt(brand);
+      promptBox.value = prompt;
+      resultTitle.textContent = `${brand} 已进入诊断`;
+      resultCopy.textContent = "远汐会先判断阶段、总分、三大板块问题和 90 天路线。";
+      submitResult.classList.add("show");
+
+      const bridge = window.RuciaDiagnosisBridge;
+      if (bridge && typeof bridge.runDiagnosis === "function") {
+        bridge.runDiagnosis({ brand, provider: "Offing", prompt, createdAt: new Date().toISOString() });
+      }
+      showToast("已进入诊断");
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const brand = cleanBrand(brandInput.value);
+      if (!brand) {
+        brandInput.focus();
+        return;
+      }
+      submitBrand(brand);
+    });
+
+    document.querySelectorAll("[data-brand]").forEach((button) => {
+      button.addEventListener("click", () => {
+        brandInput.value = button.dataset.brand;
+        brandInput.focus();
+      });
+    });
+
+    copyPrompt.addEventListener("click", async () => {
+      promptBox.select();
+      try {
+        await navigator.clipboard.writeText(promptBox.value);
+      } catch (_) {
+        document.execCommand("copy");
+      }
+      showToast("诊断要求已复制");
+    });
+  </script>
+</body>
+</html>

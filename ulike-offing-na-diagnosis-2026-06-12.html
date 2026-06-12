@@ -1,0 +1,1764 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ulike · 远汐 Offing 免费北美业务诊断 · 2026-06-12</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+  <style>
+    :root {
+      --offing-paper: #f8faf6;
+      --offing-surface: #fffffb;
+      --offing-ink: #0d1716;
+      --offing-body: #30413f;
+      --offing-muted: #6f7d78;
+      --offing-line: #d8e2dc;
+      --offing-sea: #2d6261;
+      --offing-sea-soft: #e6f0ec;
+      --offing-clay: #a76560;
+      --offing-gold: #a99556;
+      --offing-slate: #13211f;
+      --black: var(--offing-slate);
+      --graphite: var(--offing-ink);
+      --titanium: var(--offing-muted);
+      --silver: var(--offing-line);
+      --cloud: var(--offing-paper);
+      --porcelain: var(--offing-surface);
+      --brand-primary: #E0004D;
+      --brand-deep: #040000;
+      --brand-cream: #FBFAF4;
+      --brand-tan: #D6B899;
+      --brand-mint: #2E9E7B;
+      --red: #D70015;
+      --amber: #FF9F0A;
+      --green: var(--brand-mint);
+      --line: rgba(13, 23, 22, 0.08);
+      --shadow: 0 10px 32px rgba(13, 23, 22, 0.06);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(230, 240, 236, 0.38) 0%, rgba(248, 250, 246, 0.96) 26%, rgba(250, 250, 245, 0.98) 100%),
+        linear-gradient(90deg, rgba(45, 98, 97, 0.016) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(45, 98, 97, 0.014) 1px, transparent 1px),
+        var(--cloud);
+      background-size: auto, 64px 64px, 64px 64px;
+      color: var(--graphite);
+      line-height: 1.62;
+    }
+    a { color: var(--offing-sea); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { margin: 0; letter-spacing: 0; }
+    p { margin: 0; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 32px;
+      background: rgba(248, 250, 246, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .brand-lockup { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+    .brand-lockup .brand-text {
+      display: grid;
+      gap: 1px;
+      line-height: 1.18;
+    }
+    .brand-lockup .brand-text small {
+      color: var(--titanium);
+      font-size: 11px;
+      font-weight: 650;
+    }
+    .mark {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      color: var(--offing-sea);
+      background: var(--offing-sea-soft);
+      border: 1px solid rgba(45, 98, 97, 0.22);
+      font-size: 13px;
+    }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      align-content: center;
+      padding: 96px 48px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 74% 18%, rgba(45, 98, 97, 0.24), transparent 32%),
+        linear-gradient(145deg, #13211f 0%, #182824 58%, #0d1716 100%);
+    }
+    .hero-inner, .section-inner { max-width: 1180px; width: 100%; margin: 0 auto; }
+    .hero-brand-logo {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 18px 42px rgba(0, 0, 0, 0.18));
+    }
+    .hero-brand-logo img {
+      display: block;
+      width: clamp(148px, 13vw, 196px);
+      height: auto;
+    }
+    .hero-brand-logo .logo-dark { display: none; }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 10px;
+      border: 1px solid rgba(45, 98, 97, 0.42);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 11px;
+      font-weight: 650;
+    }
+    h1 {
+      max-width: 940px;
+      font-size: clamp(52px, 7.4vw, 92px);
+      line-height: 0.98;
+      font-weight: 800;
+    }
+    .hero-sub {
+      max-width: 780px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: clamp(16px, 2vw, 20px);
+    }
+    .hero-score-panel {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 1px;
+      max-width: 980px;
+      margin-top: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .total-score-card {
+      display: grid;
+      align-content: center;
+      padding: 26px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+    .score-eyebrow {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .star-score {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+    .stars {
+      position: relative;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.22);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .stars::before {
+      content: "★★★★★";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: var(--rating);
+      overflow: hidden;
+      white-space: nowrap;
+      color: var(--brand-primary);
+    }
+    .score-number { font-size: 38px; font-weight: 840; line-height: 1; }
+    .score-formula {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .subscore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .subscore {
+      position: relative;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+    .subscore::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 0;
+      height: 3px;
+      border-radius: 0 0 999px 999px;
+      background: var(--subscore-color);
+    }
+    .subscore strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 820;
+      font-variant-numeric: tabular-nums;
+      color: var(--subscore-color);
+    }
+    .subscore span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      font-weight: 720;
+    }
+    .subscore small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .subscore.health {
+      --subscore-color: var(--brand-mint);
+      background: linear-gradient(180deg, rgba(46, 158, 123, 0.16), rgba(255, 255, 255, 0.055) 52%);
+    }
+    .subscore.opportunity {
+      --subscore-color: var(--brand-primary);
+      background: linear-gradient(180deg, rgba(224, 0, 77, 0.16), rgba(255, 255, 255, 0.055) 52%);
+    }
+    .subscore.fatality {
+      --subscore-color: var(--amber);
+      background: linear-gradient(180deg, rgba(255, 159, 10, 0.18), rgba(255, 255, 255, 0.055) 52%);
+    }
+
+    section { padding: 84px 48px; }
+    .section-head { margin-bottom: 28px; }
+    .section-tag { color: var(--offing-sea); font-size: 12px; font-weight: 750; margin-bottom: 8px; }
+    h2 { font-size: clamp(32px, 4vw, 54px); line-height: 1.06; font-weight: 800; }
+    .lead { max-width: 820px; color: var(--titanium); margin: 14px 0 0; font-size: 16px; }
+    .grid { display: grid; gap: 16px; }
+    .grid.two { grid-template-columns: 1.1fr 0.9fr; }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      min-width: 0;
+      padding: 24px;
+      background: var(--porcelain);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .muted { color: var(--titanium); }
+    .small { font-size: 13px; }
+    .metric-title {
+      color: var(--titanium);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .big-score { font-size: 56px; font-weight: 800; line-height: 1; }
+    .bar { height: 8px; background: #d8e2dc; border-radius: 999px; overflow: hidden; margin-top: 16px; }
+    .bar > span { display: block; height: 100%; background: var(--brand-primary); border-radius: 999px; }
+    .bar.red > span { background: var(--red); }
+    .bar.amber > span { background: var(--amber); }
+    .bar.green > span { background: var(--green); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #e6f0ec;
+      color: var(--graphite);
+      white-space: nowrap;
+    }
+    .tag.red { color: var(--red); background: rgba(215, 0, 21, 0.08); }
+    .tag.amber { color: #9A5B00; background: rgba(255, 159, 10, 0.13); }
+    .tag.green { color: var(--green); background: rgba(46, 158, 123, 0.1); }
+    .tag.blue { color: var(--brand-primary); background: rgba(224, 0, 77, 0.09); }
+
+    .stage-layout {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .stage-summary,
+    .stage-detail,
+    .stage-action,
+    .stage-fit-card,
+    .sales-estimate-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .stage-summary {
+      padding: 26px;
+      color: #fff;
+      background: var(--graphite);
+    }
+    .stage-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--brand-primary);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .stage-summary h3 {
+      max-width: 420px;
+      margin-top: 18px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.08;
+    }
+    .stage-scoreline {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .stage-scoreline strong { font-size: 44px; line-height: 1; font-weight: 840; }
+    .stage-scoreline span { color: rgba(255, 255, 255, 0.62); font-size: 13px; }
+    .stage-summary p { margin-top: 18px; color: rgba(255, 255, 255, 0.72); font-size: 14px; }
+    .stage-detail { padding: 24px; background: var(--porcelain); }
+    .maturity-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+      padding-top: 34px;
+    }
+    .maturity-track::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 14px;
+      height: 2px;
+      background: #d8e2dc;
+    }
+    .maturity-step {
+      position: relative;
+      min-height: 116px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+    .maturity-step::before {
+      content: "";
+      position: absolute;
+      top: -29px;
+      left: 16px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      background: var(--silver);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+    .maturity-step.done::before { background: var(--brand-mint); }
+    .maturity-step.active {
+      border-color: rgba(224, 0, 77, 0.34);
+      background: rgba(224, 0, 77, 0.055);
+    }
+    .maturity-step.active::before {
+      background: var(--brand-primary);
+      box-shadow: 0 0 0 7px rgba(224, 0, 77, 0.12);
+    }
+    .maturity-step strong,
+    .stage-gate strong,
+    .fit-card strong,
+    .stage-action strong,
+    .fit-readout-item strong { display: block; line-height: 1.35; }
+    .maturity-step strong { font-size: 14px; }
+    .maturity-step span { display: block; margin-top: 8px; color: var(--titanium); font-size: 12px; line-height: 1.4; }
+    .stage-gate-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .stage-gate {
+      min-height: 108px;
+      padding: 13px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .stage-gate b,
+    .fit-card b { display: block; color: var(--titanium); font-size: 11px; margin-bottom: 6px; }
+    .stage-gate strong { font-size: 14px; }
+    .stage-gate span,
+    .stage-action span,
+    .fit-readout-item span { display: block; margin-top: 7px; color: var(--titanium); font-size: 12px; line-height: 1.42; }
+    .stage-fit-card {
+      margin-top: 16px;
+      padding: 24px;
+      background: var(--porcelain);
+    }
+    .stage-fit-head {
+      display: grid;
+      grid-template-columns: 1fr 152px;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .stage-fit-head h3 {
+      max-width: 760px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.12;
+    }
+    .fit-score {
+      display: grid;
+      justify-items: end;
+      gap: 2px;
+      text-align: right;
+    }
+    .fit-score strong { color: var(--brand-primary); font-size: 48px; line-height: 1; font-weight: 840; }
+    .fit-score span { color: var(--titanium); font-size: 13px; font-weight: 720; }
+    .fit-score small { color: var(--titanium); font-size: 11px; }
+    .fit-standard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .fit-card {
+      min-height: 210px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+    .fit-card.pass { background: rgba(46, 158, 123, 0.06); border-color: rgba(46, 158, 123, 0.2); }
+    .fit-card.warn { background: rgba(255, 159, 10, 0.07); border-color: rgba(255, 159, 10, 0.26); }
+    .fit-card.fail { background: rgba(215, 0, 21, 0.045); border-color: rgba(215, 0, 21, 0.18); }
+    .fit-status {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      background: #e6f0ec;
+    }
+    .fit-card.pass .fit-status { color: var(--brand-mint); background: rgba(46, 158, 123, 0.12); }
+    .fit-card.warn .fit-status { color: #9A5B00; background: rgba(255, 159, 10, 0.16); }
+    .fit-card.fail .fit-status { color: var(--red); background: rgba(215, 0, 21, 0.1); }
+    .fit-card strong { font-size: 15px; }
+    .fit-card p { margin: 8px 0 0; color: var(--titanium); font-size: 12px; line-height: 1.42; }
+    .fit-card hr { height: 1px; margin: 12px 0; border: 0; background: var(--line); }
+    .fit-readout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .fit-readout-item {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .fit-readout-item strong { font-size: 14px; }
+    .sales-estimate-card {
+      margin-top: 16px;
+      padding: 24px;
+      background: #fff;
+    }
+    .sales-estimate-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .sales-estimate-head h3 {
+      max-width: 780px;
+      font-size: clamp(22px, 2.6vw, 30px);
+      line-height: 1.15;
+    }
+    .confidence-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #9A5B00;
+      background: rgba(255, 159, 10, 0.14);
+      font-size: 12px;
+      font-weight: 820;
+      white-space: nowrap;
+    }
+    .sales-range-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.9fr 0.98fr;
+      gap: 10px;
+    }
+    .sales-range {
+      --range-color: var(--silver);
+      position: relative;
+      min-height: 178px;
+      overflow: hidden;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+    .sales-range::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: var(--range-color);
+    }
+    .sales-range.global { --range-color: var(--brand-primary); background: linear-gradient(180deg, rgba(224, 0, 77, 0.07), #fbfcf8 72%); }
+    .sales-range.na { --range-color: var(--amber); background: linear-gradient(180deg, rgba(255, 159, 10, 0.08), #fbfcf8 72%); }
+    .sales-range.stage { --range-color: var(--brand-mint); background: linear-gradient(180deg, rgba(46, 158, 123, 0.08), #fbfcf8 72%); }
+    .sales-range b {
+      display: block;
+      color: var(--titanium);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sales-range strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--graphite);
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+    }
+    .sales-range small.rmb-estimate {
+      display: block;
+      margin-top: 7px;
+      color: var(--range-color);
+      font-size: 15px;
+      font-weight: 820;
+      line-height: 1.3;
+    }
+    .sales-range span {
+      display: block;
+      margin-top: 10px;
+      color: var(--titanium);
+      font-size: 12px;
+      line-height: 1.48;
+    }
+    .estimate-bar {
+      height: 8px;
+      margin-top: 16px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+    .estimate-bar i {
+      display: block;
+      height: 100%;
+      width: var(--bar);
+      border-radius: inherit;
+      background: var(--range-color);
+    }
+    .sales-method {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .sales-method div {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--porcelain);
+      color: var(--titanium);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .sales-method strong { color: var(--graphite); font-weight: 800; }
+    .stage-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .stage-action { padding: 18px; background: var(--porcelain); }
+    .stage-action .tag { margin-bottom: 10px; }
+    .stage-action strong { font-size: 16px; }
+
+    .issue-stack { display: grid; gap: 12px; margin-top: 6px; }
+    .issue-card {
+      display: grid;
+      grid-template-columns: 52px 1fr 90px;
+      gap: 14px;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+    .issue-rank {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--red);
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .issue-title { font-weight: 760; }
+    .issue-note { margin-top: 4px; color: var(--titanium); font-size: 13px; }
+    .issue-score { text-align: right; font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .issue-score small { display: block; color: var(--titanium); font-size: 11px; font-weight: 650; }
+
+    .visual-board {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .visual-card {
+      min-height: 310px;
+      padding: 22px;
+      overflow: hidden;
+      background: var(--porcelain);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .visual-card h3 { font-size: 20px; margin-bottom: 6px; }
+    .caption { color: var(--titanium); font-size: 13px; margin-bottom: 18px; }
+    .price-map { display: grid; gap: 12px; }
+    .price-row {
+      display: grid;
+      grid-template-columns: 96px 1fr 64px;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+    .price-track,
+    .mini-price-track { height: 12px; border-radius: 999px; background: #d8e2dc; overflow: hidden; }
+    .price-track span,
+    .mini-price-track span { display: block; height: 100%; border-radius: 999px; background: var(--brand-primary); }
+    .price-row:nth-child(3) .price-track span,
+    .mini-price-row:nth-child(2) .mini-price-track span,
+    .mini-price-row:nth-child(3) .mini-price-track span { background: var(--amber); }
+    .price-row:nth-child(5) .price-track span { background: var(--green); }
+    .price { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .ladder { display: grid; gap: 10px; }
+    .ladder-step {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #fbfcf8;
+    }
+    .ladder-num {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--graphite);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .ladder-step.gap .ladder-num { background: var(--amber); color: var(--graphite); }
+    .ladder-step strong { display: block; font-size: 13px; }
+    .ladder-step span { display: block; color: var(--titanium); font-size: 12px; margin-top: 3px; }
+    .journey,
+    .week-path {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .journey::before,
+    .week-path::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 18px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand-primary), var(--brand-mint));
+    }
+    .week {
+      position: relative;
+      padding-top: 42px;
+      text-align: center;
+      font-size: 12px;
+      z-index: 1;
+    }
+    .week::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: calc(50% - 10px);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--porcelain);
+      border: 5px solid var(--brand-primary);
+    }
+    .week:last-child::before { border-color: var(--brand-mint); }
+    .week strong { display: block; font-size: 13px; }
+    .week span { color: var(--titanium); }
+
+    .segment-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .segment-score {
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .segment-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .segment-block h4 {
+      margin: 0 0 10px;
+      color: var(--titanium);
+      font-size: 13px;
+    }
+    .segment-block ul {
+      margin: 0;
+      padding-left: 0;
+      color: var(--graphite);
+      font-size: 13px;
+      list-style: none;
+    }
+    .segment-block li {
+      position: relative;
+      margin: 8px 0;
+      padding: 12px 12px 12px 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+    .segment-block li::before {
+      content: "";
+      position: absolute;
+      left: 13px;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+    }
+    .segment-block:last-child li::before { background: var(--amber); }
+    .source-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .source-card {
+      display: grid;
+      gap: 8px;
+      padding: 8px;
+      color: inherit;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .source-card:hover { text-decoration: none; border-color: rgba(224, 0, 77, 0.28); }
+    .source-thumb {
+      height: 112px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f8faf6;
+    }
+    .source-thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top left;
+    }
+    .source-thumb.link-only {
+      display: grid;
+      align-content: space-between;
+      padding: 12px;
+      background: var(--brand-cream);
+    }
+    .source-kpi { color: var(--brand-primary); font-size: 28px; font-weight: 820; line-height: 1; }
+    .source-domain { color: var(--titanium); font-size: 11px; font-weight: 720; }
+    .source-meta strong { display: block; font-size: 12px; line-height: 1.35; }
+    .source-meta span { display: block; margin-top: 3px; color: var(--titanium); font-size: 11px; line-height: 1.35; }
+
+    .problem-stack { display: grid; gap: 18px; }
+    .problem { padding: 0; overflow: hidden; }
+    .problem-head {
+      display: grid;
+      grid-template-columns: 126px 1fr 150px;
+      gap: 18px;
+      align-items: stretch;
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fffffb 0%, #fbfcf8 100%);
+    }
+    .severity-pill {
+      display: grid;
+      align-content: center;
+      justify-items: start;
+      gap: 4px;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(215, 0, 21, 0.08);
+      border: 1px solid rgba(215, 0, 21, 0.12);
+    }
+    .severity-pill span { color: var(--red); font-size: 12px; font-weight: 820; }
+    .severity-pill strong { font-size: 34px; line-height: 1; font-weight: 840; font-variant-numeric: tabular-nums; }
+    .severity-pill small { color: var(--titanium); font-size: 11px; font-weight: 680; }
+    .problem-kicker { color: var(--brand-primary); font-size: 12px; font-weight: 760; margin-bottom: 6px; }
+    .problem h3 { font-size: 24px; line-height: 1.18; margin-bottom: 8px; }
+    .problem-summary { color: var(--titanium); font-size: 14px; max-width: 760px; }
+    .problem-scorebox {
+      display: grid;
+      align-content: center;
+      justify-items: end;
+      gap: 4px;
+      text-align: right;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .problem-scorebox span { font-size: 28px; font-weight: 840; line-height: 1; }
+    .problem-scorebox small { color: var(--titanium); font-size: 11px; line-height: 1.35; }
+    .problem-body {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 16px;
+      padding: 20px;
+    }
+    .signal-panel {
+      min-height: 230px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .signal-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--titanium);
+      font-size: 12px;
+      font-weight: 780;
+    }
+    .evidence-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .evidence-chip {
+      display: inline-flex;
+      min-height: 22px;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(224, 0, 77, 0.08);
+      color: var(--brand-primary);
+      font-size: 11px;
+      font-weight: 760;
+    }
+    .mini-price-bars { display: grid; gap: 11px; }
+    .mini-price-row {
+      display: grid;
+      grid-template-columns: 92px 1fr 58px;
+      gap: 10px;
+      align-items: center;
+      font-size: 12px;
+    }
+    .mini-price-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mini-price-track { height: 10px; }
+    .mini-price-row em { color: var(--graphite); font-style: normal; font-weight: 780; text-align: right; font-variant-numeric: tabular-nums; }
+    .impact-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .flow-step,
+    .boundary-cell,
+    .path-node {
+      position: relative;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: #fbfcf8;
+      border: 1px solid var(--line);
+    }
+    .flow-step { min-height: 118px; }
+    .flow-step::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      width: 16px;
+      height: 1px;
+      background: var(--silver);
+    }
+    .flow-step:last-child::after { display: none; }
+    .flow-step b { display: block; color: var(--brand-primary); font-size: 12px; margin-bottom: 8px; }
+    .flow-step strong,
+    .boundary-cell strong,
+    .path-node strong { display: block; font-size: 14px; line-height: 1.3; }
+    .flow-step span,
+    .boundary-cell span,
+    .path-node span { display: block; margin-top: 8px; color: var(--titanium); font-size: 12px; line-height: 1.45; }
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .boundary-cell.risk { border-color: rgba(255, 159, 10, 0.36); background: rgba(255, 159, 10, 0.07); }
+    .week-path { padding-top: 26px; margin-top: 0; }
+    .week-path::before { top: 12px; background: #d8e2dc; }
+    .path-node { padding: 34px 10px 12px; text-align: center; }
+    .path-node::before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: calc(50% - 10px);
+      width: 20px;
+      height: 20px;
+      border: 5px solid var(--brand-primary);
+      border-radius: 50%;
+      background: #fff;
+    }
+    .path-node:last-child::before { border-color: var(--brand-mint); }
+    .action-strip {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .action-card {
+      padding: 14px;
+      border-radius: var(--radius);
+      background: var(--brand-cream);
+      border: 1px solid rgba(214, 184, 153, 0.42);
+    }
+    .action-label { color: var(--brand-primary); font-size: 11px; font-weight: 820; margin-bottom: 6px; }
+    .action-card strong { display: block; font-size: 14px; line-height: 1.35; }
+    .action-card span { display: block; margin-top: 6px; color: var(--titanium); font-size: 12px; line-height: 1.42; }
+
+    .table-wrap { max-width: 100%; min-width: 0; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 760px; }
+    th, td { padding: 13px 14px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: #fbfcf8; color: var(--titanium); font-size: 12px; font-weight: 760; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .chart { width: 100%; height: 360px; }
+    .route { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .phase h3 { font-size: 20px; margin-bottom: 6px; }
+    .phase ul { padding-left: 18px; margin: 16px 0 0; }
+    .phase li { margin: 8px 0; }
+    .evidence-list { display: grid; gap: 12px; }
+    .evidence-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .eid {
+      display: grid;
+      place-items: center;
+      height: 34px;
+      border-radius: 7px;
+      color: #fff;
+      background: var(--graphite);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    footer {
+      padding: 44px 48px;
+      color: rgba(255, 255, 255, 0.68);
+      background: var(--black);
+      font-size: 13px;
+    }
+    footer .section-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+    .reveal { opacity: 1; transform: none; transition: opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1); }
+    html.js .reveal { opacity: 0; transform: translateY(18px); }
+    html.js .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 920px) {
+      nav { align-items: flex-start; padding: 12px 18px; }
+      .nav-links { display: none; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-score-panel, .subscore-grid, .kpi-grid, .grid.two, .grid.three, .route,
+      .stage-layout, .stage-actions, .stage-gate-grid, .maturity-track,
+      .stage-fit-head, .fit-standard-grid, .fit-readout, .sales-estimate-head,
+      .sales-range-grid, .sales-method,
+      .segment-columns, .visual-board, .problem-head, .problem-body,
+      .action-strip, .impact-flow, .boundary-grid, .week-path { grid-template-columns: 1fr; }
+      .hero-brand-logo { margin-bottom: 22px; }
+      .hero-brand-logo img { width: 148px; }
+      h1 { font-size: 48px; white-space: normal; }
+      .maturity-track { padding-top: 0; }
+      .maturity-track::before, .maturity-step::before { display: none; }
+      .issue-card { grid-template-columns: 44px 1fr; }
+      .issue-score { grid-column: 2; text-align: left; font-size: 18px; }
+      .source-strip { grid-template-columns: 1fr; }
+      .source-thumb { height: 150px; }
+      .problem-scorebox, .fit-score { justify-items: start; text-align: left; }
+      .flow-step::after, .week-path::before { display: none; }
+      .path-node { padding-top: 14px; text-align: left; }
+      .path-node::before { display: none; }
+      .journey { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+      .chart { height: 320px; }
+    }
+
+    @media print {
+      nav { display: none; }
+      .hero { min-height: auto; color: #000; background: #fff; padding: 28px 24px; }
+      .hero-brand-logo { filter: none; margin-bottom: 18px; }
+      .hero-brand-logo .logo-white { display: none; }
+      .hero-brand-logo .logo-dark { display: block; width: 128px; }
+      section { padding: 28px 24px; }
+      .card, .visual-card, .stage-summary, .stage-detail, .stage-fit-card, .sales-estimate-card, .stage-action { box-shadow: none; break-inside: avoid; }
+      .reveal { opacity: 1; transform: none; }
+      a { color: #000; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand-lockup">
+      <span class="mark">O</span>
+      <span class="brand-text"><span>远汐 Offing</span><small>免费北美业务诊断</small></span>
+    </div>
+    <div class="nav-links">
+      <a href="#stage">阶段判断</a>
+      <a href="#snapshot">一页看懂</a>
+      <a href="#segments">板块诊断</a>
+      <a href="#problems">关键问题</a>
+      <a href="#competitors">竞品</a>
+      <a href="#scorecard">评分</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-brand-logo" aria-label="Ulike 官方品牌标识">
+        <img class="logo-white" src="assets/brand-logos/ulike-logo-official-transparent.png" alt="Ulike 官方品牌标识">
+        <img class="logo-dark" src="assets/brand-logos/ulike-logo-official.svg" alt="" aria-hidden="true">
+      </div>
+      <h1><span class="visually-hidden">Ulike </span>北美业务诊断</h1>
+      <p class="hero-sub">Ulike 已经完成产品与渠道验证，但北美业务的价格、信任口径和买后运营还没有形成统一经营系统。</p>
+      <div class="hero-score-panel">
+        <div class="total-score-card">
+          <div class="score-eyebrow">北美业务情况总分</div>
+          <div class="star-score">
+            <div class="stars" style="--rating:66%">★★★★★</div>
+            <div class="score-number">3.3 / 5</div>
+          </div>
+          <div class="score-formula">加权公式：业务健康度 45% + 业务机会分 35% + 风险调整后的问题致命度 20%。问题致命度越高，对总分扣分越多。</div>
+        </div>
+        <div class="subscore-grid">
+          <div class="subscore health">
+            <strong>69</strong>
+            <span>业务健康度</span>
+            <small>产品与渠道成立，但交易链路和信任表达存在结构性缺口。</small>
+          </div>
+          <div class="subscore opportunity">
+            <strong>84</strong>
+            <span>业务机会分</span>
+            <small>北美市场仍有空间，Air 10 具备继续放大的产品抓手。</small>
+          </div>
+          <div class="subscore fatality">
+            <strong>72</strong>
+            <span>问题致命度</span>
+            <small>价格口径、claim 边界和买后运营问题会直接影响转化与长期信任。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="stage">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">00 · 品牌阶段判断</div>
+        <h2>Ulike 已经越过产品验证，<br>正在进入北美经营系统化阶段。</h2>
+        <p class="lead">这个判断用于回答一个更前置的问题：Ulike 现在到底是早期品牌、单品规模化品牌，还是系统经营型品牌。结论是：产品和渠道已经成立，但北美业务还没有完全进入系统化经营。</p>
+      </div>
+      <div class="stage-layout reveal">
+        <div class="stage-summary">
+          <div class="stage-badge">当前阶段 · 10-100 阶段初期</div>
+          <h3>从“单品规模化”转向“北美系统经营”。</h3>
+          <div class="stage-scoreline"><strong>3 / 4</strong><span>品牌成熟度阶段</span></div>
+          <p>这里的“初期”指：产品与渠道已经成立，但经营系统还没有完全补齐。Ulike 不再是 0-1 阶段的产品验证问题，Air 10 已经有产品卖点、评价资产、媒体内容和零售渠道。现在真正要补的是价格治理、信任口径、买后运营和多渠道一致性。</p>
+        </div>
+        <div class="stage-detail">
+          <div class="metric-title">Offing 品牌成熟度模型</div>
+          <div class="maturity-track">
+            <div class="maturity-step done"><strong>0-1<br>产品与品类验证</strong><span>产品卖点成立，有明确目标人群和基础评价。</span></div>
+            <div class="maturity-step done"><strong>1-10<br>单品规模化</strong><span>核心 SKU 能在官网、Amazon、零售渠道承接销售。</span></div>
+            <div class="maturity-step active"><strong>10-100<br>经营系统化</strong><span>当前阶段：渠道、价格、信任、会员和内容需要统一治理。</span></div>
+            <div class="maturity-step"><strong>100+<br>品类领导</strong><span>形成多产品矩阵、稳定复购和品类话语权。</span></div>
+          </div>
+          <div class="stage-gate-grid">
+            <div class="stage-gate"><b>产品验证</b><strong>已通过</strong><span>Air 10 的冷感、速度、SkinSensor 和 2 周结果表达已形成清晰产品资产（E1）。</span></div>
+            <div class="stage-gate"><b>渠道验证</b><strong>已通过</strong><span>官网、Amazon、Ulta、Best Buy 覆盖 DTC、搜索、美妆和消费电子场景（E1, E2, E4, E6）。</span></div>
+            <div class="stage-gate"><b>信任资产</b><strong>需要治理</strong><span>4M+、5M+、7M+、8M+ 等不同时间口径需要统一到一张权威说明表，避免规模数字越新越分散（E1, E6, E7, E14）。</span></div>
+            <div class="stage-gate"><b>经营系统</b><strong>尚未成熟</strong><span>价格体系、版本选择、Amazon 交易入口和 12 周买后运营仍需补齐。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sales-estimate-card reveal">
+        <div class="sales-estimate-head">
+          <div>
+            <div class="metric-title">销售规模校准</div>
+            <h3>销售额预估有必要，但这里只能作为阶段判断的校准项，不能写成北美财务结论。</h3>
+          </div>
+          <span class="confidence-badge">中低置信度 · 方向性</span>
+        </div>
+        <div class="sales-range-grid">
+          <div class="sales-range global">
+            <b>全球累计终端销售额</b>
+            <strong>$1.1B-$2.1B</strong>
+            <small class="rmb-estimate">约人民币 76亿-141亿元</small>
+            <span>取最新公开披露的 8M+ 全球脱毛仪销量作为底线，而不是继续沿用 4M+/5M+ 旧口径。该数值是累计终端销售规模信号，不等同于年营收或公司净收入（E14）。</span>
+            <div class="estimate-bar" style="--bar: 84%"><i></i></div>
+          </div>
+          <div class="sales-range na">
+            <b>北美年销售额</b>
+            <strong>$30M-$70M</strong>
+            <small class="rmb-estimate">约人民币 2.0亿-4.7亿元</small>
+            <span>按 Amazon 公开月销提示做底线，再叠加官网、Ulta、Best Buy 等北美渠道。第三方月销工具当前未接入，后续应以西柚或 SellerSprite 口径复核（E2, E3, E4, E6, E15）。</span>
+            <div class="estimate-bar" style="--bar: 52%"><i></i></div>
+          </div>
+          <div class="sales-range stage">
+            <b>阶段校准线</b>
+            <strong>10-100 初期</strong>
+            <small class="rmb-estimate">$50M+ 需内部确认</small>
+            <span>公开信号已经跨过单品验证。若内部北美年零售 GMV 低于 $30M，更接近 1-10 后期；若稳定超过 $50M，则当前“10-100 阶段初期”判断更稳。</span>
+            <div class="estimate-bar" style="--bar: 64%"><i></i></div>
+          </div>
+        </div>
+        <div class="sales-method">
+          <div><strong>全球口径：</strong>8M units × $140-$260 折后净 ASP，得到约 $1.12B-$2.08B；按 2026-06-12 约 1 USD = 6.77 CNY 换算，约为人民币 76亿-141亿元。</div>
+          <div><strong>北美口径：</strong>Amazon 可见月销下限约 4.8K+ 台，按 $259-$349 计算年化底线约 $15M-$20M；考虑 Amazon 只是北美渠道之一，DTC 与线下零售放大后取 $30M-$70M 区间。</div>
+        </div>
+      </div>
+      <div class="stage-fit-card reveal">
+        <div class="stage-fit-head">
+          <div>
+            <div class="metric-title">阶段动作适配度</div>
+            <h3>Ulike 的渠道扩张、媒体背书和购买权益方向正确，但尚未完全切换到 10-100 阶段需要的经营治理。</h3>
+          </div>
+          <div class="fit-score"><strong>62</strong><span>/100</span><small>当前动作与阶段标准匹配度</small></div>
+        </div>
+        <div class="fit-standard-grid">
+          <div class="fit-card warn">
+            <span class="fit-status">部分符合</span>
+            <b>阶段标准</b>
+            <strong>多渠道不是越多越好，核心是价格、版本和权益一致。</strong>
+            <hr>
+            <b>Ulike 现在在做</b>
+            <p>官网、Amazon、Ulta、Best Buy 都已覆盖，但官网 $259、Ulta $349、Amazon Deluxe $299 和主 SKU 交易状态并存，说明铺货领先于渠道治理。</p>
+          </div>
+          <div class="fit-card fail">
+            <span class="fit-status">不够符合</span>
+            <b>阶段标准</b>
+            <strong>10-100 阶段必须把权威口径做成统一资产。</strong>
+            <hr>
+            <b>Ulike 现在在做</b>
+            <p>官网、PR 和 BusinessWire 分别出现 7M+、5M+、4M+ 等不同历史口径。每个数字都可能成立，但并存时会降低品牌规模确定感。</p>
+          </div>
+          <div class="fit-card pass">
+            <span class="fit-status">符合</span>
+            <b>阶段标准</b>
+            <strong>高客单设备需要降低用户试错成本。</strong>
+            <hr>
+            <b>Ulike 现在在做</b>
+            <p>HSA/FSA、100-day money back、2-year warranty、Best Buy 线下体验都在降低购买风险，这些动作符合 10-100 阶段的转化要求。</p>
+          </div>
+          <div class="fit-card fail">
+            <span class="fit-status">缺失</span>
+            <b>阶段标准</b>
+            <strong>结果型产品要把买后使用周期产品化。</strong>
+            <hr>
+            <b>Ulike 现在在做</b>
+            <p>FAQ 已说明 12 周使用周期，但缺少 Smooth Plan 式的提醒、记录、教程和维护期复购。这里仍停留在“卖设备”，还没进入“经营结果”。</p>
+          </div>
+        </div>
+        <div class="fit-readout">
+          <div class="fit-readout-item">
+            <strong>符合阶段的动作</strong>
+            <span>进入主流零售、强化媒体背书、提供 HSA/FSA 和退款保修，说明 Ulike 已经开始按高客单北美品牌的方式建立购买信任。</span>
+          </div>
+          <div class="fit-readout-item">
+            <strong>不符合阶段的动作</strong>
+            <span>继续加大促销、版本扩张和媒体声量之前，应该先修渠道价格矩阵、权威数字口径、FDA/claim 表达和 12 周买后运营。否则增长动作会放大不一致，而不是沉淀经营能力。</span>
+          </div>
+        </div>
+      </div>
+      <div class="stage-actions reveal">
+        <div class="stage-action"><span class="tag green">已成立</span><strong>产品力和需求侧不用重新证明</strong><span>当前不应把主要精力放在解释“IPL 有没有需求”，而应放在提升购买确定性。</span></div>
+        <div class="stage-action"><span class="tag amber">卡点</span><strong>北美业务缺的是经营一致性</strong><span>同一品牌在官网、平台、零售和 PR 中应有统一价格逻辑、权威口径和版本说明。</span></div>
+        <div class="stage-action"><span class="tag blue">下一步</span><strong>用 90 天建立经营中台雏形</strong><span>先修价格矩阵、claim 边界、证据资产页和 Smooth Plan 买后运营。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="snapshot">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">01 · 一页看懂</div>
+        <h2>阶段已明确。<br>核心任务是修经营一致性。</h2>
+        <p class="lead">前面的阶段判断说明，Ulike 已进入 10-100 阶段初期。下面只保留三个会影响转化和长期信任的矛盾：渠道价格、效果边界、买后使用周期。</p>
+      </div>
+      <div class="grid two">
+        <div class="card reveal">
+          <div class="metric-title">三大关键问题</div>
+          <div class="issue-stack">
+            <div class="issue-card">
+              <div class="issue-rank">01</div>
+              <div><div class="issue-title">渠道价格与购买入口缺乏统一治理</div><div class="issue-note">高意向用户在下单前需要跨渠道确认价格和版本。证据：E1, E2, E3, E4</div></div>
+              <div class="issue-score">170<small>严重度</small></div>
+            </div>
+            <div class="issue-card">
+              <div class="issue-rank">02</div>
+              <div><div class="issue-title">效果承诺强，但适用边界表达不足</div><div class="issue-note">高强度卖点需要更完整的实验条件和适用人群说明。证据：E1, E11, E12</div></div>
+              <div class="issue-score">160<small>严重度</small></div>
+            </div>
+            <div class="issue-card">
+              <div class="issue-rank">03</div>
+              <div><div class="issue-title">12 周使用周期缺少结构化运营承接</div><div class="issue-note">IPL 效果依赖持续使用，买后运营应承担结果管理和复购承接。证据：E1, E5, E13</div></div>
+              <div class="issue-score">156<small>严重度</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="metric-title">分数结构</div>
+          <div class="grid two" style="grid-template-columns:1fr 1fr">
+            <div><div class="big-score">69</div><div class="muted small">业务健康分</div><div class="bar amber"><span style="width:69%"></span></div></div>
+            <div><div class="big-score">84</div><div class="muted small">业务机会分</div><div class="bar green"><span style="width:84%"></span></div></div>
+          </div>
+          <p class="small muted" style="margin-top:22px">判断：北美市场仍具备较高增长空间，Ulike 的产品抓手明确。短板集中在渠道治理、信任表达、售后体验和买后使用管理，单纯增加投放无法解决这些结构性问题。</p>
+        </div>
+      </div>
+      <div class="visual-board reveal">
+        <div class="visual-card">
+          <h3>渠道价格地图</h3>
+          <div class="caption">同一核心产品在不同入口呈现多个价格锚点，用户需要自行判断版本和权益差异。</div>
+          <div class="price-map">
+            <div class="price-row"><strong>Nood</strong><div class="price-track"><span style="width:51%"></span></div><div class="price">$179</div></div>
+            <div class="price-row"><strong>Ulike 官网</strong><div class="price-track"><span style="width:74%"></span></div><div class="price">$259</div></div>
+            <div class="price-row"><strong>Amazon Deluxe</strong><div class="price-track"><span style="width:85%"></span></div><div class="price">$299</div></div>
+            <div class="price-row"><strong>Ulta Air10</strong><div class="price-track"><span style="width:100%"></span></div><div class="price">$349</div></div>
+            <div class="price-row"><strong>Braun</strong><div class="price-track"><span style="width:100%"></span></div><div class="price">$499+</div></div>
+          </div>
+          <p class="small muted" style="margin-top:18px">判断：Ulike 处于 Nood 与 Braun 之间，必须解释清楚溢价来自技术、舒适度、售后还是礼包。</p>
+        </div>
+        <div class="visual-card">
+          <h3>信任承接阶梯</h3>
+          <div class="caption">强 claim 本身不是问题，问题是 claim 之后缺少同屏的适用条件和边界说明。</div>
+          <div class="ladder">
+            <div class="ladder-step"><div class="ladder-num">1</div><div><strong>效果承诺</strong><span>96% / 2 周 / nearly painless</span></div></div>
+            <div class="ladder-step gap"><div class="ladder-num">2</div><div><strong>实验条件</strong><span>需要更突出样本、频率和个体差异</span></div></div>
+            <div class="ladder-step gap"><div class="ladder-num">3</div><div><strong>适用边界</strong><span>肤色、毛发颜色、纹身、破损皮肤</span></div></div>
+            <div class="ladder-step"><div class="ladder-num">4</div><div><strong>信任证明</strong><span>媒体测评、FDA-cleared、保修和退款</span></div></div>
+          </div>
+        </div>
+        <div class="visual-card">
+          <h3>12 周结果路径</h3>
+          <div class="caption">买后运营应围绕“持续使用”设计，而不是在完成购买后结束。</div>
+          <div class="journey">
+            <div class="week"><strong>W1-2</strong><span>建档<br>肤色匹配</span></div>
+            <div class="week"><strong>W3-6</strong><span>提醒<br>教程</span></div>
+            <div class="week"><strong>W7-12</strong><span>记录<br>案例</span></div>
+            <div class="week"><strong>维护期</strong><span>复购<br>组合</span></div>
+          </div>
+          <p class="small muted" style="margin-top:28px">建议：把 Smooth Plan 设计成买后体验主线，承接教程、提醒、效果记录和交叉销售。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="segments">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">02 · 三大业务板块诊断</div>
+        <h2>先看板块健康度，<br>再看具体问题。</h2>
+        <p class="lead">品牌、市场营销和电商是 Ulike 当前北美业务的三个主要承接面。分数反映板块健康度；“做得好的 / 做得不好的”用于区分可继续放大的资产和需要优先修正的短板。</p>
+      </div>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="segment-top"><div><div class="metric-title">品牌板块</div><h3>品牌资产较强，但权威口径需要统一</h3></div><div class="segment-score">82</div></div>
+          <div class="bar green"><span style="width:82%"></span></div>
+          <div class="segment-columns" style="margin-top:22px">
+            <div class="segment-block">
+              <h4>做得好的</h4>
+              <ul>
+                <li>全球销量、专利、媒体背书和北美零售进入，已能支撑基本品牌信任。官网首页写到 7M+ users，新闻稿提到 Best Buy 线下零售进入和 300 global patents，这些信息适合沉淀成统一的“品牌信任资产页”（E1, E6, E7）。</li>
+                <li>Air 10 的技术资产清晰：冰点冷敷、Dual Lights、SkinSensor、26J、10 分钟全身护理。官网 VI 以黑白基底、#E0004D 强调色和冰感产品图承接“科技 + 美容护理”的定位，但这些技术点还可以进一步映射到用户关心的痛感、速度和安全感（E1，官网 VI 采样）。</li>
+                <li>Amazon、Ulta、Best Buy 等渠道曝光让品牌从 DTC 进入更主流的北美消费场景。尤其 Ulta 页面有 4.8 / 748 reviews，说明 Ulike 已经具备美妆零售语境下的用户评价资产，不只是官网自卖自夸（E2, E4, E6）。</li>
+              </ul>
+            </div>
+            <div class="segment-block">
+              <h4>做得不好的</h4>
+              <ul>
+                <li>品牌权威数字存在时间口径差异：公开材料中出现 4M+、5M+、7M+ 等不同表达。数字本身不是问题，但不同页面和新闻稿并存时，会削弱 B2B、媒体和高客单用户对品牌规模的确定感（E1, E6, E7）。
+                  <div class="source-strip">
+                    <a class="source-card" href="https://www.ulike.com/" target="_blank" rel="noopener"><div class="source-thumb"><img src="assets/ulike-evidence/e1-ulike-7m.png" alt="Ulike 官网首页 7M users 截图"></div><div class="source-meta"><strong>E1 · 官网首页：7M+ users</strong><span>当前官网品牌信任区口径。</span></div></a>
+                    <a class="source-card" href="https://www.prnewswire.com/news-releases/ulike-makes-debut-entrance-into-us-retail-market-via-strategic-partnership-with-best-buy-302174823.html" target="_blank" rel="noopener"><div class="source-thumb"><img src="assets/ulike-evidence/e6-prnewswire-5m-300patents.png" alt="PRNewswire 5M beauty fans 和 300 patents 截图"></div><div class="source-meta"><strong>E6 · PRNewswire：5M+ beauty fans</strong><span>Best Buy 进入美国零售新闻稿。</span></div></a>
+                    <a class="source-card" href="https://www.businesswire.com/news/home/20240312253415/en/Ulike-Dominates-the-World-Home-Hair-Removal-Market-Establishing-Category-Leadership" target="_blank" rel="noopener"><div class="source-thumb link-only"><div class="source-kpi">4M+</div><div class="source-domain">BusinessWire · 原文链接</div></div><div class="source-meta"><strong>E7 · 2024 品类领导稿：4M+ units</strong><span>原站截图不稳定，保留可点击源页核验。</span></div></a>
+                  </div>
+                </li>
+                <li>FDA-cleared / FDA-approved 等表达需要跨官网、零售页、媒体素材统一。官网和 PR 对监管背书的措辞如果不一致，会给竞品、平台审核和用户投诉留下解释空间（E1, E6）。</li>
+                <li>适用人群和不适用场景没有成为品牌信任资产的一部分。当前 VI 更多服务促销和产品展示，尚未系统服务于“适用边界、临床依据、使用周期”这些信任信息，导致品牌看起来很会卖产品，但还不够像品类专家。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="segment-top"><div><div class="metric-title">市场营销板块</div><h3>声量基础较强，但信任承接不足</h3></div><div class="segment-score">68</div></div>
+          <div class="bar amber"><span style="width:68%"></span></div>
+          <div class="segment-columns" style="margin-top:22px">
+            <div class="segment-block">
+              <h4>做得好的</h4>
+              <ul>
+                <li>“96% hair reduction in 2 weeks”“nearly painless”“10-minute full-body sessions”等卖点清晰，适合短视频、达人种草和搜索广告承接。优势在于用户一眼知道产品主打结果、舒适度和效率（E1）。</li>
+                <li>Vogue、Tom's Guide、Cosmopolitan 等测评内容强化了产品有效性和舒适度认知。Tom's Guide 明确提到 FDA-cleared 和不适用人群，这类第三方内容可以反向补强 Ulike 自有页面的可信度（E12, E13）。</li>
+                <li>HSA/FSA、100-day money back、2-year warranty 等权益能降低高客单设备的决策门槛。对 $259-$349 价格带的家用美容仪来说，这些权益实际承担的是“降低试错成本”的转化角色（E1）。</li>
+              </ul>
+            </div>
+            <div class="segment-block">
+              <h4>做得不好的</h4>
+              <ul>
+                <li>强效果 claim 出现频率高，但实验条件、个体差异、适用肤色和毛发颜色未同等突出。用户看到“2 周见效”后，下一步应该立刻看到适用条件，否则预期越高，售后落差越大（E1, E12）。</li>
+                <li>PCOS、敏感肌、男性、专业脱毛后维护等细分场景有机会，但当前尚未形成清晰的内容矩阵和页面承接。这些人群不是简单换广告素材，而是需要独立 FAQ、使用计划和风险说明。</li>
+                <li>渠道促销与媒体内容之间缺少统一的“为什么买这一款、在哪里买、买哪个版本”的解释。媒体负责建立兴趣，但临门一脚的版本选择和渠道选择仍然需要官网完成。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="segment-top"><div><div class="metric-title">电商板块</div><h3>渠道覆盖较好，但价格和购买入口需要治理</h3></div><div class="segment-score">66</div></div>
+          <div class="bar amber"><span style="width:66%"></span></div>
+          <div class="segment-columns" style="margin-top:22px">
+            <div class="segment-block">
+              <h4>做得好的</h4>
+              <ul>
+                <li>官网、Amazon、Ulta、Best Buy 等渠道已覆盖北美核心购买场景。这个组合同时覆盖 DTC、搜索型购买、美妆零售和消费电子零售，比单一 Shopify 站更接近成熟北美渠道结构（E1, E2, E4, E6）。</li>
+                <li>Air 10 在 Amazon 和 Ulta 已具备可观察的评价与类目表现：Amazon 4.3 / 2,621 ratings、Ulta 4.8 / 748 reviews。两个平台的评价资产可以互相引用，用于增强官网 PDP 和对比页信任（E2, E4）。</li>
+                <li>官网提供价格优惠、礼包、Price Match、Money Back、Warranty 等转化工具，具备 DTC 承接基础。这说明官网不是简单展示页，已经承担优惠、风险逆转和售后承诺的成交功能（E1）。</li>
+              </ul>
+            </div>
+            <div class="segment-block">
+              <h4>做得不好的</h4>
+              <ul>
+                <li>官网 Air 10 $259 sale、Ulta $349、Amazon Deluxe $299 等价格并存，用户需要自行判断版本和价格差异。对高客单设备来说，这会把用户从“是否购买”带到“是不是买贵了”的比较心态（E1, E3, E4）。</li>
+                <li>Amazon 主 SKU 有评价和类目排名，但页面出现 no featured offers，会影响高意向搜索流量的成交效率。这个问题不是品牌认知问题，而是 Amazon 交易链路的直接损耗（E2）。</li>
+                <li>Air 10、Air 10 Deluxe、Pink、Gift Set 等版本价值梯度不够直观，容易增加选择成本。建议把差异拆成设备能力、配件价值、适合人群和渠道权益四列，而不是只靠命名区分。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problems">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">03 · 三大关键问题深挖</div>
+        <h2>核心问题不在产品卖点，<br>而在转化与信任链路。</h2>
+        <p class="lead">这三张卡把前面的阶段不匹配落到具体经营问题上。排序依据不是文本重要性，而是对北美转化、信任和买后结果的综合影响。</p>
+      </div>
+      <div class="problem-stack">
+        <article class="card problem reveal">
+          <div class="problem-head">
+            <div class="severity-pill"><span>P0 · 电商</span><strong>170</strong><small>严重度最高</small></div>
+            <div><div class="problem-kicker">问题 1 · 渠道价格与购买入口</div><h3>同一核心产品在不同入口形成多个价格锚点。</h3><p class="problem-summary">用户在官网、Amazon、Ulta 之间看到不同价格、不同版本和不同交易状态，决策会从“是否购买”转向“在哪里买不吃亏”。</p></div>
+            <div class="problem-scorebox"><span>7 天</span><small>先修价格矩阵与 Amazon 交易入口</small></div>
+          </div>
+          <div class="problem-body">
+            <div class="signal-panel">
+              <div class="signal-title"><span>价格信号</span><span class="evidence-chips"><a class="evidence-chip" href="#evidence">E1</a><a class="evidence-chip" href="#evidence">E2</a><a class="evidence-chip" href="#evidence">E3</a><a class="evidence-chip" href="#evidence">E4</a></span></div>
+              <div class="mini-price-bars">
+                <div class="mini-price-row"><strong>官网 Air 10</strong><div class="mini-price-track"><span style="width:74%"></span></div><em>$259</em></div>
+                <div class="mini-price-row"><strong>Amazon Deluxe</strong><div class="mini-price-track"><span style="width:85%"></span></div><em>$299</em></div>
+                <div class="mini-price-row"><strong>Ulta Air10</strong><div class="mini-price-track"><span style="width:100%"></span></div><em>$349</em></div>
+                <div class="mini-price-row"><strong>Amazon 主 SKU</strong><div class="mini-price-track"><span style="width:64%"></span></div><em>无主推</em></div>
+              </div>
+            </div>
+            <div class="signal-panel">
+              <div class="signal-title"><span>影响路径</span><span class="tag red">交易链路损耗</span></div>
+              <div class="impact-flow">
+                <div class="flow-step"><b>01</b><strong>价格不一致</strong><span>不同入口各自解释版本和优惠，用户需要二次比价。</span></div>
+                <div class="flow-step"><b>02</b><strong>版本不清晰</strong><span>Air 10、Deluxe、Gift Set 的价值差异不够直观。</span></div>
+                <div class="flow-step"><b>03</b><strong>成交被推迟</strong><span>Amazon featured offer 问题会直接影响高意向流量转化。</span></div>
+              </div>
+            </div>
+            <div class="action-strip">
+              <div class="action-card"><div class="action-label">P0 · 渠道治理</div><strong>建立北美价格与版本矩阵</strong><span>官网、Amazon、Ulta、Best Buy、TikTok Shop 同步到一张表。</span></div>
+              <div class="action-card"><div class="action-label">P0 · 交易修复</div><strong>优先恢复 Amazon 主 SKU featured offer</strong><span>这是销售链路问题，不应被当作品牌问题处理。</span></div>
+              <div class="action-card"><div class="action-label">P1 · 页面承接</div><strong>做“买哪个版本”对比模块</strong><span>用设备能力、配件、适合人群和渠道权益四列解释差异。</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card problem reveal">
+          <div class="problem-head">
+            <div class="severity-pill"><span>P0 · Marketing</span><strong>160</strong><small>信任风险</small></div>
+            <div><div class="problem-kicker">问题 2 · 效果承诺与适用边界</div><h3>强效果 claim 已经足够突出，但边界信息没有同等突出。</h3><p class="problem-summary">“2 周见效”“nearly painless”“FDA-cleared”能拉高兴趣，但 IPL 对肤色、毛发颜色、纹身和破损皮肤存在适用边界，页面需要把安全筛选前置。</p></div>
+            <div class="problem-scorebox"><span>14 天</span><small>完成 PDP claim 和适用边界治理</small></div>
+          </div>
+          <div class="problem-body">
+            <div class="signal-panel">
+              <div class="signal-title"><span>信任承接缺口</span><span class="evidence-chips"><a class="evidence-chip" href="#evidence">E1</a><a class="evidence-chip" href="#evidence">E11</a><a class="evidence-chip" href="#evidence">E12</a></span></div>
+              <div class="boundary-grid">
+                <div class="boundary-cell"><strong>效果承诺</strong><span>96% / 2 weeks、nearly painless、10-minute session。</span></div>
+                <div class="boundary-cell risk"><strong>实验条件</strong><span>样本、频率、使用周期需要和 claim 同屏出现。</span></div>
+                <div class="boundary-cell risk"><strong>适用边界</strong><span>深肤色、浅色毛发、纹身和破损皮肤需更前置。</span></div>
+                <div class="boundary-cell"><strong>风险逆转</strong><span>100-day money back、2-year warranty、HSA/FSA 可降低试错成本。</span></div>
+              </div>
+            </div>
+            <div class="signal-panel">
+              <div class="signal-title"><span>预期落差链路</span><span class="tag amber">售后压力</span></div>
+              <div class="impact-flow">
+                <div class="flow-step"><b>01</b><strong>点击被强 claim 拉高</strong><span>短期有利于投放和转化页停留。</span></div>
+                <div class="flow-step"><b>02</b><strong>个体差异解释不足</strong><span>用户把广告结果当成普遍结果。</span></div>
+                <div class="flow-step"><b>03</b><strong>退货和差评压力上升</strong><span>Trustpilot 1 星占比需要进入体验治理。</span></div>
+              </div>
+            </div>
+            <div class="action-strip">
+              <div class="action-card"><div class="action-label">P0 · PDP</div><strong>增加“适合 / 不适合”模块</strong><span>覆盖肤色、毛发颜色、使用禁区和停止使用条件。</span></div>
+              <div class="action-card"><div class="action-label">P0 · Claim</div><strong>把 claim 改成“结果 + 条件”</strong><span>每个强结果旁边写清频率、周期、个体差异。</span></div>
+              <div class="action-card"><div class="action-label">P1 · 内容</div><strong>独立承接 PCOS、敏感肌、男性场景</strong><span>每个人群都要有 FAQ、风险说明和使用计划。</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card problem reveal">
+          <div class="problem-head">
+            <div class="severity-pill"><span>P1 · 运营</span><strong>156</strong><small>买后缺口</small></div>
+            <div><div class="problem-kicker">问题 3 · 12 周使用周期运营</div><h3>产品需要持续使用，但购买后缺少结果管理主线。</h3><p class="problem-summary">Ulike FAQ 已说明 Air 10 推荐 12 周使用周期。真正的增长机会，是把“坚持使用”产品化成提醒、记录、教程和复购路径。</p></div>
+            <div class="problem-scorebox"><span>30 天</span><small>上线 Smooth Plan 买后运营主线</small></div>
+          </div>
+          <div class="problem-body">
+            <div class="signal-panel">
+              <div class="signal-title"><span>12 周结果路径</span><span class="evidence-chips"><a class="evidence-chip" href="#evidence">E1</a><a class="evidence-chip" href="#evidence">E5</a><a class="evidence-chip" href="#evidence">E13</a></span></div>
+              <div class="week-path">
+                <div class="path-node"><strong>W1-2</strong><span>建档、肤色匹配、首次教程。</span></div>
+                <div class="path-node"><strong>W3-6</strong><span>短信/邮件提醒，敏感部位指导。</span></div>
+                <div class="path-node"><strong>W7-12</strong><span>效果记录、案例收集、客服回访。</span></div>
+                <div class="path-node"><strong>维护期</strong><span>凝胶、护肤、LED 交叉销售。</span></div>
+              </div>
+            </div>
+            <div class="signal-panel">
+              <div class="signal-title"><span>缺失的经营资产</span><span class="tag blue">复购与口碑</span></div>
+              <div class="boundary-grid">
+                <div class="boundary-cell risk"><strong>提醒</strong><span>没有形成固定节奏，用户容易中途停用。</span></div>
+                <div class="boundary-cell risk"><strong>记录</strong><span>效果没有沉淀为可复用的真实案例。</span></div>
+                <div class="boundary-cell"><strong>教育</strong><span>使用频率、注意事项和敏感区域教程可降低售后。</span></div>
+                <div class="boundary-cell"><strong>复购</strong><span>维护期可以承接配件、护肤和组合购买。</span></div>
+              </div>
+            </div>
+            <div class="action-strip">
+              <div class="action-card"><div class="action-label">P1 · 用户建档</div><strong>扫码进入 Smooth Plan</strong><span>记录肤色、毛发、身体区域和首次使用时间。</span></div>
+              <div class="action-card"><div class="action-label">P1 · 留存</div><strong>每周提醒和阶段反馈</strong><span>第 2、6、12 周分别推教程、效果记录和客服触达。</span></div>
+              <div class="action-card"><div class="action-label">P2 · 增长</div><strong>把案例转为内容资产</strong><span>沉淀真实前后对比、FAQ 和细分人群故事。</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="competitors">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">04 · 竞品横向对比</div>
+        <h2>Braun 强在信任资产，Nood 强在价格效率。<br>Ulike 应聚焦“舒适、速度、可信边界”。</h2>
+        <p class="lead">竞品对比不是另起一个话题，而是用来校准 Ulike 在 10-100 阶段需要补什么：Braun 提供信任资产参照，Nood 提供价格效率压力。</p>
+      </div>
+      <div class="card reveal">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>指标</th><th>Ulike Air 10</th><th>Braun Skin i·Expert / Pro 5</th><th>Nood Flasher 2.0</th><th>低价替代 / 其他 IPL</th></tr></thead>
+            <tbody>
+              <tr><td>主力价格</td><td>$259 官网 sale；$349 list；Ulta $349</td><td>官网 Skin i·Expert $499.99 sale / $599.99 list；Amazon Pro 5 常见 $319.99-$387.49</td><td>官网 $199 / $179 sale；Target reg $199.99 sale $179.99</td><td>$160-$250 常见，功能和信任参差</td></tr>
+              <tr><td>平台口碑</td><td>官网 1,149 reviews；Amazon Air 10 4.3 / 2,621 ratings；Ulta 4.8 / 748</td><td>Braun 官方强调 clinically proven；Amazon Pro 5 具备大量历史评价</td><td>Walmart 4.6 / 10.8K ratings；媒体常把它列为高性价比</td><td>价格强，但品牌背书弱</td></tr>
+              <tr><td>核心卖点</td><td>冰点冷敷、Dual Lights、26J、SkinSensor、10 分钟全身</td><td>Skin tone sensor、coverage tracker、app guidance、无需护目镜</td><td>低价、数字显示、简单、90 天退款</td><td>便宜、轻量、短视频冲动购买</td></tr>
+              <tr><td>Ulike 差异化方向</td><td>舒适度与速度组合明确</td><td>Braun 价格更高但信任资产更强；Ulike 需要补足医学边界表达</td><td>Nood 价格更低；Ulike 需要解释溢价对应的技术、舒适度和服务价值</td><td>以安全、冷感、效率和口碑建立差异</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scorecard">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">05 · 11 维度评分</div>
+        <h2>严重度排序显示：<br>渠道治理优先于新增投放。</h2>
+        <p class="lead">11 维度评分用于校准优先级。低分不等于都要马上做，严重度由得分缺口、影响权重和当前阶段共同决定。</p>
+      </div>
+      <div class="grid two">
+        <div class="card reveal"><div id="scoreChart" class="chart"></div></div>
+        <div class="card reveal"><div id="severityChart" class="chart"></div></div>
+      </div>
+      <div class="card reveal" style="margin-top:16px">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>排名</th><th>维度</th><th class="num">得分</th><th class="num">权重</th><th class="num">严重度</th><th>置信度</th><th>一句话评价</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>电商板块</td><td class="num">66</td><td class="num">5</td><td class="num"><span class="tag red">170</span></td><td>高</td><td>渠道覆盖较好，但价格、版本和购买入口缺乏统一治理。</td></tr>
+              <tr><td>2</td><td>Marketing 板块</td><td class="num">68</td><td class="num">5</td><td class="num"><span class="tag red">160</span></td><td>中</td><td>声量基础较强，但信任边界和 claim 管理仍需补足。</td></tr>
+              <tr><td>3</td><td>订阅与会员体系</td><td class="num">48</td><td class="num">3</td><td class="num"><span class="tag red">156</span></td><td>中</td><td>结果依赖 12 周持续使用，买后运营体系仍不完整。</td></tr>
+              <tr><td>4</td><td>流量与转化漏斗</td><td class="num">63</td><td class="num">4</td><td class="num"><span class="tag amber">148</span></td><td>中</td><td>官网促销和 HSA/FSA 有利于转化，但页面路径和信息层级偏复杂。</td></tr>
+              <tr><td>5</td><td>风险与预警</td><td class="num">52</td><td class="num">3</td><td class="num"><span class="tag amber">144</span></td><td>中</td><td>安全适用边界、退货体验、FDA 表达需要治理。</td></tr>
+              <tr><td>6</td><td>竞品对比</td><td class="num">70</td><td class="num">4</td><td class="num">120</td><td>中</td><td>Braun / Nood 差异明确，Ulike 可进一步将对比内容转化为高意向页面。</td></tr>
+              <tr><td>7</td><td>客服与售后</td><td class="num">62</td><td class="num">3</td><td class="num">114</td><td>中</td><td>Trustpilot 响应表现较好，但 1 星占比需要纳入售后治理。</td></tr>
+              <tr><td>8</td><td>增长机会与战略</td><td class="num">82</td><td class="num">5</td><td class="num">90</td><td>高</td><td>市场窗口明确，零售渠道和 HSA/FSA 支付场景仍有放大空间。</td></tr>
+              <tr><td>9</td><td>用户与人群洞察</td><td class="num">72</td><td class="num">3</td><td class="num">84</td><td>中</td><td>PCOS、敏感肌和男性用户具备细分机会，但需同步强调适用边界。</td></tr>
+              <tr><td>10</td><td>品牌板块</td><td class="num">82</td><td class="num">4</td><td class="num">72</td><td>高</td><td>全球销量和媒体背书形成有效品牌资产。</td></tr>
+              <tr><td>11</td><td>产品与品类</td><td class="num">84</td><td class="num">4</td><td class="num">64</td><td>高</td><td>Air 10 产品力明确，Air 4 / X / ReGlow 可作为分层组合继续扩展。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="opportunity">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">06 · 增长机会</div>
+        <h2>北美市场仍有空间。<br>增长方式需要从单品拉动转向系统运营。</h2>
+        <p class="lead">机会判断承接前面的阶段结论：Ulike 不缺单点卖点，下一步要把产品力转化为更稳定的渠道、信任和买后运营能力。</p>
+      </div>
+      <div class="grid three">
+        <div class="card reveal"><span class="tag green">短期</span><h3 style="margin-top:14px">修渠道价格和版本矩阵</h3><p class="muted small" style="margin-top:10px">7-14 天内统一官网、Amazon、Ulta、Best Buy 的价格、版本和权益解释，减少比价犹豫。</p></div>
+        <div class="card reveal"><span class="tag blue">中期</span><h3 style="margin-top:14px">建立品牌信任资产页</h3><p class="muted small" style="margin-top:10px">统一 4M+ / 5M+ / 7M+、FDA-cleared、专利、媒体和适用边界，供 PR、零售和 B2B 复用。</p></div>
+        <div class="card reveal"><span class="tag amber">中长期</span><h3 style="margin-top:14px">把 12 周结果周期产品化</h3><p class="muted small" style="margin-top:10px">用 Smooth Plan 承接提醒、教程、效果记录、客服回访和维护期复购。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">07 · 90/180 天路线图</div>
+        <h2>先统一渠道基础，<br>再提高投放和内容效率。</h2>
+        <p class="lead">路线图按前文的严重度排序展开。先修会直接影响交易和信任的基础项，再推进内容、人群和会员运营。</p>
+      </div>
+      <div class="route">
+        <div class="card phase reveal"><span class="tag red">P0 · 0-30 天</span><h3>止损与统一</h3><ul><li>恢复 Amazon 主 SKU featured offer。</li><li>建立官网、Amazon、Ulta、Best Buy 价格矩阵。</li><li>统一 FDA / claim / 权威数字口径。</li></ul></div>
+        <div class="card phase reveal"><span class="tag amber">P1 · 31-90 天</span><h3>信任承接</h3><ul><li>上线适合 / 不适合模块和 claim 条件说明。</li><li>建立品牌信任资产页。</li><li>上线版本对比和购买入口解释。</li></ul></div>
+        <div class="card phase reveal"><span class="tag green">P2 · 91-180 天</span><h3>系统运营</h3><ul><li>上线 Smooth Plan 买后运营。</li><li>沉淀 12 周真实案例和细分人群内容。</li><li>用维护期内容承接复购和交叉销售。</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">08 · 风险预警与数据缺口</div>
+        <h2>主要风险来自预期管理，<br>其次才是竞品压力。</h2>
+        <p class="lead">风险预警只保留会改变判断优先级的事项。缺失数据不做硬推断，作为下一轮诊断需要补齐的输入。</p>
+      </div>
+      <div class="grid two">
+        <div class="card reveal">
+          <div class="metric-title">风险预警</div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>风险</th><th>触发信号</th><th>应对</th></tr></thead>
+              <tbody>
+                <tr><td>Claim / 合规</td><td>FDA-cleared、96%/2周、painless 等高强度表达</td><td>所有页面加适用条件和个体差异说明。</td></tr>
+                <tr><td>价格信任</td><td>官网、Amazon、Ulta 价格不一致</td><td>建立渠道价格矩阵和版本对比。</td></tr>
+                <tr><td>售后预期</td><td>Trustpilot 1 星占比和退货体验分化</td><td>用 Smooth Plan 管理 12 周使用预期。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="metric-title">数据缺口</div>
+          <ul class="small muted" style="margin:0; padding-left:18px">
+            <li>未拿到 Ulike GA4 / Shopify 转化率 / CAC / ROAS / 退货率。</li>
+            <li>未接入 Amazon Seller Central：Buy Box、广告词、转化率需进一步确认。</li>
+            <li>未接入西柚等第三方 Amazon 月销工具：当前北美销售额为 Amazon 公开月销下限 + 渠道倍数的方向性推算。</li>
+            <li>未拿到线下零售 sell-through，Best Buy 和 Ulta 真实销售贡献待核实。</li>
+            <li>阶段动作适配度为公开数据诊断分，内部经营数据会改变权重。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">09 · 证据表</div>
+        <h2>每个判断，<br>都要能回到证据。</h2>
+        <p class="lead">证据表用于复查前文判断来源。涉及时间口径差异、价格冲突和平台交易异常的判断，优先回到原始页面核验。</p>
+      </div>
+      <div class="evidence-list">
+        <div class="evidence-item reveal"><div class="eid">E1</div><div><strong>Ulike 官方首页与 Air 10 页面</strong><br><span class="small muted">官网首页写到 trusted by over 7 million users worldwide；Air 10 页面显示 US$259 sale / US$349 list、1,149 reviews、96% in 2 weeks、FDA-cleared、100-day money back、2-year warranty，FAQ 写明 12 周使用周期。</span><br><a href="https://www.ulike.com/">ulike.com 首页</a> · <a href="https://www.ulike.com/products/sapphire-air-10-ipl-hair-removal">Air 10 产品页</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E2</div><div><strong>Amazon Ulike Air 10 主 SKU</strong><br><span class="small muted">4.3/5，2,621 ratings，#7 Light Hair Removal Devices；搜索结果显示 4K+ bought in past month，页面出现 no featured offers。</span><br><a href="https://www.amazon.com/Ulike-Ice-Cooling-Painless-Effective-Long-Lasting/dp/B0CV3ZJ2PN">Amazon Air 10</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E3</div><div><strong>Amazon Ulike Air 10 Deluxe</strong><br><span class="small muted">$299，4.5/5，57 ratings，100+ bought in past month；同场景还出现 Nood $329、Braun $319.99-$387.49。</span><br><a href="https://www.amazon.com/Ulike-Ice-Cooling-Technology-Permanent-Reduction/dp/B0G39WBP1S">Amazon Air 10 Deluxe</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E4</div><div><strong>Ulta Ulike 品牌页</strong><br><span class="small muted">Air10 $349、4.8/5、748 reviews；Swift 5 $329、4.6/5、2,120 reviews；Air3 sale $202-$329、list $329。</span><br><a href="https://www.ulta.com/brand/ulike?category=tools-brushes%2Chair-removal-tools">Ulta Ulike</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E5</div><div><strong>Trustpilot Ulike</strong><br><span class="small muted">TrustScore 4.5/5，800 reviews，203 reviews in last 12 months；5-star 74%，1-star 14%；replied to 100% negative reviews, typically within 48 hours。</span><br><a href="https://www.trustpilot.com/review/ulike.com">Trustpilot Ulike</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E6</div><div><strong>Ulike 进入 Best Buy 新闻</strong><br><span class="small muted">2024 年宣布通过 Best Buy 进入美国线下零售；品牌称服务超过 5M beauty fans、拥有 300 global patents。</span><br><a href="https://www.prnewswire.com/news-releases/ulike-makes-debut-entrance-into-us-retail-market-via-strategic-partnership-with-best-buy-302174823.html">PR Newswire</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E7</div><div><strong>BusinessWire 品类领导背书</strong><br><span class="small muted">2024 年材料称 Ulike 2013 年起布局 IPL，全球 17 国售出 4M+ units；与当前官网 7M+ 口径存在时间差。</span><br><a href="https://www.businesswire.com/news/home/20240312253415/en/Ulike-Dominates-the-World-Home-Hair-Removal-Market-Establishing-Category-Leadership">BusinessWire</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E8</div><div><strong>北美市场规模</strong><br><span class="small muted">MarketDataForecast 估算北美 laser hair removal market 2025 年约 $351.76M，2033 年约 $1.72B，CAGR 21.97%。</span><br><a href="https://www.marketdataforecast.com/market-reports/north-america-laser-hair-removal-market">MarketDataForecast</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E9</div><div><strong>北美市场份额</strong><br><span class="small muted">GMI 称 North America region accounted for 40.5% of global laser hair removal market in 2025。</span><br><a href="https://www.gminsights.com/industry-analysis/laser-hair-removal-market">GM Insights</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E10</div><div><strong>Braun 官方 Skin i·Expert</strong><br><span class="small muted">强调 up to 95% hair reduction in 1 month、real-time coverage tracker、10 min full-body sessions。</span><br><a href="https://us.braun.com/en-us/female-hair-removal/ipls/skin-i-expert-ipl-pl7387">Braun Skin i·Expert</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E11</div><div><strong>Nood 官方与零售价格</strong><br><span class="small muted">Flasher 2.0 官方 $199 / $179 sale；Target reg $199.99 / sale $179.99；Walmart 显示 4.6/5、10.8K ratings。</span><br><a href="https://trynood.com/products/the-flasher-2">Nood Flasher 2.0</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E12</div><div><strong>媒体测评：Ulike Air 10</strong><br><span class="small muted">Tom's Guide 2026 年测评称 Air 10 $349、mid-range、FDA-cleared，并提示深肤色、浅发色、纹身或破损皮肤不适合。</span><br><a href="https://www.tomsguide.com/home/ulike-air-10-review">Tom's Guide</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E13</div><div><strong>Vogue 测评与卖点传播</strong><br><span class="small muted">Vogue 文章强化 Ulike Air 10 的冷感、SkinSensor、SHR Mode、敏感区域舒适度和 2 周效果表达。</span><br><a href="https://www.vogue.com/article/ulike-ipl-hair-removal-device-review">Vogue</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E14</div><div><strong>Ulike 中文官网最新销量口径</strong><br><span class="small muted">Ulike 中文官网披露“全球脱毛仪销量 8000000+”，并标注数据来源于 Ulike 内部统计，统计时间为 2025 年 7 月；该数字高于 2025 英文 PR 的 7M+ units sold，可作为公开销量底线。</span><br><a href="https://www.ulikebeauty.com/">Ulike 中文官网</a></div></div>
+        <div class="evidence-item reveal"><div class="eid">E15</div><div><strong>Amazon 公开月销下限</strong><br><span class="small muted">Amazon 实页显示 Air 10 主 SKU 4K+ bought in past month，Air 4 600+ bought，Air 10 Deluxe 100+ bought，Ulike X 100+ bought；公开月销提示只能作为下限，不等同于 Seller Central 实销。</span><br><a href="https://www.amazon.com/Ulike-Ice-Cooling-Painless-Effective-Long-Lasting/dp/B0CV3ZJ2PN">Air 10</a> · <a href="https://www.amazon.com/Ulike-Removal-Nearly-Painless-Treatment/dp/B0FHQ2RSS3">Air 4</a> · <a href="https://www.amazon.com/Ulike-Ice-Cooling-Technology-Permanent-Reduction/dp/B0G39WBP1S">Air 10 Deluxe</a> · <a href="https://www.amazon.com/Ulike-Ice-Cooling-Painless-Long-Lasting-Tailored/dp/B0D92G3QCD">Ulike X</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section-inner">
+      <div>远汐 Offing 免费北美业务诊断 · Ulike · 2026-06-12</div>
+      <div>免责声明：本报告基于公开数据。销售额、流量、转化率、退货率等未披露数据未做硬推断。</div>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    const scores = [
+      ['电商', 66, 170],
+      ['品牌', 82, 72],
+      ['Marketing', 68, 160],
+      ['产品', 84, 64],
+      ['漏斗', 63, 148],
+      ['人群', 72, 84],
+      ['客服', 62, 114],
+      ['会员', 48, 156],
+      ['竞品', 70, 120],
+      ['增长', 82, 90],
+      ['风险', 52, 144]
+    ];
+
+    if (window.echarts) {
+      const scoreChart = echarts.init(document.getElementById('scoreChart'));
+      scoreChart.setOption({
+        title: { text: '11 维度得分', left: 0, textStyle: { color: '#0d1716', fontSize: 16 } },
+        radar: {
+          indicator: scores.map(([name]) => ({ name, max: 100 })),
+          radius: 110,
+          axisName: { color: '#6f7d78' },
+          splitLine: { lineStyle: { color: '#d8e2dc' } },
+          axisLine: { lineStyle: { color: '#d8e2dc' } },
+          splitArea: { areaStyle: { color: ['#fbfcf8', '#fffffb'] } }
+        },
+        series: [{
+          type: 'radar',
+          data: [{ value: scores.map((s) => s[1]), name: 'Ulike' }],
+          areaStyle: { color: 'rgba(224,0,77,0.14)' },
+          lineStyle: { color: '#E0004D', width: 3 },
+          itemStyle: { color: '#E0004D' }
+        }]
+      });
+
+      const severityChart = echarts.init(document.getElementById('severityChart'));
+      const severity = [...scores].sort((a, b) => b[2] - a[2]).slice(0, 8);
+      severityChart.setOption({
+        title: { text: '问题严重度 Top 8', left: 0, textStyle: { color: '#0d1716', fontSize: 16 } },
+        grid: { left: 72, right: 20, top: 58, bottom: 20 },
+        xAxis: { type: 'value', axisLabel: { color: '#6f7d78' }, splitLine: { lineStyle: { color: '#d8e2dc' } } },
+        yAxis: { type: 'category', data: severity.map((s) => s[0]).reverse(), axisLabel: { color: '#6f7d78' } },
+        series: [{
+          type: 'bar',
+          data: severity.map((s) => ({
+            value: s[2],
+            itemStyle: { color: s[2] >= 150 ? '#D70015' : s[2] >= 130 ? '#FF9F0A' : '#E0004D' }
+          })).reverse(),
+          barWidth: 16,
+          label: { show: true, position: 'right', color: '#0d1716' }
+        }]
+      });
+
+      window.addEventListener('resize', () => {
+        scoreChart.resize();
+        severityChart.resize();
+      });
+    }
+  </script>
+</body>
+</html>
