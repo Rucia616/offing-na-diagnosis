@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Ulike · Offing Atlas Snapshot + TideLens Preview · 2026-06-13</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f8f4;
+      --surface: #fffffb;
+      --ink: #0d1716;
+      --body: #2e3c39;
+      --muted: #6d7975;
+      --line: #d9e2dd;
+      --sea: #2d6261;
+      --sea-dark: #214f4d;
+      --sea-soft: #e5f0ec;
+      --clay: #a76560;
+      --rose: #d68ca3;
+      --gold: #a99556;
+      --slate: #13211f;
+      --green: #557b67;
+      --amber: #b18642;
+      --red: #ad5a52;
+      --radius: 8px;
+      --shadow: 0 22px 70px rgba(13, 23, 22, 0.08);
+      --shadow-soft: 0 10px 34px rgba(13, 23, 22, 0.05);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(229, 240, 236, 0.72) 0%, rgba(247, 248, 244, 0.96) 34%, rgba(250, 250, 246, 0.98) 100%),
+        linear-gradient(90deg, rgba(45, 98, 97, 0.022) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(45, 98, 97, 0.018) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 64px 64px, 64px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 68px; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--slate);
+      color: #fff;
+      font-weight: 780;
+      font-size: 15px;
+    }
+    .brand-copy { display: grid; gap: 2px; }
+    .brand-copy strong { font-size: 15px; }
+    .brand-copy span { color: var(--muted); font-size: 12px; }
+    .reviewed {
+      color: var(--muted);
+      font-size: 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(255, 255, 251, 0.72);
+      white-space: nowrap;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: end;
+      padding: 52px 0 42px;
+    }
+    .product-logo {
+      width: 152px;
+      max-width: 48vw;
+      margin-bottom: 32px;
+    }
+    .product-logo img { display: block; width: 100%; height: auto; }
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: 0.94;
+      letter-spacing: 0;
+      max-width: 760px;
+    }
+    .lead {
+      max-width: 710px;
+      margin: 22px 0 0;
+      color: var(--body);
+      font-size: 18px;
+      line-height: 1.68;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .meta-chip {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 251, 0.8);
+      color: var(--body);
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 12px;
+      font-weight: 680;
+    }
+    .signal-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .signal-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 760;
+      text-transform: uppercase;
+    }
+    .signal-score {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .signal-score strong { font-size: 46px; line-height: 1; }
+    .signal-score span { color: var(--amber); font-size: 13px; font-weight: 760; }
+    .score-rows { display: grid; gap: 12px; margin-top: 18px; }
+    .score-row { display: grid; gap: 6px; }
+    .score-head { display: flex; justify-content: space-between; gap: 12px; color: var(--body); font-size: 13px; font-weight: 680; }
+    .bar { height: 8px; border-radius: 999px; background: #edf1ee; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: inherit; background: var(--sea); }
+    .bar.amber i { background: var(--amber); }
+    .bar.clay i { background: var(--clay); }
+
+    section { padding: 34px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+    .section-head h2 { margin: 0; font-size: clamp(26px, 3vw, 38px); line-height: 1.08; max-width: 780px; }
+    .section-head p { margin: 0; max-width: 340px; color: var(--muted); line-height: 1.55; font-size: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      min-height: 100%;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.22; }
+    .card p { margin: 0; color: var(--body); font-size: 14px; line-height: 1.65; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: var(--sea-soft);
+      color: var(--sea-dark);
+      font-size: 12px;
+      font-weight: 760;
+      margin-bottom: 12px;
+    }
+    .tag.amber { background: rgba(177, 134, 66, 0.13); color: #795e2d; }
+    .tag.red { background: rgba(173, 90, 82, 0.12); color: #8f473f; }
+    .tag.gray { background: #eef0ed; color: var(--body); }
+    .finding {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+    }
+    .finding + .finding { margin-top: 12px; }
+    .finding-index {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 760;
+    }
+    .finding-index strong { display: block; margin-top: 8px; color: var(--ink); font-size: 32px; line-height: 1; }
+    .finding h3 { margin: 0 0 8px; font-size: 21px; }
+    .finding p { margin: 0; color: var(--body); line-height: 1.65; }
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .priority-list { display: grid; gap: 10px; }
+    .priority {
+      display: grid;
+      grid-template-columns: 72px 1fr 86px;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 251, 0.76);
+    }
+    .priority strong { font-size: 14px; }
+    .priority span { color: var(--body); font-size: 13px; line-height: 1.45; }
+    .level {
+      justify-self: end;
+      border-radius: 999px;
+      padding: 6px 9px;
+      color: #fff;
+      background: var(--sea);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .level.p1 { background: var(--amber); }
+    .level.p2 { background: var(--muted); }
+    .competitors {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .competitor-name { font-size: 24px; font-weight: 820; margin-bottom: 8px; }
+    .locked {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(19, 33, 31, 0.96), rgba(45, 98, 97, 0.92)),
+        var(--slate);
+      color: #fff;
+      border: 0;
+      box-shadow: 0 24px 80px rgba(13, 23, 22, 0.18);
+    }
+    .locked p { color: rgba(255, 255, 255, 0.78); }
+    .lock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .lock-card {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-height: 156px;
+    }
+    .lock-card h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+    .lock-card p { font-size: 13px; }
+    .lock-mark {
+      display: inline-flex;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 9px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .cta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { margin: 0 0 8px; font-size: 28px; }
+    .cta p { margin: 0; color: var(--body); line-height: 1.6; }
+    .cta-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      background: var(--slate);
+      color: #fff;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+    .sources { color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .sources a { color: var(--sea-dark); text-decoration: underline; text-underline-offset: 3px; }
+    footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 860px) {
+      .shell { width: min(100% - 28px, 720px); padding-top: 20px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .hero, .split, .cta { grid-template-columns: 1fr; }
+      .grid-3, .grid-2, .competitors, .lock-grid { grid-template-columns: 1fr; }
+      .finding { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+      .priority { grid-template-columns: 60px 1fr; }
+      .level { grid-column: 2; justify-self: start; }
+      .reviewed { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">O</span>
+        <span class="brand-copy">
+          <strong>Offing Atlas｜远汐·航图</strong>
+          <span>Snapshot with TideLens Preview</span>
+        </span>
+      </div>
+      <div class="reviewed">AI-assisted, Offing-reviewed · noindex client link</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Ulike Atlas Snapshot">
+        <div>
+          <div class="product-logo">
+            <img src="../../assets/brand-logos/ulike-logo-official.svg" alt="Ulike" />
+          </div>
+          <h1>Ulike 北美红人机会预览</h1>
+          <p class="lead">Ulike 在北美已经不是“有没有产品力”的问题，而是“能不能把功效证明、真实体验和竞品拦截做成内容系统”。免费版先给方向判断；完整 TideLens 报告解锁候选 KOL 名单、竞品打法拆解、预算拆分和 90 天执行路径。</p>
+          <div class="hero-meta">
+            <span class="meta-chip">默认市场：North America</span>
+            <span class="meta-chip">品类：At-home IPL hair removal</span>
+            <span class="meta-chip">客户输入：品牌名</span>
+            <span class="meta-chip">数据日期：2026-06-13</span>
+          </div>
+        </div>
+
+        <aside class="signal-panel" aria-label="TideLens relevance score">
+          <div class="signal-label">TideLens Relevance Score</div>
+          <div class="signal-score">
+            <strong>High</strong>
+            <span>红人/内容声量是主要增长杠杆</span>
+          </div>
+          <div class="score-rows">
+            <div class="score-row">
+              <div class="score-head"><span>Trust proof gap</span><b>High</b></div>
+              <div class="bar clay"><i style="width: 86%"></i></div>
+            </div>
+            <div class="score-row">
+              <div class="score-head"><span>Creator content gap</span><b>High</b></div>
+              <div class="bar"><i style="width: 82%"></i></div>
+            </div>
+            <div class="score-row">
+              <div class="score-head"><span>Competitor interception gap</span><b>Medium</b></div>
+              <div class="bar amber"><i style="width: 62%"></i></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Atlas Snapshot：Ulike 的北美问题不是曝光少，而是可信内容还没有形成矩阵</h2>
+          <p>免费诊断只给方向和判断，不替代完整 TideLens 交付。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Stage · Medium confidence</span>
+            <h3>阶段判断：增长期，但内容系统仍像单点爆发</h3>
+            <p>Air 10 已经具备明确卖点和媒体讨论度，但北美用户购买 IPL 设备时非常依赖真实使用周期、肤色/毛色适配、安全性和长期效果解释。Ulike 需要从“产品宣传”升级到“可信证明网络”。</p>
+          </article>
+          <article class="card">
+            <span class="tag amber">Core gap</span>
+            <h3>最大缺口：第三方证明和使用周期教育</h3>
+            <p>官网强调 2 周可见结果、冰感和 10 分钟全身使用，但用户侧真正犹豫的是：是否适合自己肤色/毛色、是否能坚持、是否真的比沙龙/竞品更省心。</p>
+          </article>
+          <article class="card">
+            <span class="tag red">Budget direction</span>
+            <h3>预算方向：暂不建议先做头部爆破</h3>
+            <p>现阶段第一笔 KOL 预算不应平均撒到所有平台，也不应先买大曝光。更稳的是先验证 3 类 creator archetype 的内容角度，再放大有效素材。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Top 3 判断：免费版先点出问题，完整报告才给拆解和执行路径</h2>
+          <p>每条判断只保留方向，不展开完整证据矩阵。</p>
+        </div>
+        <div class="finding">
+          <div class="finding-index">Finding<strong>01</strong></div>
+          <div>
+            <h3>Ulike 的产品 claim 强，但更需要“真实周期型内容”把 claim 讲可信</h3>
+            <p>Air 10 的核心卖点包括快速处理、冰感冷却和短期可见效果。免费版判断：它适合用连续打卡、真实部位变化、肤色/毛色适配解释来建立信任，而不是只靠一次性开箱和折扣码。</p>
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-index">Finding<strong>02</strong></div>
+          <div>
+            <h3>竞品拦截不只发生在广告位，也发生在 YouTube review 和 SEO best list</h3>
+            <p>用户搜索 at-home laser / IPL 时，会同时看到 Braun、Nood、CurrentBody 等竞品和媒体榜单。免费版只提示拦截方向；完整报告会拆解竞品在哪些平台、内容格式和 creator 层级上更有优势。</p>
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-index">Finding<strong>03</strong></div>
+          <div>
+            <h3>Ulike 最值得先测试的不是“美妆大号”，而是能解释使用顾虑的垂直 creator</h3>
+            <p>IPL 是高信任门槛品类。短视频可以做素材测试，但真正影响购买信心的往往是 dermatologist-style review、hair removal journey 和敏感肌/比基尼线等具体场景解释。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>TideLens KOL Opportunity Preview：本样稿将 TideLens 权重提升为 60%</h2>
+          <p>原因：Ulike 的主要增长瓶颈高度集中在内容证明、红人信任和竞品拦截。</p>
+        </div>
+        <div class="split">
+          <article class="card">
+            <span class="tag">Platform priority</span>
+            <h3>平台优先级方向</h3>
+            <div class="priority-list">
+              <div class="priority"><strong>TikTok</strong><span>短周期素材测试、UGC proof、痛点场景。</span><b class="level">P0</b></div>
+              <div class="priority"><strong>YouTube</strong><span>深度测评、对比、长期效果、使用教学。</span><b class="level">P0</b></div>
+              <div class="priority"><strong>SEO Review</strong><span>best list、comparison review、竞品关键词拦截。</span><b class="level p1">P1</b></div>
+              <div class="priority"><strong>Instagram</strong><span>审美种草、routine、浴室/梳妆台场景。</span><b class="level p1">P1</b></div>
+              <div class="priority"><strong>Affiliate</strong><span>内容角度验证后再规模化招募。</span><b class="level p2">P2</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <span class="tag amber">Creator archetypes only</span>
+            <h3>免费版只展示画像，不展示账号名</h3>
+            <div class="grid-2">
+              <div class="card">
+                <h3>TikTok hair-removal journey creator</h3>
+                <p>30K-120K followers，能连续记录腿部、腋下、比基尼线等场景，重点拍“使用前顾虑”和“第 2/4/8 周变化”。</p>
+              </div>
+              <div class="card">
+                <h3>YouTube dermatologist-style reviewer</h3>
+                <p>能解释 IPL 原理、肤色/毛色适配、安全边界、和沙龙 laser 的区别，适合做信任背书。</p>
+              </div>
+              <div class="card">
+                <h3>Sensitive-skin beauty micro creator</h3>
+                <p>强调低痛感、冰感、红肿顾虑、使用步骤，适合把“安全感”拍出来。</p>
+              </div>
+              <div class="card">
+                <h3>SEO affiliate comparison publisher</h3>
+                <p>覆盖 “Ulike vs Braun / Nood / CurrentBody” 这类高意图搜索，但免费版不展开站点名单。</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>竞品只点名，不拆深：完整打法进入付费 TideLens</h2>
+          <p>免费版让客户知道我们看到了谁，但不交付完整 playbook。</p>
+        </div>
+        <div class="competitors">
+          <article class="card">
+            <span class="tag gray">Competitor reference</span>
+            <div class="competitor-name">Braun</div>
+            <p>一句判断：Braun 更容易承接“专业、安全、技术可信”的心智，尤其在高价 IPL 设备和媒体测评里有强背书。</p>
+          </article>
+          <article class="card">
+            <span class="tag gray">Competitor reference</span>
+            <div class="competitor-name">Nood</div>
+            <p>一句判断：Nood 更偏 DTC challenger，容易在价格、对比和用户真实体验内容里和 Ulike 形成直接比较。</p>
+          </article>
+          <article class="card">
+            <span class="tag gray">Competitor reference</span>
+            <div class="competitor-name">CurrentBody</div>
+            <p>一句判断：CurrentBody 的优势更像 beauty tech portfolio 和 SEO review 场景，会抢占高意图用户搜索路径。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>免费版给 3 条轻动作，不给完整 90 天计划</h2>
+          <p>完整计划、数量、预算和 owner 进入 Full TideLens Report。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Next 7 days</span>
+            <h3>先把 creator proof angle 分成 3 类</h3>
+            <p>效果证明、低痛感/安全感、使用便利性。不要让所有达人都拍同一种“开箱 + 折扣码”。</p>
+          </article>
+          <article class="card">
+            <span class="tag">Next 14 days</span>
+            <h3>先验证 creator archetype，再验证平台</h3>
+            <p>TikTok KOC 和 YouTube reviewer 不是替代关系：一个补素材，一个补信任。先看哪类人最能解释购买顾虑。</p>
+          </article>
+          <article class="card">
+            <span class="tag">Next decision</span>
+            <h3>不要先平均铺预算</h3>
+            <p>第一笔钱应该跟着最急的增长缺口走。Ulike 的缺口更像 trust proof 和 content proof，而不是纯 reach。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="locked" aria-label="locked TideLens modules">
+        <div class="section-head" style="border-color: rgba(255,255,255,.16);">
+          <h2>完整 TideLens 报告将解锁这些模块</h2>
+          <p>这里展示具体轮廓，但不交付完整内容。</p>
+        </div>
+        <div class="lock-grid">
+          <article class="lock-card">
+            <span class="lock-mark">Locked 01</span>
+            <h3>竞品 KOL Playbook</h3>
+            <p>Braun / Nood / CurrentBody 的平台、内容格式、creator tier、可借鉴点和不建议模仿点。</p>
+          </article>
+          <article class="lock-card">
+            <span class="lock-mark">Locked 02</span>
+            <h3>候选 KOL Shortlist</h3>
+            <p>标准付费报告直接包含候选 KOL 名单、筛选理由、优先级和合作风险。</p>
+          </article>
+          <article class="lock-card">
+            <span class="lock-mark">Locked 03</span>
+            <h3>90-Day KOL Plan</h3>
+            <p>Day 1-30 测试、Day 31-60 放大、Day 61-90 归因与复盘，不只给方向。</p>
+          </article>
+          <article class="lock-card">
+            <span class="lock-mark">Locked 04</span>
+            <h3>Budget Scenarios</h3>
+            <p>Low / Medium / Aggressive 三档预算，含平台、达人层级、样品和 paid boost 拆分。</p>
+          </article>
+          <article class="lock-card">
+            <span class="lock-mark">Locked 05</span>
+            <h3>English Creator Briefs</h3>
+            <p>TikTok proof brief、YouTube review brief、comparison hook、do/don't claim list。</p>
+          </article>
+          <article class="lock-card">
+            <span class="lock-mark">Locked 06</span>
+            <h3>Outreach + Tracking</h3>
+            <p>英文触达模板、谈价口径、tracking sheet 字段和复盘口径。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta" id="unlock">
+        <div>
+          <h2>申请进入完整 TideLens 分析</h2>
+          <p>完整报告适合已经准备认真投入北美 KOL / creator marketing 的品牌。Offing 会先确认品牌阶段、竞品范围和当前增长目标，再判断是否适合进入完整分析。</p>
+        </div>
+        <a class="cta-button" href="#" aria-label="申请进入完整 TideLens 分析">申请进入完整 TideLens 分析</a>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>公开资料来源</h2>
+          <p>免费样稿只做方向判断，未接入品牌后台数据。</p>
+        </div>
+        <div class="card sources">
+          <p>参考公开资料包括：Ulike 官方网站与 Air 10 产品页；Amazon Ulike Air 10 商品页；Vogue、Today、Cosmopolitan、Women's Health、Forbes Vetted 等近期测评/榜单；YouTube 公开 review；Reddit HairRemoval 社区讨论。关键事实需要在正式交付前再次复核。</p>
+          <p>
+            Links:
+            <a href="https://www.ulike.com/" rel="nofollow">Ulike official</a> ·
+            <a href="https://www.ulike.com/products/sapphire-air-10-ipl-hair-removal" rel="nofollow">Ulike Air 10</a> ·
+            <a href="https://www.amazon.com/Ulike-Ice-Cooling-Painless-Effective-Long-Lasting/dp/B0CV3ZJ2PN" rel="nofollow">Amazon Air 10</a> ·
+            <a href="https://www.today.com/shop/ulike-vs-nood-rcna213532" rel="nofollow">Today Ulike vs Nood</a> ·
+            <a href="https://www.cosmopolitan.com/style-beauty/beauty/a71176180/ulike-laser-hair-removal-review/" rel="nofollow">Cosmopolitan Air 10 review</a> ·
+            <a href="https://www.forbes.com/sites/forbes-personal-shopper/article/best-laser-hair-removal-devices/" rel="nofollow">Forbes Vetted laser devices</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Offing Atlas Snapshot + TideLens KOL Opportunity Preview · Ulike · 2026-06-13</p>
+      <p>免责声明：本样稿基于公开信息与方向性判断，不代表 Ulike 官方数据、内部投放数据或确定性财务结论。完整 TideLens 报告需经 Offing 进一步复核。</p>
+    </footer>
+  </div>
+</body>
+</html>
