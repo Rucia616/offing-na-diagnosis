@@ -15,7 +15,8 @@
       --sea: #2d6261;
       --sea-soft: #e6f0ec;
       --slate: #13211f;
-      --brand: #d47a00;
+      --brand: #9a5b00;
+      --brand-text: #7a4300;
       --brand-bright: #ffaa00;
       --brand-soft: #fff3d3;
       --brand-deep: #111111;
@@ -143,12 +144,12 @@
       font-size: 12px;
       font-weight: 760;
     }
-    .hero-total .label { color: rgba(255, 255, 255, 0.84); }
+    .hero-total .label { color: #dfe9e5; }
     .star-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
     .stars {
       position: relative;
       display: inline-block;
-      color: rgba(255, 255, 255, 0.32);
+      color: rgba(255, 255, 255, 0.42);
       font-size: clamp(34px, 4vw, 50px);
       line-height: 1;
       letter-spacing: 0;
@@ -165,7 +166,7 @@
     .score-number { font-size: 40px; font-weight: 840; line-height: 1; }
     .score-note {
       margin-top: 14px;
-      color: rgba(255, 255, 255, 0.84);
+      color: #eaf1ee;
       font-size: 12px;
       line-height: 1.42;
     }
@@ -207,7 +208,7 @@
 
     section { padding: 82px 48px; }
     .section-head { display: grid; gap: 10px; margin-bottom: 26px; }
-    .tagline { color: var(--brand); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .tagline { color: var(--brand-text); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     h2 { max-width: 940px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.06; font-weight: 820; }
     .lead { max-width: 900px; color: var(--muted); font-size: 16px; }
     .grid { display: grid; gap: 16px; }
@@ -229,8 +230,8 @@
         linear-gradient(145deg, #111, var(--slate));
       border-color: rgba(255, 255, 255, 0.08);
     }
-    .dark p, .dark small, .dark li { color: rgba(255, 255, 255, 0.84); }
-    .dark .label { color: rgba(255, 255, 255, 0.68); }
+    .dark p, .dark small, .dark li { color: #eaf1ee; }
+    .dark .label { color: #cbd8d4; }
     .card h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.16; }
     .card p, .card li { color: var(--body); font-size: 14px; }
     .card small { color: var(--muted); font-size: 12px; }
@@ -259,7 +260,7 @@
     .pill.good { color: var(--green); background: rgba(21, 122, 56, 0.08); }
     .pill.warn { color: var(--amber); background: rgba(154, 91, 0, 0.1); }
     .pill.bad { color: var(--red); background: rgba(215, 0, 21, 0.08); }
-    .pill.brand { color: #4d3100; background: var(--brand-soft); border-color: rgba(212, 122, 0, 0.22); }
+    .pill.brand { color: #3f2700; background: var(--brand-soft); border-color: rgba(122, 67, 0, 0.26); }
     .bar {
       position: relative;
       height: 9px;
@@ -291,7 +292,7 @@
     .stage.active {
       background: linear-gradient(180deg, rgba(255, 243, 211, 0.96), var(--surface));
       border-color: rgba(212, 122, 0, 0.35);
-      box-shadow: 0 14px 36px rgba(212, 122, 0, 0.12);
+      box-shadow: 0 14px 36px rgba(122, 67, 0, 0.12);
     }
     .stage strong { display: block; font-size: 16px; }
     .stage small { color: var(--muted); }
@@ -391,7 +392,8 @@
       color: #fff;
       background: linear-gradient(145deg, var(--brand-deep), var(--slate));
     }
-    .problem-side p, .problem-side small { color: rgba(255, 255, 255, 0.84); }
+    .problem-side .label { color: #cbd8d4; }
+    .problem-side p, .problem-side small { color: #eaf1ee; }
     .severity { margin-top: 18px; display: grid; gap: 8px; }
     .severity .bar { background: rgba(255, 255, 255, 0.18); }
     .problem-main { padding: 24px; display: grid; gap: 14px; }
@@ -440,13 +442,13 @@
       position: absolute;
       top: 18px;
       left: 24px;
-      color: var(--brand);
+      color: var(--brand-text);
       font-size: 12px;
       font-weight: 820;
     }
     footer {
       padding: 46px 48px;
-      color: rgba(255, 255, 255, 0.78);
+      color: #d8e2dc;
       background: var(--slate);
       font-size: 13px;
     }
