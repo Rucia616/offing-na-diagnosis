@@ -365,13 +365,54 @@
     .summary-strip > div { padding: 22px; background: #fff; }
     .summary-strip .dark { background: linear-gradient(145deg, #101413, var(--slate)); }
 
-    .block-card { display: grid; gap: 18px; }
-    .block-top {
+    .block-overview {
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 16px;
-      align-items: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
     }
+    .block-kpi {
+      position: relative;
+      display: grid;
+      gap: 8px;
+      min-height: 154px;
+      padding: 18px;
+      overflow: hidden;
+      border: 1px solid var(--score-line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .block-kpi::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--score);
+    }
+    .block-kpi span { color: var(--muted); font-size: 12px; font-weight: 780; }
+    .block-kpi strong { color: var(--score); font-size: 42px; line-height: 1; font-weight: 840; }
+    .block-kpi b { font-size: 14px; line-height: 1.25; }
+    .block-kpi small { color: var(--muted); line-height: 1.42; }
+    .block-board { display: grid; gap: 12px; }
+    .block-panel {
+      display: grid;
+      gap: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .block-panel-head {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr) 260px;
+      gap: 18px;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    .block-title { display: grid; gap: 8px; }
     .block-score {
       width: 118px;
       height: 118px;
@@ -387,9 +428,53 @@
     .status-green { --score: var(--green); --score-bg: rgba(21,122,56,0.09); --score-line: rgba(21,122,56,0.22); }
     .status-amber { --score: var(--amber); --score-bg: rgba(154,91,0,0.09); --score-line: rgba(154,91,0,0.25); }
     .status-red { --score: var(--red); --score-bg: rgba(215,0,21,0.08); --score-line: rgba(215,0,21,0.22); }
-    .good-bad { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .good-bad h4 { margin-bottom: 8px; font-size: 13px; color: var(--muted); }
-    .good-bad li { margin-bottom: 8px; }
+    .block-snapshot {
+      display: grid;
+      gap: 8px;
+    }
+    .block-chip {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8f9f9;
+    }
+    .block-chip b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--sea);
+      font-size: 12px;
+    }
+    .block-chip p { color: var(--body); font-size: 13px; line-height: 1.45; }
+    .block-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+    }
+    .block-list {
+      display: grid;
+      gap: 10px;
+      padding: 18px 20px 20px;
+      background: #fff;
+    }
+    .block-list h4 { color: var(--muted); font-size: 13px; }
+    .block-list.good h4 { color: var(--green); }
+    .block-list.bad h4 { color: var(--amber); }
+    .point {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .point:first-of-type { padding-top: 0; border-top: 0; }
+    .point b {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .point p { font-size: 14px; line-height: 1.52; }
 
     .problem-card {
       display: grid;
@@ -466,10 +551,9 @@
       nav { padding: 12px 18px; }
       .nav-links { display: none; }
       .hero, section { padding-left: 20px; padding-right: 20px; }
-      .hero-score, .two, .three, .four, .stage-verdict, .summary-strip, .problem-card { grid-template-columns: 1fr; }
-      .subscores, .stage-path, .gate-grid, .ceiling-stats, .good-bad, .evidence-mini, .impact-flow, .action-list, .score-logic { grid-template-columns: 1fr; }
+      .hero-score, .two, .three, .four, .stage-verdict, .summary-strip, .problem-card, .block-overview, .block-panel-head, .block-body { grid-template-columns: 1fr; }
+      .subscores, .stage-path, .gate-grid, .ceiling-stats, .evidence-mini, .impact-flow, .action-list, .score-logic { grid-template-columns: 1fr; }
       .match-row { grid-template-columns: 1fr; }
-      .block-top { grid-template-columns: 1fr; }
       .block-score { width: 100%; height: auto; min-height: 92px; }
       .score-line { grid-template-columns: 1fr; gap: 8px; }
       .road { grid-template-columns: 1fr; }
@@ -537,7 +621,7 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">00 · Stage First</span>
-          <h2>北美的短板不是规模小，而是空气炸锅依赖过重，第二增长曲线还没被证明。</h2>
+          <h2>北美的短板不是规模小，而是空气炸锅依赖过重，第二增长点还缺独立证据。</h2>
           <p class="lead">先判断阶段，再判断动作。COSORI 已经不是 0-1，也不只是 10-100 初期；空气炸锅撑起了北美规模。真正的问题是：电热水壶、食物烘干机、烤箱和咖啡线还没有接替主增长。继续把一个强品类的规模当成厨房生态成熟，会误判预算、货架和内容优先级。</p>
         </div>
 
@@ -545,7 +629,7 @@
           <div>
             <span class="label">当前阶段判断</span>
             <h3>当前阶段：100+ 初期，但品类领导资格还被空气炸锅单线卡住。</h3>
-            <p>这个阶段最危险的不是 SKU 少，而是用 SKU 宽度掩盖第二曲线不足。电热水壶和食物烘干机有 Amazon 第一信号，但它们更像利润与货架证明，还没有承担主增长；烤箱、多功能锅和咖啡线公开证据更弱。</p>
+            <p>这个阶段最危险的不是 SKU 少，而是用 SKU 宽度掩盖第二增长点证据不足。电热水壶和食物烘干机有 Amazon 第一信号，但目前更像利润与货架证明；烤箱、多功能锅和咖啡线公开证据更弱。</p>
             <div class="stage-path">
               <div class="stage"><strong>0-1</strong><small>产品需求验证</small></div>
               <div class="stage"><strong>1-10</strong><small>单品规模化</small></div>
@@ -574,7 +658,7 @@
           <div class="card metric">
             <span class="label">阶段动作适配度</span>
             <strong>部分符合</strong>
-            <p>新品高端化、Target / Best Buy 拓展和 TikTok retail 都符合 100+ 初期动作；但第二品线、非 Amazon sell-out 和 DTC 承接还没被证明。现在的问题不是方向错，而是用成熟品牌的动作跑在不成熟的第二曲线前面。E3, E6, E9</p>
+            <p>新品高端化、Target / Best Buy 拓展和 TikTok retail 都符合 100+ 初期动作；但第二品线、非 Amazon sell-out 和 DTC 承接还没被证明。现在的问题不是方向错，而是把成熟品牌的资源动作压在尚未验证的第二增长点上。E3, E6, E9</p>
           </div>
         </div>
 
@@ -583,7 +667,7 @@
           <div class="gate-grid">
             <div class="gate green-tone"><strong>产品验证</strong><span>已通过</span><p>TurboBlaze 在 Amazon 有高评分和月销提示，空气炸锅品类存在明确需求。E5</p></div>
             <div class="gate green-tone"><strong>渠道验证</strong><span>已通过</span><p>Amazon 是基本盘，Target / Best Buy / 官网也有铺货与新品承接。E2, E12</p></div>
-            <div class="gate amber-tone"><strong>第二品线</strong><span>未成立</span><p>壶和烘干机有 Amazon 信号，但还不能替代空气炸锅承担增长预算。E4, E13</p></div>
+            <div class="gate amber-tone"><strong>第二品线</strong><span>证据不足</span><p>壶和烘干机有 Amazon 信号，但还缺独立动销、评价增长和非 Amazon sell-out 证据。E4, E13</p></div>
             <div class="gate amber-tone"><strong>经营系统</strong><span>尚未成熟</span><p>空气炸锅、壶、烘干机、烤箱各自能讲，但还没有形成主线、利润线、形象线的清晰层级。</p></div>
           </div>
         </div>
@@ -594,8 +678,8 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">00A · Product-Line Ceiling</span>
-          <h2>COSORI 北美真正撑盘的是空气炸锅，壶和烘干机还没有跑成第二增长曲线。</h2>
-          <p class="lead">结论很清楚：空气炸锅负责规模、份额和主流用户拉新；电热水壶和食物烘干机更像利润 SKU、货架证明和专业厨房内容入口。烤箱、多功能锅和咖啡线公开证据更弱，不能用“小厨房电器市场很大”来证明 COSORI 已经形成厨房生态。</p>
+          <h2>COSORI 北美真正撑盘的是空气炸锅，壶和烘干机只能先作为第二增长点验证。</h2>
+          <p class="lead">结论很清楚：空气炸锅负责规模、份额和主流用户拉新；电热水壶和食物烘干机更像利润 SKU、货架证明和专业厨房内容入口。这不是说品类或产品一定跑不出来，而是公开证据还不能证明它们已经能接替空气炸锅承担增长。烤箱、多功能锅和咖啡线证据更弱，不能用“小厨房电器市场很大”来证明 COSORI 已经形成厨房生态。</p>
         </div>
 
         <div class="grid two">
@@ -679,7 +763,7 @@
           <div><span class="weight">公开样本关注权重 20%</span><h3>价格、促销、零售可得性</h3><p>北美空气炸锅竞争激烈，用户会把 COSORI 和 Ninja、Instant、Chefman、Gourmia 直接比价格。</p></div>
           <div><b>COSORI 当前卖点</b><p>TurboBlaze 在 $90-$130 区间能打；Iconic 上探 $249，但高端理由仍需要比“设计好看”更硬。E2, E5, E9</p></div>
           <div class="match-score amber-tone"><strong>68 / 100</strong><div class="bar"><i style="--w:68%;"></i></div><span class="pill amber">勉强及格</span></div>
-          <div><b>经营影响</b><p>中端爆款能卖，高端升级还没完全讲透。Iconic 如果不把材料、安全、保修和第三方背书放前面，用户会觉得只是贵。</p></div>
+          <div><b>经营影响</b><p>主流价位段能卖，高端升级还没完全讲透。Iconic 如果不把材料、安全、保修和第三方背书放前面，用户会觉得只是贵。</p></div>
         </div>
         <div class="match-row">
           <div><span class="weight">公开样本关注权重 17%</span><h3>容量、厨房空间、家庭场景</h3><p>用户会按 1-2 人、家庭、meal prep、台面空间来选型号。</p></div>
@@ -700,16 +784,16 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">01 · One Page Summary</span>
-          <h2>一页看懂：空气炸锅在 Amazon 卖得动，但新的增长点还没跑出来。</h2>
+          <h2>一页看懂：空气炸锅在 Amazon 卖得动，第二增长点还缺独立证据。</h2>
         </div>
         <div class="summary-strip">
           <div class="dark">
             <span class="label">核心判断</span>
             <h3>现在不是卖不动，是太靠一个品类、一个平台。</h3>
-            <p>空气炸锅已经能卖，Amazon 也能出量；但电热水壶、烘干机、烤箱和官网自有渠道还没有接上增长。只要新增量还主要靠 Amazon 上的空气炸锅，COSORI 就不能按成熟厨房生态来花预算。</p>
+            <p>空气炸锅已经能卖，Amazon 也能出量；但电热水壶、烘干机、烤箱和官网自有渠道还没有拿出足够独立增长证据。只要新增量还主要靠 Amazon 上的空气炸锅，COSORI 就不能按成熟厨房生态来花预算。</p>
           </div>
           <div><span class="pill red">P0</span><h3>降低 Amazon 依赖</h3><p>把 Amazon 评论、月销和爆款理由搬到官网、Target、Best Buy，别让平台掌握全部成交解释权。</p></div>
-          <div><span class="pill amber">P1</span><h3>证明第二增长点</h3><p>壶和烘干机现在更像利润和货架证明，还不是能替代空气炸锅的第二曲线。</p></div>
+          <div><span class="pill amber">P1</span><h3>证明第二增长点</h3><p>壶和烘干机不是被判定“跑不出来”；现阶段缺的是独立动销、评价增长和非 Amazon sell-out 证据。</p></div>
           <div><span class="pill amber">P1</span><h3>把买家留住</h3><p>售后、注册、配件、食谱和换新机制要把一次性购买变成可再运营的用户池。</p></div>
         </div>
       </div>
@@ -719,43 +803,121 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">02 · Three Business Blocks</span>
-          <h2>三大板块诊断：电商健康，但品牌和 Marketing 仍被空气炸锅单线牵着走。</h2>
-          <p class="lead">这里说的“拖后腿”不是声量不足，而是 Amazon 动销、非 Amazon 货架、DTC 导购和高端价格理由没有形成同一套跨渠道增长证据。</p>
+          <h2>三大板块诊断：Amazon 能卖，但增长资产还太集中。</h2>
+          <p class="lead">这里把三件事拆开看：电商看成交，品牌看能不能离开空气炸锅仍被理解，Marketing 看能不能把高端款和辅助品线讲成独立购买理由。当前不是判定壶和烘干机品类不行，而是公开证据还不能证明它们已经成为第二增长曲线。</p>
         </div>
 
-        <div class="grid three">
-          <div class="card block-card">
-            <div class="block-top">
+        <div class="block-overview">
+          <div class="block-kpi status-amber">
+            <span>品牌板块</span>
+            <strong>73</strong>
+            <b>及格但有硬伤</b>
+            <small>空气炸锅主盘清楚，厨房生态还缺第二增长点证据。</small>
+          </div>
+          <div class="block-kpi status-amber">
+            <span>Marketing</span>
+            <strong>68</strong>
+            <b>勉强及格</b>
+            <small>内容能带货，但高端款和辅助品线还没讲成独立购买理由。</small>
+          </div>
+          <div class="block-kpi status-green">
+            <span>电商板块</span>
+            <strong>82</strong>
+            <b>做得好但集中</b>
+            <small>Amazon 动销强，风险是平台掌握主要成交解释权。</small>
+          </div>
+        </div>
+
+        <div class="block-board">
+          <article class="card block-panel">
+            <div class="block-panel-head">
               <div class="block-score status-amber"><div><strong>73</strong><small>品牌板块</small></div></div>
-              <div><h3>空气炸锅心智成立，但品牌还没证明自己能从单一主品类走出来。</h3><p>COSORI 有主力品类心智和母公司规模背书；真正的硬伤是第二品线还没有跑出足够强的公开销售证据，厨房生态感被高估。</p></div>
+              <div class="block-title">
+                <span class="pill amber">第二增长点：证据不足</span>
+                <h3>空气炸锅主盘成立，第二增长点还缺独立证据。</h3>
+                <p>这不是判定电热水壶或食物烘干机品类不行，也不是判定产品力不行；公开证据只能说明它们还缺少独立动销、评价增长、渠道 sell-out 和差异化卖点证明，暂时不能替代空气炸锅承担增长预算。</p>
+              </div>
+              <div class="block-snapshot">
+                <div class="block-chip"><b>撑住了</b><p>空气炸锅、壶、烘干机覆盖清晰，官网产品线完整。E1</p></div>
+                <div class="block-chip"><b>卡住了</b><p>品牌规模仍主要由空气炸锅解释，厨房生态感被高估。E1, E4</p></div>
+                <div class="block-chip"><b>先修</b><p>把主增长线、利润线、形象线拆清楚，再决定预算。</p></div>
+              </div>
             </div>
-            <div class="good-bad">
-              <div><h4>做得好的</h4><ul><li>空气炸锅、壶、烘干机覆盖清晰，官网产品线完整。E1</li><li>COSORI 2024 品牌收入 $165.0M，证明不是小卖家。E3</li><li>Iconic 用不锈钢、PFAS-free、五年保修上探高端。E9</li></ul></div>
-              <div><h4>做得不好的</h4><ul><li>品牌规模主要由空气炸锅解释，壶、烘干机、烤箱还没有承担第二增长曲线。E1, E4</li><li>COSORI 2024 收入较 2023 下滑，品牌没有解释增长换挡原因。E3</li><li>厨房生态讲法分散，壶、烘干机、烤箱没有形成同一套“为什么买 COSORI”的理由。</li></ul></div>
+            <div class="block-body">
+              <div class="block-list good">
+                <h4>做得好的</h4>
+                <div class="point"><b>品线</b><p>空气炸锅、壶、烘干机覆盖完整，说明 COSORI 不只是单 SKU 小卖家。E1</p></div>
+                <div class="point"><b>规模</b><p>COSORI 2024 品牌收入 $165.0M，品牌体量能支撑北美继续治理。E3</p></div>
+                <div class="point"><b>上探</b><p>Iconic 用不锈钢、PFAS-free、五年保修尝试进入更高价格带。E9</p></div>
+              </div>
+              <div class="block-list bad">
+                <h4>做得不好的</h4>
+                <div class="point"><b>归因</b><p>壶、烘干机、烤箱目前是“尚未被证明”，不能直接按第二增长曲线投预算。E1, E4</p></div>
+                <div class="point"><b>增长</b><p>COSORI 2024 收入较 2023 下滑，但品牌没有解释增长换挡原因。E3</p></div>
+                <div class="point"><b>生态</b><p>厨房生态讲法分散，辅助品线没有形成同一套“为什么买 COSORI”的理由。</p></div>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <div class="card block-card">
-            <div class="block-top">
+          <article class="card block-panel">
+            <div class="block-panel-head">
               <div class="block-score status-amber"><div><strong>68</strong><small>Marketing</small></div></div>
-              <div><h3>素材能带货，但还在服务空气炸锅爆款，没有服务第二曲线。</h3><p>Marketing 不是缺卖点，而是资源仍围绕空气炸锅爆款效率展开；Iconic 高端化、壶和烘干机的专业厨房能力，都没有被组织成第二增长叙事。</p></div>
+              <div class="block-title">
+                <span class="pill amber">内容承接：不够集中</span>
+                <h3>素材能卖空气炸锅，但还没有把高端款和辅助品线讲成购买理由。</h3>
+                <p>Marketing 的短板不是没有素材，而是资源仍服务 TurboBlaze 等爆款效率；Iconic、壶和烘干机缺少集中导购、对比证据和场景内容，导致第二增长点验证被拆散。</p>
+              </div>
+              <div class="block-snapshot">
+                <div class="block-chip"><b>能成交</b><p>TurboBlaze 的速度、温控和 PFAS-free 在 Amazon 标题中很明确。E5</p></div>
+                <div class="block-chip"><b>没串起</b><p>Iconic 的高端理由散在 PR、PDP 和媒体内容里。E9</p></div>
+                <div class="block-chip"><b>先修</b><p>把“材料、保修、场景、竞品差异”做成官网导购主线。</p></div>
+              </div>
             </div>
-            <div class="good-bad">
-              <div><h4>做得好的</h4><ul><li>TurboBlaze 的速度、温控、PFAS-free 和 9-in-1 在 Amazon 标题中很明确。E5</li><li>Iconic 发布有 PRNewswire、评测媒体和 Red Dot 设计奖背书。E9, E15</li><li>官网有 recipes 和 chef / dietitian 内容，可支撑使用教育。E1</li></ul></div>
-              <div><h4>做得不好的</h4><ul><li>壶和烘干机的 Amazon 第一信号没有反哺品牌内容，浪费了专业厨房能力证明。E4</li><li>Iconic 的 $249 升级理由被拆散在 PR、PDP 和媒体里，官网导购不够集中。E9</li><li>历史召回没有做成“旧型号边界 / 新型号材料 / 保修”解释页，影响高端信任但不应成为主叙事。E6, E7</li></ul></div>
+            <div class="block-body">
+              <div class="block-list good">
+                <h4>做得好的</h4>
+                <div class="point"><b>卖点</b><p>TurboBlaze 的速度、温控、PFAS-free 和 9-in-1 在 Amazon 标题中很明确。E5</p></div>
+                <div class="point"><b>背书</b><p>Iconic 发布有 PRNewswire、评测媒体和 Red Dot 设计奖背书。E9, E15</p></div>
+                <div class="point"><b>内容</b><p>官网 recipes 和 chef / dietitian 内容能支撑使用教育。E1</p></div>
+              </div>
+              <div class="block-list bad">
+                <h4>做得不好的</h4>
+                <div class="point"><b>辅助线</b><p>壶和烘干机的 Amazon 第一信号没有反哺品牌内容，专业厨房能力没有被证明。E4</p></div>
+                <div class="point"><b>高端款</b><p>Iconic 的 $249 升级理由被拆散在 PR、PDP 和媒体里，官网导购不够集中。E9</p></div>
+                <div class="point"><b>信任</b><p>历史召回没有做成“旧型号边界 / 新型号材料 / 保修”解释页，但它应作为尾部信任治理，不应压过当前动销主线。E6, E7</p></div>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <div class="card block-card">
-            <div class="block-top">
+          <article class="card block-panel">
+            <div class="block-panel-head">
               <div class="block-score status-green"><div><strong>82</strong><small>电商板块</small></div></div>
-              <div><h3>Amazon 基本盘强，非 Amazon 正在扩，但品牌仍明显由 Amazon 驱动。</h3><p>电商是 COSORI 最健康的板块。问题不在有没有渠道，而是非 Amazon 货架还没有把 Amazon 动销转化成可复用的品牌资产。</p></div>
+              <div class="block-title">
+                <span class="pill green">动销强，但平台集中</span>
+                <h3>Amazon 动销很强，但品牌关系还没有从平台里拿回来。</h3>
+                <p>电商健康分高，来自 TurboBlaze 评分、评价量、月销提示和渠道拓展；真正风险是 Amazon 掌握主要成交解释权，DTC 和零售还缺可复用的独立评价、内容和复购资产。</p>
+              </div>
+              <div class="block-snapshot">
+                <div class="block-chip"><b>动销</b><p>TurboBlaze 4.8 分、19,654 条评价、20K+ 月销提示。E5</p></div>
+                <div class="block-chip"><b>外溢</b><p>非 Amazon 渠道收入占比提升，但 COSORI 分渠道 sell-out 未披露。E3</p></div>
+                <div class="block-chip"><b>先修</b><p>让 DTC、Target、Best Buy 能独立解释为什么买。</p></div>
+              </div>
             </div>
-            <div class="good-bad">
-              <div><h4>做得好的</h4><ul><li>TurboBlaze 4.8 分、19,654 条评价、20K+ 月销提示，Amazon 动销很硬。E5</li><li>VeSync 2024 非 Amazon 渠道 +29.0%，北美收入 +11.8%。E3</li><li>Target 有独家款，Best Buy 承接 Iconic，非 Amazon 触点在增加。E12</li></ul></div>
-              <div><h4>做得不好的</h4><ul><li>官网部分主力空气炸锅显示 sold out，DTC 不能稳定承担新品解释和转化闭环。E2</li><li>非 Amazon 渠道的 sell-out、评价和复购证据公开不足，难判断真实货架效率。</li><li>公开证据仍显示 Amazon 是最强销售证明；如果非 Amazon 不能产生独立评价和内容资产，渠道外溢会停在铺货层。E3, E5, E12</li></ul></div>
+            <div class="block-body">
+              <div class="block-list good">
+                <h4>做得好的</h4>
+                <div class="point"><b>Amazon</b><p>TurboBlaze 4.8 分、19,654 条评价、20K+ 月销提示，动销证据很硬。E5</p></div>
+                <div class="point"><b>渠道</b><p>VeSync 2024 非 Amazon 渠道 +29.0%，北美收入 +11.8%。E3</p></div>
+                <div class="point"><b>零售</b><p>Target 有独家款，Best Buy 承接 Iconic，非 Amazon 触点在增加。E12</p></div>
+              </div>
+              <div class="block-list bad">
+                <h4>做得不好的</h4>
+                <div class="point"><b>DTC</b><p>官网部分主力空气炸锅显示 sold out，DTC 不能稳定承担新品解释和转化闭环。E2</p></div>
+                <div class="point"><b>证据</b><p>非 Amazon 渠道的 sell-out、评价和复购证据公开不足，真实货架效率还需要内部数据复核。</p></div>
+                <div class="point"><b>平台</b><p>公开证据仍显示 Amazon 是最强销售证明；若非 Amazon 不能产生独立内容资产，渠道外溢会停在铺货层。E3, E5, E12</p></div>
+              </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -764,7 +926,7 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">03 · Top 3 Problems</span>
-          <h2>三大关键问题：Amazon 依赖过重，空气炸锅之外还没跑出新增长点。</h2>
+          <h2>三大关键问题：Amazon 依赖过重，空气炸锅之外还缺可验证增长点。</h2>
         </div>
 
         <div class="grid" style="gap:18px;">
@@ -805,11 +967,11 @@
               <div class="evidence-mini">
                 <div><b>9 款</b><small>官网空气炸锅集合含多个容量与定位。E2</small></div>
                 <div><b>$59.99-$249</b><small>价格跨度大，需要更强导购。E2, E9</small></div>
-                <div><b>1 条主线</b><small>空气炸锅最强；壶和烘干机仍像辅助品线。E1, E4</small></div>
+                <div><b>1 条主线</b><small>空气炸锅最强；壶和烘干机仍是验证型辅助品线。E1, E4</small></div>
               </div>
               <div class="impact-flow">
                 <div><b>现象</b><p>产品线看起来丰富，实际增长仍集中在空气炸锅。</p></div>
-                <div><b>损耗</b><p>品牌被锁在单一主品类，第二曲线不清晰。</p></div>
+                <div><b>损耗</b><p>品牌被锁在单一主品类，第二增长点还缺可验证证据。</p></div>
                 <div><b>需要修</b><p>按“主增长 / 利润 / 形象 / 试验”重排品线。</p></div>
               </div>
               <div class="action-list">
@@ -853,13 +1015,13 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">04 · Competitive Calibration</span>
-          <h2>竞品校准：COSORI 的中端效率强，但高端信任和厨房生态要向 Ninja / Breville 看齐。</h2>
+          <h2>竞品校准：COSORI 的主流价位段转化效率强，但高端信任和厨房生态要向 Ninja / Breville 看齐。</h2>
         </div>
         <div class="table-wrap">
           <table>
             <thead><tr><th>品牌 / 角色</th><th>强项</th><th>COSORI 可攻击点</th><th>COSORI 当前被压制点</th></tr></thead>
             <tbody>
-              <tr><td><b>Ninja</b><br />创新与零售强势</td><td>产品命名、功能创新、线下零售和内容教育强。</td><td>用 TurboBlaze 的价格效率和易清洁打中端家庭。</td><td>Ninja 的产品架构更像系统，COSORI 页面导购还散。</td></tr>
+              <tr><td><b>Ninja</b><br />创新与零售强势</td><td>产品命名、功能创新、线下零售和内容教育强。</td><td>用 TurboBlaze 的价格效率和易清洁打主流家庭价位段。</td><td>Ninja 的产品架构更像系统，COSORI 页面导购还散。</td></tr>
               <tr><td><b>Instant / Instant Vortex</b><br />厨房工具信任</td><td>多功能锅心智强，家庭厨房信任深。</td><td>COSORI 在空气炸锅速度和 Amazon 动销上更锋利。</td><td>Instant 的“厨房工具箱”心智更自然，COSORI 生态感不足。</td></tr>
               <tr><td><b>Breville / Cuisinart</b><br />高端 countertop</td><td>高端厨房感、耐用性、专业感和渠道背书强。</td><td>Iconic 可用材料与智能功能进入高端讨论。</td><td>$249 价格理由还没有 Breville 式专业证据密度。</td></tr>
               <tr><td><b>Gourmia / Dash</b><br />低价替代</td><td>价格低，适合仓储会员店和入门用户。</td><td>COSORI 可用性能、评价和保修解释溢价。</td><td>如果安全证据不前置，用户会把 COSORI 当普通可替代小家电。</td></tr>
@@ -873,7 +1035,7 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">05 · 11-Dimension Scores</span>
-          <h2>11 维评分：先治平台依赖，再治第二曲线，最后补会员复购。</h2>
+          <h2>11 维评分：先治平台依赖，再证明第二增长点，最后补会员复购。</h2>
           <p class="lead">这 11 项不是按分数高低随便排。治理顺序按“对增长的影响 × 当前拖累 × 是否能 90 天内启动”排序：先处理 Amazon 依赖这种 P0 经营风险，再重排空气炸锅与第二品线，最后把买后运营、售后和会员补上。</p>
         </div>
         <div class="card">
@@ -903,11 +1065,11 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">06 · 90 / 180 Days</span>
-          <h2>路线图：先降 Amazon 依赖，再证明第二曲线，最后做买后运营。</h2>
+          <h2>路线图：先降 Amazon 依赖，再证明第二增长点，最后做买后运营。</h2>
         </div>
         <div class="roadmap">
           <div class="road"><b>0-30 天</b><div><h3>降低 Amazon 单一平台依赖</h3><p>把 Amazon 上的评价、月销、使用场景和型号差异转译到官网、Target、Best Buy，并用产品注册和延保把平台买家导回自有触点。</p></div><span class="pill red">P0 · 平台风险</span></div>
-          <div class="road"><b>31-60 天</b><div><h3>空气炸锅导购矩阵和第二品线角色重排</h3><p>用人群、容量、场景和价格带重写导购：TurboBlaze 拉新，Iconic 高端升级，Dual Basket 家庭；壶和烘干机只承担利润和专业能力证明，不假装主增长。</p></div><span class="pill amber">P0 · 产品架构</span></div>
+          <div class="road"><b>31-60 天</b><div><h3>空气炸锅导购矩阵和第二品线角色重排</h3><p>用人群、容量、场景和价格带重写导购：TurboBlaze 拉新，Iconic 高端升级，Dual Basket 家庭；壶和烘干机按利润 / 货架验证管理，不假设已经成为主增长。</p></div><span class="pill amber">P0 · 产品架构</span></div>
           <div class="road"><b>61-90 天</b><div><h3>高端价格与 VOC 信任解释</h3><p>完成 Safety &amp; Materials 中心页，讲清 2023 旧型号召回边界、新型号材料 / 保修证据、Iconic 高端购买理由模块；不要把召回当主叙事，但必须回答还在问的人。</p></div><span class="pill amber">P1 · 信任</span></div>
           <div class="road"><b>91-180 天</b><div><h3>买后运营和轻会员</h3><p>用 recipes、配件、保养、换新、产品注册和交叉购买建立轻会员机制。先做空气炸锅用户的复购和升级，不要上来做复杂会员体系。</p></div><span class="pill green">P1 · LTV</span></div>
         </div>
