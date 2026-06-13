@@ -78,12 +78,12 @@
       min-height: 84vh;
       display: grid;
       align-items: center;
-      padding: 78px 48px 48px;
+      padding: 72px 48px 40px;
     }
     .inner { width: min(1180px, 100%); margin: 0 auto; }
     .hero-logo {
       display: inline-flex;
-      margin-bottom: 26px;
+      margin-bottom: 20px;
       padding: 0;
       border-radius: 0;
       border: 0;
@@ -93,7 +93,7 @@
     .hero-logo img { width: clamp(152px, 14vw, 214px); height: auto; display: block; }
     h1 {
       max-width: 840px;
-      font-size: clamp(54px, 8.4vw, 100px);
+      font-size: clamp(52px, 7.6vw, 92px);
       line-height: 0.96;
       font-weight: 820;
     }
@@ -107,7 +107,7 @@
       display: grid;
       grid-template-columns: 0.88fr 1.12fr;
       max-width: 980px;
-      margin-top: 34px;
+      margin-top: 28px;
       overflow: hidden;
       border-radius: var(--radius);
       border: 1px solid var(--line);
@@ -115,7 +115,7 @@
       box-shadow: var(--shadow);
     }
     .hero-total {
-      padding: 28px;
+      padding: 24px;
       color: #fff;
       background:
         radial-gradient(circle at 82% 18%, rgba(45, 98, 97, 0.13), transparent 35%),
@@ -134,7 +134,7 @@
       position: relative;
       display: inline-block;
       color: rgba(255, 255, 255, 0.42);
-      font-size: clamp(34px, 4vw, 50px);
+      font-size: clamp(32px, 3.6vw, 44px);
       line-height: 1;
       letter-spacing: 0;
     }
@@ -147,12 +147,39 @@
       white-space: nowrap;
       color: var(--brand-bright);
     }
-    .score-number { font-size: 40px; font-weight: 840; line-height: 1; }
+    .score-number { font-size: 36px; font-weight: 840; line-height: 1; }
     .score-note {
       margin-top: 14px;
       color: #eaf1ee;
       font-size: 12px;
       line-height: 1.42;
+    }
+    .score-formula {
+      display: grid;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .formula-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      color: #dfe9e5;
+    }
+    .formula-row strong {
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+    .formula-total {
+      margin-top: 3px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 780;
     }
     .subscores {
       display: grid;
@@ -162,8 +189,8 @@
     }
     .subscore {
       position: relative;
-      min-height: 190px;
-      padding: 24px 22px;
+      min-height: 170px;
+      padding: 22px 20px;
       background: var(--surface);
     }
     .subscore::before {
@@ -511,7 +538,7 @@
       </div>
       <h1>北美业务诊断</h1>
       <h1 class="visually-hidden">Zima 北美业务诊断</h1>
-      <p class="hero-sub">Zima 北美的核心矛盾不是产品力弱，而是入口人群和产品线顺序还没有收敛：ZimaCube 2（六盘位个人云 NAS）最接近北美 creator / homelab 的主流购买理由，却和 ZimaBoard 2（x86 单板 home server）以及 ZimaBlade（低价 x86 微服务器）共用一套 maker 叙事。结果是懂技术的人会心动，主流 NAS 买家还没有被充分说服。</p>
+      <p class="hero-sub">Zima 北美不是缺机会，而是增长主线没有收束：ZimaCube 2（六盘位个人云 NAS）应做主流入口，ZimaBoard 2（x86 单板服务器）和 ZimaBlade（低价 x86 微服务器）应做开发者分流。三条线共用 maker 叙事，主流 NAS 买家仍未被充分说服。</p>
 
       <div class="hero-score">
         <div class="hero-total">
@@ -520,23 +547,29 @@
             <span class="stars">★★★★★</span>
             <span class="score-number">3.1 / 5</span>
           </div>
-          <p class="score-note">总分 = 业务健康度 45% + 业务机会分 35% +（100 - 问题致命度）20%。数据抓取日期：2026-06-13；公开数据只能校准经营阶段，不等同于公司财务口径。</p>
+          <div class="score-formula" aria-label="总分拆解">
+            <div class="formula-row"><span>业务健康度 61 × 45%</span><strong>27.5</strong></div>
+            <div class="formula-row"><span>业务机会分 82 × 35%</span><strong>28.7</strong></div>
+            <div class="formula-row"><span>安全余量（100 - 致命度 66）× 20%</span><strong>6.8</strong></div>
+            <div class="formula-total">总分 63 / 100 = 3.1 / 5</div>
+          </div>
+          <p class="score-note">问题致命度 66 只留下 34 分安全余量；公开数据只用于校准经营阶段（2026-06-13）。</p>
         </div>
         <div class="subscores">
           <div class="subscore health">
             <strong>61</strong>
-            <span>业务健康度</span>
-            <small>有产品、渠道和技术口碑，但北美经营系统还不完整。</small>
+            <span>业务健康度 · 当前底盘</span>
+            <small>产品和早期渠道成立，但北美 GTM 还没系统化。</small>
           </div>
           <div class="subscore opportunity">
             <strong>82</strong>
-            <span>业务机会分</span>
-            <small>NAS、个人云、homelab 在北美有明确需求，品线有可打窗口。</small>
+            <span>业务机会分 · 市场窗口</span>
+            <small>个人云、NAS 和 homelab 需求明确，P0 品线有可打空间。</small>
           </div>
           <div class="subscore fatality">
             <strong>66</strong>
-            <span>问题致命度</span>
-            <small>定位、信任证据和渠道承接如果不修，投放会放大解释成本。</small>
+            <span>问题致命度 · 越高越危险</span>
+            <small>用于反向计算安全余量；定位、信任和渠道承接正在抵消机会分。</small>
           </div>
         </div>
       </div>
@@ -548,14 +581,14 @@
       <div class="section-head">
         <span class="tagline">00 · Brand Stage</span>
         <h2>产品验证成立，但北美还没进入稳定放量系统。</h2>
-        <p class="lead">Zima 不是 0-1，也不只是单品试水。ZimaBoard 2 在 Amazon 已有可见动销和评论沉淀，ZimaCube 2 获得媒体评测和官网主推，但整个北美生意仍处在「10-100 初期」：产品线成立，经营系统还没把主流 NAS 买家、开发者和低价 DIY 用户分开。</p>
+        <p class="lead">阶段判断只看经营成熟度：Zima 已经越过产品验证，但还没把用户分层、信任证据、渠道承接和买后运营整合成可复制系统。因此它不是 0-1，也不是 100+，而是「10-100 初期」。</p>
       </div>
 
       <div class="grid two">
         <div class="card dark">
           <span class="label">当前阶段判断</span>
           <h3>正在从单品验证进入经营系统化。</h3>
-          <p>这个阶段最该做的不是继续堆 SKU，而是明确哪条产品线负责增长入口、哪条负责利润、哪条负责社区声量。Zima 现在的产品组合有潜力，但入口叙事还混在一起。</p>
+          <p>这个阶段最该做的不是继续堆 SKU，而是把增长入口、利润 SKU 和社区入口拆开管理。Zima 现在卡在系统化，不是卡在有没有产品。</p>
           <div class="stage-line">
             <div class="stage"><strong>0-1</strong><small>品类需求验证</small></div>
             <div class="stage"><strong>1-10</strong><small>单品规模化</small></div>
@@ -588,22 +621,22 @@
         <div class="card kpi">
           <span class="label">产品验证</span>
           <strong>已通过</strong>
-          <p>ZimaBoard、ZimaCube、ZimaOS 都有清晰使用场景和第三方评测证据。</p>
+          <p>核心硬件、系统和使用场景都能被公开证据支持。</p>
         </div>
         <div class="card kpi">
           <span class="label">渠道验证</span>
           <strong>部分通过</strong>
-          <p>官网和 Amazon 有信号，但 ZimaCube 2 的北美零售承接还不够厚。</p>
+          <p>官网和 Amazon 有信号，但主力高客单品线的零售证据还不够厚。</p>
         </div>
         <div class="card kpi">
           <span class="label">信任资产</span>
           <strong>待治理</strong>
-          <p>媒体评测存在，但安全、售后、长期系统维护和竞品替代理由还没有集中表达。</p>
+          <p>评测有，但安全、售后、长期维护和竞品替代理由没有集中前置。</p>
         </div>
         <div class="card kpi">
           <span class="label">经营系统</span>
           <strong>尚未成熟</strong>
-          <p>主线 SKU、用户分层、渠道价格、内容漏斗和买后运营还没有形成一致系统。</p>
+          <p>主线 SKU、用户分层、渠道、内容和买后运营还没有形成一套节奏。</p>
         </div>
       </div>
     </div>
@@ -781,32 +814,29 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">01 · One Page Summary</span>
-        <h2>一页看懂：Zima 有真实机会，但增长主线必须重新排。</h2>
-        <p class="lead">Zima 的强项来自开放硬件、ZimaOS、媒体评测和开发者口碑；短板集中在主流 NAS 信任承接、产品线分工和北美渠道证据。</p>
+        <h2>一页看懂：机会不是问题，承接顺序才是问题。</h2>
+        <p class="lead">前面三个闸门给出的结论一致：市场窗口存在，卖点部分匹配，但北美转化路径没有围绕 P0 品线重建。下一步不是加预算，而是先把主线、信任和渠道证据排清楚。</p>
       </div>
       <div class="grid four">
         <div class="card kpi">
-          <span class="label">健康分</span>
-          <strong>61 / 100</strong>
-          <div class="bar" style="--tone:var(--amber); --w:61%"><span></span></div>
-          <p>及格但有硬伤。</p>
+          <span class="label">核心判断</span>
+          <strong>机会够大</strong>
+          <p>北美不是没有需求，问题是需求被三条产品线共同稀释。</p>
         </div>
         <div class="card kpi">
-          <span class="label">机会分</span>
-          <strong>82 / 100</strong>
-          <div class="bar" style="--tone:var(--blue); --w:82%"><span></span></div>
-          <p>市场窗口和产品差异都存在。</p>
+          <span class="label">优先品线</span>
+          <strong>ZimaCube 2</strong>
+          <p>先承担主流 personal cloud NAS 转化，不再和 Board / Blade 平铺。</p>
         </div>
         <div class="card kpi">
-          <span class="label">问题致命度</span>
-          <strong>66 / 100</strong>
-          <div class="bar" style="--tone:var(--red); --w:66%"><span></span></div>
-          <p>不是小修文案，而是 GTM 顺序问题。</p>
+          <span class="label">第一修复</span>
+          <strong>Trust Stack</strong>
+          <p>把数据安全、迁移、备份、保修和长期维护放到购买路径前段。</p>
         </div>
         <div class="card kpi">
-          <span class="label">优先动作</span>
-          <strong>P0</strong>
-          <p>把 ZimaCube 2 做成主流 NAS 入口，把 Board/Blade 拆到 homelab 和 maker 漏斗。</p>
+          <span class="label">不建议</span>
+          <strong>继续平铺</strong>
+          <p>继续把所有 SKU 放进同一套 maker 叙事，会放大解释成本。</p>
         </div>
       </div>
     </div>
@@ -816,8 +846,8 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">02 · Three Business Blocks</span>
-        <h2>三大板块诊断：品牌有技术辨识度，Marketing 和电商承接不达标。</h2>
-        <p class="lead">这里说的“技术辨识度”，来自开放硬件、ZimaOS、媒体评测和 Amazon ZimaBoard 2 动销；但这些证据还没有转化成主流 NAS 买家的决策理由。</p>
+        <h2>三大板块诊断：品牌有辨识度，Marketing 和电商承接不达标。</h2>
+        <p class="lead">这一节只看三个经营面：品牌是否把技术可信度翻译成购买安全感，Marketing 是否按人群分流，电商是否用足够证据承接高客单转化。</p>
       </div>
 
       <div class="grid">
