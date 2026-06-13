@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zima · 远汐 Offing 免费北美业务诊断 · 2026-06-13</title>
+  <style>
+    :root {
+      --paper: #f8faf6;
+      --surface: #fffffb;
+      --ink: #0d1716;
+      --body: #253735;
+      --muted: #52635f;
+      --line: #d8e2dc;
+      --sea: #2d6261;
+      --sea-soft: #e6f0ec;
+      --slate: #13211f;
+      --brand: #d47a00;
+      --brand-bright: #ffaa00;
+      --brand-soft: #fff3d3;
+      --brand-deep: #111111;
+      --red: #d70015;
+      --amber: #9a5b00;
+      --green: #157a38;
+      --blue: #0057ff;
+      --hairline: rgba(13, 23, 22, 0.08);
+      --shadow: 0 10px 30px rgba(13, 23, 22, 0.06);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.62;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(255, 243, 211, 0.42), rgba(248, 250, 246, 0.98) 32%, var(--paper)),
+        linear-gradient(90deg, rgba(17, 17, 17, 0.018) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(17, 17, 17, 0.016) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 64px 64px, 64px 64px;
+    }
+
+    a { color: var(--sea); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3, h4 { margin: 0; letter-spacing: 0; }
+    p { margin: 0; }
+    ul { margin: 0; padding-left: 18px; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 32px;
+      background: rgba(248, 250, 246, 0.92);
+      border-bottom: 1px solid var(--hairline);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 780;
+      line-height: 1.15;
+    }
+    .nav-mark {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      color: var(--brand-deep);
+      background: var(--brand-soft);
+      border: 1px solid rgba(212, 122, 0, 0.22);
+    }
+    .nav-brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 650; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      align-items: center;
+      padding: 78px 48px 48px;
+    }
+    .inner { width: min(1180px, 100%); margin: 0 auto; }
+    .hero-logo {
+      display: inline-flex;
+      margin-bottom: 26px;
+      padding: 0;
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    .hero-logo img { width: clamp(152px, 14vw, 214px); height: auto; display: block; }
+    h1 {
+      max-width: 840px;
+      font-size: clamp(54px, 8.4vw, 100px);
+      line-height: 0.96;
+      font-weight: 820;
+    }
+    .hero-sub {
+      max-width: 880px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: clamp(16px, 2vw, 20px);
+    }
+    .hero-score {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      max-width: 980px;
+      margin-top: 34px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero-total {
+      padding: 28px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255, 170, 0, 0.34), transparent 35%),
+        linear-gradient(145deg, var(--brand-deep), var(--slate));
+    }
+    .label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .hero-total .label { color: rgba(255, 255, 255, 0.84); }
+    .star-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+    .stars {
+      position: relative;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.32);
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .stars::before {
+      content: "★★★★★";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 63%;
+      overflow: hidden;
+      white-space: nowrap;
+      color: var(--brand-bright);
+    }
+    .score-number { font-size: 40px; font-weight: 840; line-height: 1; }
+    .score-note {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 12px;
+      line-height: 1.42;
+    }
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+    .subscore {
+      position: relative;
+      min-height: 190px;
+      padding: 24px 22px;
+      background: var(--surface);
+    }
+    .subscore::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      border-radius: 0 0 999px 999px;
+      background: var(--tone);
+    }
+    .subscore strong {
+      display: block;
+      color: var(--tone);
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 840;
+      font-variant-numeric: tabular-nums;
+    }
+    .subscore span { display: block; margin-top: 10px; font-size: 14px; font-weight: 760; }
+    .subscore small { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.42; }
+    .health { --tone: var(--amber); background: linear-gradient(180deg, rgba(255, 170, 0, 0.13), var(--surface) 48%); }
+    .opportunity { --tone: var(--blue); background: linear-gradient(180deg, rgba(0, 87, 255, 0.08), var(--surface) 48%); }
+    .fatality { --tone: var(--red); background: linear-gradient(180deg, rgba(215, 0, 21, 0.08), var(--surface) 48%); }
+
+    section { padding: 82px 48px; }
+    .section-head { display: grid; gap: 10px; margin-bottom: 26px; }
+    .tagline { color: var(--brand); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    h2 { max-width: 940px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.06; font-weight: 820; }
+    .lead { max-width: 900px; color: var(--muted); font-size: 16px; }
+    .grid { display: grid; gap: 16px; }
+    .two { grid-template-columns: 1.04fr 0.96fr; }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      min-width: 0;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .dark {
+      color: #fff;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(255, 170, 0, 0.2), transparent 32%),
+        linear-gradient(145deg, #111, var(--slate));
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .dark p, .dark small, .dark li { color: rgba(255, 255, 255, 0.84); }
+    .dark .label { color: rgba(255, 255, 255, 0.68); }
+    .card h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.16; }
+    .card p, .card li { color: var(--body); font-size: 14px; }
+    .card small { color: var(--muted); font-size: 12px; }
+    .kpi {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      min-height: 160px;
+      border-top: 3px solid var(--brand);
+    }
+    .kpi strong { font-size: 30px; line-height: 1; font-weight: 840; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--body);
+      background: rgba(13, 23, 22, 0.04);
+      border: 1px solid var(--hairline);
+      font-size: 12px;
+      font-weight: 720;
+    }
+    .pill.good { color: var(--green); background: rgba(21, 122, 56, 0.08); }
+    .pill.warn { color: var(--amber); background: rgba(154, 91, 0, 0.1); }
+    .pill.bad { color: var(--red); background: rgba(215, 0, 21, 0.08); }
+    .pill.brand { color: #4d3100; background: var(--brand-soft); border-color: rgba(212, 122, 0, 0.22); }
+    .bar {
+      position: relative;
+      height: 9px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(13, 23, 22, 0.08);
+    }
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      border-radius: inherit;
+      background: var(--tone, var(--brand));
+    }
+    .stage-line {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .stage {
+      position: relative;
+      min-height: 116px;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 251, 0.72);
+    }
+    .stage.active {
+      background: linear-gradient(180deg, rgba(255, 243, 211, 0.96), var(--surface));
+      border-color: rgba(212, 122, 0, 0.35);
+      box-shadow: 0 14px 36px rgba(212, 122, 0, 0.12);
+    }
+    .stage strong { display: block; font-size: 16px; }
+    .stage small { color: var(--muted); }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+    th { color: var(--muted); background: rgba(13, 23, 22, 0.035); font-size: 12px; font-weight: 760; }
+    tr:last-child td { border-bottom: 0; }
+    td strong { color: var(--ink); }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .product-card {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .product-card img {
+      width: 112px;
+      height: 92px;
+      object-fit: contain;
+      border-radius: var(--radius);
+      background: rgba(13, 23, 22, 0.035);
+      border: 1px solid var(--hairline);
+    }
+    .match-board { display: grid; gap: 12px; }
+    .match-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.72fr 1.18fr;
+      gap: 14px;
+      padding: 16px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .match-row strong { display: block; margin-bottom: 5px; }
+    .match-score {
+      display: grid;
+      gap: 8px;
+      color: var(--tone);
+      font-weight: 820;
+      font-size: 22px;
+      font-variant-numeric: tabular-nums;
+    }
+    .segment {
+      overflow: hidden;
+      padding: 0;
+    }
+    .segment-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 243, 211, 0.52), rgba(255, 255, 251, 0.96));
+    }
+    .segment-score {
+      color: var(--brand-deep);
+      font-size: 34px;
+      font-weight: 850;
+      line-height: 1;
+    }
+    .segment-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+    }
+    .segment-list { padding: 22px 24px; background: var(--surface); }
+    .segment-list h4 { margin-bottom: 10px; color: var(--green); }
+    .segment-list.bad h4 { color: var(--red); }
+    .segment-list li { margin: 0 0 10px; }
+    .problem {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .problem-side {
+      padding: 24px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--brand-deep), var(--slate));
+    }
+    .problem-side p, .problem-side small { color: rgba(255, 255, 255, 0.84); }
+    .severity { margin-top: 18px; display: grid; gap: 8px; }
+    .severity .bar { background: rgba(255, 255, 255, 0.18); }
+    .problem-main { padding: 24px; display: grid; gap: 14px; }
+    .impact {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .impact div {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(13, 23, 22, 0.026);
+    }
+    .action-tile {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 251, 0.74);
+    }
+    .action-tile p { margin-top: 8px; }
+    .scores {
+      display: grid;
+      gap: 10px;
+    }
+    .score-row {
+      display: grid;
+      grid-template-columns: 170px 1fr 58px;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .score-row:last-child { border-bottom: 0; }
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .step {
+      position: relative;
+      padding-top: 38px;
+    }
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: 18px;
+      left: 24px;
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 820;
+    }
+    footer {
+      padding: 46px 48px;
+      color: rgba(255, 255, 255, 0.78);
+      background: var(--slate);
+      font-size: 13px;
+    }
+    footer .inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    footer a { color: #fff; }
+
+    @media (max-width: 920px) {
+      nav { position: static; padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding: 72px 20px 40px; }
+      section { padding: 60px 20px; }
+      .hero-score, .two, .three, .four, .problem, .segment-body, .roadmap, .impact, .match-row { grid-template-columns: 1fr; }
+      .subscores { grid-template-columns: 1fr; }
+      .stage-line { grid-template-columns: 1fr 1fr; }
+      .score-row { grid-template-columns: 130px 1fr 46px; }
+    }
+
+    @media (max-width: 560px) {
+      h1 { font-size: 48px; }
+      .stage-line { grid-template-columns: 1fr; }
+      .product-card { grid-template-columns: 1fr; }
+      .product-card img { width: 100%; height: 150px; }
+      .card, .segment-head, .segment-list, .problem-side, .problem-main { padding: 18px; }
+    }
+
+    @media print {
+      nav { display: none; }
+      body { background: #fff; }
+      section, .hero { padding: 32px 0; break-inside: avoid; }
+      .inner { width: 100%; }
+      .card, .hero-score, .table-wrap { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">
+      <span class="nav-mark">潮</span>
+      <span>远汐 Offing <small>免费北美业务诊断</small></span>
+    </div>
+    <div class="nav-links">
+      <a href="#stage">阶段</a>
+      <a href="#ceiling">天花板</a>
+      <a href="#match">卖点匹配</a>
+      <a href="#overview">一页看懂</a>
+      <a href="#segments">三大板块</a>
+      <a href="#problems">关键问题</a>
+      <a href="#competitors">竞品</a>
+      <a href="#scores">评分</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner">
+      <div class="hero-logo">
+        <img src="assets/zima-logo-transparent.png" alt="Zima logo" />
+      </div>
+      <h1>北美业务诊断</h1>
+      <h1 class="visually-hidden">Zima 北美业务诊断</h1>
+      <p class="hero-sub">Zima 北美的核心矛盾不是产品力弱，而是入口人群和产品线顺序还没有收敛：ZimaCube 2（六盘位个人云 NAS）最接近北美 creator / homelab 的主流购买理由，却和 ZimaBoard 2（x86 单板 home server）以及 ZimaBlade（低价 x86 微服务器）共用一套 maker 叙事。结果是懂技术的人会心动，主流 NAS 买家还没有被充分说服。</p>
+
+      <div class="hero-score">
+        <div class="hero-total">
+          <span class="label">北美业务情况总分</span>
+          <div class="star-row">
+            <span class="stars">★★★★★</span>
+            <span class="score-number">3.1 / 5</span>
+          </div>
+          <p class="score-note">总分 = 业务健康度 45% + 业务机会分 35% +（100 - 问题致命度）20%。数据抓取日期：2026-06-13；公开数据只能校准经营阶段，不等同于公司财务口径。</p>
+        </div>
+        <div class="subscores">
+          <div class="subscore health">
+            <strong>61</strong>
+            <span>业务健康度</span>
+            <small>有产品、渠道和技术口碑，但北美经营系统还不完整。</small>
+          </div>
+          <div class="subscore opportunity">
+            <strong>82</strong>
+            <span>业务机会分</span>
+            <small>NAS、个人云、homelab 在北美有明确需求，品线有可打窗口。</small>
+          </div>
+          <div class="subscore fatality">
+            <strong>66</strong>
+            <span>问题致命度</span>
+            <small>定位、信任证据和渠道承接如果不修，投放会放大解释成本。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="stage">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">00 · Brand Stage</span>
+        <h2>产品验证成立，但北美还没进入稳定放量系统。</h2>
+        <p class="lead">Zima 不是 0-1，也不只是单品试水。ZimaBoard 2 在 Amazon 已有可见动销和评论沉淀，ZimaCube 2 获得媒体评测和官网主推，但整个北美生意仍处在「10-100 初期」：产品线成立，经营系统还没把主流 NAS 买家、开发者和低价 DIY 用户分开。</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card dark">
+          <span class="label">当前阶段判断</span>
+          <h3>正在从单品验证进入经营系统化。</h3>
+          <p>这个阶段最该做的不是继续堆 SKU，而是明确哪条产品线负责增长入口、哪条负责利润、哪条负责社区声量。Zima 现在的产品组合有潜力，但入口叙事还混在一起。</p>
+          <div class="stage-line">
+            <div class="stage"><strong>0-1</strong><small>品类需求验证</small></div>
+            <div class="stage"><strong>1-10</strong><small>单品规模化</small></div>
+            <div class="stage active"><strong>10-100 初期</strong><small>经营系统化</small></div>
+            <div class="stage"><strong>100+</strong><small>品类领导</small></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="label">销售规模校准</span>
+          <h3>公开销售额不建议给单点，北美年零售 GMV 只能做区间判断。</h3>
+          <div class="grid">
+            <div>
+              <strong>北美年零售 GMV：估算 $2.5M - $9M</strong>
+              <p>折合人民币约 ¥1,690 万 - ¥6,090 万，按 2026-06-12 USD/CNY 6.7634 换算。依据为官网价格带、Amazon 可见月销下限、Amazon 评论量、官方店与近期媒体评测交叉推算。</p>
+            </div>
+            <div>
+              <strong>全球累计终端销售额：公开证据不足</strong>
+              <p>官方店活动入口出现 5M+ downloads，但下载量不是硬件销量，不能当作 units sold 或营收底线。需要品牌内部订单、DTC 后台、Amazon Seller Central 和渠道 sell-out 复核。</p>
+            </div>
+          </div>
+          <div class="pill-row">
+            <span class="pill warn">置信度：中低，已补数</span>
+            <span class="pill">补充来源：官网 / Amazon / 媒体评测 / 行业报告 / 汇率</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid four" style="margin-top:16px">
+        <div class="card kpi">
+          <span class="label">产品验证</span>
+          <strong>已通过</strong>
+          <p>ZimaBoard、ZimaCube、ZimaOS 都有清晰使用场景和第三方评测证据。</p>
+        </div>
+        <div class="card kpi">
+          <span class="label">渠道验证</span>
+          <strong>部分通过</strong>
+          <p>官网和 Amazon 有信号，但 ZimaCube 2 的北美零售承接还不够厚。</p>
+        </div>
+        <div class="card kpi">
+          <span class="label">信任资产</span>
+          <strong>待治理</strong>
+          <p>媒体评测存在，但安全、售后、长期系统维护和竞品替代理由还没有集中表达。</p>
+        </div>
+        <div class="card kpi">
+          <span class="label">经营系统</span>
+          <strong>尚未成熟</strong>
+          <p>主线 SKU、用户分层、渠道价格、内容漏斗和买后运营还没有形成一致系统。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ceiling">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">00A · Product Line Ceiling</span>
+        <h2>北美市场天花板要按产品线看，不能用 NAS 大盘替代 Zima 的真实打法。</h2>
+        <p class="lead">美国 consumer NAS 市场公开口径约 $1.16B，2032 年预计 $3.01B；但 Zima 真正要抢的不是整个 NAS 大盘，而是个人云 NAS、x86 home server 和低价 DIY microserver 三个不同战场。</p>
+      </div>
+
+      <div class="grid three">
+        <div class="card product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0549/4495/6614/files/zimacube-2-personal-cloud-nas-pre-order-9736304.png?v=1773611791" alt="ZimaCube 2 product image" />
+          <div>
+            <span class="label">P0 · 主增长入口</span>
+            <h3>ZimaCube 2</h3>
+            <p>六盘位个人云 NAS。最接近北美 creator、家庭数据备份、homelab 升级的主购买理由。</p>
+            <div class="pill-row"><span class="pill brand">$799 起</span><span class="pill warn">份额估算 &lt;3%</span></div>
+          </div>
+        </div>
+        <div class="card product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0549/4495/6614/files/zimaboard-2-hyper-performance-single-board-server-5175060.png?v=1765906206" alt="ZimaBoard 2 product image" />
+          <div>
+            <span class="label">P1 · 开发者入口</span>
+            <h3>ZimaBoard 2</h3>
+            <p>x86 单板 home server。适合 homelab、Docker、路由、防火墙、轻 NAS。</p>
+            <div class="pill-row"><span class="pill brand">$339 起</span><span class="pill good">Amazon 有动销</span></div>
+          </div>
+        </div>
+        <div class="card product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0549/4495/6614/products/zimablade-single-board-server-for-cyber-native-pre-order-513010.jpg?v=1724171018" alt="ZimaBlade product image" />
+          <div>
+            <span class="label">P2 · 低价与社区 SKU</span>
+            <h3>ZimaBlade</h3>
+            <p>低价 x86 微服务器。能拉 maker，但不能承担主流 NAS 放量任务。</p>
+            <div class="pill-row"><span class="pill brand">$69 起</span><span class="pill bad">Amazon 口碑弱</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top:16px">
+        <table>
+          <thead>
+            <tr>
+              <th>产品线</th>
+              <th>北美市场规模预估</th>
+              <th>当前 Zima 北美 GMV 预估</th>
+              <th>市场占有率预估</th>
+              <th>天花板判断</th>
+              <th>置信度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>个人云 / Prosumer NAS</strong><br />ZimaCube 2</td>
+              <td>$1.4B - $2.1B consumer NAS；其中六盘位 / prosumer SAM 约 $200M - $600M</td>
+              <td>$1.5M - $6M</td>
+              <td>约 0.25% - 3.0%（按 SAM 口径）</td>
+              <td><span class="pill good">大盘足够大，P0</span><br />但必须补足主流 NAS 信任证据。</td>
+              <td>市场规模中；GMV 中低</td>
+            </tr>
+            <tr>
+              <td><strong>x86 单板 home server</strong><br />ZimaBoard 2</td>
+              <td>$120M - $300M homelab / SBC / microserver 方向性区间</td>
+              <td>$0.7M - $2.5M</td>
+              <td>约 0.2% - 2.1%</td>
+              <td><span class="pill warn">细分盘可赚钱，P1</span><br />适合开发者入口，不宜承载大众 NAS 心智。</td>
+              <td>中低，需第三方工具复核</td>
+            </tr>
+            <tr>
+              <td><strong>低价 microserver / DIY kit</strong><br />ZimaBlade</td>
+              <td>$80M - $220M，和 Raspberry Pi、mini PC、二手 NAS 替代重叠</td>
+              <td>$0.3M - $1.2M</td>
+              <td>约 0.1% - 1.5%</td>
+              <td><span class="pill bad">不能做主增长线，P2</span><br />适合社区与低价入门，但评价和理解成本拖后腿。</td>
+              <td>中低</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="match">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">00B · Selling Point Fit</span>
+        <h2>卖点匹配度 68/100：对 homelab 用户匹配，对主流 NAS 买家解释还不够。</h2>
+        <p class="lead">北美消费者买 NAS，不只看参数。他们更在意数据安全、远程访问稳定性、备份迁移、系统长期维护、售后和“为什么不买 Synology / UGREEN”。Zima 讲开放、扩展、zero lock-in 是对的，但主流买家还需要更硬的信任承接。</p>
+      </div>
+
+      <div class="match-board">
+        <div class="match-row">
+          <div>
+            <strong>开放系统、zero lock-in、可跑 TrueNAS / Unraid / Proxmox</strong>
+            <p>来自官网和 ZimaCube 2 PDP，是 Zima 最有辨识度的卖点。</p>
+          </div>
+          <div class="match-score" style="--tone:var(--green)">
+            82 / 100
+            <div class="bar" style="--tone:var(--green); --w:82%"><span></span></div>
+          </div>
+          <div>
+            <strong>强匹配：homelab / creator / advanced NAS 用户</strong>
+            <p>这群人怕平台锁定、爱折腾 Docker 和虚拟化，Zima 的开放性有真实购买理由。</p>
+          </div>
+        </div>
+
+        <div class="match-row">
+          <div>
+            <strong>个人云、远程访问、手机照片备份、统一文件管理</strong>
+            <p>ZimaOS 文档和官网都在讲，但还没有形成大众化信任闭环。</p>
+          </div>
+          <div class="match-score" style="--tone:var(--amber)">
+            66 / 100
+            <div class="bar" style="--tone:var(--amber); --w:66%"><span></span></div>
+          </div>
+          <div>
+            <strong>部分匹配：主流家庭和小团队</strong>
+            <p>需求存在，但必须更直接回答数据丢失、RAID、迁移、售后、隐私安全和学习成本。</p>
+          </div>
+        </div>
+
+        <div class="match-row">
+          <div>
+            <strong>Thunderbolt 4、PCIe、六盘位、M.2 扩展</strong>
+            <p>对 creator 和高阶 homelab 很有吸引力。</p>
+          </div>
+          <div class="match-score" style="--tone:var(--green)">
+            78 / 100
+            <div class="bar" style="--tone:var(--green); --w:78%"><span></span></div>
+          </div>
+          <div>
+            <strong>强匹配但有扣分：标准版无原生 10GbE</strong>
+            <p>竞品已经把 10GbE 前置，Zima 必须把扩展路径、适用人群和取舍讲透。</p>
+          </div>
+        </div>
+
+        <div class="match-row">
+          <div>
+            <strong>$69 / $339 低门槛 DIY home server</strong>
+            <p>ZimaBlade 和 ZimaBoard 2 能吸引 maker 和预算敏感用户。</p>
+          </div>
+          <div class="match-score" style="--tone:var(--amber)">
+            62 / 100
+            <div class="bar" style="--tone:var(--amber); --w:62%"><span></span></div>
+          </div>
+          <div>
+            <strong>部分匹配：价格不是唯一理由</strong>
+            <p>北美同类替代包括 mini PC、Raspberry Pi、二手 NAS。Zima 需要证明“比 DIY 少踩坑”。</p>
+          </div>
+        </div>
+
+        <div class="match-row">
+          <div>
+            <strong>ZimaOS+、长期软件维护、售后保障</strong>
+            <p>这是主流 NAS 买家会追问的点，但页面承接偏弱。</p>
+          </div>
+          <div class="match-score" style="--tone:var(--red)">
+            52 / 100
+            <div class="bar" style="--tone:var(--red); --w:52%"><span></span></div>
+          </div>
+          <div>
+            <strong>弱匹配：信任证据不足</strong>
+            <p>付费系统、数据安全、保修、迁移路径如果不提前讲清，PDP 访问会在决策后段流失。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">01 · One Page Summary</span>
+        <h2>一页看懂：Zima 有真实机会，但增长主线必须重新排。</h2>
+        <p class="lead">Zima 的强项来自开放硬件、ZimaOS、媒体评测和开发者口碑；短板集中在主流 NAS 信任承接、产品线分工和北美渠道证据。</p>
+      </div>
+      <div class="grid four">
+        <div class="card kpi">
+          <span class="label">健康分</span>
+          <strong>61 / 100</strong>
+          <div class="bar" style="--tone:var(--amber); --w:61%"><span></span></div>
+          <p>及格但有硬伤。</p>
+        </div>
+        <div class="card kpi">
+          <span class="label">机会分</span>
+          <strong>82 / 100</strong>
+          <div class="bar" style="--tone:var(--blue); --w:82%"><span></span></div>
+          <p>市场窗口和产品差异都存在。</p>
+        </div>
+        <div class="card kpi">
+          <span class="label">问题致命度</span>
+          <strong>66 / 100</strong>
+          <div class="bar" style="--tone:var(--red); --w:66%"><span></span></div>
+          <p>不是小修文案，而是 GTM 顺序问题。</p>
+        </div>
+        <div class="card kpi">
+          <span class="label">优先动作</span>
+          <strong>P0</strong>
+          <p>把 ZimaCube 2 做成主流 NAS 入口，把 Board/Blade 拆到 homelab 和 maker 漏斗。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="segments">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">02 · Three Business Blocks</span>
+        <h2>三大板块诊断：品牌有技术辨识度，Marketing 和电商承接不达标。</h2>
+        <p class="lead">这里说的“技术辨识度”，来自开放硬件、ZimaOS、媒体评测和 Amazon ZimaBoard 2 动销；但这些证据还没有转化成主流 NAS 买家的决策理由。</p>
+      </div>
+
+      <div class="grid">
+        <div class="card segment">
+          <div class="segment-head">
+            <div>
+              <h3>品牌板块：有清晰 geek 心智，但大众信任口径不够集中。</h3>
+              <p>品牌不是空的，问题是技术品牌资产没有翻译成“我敢把家庭照片、项目文件、客户素材放进去”。</p>
+            </div>
+            <div class="segment-score">66</div>
+          </div>
+          <div class="segment-body">
+            <div class="segment-list">
+              <h4>做得好的</h4>
+              <ul>
+                <li>官网 title、产品页和 ZimaOS 文档都围绕 home server、personal cloud、NAS 和 self-hosting，品类方向一致（E1-E3）。</li>
+                <li>ZimaCube 2、ZimaBoard 2 均有近期英文媒体评测，不是只靠自说自话（E6-E8）。</li>
+                <li>ZimaOS 官方资料强调 remote access、RAID、OTA、统一数据管理，这是进入 NAS 信任链的必要资产（E3）。</li>
+              </ul>
+            </div>
+            <div class="segment-list bad">
+              <h4>做得不好的</h4>
+              <ul>
+                <li>IceWhale、Zima、ZimaSpace、ZimaBoard、ZimaBlade 多套命名并存，对主流用户不够友好，会增加搜索和售后识别成本。</li>
+                <li>ZimaOS downloads 不能替代硬件销量。若对外用下载量证明规模，品牌方必须同时说明它是软件触达，不是 terminal sales（E3）。</li>
+                <li>主流 NAS 用户最关心的数据安全、迁移、保修、长期维护证据没有被放到品牌核心位置，信任资产没有被充分商业化。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card segment">
+          <div class="segment-head">
+            <div>
+              <h3>Marketing 板块：不达标，问题在于把三类用户塞进同一套叙事。</h3>
+              <p>Zima 现在的内容更像“给懂的人看”，但 ZimaCube 2 要卖给更宽的 NAS 用户，必须降低理解成本。</p>
+            </div>
+            <div class="segment-score">54</div>
+          </div>
+          <div class="segment-body">
+            <div class="segment-list">
+              <h4>做得好的</h4>
+              <ul>
+                <li>“zero lock-in”“open platform”“self-hosting”抓住了 homelab 用户的真实痛点（E2-E3）。</li>
+                <li>ZimaCube 2 的媒体评测给了足够多的参数和竞品参照，可用于 remarketing 和 comparison 页面（E6-E8）。</li>
+                <li>官方店已经把 accessories、kits、firewall、NAS 场景组合起来，有内容扩展基础（E1）。</li>
+              </ul>
+            </div>
+            <div class="segment-list bad">
+              <h4>做得不好的</h4>
+              <ul>
+                <li>做得差的是人群分层：ZimaCube 2、ZimaBoard 2、ZimaBlade 都在讲 NAS / home server / self-hosting，但购买门槛和决策逻辑完全不同。</li>
+                <li>没有把“为什么不是 Synology / UGREEN / mini PC DIY”做成明确 comparison path，导致高意向用户要自己拼答案（E6-E8）。</li>
+                <li>ZimaOS+、无原生 10GbE、drive tray 体验等争议点没有被主动解释，投放越大，售前疑虑越容易堆积。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card segment">
+          <div class="segment-head">
+            <div>
+              <h3>电商板块：不达标，ZimaBoard 有动销，ZimaCube 和 ZimaBlade 承接不均。</h3>
+              <p>官网商品结构完整，但北美电商不能只看官网页面，必须看 Amazon 动销、评价质量、主力 SKU 和竞品货架位置。</p>
+            </div>
+            <div class="segment-score">59</div>
+          </div>
+          <div class="segment-body">
+            <div class="segment-list">
+              <h4>做得好的</h4>
+              <ul>
+                <li>官网主推价格清楚：ZimaCube 2 $799 起，ZimaBoard 2 $339 起，ZimaBlade $69 起，价位阶梯能覆盖不同预算（E1）。</li>
+                <li>Amazon ZimaBoard 2 有 4.5 星、393 条评论、Amazon's Choice 和 50+ bought in past month，说明开发者 / homelab 入口已经有基本动销（E4）。</li>
+                <li>配件和 kit 丰富，具备提升 AOV 和降低装机摩擦的空间（E1）。</li>
+              </ul>
+            </div>
+            <div class="segment-list bad">
+              <h4>做得不好的</h4>
+              <ul>
+                <li>ZimaBlade 7700 Amazon 页面只有 3.8 星、15 条评论，作为低价入口的社会证明不够，反而会拖低首次信任（E5）。</li>
+                <li>ZimaCube 2 是最应该承接高客单增长的品线，但公开 Amazon 动销证据不厚，DTC 和第三方零售需要补强。</li>
+                <li>不同 SKU 的任务没有被写清：Cube 应该负责主流 NAS 转化，Board 负责 homelab，Blade 负责社区入门。现在货架更像产品集合，不像增长架构。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problems">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">03 · Top 3 Issues</span>
+        <h2>三大关键问题：先修增长顺序，再修信任，再修渠道。</h2>
+        <p class="lead">这三个问题按严重度排序。它们不是独立小问题，而是同一条链路：用户看不懂主线，信任证据不够，最后电商转化承接被削弱。</p>
+      </div>
+
+      <div class="grid">
+        <div class="card problem">
+          <div class="problem-side">
+            <span class="label">P0 · 严重度 82</span>
+            <h3>产品线主线排反了：ZimaCube 2 应该是增长入口，不是和 Board / Blade 平铺。</h3>
+            <p>ZimaCube 2（个人云 NAS）对应的是北美用户愿意为数据安全、家庭照片、创作者素材和 homelab 升级付高客单的场景；ZimaBoard 2 和 ZimaBlade 更像开发者入口与社区 SKU。</p>
+            <div class="severity">
+              <div class="bar" style="--tone:var(--red); --w:82%"><span></span></div>
+              <small>证据：E1, E2, E4, E6</small>
+            </div>
+          </div>
+          <div class="problem-main">
+            <div class="impact">
+              <div><strong>现象</strong><p>官网把 Core Products 写成 every builder，同屏承接 NAS、single-board server 和 cyber-modder。</p></div>
+              <div><strong>损耗</strong><p>主流 NAS 买家无法快速判断该买哪条线，PDP 解释成本上升。</p></div>
+              <div><strong>动作</strong><p>以 ZimaCube 2 做主入口，Board/Blade 进入 developer / DIY 分支。</p></div>
+            </div>
+            <div class="grid three">
+              <div class="action-tile"><span class="pill bad">P0</span><p>重写首页首屏：主标题只服务 personal cloud NAS，突出备份、远程访问、数据控制和迁移。</p></div>
+              <div class="action-tile"><span class="pill warn">P1</span><p>建立“Which Zima should I buy?”选择器，把用户按 creator、family backup、homelab、firewall 分流。</p></div>
+              <div class="action-tile"><span class="pill good">P2</span><p>把 Board/Blade 做成 content SEO 和社区入口，不再抢 Cube 的主转化语境。</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card problem">
+          <div class="problem-side">
+            <span class="label">P0 · 严重度 76</span>
+            <h3>主流 NAS 信任证据没有前置，Zima 的强参数没有完全转化为购买安全感。</h3>
+            <p>北美 NAS 用户买的是长期数据托管，不是单次电子产品。Zima 需要正面回答 RAID、备份、迁移、系统更新、售后、保修和安全边界。</p>
+            <div class="severity">
+              <div class="bar" style="--tone:var(--red); --w:76%"><span></span></div>
+              <small>证据：E3, E6, E8</small>
+            </div>
+          </div>
+          <div class="problem-main">
+            <div class="impact">
+              <div><strong>现象</strong><p>官网有 ZimaOS 和开放系统卖点，但信任证据散在文档、评测和 FAQ。</p></div>
+              <div><strong>损耗</strong><p>高客单用户会反复比较 Synology / UGREEN / QNAP，决策周期被拉长。</p></div>
+              <div><strong>动作</strong><p>把“能不能长期托管数据”做成页面主模块，而不是藏在技术文档里。</p></div>
+            </div>
+            <div class="grid three">
+              <div class="action-tile"><span class="pill bad">P0</span><p>ZimaCube PDP 增加 Trust Stack：RAID、备份、远程访问、更新、保修、数据迁移、恢复方案逐条解释。</p></div>
+              <div class="action-tile"><span class="pill warn">P1</span><p>把无原生 10GbE、ZimaOS+、drive tray 这些可能被竞品攻击的点提前解释清楚。</p></div>
+              <div class="action-tile"><span class="pill good">P2</span><p>把媒体评测拆成证据卡，用“适合谁 / 不适合谁”的方式降低退货和差评风险。</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card problem">
+          <div class="problem-side">
+            <span class="label">P1 · 严重度 69</span>
+            <h3>北美电商证据不均：ZimaBoard 能打，ZimaBlade 拖信任，ZimaCube 需要更厚渠道证明。</h3>
+            <p>公开证据显示 ZimaBoard 2 的 Amazon 表现更稳；ZimaBlade 7700 的评分和评论量偏弱；ZimaCube 2 的高客单增长需要更完整的 Amazon / DTC / 第三方零售信号。</p>
+            <div class="severity">
+              <div class="bar" style="--tone:var(--red); --w:69%"><span></span></div>
+              <small>证据：E1, E4, E5, E6</small>
+            </div>
+          </div>
+          <div class="problem-main">
+            <div class="impact">
+              <div><strong>现象</strong><p>官网 SKU 丰富，但 Amazon 社会证明在不同品线之间差异很大。</p></div>
+              <div><strong>损耗</strong><p>主力高客单品线如果缺少零售信任，会让用户回到 Synology / UGREEN 货架。</p></div>
+              <div><strong>动作</strong><p>按品线重做渠道优先级和 review acquisition。</p></div>
+            </div>
+            <div class="grid three">
+              <div class="action-tile"><span class="pill bad">P0</span><p>ZimaCube 2 建 Amazon 主 ASIN 和 comparison listing，集中评论、Q&amp;A、A+ 和视频评测。</p></div>
+              <div class="action-tile"><span class="pill warn">P1</span><p>ZimaBlade 做评价治理，不适合继续作为对外第一眼低价入口。</p></div>
+              <div class="action-tile"><span class="pill good">P2</span><p>用 ZimaBoard 2 的 Amazon 证据承接开发者流量，再引导到 Cube 升级。</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competitors">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">04 · Competitor Calibration</span>
+        <h2>竞品校准：Zima 的赢面在开放和扩展，输面在主流信任和零售货架。</h2>
+        <p class="lead">Zima 不能只和 low-cost DIY 比，也不能只和 Synology 比。真正的竞品组合是 Synology 的信任、UGREEN 的硬件性价比、QNAP/Asustor 的 prosumer 规格，以及 mini PC DIY 的低价替代。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>对象</th>
+              <th>北美用户心智</th>
+              <th>Zima 可以攻击的点</th>
+              <th>Zima 当前被攻击的点</th>
+              <th>建议打法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Synology</strong></td>
+              <td>稳定、安全、软件成熟、长期支持</td>
+              <td>开放性、硬件扩展、Thunderbolt / PCIe、无强锁定</td>
+              <td>信任和售后不如老牌清晰</td>
+              <td>不要硬碰品牌信任，先打 creator / homelab 的开放诉求。</td>
+            </tr>
+            <tr>
+              <td><strong>UGREEN NASync</strong></td>
+              <td>硬件参数强、价格进攻性强、软件仍在建立</td>
+              <td>ZimaOS、开放系统、社区和 self-hosting</td>
+              <td>10GbE、CPU、SSD 规格容易被比较</td>
+              <td>做“开放系统 + personal cloud”对比，不只打参数。</td>
+            </tr>
+            <tr>
+              <td><strong>QNAP / Asustor</strong></td>
+              <td>prosumer 功能强，但学习曲线高</td>
+              <td>更现代的 UI、更清晰的 creator 工作流</td>
+              <td>生态和渠道深度不足</td>
+              <td>用实际工作流案例打，不做泛参数页。</td>
+            </tr>
+            <tr>
+              <td><strong>mini PC / Raspberry Pi DIY</strong></td>
+              <td>便宜、可玩、自由</td>
+              <td>少踩坑、已集成、低功耗、PCIe / SATA 方案</td>
+              <td>价格敏感用户容易自己组</td>
+              <td>Board / Blade 要卖“节省配置时间”，不是只卖板子。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="scores">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">05 · 11D Scoring</span>
+        <h2>11 维度评分：Marketing、订阅会员、风险预警和售后信任拖低总分。</h2>
+        <p class="lead">Zima 的产品与增长机会分不低，但这不能掩盖经营短板。NAS 是信任品类，低分项如果不修，高客单增长会被解释成本吃掉。</p>
+      </div>
+      <div class="card">
+        <div class="scores">
+          <div class="score-row"><strong>电商板块</strong><div class="bar" style="--tone:var(--amber); --w:59%"><span></span></div><span>59</span></div>
+          <div class="score-row"><strong>品牌板块</strong><div class="bar" style="--tone:var(--brand); --w:66%"><span></span></div><span>66</span></div>
+          <div class="score-row"><strong>Marketing 板块</strong><div class="bar" style="--tone:var(--red); --w:54%"><span></span></div><span>54</span></div>
+          <div class="score-row"><strong>产品与品类</strong><div class="bar" style="--tone:var(--green); --w:70%"><span></span></div><span>70</span></div>
+          <div class="score-row"><strong>流量与转化漏斗</strong><div class="bar" style="--tone:var(--amber); --w:58%"><span></span></div><span>58</span></div>
+          <div class="score-row"><strong>用户与人群洞察</strong><div class="bar" style="--tone:var(--brand); --w:62%"><span></span></div><span>62</span></div>
+          <div class="score-row"><strong>客服与售后</strong><div class="bar" style="--tone:var(--red); --w:55%"><span></span></div><span>55</span></div>
+          <div class="score-row"><strong>订阅与会员体系</strong><div class="bar" style="--tone:var(--red); --w:42%"><span></span></div><span>42</span></div>
+          <div class="score-row"><strong>竞品对比</strong><div class="bar" style="--tone:var(--brand); --w:63%"><span></span></div><span>63</span></div>
+          <div class="score-row"><strong>增长机会与战略</strong><div class="bar" style="--tone:var(--green); --w:78%"><span></span></div><span>78</span></div>
+          <div class="score-row"><strong>风险与预警</strong><div class="bar" style="--tone:var(--red); --w:52%"><span></span></div><span>52</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">06 · 90 / 180 Day Roadmap</span>
+        <h2>路线图：90 天内重排主线，180 天内把信任和渠道补成系统。</h2>
+        <p class="lead">Zima 不应该先盲目加投放。先把增长入口、证据链和渠道货架修清楚，再放大预算。</p>
+      </div>
+      <div class="roadmap">
+        <div class="card step" data-step="0-30 天">
+          <h3>重排产品线和首页主线</h3>
+          <ul>
+            <li>首页首屏只服务 ZimaCube 2 的 personal cloud NAS 购买理由。</li>
+            <li>建立“选购路径”：家庭备份 / creator / homelab / firewall / DIY。</li>
+            <li>验收：主力落地页跳出率下降，Cube PDP 点击占比提升。</li>
+          </ul>
+        </div>
+        <div class="card step" data-step="31-90 天">
+          <h3>补 Trust Stack 和竞品对比</h3>
+          <ul>
+            <li>上线 ZimaCube Trust Stack：RAID、备份、迁移、保修、数据恢复、ZimaOS+。</li>
+            <li>做 Synology / UGREEN / DIY mini PC comparison 页面。</li>
+            <li>验收：PDP 加购率、邮件咨询转化、comparison 页面转化。</li>
+          </ul>
+        </div>
+        <div class="card step" data-step="91-180 天">
+          <h3>重建北美电商证据</h3>
+          <ul>
+            <li>ZimaCube 2 建 Amazon 主 ASIN 与 A+，集中评论和视频评测。</li>
+            <li>治理 ZimaBlade 低分入口，必要时下调其首页权重。</li>
+            <li>验收：Cube 评价数、Amazon 转化、DTC 与 Amazon 价格一致性。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">07 · Risks &amp; Data Gaps</span>
+        <h2>风险和数据缺口：公开数据足以判断方向，但不够支撑财务单点。</h2>
+      </div>
+      <div class="grid three">
+        <div class="card">
+          <h3>GMV 区间仍需内部复核</h3>
+          <p>北美年零售 GMV 区间来自公开信号推算，建议用 Shopify、Amazon Seller Central、渠道 sell-out、广告后台和退货数据复核。</p>
+        </div>
+        <div class="card">
+          <h3>ZimaOS+ 需主动解释</h3>
+          <p>付费系统本身不是问题，问题是用户在买 NAS 时会追问长期成本、授权边界和更新服务。若不解释，会成为竞品攻击点。</p>
+        </div>
+        <div class="card">
+          <h3>标准版无原生 10GbE 不能回避</h3>
+          <p>TechRadar 和 Android Central 都提到该点。Zima 应该明确告诉用户什么场景需要 Pro、什么场景标准版足够。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <div class="inner">
+      <div class="section-head">
+        <span class="tagline">08 · Evidence</span>
+        <h2>证据表</h2>
+        <p class="lead">抓取日期：2026-06-13。所有 GMV、份额和市场规模区间均为公开数据推算，不构成财务结论。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>来源</th>
+              <th>关键事实</th>
+              <th>支持判断</th>
+              <th>置信度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://shop.zimaspace.com/" target="_blank" rel="noreferrer">Zima 官方店首页</a></td>
+              <td>ZimaCube 2 $799 起；ZimaBoard 2 $339 起，评分 4.77；ZimaBlade $69 起，评分 4.73；官网按 Core Products / Best Picks 展示多条线；活动入口出现 5M+ downloads。</td>
+              <td>价格带、品线结构、电商承接。</td>
+              <td>高</td>
+            </tr>
+            <tr>
+              <td>E2</td>
+              <td><a href="https://shop.zimaspace.com/products/zimacube-2-personal-cloud-nas" target="_blank" rel="noreferrer">ZimaCube 2 官方 PDP</a></td>
+              <td>官方强调 personal cloud、media workflows、self-hosting、Thunderbolt 4、PCIe、zero lock-in 和自选 OS。</td>
+              <td>ZimaCube 的核心卖点和目标人群。</td>
+              <td>高</td>
+            </tr>
+            <tr>
+              <td>E3</td>
+              <td><a href="https://www.zimaspace.com/docs/zimaos/" target="_blank" rel="noreferrer">ZimaOS 官方文档</a></td>
+              <td>ZimaOS 是基于 CasaOS 的 personal cloud OS，支持 remote access、RAID configuration、OTA updates、统一数据管理。</td>
+              <td>信任资产、软件能力、NAS 用户关注点。</td>
+              <td>高</td>
+            </tr>
+            <tr>
+              <td>E4</td>
+              <td><a href="https://www.amazon.com/ZimaBoard-Quad-Core-N150-Expansion-Low-Power/dp/B0FYPBZQ3Z" target="_blank" rel="noreferrer">Amazon ZimaBoard 2 1664</a></td>
+              <td>4.5 星、393 条评论、Amazon's Choice、50+ bought in past month。</td>
+              <td>开发者 / homelab 入口已有可见动销。</td>
+              <td>高</td>
+            </tr>
+            <tr>
+              <td>E5</td>
+              <td><a href="https://www.amazon.com/ZimaBlade-Personal-Capacity-Quad-Core-Expandable/dp/B0FBFQDXSQ" target="_blank" rel="noreferrer">Amazon ZimaBlade 7700</a></td>
+              <td>$176.60，3.8 星，15 条评论，卖家 IceWhale Technology Limited，Amazon Fulfillment。</td>
+              <td>ZimaBlade 作为低价入口的信任承接偏弱。</td>
+              <td>高</td>
+            </tr>
+            <tr>
+              <td>E6</td>
+              <td><a href="https://www.techradar.com/computing/icewhale-zimacube-2-personal-cloud-nas-review" target="_blank" rel="noreferrer">TechRadar ZimaCube 2 review</a></td>
+              <td>评测确认 $799、i3-1215U、六 SATA bay、四 M.2、双 2.5GbE、ZimaOS；也指出标准版无原生 10GbE、drive tray 和 grille 体验问题。</td>
+              <td>产品力与信任缺口并存。</td>
+              <td>中高</td>
+            </tr>
+            <tr>
+              <td>E7</td>
+              <td><a href="https://www.techradar.com/computing/icewhale-zimaboard-2-mini-nas-review" target="_blank" rel="noreferrer">TechRadar ZimaBoard 2 review</a></td>
+              <td>N150、dual 2.5GbE、PCIe Gen3 x4 和被动散热是优势；soldered memory/storage、外接硬盘形态和四核 CPU 是限制。</td>
+              <td>ZimaBoard 适合 homelab，不宜承载大众 NAS 心智。</td>
+              <td>中高</td>
+            </tr>
+            <tr>
+              <td>E8</td>
+              <td><a href="https://www.androidcentral.com/accessories/smart-home/i-tested-the-zimacube-2-homelab-nas-upgrade-you-want" target="_blank" rel="noreferrer">Android Central ZimaCube 2 review</a></td>
+              <td>评测认为 ZimaCube 2 可扩展、软件丰富，但标准版缺少原生 10GbE，需要加 NIC。</td>
+              <td>卖点匹配、信任解释和竞品对比。</td>
+              <td>中高</td>
+            </tr>
+            <tr>
+              <td>E9</td>
+              <td><a href="https://www.snsinsider.com/reports/consumer-network-attached-storage-market-5928" target="_blank" rel="noreferrer">SNS Insider Consumer NAS Market</a></td>
+              <td>美国 Consumer NAS market 2025 年 $1.16B，2032 年预计 $3.01B，CAGR 11.18%。</td>
+              <td>北美个人云 / NAS 市场天花板。</td>
+              <td>中</td>
+            </tr>
+            <tr>
+              <td>E10</td>
+              <td><a href="https://tradingeconomics.com/china/currency" target="_blank" rel="noreferrer">Trading Economics USD/CNY</a></td>
+              <td>USD/CNY 2026-06-12 为 6.7634，页面 2026-06-13 更新。</td>
+              <td>美元到人民币换算。</td>
+              <td>中高</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <div>远汐 Offing 免费北美业务诊断 · 在抵达之前，先判断潮水。</div>
+      <div>Prepared for Zima · 2026-06-13</div>
+    </div>
+  </footer>
+</body>
+</html>
