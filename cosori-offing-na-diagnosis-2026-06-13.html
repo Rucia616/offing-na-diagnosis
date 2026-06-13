@@ -433,6 +433,19 @@
       font-size: 14px;
     }
     .score-line:last-child { border-bottom: 0; }
+    .score-logic {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .score-logic div {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8f9f9;
+    }
+    .score-logic b { display: block; margin-bottom: 6px; font-size: 13px; color: var(--sea); }
 
     .roadmap { position: relative; display: grid; gap: 12px; }
     .road { display: grid; grid-template-columns: 92px 1fr 180px; gap: 16px; align-items: start; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
@@ -454,7 +467,7 @@
       .nav-links { display: none; }
       .hero, section { padding-left: 20px; padding-right: 20px; }
       .hero-score, .two, .three, .four, .stage-verdict, .summary-strip, .problem-card { grid-template-columns: 1fr; }
-      .subscores, .stage-path, .gate-grid, .ceiling-stats, .good-bad, .evidence-mini, .impact-flow, .action-list { grid-template-columns: 1fr; }
+      .subscores, .stage-path, .gate-grid, .ceiling-stats, .good-bad, .evidence-mini, .impact-flow, .action-list, .score-logic { grid-template-columns: 1fr; }
       .match-row { grid-template-columns: 1fr; }
       .block-top { grid-template-columns: 1fr; }
       .block-score { width: 100%; height: auto; min-height: 92px; }
@@ -581,8 +594,8 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">00A · Product-Line Ceiling</span>
-          <h2>北美市场天花板要按品线拆：空气炸锅是现金牛，不是整套厨房生态的证明。</h2>
-          <p class="lead">COSORI 不能只用“小厨房电器市场很大”来证明机会。真正该看的是每条品线承担什么角色：拉新、利润、复购、零售货架，还是品牌升级。没有第二品线的 sell-out 证据，就不能把预算按生态品牌来分。</p>
+          <h2>COSORI 北美真正撑盘的是空气炸锅，壶和烘干机还没有跑成第二增长曲线。</h2>
+          <p class="lead">结论很清楚：空气炸锅负责规模、份额和主流用户拉新；电热水壶和食物烘干机更像利润 SKU、货架证明和专业厨房内容入口。烤箱、多功能锅和咖啡线公开证据更弱，不能用“小厨房电器市场很大”来证明 COSORI 已经形成厨房生态。</p>
         </div>
 
         <div class="grid two">
@@ -646,39 +659,39 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">00B · Selling Point Fit</span>
-          <h2>卖点匹配度 75/100：空气炸锅卖点接得住，第二品线和高端价格理由还不够硬。</h2>
-          <p class="lead">下表按北美空气炸锅 / 小厨房电器购买决策的公开样本关注权重排序。权重来自 Amazon 标题与评论、评测媒体、竞品页面、召回页面和行业报告的方向性编码，不代表统计抽样。</p>
+          <h2>空气炸锅主品线卖点匹配度 75/100：TurboBlaze 卖得动，Iconic 和第二品线还接不住价格升级。</h2>
+          <p class="lead">COSORI 是多品线品牌，但北美公开销售和动销证据最硬的是空气炸锅，所以卖点匹配先看最大收入主品线。下表按 Amazon 近评、零售评论、媒体评测、竞品页面和售后投诉的公开样本方向性编码排序，不代表统计抽样。E5, E16, E17, E18</p>
         </div>
 
         <div class="match-row">
-          <div><span class="weight">公开样本关注权重 30%</span><h3>安全、材料、召回、保修</h3><p>北美用户第一关不是“能不能炸”，而是放在厨房里是否安全、涂层是否放心、旧召回是否影响新型号。</p></div>
-          <div><b>COSORI 当前卖点</b><p>Iconic 讲 PFAS-free / BPA-free、不锈钢、五年保修；官网有召回页和产品注册入口。E8, E9</p></div>
-          <div class="match-score amber-tone"><strong>66 / 100</strong><div class="bar"><i style="--w:66%;"></i></div><span class="pill amber">部分匹配</span></div>
-          <div><b>经营影响</b><p>安全与材料证据没有被系统前置，高端 Iconic 的 $249 价格理由会被削弱；2023 召回只作为历史搜索残留风险计入。E6, E7</p></div>
+          <div><span class="weight">公开样本关注权重 28%</span><h3>酥脆效果、速度、均匀加热</h3><p>这是空气炸锅的第一成交理由，决定用户是否愿意从普通烤箱、微波炉或竞品换到 COSORI。</p></div>
+          <div><b>COSORI 当前卖点</b><p>TurboBlaze 讲 3600 rpm、90°-450°F、9-in-1、速度提升；Amazon 4.8 分和 20K+ 月销下限支撑该卖点。E5, E16</p></div>
+          <div class="match-score green-tone"><strong>86 / 100</strong><div class="bar"><i style="--w:86%;"></i></div><span class="pill green">做得好</span></div>
+          <div><b>经营影响</b><p>这是 COSORI 最稳的增长入口。TurboBlaze 应继续承担拉新，而不是让更贵、更需要解释的 Iconic 直接承担全部主线。</p></div>
         </div>
         <div class="match-row">
-          <div><span class="weight">公开样本关注权重 24%</span><h3>酥脆效果、速度、均匀加热</h3><p>这是空气炸锅的核心成交理由，直接影响点击后转化和复购评价。</p></div>
-          <div><b>COSORI 当前卖点</b><p>TurboBlaze 讲 3600 rpm、90°-450°F、9-in-1、速度提升；Amazon 4.8 分和 20K+ 月销下限支撑该卖点。E5</p></div>
-          <div class="match-score green-tone"><strong>86 / 100</strong><div class="bar"><i style="--w:86%;"></i></div><span class="pill green">强匹配</span></div>
-          <div><b>经营影响</b><p>这是 COSORI 最稳的增长入口。必须继续让 TurboBlaze 承担拉新，而不是让更贵、更需要解释的 Iconic 直接承担全部主线。</p></div>
+          <div><span class="weight">公开样本关注权重 22%</span><h3>清洁、易用、噪音</h3><p>空气炸锅能不能高频使用，取决于清洁成本、操作门槛和厨房噪音。</p></div>
+          <div><b>COSORI 当前卖点</b><p>Amazon 近评和媒体评测反复提到 easy to clean、quiet、简单操作和日常高频使用。E16, E15</p></div>
+          <div class="match-score green-tone"><strong>79 / 100</strong><div class="bar"><i style="--w:79%;"></i></div><span class="pill green">做得好</span></div>
+          <div><b>经营影响</b><p>这一点能支撑评论增长和老客升级，但官网需要把跨 SKU 的清洁、噪音和耐用证据做成固定导购模块。</p></div>
         </div>
         <div class="match-row">
-          <div><span class="weight">公开样本关注权重 18%</span><h3>容量、厨房空间、家庭场景</h3><p>用户会按 1-2 人、家庭、meal prep、台面空间来选型号。</p></div>
+          <div><span class="weight">公开样本关注权重 20%</span><h3>价格、促销、零售可得性</h3><p>北美空气炸锅竞争激烈，用户会把 COSORI 和 Ninja、Instant、Chefman、Gourmia 直接比价格。</p></div>
+          <div><b>COSORI 当前卖点</b><p>TurboBlaze 在 $90-$130 区间能打；Iconic 上探 $249，但高端理由仍需要比“设计好看”更硬。E2, E5, E9</p></div>
+          <div class="match-score amber-tone"><strong>68 / 100</strong><div class="bar"><i style="--w:68%;"></i></div><span class="pill amber">勉强及格</span></div>
+          <div><b>经营影响</b><p>中端爆款能卖，高端升级还没完全讲透。Iconic 如果不把材料、安全、保修和第三方背书放前面，用户会觉得只是贵。</p></div>
+        </div>
+        <div class="match-row">
+          <div><span class="weight">公开样本关注权重 17%</span><h3>容量、厨房空间、家庭场景</h3><p>用户会按 1-2 人、家庭、meal prep、台面空间来选型号。</p></div>
           <div><b>COSORI 当前卖点</b><p>官网有 2.1 qt、5 qt、6 qt、6.5 qt、6.8 qt、9 qt、13 qt 等覆盖，FAQ 会区分 TurboBlaze 与 Iconic。E1, E2</p></div>
-          <div class="match-score green-tone"><strong>78 / 100</strong><div class="bar"><i style="--w:78%;"></i></div><span class="pill green">强匹配但可整理</span></div>
+          <div class="match-score green-tone"><strong>78 / 100</strong><div class="bar"><i style="--w:78%;"></i></div><span class="pill green">做得好但散</span></div>
           <div><b>经营影响</b><p>覆盖足够，但页面需要把“人群 / 场景 / 容量”做成更强导购，否则 SKU 宽度会变成选择负担。</p></div>
         </div>
         <div class="match-row">
-          <div><span class="weight">公开样本关注权重 16%</span><h3>清洁、易用、噪音</h3><p>使用门槛低，才会从尝鲜变成高频厨房工具。</p></div>
-          <div><b>COSORI 当前卖点</b><p>Amazon 标题和 PR 都提到陶瓷不粘、可清洗、噪音控制、简单菜单；媒体评测也认可易用和安静。E5, E9, E15</p></div>
-          <div class="match-score green-tone"><strong>79 / 100</strong><div class="bar"><i style="--w:79%;"></i></div><span class="pill green">强匹配</span></div>
-          <div><b>经营影响</b><p>这能支撑评论增长和老客升级，但需要更多跨 SKU 的一致证据，而不是只集中在单个爆款。</p></div>
-        </div>
-        <div class="match-row">
-          <div><span class="weight">公开样本关注权重 12%</span><h3>价格、促销、零售可得性</h3><p>北美空气炸锅竞争激烈，价格不只是便宜，而是要让用户理解为什么该买这一档。</p></div>
-          <div><b>COSORI 当前卖点</b><p>TurboBlaze 在 $90-$130 区间有竞争力；Iconic 上探 $249，但高端理由仍需要比“设计好看”更硬。E2, E5, E9</p></div>
-          <div class="match-score amber-tone"><strong>68 / 100</strong><div class="bar"><i style="--w:68%;"></i></div><span class="pill amber">部分匹配</span></div>
-          <div><b>经营影响</b><p>中端爆款能卖，高端升级要靠材料、安全、保修和第三方背书共同解释，否则会被 Ninja / Breville / Typhur 的高端叙事压住。</p></div>
+          <div><span class="weight">公开样本关注权重 13%</span><h3>安全、材料、保修、旧召回边界</h3><p>召回不是 2026 的主购买理由，但在高客单、送礼和家庭厨房场景里，用户仍会追问安全材料和售后响应。</p></div>
+          <div><b>COSORI 当前卖点</b><p>Iconic 讲 PFAS-free / BPA-free、不锈钢、五年保修；但 BBB / Reddit 仍有 replacement 和售后响应的尾部投诉。E8, E9, E17, E18</p></div>
+          <div class="match-score amber-tone"><strong>63 / 100</strong><div class="bar"><i style="--w:63%;"></i></div><span class="pill amber">勉强及格</span></div>
+          <div><b>经营影响</b><p>VOC 不支持把 2023 召回写成当前主矛盾，但支持把它作为高端转化和售后信任的尾部风险治理。</p></div>
         </div>
       </div>
     </section>
@@ -687,17 +700,17 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">01 · One Page Summary</span>
-          <h2>一页看懂：COSORI 的北美问题是主品类太强，第二曲线没成立。</h2>
+          <h2>一页看懂：空气炸锅在 Amazon 卖得动，但新的增长点还没跑出来。</h2>
         </div>
         <div class="summary-strip">
           <div class="dark">
             <span class="label">核心判断</span>
-            <h3>先承认北美还主要靠空气炸锅解释，再去谈厨房品类领导。</h3>
-            <p>空气炸锅动销成立，电热水壶和烘干机有 Amazon 第一信号；但这还不是第二增长曲线。现在最该修的是：Amazon 之外的渠道证据、DTC 导购和高端价格理由。</p>
+            <h3>现在不是卖不动，是太靠一个品类、一个平台。</h3>
+            <p>空气炸锅已经能卖，Amazon 也能出量；但电热水壶、烘干机、烤箱和官网自有渠道还没有接上增长。只要新增量还主要靠 Amazon 上的空气炸锅，COSORI 就不能按成熟厨房生态来花预算。</p>
           </div>
-          <div><span class="pill green">P0</span><h3>守住 TurboBlaze</h3><p>用中端爆款继续拉新，把酥脆、速度、易清洁和安全证据放在同一页。</p></div>
-          <div><span class="pill amber">P1</span><h3>解释 Iconic</h3><p>$249 不只讲设计，要讲材料、保修、低塑化、安全边界和长期使用价值。</p></div>
-          <div><span class="pill amber">P1 风险</span><h3>历史残留</h3><p>2023 召回距今约 40 个月，当前影响主要是搜索残留和高端信任解释，不是即时事故风险。</p></div>
+          <div><span class="pill red">P0</span><h3>降低 Amazon 依赖</h3><p>把 Amazon 评论、月销和爆款理由搬到官网、Target、Best Buy，别让平台掌握全部成交解释权。</p></div>
+          <div><span class="pill amber">P1</span><h3>证明第二增长点</h3><p>壶和烘干机现在更像利润和货架证明，还不是能替代空气炸锅的第二曲线。</p></div>
+          <div><span class="pill amber">P1</span><h3>把买家留住</h3><p>售后、注册、配件、食谱和换新机制要把一次性购买变成可再运营的用户池。</p></div>
         </div>
       </div>
     </section>
@@ -751,32 +764,32 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">03 · Top 3 Problems</span>
-          <h2>三大关键问题：先把 Amazon 动销变成跨渠道资产，再证明第二品线。</h2>
+          <h2>三大关键问题：Amazon 依赖过重，空气炸锅之外还没跑出新增长点。</h2>
         </div>
 
         <div class="grid" style="gap:18px;">
           <article class="card problem-card">
             <div class="problem-side">
               <span class="pill red">P0 · 30 天内启动</span>
-              <h3>Amazon 动销很强，但没有沉淀成跨渠道品牌资产。</h3>
-              <p>COSORI 当前最硬的公开证据仍来自 Amazon：TurboBlaze 的评分、评价量和月销提示最能说明动销。Target、Best Buy 和 DTC 已经在扩，但公开页面还没有把 Amazon 动销转译成“为什么在线下和官网也该买 COSORI”的证据链。</p>
+              <h3>销售太依赖 Amazon，平台流量和规则一变，北美生意会被放大波动。</h3>
+              <p>COSORI 当前最硬的公开证据仍来自 Amazon：TurboBlaze 的评分、评价量和月销提示最能说明动销。Target、Best Buy 和 DTC 已经在扩，但还没有公开 sell-out、评价增长和复购证据证明它们能独立接住增长。</p>
               <div class="severity"><span>严重度</span><strong>82</strong></div>
             </div>
             <div class="problem-main">
               <div class="evidence-mini">
                 <div><b>20K+</b><small>TurboBlaze Amazon 月销提示，最新公开动销信号。E5</small></div>
-                <div><b>+29.0%</b><small>VeSync 2024 非 Amazon 渠道增长。E3</small></div>
+                <div><b>25.5%</b><small>VeSync 集团非 Amazon 渠道收入占比；COSORI 分渠道未披露。E3</small></div>
                 <div><b>Target / Best Buy</b><small>零售触点已出现，但 sell-out 证据不足。E12</small></div>
               </div>
               <div class="impact-flow">
-                <div><b>现象</b><p>最强动销证据集中在 Amazon。</p></div>
-                <div><b>损耗</b><p>DTC 和零售渠道只能承接流量，难沉淀品牌议价。</p></div>
-                <div><b>需要修</b><p>把 Amazon 评论、场景和型号选择转成官网 / 零售导购。</p></div>
+                <div><b>现象</b><p>最强成交证据集中在 Amazon。</p></div>
+                <div><b>损耗</b><p>平台拿走流量、评价和复购入口，品牌自己的用户资产偏薄。</p></div>
+                <div><b>需要修</b><p>把 Amazon 爆款理由转成官网、零售和会员体系可复用的资产。</p></div>
               </div>
               <div class="action-list">
-                <div><b>P0 官网</b><p>建立“Amazon best seller 为什么值得在官网买”的导购页，承接型号选择、保修和配件。</p></div>
+                <div><b>P0 官网</b><p>建立“离开 Amazon 也为什么买 COSORI”的型号比较页、保修页和配件页。</p></div>
                 <div><b>P0 零售</b><p>Target / Best Buy 页面同步 Amazon 级别的评价证据、使用场景和型号差异。</p></div>
-                <div><b>P1 数据</b><p>追踪非 Amazon 评价增长、退货原因和转化率，验证渠道外溢不是只铺货。</p></div>
+                <div><b>P0 用户池</b><p>用产品注册、延保、食谱包和配件优惠把 Amazon 买家导回自有触点。</p></div>
               </div>
             </div>
           </article>
@@ -810,25 +823,25 @@
           <article class="card problem-card">
             <div class="problem-side">
               <span class="pill amber">P1 · 60 天内治理</span>
-              <h3>历史召回的当前影响要被时间加权，不能当成主矛盾反复讲。</h3>
-              <p>2023-02-23 的召回距本报告日期约 40 个月，覆盖的是 2018-2022 年销售的旧型号。它对 2026 的影响不是即时安全事故，而是搜索残留、渠道审查和高端安全材料解释。这个问题要管，但不应盖过 Amazon 依赖和第二曲线不足。</p>
-              <div class="severity"><span>严重度</span><strong>66</strong></div>
+              <h3>卖完一台空气炸锅之后，COSORI 还没有把用户留到自己手里。</h3>
+              <p>空气炸锅是高频厨房工具，但 COSORI 的公开触点更像一次性交易：Amazon 完成成交，官网负责展示，会员、配件、食谱、保修和换新没有形成强运营路径。这会让品牌很难从爆款动销进入 LTV 管理。</p>
+              <div class="severity"><span>严重度</span><strong>69</strong></div>
             </div>
             <div class="problem-main">
               <div class="evidence-mini">
-                <div><b>2023-02-23</b><small>CPSC 召回日期，距本报告约 40 个月。E6</small></div>
-                <div><b>2018-2022</b><small>召回型号销售期，和 2026 新品要区隔。E6</small></div>
-                <div><b>53 / 100</b><small>当前加权影响：中等残留风险，不是即时事故。</small></div>
+                <div><b>48 / 100</b><small>订阅与会员体系评分，当前不达标。</small></div>
+                <div><b>Amazon</b><small>成交和评论集中在第三方平台。E5</small></div>
+                <div><b>VOC</b><small>售后/替换投诉仍会影响信任治理。E17, E18</small></div>
               </div>
               <div class="impact-flow">
-                <div><b>现象</b><p>旧召回页面仍可被搜索到。</p></div>
-                <div><b>损耗</b><p>高端用户会追问新旧型号、安全材料和保修。</p></div>
-                <div><b>需要修</b><p>用一页讲清旧型号边界和新产品安全证据。</p></div>
+                <div><b>现象</b><p>用户购买后主要停留在平台订单里。</p></div>
+                <div><b>损耗</b><p>交叉购买、配件、换新和高端升级很难系统化。</p></div>
+                <div><b>需要修</b><p>把产品注册、延保、食谱和配件做成买后运营主线。</p></div>
               </div>
               <div class="action-list">
-                <div><b>P1 页面</b><p>新增 Safety &amp; Materials 页面，重点是新旧型号区隔，不把旧召回放大成主叙事。</p></div>
-                <div><b>P1 PDP</b><p>Iconic / TurboBlaze 首屏补材料、保修、认证和使用边界。</p></div>
-                <div><b>P2 搜索</b><p>用 FAQ 和支持内容承接 recall 搜索，避免用户只看到监管页。</p></div>
+                <div><b>P1 注册</b><p>把延保、食谱包和配件券绑定产品注册，降低 Amazon 买家流失。</p></div>
+                <div><b>P1 复购</b><p>围绕 liners、配件、清洁、换新和食谱做轻会员，不先做复杂积分。</p></div>
+                <div><b>P1 售后</b><p>用清晰 SLA、召回边界和保修入口降低 BBB / Reddit 类投诉扩散。</p></div>
               </div>
             </div>
           </article>
@@ -860,21 +873,27 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">05 · 11-Dimension Scores</span>
-          <h2>11 维评分：电商强，会员复购和风险治理是低分项。</h2>
+          <h2>11 维评分：先治平台依赖，再治第二曲线，最后补会员复购。</h2>
+          <p class="lead">这 11 项不是按分数高低随便排。治理顺序按“对增长的影响 × 当前拖累 × 是否能 90 天内启动”排序：先处理 Amazon 依赖这种 P0 经营风险，再重排空气炸锅与第二品线，最后把买后运营、售后和会员补上。</p>
         </div>
         <div class="card">
+          <div class="score-logic">
+            <div><b>第一层：能不能继续卖</b><p>电商、产品与品类、流量转化决定短期收入。COSORI 这里不差，问题是太集中在 Amazon 和空气炸锅。</p></div>
+            <div><b>第二层：增长会不会失控</b><p>品牌、Marketing、竞品和风险决定预算会不会投错。当前要防止把单品爆款误判成厨房生态。</p></div>
+            <div><b>第三层：用户能不能留下</b><p>客服售后、会员复购、人群洞察决定 LTV。这里分低，所以路线图要从注册、延保、配件和食谱开始。</p></div>
+          </div>
           <div class="score-grid">
-            <div class="score-line"><b>电商板块</b><div class="bar green-tone"><i style="--w:82%;"></i></div><strong>82</strong><span class="pill green">健康</span></div>
+            <div class="score-line"><b>电商板块</b><div class="bar green-tone"><i style="--w:82%;"></i></div><strong>82</strong><span class="pill green">做得好</span></div>
             <div class="score-line"><b>品牌板块</b><div class="bar amber-tone"><i style="--w:73%;"></i></div><strong>73</strong><span class="pill amber">有硬伤</span></div>
-            <div class="score-line"><b>Marketing 板块</b><div class="bar amber-tone"><i style="--w:68%;"></i></div><strong>68</strong><span class="pill amber">拖后腿</span></div>
-            <div class="score-line"><b>产品与品类</b><div class="bar green-tone"><i style="--w:79%;"></i></div><strong>79</strong><span class="pill green">良好</span></div>
-            <div class="score-line"><b>流量与转化漏斗</b><div class="bar amber-tone"><i style="--w:72%;"></i></div><strong>72</strong><span class="pill amber">待治理</span></div>
-            <div class="score-line"><b>用户与人群洞察</b><div class="bar green-tone"><i style="--w:76%;"></i></div><strong>76</strong><span class="pill green">良好</span></div>
-            <div class="score-line"><b>客服与售后</b><div class="bar amber-tone"><i style="--w:66%;"></i></div><strong>66</strong><span class="pill amber">信任不足</span></div>
-            <div class="score-line"><b>订阅与会员体系</b><div class="bar red-tone"><i style="--w:48%;"></i></div><strong>48</strong><span class="pill red">不达标</span></div>
-            <div class="score-line"><b>竞品对比</b><div class="bar amber-tone"><i style="--w:70%;"></i></div><strong>70</strong><span class="pill amber">需主动进攻</span></div>
-            <div class="score-line"><b>增长机会与战略</b><div class="bar green-tone"><i style="--w:78%;"></i></div><strong>78</strong><span class="pill green">机会清晰</span></div>
-            <div class="score-line"><b>风险与预警</b><div class="bar amber-tone"><i style="--w:62%;"></i></div><strong>62</strong><span class="pill amber">历史残留</span></div>
+            <div class="score-line"><b>Marketing 板块</b><div class="bar amber-tone"><i style="--w:68%;"></i></div><strong>68</strong><span class="pill amber">勉强及格</span></div>
+            <div class="score-line"><b>产品与品类</b><div class="bar green-tone"><i style="--w:79%;"></i></div><strong>79</strong><span class="pill green">做得好但散</span></div>
+            <div class="score-line"><b>流量与转化漏斗</b><div class="bar amber-tone"><i style="--w:72%;"></i></div><strong>72</strong><span class="pill amber">有硬伤</span></div>
+            <div class="score-line"><b>用户与人群洞察</b><div class="bar green-tone"><i style="--w:76%;"></i></div><strong>76</strong><span class="pill green">够用</span></div>
+            <div class="score-line"><b>客服与售后</b><div class="bar amber-tone"><i style="--w:62%;"></i></div><strong>62</strong><span class="pill amber">拖后腿</span></div>
+            <div class="score-line"><b>订阅与会员体系</b><div class="bar red-tone"><i style="--w:48%;"></i></div><strong>48</strong><span class="pill red">做得差</span></div>
+            <div class="score-line"><b>竞品对比</b><div class="bar amber-tone"><i style="--w:70%;"></i></div><strong>70</strong><span class="pill amber">不够主动</span></div>
+            <div class="score-line"><b>增长机会与战略</b><div class="bar green-tone"><i style="--w:78%;"></i></div><strong>78</strong><span class="pill green">方向清楚</span></div>
+            <div class="score-line"><b>风险与预警</b><div class="bar red-tone"><i style="--w:58%;"></i></div><strong>58</strong><span class="pill red">平台集中</span></div>
           </div>
         </div>
       </div>
@@ -884,13 +903,13 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">06 · 90 / 180 Days</span>
-          <h2>路线图：先把 Amazon 动销外溢成渠道资产，再补第二品线和高端信任。</h2>
+          <h2>路线图：先降 Amazon 依赖，再证明第二曲线，最后做买后运营。</h2>
         </div>
         <div class="roadmap">
-          <div class="road"><b>0-30 天</b><div><h3>Amazon 动销外溢页</h3><p>把 Amazon 上的评价、月销、使用场景和型号差异转译到官网、Target、Best Buy：让用户离开 Amazon 也能理解为什么买 COSORI。</p></div><span class="pill red">P0 · 渠道资产</span></div>
+          <div class="road"><b>0-30 天</b><div><h3>降低 Amazon 单一平台依赖</h3><p>把 Amazon 上的评价、月销、使用场景和型号差异转译到官网、Target、Best Buy，并用产品注册和延保把平台买家导回自有触点。</p></div><span class="pill red">P0 · 平台风险</span></div>
           <div class="road"><b>31-60 天</b><div><h3>空气炸锅导购矩阵和第二品线角色重排</h3><p>用人群、容量、场景和价格带重写导购：TurboBlaze 拉新，Iconic 高端升级，Dual Basket 家庭；壶和烘干机只承担利润和专业能力证明，不假装主增长。</p></div><span class="pill amber">P0 · 产品架构</span></div>
-          <div class="road"><b>61-90 天</b><div><h3>高端价格与历史残留风险解释</h3><p>完成 Safety &amp; Materials 中心页，讲清 2023 旧型号召回边界、新型号材料 / 保修证据、Iconic 高端购买理由模块。</p></div><span class="pill amber">P1 · 信任</span></div>
-          <div class="road"><b>91-180 天</b><div><h3>厨房生态和买后运营</h3><p>用 recipes、配件、保养、换新和交叉购买建立轻会员机制。先做空气炸锅用户的复购和升级，不要上来做复杂会员体系。</p></div><span class="pill green">P1 · LTV</span></div>
+          <div class="road"><b>61-90 天</b><div><h3>高端价格与 VOC 信任解释</h3><p>完成 Safety &amp; Materials 中心页，讲清 2023 旧型号召回边界、新型号材料 / 保修证据、Iconic 高端购买理由模块；不要把召回当主叙事，但必须回答还在问的人。</p></div><span class="pill amber">P1 · 信任</span></div>
+          <div class="road"><b>91-180 天</b><div><h3>买后运营和轻会员</h3><p>用 recipes、配件、保养、换新、产品注册和交叉购买建立轻会员机制。先做空气炸锅用户的复购和升级，不要上来做复杂会员体系。</p></div><span class="pill green">P1 · LTV</span></div>
         </div>
       </div>
     </section>
@@ -899,12 +918,12 @@
       <div class="inner">
         <div class="section-head">
           <span class="tagline">07 · Risks &amp; Data Gaps</span>
-          <h2>风险和数据缺口：报告结论能成立，但不能把旧召回当成当前同权重风险。</h2>
+          <h2>风险和数据缺口：最大风险是平台集中，召回只按 VOC 残留处理。</h2>
         </div>
         <div class="grid three">
-          <div class="card"><span class="pill amber">时间加权</span><h3>2023 召回：当前影响 53/100</h3><p>CPSC 召回日期为 2023-02-23，距本报告约 40 个月。它对 2026 的影响不应等同于即时事故；即时安全风险权重较低，搜索残留、高端价格信任和渠道审查仍需治理。E6, E7</p></div>
+          <div class="card"><span class="pill red">P0 风险</span><h3>单一平台依赖</h3><p>公开证据最强的成交、评价和月销都集中在 Amazon。若平台流量、广告成本、佣金、评论规则或竞品投放变化，COSORI 北美增长会被直接放大波动。E3, E5</p></div>
+          <div class="card"><span class="pill amber">VOC 后降权</span><h3>2023 召回：当前影响 38/100</h3><p>CPSC 召回日期为 2023-02-23，距本报告约 40 个月。2026 Amazon 近评主要在讲性能、清洁和易用；BBB / Reddit 仍有替换和售后投诉，所以召回是低-中等尾部风险，不是当前主矛盾。E6, E16, E17, E18</p></div>
           <div class="card"><span class="pill amber">数据缺口</span><h3>北美品牌级 GMV</h3><p>VeSync 披露品牌收入和区域收入，但未披露 COSORI 北美分品牌收入。本报告已补官网、Amazon、Target、Best Buy、市场报告和监管数据，仍建议用后台订单、广告后台、零售 sell-out 复核。</p></div>
-          <div class="card"><span class="pill amber">风险</span><h3>关税与成本</h3><p>VeSync 年报提示美国对华进口关税不确定性可能提高成本。COSORI 若走高端化，需要用材料和保修解释价格，而不是单纯涨价。E4</p></div>
         </div>
       </div>
     </section>
@@ -934,6 +953,9 @@
               <tr><td>E13</td><td><a href="https://www.amazon.com/stores/Cosori/page/9496AE5E-EC30-4021-BF14-17357946F3FA" target="_blank" rel="noreferrer">Amazon COSORI Electric Kettles</a></td><td>2026-06-13</td><td>Amazon 店铺显示 COSORI 电热水壶 20K+ bought in past month；Best Sellers 页面显示 COSORI 电热水壶排名靠前。</td><td>电热水壶动销与品类证明。</td><td>中</td></tr>
               <tr><td>E14</td><td><a href="https://tradingeconomics.com/china/currency" target="_blank" rel="noreferrer">Trading Economics USD/CNY</a></td><td>2026-06-13</td><td>USD/CNY 2026-06-12 为 6.7634，并于 2026-06-13 更新。</td><td>美元 / 人民币换算。</td><td>高</td></tr>
               <tr><td>E15</td><td><a href="https://www.bonappetit.com/story/best-air-fryers-reviewed" target="_blank" rel="noreferrer">媒体评测公开样本</a></td><td>2026-06-13</td><td>2026 年评测媒体继续把 COSORI TurboBlaze 放在高性价比、高性能、易清洁的讨论中。</td><td>卖点匹配和第三方背书。</td><td>中</td></tr>
+              <tr><td>E16</td><td><a href="https://www.amazon.com/TurboBlaze-Premium-Ceramic-Coating-90%C2%B0-450%C2%B0F/dp/B0C33CHG99" target="_blank" rel="noreferrer">Amazon TurboBlaze 近评 VOC</a></td><td>2026-06-13</td><td>2026 年 4-5 月美国近评主要提到 powerful、easy to clean、quiet、well made、safe ceramic coating、value for money 等正向体验。</td><td>主品线卖点匹配、召回当前影响降权。</td><td>中高</td></tr>
+              <tr><td>E17</td><td><a href="https://www.bbb.org/us/ca/anaheim/profile/online-shopping/cosori-1126-1000107717/complaints" target="_blank" rel="noreferrer">BBB Cosori Complaints</a></td><td>2026-06-13</td><td>BBB 2025-2026 投诉中仍可见 recall replacement、售后响应和服务处理问题，但样本更多代表负面投诉池，不代表整体消费者比例。</td><td>售后与召回尾部 VOC。</td><td>中</td></tr>
+              <tr><td>E18</td><td><a href="https://www.reddit.com/r/airfryer/comments/1lklv0s/cosori_air_fryer_recall_replacement_this_company/" target="_blank" rel="noreferrer">Reddit recall replacement VOC</a></td><td>2026-06-13</td><td>Reddit 讨论呈现两极：有用户抱怨替换流程，也有用户反馈 replacement 很顺利。说明召回影响仍有尾部声量，但不能直接放大为当前主矛盾。</td><td>历史事件时间加权、VOC 校验。</td><td>中</td></tr>
             </tbody>
           </table>
         </div>
