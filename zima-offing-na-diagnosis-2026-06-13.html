@@ -219,11 +219,28 @@
         linear-gradient(145deg, #111, var(--slate));
       border-color: rgba(255, 255, 255, 0.08);
     }
-    .dark p, .dark small, .dark li { color: #eaf1ee; }
-    .dark .label { color: #cbd8d4; }
     .card h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.16; }
     .card p, .card li { color: var(--body); font-size: 14px; }
     .card small { color: var(--muted); font-size: 12px; }
+    .card.dark h3 { color: #fff; }
+    .card.dark p,
+    .card.dark li,
+    .card.dark small {
+      color: #eaf1ee;
+    }
+    .card.dark .label { color: #cbd8d4; }
+    .card.dark .stage {
+      color: var(--ink);
+      background: rgba(255, 255, 251, 0.92);
+      border-color: rgba(255, 255, 255, 0.66);
+    }
+    .card.dark .stage.active {
+      background: linear-gradient(180deg, #ffffff, #eaf3ef);
+      border-color: rgba(45, 98, 97, 0.42);
+      box-shadow: 0 14px 34px rgba(45, 98, 97, 0.2);
+    }
+    .card.dark .stage strong { color: var(--ink); }
+    .card.dark .stage small { color: var(--muted); }
     .kpi {
       display: grid;
       gap: 8px;
