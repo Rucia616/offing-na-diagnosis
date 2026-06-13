@@ -62,7 +62,6 @@
     }
     .hero-logo { display: inline-flex; margin-bottom: 22px; background: transparent; border: 0; box-shadow: none; }
     .hero-logo img { width: clamp(164px, 15vw, 232px); height: auto; display: block; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     h1 { max-width: 860px; font-size: clamp(54px, 7.6vw, 96px); line-height: .96; font-weight: 830; }
     .hero-sub { max-width: 1010px; margin-top: 22px; color: var(--body); font-size: clamp(16px, 2vw, 20px); }
     .hero-score {
@@ -250,7 +249,7 @@
   <header class="hero">
     <div class="inner">
       <div class="hero-logo"><img src="assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div>
-      <h1><span class="sr-only">Ulike </span>北美业务诊断</h1>
+      <h1 aria-label="Ulike 北美业务诊断">北美业务诊断</h1>
       <p class="hero-sub">Ulike 在北美已经把 Air 10（家用 IPL 脱毛仪）做成主增长入口，但增长仍然压在 IPL 主线；ReGlow（LED 光疗面罩）和 JMOON（家用护肤仪器）还没有用公开动销证明能接住第二增长曲线。下一步不是继续堆“更强技术”，而是把适用人群、安全边界、渠道价格和第二品线证据做成一套经营系统。</p>
 
       <div class="hero-score">
