@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COSORI · 远汐 Offing 免费北美业务诊断 · 2026-06-13</title>
+  <style>
+    :root {
+      --paper: #f5f5f7;
+      --top: #fbfbfd;
+      --surface: #ffffff;
+      --ink: #101413;
+      --body: #293331;
+      --muted: #66716e;
+      --line: #d7d9dc;
+      --hairline: rgba(16, 20, 19, 0.08);
+      --sea: #2d6261;
+      --slate: #13211f;
+      --brand: #1b1b1e;
+      --brand-soft: #f1f1f2;
+      --red: #d70015;
+      --amber: #9a5b00;
+      --green: #157a38;
+      --blue: #0057ff;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.055);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.62;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, var(--top) 0%, var(--paper) 40%, var(--paper) 100%);
+    }
+    a { color: var(--sea); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3, h4 { margin: 0; letter-spacing: 0; }
+    p { margin: 0; }
+    ul { margin: 0; padding-left: 18px; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 32px;
+      background: rgba(251, 251, 253, 0.84);
+      border-bottom: 1px solid var(--hairline);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand { font-weight: 780; line-height: 1.15; }
+    .nav-brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 650; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
+
+    .inner { width: min(1180px, 100%); margin: 0 auto; }
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      align-items: center;
+      padding: 72px 48px 40px;
+    }
+    .hero-logo {
+      display: inline-flex;
+      margin-bottom: 20px;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    .hero-logo img { width: clamp(150px, 14vw, 212px); height: auto; display: block; }
+    h1 {
+      max-width: 860px;
+      font-size: clamp(54px, 7.8vw, 96px);
+      line-height: 0.96;
+      font-weight: 830;
+    }
+    .hero-sub {
+      max-width: 920px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: clamp(16px, 2vw, 20px);
+    }
+    .hero-score {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      max-width: 1020px;
+      margin-top: 28px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero-total {
+      padding: 24px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(45, 98, 97, 0.12), transparent 34%),
+        linear-gradient(145deg, #101413, var(--slate));
+    }
+    .label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .hero-total .label { color: #dfe9e5; }
+    .star-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+    .stars {
+      position: relative;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.42);
+      font-size: clamp(32px, 3.6vw, 44px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .stars::before {
+      content: "★★★★★";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 72%;
+      overflow: hidden;
+      white-space: nowrap;
+      color: #f0f7f4;
+    }
+    .score-number { font-size: 36px; font-weight: 840; line-height: 1; }
+    .score-note {
+      margin-top: 14px;
+      color: #eaf1ee;
+      font-size: 12px;
+      line-height: 1.42;
+    }
+    .score-formula { display: grid; gap: 6px; margin-top: 14px; font-size: 12px; line-height: 1.35; }
+    .formula-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      color: #dfe9e5;
+    }
+    .formula-row strong { color: #fff; font-variant-numeric: tabular-nums; }
+    .formula-total {
+      margin-top: 3px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 780;
+    }
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+    .subscore {
+      position: relative;
+      min-height: 170px;
+      padding: 22px 20px;
+      background: var(--surface);
+    }
+    .subscore::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      border-radius: 0 0 999px 999px;
+      background: var(--tone);
+    }
+    .subscore strong {
+      display: block;
+      color: var(--tone);
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 840;
+      font-variant-numeric: tabular-nums;
+    }
+    .subscore span { display: block; margin-top: 10px; font-size: 14px; font-weight: 760; }
+    .subscore small { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.42; }
+    .health { --tone: var(--sea); }
+    .opportunity { --tone: var(--blue); }
+    .fatality { --tone: var(--red); }
+
+    section { padding: 82px 48px; scroll-margin-top: 76px; }
+    .section-head { display: grid; gap: 10px; margin-bottom: 26px; }
+    .tagline { color: var(--sea); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    h2 { max-width: 960px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.06; font-weight: 820; }
+    .lead { max-width: 920px; color: var(--muted); font-size: 16px; }
+    .grid { display: grid; gap: 16px; }
+    .two { grid-template-columns: 1.04fr 0.96fr; }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      min-width: 0;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.16; }
+    .card p, .card li { color: var(--body); font-size: 14px; }
+    .card small { color: var(--muted); font-size: 12px; }
+    .dark {
+      color: #fff;
+      background:
+        radial-gradient(circle at 86% 10%, rgba(45, 98, 97, 0.12), transparent 34%),
+        linear-gradient(145deg, #101413, var(--slate));
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    .dark h3, .dark .label { color: #fff; }
+    .dark p, .dark li, .dark small { color: #eaf1ee; }
+    .dark .stage,
+    .dark .stage-current {
+      color: var(--ink);
+    }
+    .dark .stage strong,
+    .dark .stage-current strong {
+      color: var(--ink);
+    }
+    .dark .stage small,
+    .dark .stage-current small,
+    .dark .stage p,
+    .dark .stage-current p {
+      color: var(--muted);
+    }
+    .dark .stage-current span {
+      color: var(--sea);
+    }
+
+    .stage-verdict {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 28px;
+      align-items: center;
+      min-height: 250px;
+    }
+    .stage-current {
+      align-self: stretch;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+      text-align: center;
+    }
+    .stage-current span { display: block; color: var(--sea); font-size: 13px; font-weight: 800; }
+    .stage-current strong { display: block; margin-top: 8px; font-size: 46px; line-height: 1; }
+    .stage-path {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .stage {
+      padding: 16px;
+      min-height: 120px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .stage.active {
+      border-color: var(--sea);
+      background: #f7fbfa;
+      box-shadow: inset 0 0 0 2px rgba(45, 98, 97, 0.12);
+    }
+    .stage strong { display: block; font-size: 20px; line-height: 1.12; }
+    .stage small { display: block; margin-top: 8px; color: var(--muted); }
+    .gate-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+    .gate { padding: 14px; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+    .gate strong { display: block; font-size: 13px; }
+    .gate span { display: inline-block; margin-top: 8px; color: var(--tone); font-size: 12px; font-weight: 780; }
+
+    .metric { display: grid; gap: 7px; }
+    .metric strong { font-size: 32px; line-height: 1; font-weight: 840; font-variant-numeric: tabular-nums; }
+    .metric small { color: var(--muted); }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: var(--brand-soft);
+      color: var(--body);
+      font-size: 12px;
+      font-weight: 780;
+    }
+    .pill.green { color: var(--green); background: rgba(21, 122, 56, 0.09); }
+    .pill.amber { color: var(--amber); background: rgba(154, 91, 0, 0.09); }
+    .pill.red { color: var(--red); background: rgba(215, 0, 21, 0.08); }
+    .bar { height: 8px; overflow: hidden; border-radius: 999px; background: #eceeef; }
+    .bar > i { display: block; width: var(--w); height: 100%; border-radius: inherit; background: var(--tone); }
+    .green-tone { --tone: var(--green); }
+    .amber-tone { --tone: var(--amber); }
+    .red-tone { --tone: var(--red); }
+    .sea-tone { --tone: var(--sea); }
+
+    .ceiling-card {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .product-img {
+      aspect-ratio: 1;
+      width: 94px;
+      border-radius: var(--radius);
+      background: #f3f4f5;
+      overflow: hidden;
+    }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ceiling-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+    .mini-stat { padding-top: 10px; border-top: 1px solid var(--line); }
+    .mini-stat b { display: block; font-size: 15px; }
+    .mini-stat small { color: var(--muted); }
+
+    .match-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.05fr 210px 1.15fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+    .match-row + .match-row { margin-top: 10px; }
+    .weight {
+      display: inline-flex;
+      margin-bottom: 8px;
+      color: var(--sea);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .match-score strong { display: block; color: var(--tone); font-size: 28px; line-height: 1; }
+    .match-score .bar { margin-top: 9px; }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: 1.1fr repeat(3, 0.85fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+    .summary-strip > div { padding: 22px; background: #fff; }
+    .summary-strip .dark { background: linear-gradient(145deg, #101413, var(--slate)); }
+
+    .block-card { display: grid; gap: 18px; }
+    .block-top {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .block-score {
+      width: 118px;
+      height: 118px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--score-bg);
+      border: 1px solid var(--score-line);
+      color: var(--score);
+    }
+    .block-score strong { font-size: 34px; line-height: 1; }
+    .block-score small { display: block; margin-top: 4px; color: currentColor; opacity: 0.82; text-align: center; }
+    .status-green { --score: var(--green); --score-bg: rgba(21,122,56,0.09); --score-line: rgba(21,122,56,0.22); }
+    .status-amber { --score: var(--amber); --score-bg: rgba(154,91,0,0.09); --score-line: rgba(154,91,0,0.25); }
+    .status-red { --score: var(--red); --score-bg: rgba(215,0,21,0.08); --score-line: rgba(215,0,21,0.22); }
+    .good-bad { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .good-bad h4 { margin-bottom: 8px; font-size: 13px; color: var(--muted); }
+    .good-bad li { margin-bottom: 8px; }
+
+    .problem-card {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1px;
+      overflow: hidden;
+      padding: 0;
+      background: var(--line);
+    }
+    .problem-side { padding: 24px; background: linear-gradient(145deg, #101413, var(--slate)); color: #fff; }
+    .problem-side p, .problem-side small, .problem-side li { color: #eaf1ee; }
+    .problem-main { display: grid; gap: 16px; padding: 24px; background: #fff; }
+    .severity {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .severity strong { font-size: 34px; line-height: 1; }
+    .evidence-mini { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .evidence-mini div { padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: #fafafa; }
+    .evidence-mini b { display: block; font-size: 14px; }
+    .evidence-mini small { color: var(--muted); }
+    .impact-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .impact-flow div { padding: 12px; border-radius: var(--radius); background: #f7f8f8; border: 1px solid var(--line); }
+    .action-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .action-list div { padding: 12px; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+
+    .score-grid { display: grid; gap: 10px; }
+    .score-line {
+      display: grid;
+      grid-template-columns: 190px 1fr 64px 84px;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .score-line:last-child { border-bottom: 0; }
+
+    .roadmap { position: relative; display: grid; gap: 12px; }
+    .road { display: grid; grid-template-columns: 92px 1fr 180px; gap: 16px; align-items: start; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+    .road b { color: var(--sea); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+    table { width: 100%; min-width: 880px; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    th { background: #f7f8f8; color: var(--body); font-size: 12px; }
+    tr:last-child td { border-bottom: 0; }
+    footer {
+      padding: 46px 48px;
+      color: #eaf1ee;
+      background: var(--slate);
+    }
+    footer p, footer small, footer a { color: #eaf1ee; }
+
+    @media (max-width: 900px) {
+      nav { padding: 12px 18px; }
+      .nav-links { display: none; }
+      .hero, section { padding-left: 20px; padding-right: 20px; }
+      .hero-score, .two, .three, .four, .stage-verdict, .summary-strip, .problem-card { grid-template-columns: 1fr; }
+      .subscores, .stage-path, .gate-grid, .ceiling-stats, .good-bad, .evidence-mini, .impact-flow, .action-list { grid-template-columns: 1fr; }
+      .match-row { grid-template-columns: 1fr; }
+      .block-top { grid-template-columns: 1fr; }
+      .block-score { width: 100%; height: auto; min-height: 92px; }
+      .score-line { grid-template-columns: 1fr; gap: 8px; }
+      .road { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(48px, 16vw, 68px); }
+    }
+
+    @media print {
+      nav { display: none; }
+      body { background: #fff; }
+      section, .hero { padding: 36px 0; break-inside: avoid; }
+      .card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">远汐 Offing<small>免费北美业务诊断</small></div>
+    <div class="nav-links">
+      <a href="#stage">阶段</a>
+      <a href="#ceiling">天花板</a>
+      <a href="#match">卖点匹配</a>
+      <a href="#summary">摘要</a>
+      <a href="#blocks">三大板块</a>
+      <a href="#problems">关键问题</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="inner">
+        <div class="hero-logo">
+          <img src="assets/brand-logos/cosori-logo-official.svg" alt="COSORI logo" />
+        </div>
+        <h1 aria-hidden="true">北美业务诊断</h1>
+        <h1 class="visually-hidden">COSORI 北美业务诊断</h1>
+        <p class="hero-sub">COSORI 北美现在的核心矛盾不是有没有销量，而是已经具备空气炸锅（主力拉新品类）的规模信号，却还没有把召回后的安全信任、Iconic（高端不锈钢智能空气炸锅）的价格理由和非 Amazon 货架承接变成同一套经营系统。</p>
+
+        <div class="hero-score">
+          <div class="hero-total">
+            <span class="label">北美业务情况总分</span>
+            <div class="star-row">
+              <span class="stars">★★★★★</span>
+              <span class="score-number">3.6 / 5</span>
+            </div>
+            <p class="score-note">数据抓取日期：2026-06-13。估算口径为公开零售与公司披露校准，不等同于财务审计或品牌后台销售额。</p>
+            <div class="score-formula" aria-label="总分加权拆解">
+              <div class="formula-row"><span>业务健康度 76 × 45%</span><strong>34.2</strong></div>
+              <div class="formula-row"><span>业务机会分 80 × 35%</span><strong>28.0</strong></div>
+              <div class="formula-row"><span>安全余量 (100 - 问题致命度 54) × 20%</span><strong>9.2</strong></div>
+              <div class="formula-total">总分 71.4 / 100 = 3.6 / 5</div>
+            </div>
+          </div>
+          <div class="subscores">
+            <div class="subscore health"><strong>76</strong><span>业务健康度</span><small>Amazon 动销、渠道覆盖和产品线规模成立，但 COSORI 2024 品牌收入同比下滑，需要看成成熟品牌的治理问题。</small></div>
+            <div class="subscore opportunity"><strong>80</strong><span>业务机会分</span><small>空气炸锅仍有升级换代，电热水壶和食物烘干机已有 Amazon 第一信号，机会来自品线架构和信任前置。</small></div>
+            <div class="subscore fatality"><strong>54</strong><span>问题致命度</span><small>越高越危险。召回历史、价格升级理由和非 Amazon 承接若不修，会压低高端转化和渠道议价。</small></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="stage">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">00 · Stage First</span>
+          <h2>北美已经跨过单品验证，下一关是品类领导的经营系统。</h2>
+          <p class="lead">先判断阶段，再判断动作。COSORI 不是 0-1，也不是刚进 10-100：公开证据显示它在北美已有大规模动销和渠道覆盖，但目前还没有完全达到“多品线、可信任、跨渠道一致”的品类领导标准。</p>
+        </div>
+
+        <div class="card dark stage-verdict">
+          <div>
+            <span class="label">当前阶段判断</span>
+            <h3>空气炸锅已经具备品类领导信号，厨房生态还没有完全跑稳。</h3>
+            <p>这个阶段不该继续只按 Amazon 爆款思路扩 SKU，而要把产品线角色、渠道证据、召回后安全信任和高端价格理由拆开管理。否则销量还在，但品牌会被锁在“好卖的空气炸锅品牌”，很难进入“高信任厨房小家电品牌”。</p>
+            <div class="stage-path">
+              <div class="stage"><strong>0-1</strong><small>产品需求验证</small></div>
+              <div class="stage"><strong>1-10</strong><small>单品规模化</small></div>
+              <div class="stage"><strong>10-100</strong><small>经营系统化</small></div>
+              <div class="stage active"><strong>100+ 初期</strong><small>品类领导治理</small></div>
+            </div>
+          </div>
+          <div class="stage-current">
+            <span>当前阶段</span>
+            <strong>100+ 初期</strong>
+            <small>有规模，但治理要跟上</small>
+          </div>
+        </div>
+
+        <div class="grid three" style="margin-top:16px;">
+          <div class="card metric">
+            <span class="label">公开最新品牌收入</span>
+            <strong>$165.0M</strong>
+            <p>VeSync 2024 年报披露 COSORI 品牌收入为 1.65048 亿美元，折合约 ¥11.16 亿元；2023 年为 1.95764 亿美元，说明品牌有规模，但近一年厨房线承压。E3, E14</p>
+          </div>
+          <div class="card metric">
+            <span class="label">北美销售规模校准</span>
+            <strong>$120M-$220M</strong>
+            <p>北美零售 GMV 估算约 ¥8.12 亿-¥14.88 亿元。该区间由 COSORI 品牌收入、VeSync 北美收入占比、Amazon 月销下限与 Target / Best Buy 铺货信号交叉校准。E3, E5, E12</p>
+          </div>
+          <div class="card metric">
+            <span class="label">阶段动作适配度</span>
+            <strong>部分符合</strong>
+            <p>新品高端化、Target / Best Buy 拓展和 TikTok retail 都符合 100+ 初期动作；安全信任治理、品线角色和非 Amazon 证据还没有达到这个阶段该有的清晰度。E3, E6, E9</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <span class="label">成熟度闸口</span>
+          <div class="gate-grid">
+            <div class="gate green-tone"><strong>产品验证</strong><span>已通过</span><p>TurboBlaze 在 Amazon 有高评分和月销提示，空气炸锅品类存在明确需求。E5</p></div>
+            <div class="gate green-tone"><strong>渠道验证</strong><span>已通过</span><p>Amazon 是基本盘，Target / Best Buy / 官网也有铺货与新品承接。E2, E12</p></div>
+            <div class="gate amber-tone"><strong>信任资产</strong><span>待治理</span><p>召回处理存在官方机制，但安全信任没有被系统前置成购买理由。E6-E8</p></div>
+            <div class="gate amber-tone"><strong>经营系统</strong><span>尚未成熟</span><p>空气炸锅、壶、烘干机、烤箱各自能讲，但还没有形成清晰的厨房生态层级。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ceiling">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">00A · Product-Line Ceiling</span>
+          <h2>北美市场天花板要按品线拆：空气炸锅是主战场，壶和烘干机是利润与货架证明。</h2>
+          <p class="lead">COSORI 不能只用“小厨房电器市场很大”来证明机会。真正该看的是每条品线承担什么角色：拉新、利润、复购、零售货架，还是品牌升级。</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card ceiling-card">
+            <div class="product-img"><img src="https://cosori.com/cdn/shop/files/CGTM_2303_CAF-DC601-KUS_WA1_01_Front_v2_1_43fa6802-67e3-4603-9ad1-54c54f2e5a8a.png?v=1762457880" alt="COSORI TurboBlaze air fryer" /></div>
+            <div>
+              <span class="pill green">P0 · 主增长入口</span>
+              <h3>空气炸锅 / Air Fryer</h3>
+              <p>北美空气炸锅大盘约 $400M-$520M；COSORI 北美空气炸锅零售 GMV 估算 $80M-$150M，份额约 15%-35%。主力不是验证需求，而是守住“安全 + 快速 + 易清洁”的购买理由。E5, E10</p>
+              <div class="ceiling-stats">
+                <div class="mini-stat"><b>$400M-$520M</b><small>北美市场规模估算</small></div>
+                <div class="mini-stat"><b>$80M-$150M</b><small>COSORI 当前 GMV 估算</small></div>
+                <div class="mini-stat"><b>中高</b><small>置信度</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="card ceiling-card">
+            <div class="product-img"><img src="https://cosori.com/cdn/shop/files/blackkettle.png?v=1777275030" alt="COSORI electric kettle" /></div>
+            <div>
+              <span class="pill amber">P1 · 利润与货架证明</span>
+              <h3>电热水壶 / Electric Kettle</h3>
+              <p>美国电热水壶是低集中度、低增速但高搜索的成熟小品类。COSORI 有 Amazon 品类第一和 20K+ 月销提示，但官网与品类叙事没有把“无塑料接触、易清洁、安全断电”打成统一信任资产。E4, E11, E13</p>
+              <div class="ceiling-stats">
+                <div class="mini-stat"><b>$250M-$500M</b><small>美国规模方向性估算</small></div>
+                <div class="mini-stat"><b>$25M-$55M</b><small>COSORI 当前 GMV 估算</small></div>
+                <div class="mini-stat"><b>中</b><small>置信度</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="card ceiling-card">
+            <div class="product-img"><img src="https://cosori.com/cdn/shop/products/01.01_OA1_CP267-FD_Silver_03.png?v=1762457668" alt="COSORI food dehydrator" /></div>
+            <div>
+              <span class="pill amber">P1 · 小盘高份额</span>
+              <h3>食物烘干机 / Food Dehydrator</h3>
+              <p>这是小盘品类，但 COSORI 在美国 Amazon 有长期第一信号。它不应承担主增长入口，更适合做专业厨房能力证明、利润 SKU 和内容流量入口。E1, E4</p>
+              <div class="ceiling-stats">
+                <div class="mini-stat"><b>$80M-$170M</b><small>北美规模方向性估算</small></div>
+                <div class="mini-stat"><b>$10M-$25M</b><small>COSORI 当前 GMV 估算</small></div>
+                <div class="mini-stat"><b>中</b><small>置信度</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="card ceiling-card">
+            <div class="product-img"><img src="https://cosori.com/cdn/shop/products/13-quart-air-fryer-front-view_0faddeed-97f5-4638-8bb4-8d1269bab778.png?v=1762457652" alt="COSORI air fryer oven" /></div>
+            <div>
+              <span class="pill amber">P2 · 需要重做角色</span>
+              <h3>烤箱 / 多功能锅 / 咖啡</h3>
+              <p>这些品线所在大盘不小，但 COSORI 当前公开证据远弱于 Ninja、Breville、Instant 等对手。继续铺 SKU 可以增加货架宽度，但不等于建立厨房生态，必须先定义哪些 SKU 是利润、哪些是入口、哪些只是长尾补位。E1, E3</p>
+              <div class="ceiling-stats">
+                <div class="mini-stat"><b>$1.2B+</b><small>相关小家电组合盘</small></div>
+                <div class="mini-stat"><b>$15M-$40M</b><small>COSORI 当前 GMV 估算</small></div>
+                <div class="mini-stat"><b>中低</b><small>需内部 sell-out 复核</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="match">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">00B · Selling Point Fit</span>
+          <h2>卖点匹配度 74/100：性能和价格接得住，第一优先级的安全信任还不够前置。</h2>
+          <p class="lead">下表按北美空气炸锅 / 小厨房电器购买决策的公开样本关注权重排序。权重来自 Amazon 标题与评论、评测媒体、竞品页面、召回页面和行业报告的方向性编码，不代表统计抽样。</p>
+        </div>
+
+        <div class="match-row">
+          <div><span class="weight">公开样本关注权重 30%</span><h3>安全、材料、召回、保修</h3><p>北美用户第一关不是“能不能炸”，而是放在厨房里是否安全、涂层是否放心、旧召回是否影响新型号。</p></div>
+          <div><b>COSORI 当前卖点</b><p>Iconic 讲 PFAS-free / BPA-free、不锈钢、五年保修；官网有召回页和产品注册入口。E8, E9</p></div>
+          <div class="match-score amber-tone"><strong>63 / 100</strong><div class="bar"><i style="--w:63%;"></i></div><span class="pill amber">部分匹配</span></div>
+          <div><b>经营影响</b><p>安全证据没有被系统前置，用户搜到召回信息时会先产生疑虑，高端 Iconic 的 $249 价格理由也会被削弱。E6, E7</p></div>
+        </div>
+        <div class="match-row">
+          <div><span class="weight">公开样本关注权重 24%</span><h3>酥脆效果、速度、均匀加热</h3><p>这是空气炸锅的核心成交理由，直接影响点击后转化和复购评价。</p></div>
+          <div><b>COSORI 当前卖点</b><p>TurboBlaze 讲 3600 rpm、90°-450°F、9-in-1、速度提升；Amazon 4.8 分和 20K+ 月销下限支撑该卖点。E5</p></div>
+          <div class="match-score green-tone"><strong>86 / 100</strong><div class="bar"><i style="--w:86%;"></i></div><span class="pill green">强匹配</span></div>
+          <div><b>经营影响</b><p>这是 COSORI 最稳的增长入口。必须继续让 TurboBlaze 承担拉新，而不是让更贵、更需要解释的 Iconic 直接承担全部主线。</p></div>
+        </div>
+        <div class="match-row">
+          <div><span class="weight">公开样本关注权重 18%</span><h3>容量、厨房空间、家庭场景</h3><p>用户会按 1-2 人、家庭、meal prep、台面空间来选型号。</p></div>
+          <div><b>COSORI 当前卖点</b><p>官网有 2.1 qt、5 qt、6 qt、6.5 qt、6.8 qt、9 qt、13 qt 等覆盖，FAQ 会区分 TurboBlaze 与 Iconic。E1, E2</p></div>
+          <div class="match-score green-tone"><strong>78 / 100</strong><div class="bar"><i style="--w:78%;"></i></div><span class="pill green">强匹配但可整理</span></div>
+          <div><b>经营影响</b><p>覆盖足够，但页面需要把“人群 / 场景 / 容量”做成更强导购，否则 SKU 宽度会变成选择负担。</p></div>
+        </div>
+        <div class="match-row">
+          <div><span class="weight">公开样本关注权重 16%</span><h3>清洁、易用、噪音</h3><p>使用门槛低，才会从尝鲜变成高频厨房工具。</p></div>
+          <div><b>COSORI 当前卖点</b><p>Amazon 标题和 PR 都提到陶瓷不粘、可清洗、噪音控制、简单菜单；媒体评测也认可易用和安静。E5, E9, E15</p></div>
+          <div class="match-score green-tone"><strong>79 / 100</strong><div class="bar"><i style="--w:79%;"></i></div><span class="pill green">强匹配</span></div>
+          <div><b>经营影响</b><p>这能支撑评论增长和老客升级，但需要更多跨 SKU 的一致证据，而不是只集中在单个爆款。</p></div>
+        </div>
+        <div class="match-row">
+          <div><span class="weight">公开样本关注权重 12%</span><h3>价格、促销、零售可得性</h3><p>北美空气炸锅竞争激烈，价格不只是便宜，而是要让用户理解为什么该买这一档。</p></div>
+          <div><b>COSORI 当前卖点</b><p>TurboBlaze 在 $90-$130 区间有竞争力；Iconic 上探 $249，但高端理由仍需要比“设计好看”更硬。E2, E5, E9</p></div>
+          <div class="match-score amber-tone"><strong>68 / 100</strong><div class="bar"><i style="--w:68%;"></i></div><span class="pill amber">部分匹配</span></div>
+          <div><b>经营影响</b><p>中端爆款能卖，高端升级要靠材料、安全、保修和第三方背书共同解释，否则会被 Ninja / Breville / Typhur 的高端叙事压住。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">01 · One Page Summary</span>
+          <h2>一页看懂：COSORI 的北美问题是规模之后的经营治理，不是单个 SKU 卖不动。</h2>
+        </div>
+        <div class="summary-strip">
+          <div class="dark">
+            <span class="label">核心判断</span>
+            <h3>从 Amazon 爆款品牌升级为厨房品类领导，最先要修安全信任和品线架构。</h3>
+            <p>空气炸锅动销成立，电热水壶和烘干机有 Amazon 第一信号；但召回历史、价格升级和非 Amazon 承接没有被打成统一系统。</p>
+          </div>
+          <div><span class="pill green">P0</span><h3>守住 TurboBlaze</h3><p>用中端爆款继续拉新，把酥脆、速度、易清洁和安全证据放在同一页。</p></div>
+          <div><span class="pill amber">P1</span><h3>解释 Iconic</h3><p>$249 不只讲设计，要讲材料、保修、低塑化、安全边界和长期使用价值。</p></div>
+          <div><span class="pill red">P0 风险</span><h3>召回信任</h3><p>旧召回不是过去式。用户搜索仍会看到监管页面，必须主动给出新型号区隔和安全证明。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blocks">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">02 · Three Business Blocks</span>
+          <h2>三大板块诊断：电商相对健康，品牌和 Marketing 的信任表达拖了后腿。</h2>
+          <p class="lead">这里说的“拖后腿”不是声量不足，而是安全信任、价格理由和品线角色没有被内容与页面系统接住。</p>
+        </div>
+
+        <div class="grid three">
+          <div class="card block-card">
+            <div class="block-top">
+              <div class="block-score status-amber"><div><strong>73</strong><small>品牌板块</small></div></div>
+              <div><h3>认知和规模成立，但召回后的信任治理不够主动。</h3><p>COSORI 有主力品类心智和母公司规模背书；真正的硬伤是没有把安全与材料证明变成品牌层面的默认入口。</p></div>
+            </div>
+            <div class="good-bad">
+              <div><h4>做得好的</h4><ul><li>空气炸锅、壶、烘干机覆盖清晰，官网产品线完整。E1</li><li>COSORI 2024 品牌收入 $165.0M，证明不是小卖家。E3</li><li>Iconic 用不锈钢、PFAS-free、五年保修上探高端。E9</li></ul></div>
+              <div><h4>做得不好的</h4><ul><li>召回后的安全信任没有被放到品牌主叙事里，用户需自行搜索。E6-E8</li><li>COSORI 2024 收入较 2023 下滑，品牌没有解释增长换挡原因。E3</li><li>厨房生态讲法分散，壶、烘干机、烤箱没有形成同一套“为什么买 COSORI”的理由。</li></ul></div>
+            </div>
+          </div>
+
+          <div class="card block-card">
+            <div class="block-top">
+              <div class="block-score status-amber"><div><strong>68</strong><small>Marketing</small></div></div>
+              <div><h3>素材能带货，但没有把第一购买疑虑讲透。</h3><p>Marketing 不是缺卖点，而是卖点排序不够狠：速度、外观、功能都在讲，安全证据和高端价格理由没有被前置成投放主线。</p></div>
+            </div>
+            <div class="good-bad">
+              <div><h4>做得好的</h4><ul><li>TurboBlaze 的速度、温控、PFAS-free 和 9-in-1 在 Amazon 标题中很明确。E5</li><li>Iconic 发布有 PRNewswire、评测媒体和 Red Dot 设计奖背书。E9, E15</li><li>官网有 recipes 和 chef / dietitian 内容，可支撑使用教育。E1</li></ul></div>
+              <div><h4>做得不好的</h4><ul><li>安全信任没有做成“旧召回型号 vs 新型号安全边界”的内容资产。E6, E7</li><li>Iconic 的 $249 升级理由被拆散在 PR、PDP 和媒体里，官网导购不够集中。E9</li><li>壶和烘干机的 Amazon 第一信号没有反哺品牌内容，浪费了专业厨房能力证明。E4</li></ul></div>
+            </div>
+          </div>
+
+          <div class="card block-card">
+            <div class="block-top">
+              <div class="block-score status-green"><div><strong>82</strong><small>电商板块</small></div></div>
+              <div><h3>Amazon 基本盘强，非 Amazon 正在扩，但 DTC 和零售证据还不够系统。</h3><p>电商是 COSORI 最健康的板块。问题不在有没有渠道，而在不同渠道是否给同一个清楚答案。</p></div>
+            </div>
+            <div class="good-bad">
+              <div><h4>做得好的</h4><ul><li>TurboBlaze 4.8 分、19,654 条评价、20K+ 月销提示，动销很硬。E5</li><li>VeSync 2024 非 Amazon 渠道 +29.0%，北美收入 +11.8%。E3</li><li>Target 有独家款，Best Buy 承接 Iconic，非 Amazon 触点在增加。E12</li></ul></div>
+              <div><h4>做得不好的</h4><ul><li>官网部分主力空气炸锅显示 sold out，DTC 不能稳定承担新品解释和转化闭环。E2</li><li>非 Amazon 渠道的 sell-out、评价和复购证据公开不足，难判断真实货架效率。</li><li>价格带跨度从 $59.99 到 $249，缺少一张清晰的“谁该买哪一台”导购图。E2, E9</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">03 · Top 3 Problems</span>
+          <h2>三大关键问题：先修信任，再整理产品线，最后才是加大投放。</h2>
+        </div>
+
+        <div class="grid" style="gap:18px;">
+          <article class="card problem-card">
+            <div class="problem-side">
+              <span class="pill red">P0 · 30 天内启动</span>
+              <h3>召回后的安全信任没有被前置，正在拖累高端升级。</h3>
+              <p>监管页面仍然是用户搜索链路里的强事实。COSORI 不能只把召回处理放在 support 页面，而要主动告诉用户：哪些型号被召回、新型号做了什么安全改进、Iconic 和 TurboBlaze 的材料与保修如何降低疑虑。</p>
+              <div class="severity"><span>严重度</span><strong>84</strong></div>
+            </div>
+            <div class="problem-main">
+              <div class="evidence-mini">
+                <div><b>2,042,631</b><small>美国受影响数量，Health Canada 披露。E7</small></div>
+                <div><b>205</b><small>全球事件报告，包含冒烟、过热、起火等。E6, E7</small></div>
+                <div><b>$249</b><small>Iconic 高端定价，需要更强安全证明。E9</small></div>
+              </div>
+              <div class="impact-flow">
+                <div><b>现象</b><p>用户搜索 COSORI recall 会直接看到监管内容。</p></div>
+                <div><b>损耗</b><p>高客单用户对材料、安全和保修的要求更高。</p></div>
+                <div><b>需要修</b><p>PDP、官网、广告落地页统一安全证据。</p></div>
+              </div>
+              <div class="action-list">
+                <div><b>P0 页面</b><p>新增“Safety &amp; Materials”中心页，列出召回型号、新型号区隔、材料、认证、保修。</p></div>
+                <div><b>P0 PDP</b><p>在 TurboBlaze / Iconic 首屏加入安全模块，不让用户跳去 support 找答案。</p></div>
+                <div><b>P1 内容</b><p>做“旧机型更换 / 新机型升级”搜索内容，抢占 recall 相关自然流量。</p></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card problem-card">
+            <div class="problem-side">
+              <span class="pill amber">P0 · 45 天内重排</span>
+              <h3>产品线角色没讲清，SKU 宽度会反过来增加选择成本。</h3>
+              <p>COSORI 有足够多的空气炸锅规格，也有壶、烘干机、烤箱和多功能锅。但页面没有把“拉新款、家庭款、高端款、专业小品类”讲成一张购买地图，用户只能在价格和容量之间自己猜。</p>
+              <div class="severity"><span>严重度</span><strong>76</strong></div>
+            </div>
+            <div class="problem-main">
+              <div class="evidence-mini">
+                <div><b>9 款</b><small>官网空气炸锅集合含多个容量与定位。E2</small></div>
+                <div><b>$59.99-$249</b><small>价格跨度大，需要更强导购。E2, E9</small></div>
+                <div><b>3 条强线</b><small>空气炸锅、壶、烘干机均有公开信号。E1, E4</small></div>
+              </div>
+              <div class="impact-flow">
+                <div><b>现象</b><p>产品线看起来丰富，但业务角色不清。</p></div>
+                <div><b>损耗</b><p>用户在同品牌内部比较时变慢，竞品更容易截流。</p></div>
+                <div><b>需要修</b><p>把产品按人群、场景和任务重排。</p></div>
+              </div>
+              <div class="action-list">
+                <div><b>P0 导购</b><p>建立“1-2 人 / 家庭 / 高端厨房 / meal prep / 专业烘干”导购矩阵。</p></div>
+                <div><b>P1 货架</b><p>定义每条品线是拉新、利润、复购还是形象，不再平均铺内容。</p></div>
+                <div><b>P1 比较页</b><p>做 COSORI vs Ninja / Instant / Breville 的场景比较，不只比参数。</p></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card problem-card">
+            <div class="problem-side">
+              <span class="pill amber">P1 · 60 天内治理</span>
+              <h3>非 Amazon 扩张已经开始，但渠道证据没有转化为品牌资产。</h3>
+              <p>VeSync 披露非 Amazon 渠道和北美区域增长，Target、Best Buy 也能看到 COSORI 触点。问题是公开页面没有把这些渠道增长变成“更可靠、更容易买、更值得升级”的信任表达。</p>
+              <div class="severity"><span>严重度</span><strong>70</strong></div>
+            </div>
+            <div class="problem-main">
+              <div class="evidence-mini">
+                <div><b>+29.0%</b><small>VeSync 2024 非 Amazon 渠道增长。E3</small></div>
+                <div><b>+11.8%</b><small>VeSync 2024 北美收入增长。E3</small></div>
+                <div><b>Target / Best Buy</b><small>公开零售触点增加。E12</small></div>
+              </div>
+              <div class="impact-flow">
+                <div><b>现象</b><p>渠道在铺，但每个渠道各讲各的。</p></div>
+                <div><b>损耗</b><p>零售货架效率和 DTC 转化都难被统一放大。</p></div>
+                <div><b>需要修</b><p>用统一证据链承接跨渠道用户。</p></div>
+              </div>
+              <div class="action-list">
+                <div><b>P1 零售页</b><p>Target / Best Buy 专供款补清楚差异、适合人群和安全材料。</p></div>
+                <div><b>P1 DTC</b><p>官网承接“where to buy + why this model”，减少用户回到 Amazon 比价。</p></div>
+                <div><b>P2 数据</b><p>用零售 sell-out、评价增长和退货原因复核每条渠道的真实效率。</p></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competitors">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">04 · Competitive Calibration</span>
+          <h2>竞品校准：COSORI 的中端效率强，但高端信任和厨房生态要向 Ninja / Breville 看齐。</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>品牌 / 角色</th><th>强项</th><th>COSORI 可攻击点</th><th>COSORI 当前被压制点</th></tr></thead>
+            <tbody>
+              <tr><td><b>Ninja</b><br />创新与零售强势</td><td>产品命名、功能创新、线下零售和内容教育强。</td><td>用 TurboBlaze 的价格效率和易清洁打中端家庭。</td><td>Ninja 的产品架构更像系统，COSORI 页面导购还散。</td></tr>
+              <tr><td><b>Instant / Instant Vortex</b><br />厨房工具信任</td><td>多功能锅心智强，家庭厨房信任深。</td><td>COSORI 在空气炸锅速度和 Amazon 动销上更锋利。</td><td>Instant 的“厨房工具箱”心智更自然，COSORI 生态感不足。</td></tr>
+              <tr><td><b>Breville / Cuisinart</b><br />高端 countertop</td><td>高端厨房感、耐用性、专业感和渠道背书强。</td><td>Iconic 可用材料与智能功能进入高端讨论。</td><td>$249 价格理由还没有 Breville 式专业证据密度。</td></tr>
+              <tr><td><b>Gourmia / Dash</b><br />低价替代</td><td>价格低，适合仓储会员店和入门用户。</td><td>COSORI 可用性能、评价和保修解释溢价。</td><td>如果安全证据不前置，用户会把 COSORI 当普通可替代小家电。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="scores">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">05 · 11-Dimension Scores</span>
+          <h2>11 维评分：电商强，会员复购和风险治理是低分项。</h2>
+        </div>
+        <div class="card">
+          <div class="score-grid">
+            <div class="score-line"><b>电商板块</b><div class="bar green-tone"><i style="--w:82%;"></i></div><strong>82</strong><span class="pill green">健康</span></div>
+            <div class="score-line"><b>品牌板块</b><div class="bar amber-tone"><i style="--w:73%;"></i></div><strong>73</strong><span class="pill amber">有硬伤</span></div>
+            <div class="score-line"><b>Marketing 板块</b><div class="bar amber-tone"><i style="--w:68%;"></i></div><strong>68</strong><span class="pill amber">拖后腿</span></div>
+            <div class="score-line"><b>产品与品类</b><div class="bar green-tone"><i style="--w:79%;"></i></div><strong>79</strong><span class="pill green">良好</span></div>
+            <div class="score-line"><b>流量与转化漏斗</b><div class="bar amber-tone"><i style="--w:72%;"></i></div><strong>72</strong><span class="pill amber">待治理</span></div>
+            <div class="score-line"><b>用户与人群洞察</b><div class="bar green-tone"><i style="--w:76%;"></i></div><strong>76</strong><span class="pill green">良好</span></div>
+            <div class="score-line"><b>客服与售后</b><div class="bar amber-tone"><i style="--w:66%;"></i></div><strong>66</strong><span class="pill amber">信任不足</span></div>
+            <div class="score-line"><b>订阅与会员体系</b><div class="bar red-tone"><i style="--w:48%;"></i></div><strong>48</strong><span class="pill red">不达标</span></div>
+            <div class="score-line"><b>竞品对比</b><div class="bar amber-tone"><i style="--w:70%;"></i></div><strong>70</strong><span class="pill amber">需主动进攻</span></div>
+            <div class="score-line"><b>增长机会与战略</b><div class="bar green-tone"><i style="--w:78%;"></i></div><strong>78</strong><span class="pill green">机会清晰</span></div>
+            <div class="score-line"><b>风险与预警</b><div class="bar red-tone"><i style="--w:58%;"></i></div><strong>58</strong><span class="pill red">明显拖累</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">06 · 90 / 180 Days</span>
+          <h2>路线图：先把安全和导购修成系统，再扩大新品和渠道预算。</h2>
+        </div>
+        <div class="roadmap">
+          <div class="road"><b>0-30 天</b><div><h3>安全信任与高端价格理由重写</h3><p>完成 Safety &amp; Materials 中心页、召回型号区隔、新型号材料 / 保修证据、Iconic 高端购买理由模块。</p></div><span class="pill red">P0 · 信任</span></div>
+          <div class="road"><b>31-60 天</b><div><h3>空气炸锅导购矩阵和品线角色重排</h3><p>用人群、容量、场景和价格带重写导购：TurboBlaze 拉新，Iconic 高端升级，Dual Basket 家庭，Mini 小空间。</p></div><span class="pill amber">P0 · 转化</span></div>
+          <div class="road"><b>61-90 天</b><div><h3>非 Amazon 渠道证据统一</h3><p>Target / Best Buy / DTC 同步材料、安全、场景、保修与评价证据。建立渠道页面的统一 KPI：点击转化、评价增长、退货原因。</p></div><span class="pill amber">P1 · 渠道</span></div>
+          <div class="road"><b>91-180 天</b><div><h3>厨房生态和买后运营</h3><p>用 recipes、配件、保养、换新和交叉购买建立轻会员机制。先做空气炸锅用户的复购和升级，不要上来做复杂会员体系。</p></div><span class="pill green">P1 · LTV</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="risk">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">07 · Risks &amp; Data Gaps</span>
+          <h2>风险和数据缺口：报告结论能成立，但销售额和份额不能给单点。</h2>
+        </div>
+        <div class="grid three">
+          <div class="card"><span class="pill red">风险</span><h3>召回搜索链路</h3><p>CPSC 和 Health Canada 页面是硬事实。若不主动解释新旧型号和安全边界，品牌越高端，用户越会追问。E6, E7</p></div>
+          <div class="card"><span class="pill amber">数据缺口</span><h3>北美品牌级 GMV</h3><p>VeSync 披露品牌收入和区域收入，但未披露 COSORI 北美分品牌收入。本报告已补官网、Amazon、Target、Best Buy、市场报告和监管数据，仍建议用后台订单、广告后台、零售 sell-out 复核。</p></div>
+          <div class="card"><span class="pill amber">风险</span><h3>关税与成本</h3><p>VeSync 年报提示美国对华进口关税不确定性可能提高成本。COSORI 若走高端化，需要用材料和保修解释价格，而不是单纯涨价。E4</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tagline">08 · Evidence Table</span>
+          <h2>证据表：每个强判断都能回到公开来源。</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ID</th><th>来源</th><th>抓取日期</th><th>关键事实</th><th>支撑判断</th><th>置信度</th></tr></thead>
+            <tbody>
+              <tr><td>E1</td><td><a href="https://cosori.com/" target="_blank" rel="noreferrer">COSORI 官网</a></td><td>2026-06-13</td><td>官网列出 Air Fryer、Air Fryer Oven、Multi-Cookers、Kettles、Food Dehydrators、Coffee 等产品线。</td><td>品线拆分、厨房生态判断。</td><td>高</td></tr>
+              <tr><td>E2</td><td><a href="https://cosori.com/collections/air-fryers" target="_blank" rel="noreferrer">COSORI Air Fryers Collection</a></td><td>2026-06-13</td><td>空气炸锅价格带覆盖 $59.99-$249，TurboBlaze、Iconic、Dual Basket、Pro LE 等型号并存。</td><td>导购复杂度、价格带、SKU 角色判断。</td><td>高</td></tr>
+              <tr><td>E3</td><td><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0417/2025041700367.pdf" target="_blank" rel="noreferrer">VeSync 2024 年报</a></td><td>2026-06-13</td><td>集团 2024 收入 $652.64M；北美 $480.489M；COSORI 品牌 $165.048M；非 Amazon 渠道 $166.244M。</td><td>规模校准、阶段判断、渠道增长。</td><td>高</td></tr>
+              <tr><td>E4</td><td><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0417/2025041700367.pdf" target="_blank" rel="noreferrer">VeSync 2024 年报</a></td><td>2026-06-13</td><td>公司称美国 Amazon 的电热水壶、食物烘干机等核心品类连续多年排名第一；年报同时提示美国关税不确定性。</td><td>壶 / 烘干机 P1、关税风险。</td><td>中高</td></tr>
+              <tr><td>E5</td><td><a href="https://www.amazon.com/TurboBlaze-Premium-Ceramic-Coating-90%C2%B0-450%C2%B0F/dp/B0C33CHG99" target="_blank" rel="noreferrer">Amazon TurboBlaze 实页</a></td><td>2026-06-13</td><td>TurboBlaze 6 qt 标题含 PFAS-free、90°-450°F、9-in-1；4.8 分、19,654 条评价、20K+ bought in past month。</td><td>主力 SKU 动销、卖点匹配。</td><td>高</td></tr>
+              <tr><td>E6</td><td><a href="https://www.cpsc.gov/Recalls/2023/Two-Million-COSORI-Air-Fryers-Recalled-by-Atekcity-Due-to-Fire-and-Burn-Hazards" target="_blank" rel="noreferrer">U.S. CPSC 召回公告</a></td><td>2026-06-13</td><td>美国约 200 万台，另有加拿大约 25 万台、墨西哥约 2.1 万台；风险为线材连接过热导致火灾和灼伤风险。</td><td>安全信任问题严重度。</td><td>高</td></tr>
+              <tr><td>E7</td><td><a href="https://recalls-rappels.canada.ca/en/alert-recall/certain-models-cosori-branded-air-fryers-recalled-due-potential-fire-hazard" target="_blank" rel="noreferrer">Health Canada 召回公告</a></td><td>2026-06-13</td><td>披露美国 2,042,631 台、加拿大 252,828 台、墨西哥 21,490 台；全球 205 起报告。</td><td>召回规模、信任风险。</td><td>高</td></tr>
+              <tr><td>E8</td><td><a href="https://cosori.com/pages/cosori-product-recall" target="_blank" rel="noreferrer">COSORI 官方召回页</a></td><td>2026-06-13</td><td>COSORI 说明其与 CPSC、Health Canada、Profeco 合作进行自愿召回和更换。</td><td>品牌已处理召回，但信任表达需前置。</td><td>高</td></tr>
+              <tr><td>E9</td><td><a href="https://www.prnewswire.com/news-releases/cosori-introduces-iconic-the-air-fryer-that-looks-as-good-as-it-cooks-302653635.html" target="_blank" rel="noreferrer">PRNewswire Iconic 发布</a></td><td>2026-06-13</td><td>Iconic 2026 年 1 月发布，$249，Red Dot 设计奖，不锈钢、PFAS-free / BPA-free、五年有限保修。</td><td>高端化机会、价格理由。</td><td>高</td></tr>
+              <tr><td>E10</td><td><a href="https://www.transparencymarketresearch.com/air-fryer-market.html" target="_blank" rel="noreferrer">Transparency Market Research</a></td><td>2026-06-13</td><td>全球空气炸锅 2025 年 $1.1034B；北美占 36.8%；篮式空气炸锅占 54.6%。</td><td>空气炸锅北美天花板估算。</td><td>中高</td></tr>
+              <tr><td>E11</td><td><a href="https://www.mordorintelligence.com/industry-reports/united-states-electric-kettles-market" target="_blank" rel="noreferrer">Mordor Intelligence U.S. Electric Kettle</a></td><td>2026-06-13</td><td>美国电热水壶市场预计低于 3% CAGR，低集中度，需求来自多功能、省时、小空间厨房。</td><td>电热水壶 P1 与成熟低增速判断。</td><td>中</td></tr>
+              <tr><td>E12</td><td><a href="https://www.target.com/s/cosori%2Bair%2Bfryer" target="_blank" rel="noreferrer">Target / Best Buy 公开零售页</a></td><td>2026-06-13</td><td>Target 有 COSORI TurboBlaze Smart Air Fryer，Best Buy 有 Iconic SKU。</td><td>非 Amazon 渠道扩张。</td><td>中</td></tr>
+              <tr><td>E13</td><td><a href="https://www.amazon.com/stores/Cosori/page/9496AE5E-EC30-4021-BF14-17357946F3FA" target="_blank" rel="noreferrer">Amazon COSORI Electric Kettles</a></td><td>2026-06-13</td><td>Amazon 店铺显示 COSORI 电热水壶 20K+ bought in past month；Best Sellers 页面显示 COSORI 电热水壶排名靠前。</td><td>电热水壶动销与品类证明。</td><td>中</td></tr>
+              <tr><td>E14</td><td><a href="https://tradingeconomics.com/china/currency" target="_blank" rel="noreferrer">Trading Economics USD/CNY</a></td><td>2026-06-13</td><td>USD/CNY 2026-06-12 为 6.7634，并于 2026-06-13 更新。</td><td>美元 / 人民币换算。</td><td>高</td></tr>
+              <tr><td>E15</td><td><a href="https://www.bonappetit.com/story/best-air-fryers-reviewed" target="_blank" rel="noreferrer">媒体评测公开样本</a></td><td>2026-06-13</td><td>2026 年评测媒体继续把 COSORI TurboBlaze 放在高性价比、高性能、易清洁的讨论中。</td><td>卖点匹配和第三方背书。</td><td>中</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <p><b>远汐 Offing 免费北美业务诊断</b></p>
+      <p>本报告基于 2026-06-13 可复查公开信息、监管公告、公司年报、电商页面和行业报告整理。销售额、GMV 与份额均为经营校准估算，不构成财务审计结论。</p>
+    </div>
+  </footer>
+</body>
+</html>
