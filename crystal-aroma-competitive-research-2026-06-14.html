@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>晶石香薰竞品调研报告 · 中国/北美 · 2026-06-14</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f8f4;
+      --surface: #fffffb;
+      --ink: #121716;
+      --body: #33413f;
+      --muted: #687874;
+      --line: #d9e0dc;
+      --hair: rgba(18, 23, 22, 0.09);
+      --sea: #2d6261;
+      --sea-dark: #173c3b;
+      --sea-soft: #e6f0ec;
+      --clay: #a76560;
+      --rose: #b46b78;
+      --gold: #a99556;
+      --blue: #345c8b;
+      --slate: #13211f;
+      --green: #157a38;
+      --amber: #9a5b00;
+      --red: #c93636;
+      --shadow: 0 16px 42px rgba(13, 23, 22, 0.06);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(230, 240, 236, 0.42) 0%, rgba(247, 248, 244, 0.98) 34%, var(--paper) 100%),
+        linear-gradient(90deg, rgba(45, 98, 97, 0.018) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(45, 98, 97, 0.014) 1px, transparent 1px);
+      background-size: auto, 64px 64px, 64px 64px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.62;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--sea-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3, h4, p { margin: 0; letter-spacing: 0; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin-bottom: 7px; }
+    sup { line-height: 0; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 32px;
+      border-bottom: 1px solid var(--hair);
+      background: rgba(247, 248, 244, 0.88);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand { font-weight: 820; line-height: 1.15; white-space: nowrap; }
+    .nav-brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 680; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 14px; color: var(--body); font-size: 13px; font-weight: 690; }
+
+    .inner { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      align-items: center;
+      padding: 76px 0 46px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 34px;
+      align-items: end;
+    }
+    .kicker {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 830;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 900px;
+      font-size: clamp(46px, 6.4vw, 86px);
+      line-height: 0.99;
+      font-weight: 870;
+    }
+    .hero-sub {
+      max-width: 850px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: clamp(16px, 1.55vw, 20px);
+    }
+    .hero-verdict {
+      display: grid;
+      gap: 14px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 16%, rgba(180, 107, 120, .22), transparent 34%),
+        linear-gradient(145deg, #101413, #13211f);
+      box-shadow: var(--shadow);
+    }
+    .hero-verdict span { color: rgba(255,255,255,.72); font-size: 12px; font-weight: 780; }
+    .hero-verdict strong { display: block; font-size: clamp(42px, 5vw, 68px); line-height: .95; }
+    .hero-verdict p { color: rgba(255,255,255,.86); font-size: 14px; }
+
+    section { padding: 78px 0; scroll-margin-top: 72px; }
+    .section-head { display: grid; gap: 10px; margin-bottom: 24px; }
+    .section-head .tag { color: var(--sea); font-size: 12px; font-weight: 840; text-transform: uppercase; }
+    h2 { max-width: 980px; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.08; font-weight: 850; }
+    h3 { font-size: 19px; line-height: 1.28; font-weight: 820; }
+    h4 { font-size: 13px; font-weight: 830; }
+    .lead { max-width: 980px; color: var(--body); font-size: 16px; }
+
+    .grid { display: grid; gap: 16px; }
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card, .table-wrap, .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .card { padding: 22px; }
+    .card p, .card li { color: var(--body); font-size: 14px; }
+    .card strong { font-weight: 830; }
+    .metric strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--tone, var(--sea));
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 880;
+      font-variant-numeric: tabular-nums;
+    }
+    .metric small { display: block; margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+    .sea { --tone: var(--sea); }
+    .gold { --tone: var(--gold); }
+    .rose { --tone: var(--rose); }
+    .blue { --tone: var(--blue); }
+    .green { --tone: var(--green); }
+    .amber { --tone: var(--amber); }
+    .red { --tone: var(--red); }
+
+    .dark {
+      color: #fff;
+      background:
+        radial-gradient(circle at 92% 10%, rgba(169, 149, 86, .2), transparent 30%),
+        linear-gradient(145deg, #101413, #13211f);
+      border-color: rgba(255,255,255,.1);
+    }
+    .dark p, .dark li, .dark small { color: rgba(255,255,255,.84); }
+    .dark h3, .dark strong { color: #fff; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--body);
+      background: #fff;
+      font-size: 12px;
+      font-weight: 760;
+    }
+    .pill.good { color: var(--green); background: rgba(21,122,56,.08); border-color: rgba(21,122,56,.16); }
+    .pill.warn { color: var(--amber); background: rgba(154,91,0,.08); border-color: rgba(154,91,0,.16); }
+    .pill.bad { color: var(--red); background: rgba(201,54,54,.08); border-color: rgba(201,54,54,.16); }
+    .pill.brand { color: var(--sea-dark); background: var(--sea-soft); border-color: rgba(45,98,97,.18); }
+
+    .table-wrap { max-width: 100%; overflow-x: auto; }
+    table { width: 100%; min-width: 920px; border-collapse: collapse; }
+    th, td { padding: 14px 15px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13px; }
+    th { color: var(--ink); background: #f1f4f1; font-weight: 840; }
+    td { color: var(--body); }
+    tr:last-child td { border-bottom: 0; }
+
+    .source {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 19px;
+      height: 19px;
+      margin-left: 2px;
+      padding: 0 5px;
+      border: 1px solid rgba(45,98,97,.2);
+      border-radius: 999px;
+      color: var(--sea-dark);
+      background: rgba(230,240,236,.78);
+      font-size: 11px;
+      font-weight: 820;
+      vertical-align: text-top;
+    }
+
+    .price-ladder { display: grid; gap: 12px; }
+    .price-row {
+      display: grid;
+      grid-template-columns: 150px 1fr 180px;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .price-row strong { color: var(--tone); font-size: 26px; line-height: 1; }
+    .bar { height: 8px; margin-top: 8px; overflow: hidden; border-radius: 999px; background: #e8ece9; }
+    .bar span { display: block; width: var(--w); height: 100%; background: var(--tone); }
+
+    .platform-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+    .platform {
+      min-height: 230px;
+      display: grid;
+      align-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .platform b { color: var(--sea-dark); font-size: 12px; text-transform: uppercase; }
+    .platform p { color: var(--body); font-size: 13px; }
+
+    .battle-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .battle-tabs button {
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--body);
+      background: #fff;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 760;
+      cursor: pointer;
+    }
+    .battle-tabs button.active {
+      color: #fff;
+      border-color: var(--sea-dark);
+      background: var(--sea-dark);
+    }
+    .battle-panel { display: none; }
+    .battle-panel.active { display: block; }
+
+    .do-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .rule-list { display: grid; gap: 10px; margin-top: 14px; }
+    .rule {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,251,.72);
+    }
+    .rule span {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--tone);
+      font-size: 13px;
+      font-weight: 850;
+    }
+    .rule p { color: var(--body); font-size: 14px; }
+
+    .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .phase {
+      position: relative;
+      min-height: 240px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .phase::before {
+      content: attr(data-phase);
+      display: inline-flex;
+      margin-bottom: 16px;
+      color: var(--sea);
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .phase p, .phase li { color: var(--body); font-size: 13px; }
+
+    .bibliography {
+      display: grid;
+      gap: 10px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .bibliography p {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      color: var(--body);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .bibliography p:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    footer {
+      padding: 34px 0;
+      color: rgba(255,255,255,.82);
+      background: var(--slate);
+    }
+    footer .inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+
+    @media (max-width: 980px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 22px; }
+      .hero-grid, .two, .three, .four, .do-grid, .timeline { grid-template-columns: 1fr; }
+      .platform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .price-row { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 54px; }
+      section { padding: 58px 0; }
+    }
+    @media (max-width: 640px) {
+      .inner { width: min(100% - 32px, 1180px); }
+      h1 { font-size: clamp(38px, 12vw, 52px); }
+      .platform-grid { grid-template-columns: 1fr; }
+      table { min-width: 760px; }
+      .nav-links { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">晶石香薰竞品调研<small>China + North America · 2026-06-14</small></div>
+    <div class="nav-links">
+      <a href="#summary">摘要</a>
+      <a href="#china">中国平台</a>
+      <a href="#battle">竞品矩阵</a>
+      <a href="#pricing">价格段</a>
+      <a href="#opportunity">机会点</a>
+      <a href="#rules">Do / Don't</a>
+      <a href="#sources">来源</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div>
+        <span class="kicker">Strategic Competitive Research</span>
+        <h1>晶石香薰不是空白赛道。机会在「香气优先的星座仪式」。</h1>
+        <p class="hero-sub">中国市场已经验证了晶石扩香的视觉吸引力、礼盒属性和玄学流量，但也暴露出低价同质化、过度玄学承诺和香气弱记忆的问题。北美市场则有水晶、星座、香薰三个独立需求，却缺少一个用测试把它们稳定连起来的 DTC 礼物品牌。</p>
+      </div>
+      <aside class="hero-verdict">
+        <span>投资判断</span>
+        <strong>可测，不可重仓</strong>
+        <p>建议继续推进 30-50 套样品 + 创作者种草 + 预售验证。第一代不要做“中国平台已有款”的搬运，而要做「Scent & Sign」式的个性化香气仪式。</p>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="summary">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">Executive Summary</span>
+          <h2>真正的机会不是水晶，也不是香薰，而是把“我最近需要什么气味”变成一次可分享的测试。</h2>
+          <p class="lead">调研覆盖北美 DTC 品牌、中国京东可见商品、淘宝/天猫公开搜索线索、Weee/Yami/Shopee 等跨境和华人电商、小红书/抖音玄学水晶内容，以及 FTC/FDA/中国广告法相关合规边界。淘宝、天猫、小红书和抖音存在登录墙和动态推荐限制，本报告不声称拥有平台后台数据，只基于公开可验证页面、搜索结果和第三方公开报道进行判断。</p>
+        </div>
+        <div class="grid four">
+          <article class="card metric sea">
+            <strong>86.78亿 RMB</strong>
+            <p>智研咨询口径下，2023 年中国家居香氛行业市场规模约 86.78 亿元，同比上涨 15.26%。</p>
+            <small>说明：家居香氛，不等同晶石香薰。</small>
+          </article>
+          <article class="card metric rose">
+            <strong>34.2亿 / 46.1亿</strong>
+            <p>36氪/卡思数据报道，小红书 #水晶 话题阅读量 34.2 亿，抖音“水晶”标签播放量 46.1 亿。</p>
+            <small>说明：水晶热度高，但伴随假货、溢价和玄学争议。</small>
+          </article>
+          <article class="card metric gold">
+            <strong>20,000+</strong>
+            <p>京东扩香石类目可见宋朝冷山多款扩香石香薰礼盒达到 20,000+ 评论，证明扩香石礼盒已有大众送礼需求。</p>
+            <small>说明：评论数为公开页面可见值，会随时间变动。</small>
+          </article>
+          <article class="card metric blue">
+            <strong>$78-$88</strong>
+            <p>北美建议首发价格带：预售 $72-$78，MSRP $88.88；若低于 $59 会被中国低价供给和 Amazon 气味品类压扁。</p>
+            <small>说明：基于 Energy Muse、Mindful Souls、Birthdate Co. 和中国高低端价格带综合判断。</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="china">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">China Platform Scan</span>
+          <h2>中国已经把“晶石扩香”做成了五种生意：低价工厂货、京东礼盒、国风高端香氛、玄学直播、社媒种草。</h2>
+          <p class="lead">这对我们是好消息也是坏消息。好消息是产品形态被验证；坏消息是如果只卖“水晶石 + 精油 + 杯子”，没有任何壁垒。</p>
+        </div>
+        <div class="platform-grid">
+          <article class="platform">
+            <div>
+              <b>Taobao / Tmall</b>
+              <h3>低价和仿款最密集</h3>
+              <p>公开搜索显示“水晶扩香石/晶石香薰/无火香薰礼盒”高度商品化。核心竞争点是低价、现货、灯光底座、礼盒包装，香气和品牌故事通常薄。</p>
+            </div>
+            <div class="pill-row"><span class="pill bad">别打价格战</span><span class="pill warn">适合找供应链</span></div>
+          </article>
+          <article class="platform">
+            <div>
+              <b>JD</b>
+              <h3>送礼与评价体系更强</h3>
+              <p>京东可见品牌包括宋朝、HomeFlower、BAHAINIAO、Lavas、MUJI、故宫文创等。类目筛选项同时覆盖“晶石香薰、香薰礼盒、水晶、送礼、冥想、招财、姻缘”等语义，说明消费者把它同时当成家居香氛、摆件和礼物。</p>
+            </div>
+            <div class="pill-row"><span class="pill good">证明需求</span><span class="pill warn">同质化强</span></div>
+          </article>
+          <article class="platform">
+            <div>
+              <b>Xiaohongshu</b>
+              <h3>“玄学 + 好看”是流量入口</h3>
+              <p>小红书玄学和水晶内容都具备巨大讨论量，但平台上用户同时敏感于“智商税、假水晶、太贵、骗人”。适合做测试、空间布置、礼物开箱，不适合承诺转运。</p>
+            </div>
+            <div class="pill-row"><span class="pill good">适合种草</span><span class="pill bad">不能神棍化</span></div>
+          </article>
+          <article class="platform">
+            <div>
+              <b>Douyin</b>
+              <h3>直播爆发强，但信任风险高</h3>
+              <p>水晶直播的爆发依赖情绪价值、明星背书和低价/高价并存的冲动购买。36氪报道同时指出假货、价格不透明和玄学夸大是行业主要风险。</p>
+            </div>
+            <div class="pill-row"><span class="pill warn">适合短视频验证</span><span class="pill bad">先别重直播</span></div>
+          </article>
+          <article class="platform">
+            <div>
+              <b>North America</b>
+              <h3>构件存在，组合缺口还在</h3>
+              <p>Energy Muse 做晶石能量，Birthdate 做生日星座香氛，House of Intuition 做仪式工具，Mindful Souls 做晶石扩香。但“生日/星盘测试 → 香气 → 晶石扩香礼盒”的完整路径仍有空位。</p>
+            </div>
+            <div class="pill-row"><span class="pill good">机会在组合</span><span class="pill brand">DTC 更适合</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="battle">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">Competitive Battlecard</span>
+          <h2>竞品不是某一个品牌，而是五类替代方案。我们要赢的是“送礼时为什么选你”。</h2>
+        </div>
+        <div class="battle-tabs" aria-label="competitor groups">
+          <button class="active" data-tab="commodity">低价晶石扩香</button>
+          <button data-tab="jd-gift">京东礼盒品牌</button>
+          <button data-tab="premium-cn">中国高端香氛</button>
+          <button data-tab="mystic-live">玄学直播/小红书</button>
+          <button data-tab="na-brands">北美 DTC</button>
+        </div>
+
+        <article id="commodity" class="battle-panel active card">
+          <h3>低价晶石扩香：最容易被误判成“我们的供应链优势”</h3>
+          <p>淘宝、1688、Shopee 台湾等平台能看到大量水晶扩香石、扩香灯、精油套装，价格从几元到数百元不等。它们的优势是低成本、款式多、上新快；弱点是香气记忆弱、品牌心智弱、品控和安全信息不透明。对我们来说，这一类只能作为供应链参考，不能作为品牌对标。</p>
+          <div class="pill-row"><span class="pill good">可借鉴：玻璃杯/底座/晶石视觉</span><span class="pill bad">不要碰：低价堆料、同款图、神奇功效</span></div>
+        </article>
+
+        <article id="jd-gift" class="battle-panel card">
+          <h3>京东礼盒品牌：证明“扩香石礼盒”是成熟送礼品类</h3>
+          <p>京东公开页面显示宋朝冷山、HomeFlower、BAHAINIAO、Lavas、故宫文创等已经在扩香石礼盒中获得可见销量和评论。宋朝冷山的核心是“中式/禅茶/清冷”美学，HomeFlower 与 BAHAINIAO 更偏生日、乔迁、伴手礼。它们的问题是：礼物理由很强，但个性化理由不足；香味多是固定选择，缺少“为什么这瓶属于我”的机制。</p>
+          <div class="pill-row"><span class="pill good">可借鉴：礼盒、送礼场景、东方气味命名</span><span class="pill warn">避开：纯礼品货架思维</span></div>
+        </article>
+
+        <article id="premium-cn" class="battle-panel card">
+          <h3>中国高端香氛：观夏、野兽派、闻献证明“故事 + 器物”能抬价</h3>
+          <p>观夏的晶石情绪香氛、野兽派晶石灯礼盒、闻献 DOCUMENTS 的家居香氛把香气、器物和审美叙事绑定。它们的强项不是玄学，而是文化语境、门店体验、礼物面子和审美完成度。我们不应该复制东方叙事去北美，而要学习它们“香气先有故事，器物负责承载”的结构。</p>
+          <div class="pill-row"><span class="pill good">可借鉴：气味叙事、器物质感、留白</span><span class="pill bad">不要碰：没有文化根基的假东方</span></div>
+        </article>
+
+        <article id="mystic-live" class="battle-panel card">
+          <h3>玄学直播/小红书：证明情绪价值，也证明信任地雷</h3>
+          <p>水晶在小红书和抖音的爆发说明年轻女性愿意为“好运、确定性、仪式感”买单。但同一批报道也反复提到假货、材质造假、价格不透明和夸大功效。我们的机会不是变成玄学直播间，而是把玄学降维为“轻测试、轻仪式、可送礼”的内容语言。</p>
+          <div class="pill-row"><span class="pill good">可借鉴：测试、星座、五行、幸运色</span><span class="pill bad">不要碰：保证转运/复合/招财</span></div>
+        </article>
+
+        <article id="na-brands" class="battle-panel card">
+          <h3>北美 DTC：组件已经在，但还缺一个“香气测试品牌”</h3>
+          <p>Energy Muse 的 Clear Quartz Crystal Diffuser 售价 $88.88，Mindful Souls 的晶石扩香带灯款售价 $99.97，Birthdate Candle 用 365 天生日个性化卖 $44.99-$54.99，House of Intuition 把仪式套装做成 $25 左右的低门槛购买。它们各自验证了晶石、香气、生日、仪式，但没有把四者整合成一个低库存、可复购、可分享测试的体系。</p>
+          <div class="pill-row"><span class="pill good">可借鉴：$88.88 价格锚点、生日个性化</span><span class="pill brand">我们的空位：Scent Sign Quiz</span></div>
+        </article>
+
+        <div class="table-wrap" style="margin-top:16px;">
+          <table>
+            <thead>
+              <tr>
+                <th>竞品组</th>
+                <th>它们赢在哪里</th>
+                <th>它们输在哪里</th>
+                <th>我们怎么赢</th>
+                <th>不能硬碰</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>低价晶石扩香</td>
+                <td>便宜、款式多、现货快</td>
+                <td>无品牌、无香气记忆、图片同质化</td>
+                <td>不卖同款，卖测试结果和香气故事</td>
+                <td>价格战、灯光小夜灯堆功能</td>
+              </tr>
+              <tr>
+                <td>京东礼盒品牌</td>
+                <td>礼盒感、评价、场景丰富</td>
+                <td>缺少个性化和社交传播钩子</td>
+                <td>生日/星座问卷 + 个性化卡片</td>
+                <td>做成普通乔迁/生日礼品</td>
+              </tr>
+              <tr>
+                <td>观夏/野兽派/闻献</td>
+                <td>审美、文化、价格锚点</td>
+                <td>贵、门店强、北美受众需重新翻译</td>
+                <td>轻奢视觉，但用更低门槛的 $78-$88</td>
+                <td>空洞东方美学和复杂诗性文案</td>
+              </tr>
+              <tr>
+                <td>玄学直播</td>
+                <td>情绪价值强，冲动购买强</td>
+                <td>信任低、监管风险、假货争议</td>
+                <td>把“玄学”转成“intention / mood reset”</td>
+                <td>承诺招财、复合、疗愈疾病</td>
+              </tr>
+              <tr>
+                <td>北美 DTC</td>
+                <td>品牌信任、giftable、SEO 成熟</td>
+                <td>产品组合分散，个性化路径不完整</td>
+                <td>用 Quiz 把香气、星座、晶石、礼物合成一条转化路径</td>
+                <td>过度宗教/巫术化，或像普通精油店</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">Price Architecture</span>
+          <h2>价格不能看成本加价，要看你站在哪个货架里。我们要站在“个性化礼物”，不是“扩香石耗材”。</h2>
+        </div>
+        <div class="price-ladder">
+          <div class="price-row" style="--tone: var(--red);">
+            <div><strong>¥20-79</strong><div class="bar"><span style="--w:22%"></span></div></div>
+            <div><h3>低价晶石/扩香石/灯座</h3><p>淘宝、1688、Shopee 台湾低价货密集，适合作为成本和款式雷达，不适合作为品牌定价参照。</p></div>
+            <div class="pill-row"><span class="pill bad">不要进入</span></div>
+          </div>
+          <div class="price-row" style="--tone: var(--amber);">
+            <div><strong>¥80-199</strong><div class="bar"><span style="--w:42%"></span></div></div>
+            <div><h3>京东大众礼盒带</h3><p>宋朝冷山、HomeFlower、BAHAINIAO 等覆盖生日、乔迁、伴手礼。它验证礼盒需求，但消费者对香气高级感要求不一定高。</p></div>
+            <div class="pill-row"><span class="pill warn">借鉴礼盒</span></div>
+          </div>
+          <div class="price-row" style="--tone: var(--blue);">
+            <div><strong>¥300-900+</strong><div class="bar"><span style="--w:72%"></span></div></div>
+            <div><h3>观夏/野兽派/闻献式高端</h3><p>靠审美、文化、门店与品牌资产抬价。闻献公开报道中产品线达到 500-2700 元区间，说明高端香氛有空间，但不是初创小预算的第一打法。</p></div>
+            <div class="pill-row"><span class="pill good">借鉴叙事</span></div>
+          </div>
+          <div class="price-row" style="--tone: var(--sea);">
+            <div><strong>$72-$88</strong><div class="bar"><span style="--w:62%"></span></div></div>
+            <div><h3>北美首发甜点位</h3><p>Energy Muse 晶石扩香为 $88.88，Birthdate Candle 个性化蜡烛常规 $54.99/促销 $44.99。我们的 kit 若包含晶石、香气、测试、礼盒与卡片，$78 预售、$88.88 标价是合理测试位。</p></div>
+            <div class="pill-row"><span class="pill good">建议首发</span></div>
+          </div>
+          <div class="price-row" style="--tone: var(--gold);">
+            <div><strong>$118-$149</strong><div class="bar"><span style="--w:82%"></span></div></div>
+            <div><h3>第二阶段 premium set</h3><p>只有当首批内容和转化证明消费者买的是“我自己的香气仪式”，而不是杯子和石头，才值得上更贵的生日/星盘定制礼盒。</p></div>
+            <div class="pill-row"><span class="pill warn">后置</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="opportunity">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">Insights & Opportunity</span>
+          <h2>我们的机会点：Scent first, crystal charged, sign matched.</h2>
+          <p class="lead">名字、包装、广告和产品结构都必须把“香气”放第一。晶石负责可视化、仪式感和礼物溢价；星座/生日负责测试转化；香气负责体验和复购。</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>1. 不是卖“水晶有能量”，是卖“这个气味适合我现在的状态”</h3>
+            <p>中国玄学水晶内容证明情绪消费很强，但高风险。北美也不能承诺转运、疗愈、睡眠改善。更稳的表达是 mood reset、intention setting、space ritual、birthday matched scent。</p>
+          </article>
+          <article class="card">
+            <h3>2. 产品第一屏必须有香气词，而不是 stone 词</h3>
+            <p>品牌可继续探索 Scent & Sign / Wish & Scent 这类结构。用户需要先知道它是香氛，再被晶石和星座吸引。否则会被误解成水晶饰品或玄学小物。</p>
+          </article>
+          <article class="card">
+            <h3>3. SKU 不能从 12 星座开始</h3>
+            <p>第一代最多 4 个西方元素或 5 个五行方向：Water / Fire / Earth / Air，或 Wood / Fire / Earth / Metal / Water。前端可以讲 zodiac elements，后端用供应链可控的 4-5 款香气。</p>
+          </article>
+          <article class="card">
+            <h3>4. 礼盒必须有“测试结果卡”</h3>
+            <p>低价竞品也有石头和精油，差别要体现在一张让用户愿意拍照的卡：Your Scent Sign、你的元素、你的本月仪式、对应晶石和香调。</p>
+          </article>
+          <article class="card">
+            <h3>5. 复购来自 refill，不来自第二个杯子</h3>
+            <p>杯子、晶石、底座是一次性购买；香气补充油、季节限定、Mercury Retrograde reset、birthday month refill 才是长期毛利。</p>
+          </article>
+          <article class="card">
+            <h3>6. 中国供应链是优势，但中国平台不是首发战场</h3>
+            <p>中国市场已经太卷，且对“玄学”广告表达更敏感。更好的路径是用中国供应链做高感知礼盒，先打北美女性礼物和 self-care 场景。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">Must Do / Must Avoid</span>
+          <h2>一定要做的，是把品类从“晶石小摆件”拉成“个性化香气仪式”。一定不要碰的，是神棍承诺和低价同款。</h2>
+        </div>
+        <div class="do-grid">
+          <article class="card">
+            <h3>一定要做</h3>
+            <div class="rule-list">
+              <div class="rule" style="--tone: var(--green);"><span>1</span><p><strong>品牌钩子里必须有 scent。</strong> 广告第一句话应该是 “Find your Scent Sign”，不是 “Buy crystal diffuser”。</p></div>
+              <div class="rule" style="--tone: var(--green);"><span>2</span><p><strong>做测试入口。</strong> 生日、星座、最近状态、空间场景四个问题足够；不要一开始做复杂星盘。</p></div>
+              <div class="rule" style="--tone: var(--green);"><span>3</span><p><strong>把香气做成可复购资产。</strong> 首套含 10ml 或 15ml oil，后续 refill 才是利润和 LTV。</p></div>
+              <div class="rule" style="--tone: var(--green);"><span>4</span><p><strong>包装要礼物化。</strong> 磁吸盒、结果卡、香调卡、使用卡、开箱脚本，比多送一袋石头更重要。</p></div>
+              <div class="rule" style="--tone: var(--green);"><span>5</span><p><strong>合规先行。</strong> 香精/精油供应商要给 IFRA/SDS/过敏原信息；页面标明儿童、宠物、皮肤接触和火源安全。</p></div>
+              <div class="rule" style="--tone: var(--green);"><span>6</span><p><strong>创作者先测内容。</strong> 30 个 micro/nano creators，目标是 8-10 条可用短视频，再决定是否加库存。</p></div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>一定不要碰</h3>
+            <div class="rule-list">
+              <div class="rule" style="--tone: var(--red);"><span>1</span><p><strong>不要承诺转运、招财、复合、治愈焦虑或睡眠。</strong> FDA/FTC 对 aromatherapy 和健康宣称都有明确风险边界，中国广告法也禁止迷信内容。</p></div>
+              <div class="rule" style="--tone: var(--red);"><span>2</span><p><strong>不要做低价同款。</strong> 中国平台的扩香石、晶石灯、精油套装已经足够便宜，初创品牌打不赢。</p></div>
+              <div class="rule" style="--tone: var(--red);"><span>3</span><p><strong>不要第一代做 12 星座 x 多晶石 x 多香型。</strong> SKU 爆炸会压垮库存、内容和页面转化。</p></div>
+              <div class="rule" style="--tone: var(--red);"><span>4</span><p><strong>不要把 crystal 真实性当核心承诺。</strong> 除非有稳定证书和供应链，否则越强调天然/产地/能量，纠纷越多。</p></div>
+              <div class="rule" style="--tone: var(--red);"><span>5</span><p><strong>不要先上 Amazon。</strong> Amazon 搜索页会把你拉回 diffuser/essential oil 价格战；这个品类需要 DTC 页面讲故事。</p></div>
+              <div class="rule" style="--tone: var(--red);"><span>6</span><p><strong>不要过度巫术化。</strong> 北美轻玄学用户喜欢 vibe，不一定想买 occult。安全词是 ritual、intention、mood、space reset。</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">90-Day Validation Plan</span>
+          <h2>自掏钱创业，下一步不是扩大，而是用最少钱证明三个问题：有人点、有人拍、有人买。</h2>
+        </div>
+        <div class="timeline">
+          <article class="phase" data-phase="Week 0-2">
+            <h3>定名与合规底盘</h3>
+            <ul>
+              <li>定工作名：Scent & Sign 或 Wish & Scent。</li>
+              <li>买域名，做 USPTO attorney knockout。</li>
+              <li>锁定 4-5 个香气方向和晶石搭配。</li>
+              <li>供应商索取 IFRA/SDS/包装材质信息。</li>
+            </ul>
+          </article>
+          <article class="phase" data-phase="Week 2-5">
+            <h3>样品与内容资产</h3>
+            <ul>
+              <li>打 30-50 套样品，不下 500 件库存。</li>
+              <li>拍开箱、滴香、空间摆放、测试结果卡。</li>
+              <li>完成 Shopify landing + quiz + email capture。</li>
+              <li>写 20 条创作者脚本。</li>
+            </ul>
+          </article>
+          <article class="phase" data-phase="Week 5-8">
+            <h3>创作者验证</h3>
+            <ul>
+              <li>寄 20-30 个 micro/nano creators。</li>
+              <li>看完播、保存、评论中的“想要/哪里买”。</li>
+              <li>小额广告测试 3 个角度：生日礼物、星座测试、房间香气 reset。</li>
+              <li>不优化 CTR，要优化加购/订金。</li>
+            </ul>
+          </article>
+          <article class="phase" data-phase="Week 8-12">
+            <h3>预售/止损</h3>
+            <ul>
+              <li>$78 预售，$88.88 MSRP 锚点。</li>
+              <li>CAC 目标低于 $35；超过 $40 需停。</li>
+              <li>订金/购买转化低于 1% 需停。</li>
+              <li>若只能靠 $49 以下成交，不适合 DTC 品牌化。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="inner">
+        <div class="section-head">
+          <span class="tag">Sources & Methodology</span>
+          <h2>来源与限制</h2>
+          <p class="lead">本报告优先使用平台官网、商品页、监管机构页面和可公开访问的行业报道。淘宝/天猫、小红书、抖音的全量排序、销量和投放数据无法在未登录/无后台权限下验证，因此本报告只使用公开可见页面和第三方公开报道做方向性判断。</p>
+        </div>
+        <div class="bibliography">
+          <p id="s1">[1] 智研咨询（2024）。《2025年中国家居香氛行业产业链、市场规模及竞争格局分析》。<a href="https://www.chyxx.com/industry/1206814.html" target="_blank" rel="noreferrer">https://www.chyxx.com/industry/1206814.html</a></p>
+          <p id="s2">[2] 发现报告/炼丹炉（2025）。《2025香薰市场线上消费数据洞察》。<a href="https://www.fxbaogao.com/detail/4763680" target="_blank" rel="noreferrer">https://www.fxbaogao.com/detail/4763680</a></p>
+          <p id="s3">[3] 人民日报海外版（2021）。《国产香氛：“香”入寻常百姓家》。<a href="https://paper.people.com.cn/rmrbhwb/html/2021-09/17/content_25879860.htm" target="_blank" rel="noreferrer">https://paper.people.com.cn/rmrbhwb/html/2021-09/17/content_25879860.htm</a></p>
+          <p id="s4">[4] 京东。扩香石品牌及商品公开页面，检索日期 2026-06-14。<a href="https://www.jd.com/brand/1620caddbfe8bb86e607.html" target="_blank" rel="noreferrer">https://www.jd.com/brand/1620caddbfe8bb86e607.html</a></p>
+          <p id="s5">[5] 京东。扩香石价格报价行情公开页面，检索日期 2026-06-14。<a href="https://www.jd.com/jiage/1620caddbfe8bb86e607.html" target="_blank" rel="noreferrer">https://www.jd.com/jiage/1620caddbfe8bb86e607.html</a></p>
+          <p id="s6">[6] 京东。水晶香薰灯品牌及商品公开页面，检索日期 2026-06-14。<a href="https://www.jd.com/brand/16207c96b1d583add507.html" target="_blank" rel="noreferrer">https://www.jd.com/brand/16207c96b1d583add507.html</a></p>
+          <p id="s7">[7] Weee! 观夏香氛相关产品公开页面，检索日期 2026-06-14。<a href="https://www.sayweee.com/zh/grocery-near-me/chinese-lang/explore/%E8%A7%82%E5%A4%8F%E9%A6%99%E6%B0%9B" target="_blank" rel="noreferrer">Weee! 观夏香氛</a></p>
+          <p id="s8">[8] Yami。观夏·晶石香薰·黑檀与猫公开商品页，检索日期 2026-06-14。<a href="https://www.yami.com/zh/p/to-summer-crystal-aromatherapy-safe-and-sound/3028477421" target="_blank" rel="noreferrer">Yami 观夏晶石香薰</a></p>
+          <p id="s9">[9] Yami。野兽派明星香氛晶石灯礼盒公开商品页，检索日期 2026-06-14。<a href="https://www.yami.com/zh/p/star-scented-crystals-lamp-gift-box-home-flameless-aromatherapy-birthday-gift-paris-weekend/3028444551" target="_blank" rel="noreferrer">Yami 野兽派晶石灯</a></p>
+          <p id="s10">[10] 中国日报网（2022）。《闻献DOCUMENTS发布首个创意香水香氛系列》。<a href="https://caijing.chinadaily.com.cn/a/202202/21/WS621335b2a3107be497a071f6.html" target="_blank" rel="noreferrer">https://caijing.chinadaily.com.cn/a/202202/21/WS621335b2a3107be497a071f6.html</a></p>
+          <p id="s11">[11] 36氪/卡思数据（2025）。《水晶直播财富密码：玄学、破价与情绪营销》。<a href="https://36kr.com/p/3361632713164544" target="_blank" rel="noreferrer">https://36kr.com/p/3361632713164544</a></p>
+          <p id="s12">[12] 梅花网/运营研究社（2024）。《我在小红书当玄学博主，1篇笔记悄悄赚1万》。<a href="https://www.meihua.info/article/5817093139350528" target="_blank" rel="noreferrer">https://www.meihua.info/article/5817093139350528</a></p>
+          <p id="s13">[13] 澎湃新闻/豹变（2025）。《水晶卖爆，年轻女孩撑起明星直播间》。<a href="https://www.thepaper.cn/newsdetail_forward_29812199" target="_blank" rel="noreferrer">https://www.thepaper.cn/newsdetail_forward_29812199</a></p>
+          <p id="s14">[14] Energy Muse。Clear Quartz Crystal Diffuser 商品页，检索日期 2026-06-14。<a href="https://energymuse.com/products/clear-quartz-crystal-diffuser" target="_blank" rel="noreferrer">https://energymuse.com/products/clear-quartz-crystal-diffuser</a></p>
+          <p id="s15">[15] Mindful Souls。Aroma Diffusers collection / Raw Gemstone Essential Oil Diffuser with Light，检索日期 2026-06-14。<a href="https://mindfulsouls.com/collections/aroma-diffusers" target="_blank" rel="noreferrer">Mindful Souls Aroma Diffusers</a></p>
+          <p id="s16">[16] House of Intuition。官网与 ritual cleansing kit 公开价格，检索日期 2026-06-14。<a href="https://houseofintuitionla.com/" target="_blank" rel="noreferrer">https://houseofintuitionla.com/</a></p>
+          <p id="s17">[17] Birthdate Co.。The Personalized Birthdate Candle 商品页，检索日期 2026-06-14。<a href="https://birthdate.co/products/the-birthdate-candle" target="_blank" rel="noreferrer">https://birthdate.co/products/the-birthdate-candle</a></p>
+          <p id="s18">[18] FDA。Aromatherapy regulatory guidance，检索日期 2026-06-14。<a href="https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy" target="_blank" rel="noreferrer">https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy</a></p>
+          <p id="s19">[19] FTC。Health Claims business guidance，检索日期 2026-06-14。<a href="https://www.ftc.gov/business-guidance/advertising-marketing/health-claims" target="_blank" rel="noreferrer">https://www.ftc.gov/business-guidance/advertising-marketing/health-claims</a></p>
+          <p id="s20">[20] 中华人民共和国广告法，检索日期 2026-06-14。<a href="https://www.12371.cn/2020/06/11/ARTI1591822469993247.shtml" target="_blank" rel="noreferrer">https://www.12371.cn/2020/06/11/ARTI1591822469993247.shtml</a></p>
+          <p id="s21">[21] Shopee 台湾。扩香石礼盒/水晶石香氛公开搜索页，检索日期 2026-06-14。<a href="https://shopee.tw/search?keyword=%E6%93%B4%E9%A6%99%E7%9F%B3%E7%A6%AE%E7%9B%92" target="_blank" rel="noreferrer">Shopee 扩香石礼盒</a></p>
+          <p id="s22">[22] Pinkoi。crystal aroma diffuser 搜索页，检索日期 2026-06-14。<a href="https://www.pinkoi.com/search?q=crystal+aroma+diffuser" target="_blank" rel="noreferrer">Pinkoi crystal aroma diffuser</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <span>Rucia / Offing · Crystal Aroma Ritual Competitive Research</span>
+      <span>Generated 2026-06-14 · Public-source desk research, not legal or investment advice</span>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll(".battle-tabs button");
+    const panels = document.querySelectorAll(".battle-panel");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item) => item.classList.remove("active"));
+        panels.forEach((panel) => panel.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
