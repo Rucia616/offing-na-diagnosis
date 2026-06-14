@@ -205,7 +205,8 @@
     .fill.warn { background: var(--warning-text); }
     .fill.bad { background: var(--risk-text); }
     .label { display: inline-block; color: var(--accent-text); font-size: 12px; font-weight: 850; letter-spacing: 0; }
-    section { padding: 58px 24px; }
+    section { padding: 58px 24px; scroll-margin-top: 78px; }
+    .hero { scroll-margin-top: 78px; }
     .inner { max-width: 1180px; margin: 0 auto; }
     .section-head { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items: end; margin-bottom: 20px; }
     .section-head .eyebrow { display: inline-flex; align-items: center; gap: 8px; }
@@ -217,7 +218,7 @@
     .three { grid-template-columns: repeat(3, 1fr); }
     .four { grid-template-columns: repeat(4, 1fr); }
     .card { padding: 22px; }
-    .card.metric, .card.result-card { background: linear-gradient(180deg, color-mix(in srgb, var(--tone, var(--accent-text)) 5%, var(--surface)) 0%, var(--surface) 36%); }
+    .card.metric, .card.result-card { background: var(--surface); }
     .card h3 { font-size: 21px; margin: 8px 0 12px; }
     .card p, .card li { color: var(--body); margin: 0; }
     .gene-map {
@@ -350,24 +351,31 @@
     }
     .cloud-head h3 { margin: 0; font-size: 20px; }
     .word-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 9px 14px;
-      min-height: 150px;
+      position: relative;
+      min-height: 178px;
     }
     .word-cloud span {
       --s: 18px;
+      --x: 50%;
+      --y: 50%;
+      --r: 0deg;
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      transform: translate(-50%, -50%) rotate(var(--r));
       display: inline-block;
       font-size: var(--s);
       line-height: 1.05;
       font-weight: 850;
+      white-space: nowrap;
       color: var(--accent-text);
     }
     .positive .word-cloud span { color: var(--success-text); }
+    .positive .word-cloud span:nth-child(3n) { color: var(--text); }
+    .positive .word-cloud span:nth-child(4n) { color: var(--accent-text); }
     .negative .word-cloud span { color: var(--risk-text); }
-    .word-cloud span:nth-child(3n) { color: var(--text); }
-    .word-cloud span:nth-child(4n) { color: var(--warning-text); }
+    .negative .word-cloud span:nth-child(3n) { color: var(--text); }
+    .negative .word-cloud span:nth-child(4n) { color: var(--body); }
     .cloud-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
     ul { padding-left: 1.1em; margin: 12px 0 0; }
     li + li { margin-top: 9px; }
@@ -382,31 +390,66 @@
       font-size: 12px;
       font-weight: 800;
     }
-    .good { color: var(--success-text); background: var(--success-bg); border-color: color-mix(in srgb, var(--success-text) 25%, transparent); }
-    .warn { color: var(--warning-text); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning-text) 25%, transparent); }
-    .bad { color: var(--risk-text); background: var(--risk-bg); border-color: color-mix(in srgb, var(--risk-text) 25%, transparent); }
-    .neutral { color: var(--accent-text); background: var(--accent-fill); border-color: color-mix(in srgb, var(--accent-text) 20%, transparent); }
+    .pill.good, .tag.good { color: var(--success-text); background: var(--success-bg); border-color: color-mix(in srgb, var(--success-text) 25%, transparent); }
+    .pill.warn, .tag.warn { color: var(--warning-text); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning-text) 25%, transparent); }
+    .pill.bad, .tag.bad { color: var(--risk-text); background: var(--risk-bg); border-color: color-mix(in srgb, var(--risk-text) 25%, transparent); }
+    .pill.neutral, .tag.neutral { color: var(--accent-text); background: var(--accent-fill); border-color: color-mix(in srgb, var(--accent-text) 20%, transparent); }
     .stage-card {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
+      position: relative;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, var(--prism-sky)), var(--surface));
+      color: var(--body);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 26px;
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    .stage-card h2, .stage-card .label { color: var(--inverse-text); }
-    .stage-card p { color: var(--inverse-muted); }
+    .stage-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-pink), var(--prism-lilac));
+    }
+    .stage-card h2 { color: var(--text); }
+    .stage-card .label { color: var(--accent-text); }
+    .stage-card p { color: var(--body); }
     .stage-path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
     .stage-step {
-      background: color-mix(in srgb, var(--inverse-text) 10%, transparent);
-      border: 1px solid color-mix(in srgb, var(--inverse-text) 14%, transparent);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 16px;
       min-height: 112px;
-      color: var(--inverse-text);
+      color: var(--body);
     }
-    .stage-step.active { background: var(--surface); color: var(--text); border-color: var(--surface); }
+    .stage-step.active {
+      background:
+        radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--prism-teal) 22%, transparent), transparent 42%),
+        var(--inverse-bg);
+      color: var(--inverse-text);
+      border-color: color-mix(in srgb, var(--inverse-bg) 80%, var(--line));
+      box-shadow: 0 14px 34px rgba(16,20,19,.12);
+    }
     .stage-step strong { display: block; font-size: 20px; margin-bottom: 6px; }
     .stage-step p { margin: 0; font-size: 13px; color: inherit; opacity: .84; }
+    #stage .stage-metrics .card.metric {
+      border-top: 1px solid var(--line);
+      border-left: 4px solid var(--line);
+      background: var(--surface);
+    }
+    #stage .stage-metrics .card.metric.good { border-left-color: var(--success-text); }
+    #stage .stage-metrics .card.metric.warn { border-left-color: var(--warning-text); }
+    #search .search-priority .card.metric {
+      border-top: 1px solid var(--line);
+      border-left: 4px solid var(--line);
+      background: var(--surface);
+    }
+    #search .search-priority .card.metric.bad { border-left-color: var(--risk-text); }
+    #search .search-priority .card.metric.warn { border-left-color: var(--warning-text); }
+    #search .search-priority .card.metric.good { border-left-color: var(--success-text); }
+    #search .search-priority .card.metric .label { color: var(--accent-text); }
     .metric { border-top: 5px solid var(--line); }
     .metric.good { --tone: var(--success-text); border-top-color: var(--success-text); }
     .metric.warn { --tone: var(--warning-text); border-top-color: var(--warning-text); }
@@ -437,6 +480,32 @@
       border-radius: var(--radius);
       background: var(--surface);
     }
+    .concern-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .concern-head strong { color: var(--text); }
+    .weight-badge {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--accent-text) 22%, transparent);
+      background: var(--accent-fill);
+      color: var(--accent-text);
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .weight-badge b {
+      font-size: 17px;
+      line-height: 1;
+    }
     .match-score { font-size: 26px; font-weight: 850; color: var(--text); }
     .problem {
       display: grid;
@@ -450,6 +519,7 @@
       padding: 24px;
     }
     .problem-side h3, .problem-side .label { color: var(--inverse-text); }
+    .problem-side .score-badge { color: var(--inverse-text); }
     .problem-side p { color: var(--inverse-muted); }
     .problem-body { padding: 24px; }
     .impact-path {
@@ -504,6 +574,8 @@
       .orbit-caption { position: static; max-width: none; margin: 18px auto 0; text-align: center; }
       .gene-note { grid-template-columns: 42px 1fr; }
       .gene-note-num { width: 36px; height: 36px; }
+      .word-cloud { min-height: 220px; }
+      .word-cloud span { font-size: calc(var(--s) * .82); }
       .seg { font-size: 10px; min-width: 34px; }
     }
     @media print {
@@ -598,7 +670,7 @@
             <div class="stage-step"><strong>100+</strong><p>AI 记录品类领导</p></div>
           </div>
         </div>
-        <div class="grid three" style="margin-top:16px">
+        <div class="grid three stage-metrics" style="margin-top:16px">
           <div class="card metric good">
             <span class="label">销售规模校准</span>
             <h3>全球年化收入约 USD 250M，约 RMB 16.9 亿。</h3>
@@ -710,7 +782,7 @@
           </div>
           <p class="lead">搜索入口不能按模板顺序看，要按“搜索量级 × 购买意图 × 当前承接缺口”排序。Plaud 的品牌词已经比较稳；真正影响预算效率的是高量级行业词被软件会议助手分流，以及高意图比较词没有系统承接。量级为公开样本方向性判断，需用 Google Ads / Search Console / Semrush 复核。</p>
         </div>
-        <div class="grid four">
+        <div class="grid four search-priority">
           <div class="card metric bad">
             <span class="label">P0 · 竞品 / 替代比较词</span>
             <h3>没接住，最影响购买判断。</h3>
@@ -788,16 +860,16 @@
               <span class="tag good">转化可用</span>
             </div>
             <div class="word-cloud">
-              <span style="--s:34px">省时间</span>
-              <span style="--s:30px">易用</span>
-              <span style="--s:28px">会议记录</span>
-              <span style="--s:24px">转写准确</span>
-              <span style="--s:22px">自动摘要</span>
-              <span style="--s:21px">轻薄硬件</span>
-              <span style="--s:20px">采访场景</span>
-              <span style="--s:18px">多语言</span>
-              <span style="--s:17px">学习笔记</span>
-              <span style="--s:16px">专业感</span>
+              <span style="--s:34px; --x:18%; --y:34%; --r:-2deg">省时间</span>
+              <span style="--s:30px; --x:43%; --y:28%; --r:1deg">易用</span>
+              <span style="--s:28px; --x:73%; --y:34%; --r:-1deg">会议记录</span>
+              <span style="--s:24px; --x:34%; --y:58%; --r:2deg">转写准确</span>
+              <span style="--s:22px; --x:72%; --y:57%; --r:-2deg">自动摘要</span>
+              <span style="--s:20px; --x:17%; --y:76%; --r:1deg">轻薄硬件</span>
+              <span style="--s:19px; --x:48%; --y:78%; --r:-1deg">采访场景</span>
+              <span style="--s:18px; --x:78%; --y:79%; --r:2deg">多语言</span>
+              <span style="--s:17px; --x:32%; --y:91%; --r:-2deg">学习笔记</span>
+              <span style="--s:16px; --x:91%; --y:90%; --r:1deg">专业感</span>
             </div>
             <p class="cloud-note">公开样本显示正向购买理由主要集中在“少整理时间”和“把记录变成摘要”。这支撑首单转化，但还需要继续转成续费价值。E4-E6, E10, E11, E19</p>
           </div>
@@ -807,16 +879,16 @@
               <span class="tag bad">影响续费</span>
             </div>
             <div class="word-cloud">
-              <span style="--s:34px">订阅成本</span>
-              <span style="--s:29px">集成不顺</span>
-              <span style="--s:26px">取消 / 账户</span>
-              <span style="--s:24px">功能边界</span>
-              <span style="--s:22px">云端等待</span>
-              <span style="--s:21px">手机替代</span>
-              <span style="--s:19px">隐私顾虑</span>
-              <span style="--s:18px">零售评分</span>
-              <span style="--s:17px">售后触点</span>
-              <span style="--s:16px">价格解释</span>
+              <span style="--s:34px; --x:20%; --y:32%; --r:-2deg">订阅成本</span>
+              <span style="--s:29px; --x:54%; --y:28%; --r:1deg">集成不顺</span>
+              <span style="--s:25px; --x:82%; --y:34%; --r:-1deg">取消 / 账户</span>
+              <span style="--s:24px; --x:70%; --y:56%; --r:2deg">功能边界</span>
+              <span style="--s:22px; --x:20%; --y:61%; --r:-1deg">云端等待</span>
+              <span style="--s:21px; --x:43%; --y:73%; --r:1deg">手机替代</span>
+              <span style="--s:19px; --x:63%; --y:82%; --r:-2deg">隐私顾虑</span>
+              <span style="--s:18px; --x:88%; --y:73%; --r:1deg">零售评分</span>
+              <span style="--s:17px; --x:31%; --y:91%; --r:-1deg">售后触点</span>
+              <span style="--s:16px; --x:79%; --y:93%; --r:2deg">价格解释</span>
             </div>
             <p class="cloud-note">负面主题更偏软件商业化和购买后管理，不是硬件首单认知问题。它会影响 Pro / Unlimited 续费、团队采购和高信任行业场景。E3, E7, E9-E11, E17, E20</p>
           </div>
@@ -917,31 +989,32 @@
         </div>
         <div class="grid">
           <div class="match-row">
-            <div><strong>录音与转写可靠性</strong><p>公开样本关注权重 28%。会议、电话、采访和课堂都先看能不能录全、转准、同步稳定。E4-E6, E11</p></div>
+            <div><div class="concern-head"><strong>录音与转写可靠性</strong><span class="weight-badge"><b>28%</b>关注</span></div><p>会议、电话、采访和课堂都先看能不能录全、转准、同步稳定。E4-E6, E11</p></div>
             <div><div class="match-score" style="color:var(--success-text)">84 / 100</div><div class="bar"><div class="fill good" style="width:84%"></div></div></div>
             <div><strong>做得好：</strong>双模式录音、多语言、设备续航和 App 评分支撑首单转化。下一步要把真实复杂场景的准确率和失败边界讲得更清楚。</div>
           </div>
           <div class="match-row">
-            <div><strong>隐私、同意与合规</strong><p>公开样本关注权重 22%。录音类产品天然触发美国州法、公司政策和医疗/法律场景的信任门槛。E3, E17</p></div>
+            <div><div class="concern-head"><strong>隐私、同意与合规</strong><span class="weight-badge"><b>22%</b>关注</span></div><p>录音类产品天然触发美国州法、公司政策和医疗/法律场景的信任门槛。E3, E17</p></div>
             <div><div class="match-score" style="color:var(--success-text)">82 / 100</div><div class="bar"><div class="fill good" style="width:82%"></div></div></div>
             <div><strong>做得好：</strong>Trust Center、SOC 2、HIPAA 等说明给企业采购提供基础。问题是合规内容还没有完全转化成行业场景的购买理由。</div>
           </div>
           <div class="match-row">
-            <div><strong>订阅费用与长期价值</strong><p>公开样本关注权重 20%。硬件购买后，用户会继续比较免费额度、Pro/Unlimited 价格、取消体验和替代软件成本。E3, E10, E11</p></div>
+            <div><div class="concern-head"><strong>订阅费用与长期价值</strong><span class="weight-badge"><b>20%</b>关注</span></div><p>硬件购买后，用户会继续比较免费额度、Pro/Unlimited 价格、取消体验和替代软件成本。E3, E10, E11</p></div>
             <div><div class="match-score" style="color:var(--warning-text)">58 / 100</div><div class="bar"><div class="fill warn" style="width:58%"></div></div></div>
             <div><strong>做得差：</strong>订阅价值没有被足够量化。页面应直接展示每周节省时间、团队协作收益、行业模板和硬件 + 软件的 TCO。</div>
           </div>
           <div class="match-row">
-            <div><strong>工作流集成与团队协作</strong><p>公开样本关注权重 18%。高频用户会看 CRM、Notion、Google/Zoom/Teams、导出、权限和团队模板。E3, E11, E18</p></div>
+            <div><div class="concern-head"><strong>工作流集成与团队协作</strong><span class="weight-badge"><b>18%</b>关注</span></div><p>高频用户会看 CRM、Notion、Google/Zoom/Teams、导出、权限和团队模板。E3, E11, E18</p></div>
             <div><div class="match-score" style="color:var(--warning-text)">66 / 100</div><div class="bar"><div class="fill warn" style="width:66%"></div></div></div>
             <div><strong>及格但有硬伤：</strong>软件产品线在补，但纯软件竞品在会议生态和团队协作里更自然。Plaud 必须把硬件优势接到团队工作流。</div>
           </div>
           <div class="match-row">
-            <div><strong>低摩擦佩戴与电池</strong><p>公开样本关注权重 12%。NotePin S 的按钮、可穿戴形态和 Desktop 新功能在修复早期佩戴/触控摩擦。E16</p></div>
+            <div><div class="concern-head"><strong>低摩擦佩戴与电池</strong><span class="weight-badge"><b>12%</b>关注</span></div><p>NotePin S 的按钮、可穿戴形态和 Desktop 新功能在修复早期佩戴/触控摩擦。E16</p></div>
             <div><div class="match-score" style="color:var(--success-text)">78 / 100</div><div class="bar"><div class="fill good" style="width:78%"></div></div></div>
             <div><strong>做得好：</strong>硬件形态仍是差异化入口，但新形态必须通过评分、退货率和 30/90 天活跃证明使用频率。</div>
           </div>
         </div>
+        <p class="footnote">关注占比为公开搜索、评论、评测和社区样本的方向性归纳，用来排序北美用户购买前最在意的点；不是内部后台统计。</p>
       </div>
     </section>
 
@@ -1035,7 +1108,7 @@
             <div class="problem-side">
               <span class="label">P0 · 30 天内进管理周会</span>
               <h3>订阅续费和团队席位还没有成为对外可验证的增长证据。</h3>
-              <div class="score-badge" style="color:#fff">82</div>
+              <div class="score-badge">82</div>
               <p>严重度 / 100</p>
             </div>
             <div class="problem-body">
@@ -1052,7 +1125,7 @@
             <div class="problem-side">
               <span class="label">P1 · 产品与品类</span>
               <h3>硬件必要性要持续证明，不能只靠第一代爆款心智。</h3>
-              <div class="score-badge" style="color:#fff">76</div>
+              <div class="score-badge">76</div>
               <p>严重度 / 100</p>
             </div>
             <div class="problem-body">
@@ -1069,7 +1142,7 @@
             <div class="problem-side">
               <span class="label">P1 · 渠道治理</span>
               <h3>零售铺货和第三方触点没有统一成专业采购体验。</h3>
-              <div class="score-badge" style="color:#fff">71</div>
+              <div class="score-badge">71</div>
               <p>严重度 / 100</p>
             </div>
             <div class="problem-body">
