@@ -49,6 +49,14 @@
       --prism-lilac: #9B7CFF;
       --prism-coral: #FF6B4A;
       --prism-green: #70E5A8;
+      --platform-instagram: #FF0069;
+      --platform-instagram-warm: #FF7A00;
+      --platform-instagram-purple: #D300C5;
+      --platform-instagram-blue: #7638FA;
+      --platform-tiktok: #25F4EE;
+      --platform-tiktok-red: #FE2C55;
+      --platform-tiktok-black: #000000;
+      --platform-youtube: #FF0000;
       --paper: var(--bg);
       --paper-2: var(--surface-2);
       --radius: 8px;
@@ -781,9 +789,9 @@
       aspect-ratio: 1;
       border-radius: 999px;
       background: conic-gradient(
-        var(--blue) 0 45.85%,
-        var(--sea-dark) 45.85% 82.39%,
-        var(--amber) 82.39% 100%
+        var(--platform-instagram) 0 45.85%,
+        var(--platform-tiktok) 45.85% 82.39%,
+        var(--platform-youtube) 82.39% 100%
       );
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), var(--shadow-soft);
     }
@@ -825,20 +833,39 @@
     }
     .legend-row {
       display: grid;
-      grid-template-columns: 14px 1fr auto auto;
-      gap: 10px;
-      align-items: baseline;
-      min-height: 48px;
-      padding: 11px 0;
+      grid-template-columns: 34px minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      min-height: 58px;
+      padding: 12px 0;
       border-bottom: 1px solid var(--line);
     }
     .legend-row:last-child { border-bottom: 0; }
-    .legend-dot {
-      width: 11px;
-      height: 11px;
+    .platform-logo {
+      width: 30px;
+      height: 30px;
+      display: inline-grid;
+      place-items: center;
       border-radius: 999px;
-      background: var(--tone);
-      transform: translateY(1px);
+      box-shadow: inset 0 0 0 1px rgba(16,20,19,.08), 0 8px 18px rgba(16,20,19,.08);
+    }
+    .platform-logo svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+    .platform-logo.instagram {
+      border-radius: 9px;
+      background: radial-gradient(circle at 28% 100%, #FED373 0 20%, transparent 38%),
+        radial-gradient(circle at 12% 12%, #FF7A00 0 18%, transparent 36%),
+        linear-gradient(135deg, var(--platform-instagram-warm), var(--platform-instagram), var(--platform-instagram-purple), var(--platform-instagram-blue));
+    }
+    .platform-logo.tiktok {
+      background: var(--platform-tiktok-black);
+    }
+    .platform-logo.youtube {
+      border-radius: 8px;
+      background: var(--platform-youtube);
     }
     .legend-row strong {
       color: var(--ink);
@@ -1858,19 +1885,35 @@
           </div>
           <div class="share-legend" aria-label="Platform share values">
             <div class="legend-row">
-              <span class="legend-dot" style="--tone:var(--blue)"></span>
+              <span class="platform-logo instagram" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.4" stroke="#fff" stroke-width="2.1" />
+                  <circle cx="12" cy="12" r="2.9" stroke="#fff" stroke-width="2.1" />
+                  <circle cx="15.7" cy="8.4" r="1.1" fill="#fff" />
+                </svg>
+              </span>
               <strong>Instagram</strong>
               <span class="legend-count">138</span>
               <span class="legend-share">46%</span>
             </div>
             <div class="legend-row">
-              <span class="legend-dot" style="--tone:var(--sea-dark)"></span>
+              <span class="platform-logo tiktok" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14.5 4v9.1a4.2 4.2 0 1 1-4.2-4.2h.7v2.8h-.7a1.4 1.4 0 1 0 1.4 1.4V4h2.8c.3 2 1.8 3.7 4 4.1v2.9c-1.5-.1-2.8-.6-4-1.5z" fill="#FE2C55" transform="translate(-1 1)" />
+                  <path d="M14.5 4v9.1a4.2 4.2 0 1 1-4.2-4.2h.7v2.8h-.7a1.4 1.4 0 1 0 1.4 1.4V4h2.8c.3 2 1.8 3.7 4 4.1v2.9c-1.5-.1-2.8-.6-4-1.5z" fill="#25F4EE" transform="translate(1 -1)" />
+                  <path d="M14.5 4v9.1a4.2 4.2 0 1 1-4.2-4.2h.7v2.8h-.7a1.4 1.4 0 1 0 1.4 1.4V4h2.8c.3 2 1.8 3.7 4 4.1v2.9c-1.5-.1-2.8-.6-4-1.5z" fill="#fff" />
+                </svg>
+              </span>
               <strong>TikTok / Shop</strong>
               <span class="legend-count">110</span>
               <span class="legend-share">37%</span>
             </div>
             <div class="legend-row">
-              <span class="legend-dot" style="--tone:var(--amber)"></span>
+              <span class="platform-logo youtube" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9.8 7.6 16.5 12l-6.7 4.4V7.6Z" fill="#fff" />
+                </svg>
+              </span>
               <strong>YouTube</strong>
               <span class="legend-count">53</span>
               <span class="legend-share">18%</span>
