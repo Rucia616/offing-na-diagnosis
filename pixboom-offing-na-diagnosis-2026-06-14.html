@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pixboom · 远汐 Offing 免费北美业务诊断 · 2026-06-14</title>
+  <meta name="description" content="Pixboom 北美业务诊断：高端高速电影机 Spark 已证明需求，下一阶段关键在交付、售后、工作流证明与专业渠道。">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #F5F5F7;
+      --top: #FBFBFD;
+      --surface: #FFFFFF;
+      --surface-2: #F7F8FA;
+      --text: #101413;
+      --body: #293331;
+      --muted: #66716E;
+      --line: #D7D9DC;
+      --link: #2D6261;
+      --accent-text: #2D6261;
+      --accent-fill: #EAF1F0;
+      --success-text: #157A38;
+      --success-bg: #EAF6EE;
+      --warning-text: #9A5B00;
+      --warning-bg: #FFF3DF;
+      --risk-text: #D70015;
+      --risk-bg: #FFF0F1;
+      --inverse-bg: #13211F;
+      --inverse-text: #F8FAF9;
+      --inverse-muted: rgba(248,250,249,.82);
+      --brand: #111111;
+      --brand-accent: #FF4800;
+      --brand-soft: #FFF1EB;
+      --shadow: 0 12px 34px rgba(16,20,19,.07);
+      --radius: 8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #0F1212;
+        --top: #141817;
+        --surface: #191E1D;
+        --surface-2: #202625;
+        --text: #F4F7F6;
+        --body: #D8DEDC;
+        --muted: #A9B2AF;
+        --line: #3A4240;
+        --link: #8CC7C3;
+        --accent-text: #9ED7D3;
+        --accent-fill: #1C3433;
+        --success-text: #8EE0A8;
+        --success-bg: #173424;
+        --warning-text: #F2C46D;
+        --warning-bg: #3A2A12;
+        --risk-text: #FF8E99;
+        --risk-bg: #3B171D;
+        --inverse-bg: #E9EFED;
+        --inverse-text: #101413;
+        --inverse-muted: #40504C;
+        --brand-soft: #2A1B16;
+        --shadow: 0 12px 34px rgba(0,0,0,.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-color: var(--bg);
+      background-image: linear-gradient(180deg, var(--top), var(--bg) 560px);
+      color: var(--body);
+      line-height: 1.65;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: saturate(180%) blur(18px);
+      background: color-mix(in srgb, var(--surface) 86%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .nav-mark {
+      color: var(--text);
+      font-weight: 800;
+      margin-right: 8px;
+    }
+    .nav-inner a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      min-height: 92vh;
+      padding: 62px 24px 36px;
+      display: grid;
+      align-content: center;
+      gap: 30px;
+    }
+    .logo {
+      color: var(--brand);
+      width: 178px;
+      max-width: 52vw;
+      display: block;
+      margin-bottom: 24px;
+    }
+    .logo svg { width: 100%; height: auto; display: block; }
+    .eyebrow {
+      color: var(--accent-text);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { color: var(--text); margin: 0; line-height: 1.12; letter-spacing: 0; }
+    h1 {
+      font-size: clamp(56px, 10vw, 116px);
+      font-weight: 850;
+      margin: 0 0 18px;
+    }
+    .hero h1 span { display: block; }
+    .hero-lead {
+      max-width: 980px;
+      color: var(--body);
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.45;
+      font-weight: 650;
+      margin: 0;
+    }
+    .score-wrap {
+      display: grid;
+      grid-template-columns: minmax(280px, .86fr) 1.2fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .total-card {
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+    .total-card small, .total-card p, .total-card .label { color: var(--inverse-muted); }
+    .total-number {
+      color: var(--inverse-text);
+      font-size: 68px;
+      line-height: .94;
+      font-weight: 850;
+      margin-top: 14px;
+    }
+    .stars {
+      font-size: 30px;
+      letter-spacing: 2px;
+      color: #F5C451;
+      margin: 8px 0 0;
+      white-space: nowrap;
+    }
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .subscore {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      min-height: 220px;
+    }
+    .subscore strong {
+      display: block;
+      font-size: 34px;
+      color: var(--text);
+      line-height: 1;
+      margin: 12px 0 10px;
+    }
+    .subscore .bar, .metric .bar {
+      height: 8px;
+      background: color-mix(in srgb, var(--line) 60%, transparent);
+      border-radius: 99px;
+      overflow: hidden;
+      margin: 10px 0 12px;
+    }
+    .fill { height: 100%; border-radius: inherit; background: var(--accent-text); }
+    .fill.good { background: var(--success-text); }
+    .fill.warn { background: var(--warning-text); }
+    .fill.bad { background: var(--risk-text); }
+    section { padding: 54px 24px; }
+    .inner { max-width: 1180px; margin: 0 auto; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, .72fr) 1.28fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 820;
+    }
+    .lead {
+      margin: 0;
+      color: var(--body);
+      font-size: 17px;
+      line-height: 1.68;
+    }
+    .grid { display: grid; gap: 14px; }
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p, .card li { margin: 0; color: var(--body); }
+    .card ul { padding-left: 18px; margin: 10px 0 0; }
+    .label {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .tag, .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 800;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .tag.good, .pill.good { color: var(--success-text); background: var(--success-bg); border-color: color-mix(in srgb, var(--success-text) 24%, transparent); }
+    .tag.warn, .pill.warn { color: var(--warning-text); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning-text) 24%, transparent); }
+    .tag.bad, .pill.bad { color: var(--risk-text); background: var(--risk-bg); border-color: color-mix(in srgb, var(--risk-text) 24%, transparent); }
+    .tag.neutral, .pill.neutral { color: var(--accent-text); background: var(--accent-fill); border-color: color-mix(in srgb, var(--accent-text) 20%, transparent); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .stage-card {
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .stage-card h2, .stage-card h3, .stage-card strong { color: var(--inverse-text); }
+    .stage-card p, .stage-card small, .stage-card .label { color: var(--inverse-muted); }
+    .stage-path {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .stage-step {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      padding: 14px;
+      min-height: 118px;
+    }
+    .stage-step.active {
+      background: #FFFFFF;
+      color: #101413;
+      box-shadow: 0 0 0 2px rgba(255,255,255,.6) inset;
+    }
+    .stage-step.active p, .stage-step.active small { color: #40504C; }
+    .stage-step strong { display: block; font-size: 22px; margin-bottom: 6px; }
+    .chart-card { padding: 20px; }
+    .stacked {
+      height: 34px;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      margin: 14px 0 14px;
+    }
+    .seg { height: 100%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; min-width: 38px; }
+    .seg.a { background: #2D6261; }
+    .seg.b { background: #101413; }
+    .seg.c { background: #A99556; color: #111; }
+    .seg.d { background: #A76560; }
+    .legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .legend-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px;
+      background: var(--surface);
+    }
+    .legend-item b { display: block; color: var(--text); font-size: 14px; }
+    .legend-item span { color: var(--muted); font-size: 12px; }
+    .score-badge {
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 850;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .metric {
+      border-left: 4px solid var(--line);
+      padding-left: 14px;
+    }
+    .metric.good { border-color: var(--success-text); }
+    .metric.warn { border-color: var(--warning-text); }
+    .metric.bad { border-color: var(--risk-text); }
+    .match-row {
+      display: grid;
+      grid-template-columns: 1.1fr .78fr .62fr 1.08fr;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      margin-bottom: 10px;
+    }
+    .match-row strong { color: var(--text); }
+    .problem {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+    .problem-side {
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
+      padding: 22px;
+    }
+    .problem-side h3, .problem-side strong { color: var(--inverse-text); }
+    .problem-side p, .problem-side .label { color: var(--inverse-muted); }
+    .problem-body { padding: 22px; }
+    .impact-path {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .impact-path div {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px;
+      font-size: 13px;
+      color: var(--body);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 780px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--text);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    td { color: var(--body); }
+    tr:last-child td { border-bottom: 0; }
+    .department-group {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .department-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+    .department-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 14px;
+    }
+    .dept-card {
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--surface);
+    }
+    .dept-card.bad { border-top-color: var(--risk-text); }
+    .dept-card.warn { border-top-color: var(--warning-text); }
+    .dept-card.good { border-top-color: var(--success-text); }
+    footer {
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
+      padding: 38px 24px;
+      margin-top: 44px;
+    }
+    footer p, footer small, footer li { color: var(--inverse-muted); }
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-top: 44px; }
+      .score-wrap, .section-head, .problem { grid-template-columns: 1fr; }
+      .subscores, .three, .four, .two, .department-grid { grid-template-columns: 1fr; }
+      .stage-path { grid-template-columns: 1fr 1fr; }
+      .legend { grid-template-columns: 1fr 1fr; }
+      .match-row { grid-template-columns: 1fr; }
+      .impact-path { grid-template-columns: 1fr; }
+      h1 { font-size: 58px; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 14px; }
+      section { padding: 42px 16px; }
+      .hero { padding-left: 16px; padding-right: 16px; }
+      h1 { font-size: 48px; }
+      .stage-path, .legend { grid-template-columns: 1fr; }
+      .total-number { font-size: 56px; }
+    }
+    @media print {
+      nav { display: none; }
+      body { background: #fff; }
+      section, .hero { break-inside: avoid; min-height: auto; }
+      .card, .department-group, .table-wrap { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-mark">远汐 Offing</div>
+      <a href="#stage">阶段</a>
+      <a href="#type">类型</a>
+      <a href="#voc">VOC</a>
+      <a href="#ceiling">天花板</a>
+      <a href="#match">卖点匹配</a>
+      <a href="#summary">一页看懂</a>
+      <a href="#blocks">三大板块</a>
+      <a href="#problems">关键问题</a>
+      <a href="#competitors">竞品</a>
+      <a href="#scores">评分</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#org">组织</a>
+      <a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div>
+        <div class="logo" aria-label="Pixboom 官方 logo">
+          <svg viewBox="0 0 139 20" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+            <path d="M20.5187 19.7299H24.5543V0.285941H20.5187V19.7299ZM46.1636 0.285941H41.2964L36.7019 6.78087L32.121 0.285941H27.2674L34.3705 9.76282L26.9947 19.7299H31.8619L36.7291 12.7584L41.5964 19.7299H46.4636L39.0878 9.76282L46.1636 0.285941ZM15.5424 0.993983C14.6698 0.517416 13.6609 0.258709 12.6112 0.258709C11.5614 0.258709 0 0.258709 0 0.258709V8.87776H3.99467V4.07124H12.6112C13.2247 4.07124 13.6746 4.23464 13.9473 4.54781C14.2199 4.84737 14.3699 5.215 14.3699 5.66434C14.3699 6.05921 14.2199 6.44046 13.9473 6.78087C13.6746 7.10766 13.211 7.37998 12.6112 7.57061L5.00356 9.81728C3.50386 10.2394 2.30409 11.0291 1.39064 12.2001C0.477178 13.3439 0.0136337 14.6919 0 16.2305V19.7299H3.99467V16.2305C3.99467 15.5633 4.17191 14.9642 4.55365 14.4468C4.93539 13.9158 5.46711 13.5754 6.10789 13.3575L14.4517 10.8521C15.5969 10.4845 16.5377 9.84451 17.2602 8.90499C17.9828 7.95186 18.3509 6.87618 18.3509 5.69157C18.3509 4.69759 18.1055 3.7853 17.6011 2.96833C17.1103 2.12413 16.4286 1.48417 15.5424 0.993983ZM130.42 0.285941L125.703 13.6707C125.525 14.0792 125.375 14.5693 125.28 15.114C125.171 14.5557 125.034 14.0655 124.857 13.6707L120.126 0.285941H114.209V19.7299H118.245V5.40563C118.409 6.07283 118.654 6.8081 118.968 7.65231L123.33 19.7435H127.243L131.606 7.65231C131.851 6.91703 132.11 6.16814 132.329 5.40563V19.7299H136.364V0.285941H130.42ZM63.6829 9.7492C64.2964 9.35433 64.8145 8.80968 65.2372 8.12887C65.6734 7.44806 65.878 6.74002 65.878 6.01836C65.878 4.98353 65.5916 4.04401 65.0327 3.17257C64.4873 2.27391 63.7375 1.57948 62.7967 1.06206C61.856 0.544648 60.7926 0.272324 59.6201 0.272324H48.7404V19.7571H60.0973C61.297 19.7571 62.3741 19.4984 63.3148 18.9674C64.2692 18.4227 65.019 17.7011 65.5644 16.816C66.0961 15.9037 66.3551 14.9097 66.3551 13.8204C66.3551 13.0171 66.0825 12.2137 65.4962 11.3968C64.9372 10.5934 64.3237 10.0488 63.6829 9.7492ZM52.7896 4.11209H59.6474C60.2745 4.11209 60.7926 4.31634 61.2016 4.71121C61.597 5.09246 61.8151 5.50095 61.8151 5.97751C61.8151 6.60386 61.6106 7.12127 61.2016 7.52976C60.8199 7.93824 60.2881 8.12887 59.6474 8.12887L52.7896 8.11526V4.11209ZM61.6242 15.2365C61.188 15.6722 60.6017 15.8765 59.9337 15.8765H52.776V11.7372H59.9337C60.629 11.7372 61.2016 11.9414 61.6242 12.3363C62.0742 12.7175 62.3059 13.1941 62.3196 13.7524C62.3196 14.3242 62.1014 14.8144 61.6242 15.2365ZM106.561 1.30716C104.993 0.435719 103.262 0 101.407 0C99.5259 0 97.7944 0.435719 96.2265 1.30716C94.6587 2.16498 93.418 3.33597 92.4909 4.86098C91.5774 6.37238 91.1003 8.08802 91.1003 10.0079C91.1003 11.9006 91.5774 13.6162 92.4909 15.1548C93.4044 16.6662 94.6723 17.8645 96.2265 18.7359C97.8217 19.5937 99.5395 20.0022 101.407 20.0022C103.262 20.0022 104.979 19.5801 106.561 18.7359C108.129 17.8781 109.397 16.6662 110.31 15.1548C111.224 13.6162 111.701 11.8869 111.701 10.0079C111.701 8.10164 111.224 6.386 110.31 4.86098C109.383 3.33597 108.142 2.16498 106.561 1.30716ZM106.847 13.1669C106.302 14.0792 105.566 14.8144 104.598 15.3591C103.657 15.8765 102.593 16.1488 101.407 16.1488C100.221 16.1488 99.1441 15.8901 98.1898 15.3591C97.2218 14.828 96.4992 14.0928 95.9538 13.1669C95.4221 12.2273 95.1631 11.1653 95.1631 9.98067C95.1631 8.79606 95.4221 7.734 95.9538 6.79448C96.4856 5.85497 97.2491 5.11969 98.1898 4.60228C99.1441 4.08486 100.221 3.81254 101.407 3.81254C102.593 3.81254 103.657 4.07124 104.598 4.60228C105.566 5.10607 106.329 5.84135 106.847 6.79448C107.379 7.734 107.638 8.79606 107.638 9.98067C107.638 11.1653 107.393 12.2273 106.847 13.1669ZM83.7517 1.30716C82.1838 0.435719 80.4524 0 78.5982 0C76.7167 0 74.9853 0.435719 73.4174 1.30716C71.8495 2.16498 70.6088 3.33597 69.6817 4.86098C68.7547 6.386 68.2911 8.08802 68.2911 10.0079C68.2911 11.9006 68.7683 13.6162 69.6817 15.1548C70.6225 16.6662 71.8631 17.8645 73.4174 18.7359C75.0125 19.5937 76.7304 20.0022 78.5982 20.0022C80.4524 20.0022 82.1702 19.5801 83.7517 18.7359C85.3196 17.8781 86.5875 16.6662 87.501 15.1548C88.4144 13.6162 88.8916 11.8869 88.8916 10.0079C88.8916 8.10164 88.4144 6.386 87.501 4.86098C86.5739 3.33597 85.3332 2.16498 83.7517 1.30716ZM84.0517 13.1669C83.5063 14.0792 82.7701 14.8144 81.8021 15.3591C80.8614 15.8765 79.7979 16.1488 78.6118 16.1488C77.4257 16.1488 76.3486 15.8901 75.3943 15.3591C74.4263 14.828 73.7037 14.0928 73.1583 13.1669C72.6266 12.2273 72.3676 11.1653 72.3676 9.98067C72.3676 8.79606 72.6266 7.734 73.1583 6.79448C73.7037 5.85497 74.4535 5.11969 75.3943 4.60228C76.3486 4.08486 77.4257 3.81254 78.6118 3.81254C79.7979 3.81254 80.8614 4.07124 81.8021 4.60228C82.7701 5.10607 83.5336 5.84135 84.0517 6.79448C84.5834 7.734 84.8424 8.79606 84.8424 9.98067C84.8424 11.1653 84.5834 12.2273 84.0517 13.1669Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="eyebrow">North America Business Diagnosis</div>
+        <h1><span>北美业务诊断</span></h1>
+        <p class="hero-lead">Pixboom 已经证明专业创作者愿意为 Spark（4K 1000fps 高速电影机）付费。下一阶段要从参数声量转向交付兑现、售后维修、真实生产案例和北美专业渠道，把早期预售热度沉淀成可复购、可转介绍的专业器材生意。</p>
+      </div>
+      <div class="score-wrap">
+        <div class="total-card">
+          <div>
+            <span class="label">北美业务情况总分</span>
+            <div class="total-number">61</div>
+            <div class="stars" aria-label="3.1 out of 5 stars">★★★☆☆</div>
+          </div>
+          <p>61 / 100 = 3.1 / 5。业务健康度 57 × 45% = 25.7；业务机会分 84 × 35% = 29.4；安全余量（100 - 问题致命度 68）× 20% = 6.4。数据抓取日期：2026-06-14。</p>
+        </div>
+        <div class="subscores">
+          <div class="subscore">
+            <span class="label">业务健康度</span>
+            <strong>57</strong>
+            <div class="bar"><div class="fill warn" style="width:57%"></div></div>
+            <p>需求和产品力成立，但出货、售后、渠道和生产稳定性还没达到专业器材品牌应有的确定性。</p>
+          </div>
+          <div class="subscore">
+            <span class="label">业务机会分</span>
+            <strong>84</strong>
+            <div class="bar"><div class="fill good" style="width:84%"></div></div>
+            <p>北美高端创作者、商业片、运动科学和 rental house 都有明确需求，价格带也有切入空间。</p>
+          </div>
+          <div class="subscore">
+            <span class="label">问题致命度</span>
+            <strong>68</strong>
+            <div class="bar"><div class="fill bad" style="width:68%"></div></div>
+            <p>越高越危险。当前高风险集中在交付延迟、服务承诺、软件成熟度和高客单信任。</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="stage">
+      <div class="inner">
+        <div class="stage-card">
+          <span class="label">Stage Judgment</span>
+          <h2>当前阶段：1-10 后期，单品需求成立，正在进入交付系统化。</h2>
+          <p class="lead">Pixboom 已经跨过 0-1 产品验证：Kickstarter、专业媒体、创作者试用和官网预售都证明 Spark 有真实需求。它距离 10-100 经营系统化还有一段距离：截至 2026-06-12，公开社区更新显示约 90-100 台已发货，下一批计划 120-150 台，剩余订单与网站预售仍需在 8-9 月交付兑现。阶段管理重点应从“让人相信参数”切到“让客户相信交付、维修、工作流和长期可用”。</p>
+          <div class="stage-path">
+            <div class="stage-step"><strong>0-1</strong><p>产品与品类验证</p></div>
+            <div class="stage-step active"><strong>1-10 后期</strong><p>单品规模化与交付验证</p></div>
+            <div class="stage-step"><strong>10-100</strong><p>渠道、服务、复购系统化</p></div>
+            <div class="stage-step"><strong>100+</strong><p>高速影像品类领导</p></div>
+          </div>
+        </div>
+        <div class="grid three" style="margin-top:14px">
+          <div class="card metric good">
+            <span class="label">已通过</span>
+            <h3>高客单需求验证</h3>
+            <p>官方披露 Kickstarter 30 天募资 $3.5M、400+ backers；BackerKit 可见 454 backers 与 HK$27.3M 口径。E5, E6</p>
+          </div>
+          <div class="card metric warn">
+            <span class="label">待治理</span>
+            <h3>生产与交付节奏</h3>
+            <p>6 月社区更新显示出货在推进，但用户评论仍集中追问批次、延迟和排队顺序。E4</p>
+          </div>
+          <div class="card metric bad">
+            <span class="label">尚未成熟</span>
+            <h3>专业渠道和售后确定性</h3>
+            <p>$13,999 设备不能只靠热度成交，北美需要 demo、维修、租赁、经销和真实生产案例共同降低购买风险。E2, E4, E12</p>
+          </div>
+        </div>
+        <div class="grid two" style="margin-top:14px">
+          <div class="card">
+            <span class="label">公开销售规模校准</span>
+            <h3>全球可核实订单底线约 USD 3.5M，约 RMB 25.1M。</h3>
+            <p>官方创始人信披露 Kickstarter $3.5M、400+ backers；按 2026-06-14 1 USD≈7.18 RMB 换算。网站预售、经销与租赁订单未披露，不计入底线。E5</p>
+          </div>
+          <div class="card">
+            <span class="label">北美年销售额估算</span>
+            <h3>USD 1.6M-4.5M，约 RMB 11.5M-32.3M。</h3>
+            <p>公开数据未披露地区拆分。按北美创作者/贸易展/社区可见度、加拿大优先批次、美国 Cine Gear/NAB 触点和高客单价格区间做方向性估算；需要内部订单地区、网站预售和经销 sell-out 复核。E1-E6</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gene">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Audience &amp; Brand Gene</span>
+            <h2>Pixboom 靠专业创作者和高速度影像用户成立，不能按普通相机品牌打法外扩。</h2>
+          </div>
+          <p class="lead">Spark 的购买人群不是泛泛的内容创作者，而是愿意为高速影像、RAW 工作流、专业 I/O 和特殊镜头场景付费的人：DP、commercial tabletop、VFX、运动科学、wildlife、rental house 和小型制作公司。大众 creator 只是未来边界，短期不能把他们当主成交人群。</p>
+        </div>
+        <div class="grid three">
+          <div class="card">
+            <span class="label">核心盘</span>
+            <h3>专业高速度影像用户</h3>
+            <p>CineD 把适用场景指向商业产品、水/玻璃、运动科学、VFX 元素和 wildlife；官网强调 4K 1000fps、RAW、12G-SDI、V-mount 和 E/EF/PL。E2, E8</p>
+          </div>
+          <div class="card">
+            <span class="label">相邻人群</span>
+            <h3>owner-operator 和小型 production house</h3>
+            <p>$13,999 让过去只能租 Phantom 的团队有购买理由，但他们会先看出货、维修、样片、软件和 resale/rental 价值。E3, E8</p>
+          </div>
+          <div class="card">
+            <span class="label">不宜过早主打</span>
+            <h3>普通 creator 和泛摄影用户</h3>
+            <p>高速拍摄需要灯光、workflow 和专门场景。若 Marketing 只讲“accessible”，会吸引预算不足或使用场景不稳定的人群，拉高咨询和售后成本。E8</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="type">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Business Type &amp; Channel Mix</span>
+            <h2>经营类型：DTC / Kickstarter 社区驱动，专业经销和租赁还在验证。</h2>
+          </div>
+          <p class="lead">Pixboom 当前最大可见订单来自 Kickstarter 与官网预售，用户信任主要由专业媒体、线下展会和社区互动支撑。这个结构适合新品冷启动，但不适合长期承接 $13,999 的专业器材销售；北美下一步要把 DTC 热度转成经销、租赁、维修和创作者案例网络。</p>
+        </div>
+        <div class="card chart-card">
+          <span class="label">北美渠道销售额占比 · 公开数据方向性估算</span>
+          <div class="stacked" aria-label="Estimated North America channel mix">
+            <div class="seg a" style="width:58%">58%</div>
+            <div class="seg b" style="width:22%">22%</div>
+            <div class="seg c" style="width:12%">12%</div>
+            <div class="seg d" style="width:8%">8%</div>
+          </div>
+          <div class="legend">
+            <div class="legend-item"><b>Kickstarter / BackerKit</b><span>50-65% · 需求验证与交付压力来源</span></div>
+            <div class="legend-item"><b>DTC 官网预售</b><span>15-30% · 利润入口但缺少公开转化证据</span></div>
+            <div class="legend-item"><b>经销 / 租赁</b><span>5-18% · Hot Rod 等触点存在，sell-out 仍待证明</span></div>
+            <div class="legend-item"><b>展会 / Workshop 线索</b><span>5-10% · 信任入口，不等于成交</span></div>
+          </div>
+        </div>
+        <div class="grid three" style="margin-top:14px">
+          <div class="card metric warn">
+            <span class="label">品类天然主渠道</span>
+            <h3>专业经销 + demo + rental + DTC 复合型</h3>
+            <p>这不是 Amazon-first 品类。高客单专业设备需要试用、技术支持、维修和团队采购信任。</p>
+          </div>
+          <div class="card metric bad">
+            <span class="label">平台集中度</span>
+            <h3>预售订单集中，用户关系仍脆弱</h3>
+            <p>Kickstarter 提供需求和现金流，但同一批客户也会集中放大交付延迟、固件和售后风险。E4-E6</p>
+          </div>
+          <div class="card metric warn">
+            <span class="label">内部校准数据</span>
+            <h3>先补地区订单、预售转化和渠道 sell-out</h3>
+            <p>下一步最需要 Seller/Shopify 订单地区、付款/退款、官网 CVR、售后工单、经销订单和租赁周转率。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voc">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Voice of Customer</span>
+            <h2>品牌声誉可控但进入警戒区：大家想要 Spark，也在盯交付和可靠性。</h2>
+          </div>
+          <p class="lead">公开 VOC 的正向主题很强：价格破局、参数稀缺、社区参与和专业媒体试用。但负向主题也集中：Kickstarter 高客单风险、延期、批次不清、软件/固件成熟度、传感器拼接线和维修可得性。声誉不是崩盘，但当前不适合把“已成熟品牌”作为对外叙事。</p>
+        </div>
+        <div class="grid four">
+          <div class="card metric warn">
+            <span class="label">声誉总分</span>
+            <div class="score-badge">63</div>
+            <span class="tag warn">警戒但可治理</span>
+          </div>
+          <div class="card">
+            <span class="label">正向购买理由</span>
+            <p>4K 1000fps、连续 RAW、低于传统高速系统的入手成本、CineD/Newsshooter 背书、社区参与感。E6-E9</p>
+          </div>
+          <div class="card">
+            <span class="label">负面集中主题</span>
+            <p>延期、批次不确定、Kickstarter 资金安全感、生产质量、固件功能、维修网络。E4, E7, E8</p>
+          </div>
+          <div class="card">
+            <span class="label">分数影响</span>
+            <p>下调客服售后、风险预警和电商转化分；不下调产品机会分，因为核心需求和产品方向仍成立。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ceiling">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Market Ceiling</span>
+            <h2>Spark 主机是收入核心，Pro Card 和软件只能在装机量起来后放大利润。</h2>
+          </div>
+          <p class="lead">直接套用“高速相机大盘”会高估 Pixboom 的短期天花板。它真正能吃的是北美专业创作高速影像的细分盘：商业产品、体育/科学、VFX、wildlife、广告和 rental house。短期优先级应放在 Spark 主机交付和专业渠道，配件与软件先服务装机量和利润质量。</p>
+        </div>
+        <div class="grid three">
+          <div class="card">
+            <span class="label">P0 · Spark 高速电影机</span>
+            <h3>北美可服务盘：USD 25M-70M / 年（方向性估算）</h3>
+            <p>广义全球高速相机市场 2024 约 USD 704M；电影机市场北美约占全球三分之一。Pixboom 的现实 SAM 是北美影视/创作高速影像细分，不能直接套整个高速相机大盘。当前北美 GMV 估算 USD 1.6M-4.5M。E10, E11</p>
+            <div class="pill-row"><span class="pill good">主收入线</span><span class="pill warn">份额需内部校准</span></div>
+          </div>
+          <div class="card">
+            <span class="label">P1 · Pro Card / Mount / 备件</span>
+            <h3>利润层，尚未形成独立增长柱</h3>
+            <p>官网单独售卖 Pro Card 2.5TB 和 mount adapters；但配件市场依赖 Spark 装机量，现阶段主要承担毛利、备份和专业工作流安全。E2, E13</p>
+            <div class="pill-row"><span class="pill warn">高毛利候选</span><span class="pill bad">装机量约束</span></div>
+          </div>
+          <div class="card">
+            <span class="label">P1 · Pixboom Cine / Firmware</span>
+            <h3>留存和信任层，暂不适合商业化</h3>
+            <p>官网下载中心显示 Pixboom Cine V0.3.4.3、Firmware V1.0.1；软件成熟度会影响复购和口碑，但此阶段不建议把核心工作流功能做成付费墙。E14</p>
+            <div class="pill-row"><span class="pill warn">必须修</span><span class="pill bad">不能过早变现</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="match">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Message-Market Fit</span>
+            <h2>Spark 的参数卖点击中需求，但高客单买家最先看的仍是可靠性和服务。</h2>
+          </div>
+          <p class="lead">匹配度 68 / 100，属于“勉强及格但有硬伤”。Pixboom 把 4K 1000fps、BSI、Global Shutter、continuous RAW 讲得足够清楚；北美专业买家真正的第一关是设备能不能按时交付、稳定拍摄、顺畅后期、坏了有人修。</p>
+        </div>
+        <div class="match-row">
+          <div><strong>可靠交付、维修和售后</strong><br><span class="label">公开样本方向性权重 30%</span></div>
+          <div>2-year warranty、local repair、24hr support response</div>
+          <div><div class="score-badge" style="font-size:30px;color:var(--warning-text)">58</div><span class="tag warn">不够硬</span></div>
+          <div>承诺存在，但社区仍在追问出货批次和延迟；$13,999 设备需要可验证的北美维修路径。E2, E4</div>
+        </div>
+        <div class="match-row">
+          <div><strong>真实 4K 高帧率画质</strong><br><span class="label">公开样本方向性权重 25%</span></div>
+          <div>4K 1000fps、Super 35 BSI、global shutter、13 stops claim</div>
+          <div><div class="score-badge" style="font-size:30px;color:var(--success-text)">78</div><span class="tag good">做得好</span></div>
+          <div>专业媒体试用支持核心产品方向；生产版仍需要正式 lab test 和更多真实项目样片。E7, E8</div>
+        </div>
+        <div class="match-row">
+          <div><strong>工作流和后期效率</strong><br><span class="label">公开样本方向性权重 20%</span></div>
+          <div>Pixboom Pro Card、Pixboom Cine、CinemaDNG export、4K HDMI firmware</div>
+          <div><div class="score-badge" style="font-size:30px;color:var(--warning-text)">64</div><span class="tag warn">部分接住</span></div>
+          <div>连续 RAW 是强卖点，但触发、pre-roll、calibration、软件版本仍是购买前疑虑。E7, E14</div>
+        </div>
+        <div class="match-row">
+          <div><strong>TCO 对比 rental / Freefly / Phantom</strong><br><span class="label">公开样本方向性权重 15%</span></div>
+          <div>$13,999 套装、低于 Freefly Ember S5K 与传统高速方案</div>
+          <div><div class="score-badge" style="font-size:30px;color:var(--success-text)">82</div><span class="tag good">价格理由强</span></div>
+          <div>价格切口成立；但 Pro Card、维修、灯光、配件和 resale 需要被纳入完整拥有成本。E2, E9, E12</div>
+        </div>
+        <div class="match-row">
+          <div><strong>专业生态和可得性</strong><br><span class="label">公开样本方向性权重 10%</span></div>
+          <div>展会、workshop、Hot Rod Cameras 触点、社区</div>
+          <div><div class="score-badge" style="font-size:30px;color:var(--risk-text)">49</div><span class="tag bad">不达标</span></div>
+          <div>有触点但没有形成北美 demo / rental / repair / reseller 的确定网络，专业采购会继续观望。E1, E12</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">One Page Summary</span>
+            <h2>一页看懂：Pixboom 的北美卡点是交付信任；需求已经被预售和专业媒体验证。</h2>
+          </div>
+          <p class="lead">Spark 已经拿到高客单预售、专业媒体和创作者关注，说明产品切口是成立的。现在决定北美能不能继续放量的，是 Pixboom 能否在 90 天内把出货节奏、维修承诺、固件路线和真实生产案例讲成一套可信的专业器材经营系统。</p>
+        </div>
+        <div class="grid three">
+          <div class="card metric bad">
+            <span class="label">P0 · 交付与售后</span>
+            <h3>出货兑现决定下一轮信任成本。</h3>
+            <p>社区对延迟和批次仍有明确不满。Pixboom 需要把“我们在努力”变成“每周可复查的交付、维修和问题关闭数据”。E4</p>
+          </div>
+          <div class="card metric warn">
+            <span class="label">P1 · 生产版证明</span>
+            <h3>参数声量已经够，生产版案例不够。</h3>
+            <p>CineD 认可基础能力，也指出 beta 版触发、校准和动态范围问题。下一步要靠生产版长测、真实片场和 workflow 教程降风险。E7, E8</p>
+          </div>
+          <div class="card metric bad">
+            <span class="label">P1 · 北美渠道</span>
+            <h3>DTC 和众筹不能单独承接专业采购。</h3>
+            <p>专业设备需要经销、租赁、demo、维修和融资。只靠官网预售，会让高意向客户停在咨询和观望。E12</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blocks">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Three Business Blocks</span>
+            <h2>三大板块诊断：产品和声量跑在前面，电商与售后承接拖后腿。</h2>
+          </div>
+          <p class="lead">Pixboom 的热度已经够高，短板在高客单交易链路还不够像专业器材品牌。品牌叙事和 Marketing 能吸引人，电商、服务和渠道必须把“敢不敢下单”这一步补上。</p>
+        </div>
+        <div class="grid three">
+          <div class="card">
+            <div class="score-badge" style="color:var(--warning-text)">68</div>
+            <h3>品牌板块</h3>
+            <p><strong>判断：</strong>专业媒体和众筹背书成立，但新品牌信任仍需要交付记录来兑现。</p>
+            <ul>
+              <li>做得好的：$3.5M 众筹、400+ backers、CineD/Newsshooter 和 iF 设计奖构成早期权威背书。E5-E9</li>
+              <li>做得好的：官网视觉和产品语言清晰，能让专业用户快速理解 4K 1000fps 和 RAW 工作流。E1, E2</li>
+              <li>做得不好的：品牌信用还被“延期、批次、维修可得性”压住；这会直接拉高高客单下单阻力。E4</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="score-badge" style="color:var(--warning-text)">72</div>
+            <h3>Marketing 板块</h3>
+            <p><strong>判断：</strong>PR 和创作者试用有效，但内容还没完全服务成交决策。</p>
+            <ul>
+              <li>做得好的：CineD hands-on、Newsshooter、Philip Bloom 等触点能触达核心专业用户。E7-E9</li>
+              <li>做得好的：NAB、Cine Gear、IBC 和 Atlas Lens workshop 让 Spark 有线下可信度。E1, E3, E4</li>
+              <li>做得不好的：大量内容仍在证明“参数很强”，缺少 production-ready、售后、维修、workflow 风险关闭内容。E7, E14</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="score-badge" style="color:var(--risk-text)">54</div>
+            <h3>DTC / 电商板块</h3>
+            <p><strong>判断：</strong>当前不达标。页面能卖参数，但还没有把 $13,999 的购买风险讲清楚。</p>
+            <ul>
+              <li>做得好的：官网直接展示价格、套装、保修、运费和下单路径，基础 DTC 能成交。E2</li>
+              <li>做得不好的：14 天退货、25%-35% restocking fee 和非质量问题不可退，会加重高客单犹豫。E2</li>
+              <li>做得不好的：经销/租赁触点少，Amazon/B&amp;H/Adorama 等主流专业购买路径没有公开 sell-out 证明。E12</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Top 3 Issues</span>
+            <h2>三大关键问题：先把专业买家的风险感降下来。</h2>
+          </div>
+          <p class="lead">Pixboom 接下来要把北美客户最在意的三件事讲透：能按期拿到、拿到后能稳定拍、坏了有人修。</p>
+        </div>
+        <div class="grid">
+          <div class="card problem">
+            <div class="problem-side">
+              <span class="label">P0 · 30 天内进周会</span>
+              <h3>出货和售后信任没有形成可复查系统。</h3>
+              <div class="score-badge" style="color:#fff">86</div>
+              <span class="tag bad">严重度高</span>
+            </div>
+            <div class="problem-body">
+              <p>6 月更新显示出货在推进，但社区评论仍集中追问延期、批次和已发货数量。对 $13,999 专业设备来说，公开透明的交付看板和北美售后路径不是客服细节，而是成交条件。E4</p>
+              <div class="impact-path">
+                <div><strong>现象</strong><br>客户关注从参数转向交付。</div>
+                <div><strong>影响</strong><br>预售转化、转介绍和经销信心被压低。</div>
+                <div><strong>动作</strong><br>建立批次、维修、已知问题和关闭率看板。</div>
+              </div>
+              <div class="pill-row"><span class="pill bad">Owner: Ops / Support</span><span class="pill neutral">验收: 每周出货与 issue update</span></div>
+            </div>
+          </div>
+          <div class="card problem">
+            <div class="problem-side">
+              <span class="label">P1 · 60 天内补证据</span>
+              <h3>生产版证明还没有追上参数声量。</h3>
+              <div class="score-badge" style="color:#fff">78</div>
+              <span class="tag warn">高优先级</span>
+            </div>
+            <div class="problem-body">
+              <p>CineD 对 Spark 的基础能力评价正向，但也明确记录 beta 阶段的动态范围、horizontal line、IR-cut、trigger、calibration 和 pre-roll 等待完善点。生产版必须用真实拍摄和长测把这些疑虑关闭。E7, E8</p>
+              <div class="impact-path">
+                <div><strong>现象</strong><br>参数可信，production-ready 证据不足。</div>
+                <div><strong>影响</strong><br>专业客户会等测评、等租赁、等别人先踩坑。</div>
+                <div><strong>动作</strong><br>20 个真实 production case + firmware issue log。</div>
+              </div>
+              <div class="pill-row"><span class="pill warn">Owner: Product / Marketing</span><span class="pill neutral">验收: 生产版案例库上线</span></div>
+            </div>
+          </div>
+          <div class="card problem">
+            <div class="problem-side">
+              <span class="label">P1 · 90 天内建渠道</span>
+              <h3>北美专业渠道没有承接高客单成交。</h3>
+              <div class="score-badge" style="color:#fff">74</div>
+              <span class="tag warn">高优先级</span>
+            </div>
+            <div class="problem-body">
+              <p>专业电影机不是纯官网成交。Pixboom 需要在 LA、NY、Toronto/Vancouver 等节点建立 demo、租赁、经销、维修和 creator referral；否则热度会停在内容观看和咨询，而不是进入采购。E1, E12</p>
+              <div class="impact-path">
+                <div><strong>现象</strong><br>贸易展触点强，经销 sell-out 弱。</div>
+                <div><strong>影响</strong><br>高意向客户缺少试用和售后安全感。</div>
+                <div><strong>动作</strong><br>签 3-5 个 demo / rental / repair 节点。</div>
+              </div>
+              <div class="pill-row"><span class="pill warn">Owner: Channel</span><span class="pill neutral">验收: 可预约 demo 和租赁周转数据</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="competitors">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Competitive Calibration</span>
+            <h2>竞品对比显示 Pixboom 的价格切口成立，但可靠性门槛更高。</h2>
+          </div>
+          <p class="lead">Pixboom 在“性能 / 价格”上有真实锋利度。问题是高速电影机属于低容错专业设备：Freefly、Kron、Phantom 的客户不仅买参数，也买可用性、服务、生态和历史信任。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>品牌 / 产品</th><th>公开价格与能力</th><th>对 Pixboom 的启示</th></tr></thead>
+            <tbody>
+              <tr><td>Pixboom Spark</td><td>$13,999，套装含 Spark、2.5TB Pro Card、E/EF/PL adapter；4K 1000fps / 2K 1800fps 级别，continuous RAW。E2</td><td>价格理由强，但必须用交付、维修和 production-ready 案例守住高客单信任。</td></tr>
+              <tr><td>Freefly Ember S5K</td><td>官方主张 5K 600fps、4K 800fps；CineD 曾披露 brain retail $17,995。E9</td><td>Freefly 是最直接的“可购买高速创作机”标杆，Pixboom 要证明的不只是更高帧率，还包括同级可用性。</td></tr>
+              <tr><td>Kron Chronos 4K12</td><td>官网/零售显示 4K 1006fps、短时记录；价格约 $17,995。E12</td><td>Chronos 更偏科研/技术型，Pixboom 若要吃影视创作者，需要把 cinema workflow 和可靠性讲得更完整。</td></tr>
+              <tr><td>Phantom / 高端 rental</td><td>Pixboom 官方内容把 4K 1000fps 与 Phantom rental 场景对比，提到 $1,500-$2,000/day 级别租赁经济性。E3</td><td>Pixboom 的拥有成本叙事成立，但也意味着客户会用专业 rental 的服务标准要求它。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="scores">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">11-Dimension Score</span>
+            <h2>11 维评分：产品机会高，服务和渠道是低分项。</h2>
+          </div>
+          <p class="lead">CEO 应该把这张表用于资源取舍：产品能力和专业声量继续放大；客服售后、渠道供应和数据看板进入 30 天治理；会员复购和软件商业化暂时不承担收入目标。</p>
+        </div>
+        <div class="grid four">
+          <div class="card metric bad"><span class="label">客服与售后</span><div class="score-badge">49</div><div class="bar"><div class="fill bad" style="width:49%"></div></div><p>延迟、维修和 issue close 需要公开化。</p></div>
+          <div class="card metric bad"><span class="label">订阅与会员</span><div class="score-badge">46</div><div class="bar"><div class="fill bad" style="width:46%"></div></div><p>不宜过早商业化，先做用户资产沉淀。</p></div>
+          <div class="card metric bad"><span class="label">电商板块</span><div class="score-badge">52</div><div class="bar"><div class="fill bad" style="width:52%"></div></div><p>DTC 可下单，但渠道和退换承接弱。</p></div>
+          <div class="card metric bad"><span class="label">风险预警</span><div class="score-badge">42</div><div class="bar"><div class="fill bad" style="width:42%"></div></div><p>交付、固件、口碑和服务风险集中。</p></div>
+          <div class="card metric warn"><span class="label">转化漏斗</span><div class="score-badge">58</div><div class="bar"><div class="fill warn" style="width:58%"></div></div><p>高意向咨询需要 demo 和渠道闭环。</p></div>
+          <div class="card metric warn"><span class="label">品牌板块</span><div class="score-badge">68</div><div class="bar"><div class="fill warn" style="width:68%"></div></div><p>背书成立，交付记录仍弱。</p></div>
+          <div class="card metric warn"><span class="label">Marketing</span><div class="score-badge">72</div><div class="bar"><div class="fill warn" style="width:72%"></div></div><p>PR 好，成交证据还要补。</p></div>
+          <div class="card metric good"><span class="label">用户洞察</span><div class="score-badge">75</div><div class="bar"><div class="fill good" style="width:75%"></div></div><p>核心用户理解较清楚。</p></div>
+          <div class="card metric good"><span class="label">产品与品类</span><div class="score-badge">76</div><div class="bar"><div class="fill good" style="width:76%"></div></div><p>产品切口强，生产版证明需补。</p></div>
+          <div class="card metric good"><span class="label">竞品对比</span><div class="score-badge">78</div><div class="bar"><div class="fill good" style="width:78%"></div></div><p>价格/性能切口清楚。</p></div>
+          <div class="card metric good"><span class="label">增长机会</span><div class="score-badge">84</div><div class="bar"><div class="fill good" style="width:84%"></div></div><p>需求强，关键看系统承接。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">90 / 180 Day Roadmap</span>
+            <h2>路线图：先把信任成本降下来，再放大北美渠道。</h2>
+          </div>
+          <p class="lead">Pixboom 的短期动作不应平均铺开。前 30 天先让已付款客户看到确定性；90 天内让潜在客户看到 production-ready 证据；180 天内让北美专业渠道承担稳定销售。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>周期</th><th>优先动作</th><th>Owner</th><th>验收指标</th></tr></thead>
+            <tbody>
+              <tr><td>0-30 天</td><td>上线公开交付/维修/固件看板：已发货、下一批数量、已知问题、已关闭问题、维修路径和预计回复 SLA。</td><td>Ops / Support</td><td>每周更新；已知 P0 issue 有状态；社区延迟投诉减少。</td></tr>
+              <tr><td>0-30 天</td><td>重写官网高客单风险页：14-day return、restocking fee、local repair、Pro Card 成本、firmware roadmap 全部解释清楚。</td><td>DTC / Legal / Support</td><td>FAQ 点击率、咨询转化、退款/犹豫主题下降。</td></tr>
+              <tr><td>31-90 天</td><td>制作 20 个 production-ready 案例：commercial tabletop、sports science、wildlife、VFX、rental workflow 各 3-5 个。</td><td>Marketing / Product</td><td>每个案例包含原始素材、灯光条件、后期路径、设备设置和问题处理。</td></tr>
+              <tr><td>31-90 天</td><td>签 3-5 个北美 demo / rental / repair 节点，优先 LA、NY、Toronto、Vancouver。</td><td>Channel</td><td>可预约 demo 页面上线；至少 2 个 rental 周转案例。</td></tr>
+              <tr><td>91-180 天</td><td>建立 installed base 增长层：Pro Card、mount、保养、培训、样片征集和 referral，不急于软件付费。</td><td>Growth / Community</td><td>老客配件 attach rate、referral 订单、NPS/VOC 回收。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="org">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Function Audit</span>
+            <h2>职能部门专业度：红灯先修交付、售后和渠道。</h2>
+          </div>
+          <p class="lead">这不是评价个人能力，而是看公开经营产出。Pixboom 最该进老板周会的是客服/售后、渠道/供应链和数据/增长运营；它们直接决定高客单客户是否继续信任下一批产品。</p>
+        </div>
+        <div class="department-group">
+          <div class="department-head"><h3>红灯部门</h3><span class="tag bad">30 天内进周会</span></div>
+          <div class="department-grid">
+            <div class="dept-card bad"><div class="score-badge">43</div><h3>客服 / 售后部</h3><p>政策写了，但公开客户焦虑仍集中在延迟、批次、技术问题和维修路径。30 天内补 issue closure 与维修 SLA。</p></div>
+            <div class="dept-card bad"><div class="score-badge">48</div><h3>渠道 / 供应链部</h3><p>出货推进慢于客户预期，专业经销和租赁 sell-out 证据不足。30 天内明确北美 demo、repair、rental 节点。</p></div>
+            <div class="dept-card bad"><div class="score-badge">50</div><h3>数据 / 增长运营部</h3><p>北美订单占比、渠道贡献、预售转化、退款原因和售后主题没有对外形成可信仪表盘。30 天内先建内部看板。</p></div>
+          </div>
+        </div>
+        <div class="department-group">
+          <div class="department-head"><h3>黄灯部门</h3><span class="tag warn">带约束优化</span></div>
+          <div class="department-grid">
+            <div class="dept-card warn"><div class="score-badge">56</div><h3>DTC / 电商部</h3><p>官网可以成交，但退换政策、交付日期、维修解释和 TCO 页面仍拖累 $13,999 转化。</p></div>
+            <div class="dept-card warn"><div class="score-badge">66</div><h3>品牌部</h3><p>品牌愿景和技术叙事成立；下一步要用交付记录、维修网络和真实项目承接权威。</p></div>
+            <div class="dept-card warn"><div class="score-badge">72</div><h3>Marketing 部</h3><p>媒体和 KOL 有效；需要减少纯参数内容，增加生产版案例和高客单风险关闭内容。</p></div>
+          </div>
+        </div>
+        <div class="department-group">
+          <div class="department-head"><h3>绿灯部门</h3><span class="tag good">继续放大，但不优先整顿</span></div>
+          <div class="department-grid">
+            <div class="dept-card good"><div class="score-badge">78</div><h3>产品 / 工程部</h3><p>核心产品方向清楚，专业媒体验证正向；下一步要把 beta 问题在生产版中关闭并公开说明。</p></div>
+            <div class="dept-card good"><div class="score-badge">76</div><h3>设计 / Web 部</h3><p>官网视觉和产品图完成度高，能承接专业感；需要把风险解释和购买决策信息层级前置。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="risks">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Risks &amp; Data Gaps</span>
+            <h2>风险预警：最危险的不是热度下降，是第一批客户体验没有被系统化管理。</h2>
+          </div>
+          <p class="lead">Pixboom 的机会很大，但现阶段每一个交付延迟、固件问题、维修不清和退款争议都会被放大。只要首批客户体验没有形成可引用的正循环，下一轮官网预售和渠道采购都会变贵。</p>
+        </div>
+        <div class="grid three">
+          <div class="card metric bad"><span class="label">P0 风险</span><h3>出货节奏和客户等待情绪</h3><p>已发货数量、下一批数量、剩余排队和网站预售交付需要变成可复查事实。E4</p></div>
+          <div class="card metric warn"><span class="label">P1 风险</span><h3>固件与 workflow 成熟度</h3><p>Pixboom Cine、HDMI firmware、trigger、pre-roll、calibration 仍会影响专业可用性。E7, E14</p></div>
+          <div class="card metric warn"><span class="label">数据缺口</span><h3>地区订单和渠道 sell-out</h3><p>公开数据不足以给北美 GMV 单点，需要内部订单地区、官网 CVR、退款、售后工单和经销 sell-out 校准。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Evidence Table</span>
+            <h2>证据表</h2>
+          </div>
+          <p class="lead">以下证据为公开来源，抓取日期为 2026-06-14。市场规模与北美 GMV 为方向性估算，不等同于 Pixboom 财务口径。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ID</th><th>来源</th><th>关键事实</th><th>支持判断</th><th>置信度</th></tr></thead>
+            <tbody>
+              <tr><td>E1</td><td><a href="https://www.pixboom.com/" target="_blank">Pixboom 官网首页</a></td><td>官网首屏写 Starting at $13,999；展示 Cine Gear 2026、NAB 2026、IBC 2025 等触点。</td><td>价格带、贸易展触点、品牌 VI。</td><td>高</td></tr>
+              <tr><td>E2</td><td><a href="https://www.pixboom.com/product/pixboom-spark/" target="_blank">Pixboom Spark 产品页</a></td><td>产品页展示 $13,999、2-year warranty、local repair centers、24hr support response；退货政策含 14-day return、25%-35% restocking fee。</td><td>DTC 转化、保修、退换风险、主品线参数。</td><td>高</td></tr>
+              <tr><td>E3</td><td><a href="https://www.pixboom.com/pixboom-spark-is-now-shipping-what-to-expect/" target="_blank">Pixboom Spark Is Now Shipping</a></td><td>2026-05-29 官方文章称 Spark 已在 2026-05 出货，$13,999，available now，并解释 4K 1000fps 与 Phantom rental 经济性。</td><td>当前出货状态、价格理由、TCO 叙事。</td><td>高</td></tr>
+              <tr><td>E4</td><td><a href="https://community.pixboom.com/t/spark-backer-update-june-2026-shipping-firmware-ibc/767" target="_blank">Pixboom Community June 2026 Update</a></td><td>2026-06-12 更新：计划 6 月 22 日开始发 120-150 台；剩余订单含官网预售预计 8-9 月；评论中管理员确认约 90-100 台已发货，并承认延迟反馈有效。</td><td>交付阶段、VOC、售后与运营风险。</td><td>高</td></tr>
+              <tr><td>E5</td><td><a href="https://www.pixboom.com/a-heartfelt-thank-you-to-the-pixboom-community/" target="_blank">Founder letter</a></td><td>2025-10-24 官方信披露 Kickstarter 30 天募资 $3.5M、400+ backers。</td><td>需求验证、销售底线。</td><td>高</td></tr>
+              <tr><td>E6</td><td><a href="https://www.backerkit.com/projects/635323867/pixboom-spark-worlds-first-consumer-bsi-high-speed-camera" target="_blank">BackerKit / BackerTracker</a></td><td>页面显示 454 backers、HK$27,318,397、目标 HK$100,000、活动周期 2025-09-17 至 2025-10-18。</td><td>众筹规模、backer 数量。</td><td>中高</td></tr>
+              <tr><td>E7</td><td><a href="https://www.cined.com/pixboom-spark-review-first-hands-on-with-beta-version-of-the-high-speed-cinema-camera/" target="_blank">CineD hands-on review</a></td><td>2025-10-23 CineD 认可 global-shutter high-speed 基础能力，同时记录 beta 阶段 10-11 stops、horizontal line、IR contamination、trigger / pre-roll / calibration 待完善。</td><td>产品力、生产版证明、VOC 风险。</td><td>高</td></tr>
+              <tr><td>E8</td><td><a href="https://www.cined.com/pixboom-spark-high-speed-camera-launches-4-6k-global-shutter-up-to-2182-fps-and-unlimited-raw/" target="_blank">CineD launch article</a></td><td>2025-09-10 披露 Super 35 global shutter、670fps 4.6K open gate、2,182fps 2K、$7,999 early-bird、$12,999 planned retail、Q1 2026 交付计划。</td><td>竞品与生命周期、参数定位。</td><td>高</td></tr>
+              <tr><td>E9</td><td><a href="https://www.cined.com/freefly-ember-s5k-high-speed-camera-now-shipping-in-depth-look-with-sample-footage/" target="_blank">CineD Freefly Ember S5K</a></td><td>Freefly Ember S5K camera brain retail $17,995；Freefly 官网显示 5K 600fps、4K 800fps。</td><td>直接竞品价格与性能校准。</td><td>高</td></tr>
+              <tr><td>E10</td><td><a href="https://www.grandviewresearch.com/industry-analysis/high-speed-camera-market-report" target="_blank">Grand View Research</a></td><td>全球 high-speed camera market 2024 约 USD 704.2M，2030 预计 USD 1,439.1M，CAGR 12.6%。</td><td>广义市场天花板。</td><td>中</td></tr>
+              <tr><td>E11</td><td><a href="https://www.fortunebusinessinsights.com/industry-reports/cinema-camera-market-100387" target="_blank">Fortune Business Insights</a></td><td>全球 cinema camera market 2025 USD 337.32M，North America 2025 占 33.40%。</td><td>创作/电影机天花板辅助校准。</td><td>中</td></tr>
+              <tr><td>E12</td><td><a href="https://hotrodcameras.com/products/pixboom-spark-camera-pl-mount-silver" target="_blank">Hot Rod Cameras listing</a> / <a href="https://www.krontech.ca/product-category/cameras/" target="_blank">Kron Technologies</a></td><td>Hot Rod Cameras 有 Spark PL mount listing，标 $13,399、contact for current availability；Kron 4K12 约 $17,995。</td><td>北美经销触点、竞品价格。</td><td>中</td></tr>
+              <tr><td>E13</td><td><a href="https://www.pixboom.com/product-category/accessories/" target="_blank">Pixboom Accessories</a></td><td>Accessories 页面显示 Pro Card 2.5TB、E/EF/PL adapters 等 4 个 SKU；区域价格以 JPY 展示。</td><td>配件/利润层与复购线索。</td><td>中高</td></tr>
+              <tr><td>E14</td><td><a href="https://www.pixboom.com/downloads/" target="_blank">Pixboom Downloads</a></td><td>Pixboom Cine V0.3.4.3 发布于 2026-05-08；Spark Firmware V1.0.1 发布于 2026-06-09，包含 4K HDMI output 和 menu UI 优化。</td><td>软件/固件成熟度与工作流风险。</td><td>高</td></tr>
+              <tr><td>E15</td><td><a href="https://www.instagram.com/pixboomtech/" target="_blank">Pixboom Instagram</a> / <a href="https://www.youtube.com/@pixboomtech" target="_blank">YouTube</a></td><td>公开搜索显示 Instagram 约 15K followers，YouTube 约 1.15K subscribers；近 2026-06 有用户发收到/测试 Spark 的内容。</td><td>社媒声量和早期用户内容。</td><td>中</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <h3>远汐 Offing 免费北美业务诊断</h3>
+      <p>本报告基于 2026-06-14 可复查公开数据、专业媒体、品牌官网、社区 VOC 与方向性市场估算。未接入 Pixboom 内部订单、广告后台、Shopify、售后工单、退款、渠道 sell-out 和财务数据，因此销售额与渠道占比均为经营判断用途，不作为财务结论。</p>
+    </div>
+  </footer>
+</body>
+</html>
