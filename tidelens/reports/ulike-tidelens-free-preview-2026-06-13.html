@@ -401,7 +401,7 @@
 
     .evidence-strip {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1.08fr .96fr .96fr;
       gap: 1px;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -410,9 +410,24 @@
       box-shadow: var(--shadow);
     }
     .evidence {
-      min-height: 156px;
-      padding: 20px;
+      min-height: 172px;
+      padding: 24px;
       background: var(--surface);
+    }
+    .evidence.primary {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(220px, .55fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: end;
+      min-height: 246px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 92% 12%, rgba(127,194,188,.22), transparent 32%),
+        linear-gradient(145deg, #101616, #173d3c);
+    }
+    .evidence-strip .evidence:last-child {
+      grid-column: span 2;
     }
     .evidence strong {
       display: block;
@@ -422,6 +437,11 @@
       font-weight: 880;
       font-variant-numeric: tabular-nums;
     }
+    .evidence.primary strong {
+      color: #fff;
+      font-size: clamp(78px, 8vw, 116px);
+      line-height: .88;
+    }
     .evidence span {
       display: block;
       margin-top: 10px;
@@ -429,6 +449,31 @@
       font-size: 14px;
       line-height: 1.42;
       font-weight: 710;
+    }
+    .evidence h3 {
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.18;
+      font-weight: 860;
+    }
+    .evidence p {
+      margin-top: 8px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.48;
+      font-weight: 560;
+    }
+    .evidence.primary .label { color: rgba(255,255,255,.68); }
+    .evidence.primary h3 {
+      color: #fff;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.06;
+    }
+    .evidence.primary p {
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+      line-height: 1.55;
     }
     .evidence small {
       display: block;
@@ -479,77 +524,140 @@
       font-size: 12px;
       line-height: 1.45;
     }
+    .volume-verdict {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.14);
+    }
+    .volume-verdict strong {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.18;
+    }
+    .volume-verdict span {
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      line-height: 1.5;
+    }
     .platform-volume {
       display: grid;
-      gap: 12px;
-      padding: 20px;
+      grid-template-columns: minmax(210px, .78fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+      padding: 24px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--surface);
       box-shadow: var(--shadow-soft);
     }
-    .stacked-bar {
+    .share-chart {
       display: grid;
-      grid-template-columns: 110fr 138fr 53fr;
-      height: 20px;
-      overflow: hidden;
+      place-items: center;
+    }
+    .donut {
+      position: relative;
+      width: min(230px, 100%);
+      aspect-ratio: 1;
       border-radius: 999px;
-      background: #e6ece9;
+      background: conic-gradient(
+        var(--blue) 0 45.85%,
+        var(--sea-dark) 45.85% 82.39%,
+        var(--amber) 82.39% 100%
+      );
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), var(--shadow-soft);
     }
-    .stacked-bar span:nth-child(1) { background: var(--sea-dark); }
-    .stacked-bar span:nth-child(2) { background: var(--blue); }
-    .stacked-bar span:nth-child(3) { background: var(--amber); }
-    .platform-row {
-      display: grid;
-      grid-template-columns: 126px 1fr 76px 58px;
-      gap: 12px;
-      align-items: center;
-      min-height: 56px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .platform-row:last-child { border-bottom: 0; }
-    .platform-row strong {
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 840;
-    }
-    .mini-bar {
-      height: 8px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: #e7ecea;
-    }
-    .mini-bar span {
-      display: block;
-      width: var(--w);
-      height: 100%;
+    .donut::after {
+      content: "";
+      position: absolute;
+      inset: 22%;
       border-radius: inherit;
-      background: var(--tone);
+      background: var(--surface);
+      box-shadow: inset 0 0 0 1px var(--line);
     }
-    .volume-number {
+    .donut-center {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
       color: var(--ink);
-      font-size: 21px;
+    }
+    .donut-center strong {
+      display: block;
+      color: var(--ink);
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: .95;
       font-weight: 880;
-      text-align: right;
       font-variant-numeric: tabular-nums;
     }
-    .volume-share {
+    .donut-center span {
+      display: block;
+      margin-top: 4px;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 780;
-      text-align: right;
+      font-weight: 760;
+    }
+    .share-legend {
+      display: grid;
+      gap: 10px;
+    }
+    .legend-row {
+      display: grid;
+      grid-template-columns: 14px 1fr auto auto;
+      gap: 10px;
+      align-items: baseline;
+      min-height: 48px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .legend-row:last-child { border-bottom: 0; }
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--tone);
+      transform: translateY(1px);
+    }
+    .legend-row strong {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 840;
+    }
+    .legend-count {
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 880;
+      font-variant-numeric: tabular-nums;
+    }
+    .legend-share {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 820;
       font-variant-numeric: tabular-nums;
     }
     .volume-caveat {
-      margin-top: 4px;
-      padding: 12px 14px;
+      grid-column: 1 / -1;
+      margin-top: 0;
+      padding: 18px 20px;
       border-radius: var(--radius);
       border: 1px solid rgba(163,101,0,.18);
       background: rgba(163,101,0,.08);
       color: var(--body);
-      font-size: 12px;
-      line-height: 1.45;
+      font-size: 18px;
+      line-height: 1.48;
+      font-weight: 650;
+    }
+    .volume-caveat strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.28;
+      font-weight: 860;
+    }
+    .volume-caveat span {
+      display: block;
     }
 
     .quote-split {
@@ -714,6 +822,11 @@
       display: grid;
       gap: 12px;
     }
+    .competitor-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
     .note-row {
       padding: 16px;
       border: 1px solid var(--line);
@@ -721,15 +834,47 @@
       background: rgba(255,255,255,.9);
       box-shadow: var(--shadow-soft);
     }
+    .note-row.featured {
+      min-height: 240px;
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      padding: 22px;
+    }
     .note-row strong {
       display: block;
       margin-bottom: 4px;
       font-size: 15px;
     }
+    .note-row.featured strong {
+      margin: 0;
+      color: var(--sea-dark);
+      font-size: 13px;
+      font-family: var(--mono);
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    .note-row h3 {
+      color: var(--ink);
+      font-size: 26px;
+      line-height: 1.08;
+      font-weight: 860;
+    }
     .note-row p {
       color: var(--body);
+      font-size: 14px;
+      line-height: 1.52;
+    }
+    .note-action {
+      margin-top: 2px;
+      padding: 12px 13px;
+      border: 1px solid rgba(45,98,97,.2);
+      border-radius: var(--radius);
+      background: var(--sea-soft);
+      color: var(--body);
       font-size: 13px;
-      line-height: 1.48;
+      line-height: 1.42;
+      font-weight: 700;
     }
 
     .platform-map {
@@ -1143,6 +1288,7 @@
     }
 
     @media (max-width: 980px) {
+      .topbar { position: static; }
       .shell { width: min(100% - 28px, 1180px); }
       .topbar-inner { min-height: auto; align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
       .nav-links { width: 100%; overflow-x: auto; gap: 14px; padding-bottom: 2px; }
@@ -1151,14 +1297,18 @@
       h1 { font-size: clamp(42px, 12vw, 58px); }
       .hero-copy { font-size: 15px; }
       .why-diagnosis { grid-template-columns: 1fr; }
-      .evidence-strip, .volume-board, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .quote-split { grid-template-columns: 1fr; }
+      .evidence-strip, .volume-board, .platform-volume, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .competitor-board, .quote-split { grid-template-columns: 1fr; }
       .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .metric { min-height: 112px; padding: 14px; }
       .metric strong { font-size: 22px; }
       .metric span { font-size: 12px; }
       .stage-bar { grid-template-columns: repeat(2, 1fr); }
-      .platform-row { grid-template-columns: 102px 1fr 58px 46px; gap: 8px; }
-      .volume-number { font-size: 18px; }
+      .donut { width: min(230px, 72vw); }
+      .volume-caveat { font-size: 15px; }
+      .volume-caveat strong { font-size: 17px; }
+      .evidence.primary { grid-template-columns: 1fr; min-height: auto; gap: 28px; }
+      .evidence-strip .evidence:last-child { grid-column: auto; }
+      .note-row.featured { min-height: auto; }
       section { padding: 48px 0; scroll-margin-top: 132px; }
       .matrix { min-height: 440px; }
       .dot::after { min-width: 88px; font-size: 11px; }
@@ -1233,10 +1383,10 @@
 
       <aside class="hero-panel" aria-label="TideLens diagnosis summary">
         <div class="score-card">
-          <span class="label">总体诊断</span>
+          <span class="label">一句话诊断</span>
           <div class="score-line">
-            <strong>效率战</strong>
-            <span>Ulike 已经不是“要不要做红人”的阶段，而是要判断哪些内容值得复投、哪些内容正在烧预算。</span>
+            <strong>别再加人</strong>
+            <span>不是完全不投，而是先停默认铺量。Ulike 近 30 天声量已经足够，真正问题是哪些内容值得复投、哪些内容只是在烧预算。</span>
           </div>
           <div class="stage-bar" aria-label="Stage diagnosis">
             <div class="stage-seg">冷启动<small>不是当前问题</small></div>
@@ -1283,37 +1433,51 @@
       <div class="volume-board">
         <div class="volume-total">
           <div>
-            <span class="label">Verified Creator Video Publishes</span>
+            <span class="label">已核验公开视频</span>
             <strong>301</strong>
-            <span>TikTok US/CA creator / affiliate videos 110 条；Instagram creator Reels 138 条；YouTube creator / review videos 53 条。</span>
+            <span>总量已经足够高：Instagram 138 条，TikTok 110 条，YouTube 53 条。</span>
           </div>
-          <small>计入口径：每条内容必须能拿到平台内容 ID、发布日期、公开 URL 和去重依据。TikTok 采用 video_id 级去重：17 组关键词，774 条原始结果，北美 creator 视频核验 110 条。Instagram 采集 hashtag / tagged cluster，635 个 permalink 候选，最近 30 天 creator Reels 为 138 条。YouTube 采集 query=ulike 的 This month / Recently uploaded 结果，172 个候选、171 条详情核验、165 条落在窗口内；保守计入 53 条 creator / review / product-mention 视频，broader Ulike-relevant public uploads 为 60 条。</small>
+          <div class="volume-verdict">
+            <strong>老板要看的不是“还有没有红人”，而是 301 条里谁值得复投。</strong>
+            <span>下一步应把内容分成可复投、可剪素材、只制造曝光、应停止四类。</span>
+            <small>统计窗口：2026-05-15 至 2026-06-14。仅计可核验公开 URL、发布日期和内容 ID 的公开视频。</small>
+          </div>
         </div>
         <div class="platform-volume">
-          <div class="stacked-bar" aria-label="Counted platform share: TikTok 37%, Instagram 46%, YouTube 18%">
-            <span title="TikTok / TikTok Shop: 110 verified creator videos"></span>
-            <span title="Instagram Reels: 138 verified creator videos"></span>
-            <span title="YouTube: 53 verified creator / review videos"></span>
+          <div class="share-chart" aria-label="Platform share donut chart: Instagram 46%, TikTok 37%, YouTube 18%">
+            <div class="donut" role="img" aria-label="Instagram 46%, TikTok 37%, YouTube 18%">
+              <div class="donut-center">
+                <div>
+                  <strong>301</strong>
+                  <span>total</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="platform-row">
-            <strong>TikTok / Shop</strong>
-            <div class="mini-bar" style="--tone:var(--sea-dark);--w:80%"><span></span></div>
-            <div class="volume-number">110</div>
-            <div class="volume-share">37%</div>
+          <div class="share-legend" aria-label="Platform share values">
+            <div class="legend-row">
+              <span class="legend-dot" style="--tone:var(--blue)"></span>
+              <strong>Instagram</strong>
+              <span class="legend-count">138</span>
+              <span class="legend-share">46%</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-dot" style="--tone:var(--sea-dark)"></span>
+              <strong>TikTok / Shop</strong>
+              <span class="legend-count">110</span>
+              <span class="legend-share">37%</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-dot" style="--tone:var(--amber)"></span>
+              <strong>YouTube</strong>
+              <span class="legend-count">53</span>
+              <span class="legend-share">18%</span>
+            </div>
           </div>
-          <div class="platform-row">
-            <strong>Instagram</strong>
-            <div class="mini-bar" style="--tone:var(--blue);--w:100%"><span></span></div>
-            <div class="volume-number">138</div>
-            <div class="volume-share">46%</div>
-          </div>
-          <div class="platform-row">
-            <strong>YouTube</strong>
-            <div class="mini-bar" style="--tone:var(--amber);--w:38%"><span></span></div>
-            <div class="volume-number">53</div>
-            <div class="volume-share">18%</div>
-          </div>
-          <p class="volume-caveat">业务解读：Ulike 现阶段是 TikTok Shop / affiliate、Instagram creator relationship 与 YouTube review / search defense 同时运转的高频铺量品牌。Instagram 负责高频视觉触达，TikTok 负责转化和素材测试，YouTube 虽然数量低于短视频平台，但承接的是更接近购买决策的 high-intent review、comparison 和 expert-style proof。</p>
+          <p class="volume-caveat">
+            <strong>业务解读：Ulike 不是缺声量，而是平台分工需要重排。</strong>
+            <span>Instagram 贡献最高，说明关系和素材层已经很活跃；TikTok 承接转化测试；YouTube 只有 18%，但它最接近购买前 review、comparison 和搜索信任，不能只用数量评估价值。</span>
+          </p>
         </div>
       </div>
     </section>
@@ -1322,38 +1486,48 @@
       <div class="section-head">
         <span class="section-kicker">Evidence-Led Diagnosis</span>
         <h2>这些公开信号共同指向同一个结论：Ulike 缺的是购买证据链。</h2>
-        <p class="lead">下面每个数字只服务一个判断：Ulike 已经有足够多的内容、合作和信任资产，下一步要从“继续铺量”转向“按购买顾虑重组内容证据，并建立复投标准”。</p>
+        <p class="lead">这屏只回答一个问题：Ulike 不是缺红人，也不是缺内容，而是缺一套把 creator 内容转成购买理由的复投标准。</p>
       </div>
       <div class="evidence-strip">
-        <div class="evidence">
-          <span class="label">声量判断</span>
-          <strong>301</strong>
-          <span>已进入高频铺量阶段，下一步看内容效率。</span>
+        <div class="evidence primary">
+          <div>
+            <span class="label">核心结论</span>
+            <strong>301</strong>
+          </div>
+          <div>
+            <h3>声量已经够，下一步看复投效率。</h3>
+            <p>近 30 天公开视频已经证明 Ulike 不缺曝光。现在真正要判断的是：哪些内容能解释购买顾虑、沉淀素材、值得继续投；哪些内容只是把预算烧成声量。</p>
+          </div>
         </div>
         <div class="evidence">
-          <span class="label">TikTok 角色</span>
+          <span class="label">TikTok</span>
           <strong>110</strong>
-          <span>TikTok 是转化与素材测试引擎。</span>
+          <h3>管转化测试</h3>
+          <p>重点看 Shop / affiliate、折扣触发、hook 胜率和评论区购买意图。</p>
         </div>
         <div class="evidence">
-          <span class="label">Instagram 角色</span>
+          <span class="label">Instagram</span>
           <strong>138</strong>
-          <span>Instagram 是关系与再营销资产层。</span>
+          <h3>管声量与素材沉淀</h3>
+          <p>适合做 creator relationship、视觉可信度和再营销素材，不应独自背成交压力。</p>
         </div>
         <div class="evidence">
-          <span class="label">YouTube 角色</span>
+          <span class="label">YouTube</span>
           <strong>53</strong>
-          <span>YouTube 是低量但高意图的防守位。</span>
+          <h3>管购买前信任</h3>
+          <p>数量最低，但最接近 review、comparison 和购买前搜索防守。</p>
         </div>
         <div class="evidence">
-          <span class="label">合作信号</span>
+          <span class="label">复投审计</span>
           <strong>95</strong>
-          <span>合作密度足够做复投审计。</span>
+          <h3>合作信号足够</h3>
+          <p>有足够 sponsored / affiliate 样本，下一步应该审计谁值得 rebook。</p>
         </div>
         <div class="evidence">
           <span class="label">信任底座</span>
           <strong>7M+ / 2,621</strong>
-          <span>品牌信任底座已经存在。</span>
+          <h3>不是从零建立信任</h3>
+          <p>销量 claim 与 Amazon ratings 已存在，creator 内容要承接这些信任资产。</p>
         </div>
       </div>
     </section>
@@ -1375,100 +1549,87 @@
         </div>
       </div>
     </section>
-
     <section class="shell" id="competitors">
       <div class="section-head">
         <span class="section-kicker">Competitor KOL Posture</span>
         <h2>竞品打法已经分化，Ulike 需要用证据型内容建立防守。</h2>
-        <p class="lead">Ulike 面临的不是一个竞品，而是三种不同的内容战场：大牌安全权威、年轻化价格挑战、高端 beauty tech 信任。不同竞品抢的是不同购买顾虑，Ulike 的防守需要按用户顾虑拆成 safety proof、value proof、authority proof 和 comparison proof。</p>
+        <p class="lead">Ulike 面临的不是一个竞品，而是四类不同的内容战场：安全权威、低价试错、高端科技信任和比较搜索截流。不同竞品抢的是不同购买顾虑，Ulike 的防守要拆成 safety proof、value proof、authority proof 和 comparison proof。</p>
       </div>
-      <div class="matrix-wrap">
-        <div class="matrix" role="img" aria-label="Competitor posture matrix">
-          <div class="quadrant q1">High trust / lower intensity</div>
-          <div class="quadrant q2">High trust / high intensity</div>
-          <div class="quadrant q3">Low trust / lower intensity</div>
-          <div class="quadrant q4">Social volume / challenger</div>
-          <span class="axis-y high">Trust / Authority High</span>
-          <span class="axis-y low">Trust / Authority Low</span>
-          <span class="axis-x left">Lower KOL Intensity</span>
-          <span class="axis-x right">Higher KOL Intensity</span>
-          <span class="dot ulike" style="--x:62%;--y:67%" data-name="Ulike: 购买证据链缺口"></span>
-          <span class="dot braun" style="--x:48%;--y:80%" data-name="Braun: authority safety"></span>
-          <span class="dot nood" style="--x:78%;--y:43%" data-name="Nood: price challenger"></span>
-          <span class="dot current" style="--x:39%;--y:72%" data-name="CurrentBody: beauty tech trust"></span>
-          <span class="dot rose" style="--x:71%;--y:34%" data-name="RoseSkinCo: social UGC"></span>
-        </div>
-        <div class="competitor-notes">
-          <div class="note-row">
-            <strong>Braun</strong>
-            <p>打法是“安全权威 + 大牌确定性”。Braun 用 SkinProtect Sensor、app guidance、dermatologically / gynecologically tested、FDA cleared、German design 和 100 years of experience，把用户的核心顾虑从“会不会有效”拉到“哪个更稳、更安全”。它抢走的是风险厌恶型用户和高客单安全心智；Ulike 需要用 creator proof 回应 safety、skin tone fit、intimate-area boundary 和长期结果。</p>
-          </div>
-          <div class="note-row">
-            <strong>Nood</strong>
-            <p>打法是“价格挑战 + 社交转化”。Nood 用 accessible pricing、The Flasher 2.0、visible-results timeline、serum bundle、dermatologist-backed language 和 UGC/review 语气，抢想尝试 IPL 但价格敏感的用户。它占据的是“先试试看”的低门槛语境；Ulike 的反制点不应只是折扣，而是更强的 pain test、speed proof、sensor/safety proof 和 comparison content。</p>
-          </div>
-          <div class="note-row">
-            <strong>CurrentBody</strong>
-            <p>打法是“高端 beauty tech 货架信任”。CurrentBody 不只是卖单一脱毛仪，而是用 LED mask、laser、clinical language、FDA-cleared claims 和媒体型内容建立 beauty device authority。它争夺的是愿意为可信科技美容设备付高价的人群；Ulike 需要在 YouTube、长文 review 和专家型 creator 内容中证明自己不仅是 TikTok 爆品，也是可长期使用的 beauty tech device。</p>
-          </div>
-          <div class="note-row">
-            <strong>RoseSkinCo / SmoothSkin / Philips Lumea</strong>
-            <p>这些品牌分别构成低价社交、技术专项、传统大牌或欧洲市场心智压力。它们未必都是 Ulike 的第一竞品，但会共同占据 “best IPL device”“at-home laser hair removal”“Ulike alternative” 这类比较语境。</p>
-          </div>
-        </div>
+      <div class="competitor-board">
+        <article class="note-row featured">
+          <strong>Braun</strong>
+          <h3>抢安全感</h3>
+          <p>Braun 把用户问题从“有没有效果”拉到“哪个更稳、更安全”。它会吃掉风险厌恶型用户。</p>
+          <div class="note-action">Ulike 反制：用 creator 讲清 safety、skin tone fit、intimate-area boundary 和长期结果。</div>
+        </article>
+        <article class="note-row featured">
+          <strong>Nood</strong>
+          <h3>抢低价试错</h3>
+          <p>Nood 抢的是“先试试看”的价格敏感用户。只靠折扣反击，会把 Ulike 拉进低价语境。</p>
+          <div class="note-action">Ulike 反制：用 pain test、speed proof、sensor proof 和 comparison content 证明为什么更值。</div>
+        </article>
+        <article class="note-row featured">
+          <strong>CurrentBody</strong>
+          <h3>抢高端科技信任</h3>
+          <p>CurrentBody 用 beauty tech 货架、clinical language 和媒体内容建立设备权威感。</p>
+          <div class="note-action">Ulike 反制：在 YouTube、长文 review 和专家型 creator 内容里证明自己不是短视频爆品，而是长期设备选择。</div>
+        </article>
+        <article class="note-row featured">
+          <strong>RoseSkinCo / SmoothSkin / Philips</strong>
+          <h3>抢比较搜索</h3>
+          <p>这些品牌会一起占住 “best IPL device”“Ulike alternative” 这类高意图比较语境。</p>
+          <div class="note-action">Ulike 反制：建立 comparison proof，而不是等用户去第三方内容里被动比较。</div>
+        </article>
       </div>
     </section>
 
     <section class="shell" id="platforms">
       <div class="section-head">
-        <span class="section-kicker">Platform Role Map</span>
-        <h2>平台不是排序，而是购买决策分工。</h2>
-        <p class="lead">YouTube 负责高意图搜索和信任闭环，TikTok 负责 proof hook 测试和 paid creative engine，Instagram 负责 lifestyle credibility、再营销素材和 creator relationship layer。brief、KPI 和 rebook 标准应按平台角色拆开。</p>
+        <span class="section-kicker">Platform Budget Decision</span>
+        <h2>平台结论：不要平均撒预算，按购买决策角色分配。</h2>
+        <p class="lead">这屏只回答老板一个问题：下个月 KOL 预算怎么分。YouTube 补信任防守，TikTok 只复投有效 hook，Instagram 做素材和再营销资产，不要再把三个平台当同一种“发帖渠道”。</p>
       </div>
       <div class="platform-map">
         <article class="platform primary">
-          <span class="priority">Decision role: Conversion defense</span>
-          <h3>YouTube</h3>
-          <p>高意图搜索拦截 + 深度信任建立。优先占位 review、comparison、PCOS、mistakes、skin tone / hair color education。</p>
+          <span class="priority">Priority 1</span>
+          <h3>YouTube：先补信任防守</h3>
+          <p>用户购买前会搜 review、comparison、skin tone、PCOS 和 safety。这个位置如果被竞品或中立 reviewer 定义，前面的短视频声量会被截流。</p>
           <div class="lane">
-            <span class="lane-item">Ulike Air 10 review after 3 months</span>
-            <span class="lane-item">Ulike vs Braun / Nood</span>
-            <span class="lane-item">Best IPL device for PCOS</span>
-            <span class="lane-item">IPL mistakes at home</span>
+            <span class="lane-item">该买：review / comparison / long-term proof</span>
+            <span class="lane-item">该看：搜索占位、评论购买意图、内容寿命</span>
+            <span class="lane-item">不要只看：视频数量</span>
           </div>
           <div class="role-note">
-            <strong>为什么放在第一层</strong>
-            <span>负责承接高意图搜索和竞品比较，是最接近购买决策的信任闭环。</span>
+            <strong>老板要得到什么</strong>
+            <span>知道哪些 YouTube 内容能守住购买前搜索，避免用户最后被 Braun / Nood / CurrentBody 截走。</span>
           </div>
         </article>
         <article class="platform">
-          <span class="priority">Decision role: Hook testing</span>
-          <h3>TikTok</h3>
-          <p>Proof hook testing + paid creative engine。TikTok 可以继续放大，但要从折扣码型短视频升级成 series-based proof content。</p>
+          <span class="priority">Priority 2</span>
+          <h3>TikTok：只复投有效 hook</h3>
+          <p>TikTok 可以继续跑量，但不能把“折扣码视频上线”当成果。它的价值是快速筛出能触发购买意图的痛点、场景和素材。</p>
           <div class="lane">
-            <span class="lane-item">I stopped shaving for X weeks</span>
-            <span class="lane-item">PCOS facial hair routine</span>
-            <span class="lane-item">Pain test: wax vs epilator vs Ulike</span>
-            <span class="lane-item">10-minute after-shower routine</span>
+            <span class="lane-item">该留：pain test / PCOS / routine proof</span>
+            <span class="lane-item">该砍：只报折扣、无使用证据的视频</span>
+            <span class="lane-item">该放大：评论区出现购买问题的 winner</span>
           </div>
           <div class="role-note">
-            <strong>为什么继续保留</strong>
-            <span>负责快速测试痛点、场景和素材潜力，适合把 winner 内容放大成 paid creative。</span>
+            <strong>老板要得到什么</strong>
+            <span>知道哪些 hook 值得 paid boost，哪些 creator 只是制造热闹。</span>
           </div>
         </article>
         <article class="platform">
-          <span class="priority">Decision role: Asset layer</span>
-          <h3>Instagram</h3>
-          <p>Lifestyle credibility + retargeting assets + creator relationship layer。Instagram 适合把 proof 内容转成可复用的视觉素材和再营销资产。</p>
+          <span class="priority">Priority 3</span>
+          <h3>Instagram：不要背成交 KPI</h3>
+          <p>Instagram 数量最高，但它更适合做视觉可信度、creator relationship、再营销素材和 landing page / ads 资产。</p>
           <div class="lane">
-            <span class="lane-item">Before / after carousel</span>
-            <span class="lane-item">Routine reel</span>
-            <span class="lane-item">PCOS community storytelling</span>
-            <span class="lane-item">Expert quote card</span>
+            <span class="lane-item">该做：before / after、routine、expert quote</span>
+            <span class="lane-item">该复用：Meta ads、landing page、email、Amazon asset</span>
+            <span class="lane-item">不要要求：单独承担成交压力</span>
           </div>
           <div class="role-note">
-            <strong>为什么不是主转化</strong>
-            <span>更适合沉淀视觉可信度、再营销素材和 creator relationship，不应承担全部成交压力。</span>
+            <strong>老板要得到什么</strong>
+            <span>知道 Instagram 的钱应该买可复用素材，而不是只买一次曝光。</span>
           </div>
         </article>
       </div>
