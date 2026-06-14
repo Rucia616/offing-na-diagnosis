@@ -490,7 +490,7 @@
     }
     .stacked-bar {
       display: grid;
-      grid-template-columns: 61fr 29fr 10fr;
+      grid-template-columns: 110fr 9fr 0fr;
       height: 20px;
       overflow: hidden;
       border-radius: 999px;
@@ -501,7 +501,7 @@
     .stacked-bar span:nth-child(3) { background: var(--amber); }
     .platform-row {
       display: grid;
-      grid-template-columns: 88px 1fr 64px 54px;
+      grid-template-columns: 126px 1fr 76px 58px;
       gap: 12px;
       align-items: center;
       min-height: 56px;
@@ -749,18 +749,23 @@
       font-size: 12px;
       font-weight: 700;
     }
-    .role-meter {
-      height: 8px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: #e4e9e7;
+    .role-note {
+      display: grid;
+      gap: 4px;
+      padding: 12px 13px;
+      border: 1px solid rgba(45,98,97,.2);
+      border-radius: var(--radius);
+      background: var(--sea-soft);
     }
-    .role-meter span {
-      display: block;
-      width: var(--w);
-      height: 100%;
-      border-radius: inherit;
-      background: var(--tone);
+    .role-note strong {
+      color: var(--sea-dark);
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .role-note span {
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.42;
     }
 
     .archetypes {
@@ -1014,7 +1019,7 @@
       .metric strong { font-size: 22px; }
       .metric span { font-size: 12px; }
       .stage-bar { grid-template-columns: repeat(2, 1fr); }
-      .platform-row { grid-template-columns: 74px 1fr 48px 42px; gap: 8px; }
+      .platform-row { grid-template-columns: 102px 1fr 58px 46px; gap: 8px; }
       .volume-number { font-size: 18px; }
       section { padding: 48px 0; scroll-margin-top: 132px; }
       .matrix { min-height: 440px; }
@@ -1075,7 +1080,7 @@
         <div class="why-diagnosis" aria-label="Why this diagnosis">
           <div class="why-item">
             <strong>1. 内容仍在持续上线</strong>
-            <span>YouTube 样本出现 2025-2026 review、1-year update、comparison、doctor-style 和 affiliate/disclosure 线索。</span>
+            <span>TikTok 北美公开样本近 30 天已核验 110 条 creator / affiliate 视频，说明 Ulike 已进入高频铺量期。</span>
           </div>
           <div class="why-item">
             <strong>2. 品类依赖证明链</strong>
@@ -1106,14 +1111,14 @@
           <div class="metric">
             <span class="label">Platform-visible Creator Activity</span>
             <strong>Active</strong>
-            <span>YouTube 和 Instagram 公开搜索显示 Ulike Air 10 creator/review 内容仍在持续上线。</span>
-            <small>Modash 54 仅作为第三方工具样本，不代表全网红人内容数量。</small>
+            <span>TikTok US/CA 已核验 110 条 creator / affiliate videos；全球 TikTok 公开样本为 277 条。</span>
+            <small>统计窗口：2026-05-15 至 2026-06-14，按 video_id 去重。</small>
           </div>
           <div class="metric">
-            <span class="label">Priority Platform</span>
-            <strong>YouTube</strong>
-            <span>用于高意图搜索拦截与深度信任建立。</span>
-            <small>TikTok 负责 hook 测试，Instagram 负责再营销素材。</small>
+            <span class="label">Highest-volume Channel</span>
+            <strong>TikTok</strong>
+            <span>当前放量核心在 TikTok Shop / affiliate / discount-code 内容。</span>
+            <small>YouTube 的角色不是铺量，而是补高意图搜索信任。</small>
           </div>
           <div class="metric">
             <span class="label">Primary Gap</span>
@@ -1133,44 +1138,44 @@
 
     <section class="shell" id="volume">
       <div class="section-head">
-        <span class="section-kicker">Last 30 Days Video Launch Estimate</span>
-        <h2>最近一个月全网视频上线量预估：Ulike 仍在高频投放短视频内容。</h2>
-        <p class="lead">统计口径：2026-05-14 至 2026-06-14，按公开搜索可见的 YouTube、Instagram Reels、TikTok / TikTok Shop 相关 Ulike 视频信号估算。一个 publish 记为 1 个上线量；同一 creator 跨平台发布时，合作红人数按 1 个去重，上线量按平台发布次数累计。</p>
+        <span class="section-kicker">Last 30 Days Video Launch Verification</span>
+        <h2>最近 30 天北美公开可见视频上线量：已核验 119 条，TikTok 单平台已破百。</h2>
+        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。一个 publish 记为 1 条上线量；同一 creator 跨平台发布时，合作 creator 按账号去重，上线量按平台发布次数累计。主口径为 US/CA creator / affiliate / review videos；品牌自有账号不计入合作 creator。</p>
       </div>
       <div class="volume-board">
         <div class="volume-total">
           <div>
-            <span class="label">Estimated Total Publishes</span>
-            <strong>28</strong>
-            <span>区间估计 24-32 条视频上线；合作 creator 去重估计约 24-28 人。</span>
+            <span class="label">Verified Public Publishes</span>
+            <strong>119</strong>
+            <span>北美公开可见 creator / affiliate 视频。TikTok US/CA 已核验 110 条，Instagram Reels 已核验 9 条，YouTube 本窗口未核验到新增上线。</span>
           </div>
-          <small>Confidence: Medium. YouTube 可用搜索元数据交叉验证；Instagram 依赖公开搜索索引；TikTok 公开索引不完整，因此用 TikTok Shop / brand-visible activity / 搜索样本做保守估算。</small>
+          <small>TikTok 采用 video_id 级去重：17 组 Ulike / Air 10 / hair removal / discount-code / TikTok Shop 关键词，774 条原始结果，北美 creator 视频核验 110 条；全球 TikTok creator / affiliate 视频核验 277 条。</small>
         </div>
         <div class="platform-volume">
-          <div class="stacked-bar" aria-label="Platform share: TikTok 61%, Instagram 29%, YouTube 10%">
-            <span title="TikTok 61%"></span>
-            <span title="Instagram 29%"></span>
-            <span title="YouTube 10%"></span>
+          <div class="stacked-bar" aria-label="Platform share: TikTok 92.4%, Instagram 7.6%, YouTube 0%">
+            <span title="TikTok / TikTok Shop 92.4%"></span>
+            <span title="Instagram 7.6%"></span>
+            <span title="YouTube 0%"></span>
           </div>
           <div class="platform-row">
-            <strong>TikTok</strong>
-            <div class="mini-bar" style="--tone:var(--sea-dark);--w:61%"><span></span></div>
-            <div class="volume-number">17</div>
-            <div class="volume-share">61%</div>
+            <strong>TikTok / Shop</strong>
+            <div class="mini-bar" style="--tone:var(--sea-dark);--w:92%"><span></span></div>
+            <div class="volume-number">110</div>
+            <div class="volume-share">92.4%</div>
           </div>
           <div class="platform-row">
             <strong>Instagram</strong>
-            <div class="mini-bar" style="--tone:var(--blue);--w:29%"><span></span></div>
-            <div class="volume-number">8</div>
-            <div class="volume-share">29%</div>
+            <div class="mini-bar" style="--tone:var(--blue);--w:8%"><span></span></div>
+            <div class="volume-number">9</div>
+            <div class="volume-share">7.6%</div>
           </div>
           <div class="platform-row">
             <strong>YouTube</strong>
-            <div class="mini-bar" style="--tone:var(--amber);--w:10%"><span></span></div>
-            <div class="volume-number">3</div>
-            <div class="volume-share">10%</div>
+            <div class="mini-bar" style="--tone:var(--amber);--w:0%"><span></span></div>
+            <div class="volume-number">0</div>
+            <div class="volume-share">0%</div>
           </div>
-          <p class="volume-caveat">业务解读：最近一个月的可见上线量主要集中在短视频端，说明 Ulike 仍在用 creator 内容维持社交流量和 TikTok Shop / summer-ready 场景；YouTube 新增量较低，但更承担 review、comparison、长期结果和搜索拦截价值。下一层分析应继续拆具体 creator 去重、跨平台复投、评论区购买意图和素材复用价值。</p>
+          <p class="volume-caveat">业务解读：Ulike 不是 KOL 冷启动品牌，而是 TikTok Shop / affiliate 驱动的高频放量品牌。当前问题不是“有没有上线”，而是 110 条北美 TikTok 内容里，哪些在稳定解决痛感、安全、肤色/毛发适配、长期效果和竞品替代这些购买顾虑；Instagram 负责生活方式背书和再营销素材，YouTube 需要补上高意图 review / comparison / expert-style 防守。</p>
         </div>
       </div>
     </section>
@@ -1179,18 +1184,23 @@
       <div class="section-head">
         <span class="section-kicker">Public Signal Snapshot</span>
         <h2>Ulike 需要把红人内容组织成购买决策证据链。</h2>
-        <p class="lead">公开资料显示 Ulike 已经具备品牌、渠道、creator 和专家背书信号。YouTube 样本里出现 2025-2026 的 review、doctor/dermatology-style、1-year update、brown skin、comparison、men's grooming 和 discount/affiliate/disclosure 线索；Instagram 搜索也显示近月 #ad / #sponsored reels。当前需要判断的是：哪些内容在帮用户做购买决策，哪些只是在制造短期曝光。</p>
+        <p class="lead">公开资料显示 Ulike 已经具备品牌、渠道、creator 和专家背书信号。近 30 天北美 TikTok 公开样本已核验 110 条 creator / affiliate 视频，其中 95 条带有 #ad、code、link in bio、TikTok Shop 或合作信号；YouTube 存量样本里存在 review、doctor-style、1-year update、brown skin 和 comparison 内容。当前需要判断的是：哪些内容在帮用户做购买决策，哪些只是在制造短期曝光。</p>
       </div>
       <div class="evidence-strip">
         <div class="evidence">
-          <strong>14/20</strong>
-          <span>YouTube search sample dated 2025-2026</span>
-          <small>Scope: first 20 YouTube search results for "Ulike Air 10 review" captured Jun 14, 2026; this is a platform sample, not a full count.</small>
+          <strong>110</strong>
+          <span>TikTok US/CA creator publishes</span>
+          <small>Window: 2026-05-15 to 2026-06-14. Brand-owned account excluded from creator count.</small>
         </div>
         <div class="evidence">
-          <strong>193K</strong>
-          <span>Instagram followers signal</span>
-          <small>Google result for @ulikeglobal showed about 193K followers and 909 posts。</small>
+          <strong>277</strong>
+          <span>Global TikTok creator publishes</span>
+          <small>17 keyword groups, 774 raw TikTok search records, deduped by video_id.</small>
+        </div>
+        <div class="evidence">
+          <strong>95</strong>
+          <span>North America sponsored / affiliate signals</span>
+          <small>Includes #ad, partner/code language, link-in-bio, TikTok Shop and shoppable discount signals.</small>
         </div>
         <div class="evidence">
           <strong>2,621</strong>
@@ -1274,7 +1284,7 @@
       </div>
       <div class="platform-map">
         <article class="platform primary">
-          <span class="priority">Priority 1</span>
+          <span class="priority">Decision role: Conversion defense</span>
           <h3>YouTube</h3>
           <p>高意图搜索拦截 + 深度信任建立。优先占位 review、comparison、PCOS、mistakes、skin tone / hair color education。</p>
           <div class="lane">
@@ -1283,10 +1293,13 @@
             <span class="lane-item">Best IPL device for PCOS</span>
             <span class="lane-item">IPL mistakes at home</span>
           </div>
-          <div class="role-meter" style="--tone:var(--sea);--w:92%"><span></span></div>
+          <div class="role-note">
+            <strong>为什么放在第一层</strong>
+            <span>负责承接高意图搜索和竞品比较，是最接近购买决策的信任闭环。</span>
+          </div>
         </article>
         <article class="platform">
-          <span class="priority">Priority 2</span>
+          <span class="priority">Decision role: Hook testing</span>
           <h3>TikTok</h3>
           <p>Proof hook testing + paid creative engine。TikTok 可以继续放大，但要从折扣码型短视频升级成 series-based proof content。</p>
           <div class="lane">
@@ -1295,10 +1308,13 @@
             <span class="lane-item">Pain test: wax vs epilator vs Ulike</span>
             <span class="lane-item">10-minute after-shower routine</span>
           </div>
-          <div class="role-meter" style="--tone:var(--blue);--w:78%"><span></span></div>
+          <div class="role-note">
+            <strong>为什么继续保留</strong>
+            <span>负责快速测试痛点、场景和素材潜力，适合把 winner 内容放大成 paid creative。</span>
+          </div>
         </article>
         <article class="platform">
-          <span class="priority">Priority 3</span>
+          <span class="priority">Decision role: Asset layer</span>
           <h3>Instagram</h3>
           <p>Lifestyle credibility + retargeting assets + creator relationship layer。Instagram 适合把 proof 内容转成可复用的视觉素材和再营销资产。</p>
           <div class="lane">
@@ -1307,7 +1323,10 @@
             <span class="lane-item">PCOS community storytelling</span>
             <span class="lane-item">Expert quote card</span>
           </div>
-          <div class="role-meter" style="--tone:var(--violet);--w:64%"><span></span></div>
+          <div class="role-note">
+            <strong>为什么不是主转化</strong>
+            <span>更适合沉淀视觉可信度、再营销素材和 creator relationship，不应承担全部成交压力。</span>
+          </div>
         </article>
       </div>
     </section>
