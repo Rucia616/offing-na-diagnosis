@@ -181,8 +181,11 @@
       min-height: 220px;
     }
     .total-card .label, .total-card p { color: var(--inverse-muted); }
-    .total-number { font-size: 74px; line-height: .95; font-weight: 850; color: var(--inverse-text); margin: 12px 0 10px; }
-    .stars { color: #F3BC49; font-size: 28px; letter-spacing: 0; }
+    .total-number { font-size: 74px; line-height: .95; font-weight: 850; color: var(--inverse-text); margin: 12px 0 8px; }
+    .star-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+    .stars { color: #F3BC49; font-size: 28px; letter-spacing: 0; line-height: 1; }
+    .star-score { color: var(--inverse-text); font-size: 22px; line-height: 1; font-weight: 850; }
+    .star-caption { color: var(--inverse-muted); font-size: 13px; font-weight: 750; }
     .subscores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
     .subscore, .card {
       background: var(--surface);
@@ -345,6 +348,7 @@
       h1 { font-size: 48px; }
       .stage-path { grid-template-columns: 1fr; }
       .total-number { font-size: 56px; }
+      .star-score { font-size: 20px; }
       .seg { font-size: 10px; min-width: 34px; }
     }
     @media print {
@@ -395,7 +399,11 @@
           <div>
             <span class="label">北美业务情况总分</span>
             <div class="total-number">72</div>
-            <div class="stars" aria-label="3.6 out of 5 stars">★★★★☆</div>
+            <div class="star-row" aria-label="综合星级 3.6 / 5，满分五颗星">
+              <span class="star-score">3.6 / 5 星</span>
+              <span class="stars" aria-hidden="true">★★★★☆</span>
+              <span class="star-caption">满分五颗星</span>
+            </div>
           </div>
           <p>72 / 100 = 3.6 / 5。业务健康度 74 × 45% = 33.3；业务机会分 83 × 35% = 29.1；安全余量（100 - 问题致命度 52）× 20% = 9.6。数据抓取日期：2026-06-15。</p>
         </div>
