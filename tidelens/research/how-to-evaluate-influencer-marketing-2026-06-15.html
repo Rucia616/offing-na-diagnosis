@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>怎么判断一个品牌的红人营销做得好不好｜远汐Offing TideLens研究库</title>
+  <meta name="description" content="远汐Offing TideLens 方法论研究：如何系统评估一个品牌的红人营销是否真正有效，从声量、创作者组合、平台分工、内容证据、商业归因、复投资产和治理风险建立诊断模型。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F7F7F2'/%3E%3Cpath d='M12 36h40' stroke='%23101816' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='29' r='13' fill='none' stroke='%23101816' stroke-width='5'/%3E%3Cpath d='M20 44h24' stroke='%235B2BFF' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #F6F6F1;
+      --paper: #FFFFFF;
+      --paper-soft: #F1F3EE;
+      --ink: #101816;
+      --body: #293230;
+      --muted: #66716D;
+      --line: #D8DDD7;
+      --line-strong: #BCC7C1;
+      --sea: #255F5B;
+      --sea-dark: #0E2724;
+      --sea-soft: #E6F0EE;
+      --violet: #5B2BFF;
+      --violet-soft: #EFEAFF;
+      --pink: #E95FB8;
+      --pink-soft: #FFEAF7;
+      --cyan: #23C8BB;
+      --cyan-soft: #E3F8F5;
+      --amber: #AA6A00;
+      --amber-soft: #FFF3DA;
+      --red: #B3261E;
+      --red-soft: #FDECEC;
+      --green: #187744;
+      --green-soft: #E6F5EC;
+      --black: #101816;
+      --shadow: 0 18px 50px rgba(16, 24, 22, .08);
+      --shadow-soft: 0 10px 28px rgba(16, 24, 22, .055);
+      --radius: 8px;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --mono: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0D1211;
+        --paper: #141B19;
+        --paper-soft: #101715;
+        --ink: #F7FAF7;
+        --body: #D8E0DD;
+        --muted: #9DAAA5;
+        --line: #2D3A36;
+        --line-strong: #465652;
+        --sea: #8FE3D8;
+        --sea-dark: #0A1816;
+        --sea-soft: #14332F;
+        --violet: #A894FF;
+        --violet-soft: #241D47;
+        --pink: #FF91D1;
+        --pink-soft: #3A1830;
+        --cyan: #5DE5D9;
+        --cyan-soft: #123330;
+        --amber: #FFC466;
+        --amber-soft: #34250E;
+        --red: #FF8B83;
+        --red-soft: #3B1716;
+        --green: #7FE2A5;
+        --green-soft: #123321;
+        --shadow: 0 22px 56px rgba(0,0,0,.32);
+        --shadow-soft: 0 14px 34px rgba(0,0,0,.24);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(35,200,187,.14), transparent 220px),
+        linear-gradient(215deg, rgba(233,95,184,.10), transparent 240px),
+        var(--bg);
+      font-family: var(--sans);
+      line-height: 1.58;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--sea); }
+    p, h1, h2, h3, h4 { margin: 0; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 0 0 8px; }
+    strong { font-weight: 860; }
+    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: saturate(150%) blur(18px);
+    }
+    .topbar-inner {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .brand-lockup::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, transparent 44%, var(--ink) 44% 56%, transparent 56%),
+        radial-gradient(circle at center, transparent 42%, var(--ink) 44% 50%, transparent 52%),
+        var(--paper);
+    }
+    .brand-lockup .offing { color: var(--ink); }
+    .brand-lockup .product { color: var(--sea); }
+    .brand-lockup .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--violet) 36%, var(--line));
+      color: var(--violet);
+      background: var(--violet-soft);
+      font-size: 12px;
+      font-weight: 860;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .nav a {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      border-bottom: 1px solid transparent;
+    }
+    .nav a:hover { border-bottom-color: currentColor; }
+    .nav .primary {
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      border-bottom: 0;
+    }
+    .nav .primary:hover { color: var(--paper); }
+
+    main { overflow: hidden; }
+    section { padding: 78px 0; }
+    .hero { padding: 86px 0 58px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .72fr);
+      gap: 44px;
+      align-items: end;
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 28px;
+      color: var(--ink);
+      font-size: 50px;
+      font-weight: 950;
+      line-height: .88;
+      letter-spacing: 0;
+    }
+    .wordmark .lens {
+      color: var(--sea);
+      border-bottom: 8px solid var(--cyan);
+      padding-bottom: 5px;
+    }
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    h1 {
+      max-width: 860px;
+      color: var(--ink);
+      font-size: 76px;
+      font-weight: 950;
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .hero-sub {
+      max-width: 760px;
+      margin-top: 28px;
+      color: var(--body);
+      font-size: 20px;
+      line-height: 1.65;
+      font-weight: 620;
+    }
+    .source-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 26px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 76%, transparent);
+      color: var(--body);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .pill b { color: var(--sea); margin-right: 5px; }
+    .hero-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: "";
+      display: block;
+      height: 6px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--violet), var(--amber));
+    }
+    .verdict-panel {
+      padding: 28px;
+      background:
+        linear-gradient(160deg, color-mix(in srgb, var(--sea-soft) 70%, transparent), transparent 62%),
+        var(--paper);
+    }
+    .verdict-label {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 860;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .verdict {
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: 42px;
+      font-weight: 950;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .verdict-copy {
+      margin-top: 16px;
+      color: var(--body);
+      font-size: 16px;
+      font-weight: 640;
+      line-height: 1.7;
+    }
+    .verdict-list {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+    }
+    .verdict-item {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--paper-soft) 76%, var(--paper));
+    }
+    .verdict-item b {
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .verdict-item span {
+      color: var(--body);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+    .section-head h2 {
+      color: var(--ink);
+      font-size: 52px;
+      font-weight: 950;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 620;
+    }
+    .light-band { background: color-mix(in srgb, var(--paper) 74%, var(--bg)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .dark-band {
+      color: #F7FAF7;
+      background-color: #101816;
+      background-image:
+        linear-gradient(112deg, #101816 0%, #12322F 68%, #1F1B2F 100%);
+    }
+    .dark-band .eyebrow,
+    .dark-band h2,
+    .dark-band .section-head p { color: #F7FAF7; }
+    .dark-band .section-head p { color: #DBE3E0; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+      padding: 22px;
+    }
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 24px;
+      font-weight: 920;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    .card p {
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.72;
+      font-weight: 580;
+    }
+    .card .label {
+      margin-bottom: 12px;
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 860;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .highlight {
+      background: linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--sea-soft) 56%, var(--paper)));
+      border-color: color-mix(in srgb, var(--sea) 28%, var(--line));
+    }
+    .warning {
+      background: linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--red-soft) 66%, var(--paper)));
+      border-color: color-mix(in srgb, var(--red) 34%, var(--line));
+    }
+    .opportunity {
+      background: linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--green-soft) 64%, var(--paper)));
+      border-color: color-mix(in srgb, var(--green) 30%, var(--line));
+    }
+
+    .stat-card {
+      min-height: 232px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+    .stat-kicker {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 860;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .stat-value {
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: 52px;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .stat-card p {
+      margin-top: 16px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 620;
+    }
+
+    .score-system {
+      border: 1px solid color-mix(in srgb, #FFFFFF 22%, transparent);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 26px 76px rgba(0,0,0,.26);
+      overflow: hidden;
+    }
+    .score-top {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      min-height: 220px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .score-number {
+      padding: 30px;
+      border-right: 1px solid rgba(255,255,255,.16);
+    }
+    .score-number span {
+      color: rgba(255,255,255,.7);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 860;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .score-number strong {
+      display: block;
+      margin-top: 10px;
+      color: #FFFFFF;
+      font-size: 96px;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .score-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .score-copy h3 {
+      max-width: 720px;
+      color: #FFFFFF;
+      font-size: 42px;
+      line-height: 1.1;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .score-copy p {
+      max-width: 760px;
+      margin-top: 16px;
+      color: #DCE5E2;
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 620;
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .score-dim {
+      min-height: 192px;
+      padding: 24px;
+      border-right: 1px solid rgba(255,255,255,.14);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+    .score-dim:nth-child(4n) { border-right: 0; }
+    .score-dim:nth-last-child(-n+4) { border-bottom: 0; }
+    .score-dim b {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      color: #9EE9DE;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 880;
+      letter-spacing: .06em;
+    }
+    .score-dim h4 {
+      margin-top: 14px;
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    .score-dim p {
+      margin-top: 10px;
+      color: #D8E2DE;
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 560;
+    }
+
+    .table-wrap {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    th, td {
+      padding: 18px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+    th:last-child, td:last-child { border-right: 0; }
+    tr:last-child td { border-bottom: 0; }
+    th {
+      color: var(--ink);
+      background: var(--paper-soft);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 860;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    td strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .platform-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .platform-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background: var(--platform);
+    }
+    .platform-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .platform-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: var(--platform);
+      color: var(--icon-on, #fff);
+      font-size: 18px;
+      font-weight: 950;
+    }
+    .platform-card h3 {
+      color: var(--ink);
+      font-size: 28px;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .platform-card .role {
+      margin-bottom: 14px;
+      color: var(--platform-dark, var(--sea));
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+    .platform-card p {
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 580;
+    }
+    .mini-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .mini-row {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--paper-soft) 62%, var(--paper));
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 720;
+      line-height: 1.45;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .proof {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 22px;
+      min-height: 210px;
+    }
+    .proof-num {
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .proof h3 {
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 23px;
+      font-weight: 930;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    .proof p {
+      margin-top: 10px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.68;
+      font-weight: 580;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .flow-step {
+      min-height: 176px;
+      padding: 18px;
+      border-right: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--paper-soft) 58%, var(--paper)));
+    }
+    .flow-step:last-child { border-right: 0; }
+    .flow-step b {
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .flow-step h3 {
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 920;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    .flow-step p {
+      margin-top: 10px;
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .rubric {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    .rubric-cell {
+      padding: 22px;
+      min-height: 188px;
+      border-right: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .rubric-cell:last-child { border-right: 0; }
+    .rubric-cell .range {
+      color: var(--sea);
+      font-size: 34px;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .rubric-cell h3 {
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 920;
+      line-height: 1.2;
+    }
+    .rubric-cell p {
+      margin-top: 10px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 10px;
+      counter-reset: source;
+    }
+    .source-item {
+      position: relative;
+      padding: 14px 16px 14px 52px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 580;
+    }
+    .source-item::before {
+      counter-increment: source;
+      content: counter(source);
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--sea-soft);
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .source-item a {
+      display: inline;
+      color: var(--sea);
+      font-weight: 820;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .cite {
+      color: var(--sea);
+      font-weight: 860;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .callout {
+      border: 1px solid color-mix(in srgb, var(--amber) 30%, var(--line));
+      border-radius: var(--radius);
+      background: var(--amber-soft);
+      padding: 20px;
+      color: color-mix(in srgb, var(--ink) 84%, var(--amber));
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 720;
+    }
+    .method-note {
+      margin-top: 18px;
+      padding: 16px;
+      border-left: 4px solid var(--sea);
+      background: var(--sea-soft);
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.72;
+      font-weight: 620;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .platform-card .role { color: var(--sea); }
+    }
+
+    footer {
+      padding: 42px 0 56px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .shell { width: min(100% - 32px, 760px); }
+      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
+      .nav { width: 100%; overflow-x: auto; padding-bottom: 2px; }
+      .hero-grid,
+      .section-head,
+      .score-top {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 54px; }
+      .section-head h2 { font-size: 40px; }
+      .wordmark { font-size: 42px; }
+      .grid-3, .grid-4, .platform-grid, .proof-grid {
+        grid-template-columns: 1fr;
+      }
+      .score-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .score-dim:nth-child(2n) { border-right: 0; }
+      .score-dim:nth-last-child(-n+4) { border-bottom: 1px solid rgba(255,255,255,.14); }
+      .score-dim:nth-last-child(-n+2) { border-bottom: 0; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step { border-right: 0; border-bottom: 1px solid var(--line); min-height: auto; }
+      .flow-step:last-child { border-bottom: 0; }
+      .rubric { grid-template-columns: 1fr; }
+      .rubric-cell { border-right: 0; border-bottom: 1px solid var(--line); min-height: auto; }
+      .rubric-cell:last-child { border-bottom: 0; }
+      table { min-width: 760px; }
+      .table-wrap { overflow-x: auto; }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 54px 0; }
+      .hero { padding-top: 54px; }
+      h1 { font-size: 42px; }
+      .hero-sub { font-size: 17px; }
+      .verdict { font-size: 32px; }
+      .score-copy h3 { font-size: 30px; }
+      .score-number strong { font-size: 76px; }
+      .score-grid { grid-template-columns: 1fr; }
+      .score-dim { border-right: 0; }
+      .score-dim:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
+      .score-dim:last-child { border-bottom: 0; }
+      .brand-lockup { white-space: normal; line-height: 1.25; }
+      .brand-lockup::before { display: none; }
+      .brand-lockup .tag { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand-lockup" href="../index.html" aria-label="返回 TideLens 研究库">
+        <span class="offing">远汐Offing</span>
+        <span class="product">TideLens研究库</span>
+        <span class="tag">2026</span>
+      </a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#verdict">结论</a>
+        <a href="#score">评分模型</a>
+        <a href="#platform">平台分工</a>
+        <a href="#measurement">指标口径</a>
+        <a href="#sources">来源</a>
+        <a class="primary" href="../reports/ulike-tidelens-free-preview-2026-06-13.html">查看Ulike样稿</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="wordmark">Tide<span class="lens">Lens</span></div>
+          <p class="eyebrow">Influencer Marketing Evaluation Research</p>
+          <h1>怎么判断一个品牌的红人营销做得好不好？</h1>
+          <p class="hero-sub">结论先说清楚：好的红人营销不是红人多、曝光高、折扣码铺得广，而是把 creator 的注意力稳定转译成购买证据、可复投资产、可衡量增长和品牌防守力。</p>
+          <div class="source-line" aria-label="研究范围">
+            <span class="pill"><b>Scope</b> DTC / Shopify / 独立站品牌</span>
+            <span class="pill"><b>Market</b> US / North America</span>
+            <span class="pill"><b>Updated</b> 2026-06-15</span>
+            <span class="pill"><b>Mode</b> Public-data research</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="核心判断">
+          <div class="verdict-panel">
+            <p class="verdict-label">TideLens Core Thesis</p>
+            <p class="verdict">红人营销的好坏，本质看四件事。</p>
+            <p class="verdict-copy">它是否找对阶段、选对 creator、讲清购买理由，并且把好内容沉淀成下一轮可复投资产。任何只看声量和互动率的判断，都只能说明“热闹”，不能说明“有效”。</p>
+            <div class="verdict-list">
+              <div class="verdict-item"><b>Stage</b><span>现在到底是冷启动、发布、增长、放量，还是防守。</span></div>
+              <div class="verdict-item"><b>Proof</b><span>内容是否回答用户为什么现在应该买、为什么信、为什么不是竞品。</span></div>
+              <div class="verdict-item"><b>System</b><span>投放是否形成 rebook、素材复用、paid boost、搜索防守的闭环。</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="verdict" class="light-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Executive Summary</p>
+            <h2>评估红人营销，不问“有没有投”，而问“有没有形成购买证据系统”。</h2>
+          </div>
+          <p>公开报告和学术研究都指向同一件事：creator 预算在增长，但真正的难点从“找红人”转向“证明这笔钱为什么值得继续投”。TideLens 后续所有诊断，都应该围绕这个问题展开。</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card warning">
+            <p class="label">Wrong Standard</p>
+            <h3>只看声量，会误判品牌已经做得很好。</h3>
+            <p>大量公开视频、affiliate code 和短期曝光只能证明品牌在买分发。真正要判断的是：这些内容有没有把安全性、效果、适用人群、竞品差异和购买顾虑讲透。</p>
+          </article>
+          <article class="card highlight">
+            <p class="label">Right Standard</p>
+            <h3>看 creator 内容是否能替销售回答关键问题。</h3>
+            <p>一个健康的红人系统，会让用户在搜索、刷到、评论、对比、进入落地页时都能遇到可信证据，而不是只遇到“我喜欢这个产品”和折扣码。</p>
+          </article>
+          <article class="card opportunity">
+            <p class="label">Business Outcome</p>
+            <h3>好内容应该能被复投、复用、复盘。</h3>
+            <p>能被二次投放、放进 landing page、Amazon、email、retargeting 和销售话术里的 creator 内容，才是真正降低获客成本和提升信任的资产。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Market Signals</p>
+            <h2>为什么这件事现在必须严肃评估。</h2>
+          </div>
+          <p>红人营销已经从“品牌部的内容合作”变成高预算增长渠道。预算越大，越不能用模糊的互动率、主观审美和红人数量来做决策。</p>
+        </div>
+        <div class="grid-4">
+          <article class="stat-card">
+            <div>
+              <p class="stat-kicker">Creator Economy Ad Spend</p>
+              <p class="stat-value">$37B</p>
+            </div>
+            <p>IAB 预计 2025 年美国 creator economy 广告支出达到 370 亿美元，同比增长 26%。这说明 creator 预算已经是主流媒体预算问题，不是边缘试验。<a class="cite" href="#s3">[3]</a></p>
+          </article>
+          <article class="stat-card">
+            <div>
+              <p class="stat-kicker">Budget Growth</p>
+              <p class="stat-value">71%</p>
+            </div>
+            <p>CreatorIQ 调研中，71% 组织表示 creator marketing 投入同比增加；报告同时提到平均年度预算显著增长。增长背后要求更强的效率和归因。<a class="cite" href="#s4">[4]</a></p>
+          </article>
+          <article class="stat-card">
+            <div>
+              <p class="stat-kicker">Measurement Gap</p>
+              <p class="stat-value">No One Metric</p>
+            </div>
+            <p>ANA 指出 organic influencer measurement 需要统一口径，且外部工具无法可靠跨平台去重曝光。诊断必须按目标拆指标，而不是用一个 ROI 数字解释所有问题。<a class="cite" href="#s5">[5]</a></p>
+          </article>
+          <article class="stat-card">
+            <div>
+              <p class="stat-kicker">Quality Risk</p>
+              <p class="stat-value">56.5%</p>
+            </div>
+            <p>Influencer Marketing Hub 的 2026 benchmark 中，fake / bot followers 是最主要的 fraud / quality concern。数量越大，越需要 creator 质量审计。<a class="cite" href="#s2">[2]</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="score" class="dark-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">TideLens Evaluation OS</p>
+            <h2>红人营销好不好，用 100 分模型看八个维度。</h2>
+          </div>
+          <p>这个模型的作用不是给品牌贴标签，而是快速判断预算下一步应该加、砍、换 brief、换平台，还是先补证据资产。</p>
+        </div>
+
+        <div class="score-system">
+          <div class="score-top">
+            <div class="score-number">
+              <span>Quality Score</span>
+              <strong>100</strong>
+            </div>
+            <div class="score-copy">
+              <h3>高分品牌的共同点：红人内容能持续降低用户购买阻力。</h3>
+              <p>低分品牌不一定没声量，常见问题反而是“看起来很热闹，但每条内容都在重复同一句广告”。高分品牌会把不同 creator、不同平台、不同内容形式分配到不同购买任务上。</p>
+            </div>
+          </div>
+          <div class="score-grid">
+            <div class="score-dim"><b>10 pts</b><h4>阶段与目标匹配</h4><p>冷启动、发布、增长、放量、防守对应不同打法。阶段错了，预算越大浪费越快。</p></div>
+            <div class="score-dim"><b>15 pts</b><h4>Creator 组合质量</h4><p>看受众匹配、可信度、内容能力、品类经验、竞争冲突和长期合作潜力。</p></div>
+            <div class="score-dim"><b>10 pts</b><h4>受众与真实性审计</h4><p>检查 fake follower、异常互动、地域错配、评论质量和商业合作密度。</p></div>
+            <div class="score-dim"><b>20 pts</b><h4>购买证据覆盖</h4><p>内容是否覆盖 safety、fit、outcome、authority、value、comparison、objection。</p></div>
+            <div class="score-dim"><b>15 pts</b><h4>平台角色分工</h4><p>TikTok、Instagram、YouTube 不应该拿同一套 brief 和 KPI 考核。</p></div>
+            <div class="score-dim"><b>15 pts</b><h4>商业测量与复盘</h4><p>把 awareness、consideration、conversion、incrementality 和 rebook 分开看。</p></div>
+            <div class="score-dim"><b>10 pts</b><h4>素材复用与付费放大</h4><p>判断 creator 内容能否进入 ads、landing page、email、Amazon 和 retargeting。</p></div>
+            <div class="score-dim"><b>5 pts</b><h4>合规与品牌安全</h4><p>确认披露、品牌适配、内容风险、使用权和 incident response。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Good vs Bad</p>
+            <h2>好红人营销和坏红人营销，不是预算差异，而是操作系统差异。</h2>
+          </div>
+          <p>品牌老板最需要看到的不是“我们投了多少”，而是“哪些内容值得继续投、哪些内容只是在消耗预算”。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>评估维度</th>
+                <th>做得好的表现</th>
+                <th>看似努力但低效的表现</th>
+                <th>TideLens 应输出的判断</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>目标</strong>阶段清楚</td>
+                <td>每轮合作都对应一个增长任务：种草、搜索防守、转化测试、复投素材、竞品拦截。</td>
+                <td>所有 creator 都发“产品推荐”，brief 没有区分用户购买路径。</td>
+                <td>现在该加预算、改 brief、补平台，还是先停止低效铺量。</td>
+              </tr>
+              <tr>
+                <td><strong>Creator</strong>组合健康</td>
+                <td>有专家型、场景型、对比型、长尾搜索型、生活方式型的组合。</td>
+                <td>只按粉丝量选人，或只追能带折扣码的 affiliate。</td>
+                <td>缺的是大号、中腰部、专家背书、长尾内容，还是复投 creator。</td>
+              </tr>
+              <tr>
+                <td><strong>内容</strong>证据足够</td>
+                <td>每条内容都回答一个购买顾虑，且有演示、对比、长期结果或专业背书。</td>
+                <td>反复出现“喜欢、好用、链接在 bio”，但没有让用户更相信。</td>
+                <td>购买证据缺口在哪里：安全、效果、适用人群、价格、竞品差异。</td>
+              </tr>
+              <tr>
+                <td><strong>平台</strong>角色分明</td>
+                <td>TikTok 测 hook，Instagram 沉淀信任素材，YouTube 承接搜索与高意图比较。</td>
+                <td>三平台使用同一套口播、同一套 CTA、同一套 KPI。</td>
+                <td>每个平台应该负责什么购买任务，以及预算应往哪里倾斜。</td>
+              </tr>
+              <tr>
+                <td><strong>测量</strong>可复盘</td>
+                <td>按目标看指标：品牌搜索、评论购买意图、落地页点击、转化、复投效率、增量 lift。</td>
+                <td>只汇报播放量、点赞率、EMV 或总销售额，不解释因果。</td>
+                <td>哪些结果值得复投，哪些只是短期曝光，哪些需要停止。</td>
+              </tr>
+              <tr>
+                <td><strong>资产</strong>可复用</td>
+                <td>合作前就谈好使用权，把 winner 内容用于 paid ads、landing page、email、Amazon。</td>
+                <td>内容发完就结束，品牌没有沉淀可二次使用的销售资产。</td>
+                <td>creator 内容是否正在变成长期资产，而不是一次性媒体费用。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" class="light-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Platform Role Map</p>
+            <h2>平台不是排序，而是购买决策分工。</h2>
+          </div>
+          <p>同一个品牌在不同平台上的“好”，标准完全不同。TideLens 需要把平台分工讲明白，老板才知道预算为什么不能平均撒。</p>
+        </div>
+        <div class="platform-grid">
+          <article class="platform-card" style="--platform:#111111;--platform-dark:#111111;--icon-on:#FFFFFF;">
+            <div class="platform-head">
+              <span class="platform-icon">♪</span>
+              <h3>TikTok / Shop</h3>
+            </div>
+            <p class="role">负责 hook 测试、affiliate 转化、评论购买意图和 paid creative 输入。</p>
+            <p>判断 TikTok 好不好，不是只看爆款播放量，而是看哪些 hook 能稳定触发痛点、评论区是否出现真实购买问题、winner 内容能否被放大。</p>
+            <div class="mini-list">
+              <div class="mini-row">看：hook 胜率、评论购买意图、Shop / affiliate 贡献、paid boost 表现。</div>
+              <div class="mini-row">危险：只堆折扣码、只追达人数量、没有复投标准。</div>
+            </div>
+          </article>
+          <article class="platform-card" style="--platform:#E95FB8;--platform-dark:#B51678;--icon-on:#101816;">
+            <div class="platform-head">
+              <span class="platform-icon">◎</span>
+              <h3>Instagram</h3>
+            </div>
+            <p class="role">负责 lifestyle credibility、creator relationship、可复用视觉资产和再营销素材。</p>
+            <p>Instagram 的价值不是单独扛成交，而是让品牌看起来被真实人群持续使用，并把视觉信任沉淀到广告、落地页和再营销里。</p>
+            <div class="mini-list">
+              <div class="mini-row">看：creator fit、素材质感、保存/分享、关系深度、授权复用率。</div>
+              <div class="mini-row">危险：只看 Reels 数量，把 Instagram 当纯短视频投放。</div>
+            </div>
+          </article>
+          <article class="platform-card" style="--platform:#FF0000;--platform-dark:#B00000;--icon-on:#101816;">
+            <div class="platform-head">
+              <span class="platform-icon">▶</span>
+              <h3>YouTube</h3>
+            </div>
+            <p class="role">负责高意图搜索、长视频 review、竞品比较、专业信任和长期防守。</p>
+            <p>YouTube 数量通常低，但接近购买前搜索。对高客单、功效型、科技型产品来说，缺 YouTube 证据会直接影响用户最终下单信心。</p>
+            <div class="mini-list">
+              <div class="mini-row">看：搜索占位、review 深度、comparison、评论疑虑、内容寿命。</div>
+              <div class="mini-row">危险：用短视频声量替代购买前信任内容。</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Proof Matrix</p>
+            <h2>内容不是越多越好，而是购买证据越完整越好。</h2>
+          </div>
+          <p>学术研究持续指出，creator 的可信度、真实性、品牌匹配和关系强度会影响品牌态度、购买意图和品牌可信度。TideLens 应把这些抽象变量翻译成品牌能执行的内容证据矩阵。<a class="cite" href="#s8">[8]</a><a class="cite" href="#s10">[10]</a></p>
+        </div>
+        <div class="proof-grid">
+          <article class="proof"><p class="proof-num">PROOF 01</p><h3>Safety Proof</h3><p>证明产品不会带来用户担心的风险。适用于美容仪、母婴、健康、食品、宠物、金融等高顾虑品类。</p></article>
+          <article class="proof"><p class="proof-num">PROOF 02</p><h3>Fit Proof</h3><p>证明“我这种人也适合”。包括肤质、发色、场景、年龄、生活方式、预算和使用习惯。</p></article>
+          <article class="proof"><p class="proof-num">PROOF 03</p><h3>Outcome Proof</h3><p>证明效果不是口号。需要过程记录、before / after、长期使用、失败条件和真实限制。</p></article>
+          <article class="proof"><p class="proof-num">PROOF 04</p><h3>Authority Proof</h3><p>用专家、专业语言、认证、媒体、第三方测试或资深 reviewer 建立更高可信度。</p></article>
+          <article class="proof"><p class="proof-num">PROOF 05</p><h3>Value Proof</h3><p>解释为什么价格值得。高客单产品尤其需要把省时、省钱、替代方案和长期价值讲清楚。</p></article>
+          <article class="proof"><p class="proof-num">PROOF 06</p><h3>Comparison Proof</h3><p>明确和竞品、旧方案、便宜替代品的差异。用户有比较搜索时，品牌必须主动防守。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="measurement" class="light-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Measurement Architecture</p>
+            <h2>指标要按购买任务拆，不要用一个 ROI 解释所有内容。</h2>
+          </div>
+          <p>Modash、GRIN、ANA 和 incrementality 研究都指出：红人营销的测量难点不在“没数据”，而在目标、归因和指标混在一起。TideLens 要先定义任务，再定义指标。<a class="cite" href="#s11">[11]</a><a class="cite" href="#s12">[12]</a><a class="cite" href="#s13">[13]</a></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>任务</th>
+                <th>老板真正关心的问题</th>
+                <th>优先指标</th>
+                <th>不要单独使用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Awareness</strong>打开认知</td>
+                <td>目标人群是否开始知道品牌，并且知道它解决什么问题。</td>
+                <td>有效触达、目标地域占比、品牌搜索 lift、自然提及增长、内容覆盖频次。</td>
+                <td>单条播放量。播放量高但受众错配，商业价值会很低。</td>
+              </tr>
+              <tr>
+                <td><strong>Consideration</strong>建立考虑</td>
+                <td>用户是否开始比较、收藏、提问、点击并进入购买路径。</td>
+                <td>评论购买意图、保存/分享、落地页点击、搜索占位、review 深度、FAQ 覆盖。</td>
+                <td>点赞率。点赞不能自动代表购买意图。</td>
+              </tr>
+              <tr>
+                <td><strong>Conversion</strong>推动成交</td>
+                <td>哪些 creator / hook / offer 真的带来订单或可解释的销售 lift。</td>
+                <td>代码销售、UTM revenue、Shop GMV、landing conversion、incremental lift、CAC proxy。</td>
+                <td>总销售额。没有基准和对照，很容易把自然需求算进红人功劳。</td>
+              </tr>
+              <tr>
+                <td><strong>Asset Reuse</strong>沉淀资产</td>
+                <td>哪些内容值得买断、复投、剪成 ads、放进页面或销售链路。</td>
+                <td>授权率、paid boost CPA / CTR、landing page uplift、素材复用次数、内容寿命。</td>
+                <td>一次性 post fee。真正资产价值常常发生在二次使用。</td>
+              </tr>
+              <tr>
+                <td><strong>Defense</strong>竞品防守</td>
+                <td>用户搜索品牌、品类和竞品时，是否能看到有利证据。</td>
+                <td>YouTube / Google 搜索占位、comparison 覆盖、专家背书、竞品评论区高频疑虑。</td>
+                <td>短期 ROAS。防守内容通常更接近长期信任和转化辅助。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Creator Portfolio Audit</p>
+            <h2>Creator 不是名单，而是品牌信任资产组合。</h2>
+          </div>
+          <p>研究显示 creator credibility、brand-influencer fit、authenticity 和 parasocial relationship 会影响品牌可信度与购买意图。选择 creator 的关键不是“谁便宜谁有粉”，而是谁能替品牌讲清一个购买理由。<a class="cite" href="#s8">[8]</a><a class="cite" href="#s10">[10]</a></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>审计项</th>
+                <th>高质量信号</th>
+                <th>风险信号</th>
+                <th>诊断结论应怎么写</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Audience Fit</strong>受众匹配</td>
+                <td>地域、年龄、性别、兴趣和购买力贴近目标用户。</td>
+                <td>粉丝量大，但核心受众不在目标市场或购买场景。</td>
+                <td>这个 creator 是目标消费者的可信代理，还是便宜曝光。</td>
+              </tr>
+              <tr>
+                <td><strong>Credibility</strong>可信来源</td>
+                <td>creator 在品类里有长期内容积累，评论区有真实咨询和复盘。</td>
+                <td>频繁跨品类接广，评论区只有抽奖、表情和折扣码。</td>
+                <td>能否承担购买前信任，不只是制造短期曝光。</td>
+              </tr>
+              <tr>
+                <td><strong>Content Skill</strong>内容能力</td>
+                <td>能做演示、对比、解释、反驳顾虑，而不是只读脚本。</td>
+                <td>所有合作内容结构相似，缺少个人经验和使用细节。</td>
+                <td>这个 creator 是否值得 rebook，还是只适合一次性曝光。</td>
+              </tr>
+              <tr>
+                <td><strong>Sponsorship Saturation</strong>商业密度</td>
+                <td>商业内容和自然内容比例健康，推荐仍有可信感。</td>
+                <td>近期内容几乎全是广告，且多个同类竞品混投。</td>
+                <td>该 creator 是否存在信任折损或竞品冲突。</td>
+              </tr>
+              <tr>
+                <td><strong>Rights</strong>使用权</td>
+                <td>合作前明确 organic、paid、whitelisting、landing page、email 等使用范围。</td>
+                <td>发完即结束，品牌无法把 winner 内容投入下一轮增长。</td>
+                <td>预算是否买到了可复投资产，而不是只买一次发布。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Operating Loop</p>
+            <h2>真正成熟的红人营销，是一个每月变聪明的循环。</h2>
+          </div>
+          <p>如果每个月都在重新找一批人、重新写一版 brief、重新猜什么内容有效，这不是增长系统，而是内容采购。</p>
+        </div>
+        <div class="flow">
+          <div class="flow-step"><b>01</b><h3>Source</h3><p>按购买任务找 creator，而不是按粉丝量找人。</p></div>
+          <div class="flow-step"><b>02</b><h3>Brief</h3><p>每条 brief 对应一个购买顾虑或一个平台角色。</p></div>
+          <div class="flow-step"><b>03</b><h3>Publish</h3><p>记录发布时间、内容角度、CTA、代码、链接和素材权利。</p></div>
+          <div class="flow-step"><b>04</b><h3>Measure</h3><p>按任务拆指标，避免用播放量替代商业判断。</p></div>
+          <div class="flow-step"><b>05</b><h3>Rebook</h3><p>只复投证明有效的 creator、hook 和证据角度。</p></div>
+          <div class="flow-step"><b>06</b><h3>Repurpose</h3><p>把 winner 内容放进广告、页面、邮件、Amazon 和销售话术。</p></div>
+          <div class="flow-step"><b>07</b><h3>Defend</h3><p>用长尾搜索、comparison 和专家型内容抵消竞品压力。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Diagnostic Protocol</p>
+            <h2>TideLens 做诊断时，应该先收集这些公开信号。</h2>
+          </div>
+          <p>公开数据不能替代品牌后台，但足够判断一个品牌红人营销的结构性问题。关键是把数据采集口径写清楚，并且只对证据能支持的结论下判断。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><p class="label">Volume</p><h3>近 30 / 60 / 90 天上线量</h3><p>按平台统计公开视频数量，并尽量 creator 去重。结论不是“多或少”，而是判断品牌处于冷启动、增长、放量还是防守阶段。</p></article>
+          <article class="card"><p class="label">Signal Quality</p><h3>评论区购买意图</h3><p>抽样看评论是否出现价格、适用人群、效果、安全、竞品、购买链接、售后等真实问题。评论区没有购买问题，播放量再高也要谨慎。</p></article>
+          <article class="card"><p class="label">Proof Coverage</p><h3>内容证据矩阵</h3><p>把内容逐条归类到 safety、fit、outcome、authority、value、comparison。缺口就是下一轮 brief 的核心。</p></article>
+          <article class="card"><p class="label">Platform Fit</p><h3>平台角色是否错配</h3><p>判断 TikTok、Instagram、YouTube 是否承担了不同任务。如果全平台都在发同一种口播，通常说明系统没有成熟。</p></article>
+          <article class="card"><p class="label">Competitor Pressure</p><h3>竞品购买理由占位</h3><p>检查竞品是否在安全、低价、高端信任、搜索 review、comparison 等场景抢占用户心智。品牌要防守的是购买理由，不只是竞品名字。</p></article>
+          <article class="card"><p class="label">Reuse Potential</p><h3>可复投资产比例</h3><p>判断哪些内容值得买授权、进广告、进页面、进邮件。不能复用的内容可以是曝光，但很难成为资产。</p></article>
+        </div>
+        <p class="method-note">TideLens 诊断报告中的每个数字都必须服务一个业务判断：阶段、缺口、平台分工、预算方向、复投标准。不能为了显得“数据很多”而堆无意义小字。</p>
+      </div>
+    </section>
+
+    <section class="light-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Score Interpretation</p>
+            <h2>评分不是装饰，而是预算动作。</h2>
+          </div>
+          <p>一份好的诊断报告必须让老板知道下一步怎么分配预算：停什么、修什么、加什么、怎么衡量。</p>
+        </div>
+        <div class="rubric">
+          <div class="rubric-cell"><p class="range">80-100</p><h3>可放量增长引擎</h3><p>平台分工、creator 组合、证据矩阵、复投机制和治理基本完整。下一步重点是扩大 winner 内容和复用资产。</p></div>
+          <div class="rubric-cell"><p class="range">60-79</p><h3>有基础但漏效率</h3><p>已有内容和 creator 资产，但部分平台或证据缺口拖累转化。下一步应重排 brief 和 rebook 标准。</p></div>
+          <div class="rubric-cell"><p class="range">40-59</p><h3>有动作但不成系统</h3><p>看得到投放，但多数内容还在制造曝光，无法稳定回答购买顾虑。下一步先停低效铺量，补 proof matrix。</p></div>
+          <div class="rubric-cell"><p class="range">0-39</p><h3>内容采购而非增长系统</h3><p>creator 选择、平台分工和测量口径都不清楚。下一步不应盲目加预算，应先建立基本诊断和执行标准。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Evidence Notes</p>
+            <h2>这套框架怎么吸收外部研究。</h2>
+          </div>
+          <p>下面是把外部资料转译成 TideLens 判断口径后的核心吸收，不是资料摘抄。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <p class="label">From Benchmark Reports</p>
+            <h3>行业预算继续增长，效率压力也会增长。</h3>
+            <p>Brandwatch、Influencer Marketing Hub、IAB、CreatorIQ 和 WFA 都在强调 creator marketing 预算、专业化和测量需求上升。TideLens 应把“花钱越来越多”转成“预算应该怎么花才不浪费”。<a class="cite" href="#s1">[1]</a><a class="cite" href="#s2">[2]</a><a class="cite" href="#s3">[3]</a><a class="cite" href="#s4">[4]</a><a class="cite" href="#s16">[16]</a></p>
+          </article>
+          <article class="card">
+            <p class="label">From Academic Research</p>
+            <h3>可信度、匹配度和真实性是购买前信任的底层变量。</h3>
+            <p>学术研究不直接告诉品牌下个月投谁，但它清楚说明为什么“同样播放量”的 creator 可能产生完全不同的品牌可信度和购买意图。<a class="cite" href="#s8">[8]</a><a class="cite" href="#s9">[9]</a><a class="cite" href="#s10">[10]</a></p>
+          </article>
+          <article class="card">
+            <p class="label">From Practitioner Tools</p>
+            <h3>工具能采集信号，但不能替老板做业务判断。</h3>
+            <p>Modash、Traackr、HypeAuditor、GRIN 等提供 metrics、vetting、benchmark 和 creator data。TideLens 的价值是把这些信号翻译成阶段判断、预算动作和内容 brief。<a class="cite" href="#s11">[11]</a><a class="cite" href="#s14">[14]</a><a class="cite" href="#s15">[15]</a><a class="cite" href="#s21">[21]</a><a class="cite" href="#s22">[22]</a></p>
+          </article>
+        </div>
+        <div class="callout" style="margin-top:18px;">
+          对 TideLens 来说，真正应该产品化的不是“更多数据面板”，而是“数据到判断的路径”：公开视频上线量 → creator 去重 → 平台角色 → 证据缺口 → 竞品压力 → 预算动作 → 复投标准。
+        </div>
+      </div>
+    </section>
+
+    <section class="light-band">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Limitations</p>
+            <h2>公开数据诊断必须承认边界，但不能因此变得含糊。</h2>
+          </div>
+          <p>越专业的报告，越要把证据边界说清楚。边界不是借口，而是建立可信度。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3>公开数据看不到全部销售归因。</h3><p>没有品牌后台、广告账户、归因模型和真实订单数据时，TideLens 不应声称精确 ROI。可以判断结构性效率、内容缺口和公开信号强弱。</p></article>
+          <article class="card"><h3>跨平台曝光不能可靠去重。</h3><p>ANA 指出外部工具无法对 organic posts 跨平台去重曝光。报告应避免把跨平台曝光直接相加成“唯一触达人数”。<a class="cite" href="#s5">[5]</a></p></article>
+          <article class="card"><h3>短期转化不能代表长期信任。</h3><p>折扣码和 UTM 可以看直接成交，但 YouTube review、comparison、专家背书和搜索占位常常承担更长周期的信任防守。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Bibliography</p>
+            <h2>研究来源与参考资料。</h2>
+          </div>
+          <p>本报告基于 2026-06-15 可访问的公开资料、行业 benchmark、平台/监管说明、工具方法论和同行评审研究形成。以下链接用于支撑方法论，不代表任何来源为 TideLens 背书。</p>
+        </div>
+        <div class="source-list">
+          <div class="source-item" id="s1"><a href="https://www.brandwatch.com/blog/influencer-marketing-strategy/" target="_blank" rel="noopener">Brandwatch: How to Develop an Effective Influencer Marketing Strategy in 2026</a>。用于吸收目标设定、预算、受众、creator tier 与 KPI 的策略框架。</div>
+          <div class="source-item" id="s2"><a href="https://influencermarketinghub.com/influencer-marketing-benchmark-report/" target="_blank" rel="noopener">Influencer Marketing Hub: Influencer Marketing Benchmark Report 2026</a>。用于行业预算、平台、测量、fraud / quality concern 与运营挑战。</div>
+          <div class="source-item" id="s3"><a href="https://www.iab.com/insights/2025-creator-economy-ad-spend-strategy-report/" target="_blank" rel="noopener">IAB: 2025 Creator Economy Ad Spend & Strategy Report</a>。用于 creator ad spend 市场规模与预算增长背景。</div>
+          <div class="source-item" id="s4"><a href="https://www.creatoriq.com/white-papers/state-of-creator-marketing-trends-2026" target="_blank" rel="noopener">CreatorIQ: The State of Creator Marketing Report 2025-2026</a>。用于 creator marketing ROI、budget growth、paid amplification、measurement 与 brand safety 趋势。</div>
+          <div class="source-item" id="s5"><a href="https://s3.amazonaws.com/media.mediapost.com/uploads/ANAinfluencermarketingguidelines.pdf" target="_blank" rel="noopener">ANA: Influencer Marketing Measurement Guidelines</a>。用于 organic influencer measurement 口径、跨平台去重限制和指标定义。</div>
+          <div class="source-item" id="s6"><a href="https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking" target="_blank" rel="noopener">FTC: The FTC's Endorsement Guides: What People Are Asking</a>。用于披露与 endorsement 风险边界。</div>
+          <div class="source-item" id="s7"><a href="https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers" target="_blank" rel="noopener">FTC: Disclosures 101 for Social Media Influencers</a>。用于 paid relationship disclosure 的基础合规判断。</div>
+          <div class="source-item" id="s8"><a href="https://link.springer.com/article/10.1007/s11747-024-01052-7" target="_blank" rel="noopener">Journal of the Academy of Marketing Science: Influencer marketing effectiveness: A meta-analytic review</a>。用于 creator credibility、fit、engagement、purchase intention 等效果变量。</div>
+          <div class="source-item" id="s9"><a href="https://link.springer.com/article/10.1007/s11747-024-01073-2" target="_blank" rel="noopener">Journal of the Academy of Marketing Science: Influencer marketing unlocked</a>。用于 creator economy value chain、customer equity、authenticity 与 ROI 挑战。</div>
+          <div class="source-item" id="s10"><a href="https://www.nature.com/articles/s41599-023-02512-1" target="_blank" rel="noopener">Humanities and Social Sciences Communications: The persuasive power of social media influencers in brand credibility and purchase intention</a>。用于 authenticity、homophily、parasocial relationship、brand credibility 和 purchase intention。</div>
+          <div class="source-item" id="s11"><a href="https://www.modash.io/blog/influencer-marketing-kpis-metrics" target="_blank" rel="noopener">Modash: Influencer Marketing Metrics: What to Track and What to Ignore</a>。用于按 campaign type 拆 KPI，而不是混用 vanity metrics。</div>
+          <div class="source-item" id="s12"><a href="https://grin.co/blog/influencer-marketing-measurement/" target="_blank" rel="noopener">GRIN: How to Measure Influencer Marketing Success</a>。用于 campaign goals、KPI、budget spend、revenue、conversion 与 content performance 口径。</div>
+          <div class="source-item" id="s13"><a href="https://www.incrmntal.com/faq/can-incrementality-measure-influencer-marketing" target="_blank" rel="noopener">INCRMNTAL: Can Incrementality Measure Influencer Marketing?</a>。用于 incremental lift 对红人营销效果评估的价值。</div>
+          <div class="source-item" id="s14"><a href="https://www.traackr.com/influencer-marketing-reports/2026-creator-advantage-uk-report" target="_blank" rel="noopener">Traackr: The Creator Advantage 2026 UK Report</a>。用于 creator data、competitive edge 和 Brand Vitality Score 视角。</div>
+          <div class="source-item" id="s15"><a href="https://www.traackr.com/influencer-marketing-blog/top-beauty-influencers-vit" target="_blank" rel="noopener">Traackr: Top Beauty Influencers to Watch in 2026</a>。用于 VIT 作为 creator marketing performance measurement 的参考。</div>
+          <div class="source-item" id="s16"><a href="https://wfanet.org/knowledge/item/2025/09/04/recommendations-for-how-to-do-better-influencer-marketing" target="_blank" rel="noopener">World Federation of Advertisers: Recommendations for how to do better influencer marketing</a>。用于预算扩大后的专业化和 reputation risk 视角。</div>
+          <div class="source-item" id="s17"><a href="https://www.creatoriq.com/blog/brand-safety-guidelines" target="_blank" rel="noopener">CreatorIQ: Brand Safety Guidelines Every Marketer Should Know</a>。用于 creator brand safety、suitability、incident rate、compliance rate 等治理口径。</div>
+          <div class="source-item" id="s18"><a href="https://www.emarketer.com/content/meta-expands-partnership-ads-turn-creator-content-performance" target="_blank" rel="noopener">eMarketer: Meta expands partnership ads to turn creator content into performance</a>。用于 creator content paid amplification 的 performance 参考。</div>
+          <div class="source-item" id="s19"><a href="https://www.vogue.com/article/the-return-to-long-form-why-youtube-is-winning-back-brands" target="_blank" rel="noopener">Vogue Business: The Return to Long-Form: Why YouTube Is Winning Back Brands</a>。用于 YouTube 长视频、深度 storytelling 和高意图内容价值。</div>
+          <div class="source-item" id="s20"><a href="https://www.vogue.com/article/how-influencer-marketing-is-changing-in-2026" target="_blank" rel="noopener">Vogue Business: How Influencer Marketing Is Changing in 2026</a>。用于 one-off pay-to-post 弱化、creator consultant、长期 advocates 和 expert creator 方向。</div>
+          <div class="source-item" id="s21"><a href="https://hypeauditor.com/resources/whitepapers/2025-marketing-benchmark-report/" target="_blank" rel="noopener">HypeAuditor x Similarweb: 2025 Marketing Benchmark Report</a>。用于 creator-led traffic 与行业 channel benchmark 参考。</div>
+          <div class="source-item" id="s22"><a href="https://www.modash.io/influencer-marketing-api/agencies" target="_blank" rel="noopener">Modash: Influencer Marketing API for Agencies</a>。用于 audience authenticity、past sponsorships、competitor conflicts 和 brand safety screening。</div>
+          <div class="source-item" id="s23"><a href="https://www.vogue.com/article/how-to-get-it-right-with-a-creator-first-brand-strategy-grin" target="_blank" rel="noopener">Vogue Business with GRIN: How to get it right with a creator-first brand strategy</a>。用于 creator content rights、long-term relationships 和 UGC asset reuse 的实践信号。</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <strong>远汐Offing · TideLens研究库</strong><br />
+      这份研究报告用于沉淀 TideLens 红人营销诊断方法论。公开资料可用于判断结构性问题；精确预算回收、真实 CAC、渠道归因和 LTV 判断需要结合品牌后台数据。
+    </div>
+  </footer>
+</body>
+</html>
