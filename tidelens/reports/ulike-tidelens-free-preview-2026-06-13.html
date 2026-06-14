@@ -489,6 +489,82 @@
       font-size: 11px;
       line-height: 1.35;
     }
+    .logic-chain {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .logic-step {
+      display: grid;
+      grid-template-columns: minmax(150px, .42fr) minmax(0, .78fr) minmax(0, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) - 2px);
+      background: var(--line);
+    }
+    .logic-cell {
+      min-height: 132px;
+      padding: 18px;
+      background: rgba(255,255,255,.92);
+    }
+    .logic-cell.signal {
+      color: #fff;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(127,194,188,.2), transparent 34%),
+        linear-gradient(145deg, #101616, #173d3c);
+    }
+    .logic-cell .label {
+      margin-bottom: 8px;
+    }
+    .logic-cell.signal .label {
+      color: rgba(255,255,255,.68);
+    }
+    .logic-cell strong {
+      display: block;
+      color: var(--ink);
+      font-size: clamp(22px, 2.2vw, 30px);
+      line-height: 1.06;
+      font-weight: 860;
+    }
+    .logic-cell.signal strong {
+      color: #fff;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: .92;
+      font-variant-numeric: tabular-nums;
+    }
+    .logic-cell p {
+      margin-top: 8px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.46;
+      font-weight: 560;
+    }
+    .logic-cell.signal p {
+      color: rgba(255,255,255,.78);
+    }
+    .logic-result {
+      padding: 20px 22px;
+      border: 1px solid rgba(45,98,97,.22);
+      border-radius: calc(var(--radius) - 2px);
+      background: rgba(126,202,194,.16);
+      color: var(--sea-dark);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.28;
+      font-weight: 860;
+    }
+    .logic-result span {
+      display: block;
+      margin-top: 8px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 620;
+    }
     .volume-board {
       display: grid;
       grid-template-columns: minmax(280px, .75fr) minmax(0, 1.25fr);
@@ -669,7 +745,7 @@
 
     .quote-split {
       display: grid;
-      grid-template-columns: .82fr 1.18fr;
+      grid-template-columns: .9fr 1.1fr;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -677,6 +753,8 @@
       background: var(--surface);
     }
     .quote-left {
+      display: grid;
+      align-content: center;
       padding: 26px;
       color: #fff;
       background: linear-gradient(145deg, var(--sea-dark), #102728);
@@ -692,7 +770,9 @@
     .quote-left p {
       margin-top: 12px;
       color: rgba(255,255,255,.85);
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 1.58;
+      font-weight: 650;
     }
     .quote-right {
       display: grid;
@@ -703,7 +783,7 @@
     .wrong-right {
       display: grid;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 0;
     }
     .wrong {
       padding: 13px 14px;
@@ -711,12 +791,14 @@
       border-radius: var(--radius);
       background: #f8faf8;
       color: var(--body);
-      font-size: 13px;
+      font-size: 14px;
+      line-height: 1.62;
       font-weight: 700;
     }
     .wrong strong {
-      display: inline-flex;
+      display: flex;
       align-items: center;
+      width: fit-content;
       min-height: 34px;
       margin-bottom: 10px;
       padding: 0 12px;
@@ -1419,12 +1501,13 @@
       .shell { width: min(100% - 28px, 1180px); }
       .topbar-inner { min-height: auto; align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
       .nav-links { width: 100%; overflow-x: auto; gap: 14px; padding-bottom: 2px; }
-      .cta { display: none; }
+      .cta, .nav-links a.cta { display: none; }
       .hero { min-height: auto; grid-template-columns: 1fr; padding: 34px 0 34px; }
       h1 { font-size: clamp(42px, 12vw, 58px); }
       .hero-copy { font-size: 15px; }
       .why-diagnosis { grid-template-columns: 1fr; }
       .evidence-strip, .volume-board, .platform-volume, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .relationship-map, .competitor-board, .quote-split { grid-template-columns: 1fr; }
+      .logic-step { grid-template-columns: 1fr; }
       .relationship-map { grid-template-areas: "ulike" "braun" "nood" "current" "search"; }
       .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .metric { min-height: 112px; padding: 14px; }
@@ -1513,7 +1596,7 @@
           <span class="label">一句话诊断</span>
           <div class="score-line">
             <strong>别再加人</strong>
-            <span>不是完全不投，而是先停默认铺量。Ulike 近 30 天声量已经足够，真正问题是哪些内容值得复投、哪些内容只是在烧预算。</span>
+            <span>不是完全不投，而是先停默认铺量。Ulike 近 30 天声量已经足够，真正问题是哪些内容值得复投、哪些内容只是低效曝光。</span>
           </div>
           <div class="stage-bar" aria-label="Stage diagnosis">
             <div class="stage-seg">冷启动<small>不是当前问题</small></div>
@@ -1529,7 +1612,7 @@
       <div class="section-head">
         <span class="section-kicker">Why This Diagnosis</span>
         <h2>为什么不是继续加人？因为 Ulike 现在缺的是复投标准。</h2>
-        <p class="lead">这一屏才放证据判断。首屏负责让老板记住结论；这里解释为什么“继续加人”不是主策略，以及下一步该审计什么。</p>
+        <p class="lead">本节承接证据判断：解释为什么“继续加人”不是主策略，以及下一步应该审计哪些内容资产。</p>
       </div>
       <div class="hero-metrics">
         <div class="metric">
@@ -1540,9 +1623,9 @@
         </div>
         <div class="metric">
           <span class="label">平台判断</span>
-          <strong>Instagram 管声量，TikTok 管转化，YouTube 管信任。</strong>
-          <span>三个平台不能用同一套 brief、同一套 KPI 去考核。</span>
-          <small>否则会把高意图信任内容误判成“量不够”。</small>
+          <strong>下一步不是换平台，而是按平台重写 brief 与复投标准。</strong>
+          <span>Instagram 看素材复用，TikTok 看购买意图，YouTube 看搜索信任。</span>
+          <small>该判断基于公开内容结果；完整 brief、KPI 与 rebook 审计需结合后台与投放记录。</small>
         </div>
         <div class="metric">
           <span class="label">差距判断</span>
@@ -1554,7 +1637,7 @@
           <span class="label">预算判断</span>
           <strong>先砍低效铺量，再加码可复投内容。</strong>
           <span>增量预算应先投向证据型 brief、winner rebook 和素材复用权。</span>
-          <small>完整金额、creator tier 和 paid boost 条件放到付费版量化。</small>
+          <small>完整报告将量化金额、creator tier 和 paid boost 条件。</small>
         </div>
       </div>
     </section>
@@ -1563,7 +1646,7 @@
       <div class="section-head">
         <span class="section-kicker">Last 30 Days Video Launch Verification</span>
         <h2>最近 30 天公开视频上线量：Ulike 现阶段已经高频铺量。</h2>
-        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。已核验 301 条 creator / review publishes；这个数字的业务含义是：Ulike 当前要优化的不是“再找一批红人发出去”，而是判断哪些平台内容负责成交、哪些负责信任、哪些只是短期曝光。</p>
+        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。已核验 301 条 creator / review publishes；这个数字的业务含义是：Ulike 当前要优化的不是继续扩大红人发布量，而是判断哪些平台内容负责成交、哪些负责信任、哪些只是短期曝光。</p>
       </div>
       <div class="volume-board">
         <div class="volume-total">
@@ -1573,7 +1656,7 @@
             <span>总量已经足够高：Instagram 138 条，TikTok 110 条，YouTube 53 条。</span>
           </div>
           <div class="volume-verdict">
-            <strong>老板要看的不是“还有没有红人”，而是 301 条里谁值得复投。</strong>
+            <strong>当前重点不是判断是否还缺红人，而是识别 301 条内容中哪些值得复投。</strong>
             <span>下一步应把内容分成可复投、可剪素材、只制造曝光、应停止四类。</span>
             <small>统计窗口：2026-05-15 至 2026-06-14。仅计可核验公开 URL、发布日期和内容 ID 的公开视频。</small>
           </div>
@@ -1620,49 +1703,81 @@
     <section class="shell" id="signals">
       <div class="section-head">
         <span class="section-kicker">Evidence-Led Diagnosis</span>
-        <h2>这些公开信号共同指向同一个结论：Ulike 缺的是购买证据链。</h2>
-        <p class="lead">这屏只回答一个问题：Ulike 不是缺红人，也不是缺内容，而是缺一套把 creator 内容转成购买理由的复投标准。</p>
+        <h2>公开信号怎么推导到结论：Ulike 的问题不在声量，而在复投标准。</h2>
+        <p class="lead">阅读顺序是：先确认声量是否过线，再判断平台角色是否混在一起，最后用合作样本和品牌信任资产判断哪些内容值得复投。</p>
       </div>
-      <div class="evidence-strip">
-        <div class="evidence primary">
-          <div>
-            <span class="label">核心结论</span>
+      <div class="logic-chain">
+        <div class="logic-step">
+          <div class="logic-cell signal">
+            <span class="label">Signal 1</span>
             <strong>301</strong>
+            <p>近 30 天已核验公开视频。</p>
           </div>
-          <div>
-            <h3>声量已经够，下一步看复投效率。</h3>
-            <p>近 30 天公开视频已经证明 Ulike 不缺曝光。现在真正要判断的是：哪些内容能解释购买顾虑、沉淀素材、值得继续投；哪些内容只是把预算烧成声量。</p>
+          <div class="logic-cell">
+            <span class="label">判断</span>
+            <strong>声量已经过线。</strong>
+            <p>近 30 天已经有足够样本，不应再把“新增红人数量”当主目标。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">下一步</span>
+            <strong>从数量审计转向复投审计。</strong>
+            <p>判断哪些内容解释了购买顾虑，哪些只制造短期曝光。</p>
           </div>
         </div>
-        <div class="evidence">
-          <span class="label">TikTok</span>
-          <strong>110</strong>
-          <h3>管转化测试</h3>
-          <p>重点看 Shop / affiliate、折扣触发、hook 胜率和评论区购买意图。</p>
+        <div class="logic-step">
+          <div class="logic-cell signal">
+            <span class="label">Signal 2</span>
+            <strong>138 / 110 / 53</strong>
+            <p>Instagram、TikTok、YouTube 分布不同。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">判断</span>
+            <strong>三平台承担的购买任务不同。</strong>
+            <p>Instagram 更像素材与关系层，TikTok 更像转化测试层，YouTube 更像购买前信任层。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">下一步</span>
+            <strong>按平台分别设定 brief、KPI 和 rebook 标准。</strong>
+            <p>Instagram 看素材复用，TikTok 看购买意图，YouTube 看搜索信任。</p>
+          </div>
         </div>
-        <div class="evidence">
-          <span class="label">Instagram</span>
-          <strong>138</strong>
-          <h3>管声量与素材沉淀</h3>
-          <p>适合做 creator relationship、视觉可信度和再营销素材，不应独自背成交压力。</p>
+        <div class="logic-step">
+          <div class="logic-cell signal">
+            <span class="label">Signal 3</span>
+            <strong>95</strong>
+            <p>可见 sponsored / affiliate 合作信号。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">判断</span>
+            <strong>已经有样本做复投筛选。</strong>
+            <p>问题不是重新从零找红人，而是从现有样本里筛出有效内容类型。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">下一步</span>
+            <strong>建立 creator cohort 与 rebook 阈值。</strong>
+            <p>把 creator 分成值得复投、只适合剪素材、应停止合作三类。</p>
+          </div>
         </div>
-        <div class="evidence">
-          <span class="label">YouTube</span>
-          <strong>53</strong>
-          <h3>管购买前信任</h3>
-          <p>数量最低，但最接近 review、comparison 和购买前搜索防守。</p>
+        <div class="logic-step">
+          <div class="logic-cell signal">
+            <span class="label">Signal 4</span>
+            <strong>7M+ / 2,621</strong>
+            <p>销量 claim 与 Amazon ratings 已存在。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">判断</span>
+            <strong>信任资产不是空白。</strong>
+            <p>品牌已有卖点和背书，缺的是 creator 内容把这些信任资产翻译给用户。</p>
+          </div>
+          <div class="logic-cell">
+            <span class="label">下一步</span>
+            <strong>把卖点改写成购买证据。</strong>
+            <p>让 creator 内容承接销量 claim、Amazon ratings、专家背书和真实使用边界。</p>
+          </div>
         </div>
-        <div class="evidence">
-          <span class="label">复投审计</span>
-          <strong>95</strong>
-          <h3>合作信号足够</h3>
-          <p>有足够 sponsored / affiliate 样本，下一步应该审计谁值得 rebook。</p>
-        </div>
-        <div class="evidence">
-          <span class="label">信任底座</span>
-          <strong>7M+ / 2,621</strong>
-          <h3>不是从零建立信任</h3>
-          <p>销量 claim 与 Amazon ratings 已存在，creator 内容要承接这些信任资产。</p>
+        <div class="logic-result">
+          结论：Ulike 不需要先扩大红人池，而需要建立内容复投标准。
+          <span>完整审计应验证哪些内容能解释购买顾虑、沉淀可复用素材，并支持下一轮预算加码。</span>
         </div>
       </div>
     </section>
@@ -1670,16 +1785,15 @@
     <section class="shell">
       <div class="quote-split">
         <div class="quote-left">
-          <span class="label">What TideLens Changes</span>
-          <strong>从流量动作，变成证据系统。</strong>
-          <p>At-home IPL 是高客单、高信任门槛、需要坚持、效果因人而异的 beauty tech category。普通 lifestyle 种草不足以解释购买顾虑。</p>
+          <span class="label">TideLens 诊断动作</span>
+          <strong>先停默认铺量。</strong>
+          <p>问题不是要不要继续做 KOL，而是不能再把“大号 + 折扣码 + 一次性曝光”当成增长答案。下一步必须按购买证据价值重排内容。</p>
         </div>
         <div class="quote-right">
-          <h3>当前最该停止的，不是 KOL 投放本身，而是把“大号 + 折扣码 + 一次性曝光”当成默认增长答案。</h3>
           <div class="wrong-right">
-            <div class="wrong bad"><strong>Stop</strong>继续找更多大号、继续用折扣码铺量。这很可能正是 Ulike 当前最容易烧钱的动作：上线量会继续增加，但无法回答“我适不适合用、安全吗、和 Braun / Nood 比值不值”。</div>
-            <div class="wrong watch"><strong>Fix</strong>做更多 review 也不够。如果 review 只是换一个 creator 复述卖点，没有拆 safety、skin tone、PCOS、长期效果和竞品比较，它仍然只是曝光内容。</div>
-            <div class="wrong good"><strong>Build</strong>正确方向是搭购买证据矩阵：让 YouTube 承接 high-intent search，让 TikTok 测证据型 hook，让 Instagram 沉淀可复用信任资产，再用 rebook 标准决定谁值得继续投。</div>
+            <div class="wrong bad"><strong>Stop</strong>停止把预算继续推向更多大号和折扣码铺量。上线量会增加，但用户仍然得不到“是否适合、是否安全、与 Braun / Nood 相比是否值得”的答案。</div>
+            <div class="wrong watch"><strong>Fix</strong>普通 review 不够。只有当 review 拆清 safety、skin tone、PCOS、长期效果和竞品比较，才有复投价值。</div>
+            <div class="wrong good"><strong>Build</strong>建立购买证据矩阵：YouTube 承接高意图搜索，TikTok 测试购买顾虑，Instagram 沉淀可复用信任素材，再用 rebook 标准决定继续投谁。</div>
           </div>
         </div>
       </div>
@@ -1750,7 +1864,7 @@
         <p class="lead">不是按平台平均分钱，而是按购买链条分工：买前搜索靠 YouTube 守住，购买冲动靠 TikTok 验证，广告复用靠 Instagram 沉淀。</p>
       </div>
       <div class="budget-command">
-        <strong>一句话给老板</strong>
+        <strong>预算结论</strong>
         <p>先不要追加“更多红人”预算。先把现有内容分成三笔钱：补信任的钱、筛 winner 的钱、买可复用素材的钱。</p>
       </div>
       <div class="platform-map">
@@ -1900,50 +2014,50 @@
 
     <section class="shell" id="unlock">
       <div class="section-head">
-        <span class="section-kicker">Next Analysis Layer</span>
-        <h2>下一层分析要量化账号、证据、预算和执行路径。</h2>
-        <p class="lead">当前诊断已经确定 Ulike 的 KOL 问题属于增长优化和防守阶段。下一步需要把平台内容、竞品动作和 creator 质量拆到可执行层。</p>
+        <span class="section-kicker">Full TideLens Analysis</span>
+        <h2>完整 TideLens 分析将量化账号、证据、预算和执行路径。</h2>
+        <p class="lead">当前诊断已经确定 Ulike 的 KOL 问题属于增长优化和防守阶段。完整分析会把平台内容、竞品动作和 creator 质量拆到可执行层。</p>
       </div>
       <div class="locked-wall">
         <article class="locked-card">
           <h3>Competitor Objection Map</h3>
-          <p>已识别 3 个竞品拦截语境：Braun 抢 safety authority，Nood 抢 price/value conversion，CurrentBody 抢 beauty tech credibility。下一层要量化这些语境对应的 creator、keyword、hook 和评论区购买意图。</p>
+          <p>已识别 3 个竞品拦截语境：Braun 抢 safety authority，Nood 抢 price/value conversion，CurrentBody 抢 beauty tech credibility。完整分析将量化这些语境对应的 creator、keyword、hook 和评论区购买意图。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
           </div>
-          <span class="lock-label">Next: playbook</span>
+          <span class="lock-label">完整报告解锁</span>
         </article>
         <article class="locked-card">
           <h3>Creator Rebook Logic</h3>
-          <p>下一层不是只补账号名单，而是区分 proof creator、sales creator、content-only creator 和 risk creator，判断谁值得 rebook、谁只适合拿素材、谁会稀释信任。</p>
+          <p>完整分析不会只补账号名单，而是区分 proof creator、sales creator、content-only creator 和 risk creator，判断谁值得 rebook、谁只适合拿素材、谁会稀释信任。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
           </div>
-          <span class="lock-label">Next: account list</span>
+          <span class="lock-label">完整报告解锁</span>
         </article>
         <article class="locked-card">
           <h3>YouTube Proof Cluster</h3>
-          <p>公开样本已经出现 doctor-style review、1-year update、brown skin、men's grooming 和 comparison。下一层要拆哪些关键词已经有 Ulike 露出，哪些仍被竞品和中立 reviewer 占据。</p>
+          <p>公开样本已经出现 doctor-style review、1-year update、brown skin、men's grooming 和 comparison。完整分析将拆出哪些关键词已有 Ulike 露出，哪些仍被竞品和中立 reviewer 占据。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
           </div>
-          <span class="lock-label">Next: keyword map</span>
+          <span class="lock-label">完整报告解锁</span>
         </article>
         <article class="locked-card">
           <h3>Proof Content Wall</h3>
-          <p>已识别需要补强的内容证据：长期追踪、pain test、skin/hair compatibility、PCOS journey、comparison review。下一层要把内容样本、hook、评论区信号和可复用 brief 串成执行资产。</p>
+          <p>已识别需要补强的内容证据：长期追踪、pain test、skin/hair compatibility、PCOS journey、comparison review。完整分析会把内容样本、hook、评论区信号和可复用 brief 串成执行资产。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
           </div>
-          <span class="lock-label">Next: evidence wall</span>
+          <span class="lock-label">完整报告解锁</span>
         </article>
       </div>
     </section>
@@ -1983,7 +2097,7 @@
         </div>
         <div class="card card-pad">
           <span class="label">Measurement Readiness</span>
-          <h3>公开信号只能证明有追踪基础，不能证明复投系统成熟。</h3>
+          <h3>公开信号显示 Ulike 已有追踪基础，下一步要验证复投系统是否成熟。</h3>
           <p>公开资料能看到 affiliate、referral、Amazon/官网销售和 creator coupon code 信号；但 creator cohort analysis、post-live tracking、usage rights 和 rebook rules 需要后台数据确认。</p>
         </div>
       </div>
@@ -1993,7 +2107,7 @@
       <div class="section-head">
         <span class="section-kicker">Sources and Caveats</span>
         <h2>本报告基于公开资料，不硬猜内部经营数据。</h2>
-        <p class="lead">GMV、毛利、CAC、ROAS、creator 合同、Amazon Attribution、TikTok Shop、Meta Ads 或 Shopify 数据均未纳入。Modash 的 54 creators 仅代表其公开页面在 2025-08-22 更新时列出的 Ulike sponsored creator sample，页面未披露 exact lookback window，不能作为全网红人内容数量。下一层 TideLens 应结合 YouTube / TikTok / Instagram 平台级 crawl、后台数据与人工复核。</p>
+        <p class="lead">GMV、毛利、CAC、ROAS、creator 合同、Amazon Attribution、TikTok Shop、Meta Ads 或 Shopify 数据均未纳入。Modash 的 54 creators 仅代表其公开页面在 2025-08-22 更新时列出的 Ulike sponsored creator sample，页面未披露 exact lookback window，不能作为全网红人内容数量。完整 TideLens 分析应结合 YouTube / TikTok / Instagram 平台级 crawl、后台数据与人工复核。</p>
       </div>
       <div class="source-grid">
         <a href="https://www.ulike.com/products/sapphire-air-10-ipl-hair-removal" target="_blank" rel="noreferrer">Ulike Air 10 official product page</a>
