@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yvette · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-15</title>
   <meta name="description" content="Yvette 北美业务诊断：阶段、渠道、搜索心智、VOC、品线天花板、卖点匹配、关键问题、部门红黄绿灯。" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
       color-scheme: light dark;
@@ -94,31 +95,30 @@
     .nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; color: var(--muted); font-size: 13px; font-weight: 700; }
     .nav a { border: 0; }
     main { max-width: var(--max); margin: 0 auto; padding: 0 28px 72px; }
-    section { padding: 72px 0 0; }
+    section { padding: 68px 0 0; scroll-margin-top: 88px; }
     .hero {
-      min-height: calc(100vh - 64px);
+      min-height: calc(100svh - 64px);
       display: grid;
       align-items: center;
-      padding-top: 36px;
-      padding-bottom: 34px;
+      padding-top: clamp(32px, 5vh, 60px);
+      padding-bottom: clamp(28px, 5vh, 54px);
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 450px);
+      gap: clamp(36px, 6vw, 74px);
+      align-items: center;
     }
     .hero-copy {
-      min-height: 620px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 36px;
+      justify-content: center;
+      gap: 0;
     }
     .logo-tile {
-      width: 168px;
-      height: 168px;
-      border-radius: 24px;
+      width: 118px;
+      height: 118px;
+      border-radius: 22px;
       overflow: hidden;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
@@ -146,22 +146,22 @@
     h1, h2, h3 { margin: 0; line-height: 1.04; letter-spacing: 0; }
     h1 {
       margin-top: 26px;
-      font-size: clamp(56px, 8vw, 112px);
+      font-size: clamp(54px, 6.2vw, 88px);
       font-weight: 900;
-      max-width: 980px;
+      max-width: 760px;
     }
     .lead {
-      margin-top: 28px;
-      max-width: 900px;
-      font-size: clamp(20px, 2.1vw, 31px);
+      margin-top: 24px;
+      max-width: 760px;
+      font-size: clamp(20px, 2vw, 27px);
       line-height: 1.38;
       font-weight: 800;
       color: var(--ink);
     }
     .sublead {
-      margin-top: 18px;
-      max-width: 920px;
-      font-size: 16px;
+      margin-top: 16px;
+      max-width: 720px;
+      font-size: 15px;
       color: var(--muted);
     }
     .hero-score {
@@ -171,11 +171,12 @@
       color: #fff;
       border-radius: 10px;
       border: 1px solid rgba(255,255,255,.16);
-      min-height: 620px;
-      padding: 32px;
+      min-height: 0;
+      padding: 30px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 26px;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
@@ -188,31 +189,64 @@
       background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
     }
     .score-label { font-size: 13px; font-weight: 800; color: rgba(255,255,255,.9); }
-    .big-score { font-size: clamp(76px, 10vw, 132px); font-weight: 900; line-height: .92; margin-top: 16px; }
+    .score-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: end;
+      margin-top: 14px;
+    }
+    .big-score { font-size: clamp(76px, 9vw, 112px); font-weight: 900; line-height: .86; }
     .stars {
-      position: relative;
-      display: inline-block;
-      margin-top: 18px;
-      font-size: 34px;
-      line-height: 1;
-      letter-spacing: 2px;
-      color: rgba(255,255,255,.28);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 6px;
       white-space: nowrap;
     }
-    .stars .fill {
-      position: absolute;
-      inset: 0 auto 0 0;
-      overflow: hidden;
-      color: #ffc857;
-      white-space: nowrap;
+    .stars span {
+      display: inline-block;
+      font-size: 32px;
+      line-height: 1;
+      color: rgba(255,255,255,.24);
+    }
+    .stars .full { color: #ffc857; }
+    .stars .half {
+      color: transparent;
+      background: linear-gradient(90deg, #ffc857 55%, rgba(255,255,255,.24) 55%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .score-caption {
+      color: rgba(255,255,255,.88);
+      font-weight: 850;
+      font-size: 15px;
     }
     .score-formula {
-      margin-top: 24px;
       color: rgba(255,255,255,.88);
       font-size: 15px;
       font-weight: 650;
     }
-    .score-grid { display: grid; gap: 12px; margin-top: 28px; }
+    .score-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .score-pill {
+      min-height: 78px;
+      display: grid;
+      gap: 4px;
+      align-content: center;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 780;
+    }
+    .score-pill b { color: #fff; font-size: 20px; line-height: 1.05; }
+    .score-grid { display: grid; gap: 12px; }
     .score-row {
       display: grid;
       grid-template-columns: 92px 1fr 52px;
@@ -224,37 +258,19 @@
     }
     .track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.16); overflow: hidden; }
     .bar { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--pink)); }
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .metric {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      color: var(--muted);
-      box-shadow: var(--shadow);
-    }
-    .metric b { display: block; margin-bottom: 4px; color: var(--ink); font-size: 22px; line-height: 1.1; }
-    @media (prefers-color-scheme: dark) {
-      .metric {
-        background: rgba(255,255,255,.08);
-        border: 1px solid rgba(255,255,255,.14);
-        color: rgba(255,255,255,.88);
-        box-shadow: none;
-      }
-      .metric b { color: #fff; }
-    }
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(260px, .95fr);
-      gap: 40px;
+      grid-template-columns: minmax(0, .96fr) minmax(300px, .86fr);
+      gap: 34px;
       align-items: end;
       margin-bottom: 24px;
     }
-    h2 { font-size: clamp(38px, 5vw, 70px); font-weight: 900; max-width: 980px; }
+    h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 900;
+      max-width: 780px;
+      line-height: 1.08;
+    }
     .section-note { color: var(--muted); font-size: 16px; max-width: 640px; }
     .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
     .grid-4 { grid-template-columns: repeat(4, 1fr); }
@@ -299,6 +315,7 @@
       border: 1px solid rgba(255,255,255,.12);
       box-shadow: var(--shadow);
     }
+    .dark-panel h2 { max-width: 1040px; }
     .dark-panel p, .dark-panel .muted { color: rgba(255,255,255,.82); }
     .stage-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
     .stage-card {
@@ -378,7 +395,7 @@
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       padding: 22px;
-      min-height: 280px;
+      min-height: 252px;
       box-shadow: var(--shadow);
     }
     .mind-card.red { border-top-color: var(--red); background: color-mix(in srgb, var(--paper) 90%, var(--red-soft)); }
@@ -497,7 +514,7 @@
     .mini-fill.red { background: var(--red); }
     .onepage {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1fr .92fr;
       gap: 16px;
     }
     .summary-list { display: grid; gap: 12px; }
@@ -532,21 +549,24 @@
     }
     .biz-top {
       display: grid;
-      grid-template-columns: 1fr 108px;
+      grid-template-columns: 86px 1fr;
       gap: 16px;
       padding: 22px;
       border-bottom: 1px solid var(--line);
     }
+    .biz-top > div:first-child { grid-column: 2; grid-row: 1; }
     .biz-score {
+      grid-column: 1;
+      grid-row: 1;
       border: 1px solid var(--line);
       border-radius: 8px;
       display: grid;
       place-items: center;
-      min-height: 116px;
+      min-height: 92px;
       background: var(--paper-soft);
       text-align: center;
     }
-    .biz-score b { display: block; font-size: 42px; line-height: 1; }
+    .biz-score b { display: block; font-size: 32px; line-height: 1; }
     .biz-body { display: grid; grid-template-columns: 1fr 1fr; }
     .biz-col { padding: 18px 22px 22px; min-width: 0; }
     .biz-col:first-child { border-right: 1px solid var(--line); }
@@ -675,12 +695,15 @@
       main { padding: 0 16px 52px; }
       section { padding-top: 54px; }
       .hero { min-height: auto; padding-top: 28px; }
-      h1 { font-size: 48px; }
-      h2 { font-size: 38px; }
-      .logo-tile { width: 132px; height: 132px; border-radius: 18px; }
+      h1 { font-size: 44px; }
+      h2 { font-size: 28px; }
+      .logo-tile { width: 92px; height: 92px; border-radius: 18px; }
       .hero-score { padding: 24px; }
-      .hero-metrics, .grid-4, .grid-3, .grid-2, .mind-grid, .scoreboard, .dept-grid, .stage-cards { grid-template-columns: 1fr; }
+      .score-head, .score-pills, .grid-4, .grid-3, .grid-2, .mind-grid, .scoreboard, .dept-grid, .stage-cards { grid-template-columns: 1fr; }
+      .score-head { gap: 14px; }
+      .stars span { font-size: 30px; }
       .biz-top, .biz-body, .comp-card, .summary-item { grid-template-columns: 1fr; }
+      .biz-top > div:first-child, .biz-score { grid-column: auto; grid-row: auto; }
       .biz-col:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
       .intent-table, .evidence-table { display: block; overflow-x: auto; }
       .share-row { grid-template-columns: 92px 1fr 42px; }
@@ -720,26 +743,31 @@
             <div class="eyebrow" style="margin-top:28px;">North America Diagnosis</div>
             <h1>Yvette 北美业务诊断</h1>
             <p class="lead">Yvette 北美的主线不是“再铺更多运动服”，而是把高支撑运动内衣的尺码信任、退换体验和 DTC 复购做成经营系统。</p>
-            <p class="sublead">公开证据显示，Yvette 在高支撑、前拉链、大胸/大码运动内衣上已经有 Amazon 动销、DTC 产品深度和外部口碑；但 Trustpilot 负评集中在尺码、退换、物流和客服，说明北美增长质量的短板不在选品数量，而在用户买前敢不敢下单、买错后能不能顺畅换对。</p>
-          </div>
-          <div class="hero-metrics">
-            <div class="metric"><b>10-100 初期</b>阶段判断</div>
-            <div class="metric"><b>DTC + Amazon</b>经营类型</div>
-            <div class="metric"><b>中</b>公开数据置信度</div>
+            <p class="sublead">主线已成立；先修尺码、退换和履约信任，再用数据决定 leggings / sets 是否值得继续加码。</p>
           </div>
         </div>
         <aside class="hero-score" aria-label="北美业务总分">
           <div>
             <div class="score-label">北美业务情况总分</div>
-            <div class="big-score">67</div>
-            <div class="stars" aria-label="3.35 out of 5 stars">★★★★★<span class="fill" style="width:67%;">★★★★★</span></div>
-            <p class="score-formula">67 / 100 = 3.35 / 5。业务健康度 69 × 45% + 业务机会分 76 × 35% +（100 - 问题致命度 55）× 20% = 66.65。数据抓取日期：2026-06-15。</p>
+            <div class="score-head">
+              <div class="big-score">67</div>
+              <div>
+                <div class="stars" aria-label="3.35 out of 5 stars"><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span><span>★</span></div>
+                <div class="score-caption">3.35 / 5 · 公开数据</div>
+              </div>
+            </div>
+          </div>
+          <div class="score-pills">
+            <div class="score-pill"><b>10-100 初期</b><span>阶段判断</span></div>
+            <div class="score-pill"><b>DTC + Amazon</b><span>经营类型</span></div>
+            <div class="score-pill"><b>中</b><span>公开数据置信度</span></div>
           </div>
           <div class="score-grid">
             <div class="score-row"><span>业务健康度</span><div class="track"><div class="bar" style="width:69%;"></div></div><span>69</span></div>
             <div class="score-row"><span>业务机会分</span><div class="track"><div class="bar" style="width:76%;"></div></div><span>76</span></div>
             <div class="score-row"><span>问题致命度</span><div class="track"><div class="bar" style="width:55%;"></div></div><span>55</span></div>
           </div>
+          <p class="score-formula">67 / 100 = 3.35 / 5。数据抓取日期：2026-06-15。</p>
         </aside>
       </div>
     </section>
