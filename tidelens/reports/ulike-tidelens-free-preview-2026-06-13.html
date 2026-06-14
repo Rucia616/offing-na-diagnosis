@@ -490,7 +490,7 @@
     }
     .stacked-bar {
       display: grid;
-      grid-template-columns: 110fr 9fr 0fr;
+      grid-template-columns: 110fr 0fr 0fr;
       height: 20px;
       overflow: hidden;
       border-radius: 999px;
@@ -1111,7 +1111,7 @@
           <div class="metric">
             <span class="label">Platform-visible Creator Activity</span>
             <strong>Active</strong>
-            <span>TikTok US/CA 已核验 110 条 creator / affiliate videos；全球 TikTok 公开样本为 277 条。</span>
+            <span>TikTok US/CA 已核验 110 条 creator / affiliate videos；Instagram 需完成 hashtag cluster audit 后再计入总数。</span>
             <small>统计窗口：2026-05-15 至 2026-06-14，按 video_id 去重。</small>
           </div>
           <div class="metric">
@@ -1139,43 +1139,43 @@
     <section class="shell" id="volume">
       <div class="section-head">
         <span class="section-kicker">Last 30 Days Video Launch Verification</span>
-        <h2>最近 30 天北美公开可见视频上线量：已核验 119 条，TikTok 单平台已破百。</h2>
-        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。一个 publish 记为 1 条上线量；同一 creator 跨平台发布时，合作 creator 按账号去重，上线量按平台发布次数累计。主口径为 US/CA creator / affiliate / review videos；品牌自有账号不计入合作 creator。</p>
+        <h2>最近 30 天北美 TikTok 公开可见视频上线量：已核验 110 条。</h2>
+        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。一个 publish 记为 1 条上线量；同一 creator 跨平台发布时，合作 creator 按账号去重，上线量按平台发布次数累计。计入总数的前提是能拿到平台内容 ID、发布日期、公开 URL 和去重依据；Instagram 待完成 hashtag cluster audit 后再合并。</p>
       </div>
       <div class="volume-board">
         <div class="volume-total">
           <div>
-            <span class="label">Verified Public Publishes</span>
-            <strong>119</strong>
-            <span>北美公开可见 creator / affiliate 视频。TikTok US/CA 已核验 110 条，Instagram Reels 已核验 9 条，YouTube 本窗口未核验到新增上线。</span>
+            <span class="label">Verified TikTok Publishes</span>
+            <strong>110</strong>
+            <span>北美公开可见 creator / affiliate 视频。TikTok US/CA 已核验 110 条；Instagram 不使用搜索片段估算，需进入 hashtag / tagged / mention 三线核验后再计入。</span>
           </div>
           <small>TikTok 采用 video_id 级去重：17 组 Ulike / Air 10 / hair removal / discount-code / TikTok Shop 关键词，774 条原始结果，北美 creator 视频核验 110 条；全球 TikTok creator / affiliate 视频核验 277 条。</small>
         </div>
         <div class="platform-volume">
-          <div class="stacked-bar" aria-label="Platform share: TikTok 92.4%, Instagram 7.6%, YouTube 0%">
-            <span title="TikTok / TikTok Shop 92.4%"></span>
-            <span title="Instagram 7.6%"></span>
+          <div class="stacked-bar" aria-label="Counted platform share: TikTok 100%, Instagram pending, YouTube pending">
+            <span title="TikTok / TikTok Shop counted"></span>
+            <span title="Instagram pending hashtag audit"></span>
             <span title="YouTube 0%"></span>
           </div>
           <div class="platform-row">
             <strong>TikTok / Shop</strong>
-            <div class="mini-bar" style="--tone:var(--sea-dark);--w:92%"><span></span></div>
+            <div class="mini-bar" style="--tone:var(--sea-dark);--w:100%"><span></span></div>
             <div class="volume-number">110</div>
-            <div class="volume-share">92.4%</div>
+            <div class="volume-share">Counted</div>
           </div>
           <div class="platform-row">
             <strong>Instagram</strong>
-            <div class="mini-bar" style="--tone:var(--blue);--w:8%"><span></span></div>
-            <div class="volume-number">9</div>
-            <div class="volume-share">7.6%</div>
+            <div class="mini-bar" style="--tone:var(--blue);--w:0%"><span></span></div>
+            <div class="volume-number">Audit</div>
+            <div class="volume-share">Pending</div>
           </div>
           <div class="platform-row">
             <strong>YouTube</strong>
             <div class="mini-bar" style="--tone:var(--amber);--w:0%"><span></span></div>
-            <div class="volume-number">0</div>
-            <div class="volume-share">0%</div>
+            <div class="volume-number">Audit</div>
+            <div class="volume-share">Pending</div>
           </div>
-          <p class="volume-caveat">业务解读：Ulike 不是 KOL 冷启动品牌，而是 TikTok Shop / affiliate 驱动的高频放量品牌。当前问题不是“有没有上线”，而是 110 条北美 TikTok 内容里，哪些在稳定解决痛感、安全、肤色/毛发适配、长期效果和竞品替代这些购买顾虑；Instagram 负责生活方式背书和再营销素材，YouTube 需要补上高意图 review / comparison / expert-style 防守。</p>
+          <p class="volume-caveat">业务解读：Ulike 不是 KOL 冷启动品牌，而是 TikTok Shop / affiliate 驱动的高频放量品牌。当前已核验的 110 条北美 TikTok 内容足以说明短视频放量强度；Instagram 不能靠少量搜索片段估算，下一步必须按 #ulike / #ulikehairremoval / #ulikeair10 / #ulikepartner / @ulikeglobal / @ulikeusa 做 hashtag cluster 与 tagged media 去重审计。</p>
         </div>
       </div>
     </section>
@@ -1184,7 +1184,7 @@
       <div class="section-head">
         <span class="section-kicker">Public Signal Snapshot</span>
         <h2>Ulike 需要把红人内容组织成购买决策证据链。</h2>
-        <p class="lead">公开资料显示 Ulike 已经具备品牌、渠道、creator 和专家背书信号。近 30 天北美 TikTok 公开样本已核验 110 条 creator / affiliate 视频，其中 95 条带有 #ad、code、link in bio、TikTok Shop 或合作信号；YouTube 存量样本里存在 review、doctor-style、1-year update、brown skin 和 comparison 内容。当前需要判断的是：哪些内容在帮用户做购买决策，哪些只是在制造短期曝光。</p>
+        <p class="lead">公开资料显示 Ulike 已经具备品牌、渠道、creator 和专家背书信号。近 30 天北美 TikTok 公开样本已核验 110 条 creator / affiliate 视频，其中 95 条带有 #ad、code、link in bio、TikTok Shop 或合作信号；Instagram 需要使用 hashtag cluster 与 tagged media 审计，不应使用搜索片段估算。当前需要判断的是：哪些内容在帮用户做购买决策，哪些只是在制造短期曝光。</p>
       </div>
       <div class="evidence-strip">
         <div class="evidence">
