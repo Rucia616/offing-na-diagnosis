@@ -61,8 +61,7 @@
     .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
     .topbar {
-      position: sticky;
-      top: 0;
+      position: static;
       z-index: 30;
       border-bottom: 1px solid rgba(215,221,219,.86);
       background: rgba(247,249,247,.88);
@@ -250,19 +249,20 @@
     }
     .score-card .label { color: rgba(255,255,255,.7); }
     .score-line {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 18px;
+      display: grid;
+      grid-template-columns: max-content minmax(220px, 1fr);
+      align-items: end;
+      gap: 22px;
     }
     .score-line strong {
       color: #fff;
-      font-size: clamp(44px, 5vw, 66px);
+      font-size: clamp(42px, 4.2vw, 58px);
       line-height: .96;
       font-weight: 880;
+      white-space: nowrap;
+      word-break: keep-all;
     }
     .score-line span {
-      max-width: 260px;
       color: rgba(255,255,255,.86);
       font-size: 13px;
       line-height: 1.35;
@@ -303,6 +303,10 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--line);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
     }
     .metric {
       min-height: 128px;
@@ -330,6 +334,9 @@
       color: var(--muted);
       font-size: 11px;
       line-height: 1.36;
+    }
+    .diagnosis-proof {
+      padding-top: 58px;
     }
 
     section {
@@ -822,6 +829,103 @@
       display: grid;
       gap: 12px;
     }
+    .relationship-map {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, .78fr) minmax(0, 1fr);
+      grid-template-areas:
+        "braun ulike current"
+        "nood ulike search";
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .relationship-node {
+      min-height: 178px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.9);
+      box-shadow: var(--shadow-soft);
+    }
+    .relationship-node.ulike {
+      grid-area: ulike;
+      align-content: center;
+      color: #fff;
+      background:
+        radial-gradient(circle at 90% 12%, rgba(127,194,188,.24), transparent 34%),
+        linear-gradient(145deg, #101616, #173d3c);
+    }
+    .relationship-node.braun { grid-area: braun; }
+    .relationship-node.nood { grid-area: nood; }
+    .relationship-node.current { grid-area: current; }
+    .relationship-node.search { grid-area: search; }
+    .relationship-node .kicker {
+      color: var(--sea-dark);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    .brand-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 4px;
+    }
+    .logo-stack {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .logo-stack .brand-logo {
+      width: 30px;
+      height: 30px;
+    }
+    .relationship-node h3 {
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1.08;
+      font-weight: 860;
+    }
+    .relationship-node p {
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+    .relationship-node .relation {
+      padding: 10px 11px;
+      border: 1px solid rgba(45,98,97,.18);
+      border-radius: var(--radius);
+      background: var(--sea-soft);
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.38;
+      font-weight: 760;
+    }
+    .relationship-node.ulike .kicker,
+    .relationship-node.ulike h3,
+    .relationship-node.ulike p {
+      color: #fff;
+    }
+    .relationship-node.ulike .relation {
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.86);
+    }
     .competitor-board {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -881,6 +985,29 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+    }
+    .budget-command {
+      margin-bottom: 16px;
+      padding: 22px 24px;
+      border: 1px solid rgba(45,98,97,.22);
+      border-left: 4px solid var(--sea);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow-soft);
+    }
+    .budget-command strong {
+      display: block;
+      color: var(--sea-dark);
+      font-size: 13px;
+      font-weight: 860;
+      margin-bottom: 6px;
+    }
+    .budget-command p {
+      max-width: 980px;
+      color: var(--ink);
+      font-size: clamp(20px, 2.4vw, 30px);
+      line-height: 1.18;
+      font-weight: 840;
     }
     .platform {
       min-height: 380px;
@@ -1213,7 +1340,7 @@
         border-bottom-color: rgba(42,56,55,.92);
         background: rgba(14,20,20,.9);
       }
-      .chip, .thesis, .why-item, .card, .note-row, .platform, .archetype, .source-grid a {
+      .chip, .thesis, .why-item, .card, .note-row, .relationship-node, .budget-command, .platform, .archetype, .source-grid a {
         background: rgba(21,29,29,.9);
       }
       .cta, .score-card, .volume-total, .dark-card, .quote-left, footer {
@@ -1297,7 +1424,8 @@
       h1 { font-size: clamp(42px, 12vw, 58px); }
       .hero-copy { font-size: 15px; }
       .why-diagnosis { grid-template-columns: 1fr; }
-      .evidence-strip, .volume-board, .platform-volume, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .competitor-board, .quote-split { grid-template-columns: 1fr; }
+      .evidence-strip, .volume-board, .platform-volume, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .relationship-map, .competitor-board, .quote-split { grid-template-columns: 1fr; }
+      .relationship-map { grid-template-areas: "ulike" "braun" "nood" "current" "search"; }
       .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .metric { min-height: 112px; padding: 14px; }
       .metric strong { font-size: 22px; }
@@ -1317,6 +1445,19 @@
       .heat-cell.head { display: none; }
       .heat-cell.level { text-align: left; }
       .source-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .score-line {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .score-line span {
+        text-align: left;
+      }
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media print {
@@ -1365,20 +1506,6 @@
           <strong>核心判断</strong>
           <p>Ulike 下一阶段要修复购买证据链缺口：把已有产品卖点、专家背书、PCOS 场景和 creator 内容，组织成能回答用户购买顾虑的购买证据系统。</p>
         </div>
-        <div class="why-diagnosis" aria-label="Why this diagnosis">
-          <div class="why-item">
-            <strong>1. 内容仍在持续上线</strong>
-            <span>TikTok + Instagram Reels + YouTube 近 30 天已核验 301 条 creator / review 视频，说明 Ulike 已进入高频铺量期。</span>
-          </div>
-          <div class="why-item">
-            <strong>2. 品类依赖证明链</strong>
-            <span>At-home IPL 用户要判断肤色/毛发适配、痛感、安全边界、长期效果和竞品差异。</span>
-          </div>
-          <div class="why-item">
-            <strong>3. 竞品正在分工抢心智</strong>
-            <span>Braun 抢安全权威，Nood 抢价格转化，CurrentBody 抢高端 beauty tech 信任。</span>
-          </div>
-        </div>
       </div>
 
       <aside class="hero-panel" aria-label="TideLens diagnosis summary">
@@ -1395,33 +1522,41 @@
             <div class="stage-seg active">防守期<small>开始加重</small></div>
           </div>
         </div>
-        <div class="hero-metrics">
-          <div class="metric">
-            <span class="label">声量结论</span>
-            <strong>红人数量已经够，继续加人不是主策略。</strong>
-            <span>近 30 天已核验 301 条公开视频，说明声量已经跑起来。</span>
-            <small>现在该审计内容质量、购买意图和复投价值。</small>
-          </div>
-          <div class="metric">
-            <span class="label">平台判断</span>
-            <strong>Instagram 管声量，TikTok 管转化，YouTube 管信任。</strong>
-            <span>三个平台不能用同一套 brief、同一套 KPI 去考核。</span>
-            <small>否则会把高意图信任内容误判成“量不够”。</small>
-          </div>
-          <div class="metric">
-            <span class="label">差距判断</span>
-            <strong>真正缺口：用户为什么现在该买 Ulike。</strong>
-            <span>品牌已有卖点和背书，但 creator 内容还没有系统回答购买顾虑。</span>
-            <small>重点是 skin tone、hair color、PCOS、痛感、安全边界和长期结果。</small>
-          </div>
-          <div class="metric">
-            <span class="label">预算判断</span>
-            <strong>先砍低效铺量，再加码可复投内容。</strong>
-            <span>增量预算应先投向证据型 brief、winner rebook 和素材复用权。</span>
-            <small>完整金额、creator tier 和 paid boost 条件放到付费版量化。</small>
-          </div>
-        </div>
       </aside>
+    </section>
+
+    <section class="shell diagnosis-proof" id="diagnosis-proof">
+      <div class="section-head">
+        <span class="section-kicker">Why This Diagnosis</span>
+        <h2>为什么不是继续加人？因为 Ulike 现在缺的是复投标准。</h2>
+        <p class="lead">这一屏才放证据判断。首屏负责让老板记住结论；这里解释为什么“继续加人”不是主策略，以及下一步该审计什么。</p>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="label">声量结论</span>
+          <strong>红人数量已经够，继续加人不是主策略。</strong>
+          <span>近 30 天已核验 301 条公开视频，说明声量已经跑起来。</span>
+          <small>现在该审计内容质量、购买意图和复投价值。</small>
+        </div>
+        <div class="metric">
+          <span class="label">平台判断</span>
+          <strong>Instagram 管声量，TikTok 管转化，YouTube 管信任。</strong>
+          <span>三个平台不能用同一套 brief、同一套 KPI 去考核。</span>
+          <small>否则会把高意图信任内容误判成“量不够”。</small>
+        </div>
+        <div class="metric">
+          <span class="label">差距判断</span>
+          <strong>真正缺口：用户为什么现在该买 Ulike。</strong>
+          <span>品牌已有卖点和背书，但 creator 内容还没有系统回答购买顾虑。</span>
+          <small>重点是 skin tone、hair color、PCOS、痛感、安全边界和长期结果。</small>
+        </div>
+        <div class="metric">
+          <span class="label">预算判断</span>
+          <strong>先砍低效铺量，再加码可复投内容。</strong>
+          <span>增量预算应先投向证据型 brief、winner rebook 和素材复用权。</span>
+          <small>完整金额、creator tier 和 paid boost 条件放到付费版量化。</small>
+        </div>
+      </div>
     </section>
 
     <section class="shell" id="volume">
@@ -1555,30 +1690,55 @@
         <h2>竞品打法已经分化，Ulike 需要用证据型内容建立防守。</h2>
         <p class="lead">Ulike 面临的不是一个竞品，而是四类不同的内容战场：安全权威、低价试错、高端科技信任和比较搜索截流。不同竞品抢的是不同购买顾虑，Ulike 的防守要拆成 safety proof、value proof、authority proof 和 comparison proof。</p>
       </div>
-      <div class="competitor-board">
-        <article class="note-row featured">
-          <strong>Braun</strong>
-          <h3>抢安全感</h3>
-          <p>Braun 把用户问题从“有没有效果”拉到“哪个更稳、更安全”。它会吃掉风险厌恶型用户。</p>
-          <div class="note-action">Ulike 反制：用 creator 讲清 safety、skin tone fit、intimate-area boundary 和长期结果。</div>
+      <div class="relationship-map" aria-label="Ulike competitor relationship map">
+        <article class="relationship-node ulike">
+          <div class="brand-head">
+            <img class="brand-logo" src="../../assets/competitors/ulike.png" alt="Ulike logo" />
+            <span class="kicker">Ulike position</span>
+          </div>
+          <h3>声量已经有了，但购买证据还没形成防守墙。</h3>
+          <p>Ulike 不是被一个品牌单点压制，而是被不同竞品从安全、价格、权威和搜索比较四个方向分流。</p>
+          <div class="relation">核心任务：把 creator 内容拆成 safety / value / authority / comparison proof。</div>
         </article>
-        <article class="note-row featured">
-          <strong>Nood</strong>
-          <h3>抢低价试错</h3>
-          <p>Nood 抢的是“先试试看”的价格敏感用户。只靠折扣反击，会把 Ulike 拉进低价语境。</p>
-          <div class="note-action">Ulike 反制：用 pain test、speed proof、sensor proof 和 comparison content 证明为什么更值。</div>
+        <article class="relationship-node braun">
+          <div class="brand-head">
+            <img class="brand-logo" src="../../assets/competitors/braun.png" alt="Braun logo" />
+            <span class="kicker">Braun → safety pressure</span>
+          </div>
+          <h3>抢风险厌恶型用户</h3>
+          <p>当用户担心安全、肤色适配和长期效果时，Braun 更容易成为“稳妥选择”。</p>
+          <div class="relation">Ulike 要用 safety proof 防守，而不是只讲优惠。</div>
         </article>
-        <article class="note-row featured">
-          <strong>CurrentBody</strong>
-          <h3>抢高端科技信任</h3>
-          <p>CurrentBody 用 beauty tech 货架、clinical language 和媒体内容建立设备权威感。</p>
-          <div class="note-action">Ulike 反制：在 YouTube、长文 review 和专家型 creator 内容里证明自己不是短视频爆品，而是长期设备选择。</div>
+        <article class="relationship-node nood">
+          <div class="brand-head">
+            <img class="brand-logo" src="../../assets/competitors/nood.png" alt="Nood logo" />
+            <span class="kicker">Nood → price pressure</span>
+          </div>
+          <h3>拉低价格锚点</h3>
+          <p>Nood 会把用户带进“先试试看、便宜一点”的语境，压低 Ulike 的价值感。</p>
+          <div class="relation">Ulike 要用 value proof 证明为什么更值。</div>
         </article>
-        <article class="note-row featured">
-          <strong>RoseSkinCo / SmoothSkin / Philips</strong>
-          <h3>抢比较搜索</h3>
-          <p>这些品牌会一起占住 “best IPL device”“Ulike alternative” 这类高意图比较语境。</p>
-          <div class="note-action">Ulike 反制：建立 comparison proof，而不是等用户去第三方内容里被动比较。</div>
+        <article class="relationship-node current">
+          <div class="brand-head">
+            <img class="brand-logo" src="../../assets/competitors/currentbody.png" alt="CurrentBody logo" />
+            <span class="kicker">CurrentBody → authority pressure</span>
+          </div>
+          <h3>抢高端设备信任</h3>
+          <p>CurrentBody 抢的是愿意为 beauty tech 付高价的人群和设备权威感。</p>
+          <div class="relation">Ulike 要用 authority proof 证明自己不是短视频爆品。</div>
+        </article>
+        <article class="relationship-node search">
+          <div class="brand-head">
+            <div class="logo-stack" aria-label="RoseSkinCo, SmoothSkin and Philips logos">
+              <img class="brand-logo" src="../../assets/competitors/roseskinco.png" alt="RoseSkinCo logo" />
+              <img class="brand-logo" src="../../assets/competitors/smoothskin.png" alt="SmoothSkin logo" />
+              <img class="brand-logo" src="../../assets/competitors/philips.png" alt="Philips logo" />
+            </div>
+            <span class="kicker">Comparison search pressure</span>
+          </div>
+          <h3>抢比较搜索入口</h3>
+          <p>这些品牌会一起占住 “best IPL device”“Ulike alternative” 这类高意图搜索。</p>
+          <div class="relation">Ulike 要主动建立 comparison proof，不等第三方定义。</div>
         </article>
       </div>
     </section>
@@ -1586,50 +1746,54 @@
     <section class="shell" id="platforms">
       <div class="section-head">
         <span class="section-kicker">Platform Budget Decision</span>
-        <h2>平台结论：不要平均撒预算，按购买决策角色分配。</h2>
-        <p class="lead">这屏只回答老板一个问题：下个月 KOL 预算怎么分。YouTube 补信任防守，TikTok 只复投有效 hook，Instagram 做素材和再营销资产，不要再把三个平台当同一种“发帖渠道”。</p>
+        <h2>下月预算指令：YouTube 补信任，TikTok 筛内容，Instagram 做素材。</h2>
+        <p class="lead">不是按平台平均分钱，而是按购买链条分工：买前搜索靠 YouTube 守住，购买冲动靠 TikTok 验证，广告复用靠 Instagram 沉淀。</p>
+      </div>
+      <div class="budget-command">
+        <strong>一句话给老板</strong>
+        <p>先不要追加“更多红人”预算。先把现有内容分成三笔钱：补信任的钱、筛 winner 的钱、买可复用素材的钱。</p>
       </div>
       <div class="platform-map">
         <article class="platform primary">
-          <span class="priority">Priority 1</span>
-          <h3>YouTube：先补信任防守</h3>
-          <p>用户购买前会搜 review、comparison、skin tone、PCOS 和 safety。这个位置如果被竞品或中立 reviewer 定义，前面的短视频声量会被截流。</p>
+          <span class="priority">先投 YouTube</span>
+          <h3>防止用户临门一脚被竞品截走。</h3>
+          <p>Ulike 是高客单 IPL，用户买前一定会搜 review、Ulike vs Braun、适合肤色、痛不痛、PCOS 能不能用。这个位置没人守，前面的短视频声量会被浪费。</p>
           <div class="lane">
-            <span class="lane-item">该买：review / comparison / long-term proof</span>
-            <span class="lane-item">该看：搜索占位、评论购买意图、内容寿命</span>
-            <span class="lane-item">不要只看：视频数量</span>
+            <span class="lane-item">现在买：长期 review、竞品对比、肤色/毛发适配解释</span>
+            <span class="lane-item">判断有效：搜索结果里出现可控可信内容</span>
+            <span class="lane-item">停止动作：只买开箱和泛测评</span>
           </div>
           <div class="role-note">
-            <strong>老板要得到什么</strong>
-            <span>知道哪些 YouTube 内容能守住购买前搜索，避免用户最后被 Braun / Nood / CurrentBody 截走。</span>
+            <strong>这一笔钱买什么</strong>
+            <span>买购买前最后一公里的信任，不是买播放量。</span>
           </div>
         </article>
         <article class="platform">
-          <span class="priority">Priority 2</span>
-          <h3>TikTok：只复投有效 hook</h3>
-          <p>TikTok 可以继续跑量，但不能把“折扣码视频上线”当成果。它的价值是快速筛出能触发购买意图的痛点、场景和素材。</p>
+          <span class="priority">再投 TikTok</span>
+          <h3>只给能引发购买问题的内容加码。</h3>
+          <p>TikTok 可以继续跑，但不能把“视频上线”当结果。它的任务是筛出哪些痛点、场景和表达真的能让用户问价格、问链接、问自己适不适合。</p>
           <div class="lane">
-            <span class="lane-item">该留：pain test / PCOS / routine proof</span>
-            <span class="lane-item">该砍：只报折扣、无使用证据的视频</span>
-            <span class="lane-item">该放大：评论区出现购买问题的 winner</span>
+            <span class="lane-item">现在留：痛感测试、PCOS 场景、routine 前后对比</span>
+            <span class="lane-item">判断有效：评论区出现真实购买顾虑</span>
+            <span class="lane-item">停止动作：只报折扣码、没有使用证据</span>
           </div>
           <div class="role-note">
-            <strong>老板要得到什么</strong>
-            <span>知道哪些 hook 值得 paid boost，哪些 creator 只是制造热闹。</span>
+            <strong>这一笔钱买什么</strong>
+            <span>买可复投内容的筛选结果，不是买热闹。</span>
           </div>
         </article>
         <article class="platform">
-          <span class="priority">Priority 3</span>
-          <h3>Instagram：不要背成交 KPI</h3>
-          <p>Instagram 数量最高，但它更适合做视觉可信度、creator relationship、再营销素材和 landing page / ads 资产。</p>
+          <span class="priority">最后投 Instagram</span>
+          <h3>把钱买成可复用素材资产。</h3>
+          <p>Instagram 的价值不是单独成交，而是把 creator 内容变成广告、落地页、邮件、Amazon 页面都能复用的可信视觉资产。</p>
           <div class="lane">
-            <span class="lane-item">该做：before / after、routine、expert quote</span>
-            <span class="lane-item">该复用：Meta ads、landing page、email、Amazon asset</span>
-            <span class="lane-item">不要要求：单独承担成交压力</span>
+            <span class="lane-item">现在买：before/after、routine、专家引用、生活方式素材</span>
+            <span class="lane-item">判断有效：能否复用到 ads、落地页、邮件和 Amazon</span>
+            <span class="lane-item">停止动作：要求 Instagram 单独背成交</span>
           </div>
           <div class="role-note">
-            <strong>老板要得到什么</strong>
-            <span>知道 Instagram 的钱应该买可复用素材，而不是只买一次曝光。</span>
+            <strong>这一笔钱买什么</strong>
+            <span>买素材复利，不是买一次性曝光。</span>
           </div>
         </article>
       </div>
