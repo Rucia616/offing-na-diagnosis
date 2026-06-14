@@ -210,6 +210,17 @@
     .org-priority { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 16px; }
     .priority-card { position: relative; overflow: hidden; }
     .priority-card::before { content: attr(data-rank); position: absolute; top: 14px; right: 16px; color: rgba(16,20,19,.08); font-size: 56px; line-height: 1; font-weight: 860; }
+    .dept-lights { display: grid; gap: 18px; }
+    .dept-group { padding: 15px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
+    .dept-group.red { border-top: 4px solid var(--red); }
+    .dept-group.yellow { border-top: 4px solid var(--amber); }
+    .dept-group.green { border-top: 4px solid var(--green); }
+    .dept-group-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
+    .dept-group-head h3 { margin: 2px 0 4px; font-size: 18px; }
+    .dept-group-head p { margin: 0; color: var(--body); font-size: 13px; max-width: 760px; }
+    .light-badge { flex: 0 0 auto; display: inline-flex; align-items: center; border-radius: 999px; padding: 6px 10px; border: 1px solid var(--line); color: var(--body); background: #f7f7f8; font-size: 12px; font-weight: 820; }
+    .dept-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .dept-group.yellow .dept-list, .dept-group.green .dept-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .dept-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
     .dept-card { padding: 16px; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow); border-top: 4px solid var(--tone); }
     .dept-card strong { display: block; color: var(--tone); font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
@@ -231,7 +242,8 @@
       .hero-total { padding: 16px 18px; }
       .stars { font-size: 30px; }
       .score-number { font-size: 30px; }
-      .subscores, .two, .three, .four, .stage-line, .roadmap, .impact, .segment-body, .channel-legend, .fit-grid, .org-priority, .dept-grid { grid-template-columns: 1fr; }
+      .subscores, .two, .three, .four, .stage-line, .roadmap, .impact, .segment-body, .channel-legend, .fit-grid, .org-priority, .dept-grid, .dept-list, .dept-group.yellow .dept-list, .dept-group.green .dept-list { grid-template-columns: 1fr; }
+      .dept-group-head { flex-direction: column; }
       .subscore { min-height: auto; padding: 14px 18px; }
       .subscore strong { font-size: 30px; }
       section { padding: 46px 0; }
@@ -271,7 +283,7 @@
     <div class="inner">
       <div class="hero-logo"><img src="assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div>
       <h1 aria-label="Ulike 北美业务诊断">北美业务诊断</h1>
-      <p class="hero-sub">Ulike 北美已经靠 Air 10（家用 IPL 脱毛仪）跑出高客单头部单品，但业务仍是主爆品驱动，不是多品线经营系统。Air 10 扛收入，ReGlow（LED 光疗面罩）和 JMOON（家用护肤仪器）还只是增长假设。接下来 90 天必须证明第二增长柱，否则新品预算应收缩，资源回到 Air 10 的利润、口碑和用户资产治理。</p>
+      <p class="hero-sub">Ulike 北美已经有高客单头部单品，但业务本质仍是主爆品驱动，不是多品线经营系统。接下来 90 天要用硬指标决定 ReGlow（LED 光疗面罩）和 JMOON（家用护肤仪器）是否继续加码；如果过不了动销、评价和复购门槛，新品预算应收缩，资源回到利润、口碑和用户资产治理。</p>
 
       <div class="hero-score">
         <div class="hero-total">
@@ -289,9 +301,9 @@
           <p class="score-note">数据抓取日期：2026-06-14。销售额为公开数据和西柚 ASIN 动销底线推算，缺少品牌后台、Amazon Seller、广告后台和分地区订单，不能当作财务审计结论。</p>
         </div>
         <div class="subscores">
-          <div class="subscore health"><strong>68</strong><span>业务健康度</span><small>Air 10 主线动销成立，但北美经营仍过度依赖单一主爆品；售后、数据和第二品线拖低健康度。</small></div>
-          <div class="subscore opportunity"><strong>83</strong><span>业务机会分</span><small>家用 IPL 主盘仍有利润和渠道空间，ReGlow 与 JMOON 也有相邻机会，但必须先跑出 30/90 天证据。</small></div>
-          <div class="subscore fatality"><strong>64</strong><span>问题致命度</span><small>最大风险是把 Air 10 的强动销误读成多品线成熟，导致新品预算、投放主线和组织优先级错配。</small></div>
+          <div class="subscore health"><strong>68</strong><span>业务健康度</span><small>主销 SKU 动销成立；扣分来自收入集中、售后 VOC、数据口径和买后复购都还没形成稳定系统。</small></div>
+          <div class="subscore opportunity"><strong>83</strong><span>业务机会分</span><small>家用 IPL 主盘仍有利润空间，相邻护肤设备也值得验证，但必须先过 30/90 天经营门槛。</small></div>
+          <div class="subscore fatality"><strong>64</strong><span>问题致命度</span><small>最大风险是把单品优势误读成多品线成熟，导致新品预算、投放主线和组织优先级错配。</small></div>
         </div>
       </div>
     </div>
@@ -301,19 +313,19 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Stage Judgment</span>
-        <h2>当前处在 10-100 阶段：Air 10 主线规模化，但还没进入品类领导。</h2>
-        <p class="lead">Ulike 北美已经进入头部单品区：Air 10（家用 IPL 脱毛仪）当前在 Amazon Light Hair Removal Devices 排第 2，西柚同页显示它在 Light Hair Removal 小类排第 2、IPL Hair Removal Device 细分类排第 4。但这还不是品类领导，因为低价 INNZA / Ubroo 的单位销量更猛，ReGlow（LED 光疗面罩）和 JMOON（家用护肤仪器）也还没有接近 Air 10 家族的动销。</p>
+        <h2>当前处在 10-100 阶段：已过单品验证，但还没到品类领导。</h2>
+        <p class="lead">Ulike 北美已经进入头部单品区：Air 10（家用 IPL 脱毛仪）当前在 Amazon Light Hair Removal Devices 排第 2。这个阶段的重点不再是证明有人买，而是看经营系统能不能接住多渠道、买后复购和第二增长柱。按公开证据，它还没到品类领导，因为低价 INNZA / Ubroo 单位销量更猛，非主品线动销也没有同等硬。</p>
       </div>
       <div class="stage-plate">
         <div class="stage-verdict">
           <span>当前阶段判断</span>
           <strong>10-100 阶段</strong>
-          <p>Ulike 已经跨过单品验证，Air 10 是北美高客单 IPL 的头部 SKU。下一步不是证明 Air 10 能卖，而是证明 Air 10 之外的第二增长柱、非 Amazon 渠道和买后复购能独立成立。</p>
+          <p>Ulike 已经跨过单品验证。下一步不是继续证明主销 SKU 能卖，而是证明第二增长柱、非 Amazon 渠道和买后复购能独立成立。</p>
         </div>
         <div class="stage-line">
           <div class="stage"><strong>0-1</strong><small>品类需求验证。只证明有人愿意试，不等于能规模化。</small></div>
           <div class="stage"><strong>1-10</strong><small>单品动销成立，核心动作是跑通页面、评价和交付。</small></div>
-          <div class="stage active"><strong>10-100</strong><small>主品线规模化，必须治理 Air 10 主线依赖、第二曲线和渠道价格。</small></div>
+          <div class="stage active"><strong>10-100</strong><small>主品线规模化，必须治理单品依赖、渠道价格和买后运营。</small></div>
           <div class="stage"><strong>100+</strong><small>品类领导，需要多品线、多渠道和品牌防御都能独立成立。</small></div>
         </div>
       </div>
@@ -373,8 +385,8 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Business Type &amp; Channel Mix</span>
-        <h2>经营类型：Amazon + DTC 双轮型，但主成交证据仍由 Air 10 和 Amazon 拉住。</h2>
-        <p class="lead">家用 IPL 不是纯 DTC 品类，也不是只能靠 Amazon 的低价标品。正确结构应该是 Amazon 承接高意图搜索和评价成交，DTC 承接教育、肤色发色筛选、售后注册和老客复购。Ulike 现在两端都有基础，但公开销售证据仍明显集中在 Air 10 家族和 Amazon，可控用户资产、非 Amazon sell-out 与第二品线成交还没有同等硬。</p>
+        <h2>经营类型：Amazon + DTC 双轮型，但用户资产还没有真正回到品牌手里。</h2>
+        <p class="lead">家用 IPL 不是纯 DTC 品类，也不是只能靠 Amazon 的低价标品。正确结构应该是 Amazon 承接高意图搜索和评价成交，DTC 承接教育、肤色发色筛选、售后注册和老客复购。Ulike 现在两端都有基础，但公开销售证据仍集中在 Amazon 和主品线；非 Amazon sell-out、CRM 复购和相邻品线成交还没有同等硬。</p>
       </div>
       <div class="card">
         <span class="label">北美平台销售额占比 · 公开数据方向性估算</span>
@@ -402,7 +414,7 @@
         <div class="fit-card">
           <span class="label">当前渠道匹配度</span>
           <strong>部分匹配</strong>
-          <p>Air 10 在 Amazon 证明了动销，DTC 也有 quiz、HSA/FSA、退换货和 warranty。但 ReGlow、JMOON、aftercare 的成交证据弱，用户资产闭环还不够硬。</p>
+          <p>Amazon 端证明了高意图成交，DTC 端也有 quiz、HSA/FSA、退换货和 warranty。但 DTC 目前更像解释与承接页，用户资产闭环还不够硬。</p>
         </div>
         <div class="fit-card">
           <span class="label">最大渠道风险</span>
@@ -506,8 +518,8 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Hero SKU Lifecycle</span>
-        <h2>Air 10 仍在正常主卖期，真正风险是第二增长柱缺位。</h2>
-        <p class="lead">Air 10 自 2024 年开始在 Amazon、媒体和达人内容里放量，2025 年有 TIME Best Inventions 背书，2026 年仍有 Tom's Guide / Cosmopolitan / NewBeauty 评测与奖项。这个 SKU 还没到衰退期，但北美增长过度依赖它。Ulike 现在要管的是 Air 10 之外谁能承担下一轮增长。</p>
+        <h2>竞品生命周期校准：IPL 不是快消换代，不能把两年主卖误判为老化。</h2>
+        <p class="lead">北美 IPL 头部竞品普遍是长周期主卖，不是一年一换的手机节奏。Air 10 自 2024 年放量、2025 年有 TIME 背书、2026 年仍有媒体评测和奖项，不能被简单判定为老化。真正要校准的是：下一代、相邻品线和买后复购能否拿到足够独立证据。</p>
       </div>
       <div class="grid four">
         <div class="card kpi">
@@ -565,7 +577,7 @@
       <div class="section-head">
         <span class="tagline">Selling Point Fit</span>
         <h2>Air 10 主品线卖点匹配 78 分：舒适和结果讲得强，适用边界讲得还不够早。</h2>
-        <p class="lead">以下排序按北美用户购买家用 IPL 脱毛仪最影响决策的关注点排列。权重基于公开评测、Amazon/Trustpilot/Reddit 主题、竞品页面和品类购买逻辑归纳，属于方向性权重，不是统计抽样。</p>
+        <p class="lead">这张表只回答一个问题：北美用户下单前最先卡在哪里，Ulike 现在的卖点有没有接住。权重来自公开评测、Amazon / Trustpilot / Reddit 主题、竞品页面和品类购买逻辑归纳，属于方向性权重，不是统计抽样。</p>
       </div>
       <div class="match-board">
         <div class="match-row" style="--tone: var(--green); --w: 82%">
@@ -607,13 +619,13 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">One Page</span>
-        <h2>一页看懂：Air 10 不是问题本身，单一增长支柱才是问题。</h2>
+        <h2>一页看懂：这不是新品多少的问题，而是预算分配问题。</h2>
       </div>
       <div class="grid four">
-        <div class="card kpi"><span class="label">增长支柱</span><strong>Air 10 主线仍然能打</strong><p>Air 10（家用 IPL 脱毛仪）主 ASIN 当前 Amazon 小类 #2，Air 10 主 ASIN + Deluxe 西柚 30 天订单下限 3,000+，不是靠旧声量空撑。</p></div>
-        <div class="card kpi"><span class="label">阶段硬伤</span><strong>接班证据不足</strong><p>ReGlow（LED 光疗面罩）西柚近 30 天订单量 100+，与 Air 10 仍不是同一量级；JMOON 也缺少同等强度的公开动销。</p></div>
-        <div class="card kpi"><span class="label">转化硬伤</span><strong>适用边界要前置</strong><p>深肤色、浅发色、纹身、痣、光敏感和坚持周期，会决定结果和售后。讲晚了就会变成差评和退款。</p></div>
-        <div class="card kpi"><span class="label">优先动作</span><strong>先跑第二增长实验</strong><p>Air 10 保住主盘；ReGlow、JMOON 用 30/90 天订单、评价和渠道 sell-out 决定是否加码。</p></div>
+        <div class="card kpi"><span class="label">已经成立</span><strong>主盘不是虚火</strong><p>高客单 IPL 主线在 Amazon 有头部排名和 30 天订单下限，说明北美基本盘成立。</p></div>
+        <div class="card kpi"><span class="label">没有成立</span><strong>新品不能自动接班</strong><p>相邻品线还没过独立动销门槛，不能承担主增长目标，也不能用“有布局”替代经营结果。</p></div>
+        <div class="card kpi"><span class="label">立刻影响转化</span><strong>边界和售后讲晚了</strong><p>适用人群、坚持周期、退款和设备故障反馈，会影响高意向用户下单前的最后一次搜索。</p></div>
+        <div class="card kpi"><span class="label">老板动作</span><strong>预算先设闸门</strong><p>主线保利润；新品设 30/90 天加码或收缩阈值；数据看板先上线。</p></div>
       </div>
     </div>
   </section>
@@ -622,8 +634,8 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Three Blocks</span>
-        <h2>三大板块诊断：品牌能撑住溢价，Marketing 和电商还没跑出第二增长系统。</h2>
-        <p class="lead">分数按“增长影响 × 当前拖累 × 90 天可启动性”判断。绿色代表相对健康，黄色代表有硬伤，红色代表当前不达标。Ulike 的品牌底盘不是主要问题，真正要追责的是新品增长故事、渠道数据和售后信任承接。</p>
+        <h2>三大板块诊断：品牌能撑住溢价，Marketing 和电商短板在经营承接。</h2>
+        <p class="lead">老板可以这样看：品牌底盘继续用，Marketing 要证明新增量，电商要把渠道数据和用户资产管起来。现在最该追责的不是视觉和声量，而是新品增长故事、渠道数据和售后信任承接。</p>
       </div>
       <div class="grid three">
         <article class="card segment segment-good">
@@ -638,7 +650,7 @@
         </article>
         <article class="card segment segment-warn">
           <div class="segment-head">
-            <div><h3>Marketing：Air 10 声量能打，但第二增长故事做得不及格。</h3><p>Tom's Guide、Cosmopolitan、Women's Health 等评测能帮助 Air 10 转化，但营销仍在消耗主爆品红利。ReGlow 和 JMOON 没有被讲成独立购买理由，强结果 claim 与适用边界也没有同步管理。</p></div>
+            <div><h3>Marketing：声量能打，但新增量叙事不及格。</h3><p>Tom's Guide、Cosmopolitan、Women's Health 等评测能帮助主品线转化，但营销仍在消耗既有红利。相邻品线没有被讲成独立购买理由，强结果 claim 与适用边界也没有同步管理。</p></div>
             <div class="segment-score"><span>Marketing</span><strong>61</strong><small>警戒</small></div>
           </div>
           <div class="segment-body">
@@ -648,7 +660,7 @@
         </article>
         <article class="card segment segment-warn">
           <div class="segment-head">
-            <div><h3>电商板块：Amazon 和官网能卖货，但渠道经营还不成系统。</h3><p>Ulike 的 DTC 基础比很多品牌好，Amazon 和 Best Buy 也能承接。但如果销售证据过度集中在 Air 10 和 Amazon/DTC，且价格长期促销、非 Amazon sell-out 不透明，100+ 阶段的品牌议价会被压住。</p></div>
+            <div><h3>电商板块：Amazon 和官网能卖货，但渠道经营还不成系统。</h3><p>Ulike 的 DTC 基础比很多品牌好，Amazon 和 Best Buy 也能承接。但如果销售证据过度集中在主品线和 Amazon/DTC，且价格长期促销、非 Amazon sell-out 不透明，100+ 阶段的品牌议价会被压住。</p></div>
             <div class="segment-score"><span>电商板块</span><strong>69</strong><small>警戒</small></div>
           </div>
           <div class="segment-body">
@@ -672,7 +684,7 @@
           <div class="problem-main">
             <h3>问题 1：Air 10 仍能卖，但下一根增长柱还没跑出来。</h3>
             <div class="impact"><div><strong>证据</strong><p>Air 10 主 ASIN Amazon 小类 #2，Air 10 主 ASIN + Deluxe 西柚 30 天订单下限 3,000+，ReGlow 100+；Braun、Philips、Nood 的 IPL 主卖 SKU 也呈多年主卖周期。</p></div><div><strong>影响</strong><p>预算、内容和渠道会继续围绕 Air 10 主线，第二品线拿不到足够资源和清晰目标。ReGlow、JMOON 会停留在“有布局”，但不形成增长柱。</p></div><div><strong>先修</strong><p>建立 Air 10 主线与第二品线经营看板：Air 10 看价格、渠道和内容效率；ReGlow、JMOON 看 30/90 天订单、评价和 sell-out 达标率。</p></div></div>
-            <p>Air 10 主线仍是 Ulike 北美最稳的主战场，但它不能继续替所有新品承担增长确定性。第二品线要独立承担订单、评价、复购和渠道 sell-out 考核。</p>
+            <p>验收标准要改成经营指标：订单、评价、复购、渠道 sell-out 和毛利，而不是只看新品发布和内容声量。</p>
           </div>
         </article>
         <article class="card problem">
@@ -719,8 +731,8 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">11 Scores</span>
-        <h2>11 维评分：强项和短板要拉开看，不能把组织问题平均化。</h2>
-        <p class="lead">排序按“对增长的影响 × 当前拖累 × 90 天可启动性”判断。Ulike 强在品牌背书、Air 10 主盘和品类机会；真正拉低北美经营质量的是数据、订阅复购、售后、产品接班和风险治理。治理从低分项开始，不是继续把每个页面都小修小补。</p>
+        <h2>11 维评分：Ulike 不是品牌弱，而是经营系统还没把利润、新品和复购管起来。</h2>
+        <p class="lead">80 分以上的项继续放大，50 分以下的项必须进老板周会。Ulike 的品牌背书、竞品位置和品类机会可以继续用；真正要先抓的是数据看板、售后闭环、复购注册和新品验证门槛。这里不需要每项都优化，先把会影响预算和利润的低分项拉回可控。</p>
       </div>
       <div class="card">
         <div class="scores">
@@ -744,11 +756,11 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Roadmap</span>
-        <h2>90 / 180 天路径：保住 Air 10 主盘，同时把接班验证跑实。</h2>
+        <h2>90 / 180 天路径：先建验证机制，再决定新品预算。</h2>
       </div>
       <div class="roadmap">
         <div class="card step" data-step="0-30 DAYS"><h3>建立竞品校准的 hero SKU 看板</h3><ul><li>按周追踪 Air 10 与 Braun、Philips、Nood、SmoothSkin 的 BSR、评论增速、价格、coupon、媒体推荐和功能表达。</li><li>PDP 首屏加入“适合谁 / 不适合谁 / 需要坚持多久 / 哪些部位最先见效”。</li><li>把肤色发色 quiz 前置到广告落地页和加购前，减少不适配用户进入售后。</li></ul></div>
-        <div class="card step" data-step="31-90 DAYS"><h3>跑 SKU 口径和第二品线验证</h3><ul><li>统一 A10 / Air 10 Pro / Air 10 的区域命名和功能口径，对外不要把同代版本讲成下一代新品。</li><li>ReGlow 按 acne、anti-aging、redness、radiance 四类需求重做页面，不只讲四种 LED。</li><li>用 Amazon / DTC / retail 三个渠道单独看 ReGlow 和 JMOON 的 30/90 天 sell-out，判断谁有资格接班。</li></ul></div>
+        <div class="card step" data-step="31-90 DAYS"><h3>跑 SKU 口径和第二品线验证</h3><ul><li>统一 A10 / Air 10 Pro / Air 10 的区域命名和功能口径，对外不要把同代版本讲成下一代新品。</li><li>ReGlow 按 acne、anti-aging、redness、radiance 四类需求重做页面，不只讲四种 LED。</li><li>用 Amazon / DTC / retail 三个渠道单独看新品 30/90 天 sell-out，再决定加码或收缩。</li></ul></div>
         <div class="card step" data-step="91-180 DAYS"><h3>治理渠道价格和用户资产</h3><ul><li>建立渠道价格带、促销日历和非 Amazon sell-out 报表，防止 Air 10 被平台折扣拖成低价爆品。</li><li>把 treatment tracker、warranty registration、referral 和 aftercare 做成 CRM 链路。</li><li>沉淀 PCOS、男士护理、敏感部位、LED 护肤和长期维护五类高意向内容资产。</li></ul></div>
       </div>
     </div>
@@ -758,69 +770,73 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Organization Audit</span>
-        <h2>职能部门专业度：真正拖后腿的是数据、产品品类和售后，不是品牌视觉。</h2>
-        <p class="lead">这个评分只看公开经营产出，不评价具体员工。Ulike 不是“每个部门都差一点”，而是强项和短板差距很大：品牌资产和视觉能支撑溢价，但数据增长、产品品类和售后没有把 Air 10 的成功转成第二增长柱和可控经营系统。老板要先抓这三块，不要把问题泛化成“继续投放和优化页面”。</p>
+        <h2>职能部门专业度：先看红灯部门，老板从这里开始整顿。</h2>
+        <p class="lead">这个评分只看公开经营产出，不评价具体员工。红灯部门要进 30 天周会，黄灯部门带着约束优化，绿灯部门继续放大。Ulike 的红灯集中在数据、产品品类、客服售后和渠道，问题不是品牌视觉不高级，而是经营系统没有把单品成功变成可控增长。</p>
       </div>
-      <div class="org-priority">
-        <div class="card priority-card" data-rank="01">
-          <span class="label">第一优先整顿</span>
-          <h3>数据 / 增长运营部</h3>
-          <p>先把北美 GMV、Amazon / DTC / 零售占比、ReGlow / JMOON sell-out、退款率和广告效率做成同一张老板看板。没有这张看板，预算分配就会继续靠感觉，Air 10 赚钱、新品烧钱、售后漏钱都分不清。</p>
-          <div class="pill-row"><span class="pill bad">P0</span><span class="pill warn">先建经营看板</span></div>
+      <div class="dept-lights">
+        <div class="dept-group red">
+          <div class="dept-group-head">
+            <div><span class="tagline">Red Light</span><h3>红灯部门 · 先整顿</h3><p>这些部门直接影响预算、利润、售后信任和新品去留，必须先进入老板周会。</p></div>
+            <span class="light-badge">4 个部门</span>
+          </div>
+          <div class="dept-list">
+            <div class="dept-card" style="--tone: var(--red)">
+              <strong>38</strong><h3>数据 / 增长运营部</h3>
+              <p>最该先整顿。GMV、渠道占比、新品 sell-out、退款率和广告效率没有统一成老板看板，预算优先级会失真。</p>
+              <div class="pill-row"><span class="pill bad">严重不达标</span><span class="pill brand">先建看板</span></div>
+            </div>
+            <div class="dept-card" style="--tone: var(--red)">
+              <strong>43</strong><h3>产品 / 品类部</h3>
+              <p>主品线之后没有第二增长柱；A10 / Air 10 Pro 不能计入新品接班，相邻新品必须用 30/90 天硬门槛决定预算。</p>
+              <div class="pill-row"><span class="pill bad">拖后腿</span><span class="pill warn">接班门槛缺失</span></div>
+            </div>
+            <div class="dept-card" style="--tone: var(--red)">
+              <strong>46</strong><h3>客服 / 售后部</h3>
+              <p>政策写得有，但公开 VOC 说明执行闭环不达标。BBB/F、1-star、Reddit 退款和设备故障反馈会伤害临门转化。</p>
+              <div class="pill-row"><span class="pill bad">不达标</span><span class="pill warn">30 天先修</span></div>
+            </div>
+            <div class="dept-card" style="--tone: var(--red)">
+              <strong>55</strong><h3>渠道 / 供应链部</h3>
+              <p>Best Buy、Nordstrom 和 Amazon 触点存在，但 sell-out、补货、价格一致性和渠道角色没有公开证据证明成熟。</p>
+              <div class="pill-row"><span class="pill bad">不达标</span><span class="pill warn">铺货不等于卖穿</span></div>
+            </div>
+          </div>
         </div>
-        <div class="card priority-card" data-rank="02">
-          <span class="label">第二优先整顿</span>
-          <h3>产品 / 品类部</h3>
-          <p>Air 10 是主爆品，ReGlow 和 JMOON 还没有达到接班门槛；A10 / Air 10 Pro 也不能替代下一代。必须设 30/90 天硬指标，达不到就收缩新品预算，不能让“有布局”继续占用增长叙事。</p>
-          <div class="pill-row"><span class="pill bad">P0</span><span class="pill warn">第二柱未成立</span></div>
+        <div class="dept-group yellow">
+          <div class="dept-group-head">
+            <div><span class="tagline">Yellow Light</span><h3>黄灯部门 · 带着约束优化</h3><p>基础存在，但不能继续按惯性加码；先补经营约束，再谈放大。</p></div>
+            <span class="light-badge">2 个部门</span>
+          </div>
+          <div class="dept-list">
+            <div class="dept-card" style="--tone: var(--amber)">
+              <strong>61</strong><h3>Marketing 部</h3>
+              <p>主线声量能打，但营销还在消耗爆品红利；相邻品线购买理由没有独立成立，强结果 claim 与适用边界也没有同步管理。</p>
+              <div class="pill-row"><span class="pill warn">勉强及格</span><span class="pill bad">新增量弱</span></div>
+            </div>
+            <div class="dept-card" style="--tone: var(--amber)">
+              <strong>69</strong><h3>DTC / 电商部</h3>
+              <p>Amazon 和官网能卖货，但价格纪律、渠道角色和 DTC 用户资产没有治理成系统；DTC 更像成交补充和信任解释。</p>
+              <div class="pill-row"><span class="pill warn">有基础</span><span class="pill bad">治理不足</span></div>
+            </div>
+          </div>
         </div>
-        <div class="card priority-card" data-rank="03">
-          <span class="label">第三优先整顿</span>
-          <h3>客服 / 售后部</h3>
-          <p>有 100-day、2-year warranty 和 Trustpilot 回复，但 BBB/F、1-star、Reddit 退款/设备故障反馈已经会影响高客单用户下单前的最后一跳。售后必须反向改 PDP、FAQ、warranty 和退款流程。</p>
-          <div class="pill-row"><span class="pill bad">P0</span><span class="pill warn">临门转化风险</span></div>
-        </div>
-      </div>
-      <div class="dept-grid">
-        <div class="dept-card" style="--tone: var(--green)">
-          <strong>82</strong><h3>品牌部</h3>
-          <p>全球 8M units、49 countries、专利和专家背书能撑起专业信任；要修的是官网旧口径和强 claim 边界，不是品牌底盘。</p>
-          <div class="pill-row"><span class="pill good">能打</span><span class="pill warn">口径需治理</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--amber)">
-          <strong>61</strong><h3>Marketing 部</h3>
-          <p>Air 10 声量能打，但营销还在消耗主爆品红利；ReGlow / JMOON 的购买理由没有独立成立，强结果 claim 与适用边界也没有同步管理。</p>
-          <div class="pill-row"><span class="pill warn">勉强及格</span><span class="pill bad">第二故事弱</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--amber)">
-          <strong>69</strong><h3>DTC / 电商部</h3>
-          <p>Amazon 和官网能卖货，但价格纪律、渠道角色和 DTC 用户资产没有治理成系统；DTC 现在更像成交补充和信任解释，不该被当成万能增长引擎。</p>
-          <div class="pill-row"><span class="pill warn">有基础</span><span class="pill bad">治理不足</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--green)">
-          <strong>78</strong><h3>设计部</h3>
-          <p>视觉和产品图合格，能支撑中高客单；短板是转化信息层级不够硬，适用边界、坚持周期和维护路径应该放到更靠前的位置。</p>
-          <div class="pill-row"><span class="pill good">可用</span><span class="pill warn">转化信息后置</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--red)">
-          <strong>46</strong><h3>客服 / 售后部</h3>
-          <p>政策写得有，但公开 VOC 说明执行闭环不达标。BBB/F、1-star、Reddit 退款和设备故障反馈会直接伤害高客单用户的最后一次搜索。</p>
-          <div class="pill-row"><span class="pill bad">不达标</span><span class="pill warn">30 天先修</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--red)">
-          <strong>43</strong><h3>产品 / 品类部</h3>
-          <p>这是最大短板之一。Air 10 后没有第二增长柱，A10 / Air 10 Pro 不能计入新品接班；ReGlow / JMOON 必须用 30/90 天硬门槛决定预算。</p>
-          <div class="pill-row"><span class="pill bad">拖后腿</span><span class="pill warn">接班门槛缺失</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--red)">
-          <strong>38</strong><h3>数据 / 增长运营部</h3>
-          <p>最该先整顿。GMV、渠道占比、第二品线 sell-out、退款率和广告效率没有被统一成老板看板，直接导致预算优先级失真。</p>
-          <div class="pill-row"><span class="pill bad">不达标</span><span class="pill brand">先建看板</span></div>
-        </div>
-        <div class="dept-card" style="--tone: var(--red)">
-          <strong>55</strong><h3>渠道 / 供应链部</h3>
-          <p>Best Buy、Nordstrom 和 Amazon 触点存在，但 sell-out、补货、价格一致性和渠道角色没有被公开证据证明成熟。铺货不是卖穿。</p>
-          <div class="pill-row"><span class="pill bad">不达标</span><span class="pill warn">sell-out 缺口</span></div>
+        <div class="dept-group green">
+          <div class="dept-group-head">
+            <div><span class="tagline">Green Light</span><h3>绿灯部门 · 继续放大</h3><p>这些不是当前最该整顿的部门，重点是保持标准，不要被低分项拖累。</p></div>
+            <span class="light-badge">2 个部门</span>
+          </div>
+          <div class="dept-list">
+            <div class="dept-card" style="--tone: var(--green)">
+              <strong>82</strong><h3>品牌部</h3>
+              <p>全球 8M units、49 countries、专利和专家背书能撑起专业信任；要修的是官网旧口径和强 claim 边界，不是品牌底盘。</p>
+              <div class="pill-row"><span class="pill good">能打</span><span class="pill warn">口径需治理</span></div>
+            </div>
+            <div class="dept-card" style="--tone: var(--green)">
+              <strong>78</strong><h3>设计部</h3>
+              <p>视觉和产品图合格，能支撑中高客单；短板是转化信息层级不够硬，适用边界、坚持周期和维护路径要前置。</p>
+              <div class="pill-row"><span class="pill good">可用</span><span class="pill warn">信息后置</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -830,13 +846,13 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Risk &amp; Data Gaps</span>
-        <h2>风险集中在接班证据：Air 10 之外谁能继续扛增长。</h2>
+        <h2>风险预警：现在缺的是内部校准数据和售后闭环。</h2>
       </div>
       <div class="grid three">
-        <div class="card"><h3>Air 10 主线依赖风险</h3><p>Air 10 仍在正常主卖期，但北美增长对同一 IPL 主线依赖过高。若 ReGlow 和 JMOON 跑不出动销，北美增长会继续压在 Air 10 家族上。</p><div class="pill-row"><span class="pill bad">P0 风险</span><span class="pill warn">需 90 天验证</span></div></div>
+        <div class="card"><h3>预算误配风险</h3><p>如果内部看板不能区分主销 SKU、新品和渠道利润，资源会继续按声量和主观判断分配，真正赚钱和真正烧钱的地方会混在一起。</p><div class="pill-row"><span class="pill bad">P0 风险</span><span class="pill warn">需 90 天验证</span></div></div>
         <div class="card"><h3>适用边界风险</h3><p>IPL 不适合所有肤色和发色。广告、PDP 和达人内容必须把限制讲清楚，否则结果差异会变成售后和差评。</p><div class="pill-row"><span class="pill bad">转化风险</span><span class="pill brand">可 30 天内修</span></div></div>
         <div class="card"><h3>品牌声誉风险</h3><p>Trustpilot 总体正向，但 BBB/F 评级和 Reddit 设备故障、退款体验讨论说明售后信任有硬伤。它不会直接打垮拉新，但会影响高意向用户下单前的最后一次搜索。</p><div class="pill-row"><span class="pill warn">声誉警戒</span><span class="pill bad">售后扣分</span></div></div>
-        <div class="card"><h3>第二品线风险</h3><p>LED 面罩市场存在，但 ReGlow 还没有建立相较 Omnilux、CurrentBody 或 Shark 的清晰购买理由。</p><div class="pill-row"><span class="pill warn">验证中</span><span class="pill ulike">品牌基因可适配</span></div></div>
+        <div class="card"><h3>新品验证风险</h3><p>相邻护肤设备需要独立动销、评价、复购和渠道 sell-out 阈值。未达标前只能用实验预算，不应承担北美主增长目标。</p><div class="pill-row"><span class="pill warn">验证中</span><span class="pill ulike">品牌基因可适配</span></div></div>
         <div class="card"><h3>数据缺口</h3><p>缺少北美 GMV、分品线 GMV、广告 ROAS、Amazon 全量 ASIN 90 天趋势、Best Buy / Nordstrom sell-out、退款率和复购率。</p><div class="pill-row"><span class="pill bad">需内部复核</span><span class="pill brand">本次为公开数据诊断</span></div></div>
       </div>
     </div>
@@ -896,7 +912,7 @@
   <footer>
     <div class="inner">
       <div><strong>远汐 Offing 免费北美业务诊断</strong><br /><span>2026-06-14 · Ulike · 公开数据 + 西柚动销 + 组织能力审计版</span></div>
-      <div>结论优先级：Air 10 主线依赖治理 > 售后信任闭环 > 第二品线验证 > 渠道价格治理</div>
+      <div>结论优先级：经营看板 > 售后信任闭环 > 新品验证 > 渠道价格治理</div>
     </div>
   </footer>
   <script>
