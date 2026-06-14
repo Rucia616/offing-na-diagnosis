@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>北美消费者调研 / 玄学能量晶石香薰 / 2026-06-14</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f4ee;
+      --paper-2: #ece7dd;
+      --ink: #161616;
+      --body: #3f3a35;
+      --muted: #746c62;
+      --line: rgba(22, 22, 22, 0.15);
+      --hair: rgba(22, 22, 22, 0.06);
+      --panel: #fffaf0;
+      --teal: #166d6a;
+      --teal-soft: #d8ece6;
+      --plum: #7c315f;
+      --plum-soft: #efdce8;
+      --amber: #a76418;
+      --amber-soft: #f5e2bf;
+      --red: #9a3434;
+      --red-soft: #f1d7d2;
+      --green: #2f7045;
+      --green-soft: #dbe9d6;
+      --max: 1200px;
+      --radius: 8px;
+      --shadow: 0 20px 55px rgba(39, 31, 21, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, var(--hair) 1px, transparent 1px),
+        linear-gradient(180deg, var(--hair) 1px, transparent 1px),
+        linear-gradient(135deg, var(--paper), #fbfaf7 52%, var(--paper-2));
+      background-size: 72px 72px, 72px 72px, auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.58;
+      overflow-x: hidden;
+    }
+    main { overflow-x: hidden; }
+    a { color: inherit; text-underline-offset: 3px; }
+    p, h1, h2, h3, h4 { margin: 0; }
+    .inner { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      height: 64px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 244, 238, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .topbar .inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      min-width: 170px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 250, 240, 0.76);
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav a:hover { color: var(--ink); background: var(--teal-soft); }
+
+    .hero {
+      padding: 62px 0 54px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(350px, 0.9fr);
+      gap: 44px;
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      margin-top: 18px;
+      max-width: 880px;
+      font-size: clamp(42px, 6vw, 86px);
+      line-height: 0.97;
+      letter-spacing: -0.055em;
+    }
+    .hero-sub {
+      margin-top: 22px;
+      max-width: 780px;
+      color: var(--body);
+      font-size: clamp(17px, 1.45vw, 21px);
+    }
+    .hero-note {
+      margin-top: 24px;
+      max-width: 760px;
+      padding-left: 16px;
+      border-left: 4px solid var(--plum);
+      color: var(--body);
+      font-size: 15px;
+    }
+    .hero-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-card .head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .signal-list { display: grid; }
+    .signal {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .signal:last-child { border-bottom: 0; }
+    .signal strong {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+    }
+    .signal p {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.6fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .section-label {
+      color: var(--plum);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    h2 {
+      margin-top: 8px;
+      font-size: clamp(30px, 4.2vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+    .section-copy {
+      color: var(--body);
+      font-size: 15px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .method-card,
+    .finding,
+    .pain,
+    .segment,
+    .source-card,
+    .action-card,
+    .limit-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.78);
+      box-shadow: 0 10px 28px rgba(39, 31, 21, 0.06);
+    }
+    .method-card { padding: 18px; }
+    .method-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .method-card p,
+    .method-card small {
+      color: var(--body);
+      font-size: 14px;
+    }
+    .method-card small { display: block; margin-top: 10px; color: var(--muted); }
+
+    .finding { margin-top: 16px; overflow: hidden; }
+    .finding-top {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr) 92px;
+      gap: 18px;
+      align-items: start;
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(216, 236, 230, 0.55), rgba(239, 220, 232, 0.35));
+    }
+    .finding-number {
+      color: var(--plum);
+      font-size: 38px;
+      font-weight: 950;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+    .finding h3,
+    .pain h3,
+    .segment h3 {
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+    .confidence,
+    .severity {
+      justify-self: end;
+      width: fit-content;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: var(--teal);
+      background: var(--teal-soft);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .finding-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
+      gap: 20px;
+      padding: 22px;
+    }
+    .finding-summary {
+      color: var(--body);
+      font-size: 16px;
+    }
+    .evidence-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .evidence-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--body);
+      font-size: 14px;
+    }
+    .evidence-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--amber);
+    }
+    .implication {
+      align-self: start;
+      padding: 16px;
+      border: 1px solid rgba(22, 109, 106, 0.24);
+      border-radius: var(--radius);
+      background: var(--teal-soft);
+    }
+    .implication b,
+    .move b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .implication p,
+    .move p {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .pain-grid,
+    .segment-grid,
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .pain { padding: 20px; }
+    .pain .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .pain .severity {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+    .move {
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid rgba(167, 100, 24, 0.26);
+      border-radius: var(--radius);
+      background: var(--amber-soft);
+    }
+
+    .segment {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+    }
+    .segment h3 {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(239, 220, 232, 0.48);
+    }
+    .segment-body {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+    .segment-row b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--plum);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .segment-row p {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+    .action-card { padding: 20px; }
+    .action-card h3 {
+      margin-bottom: 14px;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+    .numbered {
+      display: grid;
+      gap: 10px;
+      counter-reset: item;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .numbered li {
+      position: relative;
+      min-height: 30px;
+      padding-left: 40px;
+      color: var(--body);
+      font-size: 14px;
+      counter-increment: item;
+    }
+    .numbered li::before {
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fffaf0;
+      background: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .no-list li::before { background: var(--red); }
+
+    .validation {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .limit-card { padding: 18px; }
+    .limit-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--amber);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .limit-card p {
+      color: var(--body);
+      font-size: 14px;
+    }
+
+    .source-card {
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+    .source-card .type {
+      width: fit-content;
+      padding: 4px 7px;
+      border-radius: 999px;
+      color: var(--plum);
+      background: var(--plum-soft);
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .source-card a {
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration-thickness: 1px;
+    }
+    .source-card p {
+      color: var(--body);
+      font-size: 13px;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 250, 240, 0.72);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
+      gap: 22px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #161616;
+      color: #fffaf0;
+      box-shadow: var(--shadow);
+    }
+    .verdict h2 {
+      color: #fffaf0;
+    }
+    .verdict p {
+      color: rgba(255, 250, 240, 0.78);
+    }
+    .verdict .pill {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 250, 240, 0.18);
+      border-radius: 999px;
+      color: #f8d293;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .verdict ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .verdict li {
+      color: rgba(255, 250, 240, 0.82);
+      font-size: 15px;
+    }
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .topbar { height: auto; }
+      .topbar .inner {
+        min-height: 64px;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+      .nav { width: 100%; }
+      .hero-grid,
+      .section-head,
+      .finding-body,
+      .verdict,
+      .action-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-card { max-width: 620px; }
+      .grid-4,
+      .validation {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .inner { width: min(calc(100% - 28px), var(--max)); }
+      .hero { padding-top: 40px; }
+      h1 { font-size: clamp(39px, 13vw, 58px); letter-spacing: -0.045em; }
+      section { padding: 54px 0; }
+      .hero-grid,
+      .pain-grid,
+      .segment-grid,
+      .source-grid,
+      .grid-4,
+      .validation {
+        grid-template-columns: 1fr;
+      }
+      .signal {
+        grid-template-columns: 74px minmax(0, 1fr);
+        gap: 12px;
+      }
+      .finding-top {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .confidence,
+      .severity {
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div class="brand">
+        Crystal Aroma Evidence
+        <small>North America consumer research / 2026-06-14</small>
+      </div>
+      <nav class="nav" aria-label="Report sections">
+        <a href="#method">证据方法</a>
+        <a href="#motivations">购买动机</a>
+        <a href="#pain">不满</a>
+        <a href="#segments">人群</a>
+        <a href="#moves">打法边界</a>
+        <a href="#sources">来源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="inner hero-grid">
+        <div>
+          <span class="eyebrow">Consumer Evidence First</span>
+          <h1>北美消费者到底为什么会买玄学能量晶石香薰？</h1>
+          <p class="hero-sub">这份报告不先定策略。它先回答三个问题：消费者为什么买类似产品，他们对现有方案哪里不满，以及哪些证据足以支持我们继续小批量验证。</p>
+          <p class="hero-note">核心判断：最大入口不是“硬核晶石疗愈”，而是香味带来的情绪和空间体验；玄学、星座、五行、晶石的价值在于让产品更可解释、可送礼、可拍摄、可个性化。</p>
+        </div>
+        <aside class="hero-card" aria-label="Key quantified signals">
+          <div class="head">
+            <span>四个先验事实</span>
+            <span>Evidence weight</span>
+          </div>
+          <div class="signal-list">
+            <div class="signal">
+              <strong>30%</strong>
+              <p>美国成年人每年至少接触一次 astrology、tarot 或 fortune teller，多数用于娱乐或轻度自我理解。<span class="tag">Pew 2025</span></p>
+            </div>
+            <div class="signal">
+              <strong>26%</strong>
+              <p>美国成年人相信 spiritual energy 可以存在于 crystal、jewel、stone 等物体中。<span class="tag">Pew Spirituality</span></p>
+            </div>
+            <div class="signal">
+              <strong>80%</strong>
+              <p>fragrance users 认为香味能 lift or enhance mood，说明情绪价值是香氛核心购买理由。<span class="tag">Circana</span></p>
+            </div>
+            <div class="signal">
+              <strong>$55+</strong>
+              <p>Birthdate、Etsy crystal diffuser、Energy Muse 已经把个性化、晶石和香味锚在 $45-$89 区间。<span class="tag">Birthdate</span> <span class="tag">Etsy Ink + Ocean</span> <span class="tag">Energy Muse</span></p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Method</div>
+            <h2>这不是拍脑袋，是分层证据</h2>
+          </div>
+          <p class="section-copy">本报告基于公开消费者语料、评论、竞品页面、行业研究和监管信息。它不是付费定量问卷，所以不会把 Reddit 或评论样本伪装成市场占比；但这些语料非常适合发现购买动机、反感点和产品验证问题。</p>
+        </div>
+        <div class="grid-4">
+          <article class="method-card">
+                <b>高可信背景</b>
+                <p>Pew, YouGov, NCA, Circana, FDA, FTC</p>
+                <small>判断市场文化接受度、香氛购买动机、合规红线。</small>
+                <small>限制：不直接证明某个新品牌会转化。</small>
+              </article><article class="method-card">
+                <b>高相关消费者语料</b>
+                <p>Reddit aromatherapy, crystals, witchcraft, cleaning threads</p>
+                <small>看用户原话：为什么买、哪里不爽、哪些细节让他们怀疑。</small>
+                <small>限制：样本偏论坛人群，不能当作全市场占比。</small>
+              </article><article class="method-card">
+                <b>商业验证信号</b>
+                <p>Energy Muse, Birthdate, Mindful Souls, Pura, Etsy, Amazon</p>
+                <small>确认现有产品怎么卖、价格锚点、正负评论集中点。</small>
+                <small>限制：竞品页面是卖家叙事，需要用第三方评论交叉验证。</small>
+              </article><article class="method-card">
+                <b>风险信号</b>
+                <p>Trustpilot, BBB, AP recall, FDA/FTC</p>
+                <small>识别不能碰的坑：真假、订阅、硬件、安全、health claims。</small>
+                <small>限制：投诉样本天然偏负面，但对早期品牌尤其有价值。</small>
+              </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="motivations">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Motivations</div>
+            <h2>消费者为什么会买</h2>
+          </div>
+          <p class="section-copy">下面 6 个购买动机按证据强度和对产品定义的重要性排序。每个动机后面都给出它对我们产品和文案的直接含义。</p>
+        </div>
+        <article class="finding">
+              <div class="finding-top">
+                <div class="finding-number">01</div>
+                <div>
+                  <h3>先买的是情绪和空间，不是玄学本身</h3>
+                </div>
+                <span class="confidence">强信号</span>
+              </div>
+              <div class="finding-body">
+                <div>
+                  <p class="finding-summary">北美消费者对香氛的主动购买理由非常稳定：让房间舒服、让自己放松、给一天一个小仪式。晶石能增强故事感，但不能替代香味体验。</p>
+                  <ul class="evidence-list">
+                    <li><a href="https://candles.org/facts-figures/" target="_blank" rel="noreferrer">NCA</a> 显示，香味是蜡烛购买最重要因素，消费者把蜡烛用于家居装饰、舒适感、放松和减压。</li><li><a href="https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports" target="_blank" rel="noreferrer">Circana</a> 提到，80% fragrance users 认为香味有助于提升或增强情绪。</li><li><a href="https://www.trustpilot.com/review/mindfulsouls.com" target="_blank" rel="noreferrer">Mindful Souls Reviews</a> 里正向评论反复出现 self-care、relaxation、mindfulness、daily routine 等词。</li><li><a href="https://www.reddit.com/r/aromatherapy/comments/1hwxmz9/some_questions_for_a_starter/" target="_blank" rel="noreferrer">Reddit Aromatherapy</a> 里新手会把扩香和睡眠、放松、晚间氛围联系起来。</li>
+                  </ul>
+                </div>
+                <aside class="implication">
+                  <b>对我们的含义</b>
+                  <p>产品页首屏应该说清楚：这是一个让小空间变得安定、好闻、有仪式感的无火香氛礼盒。星座/五行可以做推荐逻辑，但不能做唯一卖点。</p>
+                </aside>
+              </div>
+            </article><article class="finding">
+              <div class="finding-top">
+                <div class="finding-number">02</div>
+                <div>
+                  <h3>轻玄学比重玄学更大，用户多数是娱乐和自我理解</h3>
+                </div>
+                <span class="confidence">强信号</span>
+              </div>
+              <div class="finding-body">
+                <div>
+                  <p class="finding-summary">Pew 数据显示，星座、塔罗、fortune telling 已经是主流文化的一部分，但大多数人不是拿它做人生重大决策。过度恐吓式玄学会压缩受众。</p>
+                  <ul class="evidence-list">
+                    <li><a href="https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/" target="_blank" rel="noreferrer">Pew 2025</a> 显示 30% 美国成年人每年至少接触一次 astrology、tarot 或 fortune teller，20% 主要是 for fun，10% 是为了 useful insights。</li><li><a href="https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/" target="_blank" rel="noreferrer">Pew 2025</a> 同时显示 18-49 岁女性对 astrology 的信任度更高，是天然早期受众。</li><li><a href="https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/" target="_blank" rel="noreferrer">Pew Spirituality</a> 显示 26% 美国成年人相信 spiritual energy 可以存在于 crystals、jewels、stones 等物体中。</li><li><a href="https://d3nkl3psvxxpe9.cloudfront.net/documents/toplines_New-age_beliefs_and_practices.pdf" target="_blank" rel="noreferrer">YouGov 2022</a> 显示 aromatherapy/essential oils 的接受度明显高于 healing crystals。</li>
+                  </ul>
+                </div>
+                <aside class="implication">
+                  <b>对我们的含义</b>
+                  <p>入站测试可以做，但语气要像 Spotify Wrapped + horoscope，不要像算命警告。推荐用 mood、element、ritual、season，而不是“你最近不顺所以必须买”。</p>
+                </aside>
+              </div>
+            </article><article class="finding">
+              <div class="finding-top">
+                <div class="finding-number">03</div>
+                <div>
+                  <h3>礼物场景很有可能比自用更快起量</h3>
+                </div>
+                <span class="confidence">强信号</span>
+              </div>
+              <div class="finding-body">
+                <div>
+                  <p class="finding-summary">香氛、星座和生日天然适合送礼，消费者愿意为个性化和包装多付一点。这个品类最容易被解释成“我懂你”的礼物。</p>
+                  <ul class="evidence-list">
+                    <li><a href="https://birthdate.co/products/the-birthdate-candle" target="_blank" rel="noreferrer">Birthdate</a> 把 365 个生日做成独立香味和星座人格标签，证明 personalization 可以直接商品化。</li><li><a href="https://www.trustpilot.com/review/birthdate.co" target="_blank" rel="noreferrer">Birthdate Reviews</a> 里消费者把它称为 gimmicky but good gift，说明“有点小玄学”不一定是缺点。</li><li><a href="https://candles.org/facts-figures/" target="_blank" rel="noreferrer">NCA</a> 显示蜡烛被视作节日、乔迁、hostess、thank you、adult birthday 等多场景礼物。</li><li><a href="https://www.etsy.com/listing/911562065/rose-quartz-and-amethyst-gemstone" target="_blank" rel="noreferrer">Etsy Ink + Ocean</a> 的 listing 明确覆盖 gift box、relaxation、meditation、healing、birthday/holiday gift 等关键词。</li>
+                  </ul>
+                </div>
+                <aside class="implication">
+                  <b>对我们的含义</b>
+                  <p>首发 SKU 需要把“送给某个状态的人”讲清楚：送给最近需要 reset 的朋友、搬新家的人、生日礼物、分手/换工作后的自我照顾。</p>
+                </aside>
+              </div>
+            </article><article class="finding">
+              <div class="finding-top">
+                <div class="finding-number">04</div>
+                <div>
+                  <h3>新手需要被带着做，而不是被塞一盒东西</h3>
+                </div>
+                <span class="confidence">强信号</span>
+              </div>
+              <div class="finding-body">
+                <div>
+                  <p class="finding-summary">消费者会因为不知道从哪里开始而买 kit，但也会因为 kit 像随机杂货、没有解释、没有个人相关性而反感。</p>
+                  <ul class="evidence-list">
+                    <li><a href="https://www.reddit.com/r/witchcraft/comments/1avijsp/im_a_beginner_thats_dabbling_would_buying_a/" target="_blank" rel="noreferrer">Reddit Beginner Kit</a> 里 beginners 讨论是否该买 Amazon witch kit，回复集中在“先学习”“不要买被包装成 essentials 的随机东西”。</li><li><a href="https://www.reddit.com/r/Wicca/comments/ztunek/mindful_souls/" target="_blank" rel="noreferrer">Reddit Wicca</a> 里有用户直接表达不知道该从 herbs、crystals、candles、incense 中如何开始。</li><li><a href="https://www.trustpilot.com/review/mindfulsouls.com" target="_blank" rel="noreferrer">Mindful Souls Reviews</a> 的好评特别提到 booklet 解释石头含义，让初学体验更 enjoyable and educational。</li><li><a href="https://www.reddit.com/r/Crystalsforbeginners/comments/1ajpw47/opinion_on_mindful_souls/" target="_blank" rel="noreferrer">Reddit Mindful Souls</a> 的负面语料里出现 no directions、items they will not use、subscription confusion 等问题。</li>
+                  </ul>
+                </div>
+                <aside class="implication">
+                  <b>对我们的含义</b>
+                  <p>我们不应该做“满满一盒玄学小物”。应该做少量但完整的 ritual kit：1 个主晶石容器，1 个香味，1 张结果卡，1 张用法卡，1 个 refill 路径。</p>
+                </aside>
+              </div>
+            </article><article class="finding">
+              <div class="finding-top">
+                <div class="finding-number">05</div>
+                <div>
+                  <h3>消费者在意好看、真实、可拍，视觉本身就是价值</h3>
+                </div>
+                <span class="confidence">中强信号</span>
+              </div>
+              <div class="finding-body">
+                <div>
+                  <p class="finding-summary">晶石香薰不是纯功能品。能不能成为床头、书桌、浴室、冥想角落里的漂亮物件，会直接影响购买和分享。</p>
+                  <ul class="evidence-list">
+                    <li><a href="https://www.etsy.com/listing/4311186385/rose-quartz-essential-oil-diffuser-hand" target="_blank" rel="noreferrer">Etsy Rose Quartz</a> 的评论把 gorgeous、great quality、lovely glow 作为主要正向理由。</li><li><a href="https://energymuse.com/products/clear-quartz-crystal-diffuser" target="_blank" rel="noreferrer">Energy Muse</a> 的购买评论喜欢 raw crystals 和 jar，本质上是在为实物观感付费。</li><li><a href="https://www.amazon.com/dp/B0D9SJ8SZT" target="_blank" rel="noreferrer">Amazon Salt Diffuser</a> 把 salt lamp、LED light、diffuser、gift 合成一个视觉和嗅觉产品。</li><li><a href="https://play.google.com/store/apps/details?hl=en_US&id=com.purascents.android" target="_blank" rel="noreferrer">Pura App</a> 和 Pura 相关内容说明氛围灯、schedule、intensity 已经是家居香氛产品的可感知价值。</li>
+                  </ul>
+                </div>
+                <aside class="implication">
+                  <b>对我们的含义</b>
+                  <p>主图不能像淘宝小商品。需要真实晶石的透光、纹理、桌面尺度和礼盒开箱图。视觉资产会决定用户是否觉得 $59-$89 合理。</p>
+                </aside>
+              </div>
+            </article><article class="finding">
+              <div class="finding-top">
+                <div class="finding-number">06</div>
+                <div>
+                  <h3>复购可能来自香味，不太可能来自晶石本体</h3>
+                </div>
+                <span class="confidence">中强信号</span>
+              </div>
+              <div class="finding-body">
+                <div>
+                  <p class="finding-summary">晶石更像第一次购买的意义锚点，复购更可能来自 refill oil、季节香、状态香、礼物二购。</p>
+                  <ul class="evidence-list">
+                    <li><a href="https://www.reddit.com/r/aromatherapy/comments/1f6mwu5/do_you_have_an_essential_oil_blend_you_cant_get/" target="_blank" rel="noreferrer">Reddit Blends</a> 里用户会分享自己反复使用的 blend recipes，并扩散给家人。</li><li><a href="https://play.google.com/store/apps/details?hl=en_US&id=com.purascents.android" target="_blank" rel="noreferrer">Pura App</a> 把定时、强度和双香味选择做成使用习惯。</li><li><a href="https://www.trustpilot.com/review/www.trypura.com" target="_blank" rel="noreferrer">Pura Reviews</a> 的抱怨集中在 refill cost、scents losing potency、subscription charges，反面证明 refill 是核心体验。</li><li><a href="https://www.amazon.com/Essential-Oils-Set-Therapeutic-Grade/dp/B08CZMMLLR" target="_blank" rel="noreferrer">Amazon Oils</a> 的大 review 量说明低价 scent exploration 本身有广泛需求。</li>
+                  </ul>
+                </div>
+                <aside class="implication">
+                  <b>对我们的含义</b>
+                  <p>首发不一定要订阅，但必须设计 refill：3 支 starter scent 后面接 9 支五行/星座/月相香。复购逻辑要靠香味，而不是让用户再买同样的石头。</p>
+                </aside>
+              </div>
+            </article>
+      </div>
+    </section>
+
+    <section id="pain">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Dissatisfaction</div>
+            <h2>现有方案哪里让人不满</h2>
+          </div>
+          <p class="section-copy">这些不满是我们最应该尊重的市场反馈。尤其是真假、过度套装、香味覆盖、订阅、说明书和安全，它们会直接决定新品牌是否被信任。</p>
+        </div>
+        <div class="pain-grid">
+          <article class="pain">
+                <div class="meta">
+                  <h3>最危险的不满：假晶石、染色玻璃、Temu 转卖感</h3>
+                  <span class="severity">高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.reddit.com/r/Crystalsforbeginners/comments/1ajpw47/opinion_on_mindful_souls/" target="_blank" rel="noreferrer">Reddit Mindful Souls</a> 和 <a href="https://www.reddit.com/r/witchcraft/comments/1avijsp/im_a_beginner_thats_dabbling_would_buying_a/" target="_blank" rel="noreferrer">Reddit Beginner Kit</a> 都出现 fake crystals、colored glass、Amazon/Temu 货源不可信的担忧。</li><li><a href="https://www.bbb.org/us/or/tualatin/profile/online-retailer/mindful-souls-1296-1000065326/complaints" target="_blank" rel="noreferrer">Mindful Souls BBB</a> 里 Mindful Souls 需要公开否认 fake or plastic crystals，说明这个质疑足够常见。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>必须做 stone authenticity card、自然纹理差异说明、批次图、供应链说法。不要卖“绝对功效”，卖“真实材质 + 个人仪式”。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>Kit 疲劳：随机、过度、很多东西用不上</h3>
+                  <span class="severity">高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.reddit.com/r/witchcraft/comments/1avijsp/im_a_beginner_thats_dabbling_would_buying_a/" target="_blank" rel="noreferrer">Reddit Beginner Kit</a> 里很多回复认为 pre-made kit 往往把普通材料包装成 essentials。</li><li><a href="https://www.reddit.com/r/Crystalsforbeginners/comments/1ajpw47/opinion_on_mindful_souls/" target="_blank" rel="noreferrer">Reddit Mindful Souls</a> 里消费者担心 subscription box 里有 they won't use 的东西。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>首发 SKU 控制在 3 个核心部件，不要为了显得值钱塞满小物。每个物件都要有使用场景。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>香味强度和空间覆盖经常落差</h3>
+                  <span class="severity">高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.reddit.com/r/CleaningTips/comments/1qur3yy/do_diffusers_even_work_in_big_rooms_or_am_i_doing/" target="_blank" rel="noreferrer">Reddit Big Room</a> 的消费者抱怨小卧室可以，大客厅很快没味。</li><li><a href="https://www.trustpilot.com/review/www.trypura.com" target="_blank" rel="noreferrer">Pura Reviews</a> 投诉中也出现 scent losing potency、not covering spaces adequately。</li><li><a href="https://www.reddit.com/r/CleaningTips/comments/16f4wpq/best_home_fragrance_devices/" target="_blank" rel="noreferrer">Reddit CleaningTips</a> 中用户会在 wax melts、incense、diffusers、plug-ins 之间比较强度、安全、成本和清洁麻烦。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>必须明确“小空间产品”：床头、书桌、浴室、冥想角。不要承诺 open living room whole-home scent。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>设备、App、订阅和隐藏扣费会迅速消耗信任</h3>
+                  <span class="severity">高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.trustpilot.com/review/www.trypura.com" target="_blank" rel="noreferrer">Pura Reviews</a> 抱怨 device problems、unexpected charges、subscription terms。</li><li><a href="https://www.reddit.com/r/Crystalsforbeginners/comments/1ajpw47/opinion_on_mindful_souls/" target="_blank" rel="noreferrer">Reddit Mindful Souls</a> 和 <a href="https://www.reddit.com/r/Wicca/comments/ztunek/mindful_souls/" target="_blank" rel="noreferrer">Reddit Wicca</a> 都出现 subscription/cancellation/customer service 的负面信号。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>V1 不要做硬件 App，也不要默认订阅。先用单次礼盒 + 可选 refill，把信任赚到再谈会员。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>没有说明书会让玄学产品看起来更像骗局</h3>
+                  <span class="severity">中高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.reddit.com/r/Crystalsforbeginners/comments/1ajpw47/opinion_on_mindful_souls/" target="_blank" rel="noreferrer">Reddit Mindful Souls</a> 出现 diffuser no directions 的不满。</li><li><a href="https://www.trustpilot.com/review/mindfulsouls.com" target="_blank" rel="noreferrer">Mindful Souls Reviews</a> 的正向评论反而强调 booklet 解释石头含义很有帮助。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>每盒必须有 60 秒上手卡：滴几滴、放哪里、多久补香、如何清洁、宠物和儿童注意事项、这个 ritual 代表什么。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>宠物、儿童、油品安全会影响下单</h3>
+                  <span class="severity">中高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.reddit.com/r/aromatherapy/comments/1mvxawa/aromafragrance_oils_toxic_for_cats/" target="_blank" rel="noreferrer">Reddit Pet Safety</a> 中猫主人对精油和香精油的安全性明显焦虑。</li><li><a href="https://apnews.com/article/pura-scents-diffuser-recall-magnet-e1280c34a976759f29b11ee6249d9724" target="_blank" rel="noreferrer">AP Pura Recall</a> 显示 Pura 因磁铁吞咽风险召回超过 850,000 个 diffuser covers。</li><li><a href="https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy" target="_blank" rel="noreferrer">FDA</a> 提醒 natural or organic 不等于安全。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>包装和 PDP 必须透明列出 fragrance/essential oil 成分、安全警示、通风建议、远离儿童宠物。物理结构不要有易脱落小部件。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>治疗、睡眠、焦虑、转运等强 claims 有合规和信任风险</h3>
+                  <span class="severity">高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy" target="_blank" rel="noreferrer">FDA</a> 明确指出 help you sleep、treat anxiety、relieve pain 等会进入 drug claim 风险区。</li><li><a href="https://www.ftc.gov/business-guidance/advertising-marketing/health-claims" target="_blank" rel="noreferrer">FTC</a> 要求 health-related claims 有 substantiation。</li><li><a href="https://www.reddit.com/r/Crystals/comments/csbitl/has_anyone_bought_from_energy_muse/" target="_blank" rel="noreferrer">Reddit Energy Muse</a> 里消费者反感 psychic 用高价产品卖 cure/fix。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>文案用 mood、ritual、ambience、intention、for fun、self-reflection。不要说治疗焦虑、改善睡眠、清除坏运、治愈创伤。</p>
+                </div>
+              </article><article class="pain">
+                <div class="meta">
+                  <h3>便宜平台把价格锚点拉低，消费者会问凭什么贵</h3>
+                  <span class="severity">中高</span>
+                </div>
+                <ul class="evidence-list">
+                  <li><a href="https://www.amazon.com/Essential-Oils-Set-Therapeutic-Grade/dp/B08CZMMLLR" target="_blank" rel="noreferrer">Amazon Oils</a> 说明 essential oil set 已经有大量低价评论和 gift-box 选择。</li><li><a href="https://www.etsy.com/listing/911562065/rose-quartz-and-amethyst-gemstone" target="_blank" rel="noreferrer">Etsy Ink + Ocean</a> 把 handmade crystal diffuser 锚在约 $54-$68，给 DTC 高价制造比较对象。</li><li><a href="https://www.reddit.com/r/witchcraft/comments/1avijsp/im_a_beginner_thats_dabbling_would_buying_a/" target="_blank" rel="noreferrer">Reddit Beginner Kit</a> 里用户反复把 Amazon、Etsy、本地店、craft store 放在一起比较。</li>
+                </ul>
+                <div class="move">
+                  <b>应对动作</b>
+                  <p>价格不能只靠“玄学故事”。必须靠实物质感、香味研发、礼盒体验、个性化结果卡、真实开箱内容撑住。</p>
+                </div>
+              </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="segments">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Segments</div>
+            <h2>谁最可能先买</h2>
+          </div>
+          <p class="section-copy">不要把“所有喜欢水晶的人”当成目标客群。更可执行的分法是按购买任务划分：自我照顾、家居氛围、送礼、新手入门、安全谨慎。</p>
+        </div>
+        <div class="segment-grid">
+          <article class="segment">
+                <h3>轻玄学自我照顾者</h3>
+                <div class="segment-body">
+                  <div class="segment-row">
+                    <b>Who</b>
+                    <p>18-39 岁女性为主，也包括 LGBTQ+、TikTok/IG astrology 用户、喜欢 horoscope 但不一定深信。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Job to be done</b>
+                    <p>最近状态乱，想要一个好看的 reset ritual。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Evidence</b>
+                    <p><a href="https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/" target="_blank" rel="noreferrer">Pew 2025</a> + <a href="https://www.trustpilot.com/review/mindfulsouls.com" target="_blank" rel="noreferrer">Mindful Souls Reviews</a> + <a href="https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports" target="_blank" rel="noreferrer">Circana</a></p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Product angle</b>
+                    <p>Element/Mood quiz + Calm/Clarity/Love/Protection 香味推荐。</p>
+                  </div>
+                </div>
+              </article><article class="segment">
+                <h3>香氛家居氛围人群</h3>
+                <div class="segment-body">
+                  <div class="segment-row">
+                    <b>Who</b>
+                    <p>已经买 candles、reed diffusers、Pura、wax melts 的人。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Job to be done</b>
+                    <p>让卧室、桌面、浴室更好闻，看起来更有质感。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Evidence</b>
+                    <p><a href="https://candles.org/facts-figures/" target="_blank" rel="noreferrer">NCA</a> + <a href="https://www.reddit.com/r/CleaningTips/comments/16f4wpq/best_home_fragrance_devices/" target="_blank" rel="noreferrer">Reddit CleaningTips</a> + <a href="https://www.reddit.com/r/CleaningTips/comments/1qur3yy/do_diffusers_even_work_in_big_rooms_or_am_i_doing/" target="_blank" rel="noreferrer">Reddit Big Room</a></p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Product angle</b>
+                    <p>明确小空间使用、可调强度、refill、非火源、容易清洁。</p>
+                  </div>
+                </div>
+              </article><article class="segment">
+                <h3>礼物购买者</h3>
+                <div class="segment-body">
+                  <div class="segment-row">
+                    <b>Who</b>
+                    <p>给朋友、伴侣、姐妹、同事、hostess、生日对象买礼物的人。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Job to be done</b>
+                    <p>想送一个不俗、看起来很懂对方、价格不尴尬的礼物。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Evidence</b>
+                    <p><a href="https://birthdate.co/products/the-birthdate-candle" target="_blank" rel="noreferrer">Birthdate</a> + <a href="https://www.trustpilot.com/review/birthdate.co" target="_blank" rel="noreferrer">Birthdate Reviews</a> + <a href="https://candles.org/facts-figures/" target="_blank" rel="noreferrer">NCA</a></p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Product angle</b>
+                    <p>生日/星座/元素个性化卡片，gift note，开箱强。</p>
+                  </div>
+                </div>
+              </article><article class="segment">
+                <h3>玄学新手</h3>
+                <div class="segment-body">
+                  <div class="segment-row">
+                    <b>Who</b>
+                    <p>对 crystals、witchy self-care、manifestation 感兴趣，但不知道买什么。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Job to be done</b>
+                    <p>我不想显得外行，也不想被坑，给我一个可信的入门方式。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Evidence</b>
+                    <p><a href="https://www.reddit.com/r/witchcraft/comments/1avijsp/im_a_beginner_thats_dabbling_would_buying_a/" target="_blank" rel="noreferrer">Reddit Beginner Kit</a> + <a href="https://www.reddit.com/r/Wicca/comments/ztunek/mindful_souls/" target="_blank" rel="noreferrer">Reddit Wicca</a> + <a href="https://www.trustpilot.com/review/mindfulsouls.com" target="_blank" rel="noreferrer">Mindful Souls Reviews</a></p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Product angle</b>
+                    <p>少量核心物件 + 解释卡 + 不恐吓的入门 ritual。</p>
+                  </div>
+                </div>
+              </article><article class="segment">
+                <h3>宠物/儿童/敏感家庭谨慎买家</h3>
+                <div class="segment-body">
+                  <div class="segment-row">
+                    <b>Who</b>
+                    <p>家里有猫狗、孩子、敏感体质或对室内空气质量在意的人。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Job to be done</b>
+                    <p>我想要香味，但不能承担不清楚的安全风险。</p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Evidence</b>
+                    <p><a href="https://www.reddit.com/r/aromatherapy/comments/1mvxawa/aromafragrance_oils_toxic_for_cats/" target="_blank" rel="noreferrer">Reddit Pet Safety</a> + <a href="https://apnews.com/article/pura-scents-diffuser-recall-magnet-e1280c34a976759f29b11ee6249d9724" target="_blank" rel="noreferrer">AP Pura Recall</a> + <a href="https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy" target="_blank" rel="noreferrer">FDA</a></p>
+                  </div>
+                  <div class="segment-row">
+                    <b>Product angle</b>
+                    <p>安全透明、低挥发强度选项、清晰警示、可不用精油的香氛方案。</p>
+                  </div>
+                </div>
+              </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="moves">
+      <div class="inner">
+        <div class="verdict">
+          <div>
+            <span class="pill">Evidence-based verdict</span>
+            <h2>可以继续，但只能小批量验证，不能直接重仓</h2>
+          </div>
+          <div>
+            <p>消费者证据支持这个方向有真实动机：香味、空间、礼物、轻玄学、自我照顾都成立。真正的风险不是“没人懂玄学”，而是新品牌很容易踩到信任坑：假晶石感、便宜货加价、弱扩香、玄学恐吓、订阅扣费、安全模糊。</p>
+            <ul>
+              <li>最稳的 V1：无火晶石香氛礼盒 + 个性化结果卡 + 小空间 scent ritual。</li>
+              <li>最该避开的 V1：硬件 App、月订阅、强疗愈 claims、大量随机玄学小物。</li>
+              <li>最需要先验证：用户是否愿意为新品牌在 $59-$79 付费，以及哪个主张转化最高。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height: 26px"></div>
+
+        <div class="action-grid">
+          <article class="action-card">
+            <h3>一定要做</h3>
+            <ol class="numbered">
+              <li>首发用“无火晶石香氛 ritual kit”，不要叫 crystal healing kit。前者是家居香氛，后者更容易引发真假和疗效审判。</li><li>入口 quiz 做轻量个性化：生日/月亮星座/最近状态/想要的房间氛围。结果给 scent + crystal + ritual，不给命运判断。</li><li>主 SKU 控制在 3 个方向：Calm Water、Ground Earth、Spark Fire。每个方向只配 1 个主晶石和 1 个香味，先减少认知负担。</li><li>产品页必须写 room-size expectation：desk, bedside, bath, meditation corner。不要承诺整屋扩香。</li><li>用 stone transparency 建信任：天然纹理差异、批次图、来源说明、不是医疗或转运保证。</li><li>不做默认订阅。做 optional refill、seasonal drops、gift bundle。消费者证据显示订阅是高风险信任点。</li><li>安全卡放进盒子，也放在 PDP：儿童宠物、通风、皮肤接触、孕妇/敏感人群、不是药品。</li><li>先用小批量验证香味和价格，不要重资产开模硬件。硬件可靠性会把一个小品牌拖进售后泥潭。</li>
+            </ol>
+          </article>
+          <article class="action-card">
+            <h3>一定不要碰</h3>
+            <ol class="numbered no-list">
+              <li>不要用“你最近水逆/不顺，所以必须买”做恐吓式转化。</li><li>不要承诺 healing anxiety、help sleep、clear bad energy、remove depression、cure pain。</li><li>不要塞十几样廉价小物让礼盒看起来很满。</li><li>不要在 V1 做 App、电子硬件、灯控遥控器、默认月订阅。</li><li>不要把 hardcore witchcraft/crystal 圈当成唯一主客群。他们更懂，也更会质疑假货和过度商业化。</li><li>不要隐藏香精/精油成分，也不要把 natural 当成 safe 的替代说明。</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="validate">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Next Evidence</div>
+            <h2>接下来要补的消费者证据</h2>
+          </div>
+          <p class="section-copy">公开资料能告诉我们机会和风险，但不能替代真实购买测试。下一步应该把这份报告变成小预算验证，而不是直接扩 SKU。</p>
+        </div>
+        <div class="validation">
+          <article class="limit-card">
+                <b>Message test</b>
+                <p>用 $300-$600 广告或 TikTok Spark 小额测试 3 条主张：香氛情绪 reset、生日星座礼物、晶石能量 ritual。看 CTR、email signup、add-to-cart intent。</p>
+              </article><article class="limit-card">
+                <b>15 人访谈</b>
+                <p>10 个目标消费者 + 5 个 skeptic，重点问：你买它是为自己还是送礼？你最担心假在哪里？你愿意为哪部分付溢价？</p>
+              </article><article class="limit-card">
+                <b>100 套样品</b>
+                <p>低 MOQ 打样 3 个 scent directions，寄给 micro creators 和真实买家，收集开箱、香味、持久度、用法清晰度反馈。</p>
+              </article><article class="limit-card">
+                <b>Price smoke test</b>
+                <p>同一落地页测试 $49、$59、$79 三个首购 anchor。不要先相信 $88.88，Energy Muse 的品牌信任不能直接迁移给新品牌。</p>
+              </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Sources</div>
+            <h2>来源与证据卡</h2>
+          </div>
+          <p class="section-copy">以下来源按证据类型混排。消费者语料用于发现具体动机和不满；行业与调查用于判断是否有更大的文化和品类基础。</p>
+        </div>
+        <div class="source-grid">
+          <article class="source-card">
+                <span class="type">Survey</span>
+                <a href="https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/" target="_blank" rel="noreferrer">Pew Research Center, 2025</a>
+                <p>30% of U.S. adults consult astrology, tarot, or fortune tellers at least yearly; most use it for fun, with younger women and LGBTQ+ adults over-indexing.</p>
+              </article><article class="source-card">
+                <span class="type">Survey</span>
+                <a href="https://www.pewresearch.org/religion/2023/12/07/spirituality-among-americans/" target="_blank" rel="noreferrer">Pew Research Center, 2023</a>
+                <p>26% of U.S. adults believe spiritual energy can reside in physical objects such as crystals, jewels, or stones.</p>
+              </article><article class="source-card">
+                <span class="type">Survey</span>
+                <a href="https://d3nkl3psvxxpe9.cloudfront.net/documents/toplines_New-age_beliefs_and_practices.pdf" target="_blank" rel="noreferrer">YouGov New Age Beliefs Toplines, 2022</a>
+                <p>Aromatherapy and essential oils have broader belief or openness than healing crystals, making scent the wider market entry.</p>
+              </article><article class="source-card">
+                <span class="type">Category</span>
+                <a href="https://www.circana.com/post/gen-z-accounts-for-the-highest-bump-in-fragrance-usage-circana-reports" target="_blank" rel="noreferrer">Circana Fragrance Consumer Report release, 2023</a>
+                <p>Gen Z fragrance usage rose; 80% of fragrance users say fragrance helps lift or enhance mood.</p>
+              </article><article class="source-card">
+                <span class="type">Category</span>
+                <a href="https://candles.org/facts-figures/" target="_blank" rel="noreferrer">National Candle Association Facts &amp; Figures</a>
+                <p>Fragrance is the top candle purchase factor; consumers buy candles for decor, comfort, coziness, relaxation, and gifts.</p>
+              </article><article class="source-card">
+                <span class="type">Category</span>
+                <a href="https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/future-of-wellness-trends" target="_blank" rel="noreferrer">McKinsey Future of Wellness, 2025</a>
+                <p>Younger consumers treat wellness as a daily and personalized practice.</p>
+              </article><article class="source-card">
+                <span class="type">Competitor</span>
+                <a href="https://energymuse.com/products/clear-quartz-crystal-diffuser" target="_blank" rel="noreferrer">Energy Muse Clear Quartz Crystal Diffuser</a>
+                <p>$88.88 product anchor; sells calm, clarity, presence, raw quartz, lavender scent, ritual instructions, and numerology.</p>
+              </article><article class="source-card">
+                <span class="type">Marketplace</span>
+                <a href="https://www.etsy.com/listing/911562065/rose-quartz-and-amethyst-gemstone" target="_blank" rel="noreferrer">Etsy Ink + Ocean Crystal Essential Oil Diffuser</a>
+                <p>$54.50-$68.47 anchor; combines crystals, essential oil blends, gift box, energetic qualities, and usage instructions.</p>
+              </article><article class="source-card">
+                <span class="type">Marketplace</span>
+                <a href="https://www.etsy.com/listing/4311186385/rose-quartz-essential-oil-diffuser-hand" target="_blank" rel="noreferrer">Etsy Rose Quartz Essential Oil Diffuser Lamp</a>
+                <p>Positive review signals emphasize gorgeous appearance, quality, glow, and not over-burning oil.</p>
+              </article><article class="source-card">
+                <span class="type">Competitor</span>
+                <a href="https://birthdate.co/products/the-birthdate-candle" target="_blank" rel="noreferrer">Birthdate Co. Birthdate Candle</a>
+                <p>$44.99-$54.99 anchor; 365 individualized labels and scents, astrology copy, name personalization, and gifting bundles.</p>
+              </article><article class="source-card">
+                <span class="type">Review</span>
+                <a href="https://www.trustpilot.com/review/birthdate.co" target="_blank" rel="noreferrer">Birthdate Trustpilot Reviews</a>
+                <p>Consumer language validates the category as a 'gimmicky but good gift' when personalization and service work.</p>
+              </article><article class="source-card">
+                <span class="type">Review</span>
+                <a href="https://www.trustpilot.com/review/mindfulsouls.com" target="_blank" rel="noreferrer">Mindful Souls Trustpilot Reviews</a>
+                <p>Positive reviews mention monthly self-care, beautiful crystals, aromatherapy gifts, personalization, helpful booklets, and giftability.</p>
+              </article><article class="source-card">
+                <span class="type">Complaint</span>
+                <a href="https://www.bbb.org/us/or/tualatin/profile/online-retailer/mindful-souls-1296-1000065326/complaints" target="_blank" rel="noreferrer">Mindful Souls BBB Complaints</a>
+                <p>Complaint context shows the brand has to publicly deny fake or plastic crystal claims, proving authenticity trust is a live issue.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/Crystalsforbeginners/comments/1ajpw47/opinion_on_mindful_souls/" target="_blank" rel="noreferrer">Reddit: Opinion on Mindful Souls</a>
+                <p>Consumers question fake crystals, delayed shipping, wrong plugs, weak instructions, AI-like reviews, subscriptions, and items they will not use.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/witchcraft/comments/1avijsp/im_a_beginner_thats_dabbling_would_buying_a/" target="_blank" rel="noreferrer">Reddit: Beginner Witch Kit Discussion</a>
+                <p>Beginners want guidance and convenience but criticize overpriced kits, fake stones, and aesthetic-only 'essentials'.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/Wicca/comments/ztunek/mindful_souls/" target="_blank" rel="noreferrer">Reddit: Wicca Mindful Souls Thread</a>
+                <p>Beginner overwhelm is explicit: people do not know which herbs, crystals, candles, or incense to start with.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/Crystals/comments/csbitl/has_anyone_bought_from_energy_muse/" target="_blank" rel="noreferrer">Reddit: Has anyone bought from Energy Muse?</a>
+                <p>Consumers distrust expensive psychic upsells and warn against anyone selling a cure or fix.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/aromatherapy/comments/1hwxmz9/some_questions_for_a_starter/" target="_blank" rel="noreferrer">Reddit: Aromatherapy Starter Questions</a>
+                <p>New users ask whether diffusers help sleep problems and worry about cheap oils from Amazon or AliExpress.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/aromatherapy/comments/13h4htq/waterless_device_recommendation/" target="_blank" rel="noreferrer">Reddit: Waterless Diffuser Recommendations</a>
+                <p>Consumers complain nebulizers use too much oil and are hard to clean; water diffusers can get gross or add unwanted humidity.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/CleaningTips/comments/16f4wpq/best_home_fragrance_devices/" target="_blank" rel="noreferrer">Reddit: Home Fragrance Devices</a>
+                <p>Consumers compare candles, wax melts, incense, plug-ins, diffusers, sprays, scent strength, cost, mess, and safety.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/CleaningTips/comments/1qur3yy/do_diffusers_even_work_in_big_rooms_or_am_i_doing/" target="_blank" rel="noreferrer">Reddit: Do diffusers work in big rooms?</a>
+                <p>A user wants scent that is noticeable but not choking, while complaining a diffuser works in a bedroom but fades in a larger living room.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/aromatherapy/comments/1mvxawa/aromafragrance_oils_toxic_for_cats/" target="_blank" rel="noreferrer">Reddit: Aroma oils and cats</a>
+                <p>Cat owners show high anxiety around oil safety, ventilation, fragrance oils versus essential oils, and giving pets a way to leave.</p>
+              </article><article class="source-card">
+                <span class="type">Consumer Voice</span>
+                <a href="https://www.reddit.com/r/aromatherapy/comments/1f6mwu5/do_you_have_an_essential_oil_blend_you_cant_get/" target="_blank" rel="noreferrer">Reddit: Essential oil blends users love</a>
+                <p>Users share personal recipes and repeat-use blends, showing that scent loyalty can become a repeat purchase loop.</p>
+              </article><article class="source-card">
+                <span class="type">Competitor</span>
+                <a href="https://play.google.com/store/apps/details?hl=en_US&id=com.purascents.android" target="_blank" rel="noreferrer">Pura App Listing</a>
+                <p>Consumers can control intensity, schedules, timers, ambient light, and away mode, showing demand for scent control and personalization.</p>
+              </article><article class="source-card">
+                <span class="type">Complaint</span>
+                <a href="https://www.trustpilot.com/review/www.trypura.com" target="_blank" rel="noreferrer">Pura Trustpilot Reviews</a>
+                <p>Complaints cluster around device problems, delays, subscriptions, unexpected charges, high refill cost, weak scent, and coverage issues.</p>
+              </article><article class="source-card">
+                <span class="type">Safety</span>
+                <a href="https://apnews.com/article/pura-scents-diffuser-recall-magnet-e1280c34a976759f29b11ee6249d9724" target="_blank" rel="noreferrer">AP: Pura recall</a>
+                <p>Recall of more than 850,000 diffuser covers over magnet ingestion hazard illustrates physical product safety risk.</p>
+              </article><article class="source-card">
+                <span class="type">Marketplace</span>
+                <a href="https://www.amazon.com/Essential-Oils-Set-Therapeutic-Grade/dp/B08CZMMLLR" target="_blank" rel="noreferrer">Amazon Essential Oil Gift Set</a>
+                <p>Large review count and gift-box positioning show broad low-price demand for scent exploration and DIY use.</p>
+              </article><article class="source-card">
+                <span class="type">Marketplace</span>
+                <a href="https://www.amazon.com/dp/B0D9SJ8SZT" target="_blank" rel="noreferrer">Amazon Himalayan Salt Diffuser</a>
+                <p>Mass-market product bundles diffuser, humidifier, salt lamp, sleep, office, gift, LED light, and relaxation language.</p>
+              </article><article class="source-card">
+                <span class="type">Regulatory</span>
+                <a href="https://www.fda.gov/cosmetics/cosmetic-products/aromatherapy" target="_blank" rel="noreferrer">FDA Aromatherapy Guidance</a>
+                <p>FDA says sleep, anxiety, pain, depression, and disease-treatment claims can turn aromatherapy into drug claims.</p>
+              </article><article class="source-card">
+                <span class="type">Regulatory</span>
+                <a href="https://www.ftc.gov/business-guidance/advertising-marketing/health-claims" target="_blank" rel="noreferrer">FTC Health Claims Guidance</a>
+                <p>Companies must have appropriate substantiation for health-related claims.</p>
+              </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <p>Prepared for Rucia / Offing. Research date: 2026-06-14. This report is based on public information and consumer-language evidence; it is not a paid survey, medical advice, legal advice, or a guarantee of demand.</p>
+    </div>
+  </footer>
+</body>
+</html>
