@@ -401,7 +401,7 @@
 
     .evidence-strip {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -410,7 +410,7 @@
       box-shadow: var(--shadow);
     }
     .evidence {
-      min-height: 164px;
+      min-height: 188px;
       padding: 20px;
       background: var(--surface);
     }
@@ -490,7 +490,7 @@
     }
     .stacked-bar {
       display: grid;
-      grid-template-columns: 110fr 138fr 0fr;
+      grid-template-columns: 110fr 138fr 53fr;
       height: 20px;
       overflow: hidden;
       border-radius: 999px;
@@ -598,6 +598,26 @@
       color: var(--body);
       font-size: 13px;
       font-weight: 700;
+    }
+    .wrong strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 12px;
+      font-family: var(--mono);
+      font-weight: 860;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    .wrong.bad {
+      border-color: rgba(199,38,46,.18);
+      background: rgba(199,38,46,.055);
+      color: #681116;
+    }
+    .wrong.watch {
+      border-color: rgba(163,101,0,.22);
+      background: rgba(163,101,0,.075);
+      color: #6d4300;
     }
     .wrong.good {
       border-color: rgba(20,122,62,.16);
@@ -1004,6 +1024,117 @@
     }
     footer strong { color: #fff; }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #0c1111;
+        --paper-2: #111818;
+        --surface: #151d1d;
+        --ink: #eef5f3;
+        --body: #d5ddda;
+        --muted: #a7b2af;
+        --faint: #899692;
+        --line: #2a3837;
+        --line-strong: #3b4d4a;
+        --sea: #7fc2bc;
+        --sea-dark: #89d0c7;
+        --sea-soft: #1b3533;
+        --slate: #090d0d;
+        --blue: #77acd0;
+        --violet: #96aaa3;
+        --green: #65c985;
+        --amber: #d79c3a;
+        --red: #ff737b;
+        --cold: #1d282c;
+        --shadow: 0 18px 60px rgba(0,0,0,.42);
+        --shadow-soft: 0 10px 28px rgba(0,0,0,.24);
+      }
+      html { background: var(--paper); }
+      body {
+        background:
+          linear-gradient(180deg, rgba(12,17,17,.96) 0%, rgba(17,24,24,.96) 50%, rgba(11,15,15,.98) 100%),
+          linear-gradient(90deg, rgba(127,194,188,.055) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(127,194,188,.04) 1px, transparent 1px),
+          var(--paper);
+      }
+      .topbar {
+        border-bottom-color: rgba(42,56,55,.92);
+        background: rgba(14,20,20,.9);
+      }
+      .chip, .thesis, .why-item, .card, .note-row, .platform, .archetype, .source-grid a {
+        background: rgba(21,29,29,.9);
+      }
+      .cta, .score-card, .volume-total, .dark-card, .quote-left, footer {
+        background:
+          radial-gradient(circle at 88% 12%, rgba(127,194,188,.16), transparent 34%),
+          linear-gradient(145deg, #081010, #111d1e);
+      }
+      .stage-bar { background: rgba(255,255,255,.12); }
+      .stage-seg { background: rgba(255,255,255,.06); }
+      .stage-seg.active { background: rgba(127,194,188,.18); }
+      .matrix {
+        background:
+          linear-gradient(90deg, rgba(238,245,243,.055) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(238,245,243,.055) 1px, transparent 1px),
+          linear-gradient(135deg, rgba(21,29,29,.98), rgba(13,20,20,.96));
+      }
+      .quadrant { color: rgba(238,245,243,.46); }
+      .dot { border-color: #101616; }
+      .dot::after {
+        color: var(--ink);
+        background: rgba(21,29,29,.95);
+        border-color: var(--line);
+      }
+      .stacked-bar, .mini-bar { background: #263533; }
+      .volume-caveat {
+        border-color: rgba(215,156,58,.26);
+        background: rgba(215,156,58,.12);
+      }
+      .quote-right, .hero-panel, .evidence, .platform-volume, .locked-card, .week {
+        background: var(--surface);
+      }
+      .wrong, .lane-item, .fake-row {
+        background: #101717;
+      }
+      .wrong.bad {
+        border-color: rgba(255,115,123,.3);
+        background: rgba(255,115,123,.12);
+        color: #ffc7ca;
+      }
+      .wrong.watch {
+        border-color: rgba(215,156,58,.32);
+        background: rgba(215,156,58,.13);
+        color: #f2d3a2;
+      }
+      .wrong.good {
+        border-color: rgba(101,201,133,.28);
+        background: rgba(101,201,133,.13);
+        color: #bdebc9;
+      }
+      .role-note, .method-note {
+        border-color: rgba(127,194,188,.22);
+        background: rgba(127,194,188,.1);
+      }
+      .heat-cell {
+        background: var(--surface);
+      }
+      .heat-cell.head {
+        background: #101818;
+      }
+      .level.unknown {
+        background: rgba(238,245,243,.07);
+      }
+      .locked-card::after {
+        background: linear-gradient(180deg, rgba(21,29,29,0), rgba(21,29,29,.96) 58%, #151d1d 100%);
+      }
+      .line {
+        background: linear-gradient(90deg, #364846, #1f2d2c);
+      }
+      .avatar {
+        background: linear-gradient(135deg, #233332, #1b3533);
+      }
+    }
+
     @media (max-width: 980px) {
       .shell { width: min(100% - 28px, 1180px); }
       .topbar-inner { min-height: auto; align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
@@ -1080,7 +1211,7 @@
         <div class="why-diagnosis" aria-label="Why this diagnosis">
           <div class="why-item">
             <strong>1. 内容仍在持续上线</strong>
-            <span>TikTok + Instagram Reels 近 30 天已核验 248 条 creator 视频，说明 Ulike 已进入高频铺量期。</span>
+            <span>TikTok + Instagram Reels + YouTube 近 30 天已核验 301 条 creator / review 视频，说明 Ulike 已进入高频铺量期。</span>
           </div>
           <div class="why-item">
             <strong>2. 品类依赖证明链</strong>
@@ -1109,16 +1240,16 @@
         </div>
         <div class="hero-metrics">
           <div class="metric">
-            <span class="label">Platform-visible Creator Activity</span>
-            <strong>Active</strong>
-            <span>TikTok US/CA 已核验 110 条；Instagram creator Reels 已核验 138 条。</span>
+            <span class="label">Creator Volume Diagnosis</span>
+            <strong>Not Cold Start</strong>
+            <span>近 30 天已核验 301 条 creator / review publishes，问题不再是“有没有红人”，而是“哪些内容能推动购买”。</span>
             <small>统计窗口：2026-05-15 至 2026-06-14，按平台内容 ID 去重，品牌自有账号不计入 creator 数。</small>
           </div>
           <div class="metric">
-            <span class="label">Highest-volume Channel</span>
-            <strong>TikTok</strong>
-            <span>当前放量核心在 TikTok Shop / affiliate / discount-code 内容。</span>
-            <small>YouTube 的角色不是铺量，而是补高意图搜索信任。</small>
+            <span class="label">Highest-volume Surface</span>
+            <strong>Instagram</strong>
+            <span>近期公开可见数量最高的是 Instagram Reels；TikTok 仍是 Shop / affiliate / discount-code 转化引擎。</span>
+            <small>YouTube 的角色不是短视频铺量，而是补高意图搜索信任。</small>
           </div>
           <div class="metric">
             <span class="label">Primary Gap</span>
@@ -1128,8 +1259,8 @@
           </div>
           <div class="metric">
             <span class="label">Budget Direction</span>
-            <strong>Matrix</strong>
-            <span>先做 proof matrix 和 winner rebook，再判断是否放量头部或 paid boost。</span>
+            <strong>Proof First</strong>
+            <span>增量预算应先投向 proof matrix、winner rebook 和素材复用权，再判断是否放量头部或 paid boost。</span>
             <small>预算应基于 creator tier、内容用途和复投阈值量化。</small>
           </div>
         </div>
@@ -1139,83 +1270,89 @@
     <section class="shell" id="volume">
       <div class="section-head">
         <span class="section-kicker">Last 30 Days Video Launch Verification</span>
-        <h2>最近 30 天公开可见短视频上线量：已核验 248 条 creator publishes。</h2>
-        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。一个 publish 记为 1 条上线量；同一 creator 跨平台发布时，合作 creator 按账号去重，上线量按平台发布次数累计。计入总数的前提是能拿到平台内容 ID、发布日期、公开 URL 和去重依据；TikTok 口径为 US/CA creator / affiliate 视频，Instagram 口径为登录态 hashtag / tagged cluster 中逐条打开 permalink 核验的 creator Reels。</p>
+        <h2>最近 30 天公开视频上线量：Ulike 已经是高频铺量，不是冷启动。</h2>
+        <p class="lead">统计窗口：2026-05-15 至 2026-06-14。已核验 301 条 creator / review publishes；这个数字的业务含义是：Ulike 当前要优化的不是“再找一批红人发出去”，而是判断哪些平台内容负责成交、哪些负责信任、哪些只是短期曝光。</p>
       </div>
       <div class="volume-board">
         <div class="volume-total">
           <div>
             <span class="label">Verified Creator Video Publishes</span>
-            <strong>248</strong>
-            <span>TikTok US/CA creator / affiliate videos 110 条；Instagram creator Reels 138 条。YouTube 仍需逐条核验后再合并。</span>
+            <strong>301</strong>
+            <span>TikTok US/CA creator / affiliate videos 110 条；Instagram creator Reels 138 条；YouTube creator / review videos 53 条。</span>
           </div>
-          <small>TikTok 采用 video_id 级去重：17 组关键词，774 条原始结果，北美 creator 视频核验 110 条。Instagram 采集 #ulike / #ulikeair10 / #ulikehairremoval / #ulikepartner / #glowwithulike / @ulikeglobal tagged / @ulikeusa tagged 等入口，635 个 permalink 候选；逐条打开近期 shortcode 段 permalink 核验日期后，最近 30 天 creator Reels 为 138 条，去重 creator 约 131 个。</small>
+          <small>计入口径：每条内容必须能拿到平台内容 ID、发布日期、公开 URL 和去重依据。TikTok 采用 video_id 级去重：17 组关键词，774 条原始结果，北美 creator 视频核验 110 条。Instagram 采集 hashtag / tagged cluster，635 个 permalink 候选，最近 30 天 creator Reels 为 138 条。YouTube 采集 query=ulike 的 This month / Recently uploaded 结果，172 个候选、171 条详情核验、165 条落在窗口内；保守计入 53 条 creator / review / product-mention 视频，broader Ulike-relevant public uploads 为 60 条。</small>
         </div>
         <div class="platform-volume">
-          <div class="stacked-bar" aria-label="Counted platform share: TikTok 44%, Instagram 56%, YouTube pending">
+          <div class="stacked-bar" aria-label="Counted platform share: TikTok 37%, Instagram 46%, YouTube 18%">
             <span title="TikTok / TikTok Shop: 110 verified creator videos"></span>
             <span title="Instagram Reels: 138 verified creator videos"></span>
-            <span title="YouTube 0%"></span>
+            <span title="YouTube: 53 verified creator / review videos"></span>
           </div>
           <div class="platform-row">
             <strong>TikTok / Shop</strong>
             <div class="mini-bar" style="--tone:var(--sea-dark);--w:80%"><span></span></div>
             <div class="volume-number">110</div>
-            <div class="volume-share">44%</div>
+            <div class="volume-share">37%</div>
           </div>
           <div class="platform-row">
             <strong>Instagram</strong>
             <div class="mini-bar" style="--tone:var(--blue);--w:100%"><span></span></div>
             <div class="volume-number">138</div>
-            <div class="volume-share">56%</div>
+            <div class="volume-share">46%</div>
           </div>
           <div class="platform-row">
             <strong>YouTube</strong>
-            <div class="mini-bar" style="--tone:var(--amber);--w:0%"><span></span></div>
-            <div class="volume-number">Audit</div>
-            <div class="volume-share">Pending</div>
+            <div class="mini-bar" style="--tone:var(--amber);--w:38%"><span></span></div>
+            <div class="volume-number">53</div>
+            <div class="volume-share">18%</div>
           </div>
-          <p class="volume-caveat">业务解读：Ulike 不是 KOL 冷启动品牌，而是 TikTok Shop / affiliate 与 Instagram creator relationship 同时驱动的高频铺量品牌。Instagram 核验结果显示，Ulike 的近期内容不是只靠少数官方账号撑量，而是已经有大量 creator / partner Reels 在持续上线；下一步应判断哪些内容真正解释购买顾虑，哪些只是制造短期曝光。</p>
+          <p class="volume-caveat">业务解读：Ulike 不是 KOL 冷启动品牌，而是 TikTok Shop / affiliate、Instagram creator relationship 与 YouTube review / search defense 同时运转的高频铺量品牌。Instagram 负责高频视觉触达，TikTok 负责转化和素材测试，YouTube 虽然数量低于短视频平台，但承接的是更接近购买决策的 high-intent review、comparison 和 expert-style proof。</p>
         </div>
       </div>
     </section>
 
     <section class="shell" id="signals">
       <div class="section-head">
-        <span class="section-kicker">Public Signal Snapshot</span>
-        <h2>Ulike 需要把红人内容组织成购买决策证据链。</h2>
-        <p class="lead">公开资料显示 Ulike 已经具备品牌、渠道、creator 和专家背书信号。近 30 天 TikTok US/CA 公开样本已核验 110 条 creator / affiliate 视频，其中 95 条带有 #ad、code、link in bio、TikTok Shop 或合作信号；Instagram logged-in hashtag / tagged cluster 已核验 138 条 creator Reels。当前需要判断的是：哪些内容在帮用户做购买决策，哪些只是在制造短期曝光。</p>
+        <span class="section-kicker">Evidence-Led Diagnosis</span>
+        <h2>这些公开信号共同指向同一个结论：Ulike 缺的是 proof system，不是红人起量。</h2>
+        <p class="lead">下面每个数字只服务一个判断：Ulike 已经有足够多的内容、合作和信任资产，下一步应从“继续铺量”转向“按购买顾虑重组内容证据，并建立复投标准”。</p>
       </div>
       <div class="evidence-strip">
         <div class="evidence">
+          <span class="label">Volume Conclusion</span>
+          <strong>301</strong>
+          <span>Ulike 已经进入高频铺量阶段</span>
+          <small>近 30 天 TikTok + Instagram Reels + YouTube 已核验 301 条 creator / review publishes。下一步不是证明“有投 KOL”，而是证明哪些内容能影响购买。</small>
+        </div>
+        <div class="evidence">
+          <span class="label">TikTok Role</span>
           <strong>110</strong>
-          <span>TikTok US/CA creator publishes</span>
-          <small>Window: 2026-05-15 to 2026-06-14. Brand-owned account excluded from creator count.</small>
+          <span>TikTok 是转化与素材测试引擎</span>
+          <small>US/CA creator / affiliate 视频已核验 110 条。判断重点应从“发了多少条”转成“哪些 hook、痛点和评论区信号值得复投”。</small>
         </div>
         <div class="evidence">
+          <span class="label">Instagram Role</span>
           <strong>138</strong>
-          <span>Instagram creator Reels verified</span>
-          <small>635 permalink candidates from hashtag / tagged cluster; 138 recent Reels after brand-owned accounts were excluded.</small>
+          <span>Instagram 是关系与再营销资产层</span>
+          <small>登录态 hashtag / tagged cluster 已核验 138 条 creator Reels。它更适合沉淀视觉可信度、素材复用和 creator relationship，不应被当成唯一成交平台。</small>
         </div>
         <div class="evidence">
-          <strong>131</strong>
-          <span>Instagram creators deduped</span>
-          <small>Creator count is deduped by visible Instagram owner handle in the verified Reels sample.</small>
+          <span class="label">YouTube Role</span>
+          <strong>53</strong>
+          <span>YouTube 是低量但高意图的防守位</span>
+          <small>query=ulike 的 This month / Recently uploaded 结果中，保守计入 53 条 creator / review / product-mention 视频。它负责拦截 review、comparison 和购买前搜索。</small>
         </div>
         <div class="evidence">
+          <span class="label">Partnership Signal</span>
           <strong>95</strong>
-          <span>North America sponsored / affiliate signals</span>
-          <small>Includes #ad, partner/code language, link-in-bio, TikTok Shop and shoppable discount signals.</small>
+          <span>合作信号密度足够做复投审计</span>
+          <small>北美样本中 95 条带有 #ad、partner/code、link-in-bio、TikTok Shop 或可购物折扣信号。下一步应审计 rebook threshold，而不是只扩名单。</small>
         </div>
         <div class="evidence">
-          <strong>2,621</strong>
-          <span>Amazon ratings visible</span>
-          <small>Ulike Air 10 Amazon listing displayed 4.3 rating and 2,621 reviews/ratings。</small>
-        </div>
-        <div class="evidence">
-          <strong>7M+</strong>
-          <span>devices sold claim</span>
-          <small>Ulike AAD page states 7 million+ devices sold across 17 countries。</small>
+          <span class="label">Trust Base</span>
+          <strong>7M+ / 2,621</strong>
+          <span>品牌信任底座已经存在</span>
+          <small>Ulike 公开页面展示 7M+ devices sold claim；Amazon Air 10 listing 可见 2,621 ratings。creator 内容应该承接这些信任资产，而不是重复泛泛种草。</small>
         </div>
       </div>
     </section>
@@ -1228,11 +1365,11 @@
           <p>At-home IPL 是高客单、高信任门槛、需要坚持、效果因人而异的 beauty tech category。普通 lifestyle 种草不足以解释购买顾虑。</p>
         </div>
         <div class="quote-right">
-          <h3>当前诊断已经指向一个明确问题：Ulike 的 creator 内容需要从曝光资产变成购买证据资产。</h3>
+          <h3>当前最该停止的，不是 KOL 投放本身，而是把“大号 + 折扣码 + 一次性曝光”当成默认增长答案。</h3>
           <div class="wrong-right">
-            <div class="wrong">错误方向：找更多大号，继续用折扣码铺量。</div>
-            <div class="wrong">半对方向：做更多 review，但不区分购买顾虑和平台角色。</div>
-            <div class="wrong good">推荐方向：用 creator proof matrix 承接 safety、PCOS、comparison、long-term proof、skin/hair fit 和 high-intent search。</div>
+            <div class="wrong bad"><strong>Stop</strong>继续找更多大号、继续用折扣码铺量。这很可能正是 Ulike 当前最容易烧钱的动作：上线量会继续增加，但无法回答“我适不适合用、安全吗、和 Braun / Nood 比值不值”。</div>
+            <div class="wrong watch"><strong>Fix</strong>做更多 review 也不够。如果 review 只是换一个 creator 复述卖点，没有拆 safety、skin tone、PCOS、长期效果和竞品比较，它仍然只是曝光内容。</div>
+            <div class="wrong good"><strong>Build</strong>正确方向是搭 creator proof matrix：让 YouTube 承接 high-intent search，让 TikTok 测 proof hook，让 Instagram 沉淀可复用信任资产，再用 rebook 标准决定谁值得继续投。</div>
           </div>
         </div>
       </div>
@@ -1379,8 +1516,8 @@
     <section class="shell">
       <div class="section-head">
         <span class="section-kicker">Content Gap Heatmap</span>
-        <h2>最大缺口是内容证据的组织方式。</h2>
-        <p class="lead">Ulike 已经有强产品 claims，但 creator 内容要把这些 claims 拆成用户能相信的过程证据。</p>
+        <h2>最大缺口不是卖点数量，而是卖点有没有被 creator 证明出来。</h2>
+        <p class="lead">Ulike 已经有 Air 10、冰感冷却、SkinSensor、PCOS 场景和专家背书；真正影响购买的是，这些 claims 是否被拆成用户能看懂、能相信、能比较的过程证据。</p>
       </div>
       <p class="method-note">Scoring basis: 评级基于公开官网资产、Amazon/媒体信号、YouTube 搜索样本、可见 creator 内容类型和竞品内容语境。Strong 表示品牌侧资产清晰；Gap 表示 creator proof 或搜索拦截承接不足；Unknown 表示需要后台或平台级 crawl 验证。</p>
       <div class="heatmap" aria-label="Content gap heatmap">
@@ -1520,8 +1657,8 @@
         </div>
         <div class="card card-pad">
           <span class="label">Measurement Readiness</span>
-          <h3>Medium, pending internal data.</h3>
-          <p>公开资料能看到 affiliate、referral、Amazon/官网销售和 creator coupon code 信号。但是否具备 creator cohort analysis、post live date tracking、usage rights 和 rebook rules，需要内部数据确认。</p>
+          <h3>公开信号只能证明有追踪基础，不能证明复投系统成熟。</h3>
+          <p>公开资料能看到 affiliate、referral、Amazon/官网销售和 creator coupon code 信号；但 creator cohort analysis、post-live tracking、usage rights 和 rebook rules 需要后台数据确认。</p>
         </div>
       </div>
     </section>
