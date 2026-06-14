@@ -200,6 +200,13 @@
       color: color-mix(in srgb, var(--ink) 72%, var(--muted));
     }
     .nav-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+    .nav-links a.cta,
+    .nav-links a.cta:hover,
+    .nav-links a.cta:focus-visible {
+      color: #fff;
+      background: #5B2BFF;
+      border-bottom-color: transparent;
+    }
     .cta {
       display: inline-flex;
       align-items: center;
@@ -1578,6 +1585,12 @@
         background:
           radial-gradient(circle at 88% 12%, rgba(127,194,188,.16), transparent 34%),
           linear-gradient(145deg, #081010, #111d1e);
+      }
+      .nav-links a.cta,
+      .nav-links a.cta:hover,
+      .nav-links a.cta:focus-visible {
+        color: #fff;
+        background: #5B2BFF;
       }
       .stage-bar { background: rgba(255,255,255,.12); }
       .stage-seg { background: rgba(255,255,255,.06); }
