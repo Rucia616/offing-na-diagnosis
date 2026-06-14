@@ -22,8 +22,8 @@
       --sea-dark: #173d3c;
       --sea-soft: #e1ece8;
       --slate: #121b1d;
-      --blue: #1f5eff;
-      --violet: #6f5cff;
+      --blue: #2f668c;
+      --violet: #576d67;
       --green: #147a3e;
       --amber: #a36500;
       --red: #c7262e;
@@ -234,7 +234,7 @@
       padding: 24px;
       color: #fff;
       background:
-        radial-gradient(circle at 90% 10%, rgba(111,92,255,.24), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(163,101,0,.16), transparent 32%),
         radial-gradient(circle at 8% 90%, rgba(45,98,97,.3), transparent 36%),
         linear-gradient(145deg, #101616 0%, #152326 100%);
     }
@@ -436,6 +436,120 @@
       color: var(--muted);
       font-size: 11px;
       line-height: 1.35;
+    }
+    .volume-board {
+      display: grid;
+      grid-template-columns: minmax(280px, .75fr) minmax(0, 1.25fr);
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+    .volume-total {
+      display: grid;
+      align-content: space-between;
+      min-height: 326px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      color: #fff;
+      background:
+        radial-gradient(circle at 90% 12%, rgba(45,98,97,.32), transparent 34%),
+        linear-gradient(145deg, #101616, #142326);
+      box-shadow: var(--shadow);
+    }
+    .volume-total strong {
+      display: block;
+      color: #fff;
+      font-size: clamp(64px, 8vw, 104px);
+      line-height: .9;
+      font-weight: 880;
+      font-variant-numeric: tabular-nums;
+    }
+    .volume-total span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.86);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .volume-total small {
+      display: block;
+      margin-top: 16px;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .platform-volume {
+      display: grid;
+      gap: 12px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow-soft);
+    }
+    .stacked-bar {
+      display: grid;
+      grid-template-columns: 61fr 29fr 10fr;
+      height: 20px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e6ece9;
+    }
+    .stacked-bar span:nth-child(1) { background: var(--sea-dark); }
+    .stacked-bar span:nth-child(2) { background: var(--blue); }
+    .stacked-bar span:nth-child(3) { background: var(--amber); }
+    .platform-row {
+      display: grid;
+      grid-template-columns: 88px 1fr 64px 54px;
+      gap: 12px;
+      align-items: center;
+      min-height: 56px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .platform-row:last-child { border-bottom: 0; }
+    .platform-row strong {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 840;
+    }
+    .mini-bar {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e7ecea;
+    }
+    .mini-bar span {
+      display: block;
+      width: var(--w);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--tone);
+    }
+    .volume-number {
+      color: var(--ink);
+      font-size: 21px;
+      font-weight: 880;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .volume-share {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 780;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .volume-caveat {
+      margin-top: 4px;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(163,101,0,.18);
+      background: rgba(163,101,0,.08);
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .quote-split {
@@ -894,13 +1008,15 @@
       h1 { font-size: clamp(42px, 12vw, 58px); }
       .hero-copy { font-size: 15px; }
       .why-diagnosis { grid-template-columns: 1fr; }
-      .evidence-strip, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .quote-split { grid-template-columns: 1fr; }
+      .evidence-strip, .volume-board, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .quote-split { grid-template-columns: 1fr; }
       .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .metric { min-height: 112px; padding: 14px; }
       .metric strong { font-size: 22px; }
       .metric span { font-size: 12px; }
       .stage-bar { grid-template-columns: repeat(2, 1fr); }
-      section { padding: 48px 0; }
+      .platform-row { grid-template-columns: 74px 1fr 48px 42px; gap: 8px; }
+      .volume-number { font-size: 18px; }
+      section { padding: 48px 0; scroll-margin-top: 132px; }
       .matrix { min-height: 440px; }
       .dot::after { min-width: 88px; font-size: 11px; }
       .heatmap { grid-template-columns: 1fr; background: transparent; gap: 8px; border: 0; box-shadow: none; }
@@ -931,6 +1047,7 @@
       </a>
       <nav class="nav-links" aria-label="Report navigation">
         <a href="#diagnosis">诊断</a>
+        <a href="#volume">上线量</a>
         <a href="#signals">公开信号</a>
         <a href="#competitors">竞品姿态</a>
         <a href="#platforms">平台打法</a>
@@ -1012,6 +1129,50 @@
           </div>
         </div>
       </aside>
+    </section>
+
+    <section class="shell" id="volume">
+      <div class="section-head">
+        <span class="section-kicker">Last 30 Days Video Launch Estimate</span>
+        <h2>最近一个月全网视频上线量预估：Ulike 仍在高频投放短视频内容。</h2>
+        <p class="lead">统计口径：2026-05-14 至 2026-06-14，按公开搜索可见的 YouTube、Instagram Reels、TikTok / TikTok Shop 相关 Ulike 视频信号估算。一个 publish 记为 1 个上线量；同一 creator 跨平台发布时，合作红人数按 1 个去重，上线量按平台发布次数累计。</p>
+      </div>
+      <div class="volume-board">
+        <div class="volume-total">
+          <div>
+            <span class="label">Estimated Total Publishes</span>
+            <strong>28</strong>
+            <span>区间估计 24-32 条视频上线；合作 creator 去重估计约 24-28 人。</span>
+          </div>
+          <small>Confidence: Medium. YouTube 可用搜索元数据交叉验证；Instagram 依赖公开搜索索引；TikTok 公开索引不完整，因此用 TikTok Shop / brand-visible activity / 搜索样本做保守估算。</small>
+        </div>
+        <div class="platform-volume">
+          <div class="stacked-bar" aria-label="Platform share: TikTok 61%, Instagram 29%, YouTube 10%">
+            <span title="TikTok 61%"></span>
+            <span title="Instagram 29%"></span>
+            <span title="YouTube 10%"></span>
+          </div>
+          <div class="platform-row">
+            <strong>TikTok</strong>
+            <div class="mini-bar" style="--tone:var(--sea-dark);--w:61%"><span></span></div>
+            <div class="volume-number">17</div>
+            <div class="volume-share">61%</div>
+          </div>
+          <div class="platform-row">
+            <strong>Instagram</strong>
+            <div class="mini-bar" style="--tone:var(--blue);--w:29%"><span></span></div>
+            <div class="volume-number">8</div>
+            <div class="volume-share">29%</div>
+          </div>
+          <div class="platform-row">
+            <strong>YouTube</strong>
+            <div class="mini-bar" style="--tone:var(--amber);--w:10%"><span></span></div>
+            <div class="volume-number">3</div>
+            <div class="volume-share">10%</div>
+          </div>
+          <p class="volume-caveat">业务解读：最近一个月的可见上线量主要集中在短视频端，说明 Ulike 仍在用 creator 内容维持社交流量和 TikTok Shop / summer-ready 场景；YouTube 新增量较低，但更承担 review、comparison、长期结果和搜索拦截价值。下一层分析应继续拆具体 creator 去重、跨平台复投、评论区购买意图和素材复用价值。</p>
+        </div>
+      </div>
     </section>
 
     <section class="shell" id="signals">
@@ -1354,6 +1515,7 @@
         <a href="https://www.ulike.com/pages/ulike-and-aad-advancing-dermatological-care" target="_blank" rel="noreferrer">Ulike AAD Annual Meeting page</a>
         <a href="https://www.modash.io/content-library/brands/ulike-examples/influencers" target="_blank" rel="noreferrer">Modash Ulike content examples</a>
         <a href="https://www.amazon.com/Ulike-Ice-Cooling-Painless-Effective-Long-Lasting/dp/B0CV3ZJ2PN" target="_blank" rel="noreferrer">Amazon Ulike Air 10 listing</a>
+        <a href="https://shop.tiktok.com/us/k/ulike" target="_blank" rel="noreferrer">TikTok Shop Ulike public surface</a>
         <a href="https://www.tomsguide.com/home/ulike-air-10-review" target="_blank" rel="noreferrer">Tom's Guide Ulike Air 10 review</a>
         <a href="https://us.braun.com/en-us/female-hair-removal/ipls" target="_blank" rel="noreferrer">Braun IPL official page</a>
         <a href="https://trynood.com/products/the-flasher-2" target="_blank" rel="noreferrer">Nood The Flasher 2.0 product page</a>
@@ -1361,14 +1523,14 @@
         <a href="https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking" target="_blank" rel="noreferrer">FTC Endorsement Guides FAQ</a>
         <a href="https://www.aad.org/public/cosmetic/hair-removal" target="_blank" rel="noreferrer">American Academy of Dermatology hair removal overview</a>
       </div>
-      <p class="fineprint" style="margin-top:16px;">Methodology note: 本页为公开资料诊断预览，尚未纳入品牌后台、平台 API、creator 合同、实际投放预算或销售归因数据；具体账号名单、预算场景和 90 天执行路径需要进一步平台级采集与人工复核。</p>
+      <p class="fineprint" style="margin-top:16px;">Methodology note: 本页为公开资料诊断，尚未纳入品牌后台、平台 API、creator 合同、实际投放预算或销售归因数据；具体账号名单、预算场景和 90 天执行路径需要进一步平台级采集与人工复核。</p>
     </section>
   </main>
 
   <footer>
     <div class="shell">
       <span><strong>Offing TideLens｜远汐·潮镜</strong> KOL Growth Diagnosis Workspace</span>
-      <span>Updated for Ulike, noindex preview, 2026-06-14</span>
+      <span>Updated for Ulike, public-data diagnosis, 2026-06-14</span>
     </div>
   </footer>
 </body>
