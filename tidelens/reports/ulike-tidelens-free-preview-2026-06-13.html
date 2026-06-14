@@ -262,7 +262,7 @@
       font-weight: 880;
     }
     .score-line span {
-      max-width: 180px;
+      max-width: 260px;
       color: rgba(255,255,255,.86);
       font-size: 13px;
       line-height: 1.35;
@@ -312,8 +312,8 @@
     .metric strong {
       display: block;
       color: var(--ink);
-      font-size: 28px;
-      line-height: 1.05;
+      font-size: clamp(21px, 2.2vw, 28px);
+      line-height: 1.08;
       font-weight: 860;
       font-variant-numeric: tabular-nums;
     }
@@ -410,7 +410,7 @@
       box-shadow: var(--shadow);
     }
     .evidence {
-      min-height: 188px;
+      min-height: 156px;
       padding: 20px;
       background: var(--surface);
     }
@@ -600,15 +600,22 @@
       font-weight: 700;
     }
     .wrong strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--ink);
-      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      margin-bottom: 10px;
+      padding: 0 12px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 15px;
       font-family: var(--mono);
-      font-weight: 860;
-      letter-spacing: .03em;
+      font-weight: 900;
+      letter-spacing: .05em;
       text-transform: uppercase;
     }
+    .wrong.bad strong { background: var(--red); }
+    .wrong.watch strong { background: var(--amber); }
+    .wrong.good strong { background: var(--green); }
     .wrong.bad {
       border-color: rgba(199,38,46,.18);
       background: rgba(199,38,46,.055);
@@ -1206,7 +1213,7 @@
         <p class="hero-copy">Ulike 已经进入 KOL 增长优化期。公开信号显示，它已有 affiliate、sponsored creator、PR review、Amazon/官网联动和专家背书动作；当前更关键的问题，是这些信任资产尚未被系统转译成购买决策证据链。</p>
         <div class="thesis">
           <strong>核心判断</strong>
-          <p>Ulike 的下一阶段不是单纯增加 KOL 数量，而是修复 Proof Translation Gap：把已有产品卖点、专家背书、PCOS 场景和 creator 内容，组织成能回答用户购买顾虑的 proof system。</p>
+          <p>Ulike 下一阶段要修复购买证据链缺口：把已有产品卖点、专家背书、PCOS 场景和 creator 内容，组织成能回答用户购买顾虑的购买证据系统。</p>
         </div>
         <div class="why-diagnosis" aria-label="Why this diagnosis">
           <div class="why-item">
@@ -1226,42 +1233,42 @@
 
       <aside class="hero-panel" aria-label="TideLens diagnosis summary">
         <div class="score-card">
-          <span class="label">TideLens Relevance Score</span>
+          <span class="label">总体诊断</span>
           <div class="score-line">
-            <strong>High</strong>
-            <span>Growth / Scale 之间，且开始进入竞品防守期。</span>
+            <strong>强相关</strong>
+            <span>Ulike 已进入 Growth / Scale，并开始出现竞品防守压力。TideLens 应作为增长优化模块，重点看效率、复投和防守。</span>
           </div>
           <div class="stage-bar" aria-label="Stage diagnosis">
-            <div class="stage-seg">Cold Start<small>不匹配</small></div>
-            <div class="stage-seg">Launch<small>已越过</small></div>
-            <div class="stage-seg active">Growth<small>当前主阶段</small></div>
-            <div class="stage-seg active">Defense<small>开始出现</small></div>
+            <div class="stage-seg">冷启动<small>不是当前问题</small></div>
+            <div class="stage-seg">发布期<small>已经越过</small></div>
+            <div class="stage-seg active">增长期<small>当前主战场</small></div>
+            <div class="stage-seg active">防守期<small>开始加重</small></div>
           </div>
         </div>
         <div class="hero-metrics">
           <div class="metric">
-            <span class="label">Creator Volume Diagnosis</span>
-            <strong>Not Cold Start</strong>
-            <span>近 30 天已核验 301 条 creator / review publishes，问题不再是“有没有红人”，而是“哪些内容能推动购买”。</span>
-            <small>统计窗口：2026-05-15 至 2026-06-14，按平台内容 ID 去重，品牌自有账号不计入 creator 数。</small>
+            <span class="label">阶段判断</span>
+            <strong>现阶段是铺量后的效率问题。</strong>
+            <span>近 30 天已核验 301 条 creator / review publishes，说明 Ulike 已经有红人声量。</span>
+            <small>因此不要再把问题定义成“缺红人数量”，而要判断哪些内容能推动购买。</small>
           </div>
           <div class="metric">
-            <span class="label">Highest-volume Surface</span>
-            <strong>Instagram</strong>
-            <span>近期公开可见数量最高的是 Instagram Reels；TikTok 仍是 Shop / affiliate / discount-code 转化引擎。</span>
-            <small>YouTube 的角色不是短视频铺量，而是补高意图搜索信任。</small>
+            <span class="label">平台判断</span>
+            <strong>Instagram 最高频，TikTok 更接近转化。</strong>
+            <span>Instagram 负责关系和素材层；TikTok 负责 Shop / affiliate / hook testing。</span>
+            <small>YouTube 不负责铺量，应负责 review、comparison 和购买前搜索防守。</small>
           </div>
           <div class="metric">
-            <span class="label">Primary Gap</span>
-            <strong>Proof Translation</strong>
-            <span>品牌已有信任资产，但 creator 内容需要更系统地覆盖购买顾虑。</span>
-            <small>尤其是 skin tone、hair color、PCOS、痛感和长期结果。</small>
+            <span class="label">差距判断</span>
+            <strong>缺的不是卖点，是购买证据链。</strong>
+            <span>品牌已有信任资产，但 creator 内容需要系统覆盖购买顾虑。</span>
+            <small>重点是 skin tone、hair color、PCOS、痛感、安全边界和长期结果。</small>
           </div>
           <div class="metric">
-            <span class="label">Budget Direction</span>
-            <strong>Proof First</strong>
-            <span>增量预算应先投向 proof matrix、winner rebook 和素材复用权，再判断是否放量头部或 paid boost。</span>
-            <small>预算应基于 creator tier、内容用途和复投阈值量化。</small>
+            <span class="label">预算判断</span>
+            <strong>先停默认铺量，先做购买证据矩阵。</strong>
+            <span>增量预算应先投向证据型 brief、winner rebook 和素材复用权。</span>
+            <small>完整金额、creator tier 和 paid boost 条件放到付费版量化。</small>
           </div>
         </div>
       </aside>
@@ -1270,7 +1277,7 @@
     <section class="shell" id="volume">
       <div class="section-head">
         <span class="section-kicker">Last 30 Days Video Launch Verification</span>
-        <h2>最近 30 天公开视频上线量：Ulike 已经是高频铺量，不是冷启动。</h2>
+        <h2>最近 30 天公开视频上线量：Ulike 现阶段已经高频铺量。</h2>
         <p class="lead">统计窗口：2026-05-15 至 2026-06-14。已核验 301 条 creator / review publishes；这个数字的业务含义是：Ulike 当前要优化的不是“再找一批红人发出去”，而是判断哪些平台内容负责成交、哪些负责信任、哪些只是短期曝光。</p>
       </div>
       <div class="volume-board">
@@ -1306,7 +1313,7 @@
             <div class="volume-number">53</div>
             <div class="volume-share">18%</div>
           </div>
-          <p class="volume-caveat">业务解读：Ulike 不是 KOL 冷启动品牌，而是 TikTok Shop / affiliate、Instagram creator relationship 与 YouTube review / search defense 同时运转的高频铺量品牌。Instagram 负责高频视觉触达，TikTok 负责转化和素材测试，YouTube 虽然数量低于短视频平台，但承接的是更接近购买决策的 high-intent review、comparison 和 expert-style proof。</p>
+          <p class="volume-caveat">业务解读：Ulike 现阶段是 TikTok Shop / affiliate、Instagram creator relationship 与 YouTube review / search defense 同时运转的高频铺量品牌。Instagram 负责高频视觉触达，TikTok 负责转化和素材测试，YouTube 虽然数量低于短视频平台，但承接的是更接近购买决策的 high-intent review、comparison 和 expert-style proof。</p>
         </div>
       </div>
     </section>
@@ -1314,45 +1321,39 @@
     <section class="shell" id="signals">
       <div class="section-head">
         <span class="section-kicker">Evidence-Led Diagnosis</span>
-        <h2>这些公开信号共同指向同一个结论：Ulike 缺的是 proof system，不是红人起量。</h2>
-        <p class="lead">下面每个数字只服务一个判断：Ulike 已经有足够多的内容、合作和信任资产，下一步应从“继续铺量”转向“按购买顾虑重组内容证据，并建立复投标准”。</p>
+        <h2>这些公开信号共同指向同一个结论：Ulike 缺的是购买证据链。</h2>
+        <p class="lead">下面每个数字只服务一个判断：Ulike 已经有足够多的内容、合作和信任资产，下一步要从“继续铺量”转向“按购买顾虑重组内容证据，并建立复投标准”。</p>
       </div>
       <div class="evidence-strip">
         <div class="evidence">
-          <span class="label">Volume Conclusion</span>
+          <span class="label">声量判断</span>
           <strong>301</strong>
-          <span>Ulike 已经进入高频铺量阶段</span>
-          <small>近 30 天 TikTok + Instagram Reels + YouTube 已核验 301 条 creator / review publishes。下一步不是证明“有投 KOL”，而是证明哪些内容能影响购买。</small>
+          <span>已进入高频铺量阶段，下一步看内容效率。</span>
         </div>
         <div class="evidence">
-          <span class="label">TikTok Role</span>
+          <span class="label">TikTok 角色</span>
           <strong>110</strong>
-          <span>TikTok 是转化与素材测试引擎</span>
-          <small>US/CA creator / affiliate 视频已核验 110 条。判断重点应从“发了多少条”转成“哪些 hook、痛点和评论区信号值得复投”。</small>
+          <span>TikTok 是转化与素材测试引擎。</span>
         </div>
         <div class="evidence">
-          <span class="label">Instagram Role</span>
+          <span class="label">Instagram 角色</span>
           <strong>138</strong>
-          <span>Instagram 是关系与再营销资产层</span>
-          <small>登录态 hashtag / tagged cluster 已核验 138 条 creator Reels。它更适合沉淀视觉可信度、素材复用和 creator relationship，不应被当成唯一成交平台。</small>
+          <span>Instagram 是关系与再营销资产层。</span>
         </div>
         <div class="evidence">
-          <span class="label">YouTube Role</span>
+          <span class="label">YouTube 角色</span>
           <strong>53</strong>
-          <span>YouTube 是低量但高意图的防守位</span>
-          <small>query=ulike 的 This month / Recently uploaded 结果中，保守计入 53 条 creator / review / product-mention 视频。它负责拦截 review、comparison 和购买前搜索。</small>
+          <span>YouTube 是低量但高意图的防守位。</span>
         </div>
         <div class="evidence">
-          <span class="label">Partnership Signal</span>
+          <span class="label">合作信号</span>
           <strong>95</strong>
-          <span>合作信号密度足够做复投审计</span>
-          <small>北美样本中 95 条带有 #ad、partner/code、link-in-bio、TikTok Shop 或可购物折扣信号。下一步应审计 rebook threshold，而不是只扩名单。</small>
+          <span>合作密度足够做复投审计。</span>
         </div>
         <div class="evidence">
-          <span class="label">Trust Base</span>
+          <span class="label">信任底座</span>
           <strong>7M+ / 2,621</strong>
-          <span>品牌信任底座已经存在</span>
-          <small>Ulike 公开页面展示 7M+ devices sold claim；Amazon Air 10 listing 可见 2,621 ratings。creator 内容应该承接这些信任资产，而不是重复泛泛种草。</small>
+          <span>品牌信任底座已经存在。</span>
         </div>
       </div>
     </section>
@@ -1369,7 +1370,7 @@
           <div class="wrong-right">
             <div class="wrong bad"><strong>Stop</strong>继续找更多大号、继续用折扣码铺量。这很可能正是 Ulike 当前最容易烧钱的动作：上线量会继续增加，但无法回答“我适不适合用、安全吗、和 Braun / Nood 比值不值”。</div>
             <div class="wrong watch"><strong>Fix</strong>做更多 review 也不够。如果 review 只是换一个 creator 复述卖点，没有拆 safety、skin tone、PCOS、长期效果和竞品比较，它仍然只是曝光内容。</div>
-            <div class="wrong good"><strong>Build</strong>正确方向是搭 creator proof matrix：让 YouTube 承接 high-intent search，让 TikTok 测 proof hook，让 Instagram 沉淀可复用信任资产，再用 rebook 标准决定谁值得继续投。</div>
+            <div class="wrong good"><strong>Build</strong>正确方向是搭购买证据矩阵：让 YouTube 承接 high-intent search，让 TikTok 测证据型 hook，让 Instagram 沉淀可复用信任资产，再用 rebook 标准决定谁值得继续投。</div>
           </div>
         </div>
       </div>
@@ -1391,7 +1392,7 @@
           <span class="axis-y low">Trust / Authority Low</span>
           <span class="axis-x left">Lower KOL Intensity</span>
           <span class="axis-x right">Higher KOL Intensity</span>
-          <span class="dot ulike" style="--x:62%;--y:67%" data-name="Ulike: proof system needed"></span>
+          <span class="dot ulike" style="--x:62%;--y:67%" data-name="Ulike: 购买证据链缺口"></span>
           <span class="dot braun" style="--x:48%;--y:80%" data-name="Braun: authority safety"></span>
           <span class="dot nood" style="--x:78%;--y:43%" data-name="Nood: price challenger"></span>
           <span class="dot current" style="--x:39%;--y:72%" data-name="CurrentBody: beauty tech trust"></span>
@@ -1625,7 +1626,7 @@
     <section class="shell">
       <div class="section-head">
         <span class="section-kicker">First 30 Days</span>
-        <h2>先审计现有 creator，再搭 proof matrix。</h2>
+        <h2>先审计现有 creator，再搭购买证据矩阵。</h2>
         <p class="lead">Ulike 不应平均对待所有红人。接下来要判断哪些 creator 值得 rebook，哪些内容值得变成 paid social、landing page、Amazon asset 和 email 素材。</p>
       </div>
       <div class="timeline">
@@ -1653,7 +1654,7 @@
         <div class="card card-pad dark-card">
           <span class="label">Budget Direction</span>
           <h3>不建议先砸头部红人。</h3>
-          <p>更合理的方向是：中腰部 creator proof matrix、YouTube high-intent review、TikTok series testing、PCOS/stubborn hair/safety education、winner rebook 和 paid boost。</p>
+          <p>更合理的方向是：中腰部购买证据矩阵、YouTube high-intent review、TikTok series testing、PCOS/stubborn hair/safety education、winner rebook 和 paid boost。</p>
         </div>
         <div class="card card-pad">
           <span class="label">Measurement Readiness</span>
