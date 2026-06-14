@@ -195,6 +195,32 @@
       font-weight: 840;
     }
     .thesis p { color: var(--body); font-size: 14px; }
+    .why-diagnosis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .why-item {
+      min-height: 94px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.68);
+      box-shadow: var(--shadow-soft);
+    }
+    .why-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--sea-dark);
+      font-size: 12px;
+      font-weight: 840;
+    }
+    .why-item span {
+      color: var(--body);
+      font-size: 12px;
+      line-height: 1.38;
+    }
 
     .hero-panel {
       display: grid;
@@ -695,6 +721,16 @@
     .level.mid { background: rgba(163,101,0,.13); color: var(--amber); }
     .level.low { background: rgba(199,38,46,.1); color: var(--red); }
     .level.unknown { background: rgba(16,22,22,.05); color: var(--muted); }
+    .method-note {
+      margin: -6px 0 18px;
+      padding: 13px 15px;
+      border: 1px solid rgba(45,98,97,.18);
+      border-radius: var(--radius);
+      background: rgba(225,236,232,.62);
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.5;
+    }
 
     .locked-wall {
       display: grid;
@@ -857,6 +893,7 @@
       .hero { min-height: auto; grid-template-columns: 1fr; padding: 34px 0 34px; }
       h1 { font-size: clamp(42px, 12vw, 58px); }
       .hero-copy { font-size: 15px; }
+      .why-diagnosis { grid-template-columns: 1fr; }
       .evidence-strip, .platform-map, .archetypes, .timeline, .locked-wall, .two, .three, .four, .matrix-wrap, .quote-split { grid-template-columns: 1fr; }
       .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .metric { min-height: 112px; padding: 14px; }
@@ -909,14 +946,28 @@
         <div class="meta">
           <span class="chip"><strong>Brand</strong> Ulike</span>
           <span class="chip"><strong>Market</strong> US / North America</span>
-          <span class="chip"><strong>Date</strong> 2026-06-13</span>
-          <span class="chip"><strong>Mode</strong> Free Preview</span>
+          <span class="chip"><strong>Updated</strong> 2026-06-14</span>
+          <span class="chip"><strong>Mode</strong> Public-data diagnosis</span>
         </div>
         <h1>Ulike 红人增长诊断</h1>
-        <p class="hero-copy">Ulike 已经进入 KOL 增长优化期。公开信号显示，它已有 affiliate、sponsored creator、PR review、Amazon/官网联动和专家背书动作。</p>
+        <p class="hero-copy">Ulike 已经进入 KOL 增长优化期。公开信号显示，它已有 affiliate、sponsored creator、PR review、Amazon/官网联动和专家背书动作；当前更关键的问题，是这些信任资产尚未被系统转译成购买决策证据链。</p>
         <div class="thesis">
           <strong>核心判断</strong>
-          <p>下一阶段的核心任务，是把现有红人动作从折扣码和单点测评，升级成证据驱动的 creator proof system。</p>
+          <p>Ulike 的下一阶段不是单纯增加 KOL 数量，而是修复 Proof Translation Gap：把已有产品卖点、专家背书、PCOS 场景和 creator 内容，组织成能回答用户购买顾虑的 proof system。</p>
+        </div>
+        <div class="why-diagnosis" aria-label="Why this diagnosis">
+          <div class="why-item">
+            <strong>1. 内容仍在持续上线</strong>
+            <span>YouTube 样本出现 2025-2026 review、1-year update、comparison、doctor-style 和 affiliate/disclosure 线索。</span>
+          </div>
+          <div class="why-item">
+            <strong>2. 品类依赖证明链</strong>
+            <span>At-home IPL 用户要判断肤色/毛发适配、痛感、安全边界、长期效果和竞品差异。</span>
+          </div>
+          <div class="why-item">
+            <strong>3. 竞品正在分工抢心智</strong>
+            <span>Braun 抢安全权威，Nood 抢价格转化，CurrentBody 抢高端 beauty tech 信任。</span>
+          </div>
         </div>
       </div>
 
@@ -948,15 +999,15 @@
             <small>TikTok 负责 hook 测试，Instagram 负责再营销素材。</small>
           </div>
           <div class="metric">
-            <span class="label">Main Risk</span>
-            <strong>Trust Gap</strong>
-            <span>效果因人而异，安全边界需要 creator 内容解释清楚。</span>
-            <small>尤其是 skin tone / hair color / PCOS。</small>
+            <span class="label">Primary Gap</span>
+            <strong>Proof Translation</strong>
+            <span>品牌已有信任资产，但 creator 内容需要更系统地覆盖购买顾虑。</span>
+            <small>尤其是 skin tone、hair color、PCOS、痛感和长期结果。</small>
           </div>
           <div class="metric">
             <span class="label">Budget Direction</span>
             <strong>Matrix</strong>
-            <span>不建议先砸头部，先做 proof matrix 和 rebook。</span>
+            <span>先做 proof matrix 和 winner rebook，再判断是否放量头部或 paid boost。</span>
             <small>预算应基于 creator tier、内容用途和复投阈值量化。</small>
           </div>
         </div>
@@ -1005,7 +1056,7 @@
           <div class="wrong-right">
             <div class="wrong">错误方向：找更多大号，继续用折扣码铺量。</div>
             <div class="wrong">半对方向：做更多 review，但不区分购买顾虑和平台角色。</div>
-            <div class="wrong good">推荐方向：用 creator proof matrix 承接 safety、PCOS、comparison、long-term proof 和 high-intent search。</div>
+            <div class="wrong good">推荐方向：用 creator proof matrix 承接 safety、PCOS、comparison、long-term proof、skin/hair fit 和 high-intent search。</div>
           </div>
         </div>
       </div>
@@ -1015,7 +1066,7 @@
       <div class="section-head">
         <span class="section-kicker">Competitor KOL Posture</span>
         <h2>竞品打法已经分化，Ulike 需要用证据型内容建立防守。</h2>
-        <p class="lead">Ulike 面临的不是一个竞品，而是三种不同的内容战场：大牌安全权威、年轻化价格挑战、高端 beauty tech 信任。不同竞品抢的是不同购买顾虑，Ulike 的防守也需要分层。</p>
+        <p class="lead">Ulike 面临的不是一个竞品，而是三种不同的内容战场：大牌安全权威、年轻化价格挑战、高端 beauty tech 信任。不同竞品抢的是不同购买顾虑，Ulike 的防守需要按用户顾虑拆成 safety proof、value proof、authority proof 和 comparison proof。</p>
       </div>
       <div class="matrix-wrap">
         <div class="matrix" role="img" aria-label="Competitor posture matrix">
@@ -1036,15 +1087,15 @@
         <div class="competitor-notes">
           <div class="note-row">
             <strong>Braun</strong>
-            <p>打法是“安全权威 + 大牌确定性”。Braun 用 SkinProtect Sensor、app guidance、dermatologically / gynecologically tested、FDA cleared、German design 和 100 years of experience，把用户的核心顾虑从“会不会有效”拉到“哪个更稳、更安全”。Ulike 需要用 creator proof 回应 safety、skin tone fit、intimate-area boundary 和长期结果。</p>
+            <p>打法是“安全权威 + 大牌确定性”。Braun 用 SkinProtect Sensor、app guidance、dermatologically / gynecologically tested、FDA cleared、German design 和 100 years of experience，把用户的核心顾虑从“会不会有效”拉到“哪个更稳、更安全”。它抢走的是风险厌恶型用户和高客单安全心智；Ulike 需要用 creator proof 回应 safety、skin tone fit、intimate-area boundary 和长期结果。</p>
           </div>
           <div class="note-row">
             <strong>Nood</strong>
-            <p>打法是“价格挑战 + 社交转化”。Nood 用 accessible pricing、The Flasher 2.0、visible-results timeline、serum bundle、dermatologist-backed language 和 UGC/review 语气，抢想尝试 IPL 但价格敏感的用户。Ulike 的反制点不应只是折扣，而是更强的 pain test、speed proof、sensor/safety proof 和 comparison content。</p>
+            <p>打法是“价格挑战 + 社交转化”。Nood 用 accessible pricing、The Flasher 2.0、visible-results timeline、serum bundle、dermatologist-backed language 和 UGC/review 语气，抢想尝试 IPL 但价格敏感的用户。它占据的是“先试试看”的低门槛语境；Ulike 的反制点不应只是折扣，而是更强的 pain test、speed proof、sensor/safety proof 和 comparison content。</p>
           </div>
           <div class="note-row">
             <strong>CurrentBody</strong>
-            <p>打法是“高端 beauty tech 货架信任”。CurrentBody 不只是卖单一脱毛仪，而是用 LED mask、laser、clinical language、FDA-cleared claims 和媒体型内容建立 beauty device authority。它争夺的是愿意为可信科技美容设备付高价的人群。Ulike 需要在 YouTube 和长文 review 中证明自己不仅是 TikTok 爆品，也是可长期使用的 beauty tech device。</p>
+            <p>打法是“高端 beauty tech 货架信任”。CurrentBody 不只是卖单一脱毛仪，而是用 LED mask、laser、clinical language、FDA-cleared claims 和媒体型内容建立 beauty device authority。它争夺的是愿意为可信科技美容设备付高价的人群；Ulike 需要在 YouTube、长文 review 和专家型 creator 内容中证明自己不仅是 TikTok 爆品，也是可长期使用的 beauty tech device。</p>
           </div>
           <div class="note-row">
             <strong>RoseSkinCo / SmoothSkin / Philips Lumea</strong>
@@ -1057,8 +1108,8 @@
     <section class="shell" id="platforms">
       <div class="section-head">
         <span class="section-kicker">Platform Role Map</span>
-        <h2>YouTube 负责信任和搜索，TikTok 负责测试，Instagram 负责素材沉淀。</h2>
-        <p class="lead">Ulike 不应该把三个平台当作同一种红人投放。每个平台承担的购买心理任务不同，brief、creator、KPI 也应该不同。</p>
+        <h2>平台不是排序，而是购买决策分工。</h2>
+        <p class="lead">YouTube 负责高意图搜索和信任闭环，TikTok 负责 proof hook 测试和 paid creative engine，Instagram 负责 lifestyle credibility、再营销素材和 creator relationship layer。brief、KPI 和 rebook 标准应按平台角色拆开。</p>
       </div>
       <div class="platform-map">
         <article class="platform primary">
@@ -1076,7 +1127,7 @@
         <article class="platform">
           <span class="priority">Priority 2</span>
           <h3>TikTok</h3>
-          <p>快速测试 hook、痛点和场景。但要从折扣码型短视频升级成 series-based proof content。</p>
+          <p>Proof hook testing + paid creative engine。TikTok 可以继续放大，但要从折扣码型短视频升级成 series-based proof content。</p>
           <div class="lane">
             <span class="lane-item">I stopped shaving for X weeks</span>
             <span class="lane-item">PCOS facial hair routine</span>
@@ -1088,7 +1139,7 @@
         <article class="platform">
           <span class="priority">Priority 3</span>
           <h3>Instagram</h3>
-          <p>Lifestyle credibility + retargeting assets + creator relationship layer。不是首要转化平台，但很适合沉淀品牌质感。</p>
+          <p>Lifestyle credibility + retargeting assets + creator relationship layer。Instagram 适合把 proof 内容转成可复用的视觉素材和再营销资产。</p>
           <div class="lane">
             <span class="lane-item">Before / after carousel</span>
             <span class="lane-item">Routine reel</span>
@@ -1146,6 +1197,7 @@
         <h2>最大缺口是内容证据的组织方式。</h2>
         <p class="lead">Ulike 已经有强产品 claims，但 creator 内容要把这些 claims 拆成用户能相信的过程证据。</p>
       </div>
+      <p class="method-note">Scoring basis: 评级基于公开官网资产、Amazon/媒体信号、YouTube 搜索样本、可见 creator 内容类型和竞品内容语境。Strong 表示品牌侧资产清晰；Gap 表示 creator proof 或搜索拦截承接不足；Unknown 表示需要后台或平台级 crawl 验证。</p>
       <div class="heatmap" aria-label="Content gap heatmap">
         <div class="heat-cell head">Asset</div>
         <div class="heat-cell head">Brand</div>
@@ -1206,8 +1258,8 @@
       </div>
       <div class="locked-wall">
         <article class="locked-card">
-          <h3>Competitor KOL Playbook</h3>
-          <p>已识别至少 3 种竞品打法：大牌安全信任、年轻化价格挑战、高端 beauty tech 权威。</p>
+          <h3>Competitor Objection Map</h3>
+          <p>已识别 3 个竞品拦截语境：Braun 抢 safety authority，Nood 抢 price/value conversion，CurrentBody 抢 beauty tech credibility。下一层要量化这些语境对应的 creator、keyword、hook 和评论区购买意图。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
@@ -1216,8 +1268,8 @@
           <span class="lock-label">Next: playbook</span>
         </article>
         <article class="locked-card">
-          <h3>Creator Shortlist</h3>
-          <p>已识别 6 类更适合 Ulike 当前阶段的 creator archetype，下一层分析需要筛具体账号和合作优先级。</p>
+          <h3>Creator Rebook Logic</h3>
+          <p>下一层不是只补账号名单，而是区分 proof creator、sales creator、content-only creator 和 risk creator，判断谁值得 rebook、谁只适合拿素材、谁会稀释信任。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
@@ -1226,8 +1278,8 @@
           <span class="lock-label">Next: account list</span>
         </article>
         <article class="locked-card">
-          <h3>YouTube Search Interception Map</h3>
-          <p>高价值机会不在泛曝光，而在 Ulike vs Braun、best IPL device、IPL for PCOS 这类高意图内容。</p>
+          <h3>YouTube Proof Cluster</h3>
+          <p>公开样本已经出现 doctor-style review、1-year update、brown skin、men's grooming 和 comparison。下一层要拆哪些关键词已经有 Ulike 露出，哪些仍被竞品和中立 reviewer 占据。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
@@ -1237,7 +1289,7 @@
         </article>
         <article class="locked-card">
           <h3>Proof Content Wall</h3>
-          <p>已识别需要补强的内容证据：长期追踪、pain test、skin/hair compatibility、PCOS journey、comparison review。</p>
+          <p>已识别需要补强的内容证据：长期追踪、pain test、skin/hair compatibility、PCOS journey、comparison review。下一层要把内容样本、hook、评论区信号和可复用 brief 串成执行资产。</p>
           <div class="fake-list">
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
             <div class="fake-row"><span class="avatar"></span><span class="line"></span><span class="tag"></span></div>
@@ -1293,7 +1345,7 @@
       <div class="section-head">
         <span class="section-kicker">Sources and Caveats</span>
         <h2>本报告基于公开资料，不硬猜内部经营数据。</h2>
-        <p class="lead">GMV、毛利、CAC、ROAS、creator 合同、Amazon Attribution、TikTok Shop、Meta Ads 或 Shopify 数据均未纳入。Modash 的 54 creators 仅代表其公开页面在 2025-08-22 更新时列出的 Ulike sponsored creator sample，页面未披露 exact lookback window，不能作为全网红人内容数量。完整 TideLens 应结合 YouTube / TikTok / Instagram 平台级 crawl、后台数据与人工复核。</p>
+        <p class="lead">GMV、毛利、CAC、ROAS、creator 合同、Amazon Attribution、TikTok Shop、Meta Ads 或 Shopify 数据均未纳入。Modash 的 54 creators 仅代表其公开页面在 2025-08-22 更新时列出的 Ulike sponsored creator sample，页面未披露 exact lookback window，不能作为全网红人内容数量。下一层 TideLens 应结合 YouTube / TikTok / Instagram 平台级 crawl、后台数据与人工复核。</p>
       </div>
       <div class="source-grid">
         <a href="https://www.ulike.com/products/sapphire-air-10-ipl-hair-removal" target="_blank" rel="noreferrer">Ulike Air 10 official product page</a>
@@ -1316,7 +1368,7 @@
   <footer>
     <div class="shell">
       <span><strong>Offing TideLens｜远汐·潮镜</strong> KOL Growth Diagnosis Workspace</span>
-      <span>Generated for Ulike, noindex preview, 2026-06-13</span>
+      <span>Updated for Ulike, noindex preview, 2026-06-14</span>
     </div>
   </footer>
 </body>
