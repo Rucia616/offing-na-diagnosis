@@ -103,6 +103,24 @@
       color: var(--ink);
     }
     .brand:hover { color: var(--ink); }
+    .brand-lockup {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 5px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 860;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .brand-lockup::after {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--sea), var(--violet), var(--rose));
+    }
     .brand-mark {
       position: relative;
       display: inline-flex;
@@ -1673,11 +1691,7 @@
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="#top" aria-label="Offing TideLens">
-        <span class="brand-mark">远汐 Offing</span>
-        <span class="brand-copy">
-          <strong>TideLens</strong>
-          <span>红人增长诊断</span>
-        </span>
+        <span class="brand-lockup">远汐Offing&nbsp;&nbsp;Tidelens红人营销诊断（免费版）</span>
       </a>
       <nav class="nav-links" aria-label="Report navigation">
         <a href="#diagnosis">诊断</a>
