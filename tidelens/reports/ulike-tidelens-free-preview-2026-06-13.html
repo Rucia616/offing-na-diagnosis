@@ -84,45 +84,71 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--surface) 88%, transparent);
-      backdrop-filter: saturate(180%) blur(18px);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+      background: color-mix(in srgb, var(--top) 92%, transparent);
+      backdrop-filter: saturate(160%) blur(18px);
     }
     .topbar-inner {
-      min-height: 68px;
+      min-height: 54px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: clamp(18px, 3vw, 40px);
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
       min-width: 0;
+      color: var(--ink);
     }
-    .brand img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
+    .brand:hover { color: var(--ink); }
+    .brand-mark {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 5px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 860;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .brand-mark::after {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--sea), var(--violet), var(--rose));
     }
     .brand-copy {
-      display: grid;
-      gap: 2px;
-      line-height: 1.12;
-      min-width: 0;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-left: 12px;
+      line-height: 1;
     }
     .brand-copy strong {
       color: var(--ink);
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 820;
       white-space: nowrap;
     }
     .brand-copy span {
+      position: relative;
+      padding-left: 10px;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 680;
+      font-weight: 700;
       white-space: nowrap;
+    }
+    .brand-copy span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .12em;
+      bottom: .1em;
+      width: 1px;
+      background: var(--line);
     }
     .nav-links {
       display: flex;
@@ -130,22 +156,24 @@
       gap: 18px;
       color: var(--body);
       font-size: 13px;
-      font-weight: 720;
+      font-weight: 680;
       white-space: nowrap;
     }
     .nav-links a {
-      min-height: 32px;
+      min-height: 30px;
       display: inline-flex;
       align-items: center;
       border-bottom: 1px solid transparent;
+      color: color-mix(in srgb, var(--ink) 72%, var(--muted));
     }
+    .nav-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
     .cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border-radius: var(--radius);
+      min-height: 34px;
+      padding: 0 13px;
+      border-radius: 999px;
       color: #fff;
       background: var(--action);
       font-size: 13px;
@@ -1644,20 +1672,20 @@
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="#top" aria-label="Offing TideLens">
-        <img src="../../assets/offing/offing-symbol-b23.png" alt="Offing" />
+        <span class="brand-mark">远汐 Offing</span>
         <span class="brand-copy">
-          <strong>Offing TideLens｜远汐·潮镜</strong>
-          <span>KOL Growth Diagnosis Workspace</span>
+          <strong>TideLens</strong>
+          <span>红人增长诊断</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="Report navigation">
         <a href="#diagnosis">诊断</a>
         <a href="#volume">上线量</a>
-        <a href="#signals">公开信号</a>
-        <a href="#competitors">竞品姿态</a>
+        <a href="#signals">信号</a>
+        <a href="#competitors">竞品</a>
         <a href="#platforms">平台打法</a>
         <a href="#creators">画像</a>
-        <a href="#unlock" class="cta">申请完整分析</a>
+        <a href="#unlock" class="cta">完整分析</a>
       </nav>
     </div>
   </header>
