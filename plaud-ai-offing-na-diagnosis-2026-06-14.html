@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plaud AI · 远汐 Offing 免费北美业务诊断 · 2026-06-14</title>
-  <meta name="description" content="Plaud AI 北美业务诊断：硬件获客与软件订阅已成立，下一阶段关键在付费续费、团队席位、渠道纪律与高信任垂直场景。">
+  <title>Plaud AI · 远汐 Offing 免费北美业务诊断 · 2026-06-15</title>
+  <meta name="description" content="Plaud AI 北美业务诊断：硬件入口已成立，下一阶段关键在订阅续费、团队席位、合规采购和渠道纪律。">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Cpath d='M16 42V18h12c8 0 13 4 13 11s-5 11-13 11h-5v2z' fill='%23F8FAF9'/%3E%3Cpath d='M44 18h4v24h-4z' fill='%238F53ED'/%3E%3C/svg%3E">
   <style>
     :root {
@@ -33,7 +33,14 @@
       --brand-purple: #6C3BEF;
       --brand-blue: #0077B8;
       --brand-soft: #F3F2FA;
+      --prism-teal: #32D6C6;
+      --prism-sky: #9ED1FF;
+      --prism-pink: #F7A4D8;
+      --prism-lilac: #9B7CFF;
+      --prism-coral: #FF6B4A;
+      --prism-green: #70E5A8;
       --shadow: 0 12px 34px rgba(16,20,19,.07);
+      --result-shadow: 0 26px 72px rgba(16,20,19,.10);
       --radius: 8px;
     }
     @media (prefers-color-scheme: dark) {
@@ -60,7 +67,14 @@
         --inverse-text: #101413;
         --inverse-muted: #40504C;
         --brand-soft: #24202E;
+        --prism-teal: #57E6DA;
+        --prism-sky: #9ED1FF;
+        --prism-pink: #FFB3E2;
+        --prism-lilac: #B7A8FF;
+        --prism-coral: #FF8A70;
+        --prism-green: #8AF0B8;
         --shadow: 0 12px 34px rgba(0,0,0,.36);
+        --result-shadow: 0 26px 72px rgba(0,0,0,.42);
       }
     }
     * { box-sizing: border-box; }
@@ -69,7 +83,11 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
       background-color: var(--bg);
-      background-image: linear-gradient(180deg, var(--top), var(--bg) 560px);
+      background-image:
+        radial-gradient(circle at 7% -8%, rgba(50,214,198,.16), transparent 32vw),
+        radial-gradient(circle at 93% 0%, rgba(247,164,216,.14), transparent 30vw),
+        radial-gradient(circle at 72% 20%, rgba(158,209,255,.10), transparent 28vw),
+        linear-gradient(180deg, var(--top), var(--bg) 560px);
       color: var(--body);
       line-height: 1.65;
       font-size: 15px;
@@ -95,9 +113,12 @@
       overflow-x: auto;
       white-space: nowrap;
     }
-    .nav-mark { color: var(--text); font-weight: 800; margin-right: 8px; }
+    .nav-mark { position: relative; color: var(--text); font-weight: 800; margin-right: 8px; }
+    .nav-mark::after { content: ""; display: block; width: 44px; height: 2px; margin-top: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-pink), var(--prism-lilac)); }
     .nav-inner a { color: var(--muted); font-size: 13px; font-weight: 650; }
     .hero {
+      position: relative;
+      overflow: hidden;
       max-width: 1180px;
       margin: 0 auto;
       min-height: 92vh;
@@ -106,6 +127,20 @@
       align-content: center;
       gap: 30px;
     }
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 82px;
+      right: min(5vw, 66px);
+      width: clamp(170px, 24vw, 312px);
+      aspect-ratio: 1;
+      background: conic-gradient(from 210deg, var(--prism-teal), var(--prism-sky), var(--prism-pink), var(--prism-lilac), var(--prism-coral), var(--prism-green), var(--prism-teal));
+      clip-path: polygon(48% 0%, 100% 28%, 84% 100%, 12% 83%, 0% 30%);
+      opacity: .16;
+      pointer-events: none;
+    }
+    .hero > * { position: relative; z-index: 1; }
     .logo { width: 170px; max-width: 52vw; display: block; margin-bottom: 24px; }
     .logo img { width: 100%; height: auto; display: block; }
     @media (prefers-color-scheme: dark) {
@@ -115,11 +150,11 @@
       color: var(--accent-text);
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .08em;
+      letter-spacing: 0;
       text-transform: uppercase;
     }
     h1, h2, h3 { color: var(--text); margin: 0; line-height: 1.12; letter-spacing: 0; }
-    h1 { font-size: clamp(56px, 10vw, 116px); font-weight: 850; margin: 0 0 18px; }
+    h1 { font-size: clamp(56px, 10vw, 116px); font-weight: 900; margin: 0 0 18px; }
     h1 span { display: block; }
     .hero-lead {
       max-width: 980px;
@@ -129,13 +164,17 @@
       font-weight: 650;
       margin: 0;
     }
-    .score-wrap { display: grid; grid-template-columns: minmax(280px, .86fr) 1.2fr; gap: 16px; align-items: stretch; }
+    .score-wrap { position: relative; display: grid; grid-template-columns: minmax(280px, .86fr) 1.2fr; gap: 1px; align-items: stretch; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); box-shadow: var(--result-shadow); }
+    .score-wrap::before { content: ""; position: absolute; z-index: 2; inset: 0 0 auto; height: 5px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-pink), var(--prism-lilac), var(--prism-coral), var(--prism-green)); }
     .total-card {
-      background: var(--inverse-bg);
+      background:
+        radial-gradient(circle at 86% 18%, rgba(50,214,198,.22), transparent 33%),
+        radial-gradient(circle at 14% 88%, rgba(247,164,216,.16), transparent 32%),
+        var(--inverse-bg);
       color: var(--inverse-text);
-      border-radius: var(--radius);
+      border-radius: 0;
       padding: 24px;
-      box-shadow: var(--shadow);
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -143,32 +182,39 @@
     }
     .total-card .label, .total-card p { color: var(--inverse-muted); }
     .total-number { font-size: 74px; line-height: .95; font-weight: 850; color: var(--inverse-text); margin: 12px 0 10px; }
-    .stars { color: #F3BC49; font-size: 28px; letter-spacing: 3px; }
-    .subscores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stars { color: #F3BC49; font-size: 28px; letter-spacing: 0; }
+    .subscores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
     .subscore, .card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    .subscore { padding: 20px; min-height: 220px; }
-    .subscore strong { display: block; color: var(--text); font-size: 44px; line-height: 1; margin: 14px 0; }
+    .subscore { position: relative; padding: 20px; min-height: 220px; border-radius: 0; border: 0; box-shadow: none; background: linear-gradient(180deg, color-mix(in srgb, var(--tone) 7%, var(--surface)) 0%, var(--surface) 44%); }
+    .subscore::before { content: ""; position: absolute; top: 0; left: 18px; right: 18px; height: 5px; border-radius: 0 0 999px 999px; background: var(--tone); }
+    .subscore:nth-child(1) { --tone: var(--success-text); }
+    .subscore:nth-child(2) { --tone: var(--prism-lilac); }
+    .subscore:nth-child(3) { --tone: var(--risk-text); }
+    .subscore strong { display: block; color: var(--tone); font-size: 44px; line-height: 1; margin: 14px 0; }
     .bar { height: 8px; border-radius: 999px; background: color-mix(in srgb, var(--line) 60%, transparent); overflow: hidden; margin: 10px 0 14px; }
     .fill { height: 100%; border-radius: inherit; background: var(--accent-text); }
     .fill.good { background: var(--success-text); }
     .fill.warn { background: var(--warning-text); }
     .fill.bad { background: var(--risk-text); }
-    .label { display: inline-block; color: var(--accent-text); font-size: 12px; font-weight: 850; letter-spacing: .02em; }
+    .label { display: inline-block; color: var(--accent-text); font-size: 12px; font-weight: 850; letter-spacing: 0; }
     section { padding: 58px 24px; }
     .inner { max-width: 1180px; margin: 0 auto; }
     .section-head { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items: end; margin-bottom: 20px; }
-    .section-head h2 { font-size: clamp(28px, 4vw, 48px); }
+    .section-head .eyebrow { display: inline-flex; align-items: center; gap: 8px; }
+    .section-head .eyebrow::before { content: ""; width: 18px; height: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-pink), var(--prism-lilac)); }
+    .section-head h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 880; }
     .lead { margin: 0; color: var(--body); font-size: 16px; }
     .grid { display: grid; gap: 16px; }
     .two { grid-template-columns: repeat(2, 1fr); }
     .three { grid-template-columns: repeat(3, 1fr); }
     .four { grid-template-columns: repeat(4, 1fr); }
     .card { padding: 22px; }
+    .card.metric, .card.result-card { background: linear-gradient(180deg, color-mix(in srgb, var(--tone, var(--accent-text)) 5%, var(--surface)) 0%, var(--surface) 36%); }
     .card h3 { font-size: 21px; margin: 8px 0 12px; }
     .card p, .card li { color: var(--body); margin: 0; }
     ul { padding-left: 1.1em; margin: 12px 0 0; }
@@ -210,9 +256,9 @@
     .stage-step strong { display: block; font-size: 20px; margin-bottom: 6px; }
     .stage-step p { margin: 0; font-size: 13px; color: inherit; opacity: .84; }
     .metric { border-top: 5px solid var(--line); }
-    .metric.good { border-top-color: var(--success-text); background: var(--surface); }
-    .metric.warn { border-top-color: var(--warning-text); background: var(--surface); }
-    .metric.bad { border-top-color: var(--risk-text); background: var(--surface); }
+    .metric.good { --tone: var(--success-text); border-top-color: var(--success-text); }
+    .metric.warn { --tone: var(--warning-text); border-top-color: var(--warning-text); }
+    .metric.bad { --tone: var(--risk-text); border-top-color: var(--risk-text); }
     .score-badge { font-size: 36px; font-weight: 850; line-height: 1; color: var(--text); }
     .stacked {
       display: flex;
@@ -224,11 +270,11 @@
       margin: 18px 0;
     }
     .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 850; min-width: 44px; }
-    .seg.a { background: #2D6261; }
+    .seg.a { background: #111111; }
     .seg.b { background: #101413; }
-    .seg.c { background: #6C3BEF; }
-    .seg.d { background: #A99556; color: #111; }
-    .seg.e { background: #A76560; }
+    .seg.c { background: var(--prism-lilac); }
+    .seg.d { background: var(--prism-teal); color: #111; }
+    .seg.e { background: var(--prism-pink); color: #111; }
     .match-row {
       display: grid;
       grid-template-columns: 1.1fr .78fr 1fr;
@@ -270,7 +316,7 @@
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
     table { width: 100%; border-collapse: collapse; min-width: 880px; }
     th, td { border-bottom: 1px solid var(--line); padding: 12px 14px; text-align: left; vertical-align: top; }
-    th { background: var(--surface-2); color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    th { background: var(--surface-2); color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: 0; }
     td { color: var(--body); }
     tr:last-child td { border-bottom: 0; }
     .dept-group { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
@@ -316,14 +362,18 @@
       <a href="#stage">阶段</a>
       <a href="#gene">人群</a>
       <a href="#type">类型</a>
+      <a href="#search">搜索</a>
       <a href="#voc">VOC</a>
       <a href="#ceiling">天花板</a>
+      <a href="#intent">意图</a>
       <a href="#fit">卖点匹配</a>
       <a href="#summary">一页看懂</a>
       <a href="#blocks">三大板块</a>
       <a href="#problems">关键问题</a>
       <a href="#competitors">竞品</a>
+      <a href="#positioning">定位</a>
       <a href="#scores">评分</a>
+      <a href="#budget">预算</a>
       <a href="#roadmap">路线图</a>
       <a href="#departments">组织</a>
       <a href="#evidence">证据</a>
@@ -338,7 +388,7 @@
         </div>
         <div class="eyebrow">North America Business Diagnosis</div>
         <h1><span>北美业务诊断</span></h1>
-        <p class="hero-lead">Plaud 北美已经进入硬件获客加软件订阅的经营系统化阶段。下一阶段资源应从单机出货转向付费续费、团队席位、合规信任和渠道价格纪律，让 Note Pro（AI 录音卡片）与 NotePin S（可穿戴 AI 录音器）沉淀成持续收入。</p>
+        <p class="hero-lead">Plaud 北美已经把 Note Pro（AI 录音卡片）和 NotePin S（可穿戴 AI 录音器）做成专业人群的硬件入口。下一阶段不能只看出货，要把用户推向可续费的软件工作流和团队席位；30/90 天资源优先投订阅转化、团队版证据、合规采购页和渠道价格纪律。</p>
       </div>
       <div class="score-wrap">
         <div class="total-card">
@@ -347,7 +397,7 @@
             <div class="total-number">72</div>
             <div class="stars" aria-label="3.6 out of 5 stars">★★★★☆</div>
           </div>
-          <p>72 / 100 = 3.6 / 5。业务健康度 74 × 45% = 33.3；业务机会分 83 × 35% = 29.1；安全余量（100 - 问题致命度 52）× 20% = 9.6。数据抓取日期：2026-06-14。</p>
+          <p>72 / 100 = 3.6 / 5。业务健康度 74 × 45% = 33.3；业务机会分 83 × 35% = 29.1；安全余量（100 - 问题致命度 52）× 20% = 9.6。数据抓取日期：2026-06-15。</p>
         </div>
         <div class="subscores">
           <div class="subscore">
@@ -389,7 +439,7 @@
           <div class="card metric good">
             <span class="label">销售规模校准</span>
             <h3>全球年化收入约 USD 250M，约 RMB 16.9 亿。</h3>
-            <p>第三方报道披露 Plaud 2025 年收入年化约 USD 250M；按 2026-06-14 约 1 USD = 6.76 RMB 换算。北美零售 GMV 估算 USD 90M-145M，需用 Shopify、Amazon Seller Central 与订阅后台复核。E12, E13</p>
+            <p>第三方报道披露 Plaud 2025 年收入年化约 USD 250M；按 2026-06-15 约 1 USD = 6.76 RMB 换算，约 RMB 16.9 亿。北美零售 GMV 估算 USD 90M-145M，需用 Shopify、Amazon Seller Central 与订阅后台复核。E12, E13</p>
           </div>
           <div class="card metric warn">
             <span class="label">阶段动作适配</span>
@@ -474,6 +524,55 @@
       </div>
     </section>
 
+    <section id="search">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Search Mindshare</span>
+            <h2>搜索心智：Plaud 品牌词接住了，行业词会被软件会议助手分流。</h2>
+          </div>
+          <p class="lead">Plaud 在“AI recorder / Plaud Note / Plaud Note Pro”这类硬件和品牌词上已经有心智。真正需要补的是“best AI note taker”“AI meeting assistant”“Plaud vs Otter / Granola”这类比较词：用户在这些入口里不是只买设备，而是在判断要不要把工作流交给 Plaud。</p>
+        </div>
+        <div class="grid four">
+          <div class="card metric warn">
+            <span class="label">行业词</span>
+            <h3>半接住</h3>
+            <p>AI note taker、AI meeting assistant、voice recorder for meetings 会把 Plaud、Otter、Granola、Fireflies、Fathom 和手机系统功能放到同一个比较框里。Plaud 有硬件差异化，但不能只讲录音设备。</p>
+            <div class="pill-row"><span class="pill warn">需比较内容</span></div>
+          </div>
+          <div class="card metric good">
+            <span class="label">品牌词</span>
+            <h3>接住了</h3>
+            <p>Plaud、Plaud Note、Plaud Note Pro、Plaud NotePin S 已经能被官网、Amazon、媒体评测、Trustpilot 和社区讨论承接。品牌词是当前最稳的高意图资产。</p>
+            <div class="pill-row"><span class="pill good">继续放大</span></div>
+          </div>
+          <div class="card metric good">
+            <span class="label">行业 + 品牌词</span>
+            <h3>接得不错</h3>
+            <p>Plaud AI recorder、Plaud AI note taker、Plaud transcription 这类词能把用户引到硬件 + App 的组合价值，但订阅 ROI 和合规采购仍需要更前置。</p>
+            <div class="pill-row"><span class="pill good">主线成立</span></div>
+          </div>
+          <div class="card metric bad">
+            <span class="label">竞品词</span>
+            <h3>没接牢</h3>
+            <p>Plaud vs Otter、Plaud vs Granola、Plaud vs Google Recorder 这类比较词会直接影响是否付费和是否买硬件。当前公开承接还不够系统。</p>
+            <div class="pill-row"><span class="pill bad">应补对比页</span></div>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-top:16px">
+          <table>
+            <thead><tr><th>搜索入口</th><th>用户真实意图</th><th>承接判定</th><th>经营动作</th></tr></thead>
+            <tbody>
+              <tr><td>“Plaud Note Pro review”</td><td>确认硬件是否真的比手机好用</td><td><span class="tag good">接住了</span><p>媒体、Amazon 和 YouTube 能支撑首单信任；Note Pro 的屏幕、四麦、自动切换和 highlight button 有辨识度。E5, E19</p></td><td>把 review landing page 做成“高频专业场景证明页”，不只放媒体 quote。</td></tr>
+              <tr><td>“best AI note taker / AI meeting assistant”</td><td>在硬件、软件和系统功能之间做方案选择</td><td><span class="tag warn">半接住</span><p>Plaud 有硬件入口，但软件竞品在会议生态里更自然，用户会把 Plaud 当作工作流方案比较。E14-E18</p></td><td>建立“硬件 + Desktop + Plaud Intelligence”完整工作流页，对比 Otter / Granola / Fireflies。</td></tr>
+              <tr><td>“Plaud subscription cost / membership”</td><td>判断买完硬件后还要花多少钱</td><td><span class="tag bad">没接牢</span><p>价格页清楚，但价值证明偏功能表；用户真正要看节省时间、团队收益和不用订阅时损失什么。E3, E10, E11</p></td><td>会员页按角色展示 ROI：销售、咨询、医疗、法律、教育，而不是只列分钟数。</td></tr>
+              <tr><td>“Plaud vs Otter / Granola / Google Recorder”</td><td>确认是否需要专门硬件</td><td><span class="tag bad">没接住</span><p>这是 Plaud 最该主动解释的入口。轻度会议用户可能被软件方案和手机功能拿走。E18, E20</p></td><td>做对比页：线下/电话/隐私/跨设备/合规场景由 Plaud 赢；纯线上轻会议不硬抢。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <section id="voc">
       <div class="inner">
         <div class="section-head">
@@ -521,7 +620,7 @@
           <div class="card">
             <span class="label">P0 · Note / Note Pro / NotePin 硬件</span>
             <h3>北美可服务盘：USD 180M-350M / 年。</h3>
-            <p>以 AI 记录硬件、专业录音设备和高频知识工作者硬件入口估算。Plaud 北美当前 GMV 估算 USD 65M-110M，份额已经很高，但硬件价格和换代节奏会被手机与软件竞品持续压缩。E1, E4-E6, E12-E16</p>
+            <p>以 AI 记录硬件、专业录音设备和高频知识工作者硬件入口估算。Plaud 北美当前 GMV 估算 USD 65M-110M，份额已经很高，但硬件价格和换代节奏会被手机与软件竞品持续压缩。E1, E4-E6, E12-E16, E19</p>
             <div class="pill-row"><span class="pill good">主收入线</span><span class="pill warn">硬件溢价需守住</span></div>
           </div>
           <div class="card">
@@ -536,6 +635,56 @@
             <p>Business 版本、Trust Center 和合规承诺已经具备企业化前提，但公开案例、行业模板、seat expansion 和采购流程仍应补强。短期先把销售、医疗、法律和教育作为高信任试点。E3, E17</p>
             <div class="pill-row"><span class="pill warn">验证型机会</span><span class="pill neutral">需要内部 ARR</span></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intent">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">User Intent Map</span>
+            <h2>用户意图地图：北美用户下单前，先确认“能不能省时间、是否合规、订阅值不值”。</h2>
+          </div>
+          <p class="lead">Plaud 的购买顾虑不是普通硬件参数。用户在买之前会问：录得准不准、隐私和同意怎么处理、为什么不用手机或 Otter、订阅到底值不值、团队能不能协同。谁能把这五个问题讲清楚，谁就能把硬件首单推进到续费和团队席位。</p>
+        </div>
+        <div class="grid four">
+          <div class="card metric good">
+            <span class="label">SERP / 媒体评测</span>
+            <h3>首单信任接住了</h3>
+            <p>用户能看到 Note Pro / NotePin S 的媒体和零售评价，硬件“好不好用”有足够入口。下一步要把评测素材转成工作流价值，而不是停留在开箱。</p>
+            <div class="pill-row"><span class="pill good">首单强</span></div>
+          </div>
+          <div class="card metric warn">
+            <span class="label">YouTube / Creator</span>
+            <h3>场景解释还不够聚焦</h3>
+            <p>创作者能讲清设备形态，但容易停在“很酷的 AI 录音器”。Plaud 需要更多职业场景：销售拜访、医生访谈、律师 intake、课堂和采访。</p>
+            <div class="pill-row"><span class="pill warn">场景需收窄</span></div>
+          </div>
+          <div class="card metric bad">
+            <span class="label">Reddit / 论坛</span>
+            <h3>替代品和订阅疑虑会影响续费</h3>
+            <p>社区讨论会追问硬件必要性、同步速度、取消/订阅和纯软件替代。它不会摧毁首单，但会压低 Pro / Unlimited 的长期接受度。</p>
+            <div class="pill-row"><span class="pill bad">续费风险</span></div>
+          </div>
+          <div class="card metric warn">
+            <span class="label">Amazon / Retail VOC</span>
+            <h3>Note Pro 强，NotePin 系列要继续修摩擦</h3>
+            <p>Amazon 评分证明主线硬件成立；NotePin S 用实体按钮修复早期触控不确定性，但可穿戴形态还要通过评分和退货率继续验证。</p>
+            <div class="pill-row"><span class="pill warn">形态仍需验证</span></div>
+          </div>
+        </div>
+        <div class="table-wrap" style="margin-top:16px">
+          <table>
+            <thead><tr><th>用户担心点</th><th>经营权重</th><th>Plaud 当前表现</th><th>页面 / 内容优先补什么</th></tr></thead>
+            <tbody>
+              <tr><td>录音、转写和总结是否稳定</td><td>高</td><td><span class="tag good">做得好</span><p>硬件评价、App 评分和 Note Pro 升级支撑可靠性；复杂场景的失败边界还要更透明。E4-E6, E11, E19</p></td><td>补 30/60/120 分钟会议、多人圆桌、电话、现场拜访的真实样本。</td></tr>
+              <tr><td>录音是否合法、数据是否安全</td><td>高</td><td><span class="tag good">做得好但散</span><p>合规认证和 Trust Center 有基础，但行业场景解释不够前置。E17</p></td><td>按医疗、法律、销售、教育做 consent / retention / DPA / HIPAA FAQ。</td></tr>
+              <tr><td>订阅是否值得继续付</td><td>高</td><td><span class="tag bad">做得差</span><p>价格体系完整，但价值证明偏功能表；用户容易把 Pro / Unlimited 当成额外成本。E3, E10, E11</p></td><td>把“每周节省多少小时、少掉多少整理成本、团队席位怎么扩张”放到会员页首屏。</td></tr>
+              <tr><td>为什么不用 Otter / Google Recorder / Granola</td><td>中高</td><td><span class="tag bad">没接住</span><p>Plaud 有硬件入口优势，但对比资产还不够系统。E18, E20</p></td><td>对比页按任务划分：线下、电话、跨设备、隐私敏感任务 Plaud 赢；轻会议软件赢。</td></tr>
+              <tr><td>团队是否能管理、协作和采购</td><td>中高</td><td><span class="tag warn">半接住</span><p>Business/Team 和 Trust Center 有入口，公开案例和 seat expansion 证据不足。E3, E17</p></td><td>补 team admin、权限、审计、模板、行业案例和 5-20 seats 试点包。</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -743,6 +892,40 @@
       </div>
     </section>
 
+    <section id="positioning">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Positioning Upgrade</span>
+            <h2>定位升级：从“AI 录音硬件”升级为“专业记录工作流”。</h2>
+          </div>
+          <p class="lead">Plaud 已经证明用户愿意为专用硬件付费。下一阶段的溢价理由不能只停在录音距离、屏幕和按键，而要变成可复用的工作结果：录音、转写、总结、模板、合规、团队协作和行业知识库。缺少这层，Note Pro 和 NotePin S 仍能带来首单，但会员续费和团队席位很难成为北美利润质量的主支撑。E1, E3, E17-E20</p>
+        </div>
+        <div class="grid four">
+          <div class="card metric good">
+            <span class="label">现在靠什么成交</span>
+            <h3>专用硬件 + 省时间的 AI 总结。</h3>
+            <p>Note Pro 和 NotePin S 的物理形态清楚，能覆盖会议、电话、采访、线下拜访和跨设备记录场景，这是纯软件不容易完全替代的入口。E4-E6, E16, E19</p>
+          </div>
+          <div class="card metric warn">
+            <span class="label">下一阶段靠什么增厚</span>
+            <h3>行业工作流和团队席位。</h3>
+            <p>把销售、咨询、医疗、法律、教育等场景的模板、权限、合规和复盘流程讲清楚，会员就不是“更多分钟数”，而是高频工作结果的成本结构。E3, E17, E18</p>
+          </div>
+          <div class="card metric warn">
+            <span class="label">必须补的证据</span>
+            <h3>ROI、续费和团队使用案例。</h3>
+            <p>官网与会员页需要更直接回答：用 Plaud 一个月节省多少整理时间、哪些岗位适合、团队怎么管理录音和权限、为什么不用手机或纯软件。E3, E17, E20</p>
+          </div>
+          <div class="card metric bad">
+            <span class="label">不能提前跨过去</span>
+            <h3>企业化不能只靠合规徽章。</h3>
+            <p>SOC 2、HIPAA、GDPR 是入场基础，不等于企业采购已经成立。没有行业案例、席位扩张和数据治理页面，团队版会停留在功能清单。E17, E18</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="scores">
       <div class="inner">
         <div class="section-head">
@@ -768,12 +951,50 @@
       </div>
     </section>
 
+    <section id="budget">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Budget Trade-off</span>
+            <h2>预算取舍：保留硬件获客，新增资源转向订阅转化和渠道治理。</h2>
+          </div>
+          <p class="lead">Plaud 现在不缺“有人愿意买硬件”的证明，缺的是把硬件用户沉淀成会员、团队席位和可控渠道资产。预算优先级应该从单纯拉首单，转向提高订阅绑定率、降低渠道信任摩擦、证明团队版 ROI。E3-E9, E13, E17-E20</p>
+        </div>
+        <div class="grid four">
+          <div class="card metric good">
+            <span class="label">转化预算 · 继续保</span>
+            <h3>守住 Note Pro / NotePin S 高意图成交。</h3>
+            <p>Amazon、DTC 搜索承接和 retargeting 继续保留，但落地页必须把“适合谁、替代谁、比手机强在哪、后续订阅为什么值得续费”讲清楚。</p>
+            <div class="pill-row"><span class="pill good">高意图词</span><span class="pill neutral">PDP CVR</span></div>
+          </div>
+          <div class="card metric warn">
+            <span class="label">非转化预算 · 收缩泛曝光</span>
+            <h3>减少泛 AI 曝光，转向可成交场景。</h3>
+            <p>泛效率、泛 AI 录音的曝光预算容易教育市场，却把需求分给 Otter、Granola、手机录音和免费工具；要优先投行业场景与比较页。</p>
+            <div class="pill-row"><span class="pill warn">约束投放</span><span class="pill bad">泛流量降权</span></div>
+          </div>
+          <div class="card metric">
+            <span class="label">内容资产预算 · 加码</span>
+            <h3>补 ROI、合规、比较和行业模板。</h3>
+            <p>建立 Plaud vs 手机 / Otter / Granola / Fireflies、行业模板、录音同意、数据安全和团队管理页面，让搜索心智与销售话术沉淀成资产。</p>
+            <div class="pill-row"><span class="pill neutral">SEO 资产</span><span class="pill neutral">企业采购</span></div>
+          </div>
+          <div class="card metric bad">
+            <span class="label">渠道预算 · 先治理再扩</span>
+            <h3>零售触点没统一前，不急着铺更多入口。</h3>
+            <p>Best Buy、Target、Walmart 等触点先清授权、价格、售后入口、评分样本和 sell-out 口径；渠道质量没统一，新增铺货会放大信任成本。</p>
+            <div class="pill-row"><span class="pill bad">先治渠道</span><span class="pill warn">sell-out 校准</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="roadmap">
       <div class="inner">
         <div class="section-head">
           <div>
             <span class="eyebrow">90 / 180 Days</span>
-            <h2>路线图：先证明 LTV，再扩大团队和行业场景。</h2>
+            <h2>路线图：先证明用户长期价值，再扩大团队和行业场景。</h2>
           </div>
           <p class="lead">Plaud 不缺硬件热度，缺的是把用户从首单推进到续费、团队席位和高信任场景的证据链。路线图按利润质量和可启动性排序。</p>
         </div>
@@ -821,7 +1042,7 @@
           <div class="dept-head"><strong>绿灯部门 · 继续放大</strong><span class="tag good">可作为增长支撑</span></div>
           <div class="dept-grid">
             <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">84</div><h3>品牌部</h3><p>能打：用户规模、全球覆盖、品牌声誉和媒体关注支撑头部心智；下一步补北美本地可审计硬指标。E1, E10, E12, E13</p></div>
-            <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">82</div><h3>产品 / 硬件设计部</h3><p>强项：Note、Note Pro、NotePin S 形成了清晰硬件矩阵；继续用真实场景证明专用设备价值。E1, E4-E6, E16</p></div>
+            <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">82</div><h3>产品 / 硬件设计部</h3><p>强项：Note、Note Pro、NotePin S 形成了清晰硬件矩阵；继续用真实场景证明专用设备价值。E1, E4-E6, E16, E19</p></div>
             <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">80</div><h3>安全合规 / 信任体系</h3><p>可用：Trust Center、SOC 2、HIPAA 等内容已经具备企业采购基础；需要更多行业案例承接。E17</p></div>
           </div>
         </div>
@@ -852,7 +1073,7 @@
             <span class="eyebrow">Evidence Table</span>
             <h2>证据表</h2>
           </div>
-          <p class="lead">抓取日期：2026-06-14。公开数据用于方向性经营判断，不替代品牌内部订单、广告后台、订阅后台、零售 sell-out 和 P&amp;L。</p>
+          <p class="lead">抓取日期：2026-06-15。公开数据用于方向性经营判断，不替代品牌内部订单、广告后台、订阅后台、零售 sell-out 和 P&amp;L。</p>
         </div>
         <div class="table-wrap">
           <table>
@@ -862,20 +1083,22 @@
               <tr><td>E2</td><td><a href="https://www.plaud.ai/pages/our-story-1" target="_blank">Plaud Our Story</a></td><td>强调 San Francisco、2M users、170+ countries、2-year warranty、30-day return 和 24/7 support。</td><td>品牌阶段、客服与售后基础。</td><td>高</td></tr>
               <tr><td>E3</td><td><a href="https://www.plaud.ai/pages/membership" target="_blank">Plaud Membership</a></td><td>Starter 300 minutes/month；Pro、Unlimited、Business/Team 价格与功能体系清楚。</td><td>订阅商业化和 LTV 判断。</td><td>高</td></tr>
               <tr><td>E4</td><td><a href="https://www.amazon.com/PLAUD-Transcribe-Summarize-Empowered-Languages/dp/B0CZX48H2Z" target="_blank">Amazon · Plaud Note</a></td><td>Plaud Note $159，4.5 stars，3,839 ratings，1K+ bought past month。</td><td>Amazon 动销与硬件首单信任。</td><td>中高</td></tr>
-              <tr><td>E5</td><td><a href="https://www.amazon.com/Plaud-Transcribe-Summarize-Ultra-Slim-InstantView/dp/B0FYQ4Y2ZZ" target="_blank">Amazon · Plaud Note Pro</a></td><td>Note Pro $189，4.6 stars / 1,484 ratings；页面对比显示 Note、NotePin S、NotePin 评价资产。</td><td>主力新品与硬件矩阵。</td><td>中高</td></tr>
-              <tr><td>E6</td><td><a href="https://www.amazon.com/PLAUD-NotePin-Transcribe-Summarize-Wearable/dp/B0D8GLYV93" target="_blank">Amazon · Plaud NotePin</a></td><td>NotePin 4.2 stars / 1,232 ratings；NotePin S 4.4 / 872 ratings；BSR 在 Digital Voice Recorders 前列。</td><td>可穿戴形态仍需打磨。</td><td>中高</td></tr>
+              <tr><td>E5</td><td><a href="https://www.amazon.com/Plaud-Transcribe-Summarize-Ultra-Slim-InstantView/dp/B0FYQ4Y2ZZ" target="_blank">Amazon · Plaud Note Pro</a></td><td>Note Pro $189，4.6 stars / 1,425+ ratings；页面对比显示 Note、NotePin S、NotePin 评价资产。</td><td>主力新品与硬件矩阵。</td><td>中高</td></tr>
+              <tr><td>E6</td><td><a href="https://www.amazon.com/PLAUD-Notetaker-Transcribe-Summarize-Languages/dp/B0DL9WQ4Z4" target="_blank">Amazon · Plaud NotePin S</a></td><td>NotePin S $179，4.4 stars / 876+ ratings，Amazon's Choice；卖家为 Plaud LLC，Amazon Fulfillment。</td><td>可穿戴形态与渠道信任。</td><td>中高</td></tr>
               <tr><td>E7</td><td><a href="https://www.bestbuy.com/product/plaud-note-pro-smart-ai-voice-audio-recorder-black/JJGH8KP8TF/sku/6665434" target="_blank">Best Buy</a></td><td>Plaud Note Pro $189.99，上架 Best Buy，评分样本少且约 3.7。</td><td>零售背书与评分样本风险。</td><td>中</td></tr>
               <tr><td>E8</td><td><a href="https://www.walmart.com/c/brand/plaud" target="_blank">Walmart Brand Page</a></td><td>Walmart 有 Plaud 品牌页，覆盖 Note、NotePin、accessories 等。</td><td>零售触点和渠道扩张。</td><td>中</td></tr>
               <tr><td>E9</td><td><a href="https://www.target.com/p/plaud-notepin-ai-voice-recorder-wearable-note-taker-64gb-black/-/A-1001752001" target="_blank">Target Marketplace</a></td><td>Target 页面为第三方 seller AJ Mart，NotePin $159.99，低样本评分偏低。</td><td>第三方零售触点治理。</td><td>中</td></tr>
               <tr><td>E10</td><td><a href="https://www.trustpilot.com/review/plaud.ai" target="_blank">Trustpilot</a></td><td>4.7 / 5，1,943 reviews，86% 五星，负评回复覆盖较高。</td><td>品牌声誉和售后闭环。</td><td>中高</td></tr>
               <tr><td>E11</td><td><a href="https://apps.apple.com/us/app/plaud-ai-note-taker/id6450364080" target="_blank">Apple App Store</a></td><td>公开评论正向集中在易用和节省记录时间；负向集中在订阅成本、集成、取消和功能边界。</td><td>软件体验与 VOC。</td><td>中</td></tr>
               <tr><td>E12</td><td><a href="https://eu.36kr.com/en/p/3799129165863937" target="_blank">36Kr / Yingke interview</a></td><td>报道提到 2025 年收入年化约 USD 250M、2024 年收入约 USD 56M、2025 年 7 月突破 1M units 等口径。</td><td>销售规模与阶段校准。</td><td>中</td></tr>
-              <tr><td>E13</td><td><a href="https://sacra.com/c/plaud/" target="_blank">Sacra Company Profile</a></td><td>估算 Plaud 达到约 USD 250M ARR / annualized revenue、1.5M+ devices、170+ countries，并指出硬件订阅模式和竞争风险。</td><td>全球收入、装机量和商业模式。</td><td>中</td></tr>
+              <tr><td>E13</td><td><a href="https://sacra.com/research/250m-year-granola-for-plumbers/" target="_blank">Sacra Research</a></td><td>估算 Plaud 2025 年 9 月达到约 USD 250M annualized revenue，同比增长约 83%，并指出收入约 50/50 来自硬件和 Plaud Intelligence 订阅。</td><td>全球收入、装机量和商业模式。</td><td>中</td></tr>
               <tr><td>E14</td><td><a href="https://www.grandviewresearch.com/industry-analysis/ai-meeting-assistant-market-report" target="_blank">Grand View Research</a></td><td>全球 AI meeting assistant market 2025 约 USD 3.5B，北美约占 33%。</td><td>软件订阅天花板。</td><td>中</td></tr>
               <tr><td>E15</td><td><a href="https://www.precedenceresearch.com/ai-note-taking-market" target="_blank">Precedence Research</a></td><td>AI note-taking market 2025 约 USD 623.5M，2026 约 USD 740.4M，北美为主导地区。</td><td>AI note-taking 品类成长性。</td><td>中</td></tr>
               <tr><td>E16</td><td><a href="https://www.theverge.com/tech/851393/plaud-notepin-s-desktop-app-ces" target="_blank">The Verge · NotePin S / Desktop</a></td><td>报道 NotePin S 增加 physical button 和 Desktop app，原 NotePin 逐步 phase out。</td><td>硬件换代与使用摩擦修复。</td><td>中</td></tr>
               <tr><td>E17</td><td><a href="https://www.plaud.ai/pages/trust-center" target="_blank">Plaud Trust Center</a></td><td>页面说明数据不用于模型训练、加密、SOC 2 Type II、HIPAA、GDPR 等合规承诺。</td><td>企业采购与合规信任。</td><td>高</td></tr>
               <tr><td>E18</td><td><a href="https://otter.ai/pricing" target="_blank">Otter</a> / <a href="https://fireflies.ai/pricing" target="_blank">Fireflies</a> / <a href="https://www.granola.ai/pricing" target="_blank">Granola</a> / <a href="https://fathom.video/pricing" target="_blank">Fathom</a></td><td>软件竞品以订阅和会议工作流切入，价格和集成路径更轻。</td><td>软件竞品压力和硬件必要性校准。</td><td>中</td></tr>
+              <tr><td>E19</td><td><a href="https://www.theverge.com/news/766335/plaud-ai-note-pro-launch-pricing-availability" target="_blank">The Verge · Note Pro</a></td><td>报道 Note Pro 增加两颗麦克风、16.4-foot pickup、1-inch display、自动切换录音模式和 press-to-highlight。</td><td>Note Pro 换代与硬件必要性。</td><td>中</td></tr>
+              <tr><td>E20</td><td><a href="https://www.androidcentral.com/apps-software/ai/i-wore-an-ai-voice-recorder-on-my-wrist-for-a-week-heres-how-it-went" target="_blank">Android Central · NotePin review</a></td><td>评测肯定 NotePin 形态，但指出转写处理等待、云端依赖、订阅成本和手机 Recorder / Gemini 替代压力。</td><td>用户意图、订阅疑虑和替代品风险。</td><td>中</td></tr>
             </tbody>
           </table>
         </div>
@@ -886,8 +1109,8 @@
   <footer>
     <div class="inner">
       <strong>远汐 Offing 免费北美业务诊断</strong>
-      <p>在抵达之前，先判断潮水。本报告基于 2026-06-14 可复查公开信息、平台页面、媒体报道和第三方市场数据形成方向性经营判断；涉及北美 GMV、平台占比、订阅 ARR、续费率和渠道毛利的部分需以品牌内部后台复核。</p>
-      <small>Generated for Plaud AI · Offing North America Business Diagnosis · 2026-06-14</small>
+      <p>在抵达之前，先判断潮水。本报告基于 2026-06-15 可复查公开信息、平台页面、媒体报道和第三方市场数据形成方向性经营判断；涉及北美 GMV、平台占比、订阅 ARR、续费率和渠道毛利的部分需以品牌内部后台复核。</p>
+      <small>Generated for Plaud AI · Offing North America Business Diagnosis · 2026-06-15</small>
     </div>
   </footer>
 </body>
