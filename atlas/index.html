@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offing Atlas｜远汐·航图 项目入口</title>
+  <meta name="description" content="Offing Atlas｜远汐·航图项目入口：北美业务诊断报告库、调研资料库、线上链接与交付文件管理。" />
+  <link rel="icon" type="image/svg+xml" href="../assets/offing-atlas-favicon.svg" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --top: #fbfbfd;
+      --surface: #ffffff;
+      --surface-2: #f7f8fa;
+      --text: #101413;
+      --body: #293331;
+      --muted: #66716e;
+      --line: #d7d9dc;
+      --accent: #2d6261;
+      --accent-fill: #eaf1f0;
+      --inverse-bg: #13211f;
+      --inverse-text: #f8faf9;
+      --prism-teal: #32d6c6;
+      --prism-sky: #9ed1ff;
+      --prism-pink: #f7a4d8;
+      --prism-lilac: #9b7cff;
+      --risk: #d70015;
+      --warn: #9a5b00;
+      --success: #157a38;
+      --shadow: 0 18px 48px rgba(16, 20, 19, .08);
+      --radius: 8px;
+      --max: 1180px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1212;
+        --top: #141817;
+        --surface: #191e1d;
+        --surface-2: #202625;
+        --text: #f4f7f6;
+        --body: #d8dedc;
+        --muted: #a9b2af;
+        --line: #3a4240;
+        --accent: #9ed7d3;
+        --accent-fill: #1c3433;
+        --inverse-bg: #e9efed;
+        --inverse-text: #101413;
+        --shadow: 0 18px 48px rgba(0, 0, 0, .34);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        linear-gradient(120deg, rgba(50,214,198,.08), transparent 32rem),
+        linear-gradient(240deg, rgba(247,164,216,.08), transparent 30rem),
+        var(--bg);
+      font-family: var(--font);
+      line-height: 1.58;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--top) 88%, transparent);
+      backdrop-filter: blur(18px);
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 15px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+    .lockup { font-weight: 850; line-height: 1.08; }
+    .lockup span { display: block; margin-top: 4px; color: var(--accent); font-size: 12px; font-weight: 800; }
+    .nav { display: flex; gap: 16px; color: var(--muted); font-size: 13px; font-weight: 760; }
+    .nav a:hover { color: var(--text); }
+    main { max-width: var(--max); margin: 0 auto; padding: 0 24px 72px; }
+    .hero {
+      min-height: calc(100svh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(360px, .72fr);
+      gap: clamp(28px, 6vw, 74px);
+      align-items: center;
+      padding: 54px 0 44px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-lilac), var(--prism-pink));
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      margin-top: 24px;
+      max-width: 760px;
+      font-size: clamp(58px, 7vw, 102px);
+      line-height: .98;
+      font-weight: 900;
+    }
+    .lead {
+      max-width: 720px;
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.36;
+      font-weight: 820;
+    }
+    .sublead {
+      max-width: 720px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 850;
+      box-shadow: 0 10px 24px rgba(16, 20, 19, .05);
+    }
+    .btn.primary {
+      border-color: transparent;
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
+    }
+    .console {
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, #101b1b, #13211f);
+      color: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .console::before {
+      content: "";
+      display: block;
+      height: 5px;
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-lilac), var(--prism-pink));
+    }
+    .console-body { padding: 24px; display: grid; gap: 16px; }
+    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .metric {
+      min-height: 92px;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+    }
+    .metric b { display: block; font-size: 28px; line-height: 1; margin-bottom: 8px; }
+    .metric span { color: rgba(255,255,255,.76); font-size: 12px; font-weight: 750; }
+    .console-note { color: rgba(255,255,255,.82); font-size: 14px; }
+    section { padding-top: 64px; scroll-margin-top: 82px; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 20px;
+    }
+    h2 { max-width: 760px; font-size: clamp(30px, 3vw, 42px); line-height: 1.08; font-weight: 900; }
+    .section-note { max-width: 520px; color: var(--muted); font-size: 15px; }
+    .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .quick-card, .report-card, .library-card, .file-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .quick-card {
+      min-height: 156px;
+      padding: 20px;
+      display: grid;
+      align-content: space-between;
+      border-top: 4px solid var(--line);
+    }
+    .quick-card.prism { border-top-color: var(--prism-teal); }
+    .quick-card.pink { border-top-color: var(--prism-pink); }
+    .quick-card.blue { border-top-color: var(--prism-sky); }
+    .quick-card.green { border-top-color: var(--success); }
+    .quick-card h3 { font-size: 22px; line-height: 1.12; }
+    .quick-card p { margin-top: 10px; color: var(--muted); font-size: 14px; }
+    .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 820;
+    }
+    .pill.green { color: var(--success); background: #eaf6ee; border-color: color-mix(in srgb, var(--success) 28%, var(--line)); }
+    .pill.warn { color: var(--warn); background: #fff3df; border-color: color-mix(in srgb, var(--warn) 28%, var(--line)); }
+    @media (prefers-color-scheme: dark) {
+      .pill.green { background: #173424; }
+      .pill.warn { background: #3a2a12; }
+    }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .search {
+      width: min(420px, 100%);
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+    }
+    .report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .report-card {
+      padding: 18px;
+      min-height: 214px;
+      display: grid;
+      gap: 14px;
+      align-content: space-between;
+      transition: transform .16s ease, border-color .16s ease;
+    }
+    .report-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 34%, var(--line)); }
+    .report-card h3 { font-size: 24px; line-height: 1.08; }
+    .report-card p { color: var(--muted); font-size: 14px; }
+    .report-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .library-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 14px; }
+    .library-card { padding: 24px; min-height: 300px; }
+    .library-card h3 { font-size: 26px; line-height: 1.12; margin-bottom: 12px; }
+    .library-card p { color: var(--muted); font-size: 15px; }
+    .library-list { display: grid; gap: 10px; margin-top: 18px; }
+    .library-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+    }
+    .library-item b { color: var(--accent); font-size: 13px; }
+    .library-item span { color: var(--body); font-size: 14px; font-weight: 760; }
+    .file-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .file-card { padding: 18px; min-height: 180px; }
+    .file-card h3 { font-size: 20px; margin-bottom: 8px; }
+    .file-card p { color: var(--muted); font-size: 14px; }
+    .footer {
+      margin-top: 70px;
+      padding: 22px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .quick-grid, .report-grid, .file-grid { grid-template-columns: repeat(2, 1fr); }
+      .library-grid, .section-head { display: grid; grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .topbar-inner { padding: 12px 16px; }
+      .nav { display: none; }
+      main { padding: 0 16px 56px; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 30px; }
+      .hero { padding-top: 36px; }
+      .quick-grid, .report-grid, .file-grid, .metric-grid { grid-template-columns: 1fr; }
+      .toolbar { display: grid; }
+      .library-item { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="lockup" href="../index.html">远汐 Offing<span>Atlas 项目入口</span></a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#reports">报告库</a>
+        <a href="#research">调研资料</a>
+        <a href="#structure">文件结构</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">Offing Atlas Workspace</div>
+        <h1>远汐·航图 项目入口</h1>
+        <p class="lead">这里统一存放 Atlas 的北美业务诊断报告、公开调研资料、项目规范和线上链接，后续每个品牌诊断都从这里归档。</p>
+        <p class="sublead">报告链接继续保留原路径，避免已发出去的 URL 失效；这个页面负责集中导航、更新记录和资料库入口。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reports">进入报告库</a>
+          <a class="btn" href="./research/">进入调研资料库</a>
+          <a class="btn" href="../index.html">免费诊断入口</a>
+        </div>
+      </div>
+      <aside class="console" aria-label="Atlas 当前项目概览">
+        <div class="console-body">
+          <div class="eyebrow" style="color:#8ee7df;">Project Map</div>
+          <div class="metric-grid">
+            <div class="metric"><b>8</b><span>已归档品牌报告</span></div>
+            <div class="metric"><b>1</b><span>调研资料库入口</span></div>
+            <div class="metric"><b>2026-06-15</b><span>最近更新日期</span></div>
+            <div class="metric"><b>GitHub Pages</b><span>公开交付链接</span></div>
+          </div>
+          <p class="console-note">当前入口只收纳可公开展示或可发给客户的文件。内部草稿、未确认数据、客户敏感信息不放进公开 Pages。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="quick">
+      <div class="quick-grid">
+        <a class="quick-card prism" href="#reports">
+          <div>
+            <h3>品牌报告库</h3>
+            <p>集中进入 Ulike、Plaud AI、Yvette、COSORI、Zima 等已生成诊断报告。</p>
+          </div>
+          <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
+        </a>
+        <a class="quick-card blue" href="./research/">
+          <div>
+            <h3>调研资料库</h3>
+            <p>存放公开资料、方法论、截图证据、竞品笔记和后续品牌研究文件。</p>
+          </div>
+          <div class="tools"><span class="pill warn">公开资料</span><span class="pill">Research</span></div>
+        </a>
+        <a class="quick-card pink" href="../index.html">
+          <div>
+            <h3>诊断提交入口</h3>
+            <p>客户输入品牌名后提交免费北美业务诊断申请。</p>
+          </div>
+          <div class="tools"><span class="pill">Lead</span><span class="pill">Form</span></div>
+        </a>
+        <a class="quick-card green" href="#structure">
+          <div>
+            <h3>文件结构</h3>
+            <p>定义报告、调研、证据和项目规范以后应该放在哪里。</p>
+          </div>
+          <div class="tools"><span class="pill">Index</span><span class="pill">Rules</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="reports">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Report Library</div>
+          <h2>报告库：所有已生成的 Atlas 北美业务诊断，都从这里进入。</h2>
+        </div>
+        <p class="section-note">这里展示当前可外发版本。Plaud AI 保留已发出的 06-14 链接；其他品牌按最新版文件进入。</p>
+      </div>
+      <div class="toolbar">
+        <input class="search" id="reportSearch" type="search" placeholder="搜索品牌，例如 Ulike / Plaud / Yvette" aria-label="搜索报告" />
+        <span class="pill">共 8 份报告</span>
+      </div>
+      <div class="report-grid" id="reportGrid">
+        <a class="report-card" data-name="yvette sports bra activewear" href="../yvette-offing-na-diagnosis-2026-06-15.html">
+          <div><h3>Yvette</h3><p>高支撑运动内衣、选码信心、换码与 DTC 留存。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">最新版</span></div>
+        </a>
+        <a class="report-card" data-name="plaud ai note recorder" href="../plaud-ai-offing-na-diagnosis-2026-06-14.html">
+          <div><h3>Plaud AI</h3><p>AI 录音硬件、订阅价值、团队采购和搜索入口。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15 内容</span><span class="pill warn">旧链接覆盖</span></div>
+        </a>
+        <a class="report-card" data-name="ulike ipl beauty hair removal" href="../ulike-offing-na-diagnosis-2026-06-15.html">
+          <div><h3>Ulike</h3><p>家用 IPL 脱毛仪、Air 10 主线、第二品线和售后信任。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">最新版</span></div>
+        </a>
+        <a class="report-card" data-name="pixboom" href="../pixboom-offing-na-diagnosis-2026-06-14.html">
+          <div><h3>Pixboom</h3><p>北美业务诊断归档版本。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-14</span></div>
+        </a>
+        <a class="report-card" data-name="cosori air fryer kitchen appliance" href="../cosori-offing-na-diagnosis-2026-06-13.html">
+          <div><h3>COSORI</h3><p>空气炸锅主品类、Amazon 依赖、第二曲线和安全信任。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        </a>
+        <a class="report-card" data-name="zima nas zimaspace homelab" href="../zima-offing-na-diagnosis-2026-06-13.html">
+          <div><h3>Zima</h3><p>极客社区、NAS 机会、开源基因和人群外扩边界。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        </a>
+        <a class="report-card" data-name="usmile electric toothbrush water flosser oral care" href="../usmile-offing-na-diagnosis-2026-06-13.html">
+          <div><h3>Usmile</h3><p>口腔护理、冲牙器与电动牙刷品线、动销和品类机会。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        </a>
+        <a class="report-card" data-name="kailash energy" href="../kailash-energy-offing-na-diagnosis-2026-06-13.html">
+          <div><h3>Kailash Energy</h3><p>能源品牌北美业务诊断归档版本。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Research Library</div>
+          <h2>调研资料库：公开资料、方法论和证据文件不要散落在聊天里。</h2>
+        </div>
+        <p class="section-note">这个区用于存放可公开或可交付的研究资料。内部敏感数据仍留在本地 Offing 工作区，不直接放到 GitHub Pages。</p>
+      </div>
+      <div class="library-grid">
+        <a class="library-card" href="./research/">
+          <h3>进入 Atlas 调研资料库</h3>
+          <p>后续每个品牌可以在这里建立独立研究页，放公开证据、VOC 摘要、竞品截图、市场规模口径和更新记录。</p>
+          <div class="library-list">
+            <div class="library-item"><b>01</b><span>公开证据与来源链接</span></div>
+            <div class="library-item"><b>02</b><span>竞品和品类研究笔记</span></div>
+            <div class="library-item"><b>03</b><span>VOC / Reddit / Amazon 评论摘要</span></div>
+            <div class="library-item"><b>04</b><span>可外发截图和附件</span></div>
+          </div>
+        </a>
+        <div class="library-card">
+          <h3>放文件的原则</h3>
+          <p>能发给客户、能支持判断、能复盘来源的文件可以进入公开资料库。内部草稿、原始后台数据、客户私密信息、未确认推断不要公开。</p>
+          <div class="tools"><span class="pill green">公开可发</span><span class="pill warn">敏感不放</span><span class="pill">证据优先</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="structure">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">File Structure</div>
+          <h2>文件结构：入口、报告、调研资料和资产分开，后续才不会乱。</h2>
+        </div>
+        <p class="section-note">现有报告 URL 不移动；新增资料和新品牌研究都进 `atlas/` 下的结构。</p>
+      </div>
+      <div class="file-grid">
+        <div class="file-card"><h3>`/atlas/`</h3><p>Atlas 项目总入口。展示报告库、资料库、入口页和文件结构。</p></div>
+        <div class="file-card"><h3>`/atlas/research/`</h3><p>公开调研资料库。后续可按品牌建立子目录或独立研究页。</p></div>
+        <div class="file-card"><h3>`/*.html`</h3><p>现有品牌报告继续保留在根目录，确保已经发出的 GitHub Pages 链接不失效。</p></div>
+        <div class="file-card"><h3>`/assets/`</h3><p>存放 favicon、品牌 logo、可公开截图和报告依赖素材。</p></div>
+        <div class="file-card"><h3>桌面归档</h3><p>本地最终版放在 `远汐Offing / 01_Offing_Atlas_远汐航图_北美业务诊断` 对应目录。</p></div>
+        <div class="file-card"><h3>链接索引</h3><p>线上链接继续同步到桌面 `GitHub_Pages_线上链接索引.md`，方便后续找最新版。</p></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>Offing Atlas｜远汐·航图 · Project Hub</span>
+      <span>Last updated: 2026-06-15</span>
+    </div>
+  </main>
+
+  <script>
+    const input = document.getElementById("reportSearch");
+    const cards = Array.from(document.querySelectorAll(".report-card"));
+    input?.addEventListener("input", () => {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const text = `${card.dataset.name || ""} ${card.innerText}`.toLowerCase();
+        card.hidden = q && !text.includes(q);
+      });
+    });
+  </script>
+</body>
+</html>
