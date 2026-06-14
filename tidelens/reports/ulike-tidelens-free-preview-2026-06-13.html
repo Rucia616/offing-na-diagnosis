@@ -106,8 +106,8 @@
     .brand-lockup {
       position: relative;
       display: inline-flex;
-      flex-direction: column;
-      gap: 5px;
+      align-items: center;
+      gap: 8px;
       color: var(--ink);
       font-size: 14px;
       font-weight: 860;
@@ -120,6 +120,20 @@
       height: 2px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--sea), var(--violet), var(--rose));
+    }
+    .brand-owner { color: var(--ink); }
+    .brand-product { color: var(--sea); font-weight: 880; }
+    .brand-edition {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 7px;
+      border: 1px solid color-mix(in srgb, var(--action) 18%, var(--line));
+      border-radius: 999px;
+      color: var(--action);
+      background: var(--action-soft);
+      font-size: 11px;
+      font-weight: 820;
     }
     .brand-mark {
       position: relative;
@@ -1691,7 +1705,11 @@
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="#top" aria-label="Offing TideLens">
-        <span class="brand-lockup">远汐Offing&nbsp;&nbsp;Tidelens红人营销诊断（免费版）</span>
+        <span class="brand-lockup" aria-label="远汐Offing Tidelens红人营销诊断（免费版）">
+          <span class="brand-owner">远汐Offing</span>
+          <span class="brand-product">Tidelens红人营销诊断</span>
+          <span class="brand-edition">（免费版）</span>
+        </span>
       </a>
       <nav class="nav-links" aria-label="Report navigation">
         <a href="#diagnosis">诊断</a>
