@@ -26,10 +26,13 @@
       --sea-soft: #EAF1F0;
       --slate: #13211F;
       --blue: #2F668C;
+      --blue-soft: #EAF1FF;
       --violet: #5B2BFF;
+      --rose: #F7A4D8;
       --green: #157A38;
       --amber: #9A5B00;
       --red: #D70015;
+      --risk-soft: #FFF0EA;
       --action: #5B2BFF;
       --action-dark: #3515B8;
       --action-soft: #F0EAFF;
@@ -536,16 +539,15 @@
     .card-pad { padding: 22px; }
     .card p { color: var(--body); font-size: 14px; }
     .dark-card {
-      color: #fff;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(45,98,97,.38), transparent 30%),
-        linear-gradient(145deg, #101616, #142124);
-      border-color: rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
+      color: var(--ink);
+      background: var(--surface);
+      border-color: rgba(45,98,97,.22);
+      border-left: 4px solid var(--sea);
+      box-shadow: var(--shadow-soft);
     }
-    .dark-card p, .dark-card li { color: rgba(255,255,255,.84); }
-    .dark-card .label { color: rgba(255,255,255,.68); }
-    .dark-card h3 { color: #fff; }
+    .dark-card p, .dark-card li { color: var(--body); }
+    .dark-card .label { color: var(--sea); }
+    .dark-card h3 { color: var(--ink); }
 
     .evidence-strip {
       display: grid;
@@ -569,10 +571,8 @@
       gap: 28px;
       align-items: end;
       min-height: 246px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 92% 12%, rgba(127,194,188,.22), transparent 32%),
-        linear-gradient(145deg, #101616, #173d3c);
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--surface), var(--sea-soft));
     }
     .evidence-strip .evidence:last-child {
       grid-column: span 2;
@@ -586,7 +586,7 @@
       font-variant-numeric: tabular-nums;
     }
     .evidence.primary strong {
-      color: #fff;
+      color: var(--sea-dark);
       font-size: clamp(78px, 8vw, 116px);
       line-height: .88;
     }
@@ -612,14 +612,14 @@
       line-height: 1.48;
       font-weight: 560;
     }
-    .evidence.primary .label { color: rgba(255,255,255,.68); }
+    .evidence.primary .label { color: var(--sea); }
     .evidence.primary h3 {
-      color: #fff;
+      color: var(--ink);
       font-size: clamp(34px, 4vw, 52px);
       line-height: 1.06;
     }
     .evidence.primary p {
-      color: rgba(255,255,255,.82);
+      color: var(--body);
       font-size: 16px;
       line-height: 1.55;
     }
@@ -654,16 +654,14 @@
       background: rgba(255,255,255,.92);
     }
     .logic-cell.signal {
-      color: #fff;
-      background:
-        radial-gradient(circle at 88% 12%, rgba(127,194,188,.2), transparent 34%),
-        linear-gradient(145deg, #101616, #173d3c);
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--surface), var(--sea-soft));
     }
     .logic-cell .label {
       margin-bottom: 8px;
     }
     .logic-cell.signal .label {
-      color: rgba(255,255,255,.68);
+      color: var(--sea);
     }
     .logic-cell strong {
       display: block;
@@ -673,7 +671,7 @@
       font-weight: 860;
     }
     .logic-cell.signal strong {
-      color: #fff;
+      color: var(--sea-dark);
       font-size: clamp(34px, 4vw, 54px);
       line-height: .92;
       font-variant-numeric: tabular-nums;
@@ -686,7 +684,7 @@
       font-weight: 560;
     }
     .logic-cell.signal p {
-      color: rgba(255,255,255,.78);
+      color: var(--body);
     }
     .logic-result {
       padding: 20px 22px;
@@ -718,17 +716,16 @@
       align-content: space-between;
       min-height: 326px;
       padding: 24px;
-      border: 1px solid rgba(255,255,255,.1);
+      border: 1px solid rgba(45,98,97,.22);
+      border-top: 5px solid var(--sea);
       border-radius: var(--radius);
-      color: #fff;
-      background:
-        radial-gradient(circle at 90% 12%, rgba(45,98,97,.32), transparent 34%),
-        linear-gradient(145deg, #101616, #142326);
-      box-shadow: var(--shadow);
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--surface), var(--sea-soft));
+      box-shadow: var(--shadow-soft);
     }
     .volume-total strong {
       display: block;
-      color: #fff;
+      color: var(--sea-dark);
       font-size: clamp(64px, 8vw, 104px);
       line-height: .9;
       font-weight: 880;
@@ -737,29 +734,29 @@
     .volume-total span {
       display: block;
       margin-top: 8px;
-      color: rgba(255,255,255,.86);
+      color: var(--body);
       font-size: 15px;
       line-height: 1.45;
     }
     .volume-total small {
       display: block;
       margin-top: 16px;
-      color: rgba(255,255,255,.68);
+      color: var(--muted);
       font-size: 12px;
       line-height: 1.45;
     }
     .volume-verdict {
       margin-top: 24px;
       padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.14);
+      border-top: 1px solid rgba(45,98,97,.18);
     }
     .volume-verdict strong {
-      color: #fff;
+      color: var(--ink);
       font-size: 18px;
       line-height: 1.18;
     }
     .volume-verdict span {
-      color: rgba(255,255,255,.82);
+      color: var(--body);
       font-size: 13px;
       line-height: 1.5;
     }
@@ -897,20 +894,21 @@
       display: grid;
       align-content: center;
       padding: 26px;
-      color: #fff;
-      background: linear-gradient(145deg, var(--sea-dark), #102728);
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--surface), var(--sea-soft));
+      border-right: 1px solid var(--line);
     }
     .quote-left strong {
       display: block;
       margin-top: 10px;
-      color: #fff;
+      color: var(--ink);
       font-size: clamp(34px, 4.4vw, 58px);
       line-height: .98;
       font-weight: 860;
     }
     .quote-left p {
       margin-top: 12px;
-      color: rgba(255,255,255,.85);
+      color: var(--body);
       font-size: 16px;
       line-height: 1.58;
       font-weight: 650;
@@ -930,7 +928,7 @@
       padding: 13px 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: #f8faf8;
+      background: var(--surface-2);
       color: var(--body);
       font-size: 14px;
       line-height: 1.62;
@@ -955,19 +953,19 @@
     .wrong.watch strong { background: var(--amber); }
     .wrong.good strong { background: var(--green); }
     .wrong.bad {
-      border-color: rgba(199,38,46,.18);
-      background: rgba(199,38,46,.055);
-      color: #681116;
+      border-color: rgba(215,0,21,.18);
+      background: var(--risk-soft);
+      color: #7A151B;
     }
     .wrong.watch {
-      border-color: rgba(163,101,0,.22);
-      background: rgba(163,101,0,.075);
-      color: #6d4300;
+      border-color: rgba(154,91,0,.22);
+      background: var(--alert-soft);
+      color: #6D4300;
     }
     .wrong.good {
-      border-color: rgba(20,122,62,.16);
-      background: rgba(20,122,62,.08);
-      color: var(--green);
+      border-color: rgba(14,122,75,.18);
+      background: var(--verify-soft);
+      color: var(--verify-dark);
     }
 
     .matrix-wrap {
@@ -1075,10 +1073,9 @@
     .relationship-node.ulike {
       grid-area: ulike;
       align-content: center;
-      color: #fff;
-      background:
-        radial-gradient(circle at 90% 12%, rgba(127,194,188,.24), transparent 34%),
-        linear-gradient(145deg, #101616, #173d3c);
+      color: var(--ink);
+      border-color: rgba(45,98,97,.28);
+      background: linear-gradient(135deg, var(--surface), var(--sea-soft));
     }
     .relationship-node.braun { grid-area: braun; }
     .relationship-node.nood { grid-area: nood; }
@@ -1142,12 +1139,12 @@
     .relationship-node.ulike .kicker,
     .relationship-node.ulike h3,
     .relationship-node.ulike p {
-      color: #fff;
+      color: var(--ink);
     }
     .relationship-node.ulike .relation {
-      border-color: rgba(255,255,255,.18);
-      background: rgba(255,255,255,.1);
-      color: rgba(255,255,255,.86);
+      border-color: rgba(45,98,97,.2);
+      background: var(--surface);
+      color: var(--body);
     }
     .competitor-board {
       display: grid;
@@ -1266,7 +1263,7 @@
       padding: 10px 11px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: #f8faf8;
+      background: var(--surface-2);
       color: var(--body);
       font-size: 12px;
       font-weight: 700;
@@ -1302,7 +1299,7 @@
       align-content: start;
       padding: 20px;
       border: 1px solid var(--line);
-      border-top: 4px solid var(--tone);
+      border-top: 4px solid var(--sea);
       border-radius: var(--radius);
       background: rgba(255,255,255,.92);
       box-shadow: var(--shadow-soft);
@@ -1335,14 +1332,14 @@
       align-content: center;
       gap: 4px;
       padding: 14px;
-      background: #fff;
+      background: var(--surface);
       color: var(--body);
       font-size: 12px;
       line-height: 1.35;
     }
     .heat-cell.head {
       min-height: 48px;
-      background: #f5f7f6;
+      background: var(--surface-2);
       color: var(--ink);
       font-family: var(--mono);
       font-weight: 820;
@@ -1358,10 +1355,10 @@
       font-weight: 840;
       color: var(--ink);
     }
-    .level.high { background: rgba(20,122,62,.16); color: var(--green); }
-    .level.mid { background: rgba(163,101,0,.13); color: var(--amber); }
-    .level.low { background: rgba(199,38,46,.1); color: var(--red); }
-    .level.unknown { background: rgba(16,22,22,.05); color: var(--muted); }
+    .level.high { background: var(--verify-soft); color: var(--verify-dark); }
+    .level.mid { background: var(--alert-soft); color: #6D4300; }
+    .level.low { background: var(--risk-soft); color: #7A151B; }
+    .level.unknown { background: var(--surface-2); color: var(--muted); }
     .method-note {
       margin: -6px 0 18px;
       padding: 13px 15px;
@@ -1420,7 +1417,7 @@
       padding: 6px 8px;
       border: 1px solid var(--line);
       border-radius: 7px;
-      background: #f8faf8;
+      background: var(--surface-2);
       filter: blur(.2px);
     }
     .avatar {
@@ -1514,8 +1511,9 @@
 
     footer {
       padding: 34px 0;
-      color: rgba(255,255,255,.78);
-      background: var(--slate);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--surface-2);
     }
     footer .shell {
       display: flex;
@@ -1524,7 +1522,7 @@
       flex-wrap: wrap;
       font-size: 13px;
     }
-    footer strong { color: #fff; }
+    footer strong { color: var(--ink); }
 
     @media (prefers-color-scheme: dark) {
       :root {
@@ -1541,11 +1539,13 @@
         --line-strong: #4B5552;
         --link: #8CC7C3;
         --sea: #9ED7D3;
-        --sea-dark: #081010;
+        --sea-dark: #D7F5F2;
         --sea-soft: #1C3433;
         --slate: #090D0D;
         --blue: #9ED1FF;
+        --blue-soft: #172D42;
         --violet: #B7A8FF;
+        --rose: #FFB3E2;
         --green: #8EE0A8;
         --action: #B7A8FF;
         --action-dark: #8F7BFF;
@@ -1558,6 +1558,7 @@
         --alert-soft: #3D2F18;
         --amber: #F2C46D;
         --red: #FF8E99;
+        --risk-soft: #3C1F23;
         --cold: #24202E;
         --paper: var(--bg);
         --paper-2: var(--surface-2);
@@ -1582,7 +1583,7 @@
       .chip, .thesis, .why-item, .card, .note-row, .relationship-node, .budget-command, .platform, .archetype, .source-grid a {
         background: rgba(21,29,29,.9);
       }
-      .cta, .score-card, .volume-total, .dark-card, .quote-left, footer {
+      .cta, .score-card {
         background:
           radial-gradient(circle at 88% 12%, rgba(127,194,188,.16), transparent 34%),
           linear-gradient(145deg, #081010, #111d1e);
@@ -1635,6 +1636,11 @@
         background: rgba(101,201,133,.13);
         color: #bdebc9;
       }
+      .archetype .risk {
+        border-color: rgba(255,115,123,.3);
+        background: rgba(255,115,123,.12);
+        color: #ffc7ca;
+      }
       .role-note, .method-note {
         border-color: rgba(127,194,188,.22);
         background: rgba(127,194,188,.1);
@@ -1644,6 +1650,18 @@
       }
       .heat-cell.head {
         background: #101818;
+      }
+      .level.high {
+        background: rgba(101,201,133,.13);
+        color: #bdebc9;
+      }
+      .level.mid {
+        background: rgba(215,156,58,.13);
+        color: #f2d3a2;
+      }
+      .level.low {
+        background: rgba(255,115,123,.12);
+        color: #ffc7ca;
       }
       .level.unknown {
         background: rgba(238,245,243,.07);
