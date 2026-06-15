@@ -388,34 +388,37 @@
     .score-row {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 58px;
-      gap: 10px 14px;
+      gap: 12px 14px;
       align-items: start;
       grid-column: span 1;
-      min-height: 116px;
+      min-height: 168px;
       padding: 14px;
       border: 1px solid var(--tl-line);
       border-radius: var(--radius);
       background: var(--tl-surface);
       box-shadow: var(--shadow);
     }
+    .score-row.is-good { border-color: color-mix(in srgb, var(--tl-verify) 28%, var(--tl-line)); background: linear-gradient(180deg, var(--tl-verify-soft), var(--tl-surface) 66%); }
+    .score-row.is-caution { border-color: color-mix(in srgb, var(--tl-alert-amber) 28%, var(--tl-line)); background: linear-gradient(180deg, var(--tl-alert-soft), var(--tl-surface) 66%); }
+    .score-row.is-risk { border-color: color-mix(in srgb, var(--tl-risk) 30%, var(--tl-line)); background: linear-gradient(180deg, var(--tl-risk-soft), var(--tl-surface) 66%); }
     .score-row.weight-20 {
       grid-column: span 2;
-      min-height: 150px;
+      min-height: 220px;
       padding: 20px;
     }
     .score-row.weight-15 {
       grid-column: span 1;
-      min-height: 132px;
+      min-height: 188px;
     }
     .score-row.weight-10 {
       grid-column: span 1;
-      min-height: 116px;
+      min-height: 168px;
     }
     .score-row.weight-5 {
       grid-column: span 1;
-      min-height: 94px;
+      min-height: 148px;
       padding: 12px 14px;
-      gap: 8px 12px;
+      gap: 9px 12px;
     }
     .score-row.weight-5 .score-sub {
       font-size: 11.5px;
@@ -430,6 +433,27 @@
       font-size: 14px;
       line-height: 1.55;
     }
+    .score-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .score-status {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .score-status.good { color: var(--tl-verify-dark); background: color-mix(in srgb, var(--tl-verify-soft) 84%, #fff); border: 1px solid color-mix(in srgb, var(--tl-verify) 30%, var(--tl-line)); }
+    .score-status.caution { color: #7A4B00; background: color-mix(in srgb, var(--tl-alert-soft) 88%, #fff); border: 1px solid color-mix(in srgb, var(--tl-alert-amber) 28%, var(--tl-line)); }
+    .score-status.risk { color: #9B321E; background: color-mix(in srgb, var(--tl-risk-soft) 88%, #fff); border: 1px solid color-mix(in srgb, var(--tl-risk) 28%, var(--tl-line)); }
     .score-title {
       color: var(--tl-ink);
       font-size: 15px;
@@ -443,6 +467,34 @@
       line-height: 1.45;
       font-weight: 650;
     }
+    .score-lines {
+      display: grid;
+      gap: 6px;
+      grid-column: 1 / -1;
+    }
+    .score-line {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      color: var(--tl-body);
+      font-size: 12.5px;
+      line-height: 1.42;
+      font-weight: 680;
+    }
+    .score-line b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 20px;
+      border-radius: 999px;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .score-line.good b { color: var(--tl-verify-dark); background: color-mix(in srgb, var(--tl-verify-soft) 88%, #fff); }
+    .score-line.bad b { color: #9B321E; background: color-mix(in srgb, var(--tl-risk-soft) 90%, #fff); }
+    .score-line.next b { color: var(--tl-action-dark); background: var(--tl-action-soft); }
     #score .section-head { margin-bottom: 22px; }
     #score .section-head h2 { font-size: clamp(40px, 4.6vw, 64px); }
     .score-bar {
@@ -1152,7 +1204,7 @@
         <div class="kicker">North America creator growth diagnosis</div>
         <h1><span class="hline">PetPivot 不缺声量，</span><span class="hline">缺复投标准。</span></h1>
         <p class="lead">
-          PetPivot 已经跑出 TikTok Shop / affiliate 铺量、Instagram creator Reels 和 YouTube review 搜索内容。下一阶段最重要的不是继续追求更多发布，而是证明“低价自动猫砂盆也安全、耐用、适合我家猫、售后可靠”。
+          PetPivot 已经跑出 TikTok Shop / affiliate 铺量、Instagram creator Reels 和 YouTube review 搜索内容。下一阶段先证明“低价自动猫砂盆也安全、耐用、适合我家猫、售后可靠”，再决定是否继续增加发布。
         </p>
         <div class="chips" aria-label="报告标签">
           <span class="chip"><strong>Brand</strong>PetPivot</span>
@@ -1173,7 +1225,7 @@
             公开视频已经证明 PetPivot 有声量和转化入口；真正影响下一阶段效率的是哪些内容值得复投，哪些只是把预算换成短期曝光。
           </p>
           <div class="stage-row" aria-label="阶段判断">
-            <div class="stage"><strong>冷启动</strong>不是当前问题</div>
+            <div class="stage"><strong>冷启动</strong>已经过去</div>
             <div class="stage"><strong>发布期</strong>已经越过</div>
             <div class="stage active"><strong>增长期</strong>当前主战场</div>
             <div class="stage"><strong>规模期</strong>开始进入</div>
@@ -1188,7 +1240,7 @@
           <div class="result-cell">
             <div class="mini-label">主要缺口</div>
             <h3>Proof Translation</h3>
-            <p>卖点已经有，但 creator 内容需要把卖点转成用户敢买的证据。</p>
+            <p>PetPivot 缺的是把卖点转成用户敢买的证据。</p>
           </div>
           <div class="result-cell">
             <div class="mini-label">预算方向</div>
@@ -1198,7 +1250,7 @@
           <div class="result-cell">
             <div class="mini-label">核心风险</div>
             <h3>低价信任门槛</h3>
-            <p>自动猫砂盆不是低决策品类，低价优势必须用安全和耐用证明托住。</p>
+            <p>自动猫砂盆是高顾虑品类，低价优势必须用安全和耐用证明托住。</p>
           </div>
         </div>
       </aside>
@@ -1210,10 +1262,10 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">TideLens scorecard</div>
-            <h2>PetPivot 目前 62 / 100：有增长盘，但还不是复投系统。</h2>
+            <h2>PetPivot 目前 62 / 100：增长盘已起来，复投机制还没搭好。</h2>
           </div>
           <p>
-            评分按 TideLens 8 维模型：阶段目标、creator 组合、受众真实性、购买证明、平台分工、商业信号、素材复用和治理学习。总分不是评价“有没有投红人”，而是评价红人内容能不能持续降低购买顾虑。
+            评分按 TideLens 8 维模型：阶段目标、creator 组合、受众真实性、购买证明、平台分工、商业信号、素材复用和治理学习。总分评价的是红人内容能不能持续降低购买顾虑。
           </p>
         </div>
 
@@ -1224,7 +1276,7 @@
               <div class="score-number">62<span>/100</span></div>
               <h3>活跃，但效率在流失。</h3>
               <p>
-                PetPivot 已经有 TikTok Shop、affiliate、Instagram Reels、YouTube review、Amazon 和 PR 信号；真正扣分的不是声量，而是 proof matrix、复投标准和平台分工还没有被系统化。
+                PetPivot 已经有 TikTok Shop、affiliate、Instagram Reels、YouTube review、Amazon 和 PR 信号；真正扣分项集中在购买证明矩阵、复投标准和平台分工，这些还没有变成可执行的复投审计。
               </p>
             </div>
             <p>
@@ -1233,66 +1285,130 @@
           </article>
 
           <article class="score-list">
-            <div class="score-row weight-20">
+            <div class="score-row weight-20 is-risk">
               <div>
-                <div class="score-title">购买证明矩阵</div>
-                <div class="score-sub">这是 20 分最高权重项，也是当前最大拖累。便利性已经讲得够多，但安全、耐用、猫适配、售后和比价证明没有被 creator 内容系统接住。</div>
+                <div class="score-head">
+                  <div class="score-title">购买证明矩阵</div>
+                  <span class="score-status risk">最大短板</span>
+                </div>
+                <div class="score-sub">PetPivot 缺的是把卖点变成付款理由。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>便利、低价和自动化卖点已经被讲出来。</span></div>
+                <div class="score-line bad"><b>差</b><span>安全、耐用、猫适配、售后和竞品对比还没形成购买前证据。</span></div>
+                <div class="score-line next"><b>先做</b><span>先补风险证明 brief，再决定哪些内容值得复投。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 55%"></div></div>
               <div class="score-val">11<small>/20</small></div>
             </div>
-            <div class="score-row weight-15">
+            <div class="score-row weight-15 is-caution">
               <div>
-                <div class="score-title">Creator 组合质量</div>
-                <div class="score-sub">有铺量和 affiliate 入口，但高信任测评型 creator 需要加强。</div>
+                <div class="score-head">
+                  <div class="score-title">Creator 组合质量</div>
+                  <span class="score-status caution">中等</span>
+                </div>
+                <div class="score-sub">Creator 数量够，信任型测评不足。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>affiliate 和铺量型 creator 已经形成入口。</span></div>
+                <div class="score-line bad"><b>差</b><span>认真测 30 天、会解释猫行为和售后的 creator 还不够。</span></div>
+                <div class="score-line next"><b>先做</b><span>优先找高信任测评型 creator，减少泛流量采购。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
               <div class="score-val">9<small>/15</small></div>
             </div>
-            <div class="score-row weight-15">
+            <div class="score-row weight-15 is-caution">
               <div>
-                <div class="score-title">平台角色分工</div>
-                <div class="score-sub">TikTok 管转化，Instagram 管素材，YouTube 管信任；目前需要更明确 brief。</div>
+                <div class="score-head">
+                  <div class="score-title">平台角色分工</div>
+                  <span class="score-status caution">需重分工</span>
+                </div>
+                <div class="score-sub">三平台都有入口，但 brief 容易混用。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>TikTok、Instagram、YouTube 都已经有可见内容。</span></div>
+                <div class="score-line bad"><b>差</b><span>平台之间的购买决策任务还没有拆清楚。</span></div>
+                <div class="score-line next"><b>先做</b><span>TikTok 测 hook，Instagram 沉淀素材，YouTube 补购买前信任。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
               <div class="score-val">9<small>/15</small></div>
             </div>
-            <div class="score-row weight-15">
+            <div class="score-row weight-15 is-good">
               <div>
-                <div class="score-title">商业信号与测量</div>
-                <div class="score-sub">TikTok Shop / GMV / Amazon / PR 信号强，但 creator 级复投阈值不清楚。</div>
+                <div class="score-head">
+                  <div class="score-title">商业信号与测量</div>
+                  <span class="score-status good">相对优势</span>
+                </div>
+                <div class="score-sub">需求已经被验证，复投阈值还要补。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>TikTok Shop、GMV、Amazon 和 PR 信号能证明市场需求。</span></div>
+                <div class="score-line bad"><b>差</b><span>creator 级复投阈值和素材授权价值还不清楚。</span></div>
+                <div class="score-line next"><b>先做</b><span>用购买评论、Shop 信号和素材复用表现决定 rebook。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
               <div class="score-val">12<small>/15</small></div>
             </div>
-            <div class="score-row weight-10">
+            <div class="score-row weight-10 is-good">
               <div>
-                <div class="score-title">阶段目标匹配</div>
-                <div class="score-sub">增长期判断清楚，但预算不应继续默认买发布数量。</div>
+                <div class="score-head">
+                  <div class="score-title">阶段目标匹配</div>
+                  <span class="score-status good">方向清楚</span>
+                </div>
+                <div class="score-sub">PetPivot 已经进入 Growth / early Scale。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>公开上线量已经证明 PetPivot 进入增长期。</span></div>
+                <div class="score-line bad"><b>差</b><span>预算仍容易流向新增发布，复投审计不足。</span></div>
+                <div class="score-line next"><b>先做</b><span>从冲上线量切换到筛选可复投内容。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
               <div class="score-val">8<small>/10</small></div>
             </div>
-            <div class="score-row weight-10">
+            <div class="score-row weight-10 is-risk">
               <div>
-                <div class="score-title">受众与真实性审计</div>
-                <div class="score-sub">公开样本能看出活跃，但还缺账号级评论质量和赞助密度审计。</div>
+                <div class="score-head">
+                  <div class="score-title">受众与真实性审计</div>
+                  <span class="score-status risk">风险项</span>
+                </div>
+                <div class="score-sub">账号活跃不等于买家有效。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>公开内容能证明 creator 端有活跃度。</span></div>
+                <div class="score-line bad"><b>差</b><span>区域、评论质量、赞助密度和真实买家意图还没审清。</span></div>
+                <div class="score-line next"><b>先做</b><span>先筛 creator 质量，再增加预算。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 50%"></div></div>
               <div class="score-val">5<small>/10</small></div>
             </div>
-            <div class="score-row weight-10">
+            <div class="score-row weight-10 is-caution">
               <div>
-                <div class="score-title">素材复用与 paid boost</div>
-                <div class="score-sub">已有内容池，但需要按 ads、landing page、Amazon、email 复用价值筛选。</div>
+                <div class="score-head">
+                  <div class="score-title">素材复用与 paid boost</div>
+                  <span class="score-status caution">未分级</span>
+                </div>
+                <div class="score-sub">内容池有了，winner 还没分层。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>已经有内容可用于 ads、landing page、Amazon 和 email。</span></div>
+                <div class="score-line bad"><b>差</b><span>没有按 hook、证明力、授权价值和转化场景分级。</span></div>
+                <div class="score-line next"><b>先做</b><span>给 winner 内容打标签，再做 paid boost。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
               <div class="score-val">6<small>/10</small></div>
             </div>
-            <div class="score-row weight-5">
+            <div class="score-row weight-5 is-risk">
               <div>
-                <div class="score-title">治理与学习循环</div>
-                <div class="score-sub">缺月度复盘、内容权利、brand safety 和 rebook 规则。</div>
+                <div class="score-head">
+                  <div class="score-title">治理与学习循环</div>
+                  <span class="score-status risk">管理缺口</span>
+                </div>
+                <div class="score-sub">商业入口有了，复盘规则太弱。</div>
+              </div>
+              <div class="score-lines">
+                <div class="score-line good"><b>好</b><span>合作入口和商业信号已经存在。</span></div>
+                <div class="score-line bad"><b>差</b><span>内容权利、brand safety、月度复盘和 rebook 规则缺失。</span></div>
+                <div class="score-line next"><b>先做</b><span>建立停投 / 复投标准。</span></div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 40%"></div></div>
               <div class="score-val">2<small>/5</small></div>
@@ -1310,7 +1426,7 @@
             <h2>真正拉低效率的，是四个还没被复投审计接住的环节。</h2>
           </div>
           <p>
-            PetPivot 已经有 133+ 条近 30 天 creator 上线样本。现在不该继续平均加码所有内容，而是先拆最影响复投的低分项：购买证明、受众真实性、素材复用和治理学习。
+            PetPivot 已经有 133+ 条近 30 天 creator 上线样本。现在先拆最影响复投的低分项：购买证明、受众真实性、素材复用和治理学习。
           </p>
         </div>
 
@@ -1327,7 +1443,7 @@
               </div>
               <div class="gap-line">
                 <b>业务影响</b>
-                <span>如果 proof 只停留在便利性，用户会把 PetPivot 当成低价试错，而不是可以长期使用的设备。</span>
+                <span>如果 proof 只停留在便利性，用户会把 PetPivot 当成低价试错，很难相信它能长期使用。</span>
               </div>
               <div class="gap-line">
                 <b>先修动作</b>
@@ -1365,7 +1481,7 @@
             <div class="gap-body">
               <div class="gap-line">
                 <b>拖累原因</b>
-                <span>PetPivot 有足够多 creator 内容，但不是每条内容都值得进 ads、landing page、Amazon、email 或 TikTok Shop 素材库。</span>
+                <span>PetPivot 有足够多 creator 内容，只有能解释购买顾虑的内容才值得进 ads、landing page、Amazon、email 或 TikTok Shop 素材库。</span>
               </div>
               <div class="gap-line">
                 <b>业务影响</b>
@@ -1390,7 +1506,7 @@
               </div>
               <div class="gap-line">
                 <b>业务影响</b>
-                <span>如果没有固定学习循环，133+ 条内容会变成一次性曝光记录，而不是下一轮增长的判断依据。</span>
+                <span>如果没有固定学习循环，133+ 条内容会变成一次性曝光记录，无法变成下一轮增长的判断依据。</span>
               </div>
               <div class="gap-line">
                 <b>先修动作</b>
@@ -1407,7 +1523,7 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Last 30 days public creator signal</div>
-            <h2>近 30 天已核验 133 条 creator 上线：下一步不是加量，是筛复投。</h2>
+            <h2>近 30 天已核验 133 条 creator 上线：下一步筛复投，再考虑加量。</h2>
           </div>
           <p>
             统计窗口：2026-05-16 至 2026-06-15。口径为公开可核验 creator publish，下方不含品牌自有账号；TikTok 已补抓品牌名、#PetPivot、#AutoScooper、#AutoScooper12Lite、Shop / affiliate / code 相关入口，避免只按品牌名搜索低估声量。
@@ -1456,7 +1572,7 @@
                   </div>
                 </div>
                 <div class="chart-callout">
-                  <strong>业务解读：</strong>PetPivot 不是缺红人上线，而是需要从 133 条里筛出能复投的内容：哪些能证明安全、耐用、低价不低质、适合多猫家庭；哪些只是把预算换成一次曝光。TikTok 负责转化测试，Instagram 负责素材沉淀，YouTube 负责购买前信任防守。
+                  <strong>业务解读：</strong>PetPivot 需要从 133 条里筛出能复投的内容：哪些能证明安全、耐用、低价不低质、适合多猫家庭；哪些只是把预算换成一次曝光。TikTok 负责转化测试，Instagram 负责素材沉淀，YouTube 负责购买前信任防守。
                 </div>
               </div>
             </div>
@@ -1489,12 +1605,12 @@
             <span class="pill fix">Fix</span>
             <h3>先修安全、耐用、适配和售后四个信任缺口。</h3>
             <p>
-              自动猫砂盆的购买阻力不是“用户不知道可以自动铲屎”，而是担心猫会不会用、会不会夹猫、会不会坏、售后能不能接住。
+              自动猫砂盆的购买阻力集中在四件事：猫会不会用、会不会夹猫、会不会坏、售后能不能接住。
             </p>
           </article>
           <article class="card">
             <span class="pill build">Build</span>
-            <h3>建立复投矩阵，而不是继续扩 creator 池。</h3>
+            <h3>建立复投矩阵，停止继续扩 creator 池。</h3>
             <p>
               每条合作内容都要进入复投审计：能不能做 ads、landing page、Amazon、TikTok Shop、email 和客服答疑资产。不能复用的内容要降权。
             </p>
@@ -1507,8 +1623,8 @@
       <div class="shell">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Buying proof matrix</div>
-            <h2>PetPivot 的卖点已经有，缺的是把卖点变成付款理由。</h2>
+            <div class="section-kicker">Buying proof</div>
+            <h2>PetPivot 缺的是把卖点变成付款理由。</h2>
           </div>
           <p>
             官网和 PR 已经给出 1M+ sold、1.8M users、300,000+ US units、no app、open-top、safety sensors 等信任资产。Creator 内容需要把这些资产翻译成用户能相信的场景证据。
@@ -1522,7 +1638,7 @@
           </div>
           <div class="proof risk">
             <b>安全证明需要更硬。</b>
-            <span>需要看得见的传感器、暂停、半齿轮、防夹和异常进入测试，而不是只说 safe。</span>
+            <span>需要看得见的传感器、暂停、半齿轮、防夹和异常进入测试，不能只说 safe。</span>
           </div>
           <div class="proof risk">
             <b>耐用证明需要补上。</b>
@@ -1545,7 +1661,7 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Competitor pressure</div>
-            <h2>PetPivot 防守的不是一个竞品，而是四种购买心智。</h2>
+            <h2>PetPivot 需要防守的是四种购买心智。</h2>
           </div>
           <p>
             自动猫砂盆用户不会只看一个品牌。PetPivot 的内容防守要同时回答：为什么不买更贵的、为什么不买更智能的、为什么不买更便宜的、为什么现在就敢买。
@@ -1580,7 +1696,7 @@
             </div>
             <div class="comp-body">
               <h3>抢智能功能。</h3>
-              <p>PETKIT 抢的是 app、数据和智能设备感。PetPivot 的 no app 不是短板，要被讲成稳定、简单、少维护。</p>
+              <p>PETKIT 抢的是 app、数据和智能设备感。PetPivot 的 no app 要被讲成稳定、简单、少维护。</p>
             </div>
           </article>
           <article class="comp-card">
@@ -1605,7 +1721,7 @@
             <h2>三平台不要用同一套 brief，预算按购买决策角色分配。</h2>
           </div>
           <p>
-            平台数量不是排序。PetPivot 应该把 TikTok、Instagram、YouTube 拆成三个不同职能：转化测试、素材沉淀、购买前信任。
+            平台数量只说明覆盖面。PetPivot 应该把 TikTok、Instagram、YouTube 拆成三个不同职能：转化测试、素材沉淀、购买前信任。
           </p>
         </div>
 
