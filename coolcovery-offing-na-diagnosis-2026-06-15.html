@@ -1,0 +1,1387 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoolCovery · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-15</title>
+  <meta name="description" content="CoolCovery 北美业务诊断：阶段判断、渠道结构、搜索心智、VOC、分品线天花板、卖点匹配、关键问题与90/180天路线图。" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --top: rgba(251, 251, 253, .88);
+      --surface: #ffffff;
+      --surface-soft: #f8f9fb;
+      --surface-tint: #f2f7f7;
+      --text: #111615;
+      --body: #263230;
+      --muted: #66716f;
+      --line: #d8dadd;
+      --line-strong: #bfc5c7;
+      --inverse: #111f1e;
+      --inverse-2: #172927;
+      --inverse-text: #f7faf9;
+      --accent: #2f6866;
+      --accent-2: #4f8d89;
+      --teal: #35d1c7;
+      --sky: #a6d7ff;
+      --lilac: #9d86ff;
+      --pink: #f4a7d9;
+      --green: #137a3b;
+      --green-bg: #ecf7f0;
+      --amber: #9a5b00;
+      --amber-bg: #fff6e8;
+      --red: #d70015;
+      --red-bg: #fff0f2;
+      --blue: #0f68c4;
+      --blue-bg: #eff7ff;
+      --shadow: 0 18px 48px rgba(16, 20, 19, .08);
+      --radius: 8px;
+      --max: 1240px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101313;
+        --top: rgba(20, 24, 24, .9);
+        --surface: #191e1e;
+        --surface-soft: #202626;
+        --surface-tint: #182b2a;
+        --text: #f4f7f6;
+        --body: #dce2e0;
+        --muted: #a7b1ae;
+        --line: #3a4241;
+        --line-strong: #596261;
+        --inverse: #e8eeee;
+        --inverse-2: #f4f8f7;
+        --inverse-text: #111615;
+        --accent: #9edbd7;
+        --accent-2: #b5e7e3;
+        --green-bg: #123322;
+        --amber-bg: #33250f;
+        --red-bg: #371418;
+        --blue-bg: #12263a;
+        --shadow: 0 18px 48px rgba(0, 0, 0, .32);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        linear-gradient(120deg, rgba(53, 209, 199, .07), transparent 34rem),
+        linear-gradient(240deg, rgba(244, 167, 217, .06), transparent 30rem),
+        var(--bg);
+      font-family: var(--font);
+      line-height: 1.58;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 900; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: var(--top);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .lock-symbol {
+      width: 30px;
+      height: 30px;
+      border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--surface-tint) 78%, transparent);
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .lockup span { display: block; margin-top: 3px; color: var(--accent); font-size: 12px; font-weight: 850; }
+    .nav { display: flex; gap: 16px; color: var(--muted); font-size: 13px; font-weight: 760; white-space: nowrap; }
+    .nav a:hover { color: var(--text); }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 0 24px 76px; }
+    section { padding-top: 72px; scroll-margin-top: 84px; }
+    h1, h2, h3, p { margin: 0; }
+
+    .hero {
+      min-height: calc(100svh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(380px, .72fr);
+      gap: clamp(28px, 5vw, 70px);
+      align-items: center;
+      padding: 54px 0 46px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      margin-bottom: 26px;
+    }
+
+    .brand-logo img {
+      width: min(270px, 62vw);
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: saturate(1.02);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--teal), var(--lilac), var(--pink));
+    }
+
+    h1 {
+      max-width: 820px;
+      font-size: clamp(56px, 6.2vw, 94px);
+      line-height: .95;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(21px, 2vw, 29px);
+      line-height: 1.36;
+      font-weight: 850;
+    }
+
+    .sublead {
+      max-width: 760px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 620;
+    }
+
+    .score-panel {
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        linear-gradient(125deg, rgba(53, 209, 199, .16), transparent 45%),
+        linear-gradient(245deg, rgba(244, 167, 217, .15), transparent 48%),
+        linear-gradient(145deg, var(--inverse), var(--inverse-2));
+      color: var(--inverse-text);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .score-panel::before {
+      content: "";
+      display: block;
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--sky), var(--lilac), var(--pink));
+    }
+
+    .score-body { padding: 26px; }
+    .score-label { color: color-mix(in srgb, var(--inverse-text) 78%, transparent); font-size: 13px; font-weight: 850; }
+    .score-num { margin-top: 10px; font-size: clamp(66px, 7vw, 92px); font-weight: 950; line-height: .9; }
+    .stars {
+      position: relative;
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 29px;
+      line-height: 1;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.28);
+      font-family: Georgia, serif;
+    }
+    .stars::before { content: "★★★★★"; }
+    .stars span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: var(--star);
+      overflow: hidden;
+      white-space: nowrap;
+      color: #ffc04d;
+    }
+    .stars span::before { content: "★★★★★"; }
+    .formula {
+      margin-top: 18px;
+      color: color-mix(in srgb, var(--inverse-text) 82%, transparent);
+      font-size: 15px;
+      font-weight: 680;
+    }
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .subscore {
+      min-height: 116px;
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.07);
+    }
+    .subscore b { display: block; font-size: 32px; line-height: 1; }
+    .subscore span { display: block; margin-top: 8px; color: color-mix(in srgb, var(--inverse-text) 82%, transparent); font-size: 13px; font-weight: 850; }
+    .subscore small { display: block; margin-top: 8px; color: color-mix(in srgb, var(--inverse-text) 70%, transparent); font-size: 12px; line-height: 1.45; }
+    .bar { width: 100%; height: 7px; border-radius: 99px; background: color-mix(in srgb, var(--line) 70%, transparent); overflow: hidden; margin-top: 10px; }
+    .bar > i { display: block; height: 100%; width: var(--w); border-radius: inherit; background: var(--c); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(300px, .7fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      max-width: 860px;
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 1.03;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .section-note { color: var(--body); font-size: 16px; font-weight: 650; }
+    .muted { color: var(--muted); }
+
+    .grid { display: grid; gap: 14px; }
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card.pad { padding: 20px; }
+    .card h3 { font-size: 20px; line-height: 1.18; font-weight: 900; }
+    .card p { margin-top: 10px; color: var(--body); font-size: 15px; }
+    .card .small { color: var(--muted); font-size: 13px; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      color: var(--body);
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .chip.green { border-color: color-mix(in srgb, var(--green) 28%, var(--line)); background: var(--green-bg); color: var(--green); }
+    .chip.amber { border-color: color-mix(in srgb, var(--amber) 28%, var(--line)); background: var(--amber-bg); color: var(--amber); }
+    .chip.red { border-color: color-mix(in srgb, var(--red) 28%, var(--line)); background: var(--red-bg); color: var(--red); }
+    .chip.blue { border-color: color-mix(in srgb, var(--blue) 28%, var(--line)); background: var(--blue-bg); color: var(--blue); }
+
+    .stage-panel {
+      padding: 26px;
+      color: #f7faf9;
+      background:
+        radial-gradient(circle at 70% 25%, rgba(53, 209, 199, .16), transparent 28%),
+        linear-gradient(140deg, #0f1c1b, #142927);
+      border-color: rgba(255,255,255,.12);
+    }
+
+    .stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 22px; }
+    .stage-tile {
+      min-height: 118px;
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.9);
+    }
+    .stage-tile.active { background: #fff; color: #111615; box-shadow: 0 16px 36px rgba(53,209,199,.18); }
+    .stage-tile b { display: block; font-size: 23px; margin-bottom: 8px; }
+    .stage-tile span { color: inherit; opacity: .72; font-size: 13px; font-weight: 800; }
+
+    .rings {
+      min-height: 440px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--surface), var(--surface-soft));
+      position: relative;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+    }
+    .ring.outer { width: 92%; aspect-ratio: 1 / .58; background: color-mix(in srgb, var(--pink) 7%, transparent); }
+    .ring.mid { width: 68%; aspect-ratio: 1 / .58; background: color-mix(in srgb, var(--sky) 10%, var(--surface)); }
+    .ring.core { width: 42%; aspect-ratio: 1 / .58; background: color-mix(in srgb, var(--teal) 18%, var(--surface)); border-color: color-mix(in srgb, var(--accent) 38%, var(--line)); box-shadow: 0 18px 44px rgba(47,104,102,.13); }
+    .ring b { display: block; font-size: clamp(18px, 2.1vw, 26px); line-height: 1.15; }
+    .ring span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 760; }
+
+    .split-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 260px;
+    }
+    .split-card > div { padding: 20px; }
+    .split-card > div + div { border-left: 1px solid var(--line); }
+    .split-card ul, .issue ul, .roadmap ul { margin: 12px 0 0; padding-left: 18px; color: var(--body); }
+    .split-card li, .issue li, .roadmap li { margin: 8px 0; }
+
+    .channel-bars { display: grid; gap: 14px; }
+    .channel { display: grid; grid-template-columns: 160px 1fr 54px; gap: 12px; align-items: center; font-size: 14px; font-weight: 850; }
+    .track { height: 12px; border-radius: 99px; background: var(--surface-soft); border: 1px solid var(--line); overflow: hidden; }
+    .track i { display: block; height: 100%; width: var(--w); border-radius: inherit; background: linear-gradient(90deg, var(--teal), var(--accent)); }
+
+    .rank-card { border-top: 4px solid var(--line); }
+    .rank-card.red { border-top-color: var(--red); background: color-mix(in srgb, var(--red-bg) 38%, var(--surface)); }
+    .rank-card.amber { border-top-color: var(--amber); background: color-mix(in srgb, var(--amber-bg) 38%, var(--surface)); }
+    .rank-card.green { border-top-color: var(--green); background: color-mix(in srgb, var(--green-bg) 38%, var(--surface)); }
+    .rank-card.blue { border-top-color: var(--blue); background: color-mix(in srgb, var(--blue-bg) 35%, var(--surface)); }
+    .rank-card .rank { color: var(--accent); font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .04em; }
+    .rank-card h3 { margin-top: 10px; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 860px; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--surface-soft); font-size: 13px; font-weight: 900; color: var(--text); }
+    td { color: var(--body); font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .verdict { display: inline-flex; min-width: 76px; justify-content: center; padding: 3px 8px; border-radius: 99px; font-size: 12px; font-weight: 900; }
+    .verdict.bad { color: var(--red); background: var(--red-bg); border: 1px solid color-mix(in srgb, var(--red) 24%, var(--line)); }
+    .verdict.mid { color: var(--amber); background: var(--amber-bg); border: 1px solid color-mix(in srgb, var(--amber) 24%, var(--line)); }
+    .verdict.good { color: var(--green); background: var(--green-bg); border: 1px solid color-mix(in srgb, var(--green) 24%, var(--line)); }
+
+    .wordcloud {
+      min-height: 236px;
+      position: relative;
+      padding: 22px;
+    }
+    .wordcloud h3 { margin-bottom: 16px; }
+    .cloud-area {
+      position: relative;
+      min-height: 138px;
+      overflow: hidden;
+    }
+    .cloud-word {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      transform: rotate(var(--r));
+      color: var(--color);
+      font-weight: 950;
+      font-size: var(--s);
+      white-space: nowrap;
+    }
+
+    .fit-row {
+      display: grid;
+      grid-template-columns: minmax(220px, .9fr) 110px minmax(220px, .85fr) minmax(280px, 1.2fr);
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .fit-point b { display: block; font-size: 19px; }
+    .weight { display: inline-flex; margin-top: 10px; padding: 5px 10px; border-radius: 99px; color: var(--blue); background: var(--blue-bg); border: 1px solid color-mix(in srgb, var(--blue) 24%, var(--line)); font-size: 13px; font-weight: 900; }
+    .fit-score b { display: block; color: var(--c); font-size: 30px; line-height: 1; }
+
+    .onepage {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, .7fr);
+      gap: 16px;
+    }
+    .judgement {
+      padding: 24px;
+      background: linear-gradient(140deg, #0f1d1c, #142927);
+      color: #f7faf9;
+    }
+    .judgement p { color: rgba(255,255,255,.82); font-size: 16px; }
+    .top-list { display: grid; gap: 12px; }
+    .top-item { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; padding: 18px; }
+    .num-dot { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--red-bg); color: var(--red); font-weight: 950; }
+
+    .block-card {
+      display: grid;
+      grid-template-columns: 155px 1fr;
+      min-height: 390px;
+    }
+    .block-score {
+      padding: 24px 18px;
+      border-right: 1px solid var(--line);
+      background: var(--surface-soft);
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+    .block-score b { font-size: 54px; line-height: .9; color: var(--c); }
+    .block-copy { padding: 24px; }
+    .block-copy .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; }
+    .block-copy h4 { margin: 0 0 8px; font-size: 14px; color: var(--accent); }
+    .block-copy li { margin: 8px 0; color: var(--body); }
+
+    .issue {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .issue-side {
+      padding: 24px;
+      background: linear-gradient(160deg, #101b1a, #142927);
+      color: #fff;
+    }
+    .issue-side .severity { color: rgba(255,255,255,.72); font-size: 12px; font-weight: 900; }
+    .issue-side b { display: block; margin-top: 14px; font-size: 48px; line-height: .9; }
+    .issue-main { padding: 22px; }
+    .issue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+    .mini { padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-soft); }
+    .mini b { display: block; margin-bottom: 6px; }
+    .issue-bottom { margin-top: 14px; color: var(--body); }
+
+    .path {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      counter-reset: step;
+    }
+    .path-card { position: relative; min-height: 190px; padding: 20px; }
+    .path-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      position: absolute;
+      right: 16px;
+      top: 12px;
+      color: color-mix(in srgb, var(--text) 10%, transparent);
+      font-size: 52px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .score-card { padding: 18px; border-top: 4px solid var(--c); }
+    .score-card b { display: block; color: var(--c); font-size: 34px; line-height: 1; }
+    .score-card h3 { margin-top: 8px; font-size: 17px; }
+
+    .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .roadmap .card { padding: 20px; }
+    .roadmap .days { color: var(--accent); font-size: 13px; font-weight: 950; text-transform: uppercase; letter-spacing: .04em; }
+    .roadmap h3 { margin-top: 12px; }
+
+    .light-group {
+      border-top: 4px solid var(--c);
+      padding: 18px;
+    }
+    .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+    .dept-card { padding: 16px; border-top: 4px solid var(--c); }
+    .dept-card b { color: var(--c); font-size: 34px; line-height: 1; }
+    .dept-card h3 { margin-top: 8px; font-size: 18px; }
+    .worst { margin-top: 10px; padding: 10px; border-radius: var(--radius); background: color-mix(in srgb, var(--red-bg) 58%, var(--surface)); color: var(--red); font-weight: 900; font-size: 13px; }
+
+    .source-list { display: grid; gap: 10px; }
+    .source {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .source b { color: var(--accent); }
+    .source a { color: var(--blue); font-weight: 850; overflow-wrap: anywhere; }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 24px 54px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero, .section-head, .onepage { grid-template-columns: 1fr; }
+      .score-panel { max-width: 680px; }
+      .cols-4, .cols-3, .score-grid, .dept-grid, .path, .roadmap { grid-template-columns: repeat(2, 1fr); }
+      .block-card, .issue { grid-template-columns: 1fr; }
+      .block-score { border-right: 0; border-bottom: 1px solid var(--line); }
+      .issue-grid, .subscores, .stage-grid { grid-template-columns: 1fr; }
+      .fit-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 12px 18px; }
+      .nav { width: 100%; gap: 12px; overflow-x: auto; padding-bottom: 2px; }
+      main { padding: 0 16px 58px; }
+      .hero { min-height: auto; padding: 38px 0 34px; }
+      h1 { font-size: clamp(42px, 13vw, 54px); }
+      h2 { font-size: clamp(32px, 11vw, 48px); }
+      .cols-4, .cols-3, .cols-2, .score-grid, .dept-grid, .path, .roadmap { grid-template-columns: 1fr; }
+      .split-card, .block-copy .columns { grid-template-columns: 1fr; }
+      .split-card > div + div { border-left: 0; border-top: 1px solid var(--line); }
+      .channel { grid-template-columns: 1fr; gap: 6px; }
+      .rings { min-height: 360px; }
+      .ring.outer { width: 98%; }
+      .ring.mid { width: 76%; }
+      .ring.core { width: 54%; }
+      .wordcloud { min-height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="lockup" aria-label="远汐 Offing Atlas 北美业务诊断">
+        <span class="lock-symbol">A</span>
+        <span style="display:block;color:inherit;font-size:15px;">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></span>
+      </a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#stage">阶段</a>
+        <a href="#channel">类型</a>
+        <a href="#search">搜索</a>
+        <a href="#voc">VOC</a>
+        <a href="#problems">问题</a>
+        <a href="#roadmap">路径</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="首屏结论">
+      <div>
+        <div class="brand-logo"><img src="assets/coolcovery/coolcovery-wordmark.png" alt="CoolCovery logo" /></div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">CoolCovery 的产品概念有辨识度，但北美当前最卡的不是功能，而是信任证据：高客单恢复设备需要清楚证明谁该买、为什么敢买、买哪套、出了问题怎么处理。</p>
+        <p class="sublead">公开数据日期：2026-06-15。判断基于官网、Shopify 产品页、退款政策、社媒搜索结果、竞品官网与公开市场资料；内部订单、报价单、毛利和渠道后台会显著影响最终分数。</p>
+      </div>
+
+      <aside class="score-panel" aria-label="北美业务总分">
+        <div class="score-body">
+          <div class="score-label">北美业务情况总分</div>
+          <div class="score-num">49</div>
+          <div class="stars" style="--star:49%;"><span></span></div>
+          <p class="formula">49 / 100 = 2.45 / 5。业务健康度 42 × 45% + 业务机会分 74 × 35% +（100 - 问题致命度 78）× 20%。</p>
+          <div class="subscores">
+            <div class="subscore">
+              <b>42</b>
+              <span>业务健康度</span>
+              <div class="bar"><i style="--w:42%;--c:var(--red);"></i></div>
+              <small>产品方向成立，但公开成交证据、页面完成度和独立口碑不足。</small>
+            </div>
+            <div class="subscore">
+              <b>74</b>
+              <span>业务机会分</span>
+              <div class="bar"><i style="--w:74%;--c:var(--green);"></i></div>
+              <small>冷/热/压缩一体化具备差异点，专业恢复空间有机会。</small>
+            </div>
+            <div class="subscore">
+              <b>78</b>
+              <span>问题致命度</span>
+              <div class="bar"><i style="--w:78%;--c:var(--red);"></i></div>
+              <small>信任缺口直接影响高客单转化，不能靠投放硬推。</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="stage">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>当前阶段：1-10 初期，产品能讲清，但还没有把北美成交证据做扎实。</h2>
+        </div>
+        <p class="section-note">CoolCovery 已经跨过“只有概念”的阶段：官网有完整产品线、专业场景、退款政策和报价入口。问题是，这些材料还没有组成一套足以支撑高客单购买的信任链。</p>
+      </div>
+      <div class="card stage-panel">
+        <h3>这个阶段最该做什么</h3>
+        <p style="color:rgba(255,255,255,.82);margin-top:8px;">先把一个主力购买场景做成可验证样板：例如“运动恢复工作室 / 诊所 / 高客单家庭健身房”三选一。页面、案例、报价、演示和售后都围绕这个场景收敛，而不是同时讲所有人都适合。</p>
+        <div class="stage-grid">
+          <div class="stage-tile"><b>0-1</b><span>产品需求验证</span></div>
+          <div class="stage-tile active"><b>1-10 初期</b><span>单一场景成交验证</span></div>
+          <div class="stage-tile"><b>10-100</b><span>渠道与复购系统化</span></div>
+          <div class="stage-tile"><b>100+</b><span>品类领导</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gene">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Brand Gene</div>
+          <h2>品牌基因：靠专业恢复场景成立，不能先按普通健身小电器卖。</h2>
+        </div>
+        <p class="section-note">CoolCovery 的核心人群不是“所有运动后腿酸的人”。真正愿意付高客单的人，要么需要更专业的恢复流程，要么需要把设备放进一个可收费的服务空间。</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card rings" aria-label="核心人群同心圆">
+          <div class="ring outer"><b>大众外扩</b><span>跑步、健身、办公室疲劳人群</span></div>
+          <div class="ring mid"><b>相邻人群</b><span>高客单家庭健身房、球队、精品健身房、恢复工作室</span></div>
+          <div class="ring core"><b>核心盘</b><span>诊所 / 教练 / 专业恢复空间 / 严肃运动用户</span></div>
+        </div>
+        <div class="grid">
+          <div class="card pad rank-card green">
+            <div class="rank">Core</div>
+            <h3>最应该先打：需要把恢复变成流程和服务的人。</h3>
+            <p>官网已经写到 clinics、sports teams、fitness centers、spa & wellness 等专业场景，但缺少对应案例、套餐、报价逻辑和采购理由。E1, E5</p>
+          </div>
+          <div class="card pad rank-card amber">
+            <div class="rank">Adjacent</div>
+            <h3>可以外扩：高客单家庭和严肃运动人群。</h3>
+            <p>这群人会被“无冰冷疗 + 热敷 + 压缩”吸引，但会先问：比 Normatec、Therabody、Game Ready 或低价 Amazon 靴子强在哪里。E11-E14</p>
+          </div>
+          <div class="card pad rank-card red">
+            <div class="rank">Boundary</div>
+            <h3>暂时别泛化：普通恢复小工具用户。</h3>
+            <p>如果页面没有价格理由、风险解释和独立评价，普通用户只会拿它和更便宜的压缩靴或冰敷机比价，转化会被拉低。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="channel">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Operating Type</div>
+          <h2>经营类型：B2B / 专业空间验证型，官网私域报价比公开货架更关键。</h2>
+        </div>
+        <p class="section-note">CoolCovery 不是典型 Amazon 驱动品牌。公开证据显示它更像用 Shopify 官网承接询盘和报价的专业设备品牌，但官网产品页又保留了普通电商下单逻辑，导致路径混杂。</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card pad">
+          <h3>预估渠道销售额占比</h3>
+          <p class="small">公开可见证据下的方向性估算；若存在大量私域报价、展会或经销商订单，应以内部门店/发票数据覆盖。</p>
+          <div class="channel-bars" style="margin-top:18px;">
+            <div class="channel"><span>官网 / 私域报价</span><div class="track"><i style="--w:70%;"></i></div><b>70%</b></div>
+            <div class="channel"><span>B2B 演示 / 批量</span><div class="track"><i style="--w:20%;"></i></div><b>20%</b></div>
+            <div class="channel"><span>Amazon / 平台</span><div class="track"><i style="--w:5%;"></i></div><b>5%</b></div>
+            <div class="channel"><span>零售 / 经销</span><div class="track"><i style="--w:5%;"></i></div><b>5%</b></div>
+          </div>
+          <div class="chip-row">
+            <span class="chip amber">置信度：中低</span>
+            <span class="chip blue">需要内部订单校准</span>
+          </div>
+        </div>
+        <div class="card split-card">
+          <div>
+            <h3>做对的地方</h3>
+            <ul>
+              <li>官网第一行已经把“专业演示 / 报价”放到前面，方向更像专业设备销售。E1</li>
+              <li>退款政策覆盖 direct invoice、quotation、B2B、commercial、pilot、demo 等交易形态，说明品牌知道高客单设备不能只靠购物车。E8</li>
+              <li>产品组合围绕一个控制主机和模块化附件，具备套餐化基础。E6</li>
+            </ul>
+          </div>
+          <div>
+            <h3>做得差的地方</h3>
+            <ul>
+              <li>产品页同时出现 Contact Us、By It Now、$0 价格和 1 in stock，购买路径很混乱。E2, E9</li>
+              <li>Support 页面几乎为空，高客单设备最需要的售前/售后信任没有落地。E7</li>
+              <li>没有公开看到足够强的 Amazon、零售、诊所案例或独立评测资产，投放会很难放量。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="search">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：行业入口最大，但 CoolCovery 还没有把“冷 + 热 + 压缩”变成可搜索的购买理由。</h2>
+        </div>
+        <p class="section-note">搜索入口应按“量级 × 购买意图 × 当前承接缺口”排序。CoolCovery 现在最应补的是行业词和竞品词承接，而不是只守品牌词。</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="card pad rank-card red">
+          <div class="rank">P0 · 行业词</div>
+          <h3>没接住，最影响获客。</h3>
+          <p>recovery boots、compression boots、cold compression therapy、sports recovery device 这类入口量级最大。CoolCovery 有功能差异，但缺少专门的行业词落地页和对比页。</p>
+          <div class="chip-row"><span class="chip red">量级高</span><span class="chip red">承接弱</span></div>
+        </div>
+        <div class="card pad rank-card red">
+          <div class="rank">P0 · 竞品词</div>
+          <h3>没接牢，会丢高意向用户。</h3>
+          <p>Normatec、Therabody、Game Ready、NICE 都在教育市场。用户已经知道品类时，CoolCovery 必须解释“为什么不是只买压缩靴或租 Game Ready”。</p>
+          <div class="chip-row"><span class="chip amber">量级中高</span><span class="chip red">缺对比页</span></div>
+        </div>
+        <div class="card pad rank-card amber">
+          <div class="rank">P1 · 场景词</div>
+          <h3>有机会，但页面没拆细。</h3>
+          <p>triathlon recovery、gym recovery room、PT clinic recovery、team recovery 等场景词更接近 B2B，但官网只做了泛场景陈列，没有按采购决策写页面。</p>
+          <div class="chip-row"><span class="chip amber">高价值</span><span class="chip amber">需内容资产</span></div>
+        </div>
+        <div class="card pad rank-card green">
+          <div class="rank">P2 · 品牌词</div>
+          <h3>能接住，但规模很小。</h3>
+          <p>CoolCovery 品牌词能回到官网和社媒，但品牌知名度还不足以支撑主要增长。品牌词保护是基础，不是增长主线。</p>
+          <div class="chip-row"><span class="chip green">可守住</span><span class="chip blue">需放大</span></div>
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-top:14px;">
+        <table>
+          <thead>
+            <tr>
+              <th>搜索入口</th>
+              <th>用户真实意图</th>
+              <th>现在承接情况</th>
+              <th>经营动作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>“best recovery boots / compression boots”</td>
+              <td>想找可靠、好用、值得买的恢复设备</td>
+              <td><span class="verdict bad">没接住</span> 只有产品页，缺少榜单、对比、使用边界和价格解释。</td>
+              <td>建立 Normatec / Therabody / low-cost Amazon 对比页，明确 CoolCovery 的冷/热/压缩价值。</td>
+            </tr>
+            <tr>
+              <td>“cold compression therapy machine”</td>
+              <td>更偏术后、康复、疼痛管理和专业使用</td>
+              <td><span class="verdict mid">半接住</span> 功能有，但临床证据、禁忌、专业流程不够具体。</td>
+              <td>补适用/不适用、使用流程、专业背书、免责声明和案例。</td>
+            </tr>
+            <tr>
+              <td>“Game Ready alternative”</td>
+              <td>想找更便捷或更可负担的专业冷压缩方案</td>
+              <td><span class="verdict bad">没接住</span> 没有直接解释与租赁/医疗系统的边界。</td>
+              <td>做“家庭/工作室版本的冷+热+压缩方案”页面，不碰医疗承诺红线。</td>
+            </tr>
+            <tr>
+              <td>“recovery room equipment for gym / clinic”</td>
+              <td>B2B 采购，关心 ROI、耐用、维护、售后和报价</td>
+              <td><span class="verdict mid">半接住</span> 有报价入口，但缺少采购包、演示流程和样板间案例。</td>
+              <td>把 B2B 表单改为“预约演示 + 场地类型 + 套餐建议 + 预计回本逻辑”。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="voc">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC & Reputation</div>
+          <h2>声誉总分 36：官网好评很多，但独立口碑太薄，反而会让谨慎用户起疑。</h2>
+        </div>
+        <p class="section-note">高客单恢复设备的口碑不能只放在自己官网。CoolCovery 现在最危险的不是差评很多，而是公开独立样本太少，官网评论又存在明显重复，可信度不足。</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="card pad rank-card amber">
+          <div class="rank">Official Reviews</div>
+          <h3>4.9 / 5.0，128+ reviews。</h3>
+          <p>官网产品页展示 4.9/5.0 和 128+ genuine reviews，但页面里多段评论重复出现，削弱真实感。E4</p>
+        </div>
+        <div class="card pad rank-card red">
+          <div class="rank">Independent Proof</div>
+          <h3>公开独立评价不足。</h3>
+          <p>未看到足够强的 Amazon、Trustpilot、BBB、媒体长测或 Reddit 讨论沉淀。对高客单设备，这是转化短板。</p>
+        </div>
+        <div class="card pad rank-card amber">
+          <div class="rank">Policy Trust</div>
+          <h3>政策很细，但页面没转化成安心感。</h3>
+          <p>退款政策写得完整，尤其 B2B 和 hygiene-sensitive accessories 边界清楚；但 PDP、FAQ 和支持页没有把关键条款讲成用户能理解的承诺。E8</p>
+        </div>
+        <div class="card pad rank-card red">
+          <div class="rank">Service Touchpoint</div>
+          <h3>Support 页面几乎空白。</h3>
+          <p>对涉及身体接触、温控和压力的设备，支持页缺少故障、保修、配件、医生咨询、使用禁忌和售后流程。E7</p>
+        </div>
+      </div>
+      <div class="grid cols-2" style="margin-top:14px;">
+        <div class="card wordcloud">
+          <h3>集中好评主题</h3>
+          <div class="cloud-area">
+            <span class="cloud-word" style="--x:5%;--y:18%;--r:-2deg;--s:28px;--color:var(--green);">无冰冷疗</span>
+            <span class="cloud-word" style="--x:42%;--y:10%;--r:1deg;--s:24px;--color:var(--accent);">冷 + 压缩</span>
+            <span class="cloud-word" style="--x:25%;--y:48%;--r:-4deg;--s:22px;--color:var(--green);">腿部轻松</span>
+            <span class="cloud-word" style="--x:62%;--y:50%;--r:3deg;--s:18px;--color:var(--body);">一键启动</span>
+            <span class="cloud-word" style="--x:8%;--y:72%;--r:2deg;--s:17px;--color:var(--accent);">家庭健身房</span>
+            <span class="cloud-word" style="--x:55%;--y:76%;--r:-3deg;--s:19px;--color:var(--green);">运动恢复</span>
+          </div>
+          <p class="small">好评方向能说明产品有体验感，但目前更像官网内素材，不足以直接证明北美真实转化质量。</p>
+        </div>
+        <div class="card wordcloud">
+          <h3>集中抱怨 / 疑虑主题</h3>
+          <div class="cloud-area">
+            <span class="cloud-word" style="--x:4%;--y:14%;--r:2deg;--s:30px;--color:var(--red);">没有独立口碑</span>
+            <span class="cloud-word" style="--x:48%;--y:10%;--r:-3deg;--s:24px;--color:var(--red);">价格不清</span>
+            <span class="cloud-word" style="--x:20%;--y:46%;--r:4deg;--s:23px;--color:var(--amber);">评论重复</span>
+            <span class="cloud-word" style="--x:56%;--y:48%;--r:1deg;--s:19px;--color:var(--red);">Support 空白</span>
+            <span class="cloud-word" style="--x:8%;--y:74%;--r:-2deg;--s:18px;--color:var(--amber);">B2B 退换边界</span>
+            <span class="cloud-word" style="--x:60%;--y:76%;--r:3deg;--s:18px;--color:var(--body);">适用人群不清</span>
+          </div>
+          <p class="small">这些疑虑不一定来自差评，而是来自页面和公开证据缺口；它们会直接拉低高意向用户的下单信心。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ceiling">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Market Ceiling</div>
+          <h2>北美市场天花板要分品线看：压缩靴竞争最卷，冷/热/压缩一体化才是 CoolCovery 的突破口。</h2>
+        </div>
+        <p class="section-note">不能只说“恢复市场很大”。CoolCovery 要证明自己不是又一双 recovery boots，而是能进入工作室、诊所、球队和高客单家庭的模块化恢复系统。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>品线 / 方案</th>
+              <th>北美天花板判断</th>
+              <th>当前公开 GMV / 市占判断</th>
+              <th>经营结论</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3COVERY 主机 + 模块附件</td>
+              <td>机会最大，能从单品转向恢复空间方案。</td>
+              <td>公开下限很低；Shopify 显示多款产品价格为 0，公开 sell-out 不透明。E9</td>
+              <td>先把主方案做成可报价、可演示、可比较的“恢复空间套餐”。</td>
+            </tr>
+            <tr>
+              <td>Compression boots / MOVE</td>
+              <td>需求大，但竞争最激烈；Normatec、Therabody 和低价 Amazon 都会拦截。</td>
+              <td>未看到强平台动销证据，暂不应按规模品线估值。</td>
+              <td>不能用普通压缩靴打法，必须把冷/热差异和专业场景讲透。</td>
+            </tr>
+            <tr>
+              <td>Cold + compression rehab</td>
+              <td>专业价值高，北美冷压缩治疗市场公开报告显示 2026 全球约 USD 1.95B，北美占比约 41%。E15</td>
+              <td>CoolCovery 还没有公开临床、渠道或租赁体系证明能吃到这部分预算。</td>
+              <td>可以借势，但不能做医疗化承诺；要用场景、禁忌和专业合作降低风险。</td>
+            </tr>
+            <tr>
+              <td>B2B / gym / clinic packages</td>
+              <td>不一定最大，但最适合当前阶段。</td>
+              <td>官网有 B2B 团购和专业演示信号，缺少案例和报价路径。E1, E5, E8</td>
+              <td>这是 90 天内最该验证的收入入口。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="intent">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：北美用户不是先问“功能多不多”，而是先问“我敢不敢买”。</h2>
+        </div>
+        <p class="section-note">恢复设备涉及身体、安全、价格和售后。页面的核心任务不是继续堆功能，而是把购买风险一个个拆掉。</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="card pad">
+          <h3>SERP</h3>
+          <p>用户在搜索结果里会先比较 Normatec、Therabody、Game Ready 和低价 Amazon 产品。</p>
+          <div class="chip-row"><span class="chip red">对比页缺口</span></div>
+        </div>
+        <div class="card pad">
+          <h3>YouTube / TikTok</h3>
+          <p>用户想看真实上腿、噪音、冷感、尺寸、清洁、场景演示和长期使用反馈。</p>
+          <div class="chip-row"><span class="chip amber">素材不够硬</span></div>
+        </div>
+        <div class="card pad">
+          <h3>Reddit / Forums</h3>
+          <p>用户会问“贵的和便宜的差在哪”“是否真的恢复更快”“售后靠不靠谱”。</p>
+          <div class="chip-row"><span class="chip red">信任资产不足</span></div>
+        </div>
+        <div class="card pad">
+          <h3>B2B Buyer</h3>
+          <p>诊所和健身房关心报价、维护、消毒、保修、回本、培训和客户体验。</p>
+          <div class="chip-row"><span class="chip red">采购包未成型</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配度 46：主卖点有差异，但没有按北美用户最在意的问题排序。</h2>
+        </div>
+        <p class="section-note">以下权重为公开搜索、竞品页面、官网信息和恢复设备购买场景的方向性样本权重，需用广告词、Search Console、客服问询和成交访谈校准。</p>
+      </div>
+      <div class="grid">
+        <div class="fit-row">
+          <div class="fit-point"><b>是否真的有效 / 适合我的场景</b><span class="weight">关注权重 32%</span></div>
+          <div class="fit-score"><b style="--c:var(--amber);">52 / 100</b><div class="bar"><i style="--w:52%;--c:var(--amber);"></i></div></div>
+          <div><span class="verdict mid">半接住</span></div>
+          <p>官网有动态压缩、冷+压缩、热+压缩和使用场景，但缺少真实案例、长测视频、专业人士背书和不同人群的使用边界。E5</p>
+        </div>
+        <div class="fit-row">
+          <div class="fit-point"><b>安全、禁忌和身体接触风险</b><span class="weight">关注权重 24%</span></div>
+          <div class="fit-score"><b style="--c:var(--red);">38 / 100</b><div class="bar"><i style="--w:38%;--c:var(--red);"></i></div></div>
+          <div><span class="verdict bad">没接住</span></div>
+          <p>FAQ 写了安全和“consult a doctor”，但没有把压力、温度、适用/不适用人群、卫生配件和售后边界提前讲清。E4, E8</p>
+        </div>
+        <div class="fit-row">
+          <div class="fit-point"><b>价格理由 / 为什么比竞品值得</b><span class="weight">关注权重 18%</span></div>
+          <div class="fit-score"><b style="--c:var(--red);">34 / 100</b><div class="bar"><i style="--w:34%;--c:var(--red);"></i></div></div>
+          <div><span class="verdict bad">没接住</span></div>
+          <p>公开产品数据价格为 0，页面没有清晰套餐价格、报价逻辑或对比成本。高客单用户会直接转去竞品页面。E9, E11-E14</p>
+        </div>
+        <div class="fit-row">
+          <div class="fit-point"><b>买哪套 / 尺码和部位适配</b><span class="weight">关注权重 14%</span></div>
+          <div class="fit-score"><b style="--c:var(--amber);">48 / 100</b><div class="bar"><i style="--w:48%;--c:var(--amber);"></i></div></div>
+          <div><span class="verdict mid">半接住</span></div>
+          <p>FLEX、MAX、MOVE、PERFORM 和附件逻辑存在，但 Option A/B/C/D、套组和尺寸选择没有被讲成明确的购买决策树。E6, E9</p>
+        </div>
+        <div class="fit-row">
+          <div class="fit-point"><b>保修、退换和后续维护</b><span class="weight">关注权重 12%</span></div>
+          <div class="fit-score"><b style="--c:var(--red);">39 / 100</b><div class="bar"><i style="--w:39%;--c:var(--red);"></i></div></div>
+          <div><span class="verdict bad">没接住</span></div>
+          <p>产品页写 1-Year Warranty 和 30-day return，但退款政策实际对 hygiene-sensitive accessories 和 B2B 订单有很多限制；必须提前透明化。E3, E8</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="onepage">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One Page Summary</div>
+          <h2>一页看懂：CoolCovery 要先补可信成交链，再谈铺渠道。</h2>
+        </div>
+        <p class="section-note">当前北美最优先的不是多上几个 SKU，也不是泛投放，而是把一个高信任购买路径打通。</p>
+      </div>
+      <div class="onepage">
+        <div class="card judgement">
+          <h3>经营判断</h3>
+          <p style="margin-top:14px;">CoolCovery 的冷/热/压缩一体化有差异点，适合先从专业恢复空间和严肃运动人群切入。现在的问题是，官网承接还停在“功能展示 + 联系报价”的中间态：页面完成度、真实口碑、竞品对比、售后边界和 B2B 采购包都没补齐，导致用户看懂功能之后仍然不敢买。</p>
+          <div class="chip-row">
+            <span class="chip green">机会：专业恢复场景</span>
+            <span class="chip red">短板：信任证据</span>
+            <span class="chip amber">阶段：1-10 初期</span>
+          </div>
+        </div>
+        <div class="top-list">
+          <div class="card top-item">
+            <div class="num-dot">1</div>
+            <div><h3>先修产品页信任。</h3><p>清掉占位文案和拼写错误，补价格逻辑、真实评价来源、适用边界、保修/退换和对比页面。</p></div>
+          </div>
+          <div class="card top-item">
+            <div class="num-dot">2</div>
+            <div><h3>把 B2B 购买路径单独拉出来。</h3><p>诊所、健身房、球队和恢复工作室需要演示、报价、维护、消毒、培训和回本逻辑。</p></div>
+          </div>
+          <div class="card top-item">
+            <div class="num-dot">3</div>
+            <div><h3>先打一个主场景，不要所有人都讲。</h3><p>优先选择最容易拿到案例和复购的场景，做出样板后再外扩。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blocks">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Blocks</div>
+          <h2>三大板块诊断：品牌有方向，Marketing 和电商承接都没到高客单标准。</h2>
+        </div>
+        <p class="section-note">分数不是平均印象分，而是按对北美增长质量、利润质量和资源效率的影响来判断。</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card block-card">
+          <div class="block-score" style="--c:var(--amber);"><b>48</b><span>品牌板块</span><span class="chip amber">方向有，但证据薄</span></div>
+          <div class="block-copy">
+            <h3>品牌不是空的，但专业可信度还没立住。</h3>
+            <p>冷、热、压缩的一体化方向有辨识度，专业场景也选对了；但品牌还没有把“为什么值得信任”讲成一套硬证据。</p>
+            <div class="columns">
+              <div><h4>做得好的</h4><ul><li>专业恢复场景选择正确。E1</li><li>产品功能有差异，不只是普通压缩靴。E5</li><li>退款政策显示有 B2B 交易意识。E8</li></ul></div>
+              <div><h4>做得差的</h4><ul><li>缺少真实案例、专业背书和媒体评测。</li><li>官网评论重复，削弱信任。E4</li><li>没有把安全边界讲清楚。E8</li></ul></div>
+            </div>
+          </div>
+        </div>
+        <div class="card block-card">
+          <div class="block-score" style="--c:var(--red);"><b>42</b><span>Marketing</span><span class="chip red">承接弱</span></div>
+          <div class="block-copy">
+            <h3>营销没有把购买风险拆掉。</h3>
+            <p>当前内容更像“功能介绍”，不是高客单恢复设备的购买教育。它需要解释场景、竞品差异、使用边界和回本，而不是继续说恢复很重要。</p>
+            <div class="columns">
+              <div><h4>做得好的</h4><ul><li>博客覆盖跑步、铁三、足球、自行车等运动场景。E1</li><li>社媒近几个月仍有更新。E10</li><li>“No ice, just water”容易被记住。E1</li></ul></div>
+              <div><h4>做得差的</h4><ul><li>搜索入口没有成体系。</li><li>竞品对比和专业场景页不足。</li><li>缺少真实长测和现场使用素材。</li></ul></div>
+            </div>
+          </div>
+        </div>
+        <div class="card block-card">
+          <div class="block-score" style="--c:var(--red);"><b>36</b><span>电商 / B2B</span><span class="chip red">不达标</span></div>
+          <div class="block-copy">
+            <h3>交易页面会让高意向用户犹豫。</h3>
+            <p>产品页还有占位文案、按钮拼写错误、价格为 0、评论重复和支持页空白。对高客单设备，这些不是小瑕疵，是直接影响成交的硬伤。</p>
+            <div class="columns">
+              <div><h4>做得好的</h4><ul><li>有 Contact Us 和报价入口。E1, E2</li><li>有退换、保修和 B2B 条款。E3, E8</li><li>产品线可套餐化。E6</li></ul></div>
+              <div><h4>做得差的</h4><ul><li>PDP 完成度不合格。E2</li><li>Support 页面无法承接售后疑虑。E7</li><li>报价、演示和购买路径混在一起。</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Problems</div>
+          <h2>Top 3 关键问题：先修信任，再做场景样板，最后才放大获客。</h2>
+        </div>
+        <p class="section-note">这三个问题直接决定 CoolCovery 是否能从“看起来有意思”变成“值得报价/演示/下单”。</p>
+      </div>
+      <div class="grid">
+        <article class="issue">
+          <div class="issue-side">
+            <div class="severity">P0 · 严重度</div>
+            <b>88</b>
+            <p style="margin-top:14px;color:rgba(255,255,255,.78);">产品页信任不合格。</p>
+          </div>
+          <div class="issue-main">
+            <h3>问题 1：高客单设备最该严谨的页面，反而留下了最明显的低级破绽。</h3>
+            <div class="issue-grid">
+              <div class="mini"><b>证据</b><p>FLEX 和 MAX 产品页出现“Provide additional details here”“Add Product Details”“By It Now”等问题，且多段评论重复。E2, E4</p></div>
+              <div class="mini"><b>影响</b><p>用户会怀疑品牌成熟度、售后能力和评论真实性；B2B 采购也很难把页面发给决策人。</p></div>
+              <div class="mini"><b>先修</b><p>48 小时内清理占位/错字/重复评论；7 天内重写主 PDP；30 天内补 FAQ、保修、退换和对比页。</p></div>
+            </div>
+            <p class="issue-bottom">验收指标：页面零占位文案、零明显拼写错误；PDP 首屏能回答价格、适用人群、差异点、售后和风险边界。</p>
+          </div>
+        </article>
+
+        <article class="issue">
+          <div class="issue-side">
+            <div class="severity">P0 · 严重度</div>
+            <b>82</b>
+            <p style="margin-top:14px;color:rgba(255,255,255,.78);">B2B 和 DTC 路径混在一起。</p>
+          </div>
+          <div class="issue-main">
+            <h3>问题 2：官网说要 demo / quote，但页面没有给专业采购一条完整路。</h3>
+            <div class="issue-grid">
+              <div class="mini"><b>证据</b><p>首页和 PDP 都强调 Book demo / request quote；退款政策也覆盖 B2B、commercial、pilot、direct invoice，但页面还保留普通购物车逻辑。E1, E8, E9</p></div>
+              <div class="mini"><b>影响</b><p>专业买家不知道该预约、询价还是下单；普通用户也会因价格和条款不清而离开。</p></div>
+              <div class="mini"><b>先修</b><p>把 B2B 拆成独立路径：场景选择、套餐建议、演示预约、报价清单、维护和售后说明。</p></div>
+            </div>
+            <p class="issue-bottom">验收指标：B2B 表单能收集场地类型、预算、设备数量、使用人数、维护需求和期望上线时间。</p>
+          </div>
+        </article>
+
+        <article class="issue">
+          <div class="issue-side">
+            <div class="severity">P1 · 严重度</div>
+            <b>76</b>
+            <p style="margin-top:14px;color:rgba(255,255,255,.78);">竞品承接资产不足。</p>
+          </div>
+          <div class="issue-main">
+            <h3>问题 3：CoolCovery 有差异点，但没有把差异讲到足以改变用户选择。</h3>
+            <div class="issue-grid">
+              <div class="mini"><b>证据</b><p>Therabody、Game Ready、NICE 等竞品把价格、功能、专业场景、租赁或临床路径讲得更完整。E11-E14</p></div>
+              <div class="mini"><b>影响</b><p>用户只会把 CoolCovery 归到“又一个恢复靴”，再用价格和口碑筛掉。</p></div>
+              <div class="mini"><b>先修</b><p>建立 3 张对比页：vs Normatec / Therabody、vs Game Ready rental、vs 低价 Amazon compression boots。</p></div>
+            </div>
+            <p class="issue-bottom">验收指标：核心广告落地页跳出率下降，demo / quote 表单转化提升，销售话术不再靠人工临场解释。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Calibration</div>
+          <h2>竞品承接结构：CoolCovery 不能只比功能，要比谁更能降低购买风险。</h2>
+        </div>
+        <p class="section-note">竞品真正强的不是参数更多，而是用户能快速判断适不适合自己、值不值得买、出了问题怎么办。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>参照对象</th>
+              <th>竞品如何降低风险</th>
+              <th>CoolCovery 的相对优势</th>
+              <th>CoolCovery 要补的资产</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hyperice Normatec</td>
+              <td>品牌心智强，用户教育成熟，恢复靴已经是标准参照物。</td>
+              <td>CoolCovery 有冷/热/压缩一体化，不只做压缩。</td>
+              <td>需要“为什么比单纯压缩靴更值得”的对比页和真实体验素材。</td>
+            </tr>
+            <tr>
+              <td>Therabody JetBoots Pro Plus</td>
+              <td>价格、尺寸、HSA/FSA、支付方式、专家背书、科技功能都讲得很完整。E11</td>
+              <td>CoolCovery 的温控范围和模块化附件更适合恢复空间。</td>
+              <td>补价格、尺寸、付款、专业使用场景和维护说明。</td>
+            </tr>
+            <tr>
+              <td>Game Ready / NICE</td>
+              <td>医疗/康复心智强，有患者、医生、诊所、租赁和专业支持路径。E12, E14</td>
+              <td>CoolCovery 可能更适合非处方的家庭和工作室日常恢复。</td>
+              <td>必须解释医疗边界、适用场景、禁忌和专业合作方式。</td>
+            </tr>
+            <tr>
+              <td>低价 Amazon compression boots / ice machines</td>
+              <td>价格低、评价多、退货方便，适合轻决策。</td>
+              <td>CoolCovery 有更完整的温控和模块化恢复概念。</td>
+              <td>证明不是“贵一点的靴子”：要讲长期使用、部位覆盖、服务空间价值和售后。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="position">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Upgrade</div>
+          <h2>定位升级路径：从“多功能恢复设备”，升级为“可落地的恢复空间方案”。</h2>
+        </div>
+        <p class="section-note">这个模块不需要花哨配图。用四步路径更清楚：当前靠功能吸引，下一阶段要靠方案、证据和服务承接提高客单与转化。</p>
+      </div>
+      <div class="path">
+        <div class="card path-card"><h3>当前成交理由</h3><p>冷、热、压缩集中在一个设备里，省去冰浴和多设备切换。</p></div>
+        <div class="card path-card"><h3>下一阶段理由</h3><p>为诊所、健身房、球队和家庭健身房提供可重复执行的恢复流程。</p></div>
+        <div class="card path-card"><h3>溢价理由</h3><p>套餐清楚、维护简单、使用风险透明、专业案例可验证。</p></div>
+        <div class="card path-card"><h3>品牌该收束</h3><p>少讲“所有人都适合”，多讲“哪个场景最值得买哪一套”。</p></div>
+      </div>
+    </section>
+
+    <section id="scores">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：机会来自产品差异，短板集中在证据、转化和渠道。</h2>
+        </div>
+        <p class="section-note">低分项优先进入经营周会，不要继续平均修页面。</p>
+      </div>
+      <div class="score-grid">
+        <div class="card score-card" style="--c:var(--green);"><b>74</b><h3>品类机会</h3><p>冷/热/压缩一体化有市场空间。</p></div>
+        <div class="card score-card" style="--c:var(--amber);"><b>58</b><h3>产品结构</h3><p>模块化成立，但套装解释不够清楚。</p></div>
+        <div class="card score-card" style="--c:var(--amber);"><b>52</b><h3>品牌定位</h3><p>方向对，专业背书不足。</p></div>
+        <div class="card score-card" style="--c:var(--red);"><b>36</b><h3>电商转化</h3><p>PDP 完成度不合格。</p></div>
+        <div class="card score-card" style="--c:var(--red);"><b>34</b><h3>独立口碑</h3><p>公开真实评价样本太薄。</p></div>
+        <div class="card score-card" style="--c:var(--red);"><b>40</b><h3>售后信任</h3><p>条款有，页面没讲明白。</p></div>
+        <div class="card score-card" style="--c:var(--red);"><b>38</b><h3>搜索承接</h3><p>行业词和竞品词落地页缺失。</p></div>
+        <div class="card score-card" style="--c:var(--amber);"><b>45</b><h3>内容资产</h3><p>运动文章有，真实演示不足。</p></div>
+        <div class="card score-card" style="--c:var(--red);"><b>32</b><h3>数据增长</h3><p>公开 sell-out 与渠道结构不透明。</p></div>
+        <div class="card score-card" style="--c:var(--amber);"><b>44</b><h3>B2B 渠道</h3><p>方向存在，但采购包未成型。</p></div>
+        <div class="card score-card" style="--c:var(--amber);"><b>55</b><h3>视觉设计</h3><p>产品图可用，页面细节拖后腿。</p></div>
+        <div class="card score-card" style="--c:var(--red);"><b>35</b><h3>风险治理</h3><p>安全、卫生、退换边界要前置。</p></div>
+      </div>
+    </section>
+
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先把成交信任补上，再投流量和铺渠道。</h2>
+        </div>
+        <p class="section-note">CoolCovery 现在花钱的顺序要很克制：能让用户敢预约、敢询价、敢下单的资产优先。</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="card pad rank-card red">
+          <div class="rank">转化预算</div>
+          <h3>优先修 PDP 和报价路径。</h3>
+          <p>产品页、FAQ、退换说明、对比页、B2B 表单和 demo 预约页必须先合格。</p>
+        </div>
+        <div class="card pad rank-card amber">
+          <div class="rank">非转化预算</div>
+          <h3>少做泛社媒素材。</h3>
+          <p>泛运动恢复内容不能直接解决信任问题。先拍真实场景、维护、清洁、长测和专业使用。</p>
+        </div>
+        <div class="card pad rank-card green">
+          <div class="rank">内容资产</div>
+          <h3>补三类高意向内容。</h3>
+          <p>对比竞品、适用边界、B2B 场景案例。每类内容都要能进入销售和客服话术。</p>
+        </div>
+        <div class="card pad rank-card red">
+          <div class="rank">渠道预算</div>
+          <h3>暂缓大规模铺货。</h3>
+          <p>公开证据不足时，铺 Amazon 或零售会把价格、评价和售后问题提前暴露。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Roadmap</div>
+          <h2>90 / 180 天路线图：先完成“敢买”证明，再验证一个可复制场景。</h2>
+        </div>
+        <p class="section-note">每一步都要有验收指标，不能用“内容已更新”代替经营结果。</p>
+      </div>
+      <div class="roadmap">
+        <div class="card">
+          <div class="days">0-30 Days</div>
+          <h3>先修信任地基</h3>
+          <ul>
+            <li>清理全部占位文案、错字、重复评论和 $0 价格异常。</li>
+            <li>重写 FLEX / MAX / MOVE / PERFORM 的购买决策树。</li>
+            <li>补安全、禁忌、卫生配件、保修、退换、支持流程和 FAQ。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="days">31-90 Days</div>
+          <h3>做出一个样板场景</h3>
+          <ul>
+            <li>从诊所、健身房、球队、恢复工作室中选择一个主战场。</li>
+            <li>完成 B2B demo 页面、报价表、套餐包、维护说明和案例素材。</li>
+            <li>建立竞品对比页和 3 条真实长测视频。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="days">91-180 Days</div>
+          <h3>再考虑放大渠道</h3>
+          <ul>
+            <li>用 demo → quote → close rate 判断是否加投。</li>
+            <li>若 DTC 转化稳定，再测试 Amazon 或专业经销渠道。</li>
+            <li>沉淀安装、培训、维护和售后 SOP，支撑 B2B 复制。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="departments">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Function Scorecard</div>
+          <h2>职能部门红黄绿灯：红灯集中在官网转化、数据、客服和 B2B 承接。</h2>
+        </div>
+        <p class="section-note">红灯先展示。每个部门只说最拖后腿的一点，便于直接进入整改。</p>
+      </div>
+
+      <div class="grid">
+        <div class="card light-group" style="--c:var(--red);">
+          <h3>红灯部门 · 先整改</h3>
+          <p>这些问题会直接影响预约、报价、下单和售后信任。</p>
+          <div class="dept-grid">
+            <div class="card dept-card" style="--c:var(--red);"><b>34</b><h3>电商 / 官网部</h3><p>页面还有占位文案、错字、重复评论和价格异常。</p><div class="worst">最差点：PDP 完成度不合格。</div></div>
+            <div class="card dept-card" style="--c:var(--red);"><b>32</b><h3>数据 / 增长部</h3><p>北美 GMV、渠道占比、demo 转化和 sell-out 没有公开闭环。</p><div class="worst">最差点：没有能指导预算的经营看板。</div></div>
+            <div class="card dept-card" style="--c:var(--red);"><b>40</b><h3>客服 / 售后部</h3><p>Support 页面空白，退换边界没有转化成用户能理解的说明。</p><div class="worst">最差点：售后信任没有前置。</div></div>
+            <div class="card dept-card" style="--c:var(--red);"><b>44</b><h3>B2B / 渠道部</h3><p>有报价入口，但没有场景包、演示流程、案例和维护说明。</p><div class="worst">最差点：专业采购路径没成型。</div></div>
+          </div>
+        </div>
+
+        <div class="card light-group" style="--c:var(--amber);">
+          <h3>黄灯部门 · 有基础但不能继续粗放</h3>
+          <p>这些部门不是没有做事，而是还没做到能支撑高客单增长。</p>
+          <div class="dept-grid">
+            <div class="card dept-card" style="--c:var(--amber);"><b>52</b><h3>品牌部</h3><p>方向对，但专业背书和独立口碑不够。</p><div class="worst">最差点：可信证据薄。</div></div>
+            <div class="card dept-card" style="--c:var(--amber);"><b>42</b><h3>Marketing 部</h3><p>内容有场景，但没有解决搜索和竞品比较。</p><div class="worst">最差点：高意向内容缺失。</div></div>
+            <div class="card dept-card" style="--c:var(--amber);"><b>58</b><h3>产品 / 品类部</h3><p>模块化方向成立，但套装命名和选择逻辑不清。</p><div class="worst">最差点：用户不知道买哪套。</div></div>
+            <div class="card dept-card" style="--c:var(--amber);"><b>55</b><h3>设计部</h3><p>产品视觉可用，但页面细节降低专业感。</p><div class="worst">最差点：高客单质感被低级细节破坏。</div></div>
+          </div>
+        </div>
+
+        <div class="card light-group" style="--c:var(--green);">
+          <h3>绿灯部门 · 暂无公开证据可判定</h3>
+          <p>公开资料下没有哪个部门能被稳妥判为绿灯。若内部已有 B2B 成交案例、复购数据、渠道流水或售后满意度，应纳入下一版重新评分。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="risks">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk & Evidence</div>
+          <h2>风险预警与数据缺口：最需要内部后台校准的是成交、渠道和售后。</h2>
+        </div>
+        <p class="section-note">公开诊断可以指出方向，但以下数据会改变优先级和分数。</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card pad rank-card red"><h3>成交数据缺口</h3><p>官网订单、私域报价、B2B 合同、demo show-up、quote close rate、退货率和毛利。</p></div>
+        <div class="card pad rank-card red"><h3>渠道数据缺口</h3><p>是否已有 Amazon、经销商、诊所、展会或联盟渠道订单；各渠道价格和售后责任。</p></div>
+        <div class="card pad rank-card amber"><h3>VOC 数据缺口</h3><p>真实买家访谈、客服工单、故障类型、使用频率、退款原因和配件更换周期。</p></div>
+      </div>
+
+      <h3 style="margin-top:28px;font-size:24px;">证据表</h3>
+      <div class="source-list" style="margin-top:14px;">
+        <div class="source"><b>E1</b><div>CoolCovery 官网首页：专业 demo / request quote、冷/热/压缩卖点、专业空间场景。<br><a href="https://www.coolcovery.com/">https://www.coolcovery.com/</a></div></div>
+        <div class="source"><b>E2</b><div>3COVERY FLEX PDP：套组、库存、占位文案、Contact Us、By It Now、保修与退换。<br><a href="https://www.coolcovery.com/products/the-coolcovery-ultimate-system-optionb">https://www.coolcovery.com/products/the-coolcovery-ultimate-system-optionb</a></div></div>
+        <div class="source"><b>E3</b><div>3COVERY MAX PDP：Complete Recovery System、库存、占位文案、保修与退换。<br><a href="https://www.coolcovery.com/products/the-coolcovery-ultimate-system-optiond">https://www.coolcovery.com/products/the-coolcovery-ultimate-system-optiond</a></div></div>
+        <div class="source"><b>E4</b><div>官网 PDP 评论区：4.9/5.0、128+ reviews，页面中评论重复出现。<br><a href="https://www.coolcovery.com/products/the-coolcovery-ultimate-system-optionb">https://www.coolcovery.com/products/the-coolcovery-ultimate-system-optionb</a></div></div>
+        <div class="source"><b>E5</b><div>How It Works：Dynamic Compression、Cold + Compression、Heat + Compression、Compression Only 和适用场景。<br><a href="https://www.coolcovery.com/pages/how-it-works">https://www.coolcovery.com/pages/how-it-works</a></div></div>
+        <div class="source"><b>E6</b><div>Products 集合页：One control unit、modular attachments、FLEX/MAX/MOVE/PERFORM。<br><a href="https://www.coolcovery.com/collections/all">https://www.coolcovery.com/collections/all</a></div></div>
+        <div class="source"><b>E7</b><div>Support 页面：公开页面内容极少，仅显示 Contact Us 和基础页脚。<br><a href="https://www.coolcovery.com/pages/support">https://www.coolcovery.com/pages/support</a></div></div>
+        <div class="source"><b>E8</b><div>Refund Policy：2026.5.21 更新，覆盖 direct invoices、quotations、B2B、hygiene-sensitive accessories、premium home recovery purchases。<br><a href="https://www.coolcovery.com/policies/refund-policy">https://www.coolcovery.com/policies/refund-policy</a></div></div>
+        <div class="source"><b>E9</b><div>Shopify 产品 JSON：FLEX/MAX/MOVE/PERFORM price 为 0，公开价格和库存口径需要校准。<br><a href="https://www.coolcovery.com/products.json?limit=250">https://www.coolcovery.com/products.json?limit=250</a></div></div>
+        <div class="source"><b>E10</b><div>CoolCovery Instagram 公开搜索：近几个月仍有内容更新，但公开独立口碑沉淀有限。<br><a href="https://www.instagram.com/coolcovery_official/">https://www.instagram.com/coolcovery_official/</a></div></div>
+        <div class="source"><b>E11</b><div>Therabody JetBoots Pro Plus：价格、HSA/FSA、技术卖点、尺寸和专家背书页面。<br><a href="https://www.therabody.com/products/jetboots-pro-plus-regular">https://www.therabody.com/products/jetboots-pro-plus-regular</a></div></div>
+        <div class="source"><b>E12</b><div>Game Ready 官网：患者、医疗专业、租赁、临床和支持路径。<br><a href="https://gameready.com/">https://gameready.com/</a></div></div>
+        <div class="source"><b>E13</b><div>Medcom Group Game Ready 租赁页：2 周租赁、处方、保险联系和租赁流程。<br><a href="https://www.medcomgroup.com/game-ready-cold-therapy-compression-system-control-unit-2-week-rental-3-6-week-rentals-available/">https://www.medcomgroup.com/game-ready-cold-therapy-compression-system-control-unit-2-week-rental-3-6-week-rentals-available/</a></div></div>
+        <div class="source"><b>E14</b><div>NICE Recovery Systems：iceless cold therapy、post-surgery / injury protocols、rental path。<br><a href="https://getnice.com/">https://getnice.com/</a></div></div>
+        <div class="source"><b>E15</b><div>Healthcare Foresights 2026 cold compression therapy market：全球 2026 约 USD 1.95B，北美 2025 占比约 41%。<br><a href="https://www.healthcareforesights.com/reports/cold-compression-therapy-market">https://www.healthcareforesights.com/reports/cold-compression-therapy-market</a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>远汐 Offing · Atlas 北美业务诊断（免费版）</strong><br />
+    本报告基于公开信息形成经营判断，不替代品牌内部后台、财务、广告账户、CRM、客服工单和渠道 sell-out 数据。所有强判断均回到证据 ID；如内部数据与公开证据冲突，应以内外部数据合并复核。
+  </footer>
+</body>
+</html>
