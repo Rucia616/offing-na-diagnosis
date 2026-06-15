@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ulike · 远汐 Offing 免费北美业务诊断 · 2026-06-15</title>
+  <title>Ulike · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-15</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Ccircle cx='32' cy='29' r='15' fill='none' stroke='%23F8FAF9' stroke-width='5'/%3E%3Cpath d='M14 37c8 5 14 5 22 0s14-5 14 0' fill='none' stroke='%2332D6C6' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M21 45h22' stroke='%239ED1FF' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
   <style>
     :root {
@@ -127,8 +127,16 @@
     .label { display: block; margin-bottom: 10px; color: var(--muted); font-size: 12px; font-weight: 760; }
     .hero-total .label, .dark .label, .problem-side .label, footer .label { color: rgba(255,255,255,.88); }
     .star-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
-    .stars { position: relative; display: inline-block; color: rgba(255,255,255,.34); font-size: clamp(32px, 3.6vw, 44px); line-height: 1; letter-spacing: 0; }
-    .stars::before { content: "★★★★★"; position: absolute; inset: 0 auto auto 0; width: 68%; overflow: hidden; white-space: nowrap; color: #eef5f2; }
+    .stars { display: inline-flex; align-items: center; gap: 2px; color: rgba(255,255,255,.34); font-size: clamp(32px, 3.6vw, 44px); line-height: 1; letter-spacing: 0; }
+    .stars .filled { color: #ffc24b; }
+    .stars .half {
+      color: transparent;
+      background: linear-gradient(90deg, #ffc24b 55%, rgba(255,255,255,.30) 55%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .stars .empty { color: rgba(255,255,255,.30); }
+    .star-verdict { flex-basis: 100%; color: rgba(255,255,255,.90); font-size: 13px; font-weight: 780; }
     .score-number { font-size: 36px; font-weight: 840; line-height: 1; }
     .score-formula { display: grid; gap: 6px; margin-top: 14px; font-size: 12px; line-height: 1.35; }
     .formula-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.87); }
@@ -441,6 +449,7 @@
       .hero-total {
         background: radial-gradient(circle at 92% 8%, rgba(161,151,255,.14), transparent 30%), linear-gradient(145deg, #080d0d, #111b1a);
       }
+      .hero-logo img { filter: invert(1) brightness(1.14); }
       .trend-visual img { background: #fff; border-radius: calc(var(--radius) - 2px); }
     }
     @media (max-width: 920px) {
@@ -450,7 +459,7 @@
       .hero { min-height: auto; padding: 28px 0 24px; }
       .hero-logo { margin-bottom: 14px; }
       .hero-logo img { width: 160px; }
-      h1 { font-size: clamp(42px, 12vw, 56px); }
+      h1 { font-size: clamp(36px, 10.8vw, 44px); }
       .hero-sub { margin-top: 14px; font-size: 14.5px; line-height: 1.52; }
       .hero-score, .stage-plate, .problem { grid-template-columns: 1fr; }
       .hero-total { padding: 16px 18px; }
@@ -480,7 +489,7 @@
 <body>
 
   <nav>
-    <div class="nav-brand">远汐 Offing<small>免费北美业务诊断</small></div>
+    <div class="nav-brand">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
     <div class="nav-links">
       <a href="#stage">阶段</a>
       <a href="#channel">类型</a>
@@ -510,8 +519,9 @@
         <div class="hero-total">
           <span class="label">北美业务情况总分</span>
           <div class="star-row">
-            <div class="stars" aria-label="3.4 out of 5 stars">★★★★★</div>
+            <div class="stars" aria-label="3.4 out of 5 stars"><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="half">★</span><span class="empty">★</span></div>
             <div class="score-number">3.4 / 5</div>
+            <div class="star-verdict">主线成立，但利润质量、售后信任和第二品线拖后腿。</div>
           </div>
           <div class="score-formula">
             <div class="formula-row"><span>业务健康度 68 × 45%</span><strong>30.6</strong></div>
@@ -522,7 +532,7 @@
           <p class="score-note">数据更新日期：2026-06-15。销售额为公开数据、2026-06-14 西柚 ASIN 动销快照和渠道倍数推算，缺少品牌后台、Amazon Seller、广告后台和分地区订单，不能当作财务审计结论。</p>
         </div>
         <div class="subscores">
-          <div class="subscore health"><strong>68</strong><span>业务健康度</span><small>Air 10 家族动销成立；扣分在收入集中、售后成本外溢、折扣侵蚀和买后复购还没系统化。</small></div>
+          <div class="subscore health"><strong>68</strong><span>业务健康度</span><small>Air 10 家族动销成立；扣分在收入集中、售后成本外溢、折扣侵蚀和买后复购路径不够清楚。</small></div>
           <div class="subscore opportunity"><strong>83</strong><span>业务机会分</span><small>IPL 主线仍有利润改善空间，相邻护肤设备也值得验证；但每一笔新品预算都要有 30/90 天验收线。</small></div>
           <div class="subscore fatality"><strong>64</strong><span>问题致命度</span><small>最大风险是把“有新品布局”当成“有新增长柱”，导致预算继续流向未被验证的品线。</small></div>
         </div>
@@ -738,7 +748,7 @@
         <table>
           <thead><tr><th>来源组</th><th>公开态度</th><th>主要 VOC 主题</th><th>评分影响</th></tr></thead>
           <tbody>
-            <tr><td>Trustpilot</td><td>偏正向，但 1-star 不低</td><td>页面显示 4.4，804 reviews，近 12 个月 206 条；5-star 74%，1-star 14%；Ulike 回复 100% 负评，通常 48 小时内。</td><td>品牌声誉不判危机；但 14% 1-star 足够触发售后信任警戒。</td></tr>
+            <tr><td>Trustpilot</td><td>偏正向，但 1-star 不低</td><td>页面显示 4.4，805 reviews；5-star 74%，1-star 14%；Ulike 回复负评较积极。</td><td>品牌声誉不判危机；但 14% 1-star 足够触发售后信任警戒。</td></tr>
             <tr><td>BBB</td><td>明显负面</td><td>Ulike Trade Co., Ltd. BBB Rating 为 F，原因包括未回应投诉和投诉数量。</td><td>客服售后扣分；这类来源会影响谨慎型用户和渠道/媒体信任。</td></tr>
             <tr><td>Reddit / 论坛</td><td>混合但具体</td><td>有人反馈腿部 touch-up 有帮助，也有人提到 SHR 慢、腋下效果不确定、设备停止闪光或客服响应慢。</td><td>不是品牌危机，但说明适用边界和故障处理必须在页面前置。</td></tr>
             <tr><td>媒体长测</td><td>正向但有边界</td><td>Tom's Guide 推荐 Air 10 给浅肤色深色毛发用户；Women's Health 强调 IPL 不适合部分肤色，并需要长期坚持。</td><td>正向声量可用，但广告和 PDP 不能只截取“有效”，要一起讲限制条件。</td></tr>
@@ -1022,7 +1032,7 @@
           <div class="problem-side"><span class="label">P0 · 严重度</span><strong>84</strong><p>Air 10 仍然强，问题是主力盘和新品试验没有分账。</p></div>
           <div class="problem-main">
             <h3>结论：Air 10 继续保利润，ReGlow / JMOON 先按实验预算管理。</h3>
-            <div class="impact"><div><strong>证据</strong><p>Air 10 主 ASIN Amazon 小类 #2，Air 10 主 ASIN + Deluxe 西柚 30 天订单下限 3,000+，ReGlow 100+；Braun、Philips、Nood 的 IPL 主卖 SKU 也呈多年主卖周期。</p></div><div><strong>影响</strong><p>如果新品和主力盘混在一张预算表里，资源会继续被“有新品、有声量”吸走，但利润仍靠 Air 10 扛。新品没有达标前，不应消耗主力盘现金流。</p></div><div><strong>先修</strong><p>建立 Air 10 主线与第二品线经营看板：Air 10 看毛利、价格、渠道和内容效率；ReGlow、JMOON 看 30/90 天订单、评价、复购和 sell-out。</p></div></div>
+            <div class="impact"><div><strong>证据</strong><p>Air 10 主 ASIN Amazon 小类 #2，Air 10 主 ASIN + Deluxe 西柚 30 天订单下限 3,000+，ReGlow 100+；Braun、Philips、Nood 的 IPL 主卖 SKU 也呈多年主卖周期。</p></div><div><strong>影响</strong><p>如果新品和主力盘混在一张预算表里，资源会继续被“有新品、有声量”吸走，但利润仍靠 Air 10 扛。新品没有达标前，应控制在实验预算内。</p></div><div><strong>先修</strong><p>建立 Air 10 主线与第二品线经营看板：Air 10 看毛利、价格、渠道和内容效率；ReGlow、JMOON 看 30/90 天订单、评价、复购和 sell-out。</p></div></div>
             <p>验收标准要改成经营指标：订单、评价、复购、渠道 sell-out 和毛利。新品达标才加码，不达标就收缩，不用“布局完整”替代收入能力。</p>
           </div>
         </article>
@@ -1126,7 +1136,7 @@
       <div class="section-head">
         <span class="tagline">11 Scores</span>
         <h2>11 维评分：能贡献利润的项继续放大，会侵蚀利润的项进入管理周会。</h2>
-        <p class="lead">Ulike 的品牌、竞品位置和品类机会可以继续用来支撑高客单；真正拉低增长质量的是订阅会员、客服售后、风险预警和产品品类。治理顺序很简单：先把会吞掉利润和预算判断的低分项拉回可控，再谈扩大新品和渠道。</p>
+        <p class="lead">Ulike 的品牌、竞品位置和品类机会可以继续支撑高客单；真正拉低增长质量的是老客复购、客服售后、风险预警和产品品类。治理顺序很简单：先把影响利润和预算判断的低分项拉回可控，再谈扩大新品和渠道。</p>
       </div>
       <div class="card">
         <div class="scores">
@@ -1140,7 +1150,7 @@
           <div class="score-row" style="--tone: var(--red); --w: 55%"><span>产品品类</span><div class="bar"><span></span></div><span>55</span></div>
           <div class="score-row" style="--tone: var(--red); --w: 52%"><span>风险预警</span><div class="bar"><span></span></div><span>52</span></div>
           <div class="score-row" style="--tone: var(--red); --w: 48%"><span>客服售后</span><div class="bar"><span></span></div><span>48</span></div>
-          <div class="score-row" style="--tone: var(--red); --w: 38%"><span>订阅会员</span><div class="bar"><span></span></div><span>38</span></div>
+          <div class="score-row" style="--tone: var(--red); --w: 38%"><span>老客复购</span><div class="bar"><span></span></div><span>38</span></div>
         </div>
       </div>
     </div>
@@ -1150,14 +1160,14 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Budget Trade-off</span>
-        <h2>预算怎么花：Air 10 占大头，新品只给验证钱，没达标就砍。</h2>
-        <p class="lead">公开数据不能替代内部预算表，但方向很明确：先保 Air 10 主线现金流，再补信任资产；ReGlow / JMOON 只拿小预算跑验证，不达标不继续烧钱。</p>
+        <h2>预算怎么分：Air 10 保主线，新品按 90 天验证门槛配置。</h2>
+        <p class="lead">公开数据不能替代内部预算表，但方向很明确：先保 Air 10 主线现金流，再补信任资产；ReGlow / JMOON 先用小预算验证，未达标就收缩投入。</p>
       </div>
       <div class="grid four">
         <div class="card ceiling-card" style="--tone: var(--green)">
           <div><span class="label">保 · 50%-60%</span><strong>Air 10 主线成交</strong></div>
-          <p>钱花在 Amazon 高意图词、Air 10 PDP、retargeting、Best Seller 防守。每周看毛利、退款、评价增速、广告成本和类目排名。</p>
-          <div class="pill-row"><span class="pill good">继续投</span><span class="pill warn">不许只看 GMV</span></div>
+          <p>投向 Amazon 高意图词、Air 10 PDP、retargeting、Best Seller 防守。每周看毛利、退款、评价增速、广告成本和类目排名。</p>
+          <div class="pill-row"><span class="pill good">继续投</span><span class="pill warn">不能只看 GMV</span></div>
         </div>
         <div class="card ceiling-card" style="--tone: var(--amber)">
           <div><span class="label">补 · 20%-25%</span><strong>信任和对比资产</strong></div>
@@ -1170,9 +1180,9 @@
           <div class="pill-row"><span class="pill brand">小预算验证</span><span class="pill warn">达标才加码</span></div>
         </div>
         <div class="card ceiling-card" style="--tone: var(--red)">
-          <div><span class="label">砍 · 立即暂停</span><strong>无验证的泛声量</strong></div>
+          <div><span class="label">停 · 立即收缩</span><strong>无验证的泛声量</strong></div>
           <p>暂停只讲折扣、只做曝光、没有成交回收的 KOL / PR / 零售扩张。Best Buy / Nordstrom 没有卖穿数据前，不继续按铺货讲增长。</p>
-          <div class="pill-row"><span class="pill bad">先停掉</span><span class="pill warn">等数据再开</span></div>
+          <div class="pill-row"><span class="pill bad">先暂停</span><span class="pill warn">等数据再开</span></div>
         </div>
       </div>
     </div>
@@ -1182,12 +1192,12 @@
     <div class="inner">
       <div class="section-head">
         <span class="tagline">Roadmap</span>
-        <h2>接下来 180 天：先把 Air 10 的钱赚稳，再决定新品要不要加预算。</h2>
-        <p class="lead">接下来优先盯三件事：第一，Air 10 每单利润有没有被折扣和退款吃掉；第二，ReGlow / JMOON 是否真的卖得动；第三，买过 Air 10 的用户能不能继续被服务和加购。</p>
+        <h2>接下来 180 天：先稳住 Air 10 利润质量，再决定新品预算。</h2>
+        <p class="lead">接下来优先盯三件事：第一，Air 10 每单利润是否被折扣和退款侵蚀；第二，ReGlow / JMOON 是否真的卖得动；第三，买过 Air 10 的用户能否继续被服务和加购。</p>
       </div>
       <div class="roadmap">
         <div class="card step" data-step="0-30 DAYS">
-          <h3>第一阶段：先止血，别让 Air 10 的利润漏掉。</h3>
+          <h3>第一阶段：先控损耗，避免 Air 10 利润被折扣和退款侵蚀。</h3>
           <div class="owner-line">
             <div><strong>建议决策：</strong>Air 10 继续是北美主线，先不把预算大规模挪给新品。</div>
             <div><strong>负责人：</strong>电商负责人 + 客服负责人 + 页面负责人。</div>
@@ -1196,7 +1206,7 @@
           </div>
         </div>
         <div class="card step" data-step="31-90 DAYS">
-          <h3>第二阶段：用数据决定 ReGlow / JMOON 值不值得加钱。</h3>
+          <h3>第二阶段：用数据决定 ReGlow / JMOON 是否值得加预算。</h3>
           <div class="owner-line">
             <div><strong>建议决策：</strong>新品先给小预算试，不达标不加码。</div>
             <div><strong>负责人：</strong>产品负责人 + Marketing 负责人 + Amazon/DTC 负责人。</div>
@@ -1222,7 +1232,7 @@
       <div class="section-head">
         <span class="tagline">Organization Audit</span>
         <h2>职能部门专业度：先整顿会影响利润和预算判断的红灯部门。</h2>
-        <p class="lead">这个评分只看公开经营产出，不评价具体员工。红灯部门要进 30 天周会，因为它们直接决定预算投向哪里、利润在哪里流失、哪些新品该停。Ulike 的红灯集中在数据、产品品类、客服售后和渠道，问题不是品牌视觉不高级，而是经营系统没有把单品成功变成可控利润。</p>
+        <p class="lead">这个评分只看公开经营产出，不评价具体员工。红灯部门要进 30 天经营周会，因为它们直接决定预算投向哪里、利润在哪里被侵蚀、哪些新品该收缩。Ulike 的红灯集中在数据、产品品类、客服售后和渠道，问题不是品牌视觉不高级，而是单品成功还没有被拆成可管理的利润、复购和渠道指标。</p>
       </div>
       <div class="dept-lights">
         <div class="dept-group red">
@@ -1311,7 +1321,7 @@
         <div class="card"><h3>预算误配风险</h3><p>如果内部看板不能区分主销 SKU、新品和渠道利润，资源会继续按声量和主观判断分配，真正贡献利润和消耗预算的地方会混在一起。</p><div class="pill-row"><span class="pill bad">P0 风险</span><span class="pill warn">需 90 天验证</span></div></div>
         <div class="card"><h3>适用边界风险</h3><p>IPL 不适合所有肤色和发色。广告、PDP 和达人内容必须把限制讲清楚，否则结果差异会变成售后和差评。</p><div class="pill-row"><span class="pill bad">转化风险</span><span class="pill brand">可 30 天内修</span></div></div>
         <div class="card"><h3>品牌声誉风险</h3><p>Trustpilot 总体正向，但 BBB/F 评级和 Reddit 设备故障、退款体验讨论说明售后信任有硬伤。它不会直接打垮拉新，但会影响高意向用户下单前的最后一次搜索。</p><div class="pill-row"><span class="pill warn">声誉警戒</span><span class="pill bad">售后扣分</span></div></div>
-        <div class="card"><h3>新品验证风险</h3><p>相邻护肤设备需要独立动销、评价、复购和渠道 sell-out 阈值。未达标前只能用实验预算，不应承担北美主增长目标。</p><div class="pill-row"><span class="pill warn">验证中</span><span class="pill ulike">品牌基因可适配</span></div></div>
+        <div class="card"><h3>新品验证风险</h3><p>相邻护肤设备需要独立动销、评价、复购和渠道 sell-out 阈值。未达标前只能用实验预算，暂不承担北美主增长目标。</p><div class="pill-row"><span class="pill warn">验证中</span><span class="pill ulike">品牌基因可适配</span></div></div>
         <div class="card"><h3>数据缺口</h3><p>缺少北美 GMV、分品线 GMV、广告 ROAS、Amazon 全量 ASIN 90 天趋势、Best Buy / Nordstrom sell-out、退款率和复购率。</p><div class="pill-row"><span class="pill bad">需内部复核</span><span class="pill brand">本次为公开数据诊断</span></div></div>
       </div>
     </div>
@@ -1337,7 +1347,7 @@
             <tr><td>E7</td><td><a href="https://www.amazon.com/Ulike-Therapy-Infrared-Anti-Aging-Eye-Protection/dp/B0DT14FRPG" target="_blank">Amazon ReGlow, ASIN B0DT14FRPG</a></td><td>2026-06-13</td><td>ReGlow 页面主打 red/blue/yellow/infrared、8 minutes a day、2 周改善色沉/泛红、4 周改善细纹。</td><td>第二品线卖点和证据强度。</td></tr>
             <tr><td>E8</td><td><a href="https://www.bestbuy.com/product/ulike-air10-ice-cooling-ipl-hair-removal-device-pink/J3Q5Q36ZXS/sku/12249576" target="_blank">Best Buy Air10</a></td><td>2026-06-13</td><td>Best Buy 页面显示 Air10 $349，sold &amp; shipped by America Ulike Technology Inc.，并承接 Ulike syndicated rating。</td><td>非 Amazon 渠道铺货，但 sell-out 仍需内部核验。</td></tr>
             <tr><td>E9</td><td><a href="https://www.prnewswire.com/news-releases/ulike-global-makes-debut-into-the-us-commercial-beauty-retail-market-with-inaugural-partnership-at-nordstrom-302254543.html" target="_blank">Nordstrom PR</a></td><td>2026-06-13</td><td>2024 年 Ulike 通过 Nordstrom 进入美国商业美容零售渠道；当时公开口径为 5M units sold。</td><td>渠道扩张和全球销量时间序列。</td></tr>
-            <tr><td>E10</td><td><a href="https://www.trustpilot.com/review/ulike.com" target="_blank">Trustpilot Ulike</a></td><td>2026-06-15</td><td>页面显示 4.4，804 reviews，近 12 个月 206 条；5-star 74%，1-star 14%；Ulike replied to 100% of negative reviews, typically within 48 hours。</td><td>VOC、售后闭环和差评权重。</td></tr>
+            <tr><td>E10</td><td><a href="https://www.trustpilot.com/review/ulike.com" target="_blank">Trustpilot Ulike</a></td><td>2026-06-15</td><td>页面显示 4.4，805 reviews；5-star 74%，1-star 14%；Ulike 对负评回复较积极。</td><td>VOC、售后闭环和差评权重。</td></tr>
             <tr><td>E11</td><td><a href="https://www.tomsguide.com/home/ulike-air-10-review" target="_blank">Tom's Guide Air 10 Review</a></td><td>2026-06-13</td><td>2026 年评测写 Air 10 $349、FDA-cleared，适合浅肤色深色毛发，不适合深肤色/浅发色；需要 3 次/周使用一个月后维护。</td><td>适用边界和坚持成本。</td></tr>
             <tr><td>E12</td><td><a href="https://www.cosmopolitan.com/style-beauty/beauty/a71176180/ulike-laser-hair-removal-review/" target="_blank">Cosmopolitan Air 10 Review</a></td><td>2026-06-13</td><td>Cosmopolitan 评测写 Air 10 是 FDA-cleared IPL device，并指出需要持续使用才能看到结果。</td><td>媒体背书和教育成本。</td></tr>
             <tr><td>E13</td><td><a href="https://www.womenshealthmag.com/beauty/a71142162/ulike-reglow-led-light-therapy-mask-review/" target="_blank">Women's Health ReGlow Review</a></td><td>2026-06-13</td><td>ReGlow 被评价为能提升 radiance，但不是 overnight skin fixer，适合愿意长期坚持的人。</td><td>ReGlow 第二曲线需要长期使用教育。</td></tr>
@@ -1371,7 +1381,7 @@
 
   <footer>
     <div class="inner">
-      <div><strong>远汐 Offing 免费北美业务诊断</strong><br /><span>2026-06-15 · Ulike · 公开数据 + 西柚动销 + 组织能力审计版</span></div>
+      <div><strong>远汐 Offing Atlas 北美业务诊断（免费版）</strong><br /><span>2026-06-15 · Ulike · 公开数据 + 西柚动销 + 经营能力诊断</span></div>
       <div>结论优先级：经营看板 > 售后信任闭环 > 新品验证 > 渠道价格治理</div>
     </div>
   </footer>
