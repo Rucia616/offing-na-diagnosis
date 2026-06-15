@@ -794,33 +794,84 @@
     }
     .gap-head {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) 110px;
       gap: 18px;
       align-items: start;
       padding: 20px;
       border-bottom: 1px solid var(--tl-line);
       background: var(--tl-surface-2);
     }
+    .gap-card.is-risk .gap-head { background: linear-gradient(180deg, var(--tl-risk-soft), var(--tl-surface-2) 74%); }
+    .gap-card.is-caution .gap-head { background: linear-gradient(180deg, var(--tl-alert-soft), var(--tl-surface-2) 74%); }
     .gap-head h3 {
       color: var(--tl-ink);
-      font-size: 25px;
-      line-height: 1.14;
+      font-size: 27px;
+      line-height: 1.08;
       font-weight: 950;
     }
-    .gap-score {
-      color: var(--tl-ink);
-      font-size: 30px;
+    .gap-dimension {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--tl-accent-text);
+      font-size: 14px;
       line-height: 1;
       font-weight: 950;
-      text-align: right;
     }
-    .gap-score small {
+    .gap-conclusion {
+      display: block;
+      max-width: 560px;
+    }
+    .gap-score {
+      align-self: start;
+      justify-self: end;
+      min-width: 96px;
+      padding: 11px 12px 10px;
+      border: 1px solid var(--tl-line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--tl-ink);
+      line-height: 1;
+      font-weight: 950;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(16,20,19,.06);
+    }
+    .gap-score strong {
+      display: block;
+      font-size: 36px;
+      line-height: .92;
+    }
+    .gap-score span {
       display: block;
       margin-top: 4px;
       color: var(--tl-muted);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 850;
     }
+    .gap-score em {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 22px;
+      margin-top: 8px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-style: normal;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .gap-score.is-risk {
+      border-color: color-mix(in srgb, var(--tl-risk) 34%, var(--tl-line));
+      background: #FFF8F5;
+      color: #9B321E;
+    }
+    .gap-score.is-risk em { color: #9B321E; background: var(--tl-risk-soft); }
+    .gap-score.is-caution {
+      border-color: color-mix(in srgb, var(--tl-alert-amber) 34%, var(--tl-line));
+      background: #FFFDF7;
+      color: #7A4B00;
+    }
+    .gap-score.is-caution em { color: #7A4B00; background: var(--tl-alert-soft); }
     .gap-body {
       display: grid;
       gap: 14px;
@@ -1168,6 +1219,12 @@
       .legend-row { grid-template-columns: 1fr auto; }
       .legend-row span:last-child { grid-column: 2; }
       .big-number-card { min-height: auto; }
+      .gap-head { grid-template-columns: 1fr; }
+      .gap-score {
+        justify-self: start;
+        min-width: 118px;
+      }
+      .gap-head h3 { font-size: 24px; }
     }
     @media (max-width: 360px) {
       h1 .hline:first-child { white-space: normal; }
@@ -1423,7 +1480,7 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Low-score gap breakdown</div>
-            <h2>真正拉低效率的，是四个还没被复投审计接住的环节。</h2>
+            <h2>四个低分项正在拉低复投效率。</h2>
           </div>
           <p>
             PetPivot 已经有 133+ 条近 30 天 creator 上线样本。现在先拆最影响复投的低分项：购买证明、受众真实性、素材复用和治理学习。
@@ -1431,10 +1488,13 @@
         </div>
 
         <div class="gap-breakdown">
-          <article class="gap-card">
+          <article class="gap-card is-risk">
             <div class="gap-head">
-              <h3>购买证明矩阵：便利讲够了，风险还没讲透。</h3>
-              <div class="gap-score">11<small>/20</small></div>
+              <h3>
+                <span class="gap-dimension">购买证明矩阵：</span>
+                <span class="gap-conclusion">便利讲够了，风险还没讲通。</span>
+              </h3>
+              <div class="gap-score is-risk"><strong>11</strong><span>/20</span><em>风险项</em></div>
             </div>
             <div class="gap-body">
               <div class="gap-line">
@@ -1452,10 +1512,13 @@
             </div>
           </article>
 
-          <article class="gap-card">
+          <article class="gap-card is-risk">
             <div class="gap-head">
-              <h3>受众真实性审计：账号在发，不等于买家有效。</h3>
-              <div class="gap-score">5<small>/10</small></div>
+              <h3>
+                <span class="gap-dimension">受众真实性审计：</span>
+                <span class="gap-conclusion">账号在发，不等于买家有效。</span>
+              </h3>
+              <div class="gap-score is-risk"><strong>5</strong><span>/10</span><em>风险项</em></div>
             </div>
             <div class="gap-body">
               <div class="gap-line">
@@ -1473,10 +1536,13 @@
             </div>
           </article>
 
-          <article class="gap-card">
+          <article class="gap-card is-caution">
             <div class="gap-head">
-              <h3>素材复用与 paid boost：内容池有了，winner 还没分级。</h3>
-              <div class="gap-score">6<small>/10</small></div>
+              <h3>
+                <span class="gap-dimension">素材复用与 paid boost：</span>
+                <span class="gap-conclusion">内容池有了，winner 还没分级。</span>
+              </h3>
+              <div class="gap-score is-caution"><strong>6</strong><span>/10</span><em>偏弱</em></div>
             </div>
             <div class="gap-body">
               <div class="gap-line">
@@ -1494,10 +1560,13 @@
             </div>
           </article>
 
-          <article class="gap-card">
+          <article class="gap-card is-risk">
             <div class="gap-head">
-              <h3>治理与学习循环：最大管理缺口是复投规则不清楚。</h3>
-              <div class="gap-score">2<small>/5</small></div>
+              <h3>
+                <span class="gap-dimension">治理与学习循环：</span>
+                <span class="gap-conclusion">最大管理缺口是复投规则不清楚。</span>
+              </h3>
+              <div class="gap-score is-risk"><strong>2</strong><span>/5</span><em>风险项</em></div>
             </div>
             <div class="gap-body">
               <div class="gap-line">
