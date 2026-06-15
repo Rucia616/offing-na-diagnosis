@@ -4,463 +4,755 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
-  <title>远汐Offing TideLens 项目入口</title>
-  <meta name="description" content="远汐Offing TideLens 项目入口：存放红人营销诊断研究、方法论、样稿报告与客户交付页面。" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F7F7F2'/%3E%3Cpath d='M12 36h40' stroke='%23101816' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='29' r='13' fill='none' stroke='%23101816' stroke-width='5'/%3E%3Cpath d='M20 44h24' stroke='%235B2BFF' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <title>Offing TideLens｜远汐·潮镜 项目入口</title>
+  <meta name="description" content="Offing TideLens｜远汐·潮镜项目入口：红人营销诊断报告库、研究资料库、方法论与交付链接归档。" />
+  <link rel="icon" type="image/png" href="../assets/offing/offing-symbol-b23.png" />
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #F6F6F1;
-      --paper: #FFFFFF;
-      --paper-soft: #F1F3EE;
-      --ink: #101816;
-      --body: #293230;
-      --muted: #66716D;
-      --line: #D8DDD7;
-      --line-strong: #BCC7C1;
-      --sea: #255F5B;
-      --sea-soft: #E6F0EE;
-      --violet: #5B2BFF;
-      --violet-soft: #EFEAFF;
-      --pink: #E95FB8;
-      --cyan: #23C8BB;
-      --amber: #AA6A00;
-      --shadow: 0 18px 50px rgba(16, 24, 22, .08);
+      --bg: #f5f5f7;
+      --top: #fbfbfd;
+      --surface: #ffffff;
+      --surface-2: #f7f8fa;
+      --text: #101413;
+      --body: #293331;
+      --muted: #66716e;
+      --line: #d7d9dc;
+      --line-strong: #c4c9c7;
+      --accent: #2d6261;
+      --accent-fill: #eaf1f0;
+      --inverse-bg: #13211f;
+      --inverse-text: #f8faf9;
+      --action: #5b2bff;
+      --action-soft: #f0eaff;
+      --verify: #157a38;
+      --verify-soft: #e8f8f1;
+      --warn: #9a5b00;
+      --warn-soft: #fff3df;
+      --risk: #d64b30;
+      --risk-soft: #fff0ea;
+      --prism-teal: #32d6c6;
+      --prism-sky: #9ed1ff;
+      --prism-pink: #f7a4d8;
+      --prism-lilac: #9b7cff;
+      --shadow: 0 18px 48px rgba(16, 20, 19, .08);
       --radius: 8px;
-      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --max: 1180px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
       --mono: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0D1211;
-        --paper: #141B19;
-        --paper-soft: #101715;
-        --ink: #F7FAF7;
-        --body: #D8E0DD;
-        --muted: #9DAAA5;
-        --line: #2D3A36;
-        --line-strong: #465652;
-        --sea: #8FE3D8;
-        --sea-soft: #14332F;
-        --violet: #A894FF;
-        --violet-soft: #241D47;
-        --pink: #FF91D1;
-        --cyan: #5DE5D9;
-        --amber: #FFC466;
-        --shadow: 0 22px 56px rgba(0,0,0,.32);
+        --bg: #0f1212;
+        --top: #141817;
+        --surface: #191e1d;
+        --surface-2: #202625;
+        --text: #f4f7f6;
+        --body: #d8dedc;
+        --muted: #a9b2af;
+        --line: #3a4240;
+        --line-strong: #505b58;
+        --accent: #9ed7d3;
+        --accent-fill: #1c3433;
+        --inverse-bg: #e9efed;
+        --inverse-text: #101413;
+        --action: #9b7cff;
+        --action-soft: #241d47;
+        --verify: #70e5a8;
+        --verify-soft: #173424;
+        --warn: #ffc466;
+        --warn-soft: #3a2a12;
+        --risk: #ff8d75;
+        --risk-soft: #3a211b;
+        --shadow: 0 18px 48px rgba(0, 0, 0, .34);
       }
     }
+
     * { box-sizing: border-box; }
-    html { background: var(--bg); }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      color: var(--ink);
+      min-width: 320px;
+      color: var(--text);
       background:
-        linear-gradient(135deg, rgba(35,200,187,.14), transparent 240px),
-        linear-gradient(218deg, rgba(233,95,184,.10), transparent 270px),
+        linear-gradient(118deg, rgba(50, 214, 198, .08), transparent 32rem),
+        linear-gradient(242deg, rgba(155, 124, 255, .07), transparent 30rem),
+        linear-gradient(28deg, rgba(247, 164, 216, .055), transparent 36rem),
         var(--bg);
-      font-family: var(--sans);
+      font-family: var(--font);
       line-height: 1.58;
       letter-spacing: 0;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
+
     a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--sea); }
-    p, h1, h2, h3 { margin: 0; }
-    .shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    h1, h2, h3, p { margin: 0; }
+    img { display: block; max-width: 100%; }
     .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--paper) 92%, transparent);
-      backdrop-filter: saturate(150%) blur(18px);
+      background: color-mix(in srgb, var(--top) 90%, transparent);
+      backdrop-filter: blur(18px);
     }
     .topbar-inner {
-      min-height: 62px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 18px;
     }
-    .brand-lockup {
-      display: inline-flex;
+    .lockup {
+      display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       min-width: 0;
-      color: var(--ink);
       font-size: 15px;
       font-weight: 900;
-      line-height: 1;
+      line-height: 1.1;
       white-space: nowrap;
     }
-    .brand-lockup::before {
-      content: "";
-      width: 28px;
-      height: 28px;
-      flex: 0 0 auto;
-      border: 1px solid var(--line-strong);
-      border-radius: 8px;
-      background:
-        linear-gradient(90deg, transparent 44%, var(--ink) 44% 56%, transparent 56%),
-        radial-gradient(circle at center, transparent 42%, var(--ink) 44% 50%, transparent 52%),
-        var(--paper);
+    .lockup .owner { color: var(--text); }
+    .lockup .product { color: var(--accent); }
+    .lockup .edition {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 9px;
+      border: 1px solid color-mix(in srgb, var(--action) 28%, var(--line));
+      border-radius: 999px;
+      background: var(--action-soft);
+      color: var(--action);
+      font-size: 12px;
+      font-weight: 900;
     }
-    .brand-lockup .product { color: var(--sea); }
     .nav {
       display: flex;
       align-items: center;
-      gap: 18px;
-      color: var(--body);
+      gap: 16px;
+      color: var(--muted);
       font-size: 13px;
-      font-weight: 760;
+      font-weight: 800;
       white-space: nowrap;
     }
-    .nav a {
-      min-height: 32px;
-      display: inline-flex;
-      align-items: center;
-      border-bottom: 1px solid transparent;
+    .nav a:hover { color: var(--text); }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 72px;
     }
-    .nav a:hover { border-bottom-color: currentColor; }
-    .hero { padding: 88px 0 52px; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 44px;
-      align-items: end;
-    }
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 28px;
-      color: var(--ink);
-      font-size: 54px;
-      font-weight: 950;
-      line-height: .88;
-      letter-spacing: 0;
-    }
-    .wordmark .lens {
-      color: var(--sea);
-      border-bottom: 8px solid var(--cyan);
-      padding-bottom: 5px;
-    }
+
     .eyebrow {
-      margin-bottom: 10px;
-      color: var(--sea);
-      font-family: var(--mono);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
       font-size: 12px;
-      font-weight: 840;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: .08em;
+      letter-spacing: .04em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-lilac), var(--prism-pink));
+    }
+
+    .hero {
+      min-height: calc(100svh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, .68fr);
+      gap: clamp(28px, 6vw, 72px);
+      align-items: center;
+      padding: 54px 0 44px;
     }
     h1 {
-      max-width: 860px;
-      font-size: 82px;
+      margin-top: 24px;
+      max-width: 790px;
+      font-size: clamp(58px, 7vw, 104px);
       line-height: .98;
-      font-weight: 950;
+      font-weight: 930;
       letter-spacing: 0;
     }
-    .hero p.lead {
-      max-width: 760px;
-      margin-top: 26px;
+    .headline-line { display: block; }
+    .lead {
+      max-width: 720px;
+      margin-top: 24px;
       color: var(--body);
-      font-size: 20px;
-      line-height: 1.66;
-      font-weight: 620;
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.36;
+      font-weight: 820;
     }
-    .status-card {
+    .sublead {
+      max-width: 720px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+      font-weight: 560;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--paper);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 880;
+      box-shadow: 0 10px 24px rgba(16, 20, 19, .05);
+    }
+    .btn.primary {
+      border-color: transparent;
+      background: var(--inverse-bg);
+      color: var(--inverse-text);
+    }
+
+    .console {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      background: linear-gradient(135deg, #101b1b, #13211f);
+      color: #fff;
       box-shadow: var(--shadow);
       overflow: hidden;
     }
-    .status-card::before {
-      content: "";
-      display: block;
-      height: 6px;
-      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--violet), var(--amber));
-    }
-    .status-body { padding: 24px; }
-    .status-body h2 {
-      color: var(--ink);
-      font-size: 28px;
-      line-height: 1.12;
-      font-weight: 950;
-      letter-spacing: 0;
-    }
-    .status-body p {
-      margin-top: 12px;
-      color: var(--body);
-      font-size: 15px;
-      line-height: 1.72;
-      font-weight: 620;
-    }
-    .status-list {
+    .console-body {
+      padding: 24px;
       display: grid;
-      gap: 9px;
-      margin-top: 18px;
-    }
-    .status-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 10px 0;
-      border-top: 1px solid var(--line);
-      color: var(--body);
-      font-size: 13px;
-      font-weight: 760;
-    }
-    .status-row strong { color: var(--sea); }
-    section.library { padding: 42px 0 88px; }
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 28px;
-      margin-bottom: 22px;
-    }
-    .section-head h2 {
-      color: var(--ink);
-      font-size: 40px;
-      line-height: 1.1;
-      font-weight: 950;
-      letter-spacing: 0;
-    }
-    .section-head p {
-      max-width: 420px;
-      color: var(--body);
-      font-size: 15px;
-      line-height: 1.7;
-      font-weight: 620;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
-    .card {
-      min-height: 282px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid var(--line);
+    .console .eyebrow { color: #8ee7df; }
+    .console-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .metric {
+      min-height: 92px;
+      padding: 14px;
       border-radius: var(--radius);
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(255, 255, 255, .07);
     }
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: color-mix(in srgb, var(--sea) 44%, var(--line));
-      box-shadow: 0 22px 56px rgba(16, 24, 22, .12);
-      color: inherit;
+    .metric b {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 930;
     }
-    .card .type {
-      color: var(--sea);
-      font-family: var(--mono);
+    .metric span {
+      color: rgba(255, 255, 255, .76);
       font-size: 12px;
-      font-weight: 860;
-      text-transform: uppercase;
-      letter-spacing: .08em;
+      font-weight: 760;
     }
-    .card h3 {
-      margin-top: 14px;
-      color: var(--ink);
-      font-size: 28px;
-      line-height: 1.12;
-      font-weight: 950;
+    .console-note {
+      color: rgba(255, 255, 255, .82);
+      font-size: 14px;
+      line-height: 1.72;
+      font-weight: 560;
+    }
+
+    section {
+      padding-top: 64px;
+      scroll-margin-top: 82px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      max-width: 760px;
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1.08;
+      font-weight: 920;
       letter-spacing: 0;
     }
-    .card p {
-      margin-top: 14px;
-      color: var(--body);
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
       font-size: 15px;
-      line-height: 1.68;
-      font-weight: 600;
+      line-height: 1.72;
     }
-    .card .meta {
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .quick-card,
+    .report-card,
+    .research-card,
+    .rule-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .quick-card {
+      min-height: 156px;
+      padding: 20px;
+      display: grid;
+      align-content: space-between;
+      border-top: 4px solid var(--line);
+    }
+    .quick-card.teal { border-top-color: var(--prism-teal); }
+    .quick-card.violet { border-top-color: var(--action); }
+    .quick-card.pink { border-top-color: var(--prism-pink); }
+    .quick-card.green { border-top-color: var(--verify); }
+    .quick-card h3,
+    .research-card h3,
+    .rule-card h3 {
+      font-size: 22px;
+      line-height: 1.12;
+      font-weight: 920;
+      letter-spacing: 0;
+    }
+    .quick-card p,
+    .research-card p,
+    .rule-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+      font-weight: 560;
+    }
+    .tools {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 22px;
+      margin-top: 14px;
     }
     .pill {
       display: inline-flex;
       align-items: center;
       min-height: 28px;
-      padding: 0 9px;
-      border: 1px solid var(--line);
+      padding: 4px 10px;
       border-radius: 999px;
-      background: var(--paper-soft);
-      color: var(--body);
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--muted);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 820;
     }
-    .feature {
+    .pill.green {
+      color: var(--verify);
+      background: var(--verify-soft);
+      border-color: color-mix(in srgb, var(--verify) 28%, var(--line));
+    }
+    .pill.warn {
+      color: var(--warn);
+      background: var(--warn-soft);
+      border-color: color-mix(in srgb, var(--warn) 28%, var(--line));
+    }
+    .pill.violet {
+      color: var(--action);
+      background: var(--action-soft);
+      border-color: color-mix(in srgb, var(--action) 28%, var(--line));
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .report-card {
+      min-height: 320px;
+      padding: 22px;
+      display: grid;
+      align-content: space-between;
+      gap: 20px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .report-card:hover,
+    .research-card:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+      box-shadow: 0 22px 56px rgba(16, 20, 19, .12);
+    }
+    .logo-row {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .logo-well {
+      width: min(210px, 56%);
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+    }
+    .logo-well img {
+      width: auto;
+      max-height: 44px;
+      object-fit: contain;
+    }
+    .logo-well.petpivot img {
+      max-height: 40px;
+      max-width: 188px;
+    }
+    .report-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--action) 28%, var(--line));
+      background: var(--action-soft);
+      color: var(--action);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .report-card h3 {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.02;
+      font-weight: 930;
+      letter-spacing: 0;
+    }
+    .report-card .verdict {
+      color: var(--body);
+      font-size: 18px;
+      line-height: 1.42;
+      font-weight: 830;
+    }
+    .report-card .summary {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 560;
+    }
+
+    .research-grid,
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .research-card,
+    .rule-card {
+      min-height: 220px;
+      padding: 22px;
+      display: grid;
+      align-content: space-between;
+      gap: 18px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .research-card.feature {
       grid-column: span 2;
-      min-height: 282px;
       background:
-        linear-gradient(130deg, color-mix(in srgb, var(--sea-soft) 62%, transparent), transparent 68%),
-        var(--paper);
+        linear-gradient(135deg, color-mix(in srgb, var(--accent-fill) 72%, transparent), transparent 68%),
+        var(--surface);
     }
-    footer {
-      padding: 36px 0 52px;
+    .rule-card strong {
+      display: block;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .footer {
+      margin-top: 72px;
+      padding: 22px 0 0;
       border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.7;
+      font-weight: 650;
     }
-    @media (max-width: 900px) {
-      .shell { width: min(100% - 32px, 760px); }
-      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
-      .nav { width: 100%; overflow-x: auto; padding-bottom: 2px; }
-      .hero-grid, .grid { grid-template-columns: 1fr; }
-      .feature { grid-column: span 1; }
-      h1 { font-size: 54px; }
-      .section-head { align-items: start; flex-direction: column; }
+
+    @media (max-width: 980px) {
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 44px 0 34px;
+      }
+      .quick-grid,
+      .research-grid,
+      .rule-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .research-card.feature { grid-column: span 2; }
     }
-    @media (max-width: 560px) {
-      .hero { padding-top: 56px; }
-      .wordmark { font-size: 42px; }
-      h1 { font-size: 42px; }
-      .hero p.lead { font-size: 17px; }
-      .brand-lockup { white-space: normal; line-height: 1.25; }
-      .brand-lockup::before { display: none; }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 18px;
+      }
+      .lockup {
+        flex-wrap: wrap;
+        white-space: normal;
+        row-gap: 6px;
+      }
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      main { padding: 0 18px 54px; }
+      .hero > div:first-child {
+        min-height: calc(100svh - 116px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .console { margin-top: 36px; }
+      h1 { font-size: 44px; }
+      .lead { font-size: 18px; line-height: 1.45; }
+      .sublead { font-size: 14px; }
+      .hero-actions .btn { width: 100%; }
+      .console-grid,
+      .quick-grid,
+      .report-grid,
+      .research-grid,
+      .rule-grid {
+        grid-template-columns: 1fr;
+      }
+      .research-card.feature { grid-column: span 1; }
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      h2 { font-size: 30px; }
+      .report-card,
+      .quick-card,
+      .research-card,
+      .rule-card {
+        min-height: auto;
+        padding: 18px;
+      }
+      .report-card h3 { font-size: 30px; }
+      .logo-row {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .logo-well { width: 100%; }
+      .footer { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <div class="shell topbar-inner">
-      <a class="brand-lockup" href="./" aria-label="TideLens 项目入口">
-        <span>远汐Offing</span>
-        <span class="product">TideLens项目入口</span>
+    <div class="topbar-inner">
+      <a class="lockup" href="./" aria-label="Offing TideLens 项目入口">
+        <span class="owner">远汐Offing</span>
+        <span class="product">Tidelens红人营销诊断</span>
+        <span class="edition">项目入口</span>
       </a>
-      <nav class="nav" aria-label="入口导航">
-        <a href="#research">调研文件</a>
-        <a href="#reports">诊断报告</a>
-        <a href="../index.html">Offing Atlas</a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#reports">报告库</a>
+        <a href="#research">研究</a>
+        <a href="#rules">交付门槛</a>
+        <a href="../index.html">Offing 总入口</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="shell hero-grid">
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">Offing TideLens Workspace</div>
+        <h1><span class="headline-line">红人营销诊断</span><span class="headline-line">档案库</span></h1>
+        <p class="lead">这里集中存放 TideLens 的品牌诊断报告、红人营销评估研究和交付规范。每个链接都要服务一个判断：内容是否降低购买顾虑，预算是否值得继续复投。</p>
+        <p class="sublead">报告 URL 保持稳定；新增品牌、研究文件和样稿会从这个入口归档。TideLens 的默认视觉是浅色、清晰、结论先行，彩色只用于阶段、风险、机会和解锁状态。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reports">进入报告库</a>
+          <a class="btn" href="#research">查看研究文件</a>
+          <a class="btn" href="../atlas/">进入 Atlas</a>
+        </div>
+      </div>
+      <aside class="console" aria-label="TideLens 当前项目概览">
+        <div class="console-body">
+          <div class="eyebrow">Project Map</div>
+          <div class="console-grid">
+            <div class="metric"><b>2</b><span>已归档品牌诊断</span></div>
+            <div class="metric"><b>1</b><span>方法论研究报告</span></div>
+            <div class="metric"><b>8</b><span>红人营销评分维度</span></div>
+            <div class="metric"><b>2026-06-15</b><span>最近更新日期</span></div>
+          </div>
+          <p class="console-note">入口只放可打开、可复盘、可继续交付的文件。未确认数据、过程草稿和客户敏感信息保留在本地工作区。</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="quick">
+      <div class="quick-grid" aria-label="TideLens 快速入口">
+        <a class="quick-card teal" href="#reports">
+          <div>
+            <h3>品牌报告库</h3>
+            <p>进入 Ulike、PetPivot 等红人增长诊断页面。</p>
+          </div>
+          <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
+        </a>
+        <a class="quick-card violet" href="#research">
+          <div>
+            <h3>评估框架</h3>
+            <p>沉淀“红人营销做得好不好”的判断标准。</p>
+          </div>
+          <div class="tools"><span class="pill violet">Score OS</span><span class="pill">Research</span></div>
+        </a>
+        <a class="quick-card pink" href="#rules">
+          <div>
+            <h3>交付门槛</h3>
+            <p>每次输出先过 VI、文案、移动端和链接检查。</p>
+          </div>
+          <div class="tools"><span class="pill warn">Preflight</span><span class="pill">QA</span></div>
+        </a>
+        <a class="quick-card green" href="../index.html">
+          <div>
+            <h3>远汐总入口</h3>
+            <p>回到 Offing 的免费诊断提交和项目总导航。</p>
+          </div>
+          <div class="tools"><span class="pill">Offing</span><span class="pill">Index</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="reports">
+      <div class="section-head">
         <div>
-          <div class="wordmark">Tide<span class="lens">Lens</span></div>
-          <p class="eyebrow">KOL Growth Diagnosis Workspace</p>
-          <h1>远汐潮镜的研究、样稿和客户交付入口。</h1>
-          <p class="lead">这里用于存放 TideLens 红人营销诊断的方法论研究、品牌样稿和后续客户专属报告。所有页面默认服务一个目标：把红人内容从“曝光动作”转成“购买证据系统”。</p>
+          <div class="eyebrow">Report Library</div>
+          <h2>已生成的 TideLens 品牌诊断，从这里进入。</h2>
         </div>
-        <aside class="status-card" aria-label="项目状态">
-          <div class="status-body">
-            <h2>当前项目阶段：方法论固化 + 样稿打磨。</h2>
-            <p>TideLens 第一版服务 Shopify / 独立站 DTC 品牌，优先覆盖北美市场和 YouTube、TikTok、Instagram 的公开信号诊断。</p>
-            <div class="status-list">
-              <div class="status-row"><span>Primary Use</span><strong>免费诊断入口</strong></div>
-              <div class="status-row"><span>Paid Unlock</span><strong>完整分析报告</strong></div>
-              <div class="status-row"><span>VI</span><strong>Offing TideLens</strong></div>
-            </div>
-          </div>
-        </aside>
+        <p class="section-note">这些页面用于展示诊断样稿和客户交付版本。报告内部继续保持无返回按钮，项目入口负责集中导航和归档。</p>
       </div>
-    </section>
-
-    <section id="research" class="library">
-      <div class="shell">
-        <div class="section-head">
+      <div class="report-grid">
+        <a class="report-card" href="reports/petpivot-tidelens-free-preview-2026-06-15.html">
           <div>
-            <p class="eyebrow">Research Library</p>
-            <h2>调研文件</h2>
+            <div class="logo-row">
+              <div class="logo-well petpivot"><img src="../assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div>
+              <span class="report-badge">免费版</span>
+            </div>
+            <h3>PetPivot 红人增长诊断</h3>
+            <p class="verdict">声量入口已经建立，下一步先审内容再加预算。</p>
+            <p class="summary">覆盖 TikTok Shop / affiliate、Instagram Reels、YouTube review、购买证明矩阵和最大拖累项评分。</p>
           </div>
-          <p>这些文件沉淀 TideLens 的诊断逻辑，后续会继续加入竞品平台研究、红人数据采集口径和行业 benchmark。</p>
-        </div>
-        <div class="grid">
-          <a class="card feature" href="research/how-to-evaluate-influencer-marketing-2026-06-15.html">
-            <div>
-              <p class="type">Deep Research · 2026-06-15</p>
-              <h3>怎么判断一个品牌的红人营销做得好不好？</h3>
-              <p>建立 TideLens 的核心评估模型：阶段、creator 组合、平台分工、购买证据、商业测量、素材复用和治理风险。</p>
-            </div>
-            <div class="meta">
-              <span class="pill">Evaluation OS</span>
-              <span class="pill">Score Model</span>
-              <span class="pill">Public Data</span>
-            </div>
-          </a>
-          <a class="card" href="../index.html">
-            <div>
-              <p class="type">Offing Index</p>
-              <h3>返回远汐总入口</h3>
-              <p>查看 Offing Atlas、既有北美业务诊断报告和其他远汐交付页面。</p>
-            </div>
-            <div class="meta">
-              <span class="pill">Atlas</span>
-              <span class="pill">Reports</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+          <div class="tools">
+            <span class="pill green">2026-06-15</span>
+            <span class="pill">Pet Tech</span>
+            <span class="pill">Score 62/100</span>
+          </div>
+        </a>
 
-    <section id="reports" class="library" style="padding-top:0;">
-      <div class="shell">
-        <div class="section-head">
+        <a class="report-card" href="reports/ulike-tidelens-free-preview-2026-06-13.html">
           <div>
-            <p class="eyebrow">Report Library</p>
-            <h2>诊断样稿与交付页</h2>
+            <div class="logo-row">
+              <div class="logo-well"><img src="../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div>
+              <span class="report-badge">免费版</span>
+            </div>
+            <h3>Ulike 红人增长诊断</h3>
+            <p class="verdict">上线量已经够，下一步建立可复投的购买证明标准。</p>
+            <p class="summary">覆盖近 30 天公开视频、Instagram / TikTok / YouTube 分工、竞品购买心智和 Proof Translation Gap。</p>
           </div>
-          <p>这里存放已生成的 TideLens 品牌诊断 HTML。免费版用于给客户看见问题，完整分析用于付费解锁。</p>
+          <div class="tools">
+            <span class="pill green">2026-06-13</span>
+            <span class="pill">Beauty Tech</span>
+            <span class="pill">Public Data</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Research Library</div>
+          <h2>红人营销评估方法，从研究文件沉淀。</h2>
         </div>
-        <div class="grid">
-          <a class="card feature" href="reports/ulike-tidelens-free-preview-2026-06-13.html">
-            <div>
-              <p class="type">Free Preview · Ulike</p>
-              <h3>Ulike 红人增长诊断</h3>
-              <p>公开信号样稿：近 30 天公开视频上线量、平台角色、竞品打法、购买证据缺口和预算方向判断。</p>
-            </div>
-            <div class="meta">
-              <span class="pill">YouTube</span>
-              <span class="pill">TikTok</span>
-              <span class="pill">Instagram</span>
-            </div>
-          </a>
-          <a class="card" href="reports/petpivot-tidelens-free-preview-2026-06-15.html">
-            <div>
-              <p class="type">Free Preview · PetPivot</p>
-              <h3>PetPivot 红人增长诊断</h3>
-              <p>公开信号样稿：TikTok Shop / affiliate 铺量、Instagram Reels、YouTube review 和自动猫砂盆信任证明缺口。</p>
-            </div>
-            <div class="meta">
-              <span class="pill">Pet Tech</span>
-              <span class="pill">TikTok Shop</span>
-              <span class="pill">YouTube Review</span>
-            </div>
-          </a>
-          <a class="card" href="reports/ulike-20260613-t7q4.html">
-            <div>
-              <p class="type">Legacy Link</p>
-              <h3>Ulike 旧版链接</h3>
-              <p>保留早期部署链接，避免之前发出的 URL 失效。新样稿以后优先使用标准命名版本。</p>
-            </div>
-            <div class="meta">
-              <span class="pill">Archive</span>
-              <span class="pill">Noindex</span>
-            </div>
-          </a>
+        <p class="section-note">TideLens 的判断不只看上线量，会同时看阶段目标、平台分工、creator 组合质量、购买证明、测量纪律和素材复用。</p>
+      </div>
+      <div class="research-grid">
+        <a class="research-card feature" href="research/how-to-evaluate-influencer-marketing-2026-06-15.html">
+          <div>
+            <div class="eyebrow">Deep Research · 2026-06-15</div>
+            <h3>如何评估一个品牌的红人营销是否做得好？</h3>
+            <p>整理 TideLens 的 8 维评分框架：阶段目标、creator 组合、受众真实性、购买证明、平台分工、商业信号、素材复用和治理学习。</p>
+          </div>
+          <div class="tools"><span class="pill violet">Evaluation OS</span><span class="pill">Score Model</span><span class="pill">Benchmark</span></div>
+        </a>
+        <a class="research-card" href="reports/ulike-20260613-t7q4.html">
+          <div>
+            <div class="eyebrow">Archive Link</div>
+            <h3>Ulike 早期链接保留</h3>
+            <p>保留已经生成过的旧链接，避免历史 URL 失效；新交付优先进入标准命名报告。</p>
+          </div>
+          <div class="tools"><span class="pill warn">Legacy</span><span class="pill">Noindex</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Delivery Gate</div>
+          <h2>每次发链接前，先过 TideLens 交付门槛。</h2>
+        </div>
+        <p class="section-note">入口页、报告页和研究页都按同一套标准检查：VI 一致、结论直给、移动端不挤、链接可打开、线上版本已验证。</p>
+      </div>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <div>
+            <strong>01 · VI</strong>
+            <h3>浅色报告系统，黑字结论优先。</h3>
+            <p>页面不得退回彩虹大面积装饰、泛紫 SaaS 感或自造项目 logo。彩色只标记阶段、风险、机会和解锁状态。</p>
+          </div>
+          <div class="tools"><span class="pill green">TideLens VI</span></div>
+        </div>
+        <div class="rule-card">
+          <div>
+            <strong>02 · Copy</strong>
+            <h3>每句话都服务一个业务判断。</h3>
+            <p>标题直接写结论。避免口号、过程说明和内部小九九。长句拆短，中文不硬断行。</p>
+          </div>
+          <div class="tools"><span class="pill violet">Executive Copy</span></div>
+        </div>
+        <div class="rule-card">
+          <div>
+            <strong>03 · QA</strong>
+            <h3>桌面、移动端和 live 链接都要检查。</h3>
+            <p>上线前确认无横向溢出、按钮对比度合格、favicon 存在、报告链接和项目入口链接同时可访问。</p>
+          </div>
+          <div class="tools"><span class="pill warn">Preflight</span></div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="shell">
-      <strong>远汐Offing · TideLens项目入口</strong><br />
-      所有 TideLens 报告默认使用公开数据诊断口径，客户级精确预算、销售归因、LTV 和渠道利润判断需要结合品牌后台数据。
+    <div class="footer">
+      <span>Offing TideLens｜远汐·潮镜 · Project Hub</span>
+      <span>Last updated: 2026-06-15</span>
     </div>
-  </footer>
+  </main>
 </body>
 </html>
