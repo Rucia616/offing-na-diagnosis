@@ -233,9 +233,40 @@
       section, .hero { padding: 32px 0; break-inside: avoid; }
       .card, .hero-score, .table-wrap { box-shadow: none; break-inside: avoid; }
     }
+  
+    .atlas-home-link {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid rgba(45, 98, 97, .28);
+      border-radius: 999px;
+      background: rgba(251, 251, 253, .92);
+      color: #2d6261;
+      font: 850 13px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(16, 20, 19, .10);
+      backdrop-filter: blur(14px);
+    }
+    .atlas-home-link:hover { color: #101413; border-color: rgba(45, 98, 97, .48); }
+    @media (prefers-color-scheme: dark) {
+      .atlas-home-link { background: rgba(20, 24, 23, .9); color: #9ed7d3; border-color: rgba(158, 215, 211, .34); box-shadow: 0 12px 30px rgba(0, 0, 0, .32); }
+      .atlas-home-link:hover { color: #f4f7f6; }
+    }
+    @media (max-width: 640px) {
+      .atlas-home-link { right: 12px; bottom: 12px; min-height: 38px; padding: 0 12px; font-size: 12px; }
+    }
+    @media print { .atlas-home-link { display: none; } }
   </style>
 </head>
 <body>
+  <a class="atlas-home-link" href="https://rucia616.github.io/offing-na-diagnosis/atlas/#structure" aria-label="返回 Atlas 项目入口">返回 Atlas 项目入口</a>
+
   <nav>
     <div class="nav-brand">远汐 Offing <small>免费北美业务诊断</small></div>
     <div class="nav-links">

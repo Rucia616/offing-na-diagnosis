@@ -106,27 +106,7 @@
       gap: 20px;
     }
 
-    .lockup {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      line-height: 1.06;
-      letter-spacing: 0;
-    }
-
-    .lock-symbol {
-      width: 30px;
-      height: 30px;
-      border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-      background: color-mix(in srgb, var(--surface-tint) 78%, transparent);
-      font-size: 15px;
-      font-weight: 950;
-    }
+    .lockup { font-weight: 900; line-height: 1.06; letter-spacing: 0; }
 
     .lockup span { display: block; margin-top: 3px; color: var(--accent); font-size: 12px; font-weight: 850; }
     .nav { display: flex; gap: 16px; color: var(--muted); font-size: 13px; font-weight: 760; white-space: nowrap; }
@@ -233,20 +213,34 @@
       font-size: 29px;
       line-height: 1;
       letter-spacing: 1px;
-      color: rgba(255,255,255,.28);
       font-family: Georgia, serif;
     }
-    .stars::before { content: "★★★★★"; }
-    .stars span {
+    .stars .star-base {
+      display: block;
+      color: rgba(255,255,255,.30);
+    }
+    .stars .star-fill {
       position: absolute;
       left: 0;
       top: 0;
-      width: var(--star);
+      width: var(--fill);
       overflow: hidden;
       white-space: nowrap;
       color: #ffc04d;
     }
-    .stars span::before { content: "★★★★★"; }
+    .star-verdict {
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 11px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .08);
+      color: color-mix(in srgb, var(--inverse-text) 90%, transparent);
+      font-size: 13px;
+      font-weight: 900;
+    }
     .formula {
       margin-top: 18px;
       color: color-mix(in srgb, var(--inverse-text) 82%, transparent);
@@ -282,7 +276,7 @@
 
     h2 {
       max-width: 860px;
-      font-size: clamp(34px, 4.2vw, 58px);
+      font-size: clamp(28px, 3vw, 44px);
       line-height: 1.03;
       font-weight: 950;
       letter-spacing: 0;
@@ -370,6 +364,45 @@
     .ring.core { width: 42%; aspect-ratio: 1 / .58; background: color-mix(in srgb, var(--teal) 18%, var(--surface)); border-color: color-mix(in srgb, var(--accent) 38%, var(--line)); box-shadow: 0 18px 44px rgba(47,104,102,.13); }
     .ring b { display: block; font-size: clamp(18px, 2.1vw, 26px); line-height: 1.15; }
     .ring span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 760; }
+
+    .audience-map {
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+      align-content: center;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--teal) 8%, transparent), transparent 38%),
+        linear-gradient(225deg, color-mix(in srgb, var(--pink) 7%, transparent), transparent 42%),
+        var(--surface);
+    }
+    .audience-layer {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 16px;
+      align-items: center;
+      min-height: 118px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+    }
+    .audience-layer strong {
+      display: grid;
+      place-items: center;
+      min-height: 78px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 950;
+      text-align: center;
+      border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+    }
+    .audience-layer h3 { margin: 0; }
+    .audience-layer p { margin-top: 8px; }
+    .audience-layer.core { background: color-mix(in srgb, var(--teal) 12%, var(--surface)); }
+    .audience-layer.adjacent { background: color-mix(in srgb, var(--sky) 10%, var(--surface)); }
+    .audience-layer.boundary { background: color-mix(in srgb, var(--pink) 9%, var(--surface)); }
 
     .split-card {
       display: grid;
@@ -465,20 +498,24 @@
 
     .block-card {
       display: grid;
-      grid-template-columns: 155px 1fr;
-      min-height: 390px;
+      grid-template-columns: 1fr;
+      min-height: auto;
     }
     .block-score {
-      padding: 24px 18px;
-      border-right: 1px solid var(--line);
+      padding: 18px;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
       background: var(--surface-soft);
-      display: grid;
-      align-content: start;
-      gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
-    .block-score b { font-size: 54px; line-height: .9; color: var(--c); }
-    .block-copy { padding: 24px; }
-    .block-copy .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; }
+    .block-score b { font-size: 44px; line-height: .9; color: var(--c); }
+    .block-score span:not(.chip) { color: var(--body); font-weight: 900; }
+    .block-copy { padding: 20px; }
+    .block-copy .columns { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
     .block-copy h4 { margin: 0 0 8px; font-size: 14px; color: var(--accent); }
     .block-copy li { margin: 8px 0; color: var(--body); }
 
@@ -521,6 +558,37 @@
       font-size: 52px;
       font-weight: 950;
       line-height: 1;
+    }
+    .position-copy {
+      margin-top: 14px;
+      padding: 22px;
+    }
+    .copy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .copy-line {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+    }
+    .copy-line span {
+      display: block;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+    .copy-line p {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.48;
+      font-weight: 760;
     }
 
     .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -592,15 +660,43 @@
       .ring.core { width: 54%; }
       .wordcloud { min-height: 250px; }
     }
+  
+    .atlas-home-link {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid rgba(45, 98, 97, .28);
+      border-radius: 999px;
+      background: rgba(251, 251, 253, .92);
+      color: #2d6261;
+      font: 850 13px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(16, 20, 19, .10);
+      backdrop-filter: blur(14px);
+    }
+    .atlas-home-link:hover { color: #101413; border-color: rgba(45, 98, 97, .48); }
+    @media (prefers-color-scheme: dark) {
+      .atlas-home-link { background: rgba(20, 24, 23, .9); color: #9ed7d3; border-color: rgba(158, 215, 211, .34); box-shadow: 0 12px 30px rgba(0, 0, 0, .32); }
+      .atlas-home-link:hover { color: #f4f7f6; }
+    }
+    @media (max-width: 640px) {
+      .atlas-home-link { right: 12px; bottom: 12px; min-height: 38px; padding: 0 12px; font-size: 12px; }
+    }
+    @media print { .atlas-home-link { display: none; } }
   </style>
 </head>
 <body>
+  <a class="atlas-home-link" href="https://rucia616.github.io/offing-na-diagnosis/atlas/#structure" aria-label="返回 Atlas 项目入口">返回 Atlas 项目入口</a>
+
   <header class="topbar">
     <div class="topbar-inner">
-      <a href="#top" class="lockup" aria-label="远汐 Offing Atlas 北美业务诊断">
-        <span class="lock-symbol">A</span>
-        <span style="display:block;color:inherit;font-size:15px;">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></span>
-      </a>
+      <a href="#top" class="lockup" aria-label="远汐 Offing Atlas 北美业务诊断">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></a>
       <nav class="nav" aria-label="页面导航">
         <a href="#stage">阶段</a>
         <a href="#channel">类型</a>
@@ -626,7 +722,11 @@
         <div class="score-body">
           <div class="score-label">北美业务情况总分</div>
           <div class="score-num">49</div>
-          <div class="stars" style="--star:49%;"><span></span></div>
+          <div class="stars" role="img" aria-label="2.45 / 5 stars" style="--fill:49%;">
+            <span class="star-base" aria-hidden="true">★★★★★</span>
+            <span class="star-fill" aria-hidden="true">★★★★★</span>
+          </div>
+          <div class="star-verdict">2.5 星 · 机会成立，但成交信任不达标</div>
           <p class="formula">49 / 100 = 2.45 / 5。业务健康度 42 × 45% + 业务机会分 74 × 35% +（100 - 问题致命度 78）× 20%。</p>
           <div class="subscores">
             <div class="subscore">
@@ -681,10 +781,19 @@
         <p class="section-note">CoolCovery 的核心人群不是“所有运动后腿酸的人”。真正愿意付高客单的人，要么需要更专业的恢复流程，要么需要把设备放进一个可收费的服务空间。</p>
       </div>
       <div class="grid cols-2">
-        <div class="card rings" aria-label="核心人群同心圆">
-          <div class="ring outer"><b>大众外扩</b><span>跑步、健身、办公室疲劳人群</span></div>
-          <div class="ring mid"><b>相邻人群</b><span>高客单家庭健身房、球队、精品健身房、恢复工作室</span></div>
-          <div class="ring core"><b>核心盘</b><span>诊所 / 教练 / 专业恢复空间 / 严肃运动用户</span></div>
+        <div class="card audience-map" aria-label="核心人群分层地图">
+          <div class="audience-layer core">
+            <strong>核心盘</strong>
+            <div><h3>先打专业恢复空间。</h3><p>诊所、教练、运动队、恢复工作室和严肃运动用户，需要可重复执行的恢复流程。</p></div>
+          </div>
+          <div class="audience-layer adjacent">
+            <strong>相邻人群</strong>
+            <div><h3>再外扩高客单家庭和精品健身房。</h3><p>他们会被冷 / 热 / 压缩一体化吸引，但需要更强的价格理由、真实案例和售后确定性。</p></div>
+          </div>
+          <div class="audience-layer boundary">
+            <strong>暂缓人群</strong>
+            <div><h3>普通恢复小工具用户先别泛化。</h3><p>这群人更容易按低价压缩靴或冰敷机比价，不适合作为当前主预算入口。</p></div>
+          </div>
         </div>
         <div class="grid">
           <div class="card pad rank-card green">
@@ -1198,15 +1307,45 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Positioning Upgrade</div>
-          <h2>定位升级路径：从“多功能恢复设备”，升级为“可落地的恢复空间方案”。</h2>
+          <h2>定位升级：把“设备功能”讲成可采购的恢复空间方案。</h2>
         </div>
-        <p class="section-note">这个模块不需要花哨配图。用四步路径更清楚：当前靠功能吸引，下一阶段要靠方案、证据和服务承接提高客单与转化。</p>
+        <p class="section-note">当前成交靠功能组合；下一阶段要让采购人看到明确场景、套装、维护边界和服务承诺，才愿意把它放进诊所、健身房或恢复空间。</p>
       </div>
       <div class="path">
         <div class="card path-card"><h3>当前成交理由</h3><p>冷、热、压缩集中在一个设备里，省去冰浴和多设备切换。</p></div>
         <div class="card path-card"><h3>下一阶段理由</h3><p>为诊所、健身房、球队和家庭健身房提供可重复执行的恢复流程。</p></div>
         <div class="card path-card"><h3>溢价理由</h3><p>套餐清楚、维护简单、使用风险透明、专业案例可验证。</p></div>
         <div class="card path-card"><h3>品牌该收束</h3><p>少讲“所有人都适合”，多讲“哪个场景最值得买哪一套”。</p></div>
+      </div>
+      <div class="card position-copy">
+        <h3>可直接使用的英文定位文案</h3>
+        <p class="small">先用于官网首屏、B2B landing page、sales deck 和外联邮件；等有真实案例后，再把行业和场景继续收窄。</p>
+        <div class="copy-grid">
+          <div class="copy-line">
+            <span>Homepage headline</span>
+            <p>Turn any room into a professional recovery space.</p>
+          </div>
+          <div class="copy-line">
+            <span>Hero subhead</span>
+            <p>CoolCovery combines cold, heat, and dynamic compression in one modular system, helping recovery-focused spaces run consistent routines without ice tubs or scattered devices.</p>
+          </div>
+          <div class="copy-line">
+            <span>B2B page headline</span>
+            <p>A recovery setup built for clinics, teams, gyms, and performance spaces.</p>
+          </div>
+          <div class="copy-line">
+            <span>Product promise</span>
+            <p>One control unit. Multiple recovery attachments. Clear protocols for legs, back, arms, and full-body recovery.</p>
+          </div>
+          <div class="copy-line">
+            <span>Sales outreach opener</span>
+            <p>We help recovery spaces add cold, heat, and compression therapy without the operational mess of ice baths or separate single-use devices.</p>
+          </div>
+          <div class="copy-line">
+            <span>CTA</span>
+            <p>Build your recovery setup.</p>
+          </div>
+        </div>
       </div>
     </section>
 

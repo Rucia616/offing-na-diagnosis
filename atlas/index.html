@@ -237,8 +237,9 @@
       align-items: center;
       gap: 14px;
       margin-bottom: 14px;
+      flex-wrap: wrap;
     }
-    .search {
+    .search, .filter {
       width: min(420px, 100%);
       min-height: 42px;
       padding: 0 14px;
@@ -249,10 +250,34 @@
       font: inherit;
       font-size: 14px;
     }
+    .filter {
+      width: 160px;
+      color: var(--body);
+      font-weight: 760;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .reset-filter {
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      color: var(--body);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .reset-filter:hover { border-color: color-mix(in srgb, var(--accent) 34%, var(--line)); color: var(--text); }
     .report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .report-card {
       padding: 18px;
-      min-height: 214px;
+      min-height: 252px;
       display: grid;
       gap: 14px;
       align-content: space-between;
@@ -261,7 +286,36 @@
     .report-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 34%, var(--line)); }
     .report-card h3 { font-size: 24px; line-height: 1.08; }
     .report-card p { color: var(--muted); font-size: 14px; }
+    .report-logo {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .report-logo img {
+      max-width: 168px;
+      max-height: 42px;
+      object-fit: contain;
+      display: block;
+    }
+    .report-wordmark {
+      color: var(--text);
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 950;
+    }
     .report-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .empty-state {
+      display: none;
+      padding: 22px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--muted);
+      text-align: center;
+      font-weight: 760;
+    }
+    .empty-state.show { display: block; }
     .library-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 14px; }
     .library-card { padding: 24px; min-height: 300px; }
     .library-card h3 { font-size: 26px; line-height: 1.12; margin-bottom: 12px; }
@@ -306,7 +360,8 @@
       h2 { font-size: 30px; }
       .hero { padding-top: 36px; }
       .quick-grid, .report-grid, .file-grid, .metric-grid { grid-template-columns: 1fr; }
-      .toolbar { display: grid; }
+      .toolbar, .filter-bar { display: grid; }
+      .filter, .search { width: 100%; }
       .library-item { grid-template-columns: 1fr; gap: 6px; }
     }
   </style>
@@ -393,46 +448,82 @@
       </div>
       <div class="toolbar">
         <input class="search" id="reportSearch" type="search" placeholder="搜索品牌，例如 Ulike / Plaud / CoolCovery" aria-label="搜索报告" />
-        <span class="pill">共 9 份报告</span>
+        <div class="filter-bar">
+          <select class="filter" id="stageFilter" aria-label="按品牌阶段筛选">
+            <option value="">全部阶段</option>
+            <option value="0-1">0-1</option>
+            <option value="1-10">1-10</option>
+            <option value="10-100">10-100</option>
+            <option value="100+">100+</option>
+          </select>
+          <select class="filter" id="categoryFilter" aria-label="按类目筛选">
+            <option value="">全部类目</option>
+            <option value="beauty">美容个护</option>
+            <option value="health">运动健康</option>
+            <option value="hardware">智能硬件</option>
+            <option value="kitchen">厨房家电</option>
+            <option value="energy">能源户外</option>
+            <option value="imaging">影像设备</option>
+            <option value="oralcare">口腔护理</option>
+          </select>
+          <select class="filter" id="typeFilter" aria-label="按经营类型筛选">
+            <option value="">全部类型</option>
+            <option value="amazon">Amazon 驱动</option>
+            <option value="dtc">DTC / 全渠道</option>
+            <option value="b2b">B2B / 专业空间</option>
+            <option value="community">社群专业用户</option>
+            <option value="subscription">硬件 + 订阅</option>
+            <option value="presale">众筹 / 预售</option>
+          </select>
+          <select class="filter" id="statusFilter" aria-label="按报告状态筛选">
+            <option value="">全部状态</option>
+            <option value="latest">最新版</option>
+            <option value="legacy">旧链接覆盖</option>
+            <option value="archive">归档版</option>
+          </select>
+          <button class="reset-filter" id="resetFilters" type="button">重置</button>
+          <span class="pill" id="reportCount">共 9 份报告</span>
+        </div>
       </div>
       <div class="report-grid" id="reportGrid">
-        <a class="report-card" data-name="coolcovery 3covery recovery boots compression cold heat therapy" href="../coolcovery-offing-na-diagnosis-2026-06-15.html">
-          <div><h3>CoolCovery</h3><p>冷 / 热 / 压缩恢复设备、B2B 专业空间、PDP 信任和报价路径。</p></div>
-          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">最新版</span></div>
+        <a class="report-card" data-name="coolcovery 3covery recovery boots compression cold heat therapy" data-stage="1-10" data-category="health" data-type="b2b" data-status="latest" href="../coolcovery-offing-na-diagnosis-2026-06-15.html">
+          <div><div class="report-logo"><img src="../assets/coolcovery/coolcovery-wordmark.png" alt="CoolCovery logo" /></div><h3>CoolCovery</h3><p>冷 / 热 / 压缩恢复设备、B2B 专业空间、PDP 信任和报价路径。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">1-10</span><span class="pill">运动健康</span></div>
         </a>
-        <a class="report-card" data-name="yvette sports bra activewear" href="../yvette-offing-na-diagnosis-2026-06-15.html">
-          <div><h3>Yvette</h3><p>高支撑运动内衣、选码信心、换码与 DTC 留存。</p></div>
-          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">最新版</span></div>
+        <a class="report-card" data-name="yvette sports bra activewear" data-stage="1-10" data-category="health" data-type="dtc" data-status="latest" href="../yvette-offing-na-diagnosis-2026-06-15.html">
+          <div><div class="report-logo"><img src="../assets/yvette-logo-alt.png" alt="Yvette logo" /></div><h3>Yvette</h3><p>高支撑运动内衣、选码信心、换码与 DTC 留存。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">1-10</span><span class="pill">运动健康</span></div>
         </a>
-        <a class="report-card" data-name="plaud ai note recorder" href="../plaud-ai-offing-na-diagnosis-2026-06-14.html">
-          <div><h3>Plaud AI</h3><p>AI 录音硬件、订阅价值、团队采购和搜索入口。</p></div>
-          <div class="report-meta"><span class="pill green">2026-06-15 内容</span><span class="pill warn">旧链接覆盖</span></div>
+        <a class="report-card" data-name="plaud ai note recorder" data-stage="10-100" data-category="hardware" data-type="subscription" data-status="legacy" href="../plaud-ai-offing-na-diagnosis-2026-06-14.html">
+          <div><div class="report-logo"><img src="../assets/plaud-logo.png" alt="Plaud AI logo" /></div><h3>Plaud AI</h3><p>AI 录音硬件、订阅价值、团队采购和搜索入口。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15 内容</span><span class="pill warn">旧链接覆盖</span><span class="pill">10-100</span></div>
         </a>
-        <a class="report-card" data-name="ulike ipl beauty hair removal" href="../ulike-offing-na-diagnosis-2026-06-15.html">
-          <div><h3>Ulike</h3><p>家用 IPL 脱毛仪、Air 10 主线、第二品线和售后信任。</p></div>
-          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">最新版</span></div>
+        <a class="report-card" data-name="ulike ipl beauty hair removal" data-stage="10-100" data-category="beauty" data-type="dtc" data-status="latest" href="../ulike-offing-na-diagnosis-2026-06-15.html">
+          <div><div class="report-logo"><img src="../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div><h3>Ulike</h3><p>家用 IPL 脱毛仪、Air 10 主线、第二品线和售后信任。</p></div>
+          <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">10-100</span><span class="pill">美容个护</span></div>
         </a>
-        <a class="report-card" data-name="pixboom" href="../pixboom-offing-na-diagnosis-2026-06-14.html">
-          <div><h3>Pixboom</h3><p>北美业务诊断归档版本。</p></div>
-          <div class="report-meta"><span class="pill">2026-06-14</span></div>
+        <a class="report-card" data-name="pixboom camera high speed imaging" data-stage="1-10" data-category="imaging" data-type="presale" data-status="archive" href="../pixboom-offing-na-diagnosis-2026-06-14.html">
+          <div><div class="report-logo"><span class="report-wordmark">Pixboom</span></div><h3>Pixboom</h3><p>高速电影机、专业创作者、预售兑现和北美渠道。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-14</span><span class="pill">1-10</span><span class="pill">影像设备</span></div>
         </a>
-        <a class="report-card" data-name="cosori air fryer kitchen appliance" href="../cosori-offing-na-diagnosis-2026-06-13.html">
-          <div><h3>COSORI</h3><p>空气炸锅主品类、Amazon 依赖、第二曲线和安全信任。</p></div>
-          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        <a class="report-card" data-name="cosori air fryer kitchen appliance" data-stage="100+" data-category="kitchen" data-type="amazon" data-status="archive" href="../cosori-offing-na-diagnosis-2026-06-13.html">
+          <div><div class="report-logo"><img src="../assets/brand-logos/cosori-logo-official.svg" alt="COSORI logo" /></div><h3>COSORI</h3><p>空气炸锅主品类、Amazon 依赖、第二曲线和安全信任。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">100+</span><span class="pill">厨房家电</span></div>
         </a>
-        <a class="report-card" data-name="zima nas zimaspace homelab" href="../zima-offing-na-diagnosis-2026-06-13.html">
-          <div><h3>Zima</h3><p>极客社区、NAS 机会、开源基因和人群外扩边界。</p></div>
-          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        <a class="report-card" data-name="zima nas zimaspace homelab" data-stage="10-100" data-category="hardware" data-type="community" data-status="archive" href="../zima-offing-na-diagnosis-2026-06-13.html">
+          <div><div class="report-logo"><img src="../assets/zima-logo-transparent.png" alt="Zima logo" /></div><h3>Zima</h3><p>极客社区、NAS 机会、开源基因和人群外扩边界。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">10-100</span><span class="pill">智能硬件</span></div>
         </a>
-        <a class="report-card" data-name="usmile electric toothbrush water flosser oral care" href="../usmile-offing-na-diagnosis-2026-06-13.html">
-          <div><h3>Usmile</h3><p>口腔护理、冲牙器与电动牙刷品线、动销和品类机会。</p></div>
-          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        <a class="report-card" data-name="usmile electric toothbrush water flosser oral care" data-stage="1-10" data-category="oralcare" data-type="amazon" data-status="archive" href="../usmile-offing-na-diagnosis-2026-06-13.html">
+          <div><div class="report-logo"><img src="https://usmile.us/cdn/shop/files/usmile_logo.png?v=1690797066&amp;width=420" alt="Usmile logo" /></div><h3>Usmile</h3><p>口腔护理、冲牙器与电动牙刷品线、动销和品类机会。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">1-10</span><span class="pill">口腔护理</span></div>
         </a>
-        <a class="report-card" data-name="kailash energy" href="../kailash-energy-offing-na-diagnosis-2026-06-13.html">
-          <div><h3>Kailash Energy</h3><p>能源品牌北美业务诊断归档版本。</p></div>
-          <div class="report-meta"><span class="pill">2026-06-13</span></div>
+        <a class="report-card" data-name="kailash energy portable power energy" data-stage="0-1" data-category="energy" data-type="b2b" data-status="archive" href="../kailash-energy-offing-na-diagnosis-2026-06-13.html">
+          <div><div class="report-logo"><img src="../assets/brand-logos/kailash-energy-logo-dark.png" alt="Kailash Energy logo" /></div><h3>Kailash Energy</h3><p>能源品牌、户外电源、渠道验证和专业场景。</p></div>
+          <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">0-1</span><span class="pill">能源户外</span></div>
         </a>
       </div>
+      <div class="empty-state" id="emptyState">没有找到匹配的报告。可以清空筛选条件重新查看。</div>
     </section>
 
     <section id="research">
@@ -489,13 +580,53 @@
   <script>
     const input = document.getElementById("reportSearch");
     const cards = Array.from(document.querySelectorAll(".report-card"));
-    input?.addEventListener("input", () => {
+    const stageFilter = document.getElementById("stageFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const typeFilter = document.getElementById("typeFilter");
+    const statusFilter = document.getElementById("statusFilter");
+    const reportCount = document.getElementById("reportCount");
+    const resetFilters = document.getElementById("resetFilters");
+    const emptyState = document.getElementById("emptyState");
+
+    function applyReportFilters() {
       const q = input.value.trim().toLowerCase();
+      const stage = stageFilter.value;
+      const category = categoryFilter.value;
+      const type = typeFilter.value;
+      const status = statusFilter.value;
+      let visible = 0;
+
       cards.forEach(card => {
         const text = `${card.dataset.name || ""} ${card.innerText}`.toLowerCase();
-        card.hidden = q && !text.includes(q);
+        const matched =
+          (!q || text.includes(q)) &&
+          (!stage || card.dataset.stage === stage) &&
+          (!category || card.dataset.category === category) &&
+          (!type || card.dataset.type === type) &&
+          (!status || card.dataset.status === status);
+        card.hidden = !matched;
+        if (matched) visible += 1;
       });
+
+      if (reportCount) reportCount.textContent = `显示 ${visible} / ${cards.length} 份报告`;
+      emptyState?.classList.toggle("show", visible === 0);
+    }
+
+    [input, stageFilter, categoryFilter, typeFilter, statusFilter].forEach(control => {
+      control?.addEventListener("input", applyReportFilters);
+      control?.addEventListener("change", applyReportFilters);
     });
+
+    resetFilters?.addEventListener("click", () => {
+      input.value = "";
+      stageFilter.value = "";
+      categoryFilter.value = "";
+      typeFilter.value = "";
+      statusFilter.value = "";
+      applyReportFilters();
+    });
+
+    applyReportFilters();
   </script>
 </body>
 </html>
