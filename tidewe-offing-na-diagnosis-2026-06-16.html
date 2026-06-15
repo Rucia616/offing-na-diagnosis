@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TideWe · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-16</title>
+  <meta name="description" content="TideWe 北美业务诊断：waders、hunting blinds 和 heated apparel 已有货架基础，下一阶段要把场景、耐用、尺码、保修和售后信任做成下单理由。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Ccircle cx='32' cy='29' r='15' fill='none' stroke='%23F8FAF9' stroke-width='5'/%3E%3Cpath d='M14 37c8 5 14 5 22 0s14-5 14 0' fill='none' stroke='%2332D6C6' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M21 45h22' stroke='%239ED1FF' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg:#F5F5F7; --top:#FBFBFD; --surface:#FFFFFF; --surface-2:#F7F8FA;
+      --text:#101413; --body:#293331; --muted:#66716E; --line:#D7D9DC;
+      --accent:#2D6261; --accent-fill:#EAF1F0; --inverse:#13211F; --inverse-text:#F8FAF9;
+      --green:#157A38; --green-bg:#EAF6EE; --amber:#9A5B00; --amber-bg:#FFF3DF;
+      --red:#D70015; --red-bg:#FFF0F1; --blue:#1663D8; --blue-bg:#EEF5FF;
+      --prism-teal:#32D6C6; --prism-sky:#9ED1FF; --prism-pink:#F7A4D8; --prism-lilac:#9B7CFF;
+      --radius:8px; --shadow:0 18px 54px rgba(16,20,19,.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#0F1212; --top:#141817; --surface:#191E1D; --surface-2:#202625;
+        --text:#F4F7F6; --body:#D8DEDC; --muted:#A9B2AF; --line:#3A4240;
+        --accent:#9ED7D3; --accent-fill:#1C3433; --inverse:#E9EFED; --inverse-text:#101413;
+        --green:#5ED083; --green-bg:#183B27; --amber:#FFC46B; --amber-bg:#3B2B16;
+        --red:#FF6B7A; --red-bg:#3A1820; --blue:#8FB7FF; --blue-bg:#172A48;
+        --shadow:0 18px 54px rgba(0,0,0,.34);
+      }
+      .nav-links { color:#C2CAC7; }
+      .hero-sub { color:#E2E7E5; }
+      .chip { background:rgba(25,30,29,.82); color:#DDE4E2; }
+      .hero-product { background:linear-gradient(180deg,#202625,#151918); }
+      .bar-track, .mini-bar { background:#333A38; }
+      .stage-panel { background:#0A1110; }
+      .stage-cell.active { background:#F4F7F6; color:#101413; }
+      .hero-card { background:radial-gradient(circle at 86% 0%, rgba(50,214,198,.18), transparent 28%), linear-gradient(145deg,#08100F,#14201F); }
+      .problem-side { background:#0A1110; color:#F8FAF9; }
+      .verdict.good, .pill.good { border-color:#337C4B; }
+      .verdict.warn, .pill.warn { border-color:#7E551E; }
+      .verdict.bad, .pill.bad { border-color:#7E2A36; }
+      .verdict.blue, .pill.blue { border-color:#345A92; }
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.62; }
+    a { color:inherit; text-decoration:none; }
+    nav { position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:14px clamp(20px,5vw,76px); background:color-mix(in srgb,var(--top) 88%,transparent); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .nav-brand { color:var(--text); font-weight:850; line-height:1.08; }
+    .nav-brand small { display:block; margin-top:2px; color:var(--accent); font-size:12px; font-weight:780; }
+    .nav-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px 14px; max-width:860px; color:#394441; font-size:12.5px; font-weight:760; }
+    .nav-links a { white-space:nowrap; }
+    .inner { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
+    section { padding:82px 0; border-bottom:1px solid color-mix(in srgb,var(--line) 74%,transparent); scroll-margin-top:80px; }
+    .tagline { display:flex; align-items:center; gap:8px; color:var(--accent); font-size:12px; font-weight:860; letter-spacing:.06em; text-transform:uppercase; }
+    .tagline::before { content:""; width:18px; height:2px; border-radius:999px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-pink)); }
+    h1, h2, h3, p { margin:0; }
+    h1 { color:var(--text); font-size:clamp(64px,8.2vw,108px); line-height:.94; letter-spacing:0; }
+    h2 { max-width:940px; margin-top:10px; color:var(--text); font-size:clamp(30px,3.4vw,42px); line-height:1.12; letter-spacing:0; }
+    h3 { color:var(--text); font-size:22px; line-height:1.18; letter-spacing:0; }
+    .lead { max-width:760px; margin-top:18px; color:var(--body); font-size:17px; line-height:1.66; }
+    .hero { min-height:calc(100vh - 64px); display:grid; align-items:center; padding:52px 0 46px; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr); gap:40px; align-items:center; }
+    .hero-copy { grid-column:1; grid-row:1; }
+    .hero-card { grid-column:2; grid-row:1; align-self:center; }
+    .hero-logo { width:238px; margin-bottom:34px; }
+    .hero-logo img { width:100%; height:auto; display:block; }
+    .hero-kicker { display:flex; align-items:center; gap:12px; margin-bottom:18px; color:var(--accent); font-size:13px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+    .hero-kicker::before { content:""; width:22px; height:2px; border-radius:999px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-pink)); }
+    .hero-sub { margin-top:24px; max-width:760px; color:#2E3936; font-size:25px; font-weight:780; line-height:1.42; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 11px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.7); color:#43504D; font-size:12px; font-weight:760; }
+    .hero-card { position:relative; padding:26px; overflow:hidden; background:radial-gradient(circle at 86% 0%, rgba(50,214,198,.16), transparent 28%), linear-gradient(145deg,#111B1A,#24302F); color:var(--inverse-text); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero-card::before { content:""; position:absolute; inset:0 0 auto 0; height:5px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-sky),var(--prism-pink)); }
+    .score-label { color:rgba(248,250,249,.82); font-size:12px; font-weight:820; }
+    .score-big { margin-top:10px; font-size:86px; line-height:.9; font-weight:900; letter-spacing:0; }
+    .star-row { display:flex; align-items:center; gap:14px; margin-top:20px; flex-wrap:wrap; }
+    .stars { display:inline-flex; gap:2px; font-size:33px; line-height:1; color:rgba(255,255,255,.28); }
+    .stars .filled { color:#FFC24B; }
+    .stars .half {
+      color:transparent;
+      background:linear-gradient(90deg,#FFC24B 55%,rgba(255,255,255,.30) 55%);
+      -webkit-background-clip:text;
+      background-clip:text;
+    }
+    .stars .empty { color:rgba(255,255,255,.30); }
+    .star-score { color:#FFC24B; font-size:18px; line-height:1; font-weight:900; letter-spacing:0; white-space:nowrap; }
+    .star-verdict { margin-top:12px; color:rgba(248,250,249,.92); font-size:14px; font-weight:780; }
+    .formula { margin-top:18px; display:grid; gap:8px; color:rgba(248,250,249,.84); font-size:13px; }
+    .formula div { display:flex; justify-content:space-between; gap:14px; padding-top:8px; border-top:1px solid rgba(255,255,255,.14); }
+    .subscores { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
+    .subscore { min-height:86px; padding:12px; border:1px solid rgba(255,255,255,.18); border-radius:var(--radius); background:rgba(255,255,255,.07); }
+    .subscore strong { display:block; font-size:34px; line-height:1; color:#fff; }
+    .subscore span { display:block; margin-top:8px; font-weight:840; color:#fff; }
+    .subscore small { display:none; margin-top:8px; color:rgba(248,250,249,.74); font-size:12px; line-height:1.46; }
+    .hero-product { display:none; grid-column:1; grid-row:2; margin-top:22px; padding:20px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#f3f4f4); border-radius:var(--radius); }
+    .hero-product img { display:block; width:100%; max-height:390px; object-fit:contain; }
+    .grid { display:grid; gap:16px; }
+    .two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .four { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:0 12px 34px rgba(16,20,19,.04); }
+    .card h3 + p { margin-top:10px; }
+    .card p { color:var(--body); font-size:15px; line-height:1.64; }
+    .metric { display:grid; gap:10px; }
+    .metric strong { color:var(--text); font-size:34px; line-height:1; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .pill { display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:820; border:1px solid transparent; }
+    .good { color:var(--green); background:var(--green-bg); border-color:#BFE7CB; }
+    .warn { color:var(--amber); background:var(--amber-bg); border-color:#EBD4AD; }
+    .bad { color:var(--red); background:var(--red-bg); border-color:#FFC4CB; }
+    .blue { color:var(--blue); background:var(--blue-bg); border-color:#CFE0FF; }
+    .stage-wrap { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; align-items:stretch; }
+    .stage-panel { background:var(--inverse); color:var(--inverse-text); border-radius:var(--radius); padding:26px; }
+    .stage-panel h3 { color:#fff; font-size:30px; }
+    .stage-panel p { margin-top:12px; color:rgba(248,250,249,.78); }
+    .stage-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:22px; }
+    .stage-cell { padding:16px; min-height:104px; border:1px solid rgba(255,255,255,.18); border-radius:var(--radius); background:rgba(255,255,255,.08); color:rgba(255,255,255,.74); }
+    .stage-cell.active { background:#fff; color:var(--text); box-shadow:0 0 0 1px rgba(255,255,255,.75); }
+    .stage-cell strong { display:block; color:inherit; font-size:22px; }
+    .stage-cell span { display:block; margin-top:8px; font-size:12px; font-weight:760; }
+    .audience-layout { display:grid; grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr); gap:18px; align-items:stretch; margin-top:24px; }
+    .audience-map { position:relative; min-height:390px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(180deg,var(--surface),var(--surface-2)); overflow:hidden; }
+    .audience-ring { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:999px; display:flex; align-items:center; justify-content:center; text-align:center; border:1px solid var(--ring); background:var(--fill); color:var(--text); }
+    .audience-ring strong { display:block; font-size:22px; line-height:1.05; }
+    .audience-ring span { display:block; margin-top:6px; color:var(--muted); font-size:12px; font-weight:780; }
+    .ring-boundary { width:88%; height:72%; --ring:#E1C4CB; --fill:rgba(255,240,241,.42); }
+    .ring-adjacent { width:65%; height:48%; --ring:#C9DCEB; --fill:rgba(238,245,255,.70); }
+    .ring-core { width:38%; height:28%; --ring:#95DCC7; --fill:rgba(234,246,238,.92); }
+    .audience-pin { position:absolute; display:inline-flex; align-items:center; gap:6px; min-height:28px; padding:4px 9px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--body); font-size:12px; font-weight:840; box-shadow:0 8px 20px rgba(16,20,19,.06); }
+    .audience-pin.one { left:50%; top:50%; transform:translate(-50%,62px); }
+    .audience-pin.two { left:18%; top:28%; }
+    .audience-pin.three { right:8%; bottom:18%; }
+    .audience-notes { display:grid; gap:12px; }
+    .audience-card { border-left:5px solid var(--tone); }
+    .channel-bars { display:grid; gap:12px; }
+    .bar-row { display:grid; grid-template-columns:150px 1fr 82px; gap:12px; align-items:center; font-size:14px; font-weight:800; color:var(--text); }
+    .bar-track { height:13px; background:#E8EAEC; border-radius:999px; overflow:hidden; }
+    .bar-track span { display:block; height:100%; width:var(--w); background:var(--tone); border-radius:999px; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+    table { width:100%; border-collapse:collapse; min-width:820px; }
+    th, td { padding:15px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:14px; line-height:1.55; }
+    th { color:var(--text); background:var(--surface-2); font-size:13px; font-weight:850; }
+    tr:last-child td { border-bottom:0; }
+    .verdict { display:inline-flex; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:850; margin-right:7px; }
+    .fit-row { display:grid; grid-template-columns:1.1fr 180px 1.2fr; gap:18px; align-items:center; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+    .fit-row + .fit-row { margin-top:12px; }
+    .fit-score strong { display:block; font-size:30px; line-height:1; color:var(--tone); }
+    .mini-bar { height:10px; margin-top:10px; background:#E8EAEC; border-radius:999px; overflow:hidden; }
+    .mini-bar span { display:block; width:var(--w); height:100%; background:var(--tone); border-radius:999px; }
+    .wordcloud { min-height:210px; position:relative; overflow:hidden; }
+    .wordcloud span { position:absolute; font-weight:900; white-space:nowrap; transform:translate(-50%,-50%) rotate(var(--r)); color:var(--c); font-size:var(--s); }
+    .problem { display:grid; grid-template-columns:240px 1fr; overflow:hidden; padding:0; }
+    .problem-side { background:var(--inverse); color:#fff; padding:24px; }
+    .problem-side strong { display:block; font-size:56px; line-height:1; margin:12px 0; }
+    .problem-main { padding:22px; }
+    .impact { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+    .impact div { border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); padding:14px; }
+    .impact strong { display:block; color:var(--text); margin-bottom:6px; }
+    .scores { display:grid; gap:10px; }
+    .score-row { display:grid; grid-template-columns:190px 1fr 44px; gap:12px; align-items:center; color:var(--text); font-weight:800; }
+    .score-row .bar-track { height:10px; }
+    .dept-lights { display:grid; gap:18px; }
+    .dept-group { border-top:5px solid var(--tone); }
+    .dept-head { display:flex; justify-content:space-between; gap:16px; align-items:start; margin-bottom:16px; }
+    .dept-head h3 { color:var(--tone); }
+    .dept-cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .dept-card { border-top:4px solid var(--tone); }
+    .dept-card .num { color:var(--tone); font-size:36px; font-weight:900; line-height:1; }
+    .copy-box { background:linear-gradient(180deg,#fff,#F6F7F8); border:1px solid var(--line); border-radius:var(--radius); padding:18px; }
+    .copy-box strong { display:block; color:var(--text); font-size:18px; margin-bottom:8px; }
+    .evidence a { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+    footer { padding:32px 0; color:var(--muted); font-size:13px; }
+    footer .inner { display:flex; justify-content:space-between; gap:20px; }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme:dark; --bg:#0F1212; --top:#141817; --surface:#191E1D; --surface-2:#202625; --text:#F4F7F6; --body:#D8DEDC; --muted:#A9B2AF; --line:#3A4240; --accent:#9ED7D3; --accent-fill:#1C3433; --green:#8EE0A8; --green-bg:#173424; --amber:#F2C46D; --amber-bg:#3A2A12; --red:#FF8E99; --red-bg:#3B171D; --blue:#9ED1FF; --blue-bg:#162B45; }
+      .hero-sub { color:#DCE2E0; }
+      .chip { background:rgba(255,255,255,.08); color:#DDE4E2; border-color:#485351; }
+      .hero-product { background:rgba(255,255,255,.05); }
+      .hero-logo img { filter:none; }
+      .hero-product img { filter:drop-shadow(0 12px 40px rgba(0,0,0,.35)); }
+      .bar-track, .mini-bar { background:#303735; }
+    }
+    @media (max-width: 920px) {
+      nav { position:static; padding:12px 18px; }
+      .nav-links { display:none; }
+      .inner { width:min(100% - 28px, 1180px); }
+      section { padding:54px 0; }
+      .hero { min-height:auto; padding:34px 0 28px; }
+      .hero-grid, .stage-wrap, .audience-layout, .two, .three, .four, .problem { grid-template-columns:1fr; }
+      .hero-copy, .hero-card, .hero-product { grid-column:auto; grid-row:auto; }
+      .hero-grid { gap:18px; }
+      .hero-logo { width:168px; margin-bottom:20px; }
+      h1 { font-size:clamp(38px,10.8vw,44px); }
+      h2 { font-size:clamp(25px,7vw,30px); line-height:1.14; }
+      .lead { font-size:16px; }
+      .hero-sub { font-size:17px; line-height:1.48; }
+      .hero-card { padding:14px; }
+      .score-big { font-size:58px; }
+      .star-row { margin-top:14px; gap:10px; }
+      .stars { font-size:28px; }
+      .star-score { font-size:16px; }
+      .formula { display:none; }
+      .star-verdict { font-size:13px; line-height:1.45; }
+      .subscores { grid-template-columns:repeat(3,1fr); gap:7px; }
+      .subscore { min-height:auto; padding:8px; }
+      .subscore strong { font-size:24px; }
+      .subscore span { font-size:12px; }
+      .subscore small { display:none; }
+      .stage-grid, .impact, .dept-cards, .five { grid-template-columns:1fr !important; }
+      .bar-row, .score-row { grid-template-columns:1fr; gap:7px; }
+      .fit-row { grid-template-columns:1fr; }
+      .wordcloud { min-height:230px; }
+      .audience-map { min-height:300px; }
+      .audience-ring strong { font-size:18px; }
+      .audience-pin { display:inline-flex; max-width:150px; min-height:24px; padding:3px 7px; font-size:10px; line-height:1.2; }
+      .audience-pin.one { left:50%; top:58%; transform:translate(-50%,0); }
+      .audience-pin.two { left:8%; top:24%; transform:none; }
+      .audience-pin.three { right:7%; bottom:12%; }
+      footer .inner { display:grid; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+    <div class="nav-links">
+      <a href="#stage">阶段</a><a href="#gene">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#fit">卖点</a><a href="#summary">总结</a><a href="#issues">问题</a><a href="#competitor">竞品</a><a href="#roadmap">路线</a><a href="#departments">部门</a><a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div class="hero-copy">
+        <div class="hero-logo"><img src="assets/brand-logos/tidewe-logo-official.png" alt="TideWe logo" /></div>
+        <div class="hero-kicker">North America Diagnosis</div>
+        <h1>TideWe 北美业务诊断</h1>
+        <p class="hero-sub">TideWe 北美的增长底盘已经成立；下一阶段要把 waders、hunting blinds 和 heated apparel 收束到清晰场景，把耐用、尺码、保修和售后响应前置成下单理由。</p>
+        <div class="hero-meta">
+          <span class="chip">品类：狩猎 / 钓鱼 / 户外装备</span>
+          <span class="chip">阶段：10-100 中期</span>
+          <span class="chip">类型：DTC + Amazon 双货架</span>
+          <span class="chip">数据日期：2026-06-16</span>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="score-label">北美业务情况总分</div>
+        <div class="score-big">68</div>
+        <div class="star-row" aria-label="3.4 out of 5 stars">
+          <div class="stars" aria-hidden="true"><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="half">★</span><span class="empty">★</span></div>
+          <div class="star-score">3.4 / 5 星</div>
+        </div>
+        <div class="star-verdict">主力品类有货架基础，利润质量取决于信任证据和品线取舍。</div>
+        <div class="formula">
+          <div><span>业务健康度 70 × 45%</span><strong>31.5</strong></div>
+          <div><span>业务机会分 82 × 35%</span><strong>28.7</strong></div>
+          <div><span>(100 - 问题致命度 63) × 20%</span><strong>7.4</strong></div>
+        </div>
+        <div class="subscores">
+          <div class="subscore"><strong>70</strong><span>业务健康度</span><small>DTC、Amazon、Walmart 和专业评测都存在，扣分在品线分散、售后口碑和耐用解释。</small></div>
+          <div class="subscore"><strong>82</strong><span>业务机会分</span><small>水禽、狩猎 blind、heated apparel 和 rangefinder 都有北美需求，TideWe 已有多入口。</small></div>
+          <div class="subscore"><strong>63</strong><span>问题致命度</span><small>最伤转化的是靴子舒适度、拉链漏水、blind 结构和客服响应。</small></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="stage">
+    <div class="inner">
+      <div class="stage-wrap">
+        <div class="stage-panel">
+          <span class="tagline">Stage Judgment</span>
+          <h3>当前阶段：10-100 中期，主线货架成立，下一关是品类收束和信任兑现。</h3>
+          <p>TideWe 已经跨过单品验证：官网覆盖 waders、blinds、boots、heated clothes、rangefinder 等完整户外装备线，Amazon 品牌页累计评分和订单信号也能证明交易基础。接下来不宜继续平均铺品，应该明确 waders / hunting blinds / heated apparel 各自承担的增长任务。</p>
+          <div class="stage-grid">
+            <div class="stage-cell"><strong>0-1</strong><span>需求验证</span></div>
+            <div class="stage-cell"><strong>1-10</strong><span>单品放量</span></div>
+            <div class="stage-cell active"><strong>10-100 中期</strong><span>品线收束与信任兑现</span></div>
+            <div class="stage-cell"><strong>100+</strong><span>户外装备品类领导</span></div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card metric"><span class="tagline">GMV Floor</span><strong>USD 28M-55M</strong><p>按官网价格带、Amazon 公开订单信号、Trustpilot 样本量和多品线货架估算，北美年零售销售额约 USD 28M-55M，约 RMB 1.89-3.72 亿。该区间用于经营判断，不等同财务审计。</p><div class="pill-row"><span class="pill good">规模成立</span><span class="pill warn">置信度中</span></div></div>
+          <div class="card metric"><span class="tagline">Next Gate</span><strong>信任和取舍</strong><p>waders 要守住防水和靴子体验，hunting blinds 要证明结构和视野，heated apparel 要讲清安全、续航和洗护。每条线都要有明确预算门槛。</p><div class="pill-row"><span class="pill bad">不能平均铺品</span><span class="pill blue">90 天可校准</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gene">
+    <div class="inner">
+      <span class="tagline">Brand Gene</span>
+      <h2>品牌基因：靠高性价比户外装备成立，核心人群是预算敏感但真的会下水、打猎和露营的人。</h2>
+      <p class="lead">TideWe 的基础是实用装备：水禽猎人、钓鱼人、鹿猎用户和冬季户外人群要的是干爽、保暖、耐磨、易穿脱、退换靠谱。品牌可以外扩到泛户外家庭，但轻户外生活方式不该优先于核心装备信任。</p>
+      <div class="audience-layout">
+        <div class="audience-map" aria-label="TideWe audience concentric map">
+          <div class="audience-ring ring-boundary"><div><strong>03</strong><span>暂时边界</span></div></div>
+          <div class="audience-ring ring-adjacent"><div><strong>02</strong><span>相邻人群</span></div></div>
+          <div class="audience-ring ring-core"><div><strong>01</strong><span>核心盘</span></div></div>
+          <div class="audience-pin one">01 水禽 / 钓鱼 / 鹿猎</div>
+          <div class="audience-pin two">02 露营 / 冬季户外</div>
+          <div class="audience-pin three">03 高端专业装备</div>
+        </div>
+        <div class="audience-notes">
+          <div class="card audience-card" style="--tone:var(--green);"><h3>核心盘：水禽、钓鱼、鹿猎实用用户</h3><p>他们买的是不漏水、够暖、能站进泥水、能坐进 blind 的可靠装备。价格要有优势，但页面必须把尺码、靴底、拉链、缝线和保修讲清楚。</p><div class="pill-row"><span class="pill good">最先成交</span><span class="pill warn">耐用敏感</span></div></div>
+          <div class="card audience-card" style="--tone:var(--blue);"><h3>相邻人群：家庭露营、冬季户外和预算型户外用户</h3><p>这群人会被 heated vest、boots、camping chair 和 accessories 吸引，但更依赖榜单评测、尺码说明和退换政策。</p><div class="pill-row"><span class="pill blue">可扩展</span><span class="pill warn">要场景分层</span></div></div>
+          <div class="card audience-card" style="--tone:var(--red);"><h3>暂时边界：高端专业装备用户</h3><p>Sitka、Simms、Frogg Toggs 和 Cabela's 的重度用户会更看重材料、保修、口碑和门店信任。TideWe 可以做 value alternative，但不能只靠低价抢专业心智。</p><div class="pill-row"><span class="pill warn">谨慎外扩</span><span class="pill bad">信任门槛高</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="channel">
+    <div class="inner">
+      <span class="tagline">Business Type</span>
+      <h2>经营类型：DTC 负责讲场景和组合，Amazon 负责交易效率和评论复核。</h2>
+      <p class="lead">TideWe 不是单一 Amazon 品牌，也不是纯 DTC 品牌。官网承担完整产品线、保修和品牌故事；Amazon 承担高意向购买和评价资产；Walmart 等零售页面提供额外触点，但目前样本薄。最该管的是每条渠道卖什么、以什么价格卖、出了问题谁承接。</p>
+      <div class="grid two" style="margin-top:24px;">
+        <div class="card">
+          <h3>北美渠道销售额占比估算</h3>
+          <div class="channel-bars" style="margin-top:16px;">
+            <div class="bar-row"><span>Amazon</span><div class="bar-track"><span style="--w:56%;--tone:#157A38;"></span></div><span>50-60%</span></div>
+            <div class="bar-row"><span>DTC / 官网</span><div class="bar-track"><span style="--w:36%;--tone:#2D6261;"></span></div><span>30-40%</span></div>
+            <div class="bar-row"><span>Walmart / 其他零售</span><div class="bar-track"><span style="--w:8%;--tone:#1663D8;"></span></div><span>5-10%</span></div>
+            <div class="bar-row"><span>Dealer / B2B</span><div class="bar-track"><span style="--w:4%;--tone:#9A5B00;"></span></div><span>0-5%</span></div>
+          </div>
+          <p style="margin-top:14px;">置信度：中。西柚已校准多个 Amazon ASIN：rangefinder 父体近 30 天订单量 450+，hunting blind 父体 150+，backpack 单 ASIN 100+，chair 单 ASIN 50+；官网、Walmart 和线下 sell-out 仍需后台校准。</p>
+        </div>
+        <div class="card">
+          <h3>西柚可读样本</h3>
+          <p>样本显示 Amazon 不是完全没动销，但 waders 单 ASIN 多数低于 50 单/月，blind 与 rangefinder 的父体更有亮点。这意味着预算要按品线拆，不应把所有户外 SKU 当成同一效率。</p>
+          <img src="assets/tidewe-evidence/tidewe-xiyou-blind-b0g4nqmrtr-2026-06-16.png" alt="TideWe Xiyou hunting blind evidence screenshot" style="width:100%;margin-top:14px;border:1px solid var(--line);border-radius:8px;display:block;" />
+          <div class="pill-row"><span class="pill good">Amazon 有基础</span><span class="pill warn">品线差异大</span><span class="pill blue">需后台校准</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="search">
+    <div class="inner">
+      <span class="tagline">Search Mindshare</span>
+      <h2>搜索心智：行业词量级最大，品牌词接得住，耐用和售后词会影响成交。</h2>
+      <p class="lead">TideWe 的搜索入口要按需求量排序：最大的是 hunting waders、fishing waders、hunting blinds、heated vest 这类行业词；其次是 TideWe + 品类词；再往下是 review、warranty、leak、zipper、boots 等临门复核词。品牌词已有承接，真正薄弱的是高意图用户查问题时看到的解释不够硬。</p>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card" style="border-top:4px solid var(--amber);"><h3>P0 · 行业词｜量级最大</h3><p>hunting waders、fishing waders、hunting blinds、heated vest。TideWe 有 Amazon 和官网入口，但榜单/评测仍容易被 Frogg Toggs、Simms、Sitka、Ororo 等分流。</p><div class="pill-row"><span class="pill warn">半接住</span><span class="pill blue">需分品线内容</span></div></div>
+        <div class="card" style="border-top:4px solid var(--green);"><h3>P1 · 行业 + 品牌词</h3><p>TideWe waders、TideWe hunting blind、TideWe heated vest。品牌词能找到官网、Amazon、Trustpilot、评测和 Reddit 讨论。</p><div class="pill-row"><span class="pill good">接住了</span><span class="pill warn">体验要解释</span></div></div>
+        <div class="card" style="border-top:4px solid var(--red);"><h3>P1 · 问题复核词</h3><p>TideWe waders leaking、zipper、boots、customer service、return policy。量级不一定最大，但最影响高客单用户下单。</p><div class="pill-row"><span class="pill bad">没接牢</span><span class="pill warn">高意图</span></div></div>
+        <div class="card" style="border-top:4px solid var(--amber);"><h3>P2 · 竞品比较词</h3><p>TideWe vs Frogg Toggs、TideWe vs Sitka、TideWe vs Simms、TideWe blind review。用户在判断是否用更低价格替代老牌装备。</p><div class="pill-row"><span class="pill warn">弱承接</span><span class="pill blue">应补对比页</span></div></div>
+      </div>
+      <div class="table-wrap" style="margin-top:18px;">
+        <table>
+          <thead><tr><th>搜索入口</th><th>用户真实意图</th><th>现在接得怎样</th><th>经营动作</th></tr></thead>
+          <tbody>
+            <tr><td>“hunting waders / fishing waders”</td><td>找防水、保暖、靴底和尺码可靠的装备</td><td><span class="verdict warn">半接住</span>官网品线全，Amazon 有入口，但专业评测和尺码/靴子解释仍不够集中。</td><td>按 waterfowl、fly fishing、cold weather 建立分场景页，前置 boot fit、seam、zipper 和 warranty。</td></tr>
+            <tr><td>“hunting blinds / see through hunting blind”</td><td>确认视野、结构、收纳和耐风性</td><td><span class="verdict good">接得较好</span>西柚显示 blind 父体与 BSR 有亮点，官网和 Amazon 都能承接。</td><td>把 see-through、setup、wind stability、chair/pack bundle 做成对比内容。</td></tr>
+            <tr><td>“TideWe heated vest / jacket”</td><td>确认续航、发热区域、安全和洗护</td><td><span class="verdict warn">半接住</span>Good Housekeeping、People 等榜单有正向露出，但安全与洗护承接仍可更硬。</td><td>建立电池安全、洗护、温控、尺码和冬季场景页。</td></tr>
+            <tr><td>“TideWe reviews / customer service”</td><td>确认品牌是否靠谱、坏了谁负责</td><td><span class="verdict bad">没接牢</span>Trustpilot 4.4 分可用，但 Reddit 中客服和产品缺陷讨论会造成犹豫。</td><td>官网支持页补 SLA、repair timeline、replacement examples、warranty claim 路径。</td></tr>
+            <tr><td>“TideWe vs Frogg Toggs / Sitka / Simms”</td><td>判断低价替代是否值得</td><td><span class="verdict warn">弱承接</span>品牌没有把 value alternative 的边界讲清。</td><td>做诚实对比页：适合谁、不适合谁、为什么买 TideWe、什么时候该买更高端。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="voc">
+    <div class="inner">
+      <span class="tagline">VOC & Reputation</span>
+      <h2>声誉总分 72：性价比和保暖能打，靴子、拉链、blind 结构和客服会拖转化。</h2>
+      <p class="lead">TideWe 的口碑不是一边倒。Trustpilot 4.4 / 5 和 1,394 条评论可以证明品牌不是空壳；Amazon 4.5 星、100K+ rating 的品牌信号也有价值。但 Reddit 和单品评论里的抱怨很具体，尤其是 waders 的 boots / zipper / leak 与 blind 的结构体验，必须被页面主动承接。</p>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card"><h3>Trustpilot</h3><p>4.4 / 5，1,394 reviews，过去 12 个月 790 条；5 星 76%，1 星 10%，回复 83% 负评，通常 1 周内。</p><div class="pill-row"><span class="pill good">总体可用</span><span class="pill warn">仍有负评</span></div></div>
+        <div class="card"><h3>Amazon</h3><p>品牌公开面显示 4.5 星和 100K+ customer ratings，部分 ASIN 有 50K+ orders 近 3 个月信号。</p><div class="pill-row"><span class="pill good">交易信任强</span></div></div>
+        <div class="card"><h3>专业评测</h3><p>Field & Stream、New Hunters Guide、Good Housekeeping、People 都有正向或榜单露出，能为 waders、rangefinder 和 heated apparel 提供信任。</p><div class="pill-row"><span class="pill blue">可做证据</span></div></div>
+        <div class="card"><h3>Reddit / 社群</h3><p>正向集中在 warm、dry、value；负向集中在 boots、zipper、leak、blind quality、customer service。</p><div class="pill-row"><span class="pill warn">混合口碑</span></div></div>
+      </div>
+      <div class="grid two" style="margin-top:16px;">
+        <div class="card wordcloud">
+          <h3>集中好评主题</h3>
+          <span style="--s:31px;--c:#157A38;--r:-4deg;left:19%;top:43%;">性价比</span>
+          <span style="--s:27px;--c:#157A38;--r:5deg;left:51%;top:35%;">保暖</span>
+          <span style="--s:24px;--c:#2D6261;--r:-7deg;left:73%;top:48%;">防水</span>
+          <span style="--s:20px;--c:#2D6261;--r:6deg;left:31%;top:70%;">够用</span>
+          <span style="--s:18px;--c:#157A38;--r:-5deg;left:58%;top:72%;">预算友好</span>
+          <span style="--s:16px;--c:#66716E;--r:7deg;left:79%;top:74%;">轻便</span>
+        </div>
+        <div class="card wordcloud">
+          <h3>集中抱怨主题</h3>
+          <span style="--s:30px;--c:#D70015;--r:-4deg;left:22%;top:42%;">靴子不舒服</span>
+          <span style="--s:27px;--c:#D70015;--r:5deg;left:58%;top:34%;">拉链漏水</span>
+          <span style="--s:23px;--c:#9A5B00;--r:-6deg;left:77%;top:49%;">客服响应</span>
+          <span style="--s:20px;--c:#D70015;--r:6deg;left:32%;top:71%;">blind 结构</span>
+          <span style="--s:18px;--c:#9A5B00;--r:-5deg;left:64%;top:72%;">尺码</span>
+          <span style="--s:16px;--c:#66716E;--r:8deg;left:83%;top:76%;">配件</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ceiling">
+    <div class="inner">
+      <span class="tagline">Market Ceiling</span>
+      <h2>分品线天花板：waders 是主盘，hunting blinds 和 heated apparel 是第二层机会。</h2>
+      <p class="lead">TideWe 必须分品线看市场，不适合用“户外装备”一个大词覆盖所有机会。waders 负责水禽/钓鱼核心盘，hunting blinds 负责狩猎货架效率，heated apparel 负责冬季泛户外外扩，rangefinder 和 chair 更像高效配件线。</p>
+      <div class="table-wrap" style="margin-top:24px;">
+        <table>
+          <thead><tr><th>品线</th><th>北美市场天花板</th><th>TideWe 当前证据</th><th>阶段判断</th><th>经营结论</th></tr></thead>
+          <tbody>
+            <tr><td>Waders / boots</td><td>北美 waders 约 USD 450M-600M 方向性空间，waterfowl / fishing 是核心场景</td><td>官网品线完整；Field & Stream / New Hunters Guide 有正向评测；西柚样本 wader 单 ASIN 多数 &lt;50 单/月</td><td><span class="verdict warn">主盘需修信任</span></td><td>继续守主盘，但先修 boot fit、zipper、leak、repair 和 sizing。</td></tr>
+            <tr><td>Hunting blinds</td><td>北美 hunting blind 约 USD 150M-300M 方向性空间，see-through 是购买理由</td><td>西柚 B0G4NQMRTR 父体近 30 天 150+，Hunting Blinds #2；新 blind 也有榜位</td><td><span class="verdict good">第二层可加码</span></td><td>90 天看 sell-out、退货和评论增速；过线后加组合包和对比页。</td></tr>
+            <tr><td>Heated apparel</td><td>北美 heated clothing 2025 年约 USD 160M，2026 年约 USD 170M</td><td>Good Housekeeping 和 People 榜单露出；官网有 heated clothes 矩阵</td><td><span class="verdict warn">可做季节增长</span></td><td>按 Q4 前置电池安全、续航、洗护和尺寸页，避免只靠折扣卖。</td></tr>
+            <tr><td>Rangefinder / chair / backpack</td><td>配件线空间小于主品类，但容易贡献客单和组合</td><td>rangefinder 父体近 30 天 450+，Laser Rangefinders #2；backpack 100+，chair 50+</td><td><span class="verdict good">效率配件</span></td><td>作为 waders / blind 的 bundle 和加购线，不宜分散品牌主叙事。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="intent">
+    <div class="inner">
+      <span class="tagline">User Intent Map</span>
+      <h2>用户下单前卡五件事：会不会漏、穿着疼不疼、够不够暖、坏了谁管、是否比老牌值。</h2>
+      <div class="grid five" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px;">
+        <div class="card"><h3>防水</h3><p>waders 用户最怕 seam、zipper、boot connection 漏水。</p></div>
+        <div class="card"><h3>脚感</h3><p>靴子舒适度、尺码、脚踝支撑直接影响复购和退货。</p></div>
+        <div class="card"><h3>保暖</h3><p>水禽、冬季钓鱼和 heated apparel 都围绕保暖决策。</p></div>
+        <div class="card"><h3>售后</h3><p>高磨损户外装备要把 repair、replacement 和 timeline 讲清。</p></div>
+        <div class="card"><h3>替代价值</h3><p>用户会拿 TideWe 对比 Frogg Toggs、Simms、Sitka、Cabela's。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fit">
+    <div class="inner">
+      <span class="tagline">Message-Market Fit</span>
+      <h2>卖点匹配度 70：价格和场景接住了，耐用与售后解释还要更硬。</h2>
+      <p class="lead">以下权重是公开样本方向性权重，来自 Amazon/Trustpilot/Reddit、专业评测、官网页面和品类购买逻辑归纳，不是统计抽样。</p>
+      <div style="margin-top:22px;">
+        <div class="fit-row" style="--tone:var(--red);--w:58%;"><div><h3>防水 / 拉链 / 缝线可靠 <span class="pill bad">26%</span></h3><p>waders 用户最在意是否真的能干爽使用。</p></div><div class="fit-score"><strong>58 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得差：</b>官网有 warranty，但问题词和 Reddit 抱怨会让 leak、zipper、boot separation 成为购买顾虑。</p></div>
+        <div class="fit-row" style="--tone:var(--amber);--w:64%;"><div><h3>尺码 / 靴子舒适度 <span class="pill warn">22%</span></h3><p>水禽和钓鱼用户会担心长时间站立、泥地和低温场景。</p></div><div class="fit-score"><strong>64 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>勉强及格：</b>尺码表存在，但 boot fit、脚踝、厚袜和退换场景还没有被讲成购买决策页。</p></div>
+        <div class="fit-row" style="--tone:var(--green);--w:82%;"><div><h3>价格价值 / 全套装备 <span class="pill good">20%</span></h3><p>用户想用更低预算买到从 waders 到 blind 的完整装备。</p></div><div class="fit-score"><strong>82 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得好：</b>官网和 Amazon 价格带清晰，产品线完整，适合 value outdoor 叙事。</p></div>
+        <div class="fit-row" style="--tone:var(--green);--w:78%;"><div><h3>保暖 / 冬季场景 <span class="pill good">18%</span></h3><p>heated apparel 和 neoprene waders 都能围绕低温建立购买理由。</p></div><div class="fit-score"><strong>78 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得好：</b>榜单和评测已能支持保暖心智，Q4 前应补电池安全、续航和洗护。</p></div>
+        <div class="fit-row" style="--tone:var(--amber);--w:68%;"><div><h3>blind 结构 / 视野 / 收纳 <span class="pill warn">14%</span></h3><p>猎人会看 visibility、setup、wind stability 和空间。</p></div><div class="fit-score"><strong>68 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>有机会：</b>西柚显示 blind 父体有动销，但结构稳定和长期使用证据还要补。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="summary">
+    <div class="inner">
+      <span class="tagline">One Page Summary</span>
+      <h2>一页看懂：TideWe 要先收束主线，再把问题词变成信任页。</h2>
+      <div class="grid two" style="margin-top:24px;">
+        <div class="card" style="background:var(--inverse);color:#fff;">
+          <h3 style="color:#fff;">经营判断</h3>
+          <p style="color:rgba(248,250,249,.84);">TideWe 北美已经有多品线货架和交易基础，现阶段最该做的是把 waders、hunting blinds 和 heated apparel 的职责分清：waders 守核心盘，blinds 验证第二增长点，heated apparel 做季节外扩。所有页面都要优先回答耐用、尺码、保修和售后。</p>
+          <div class="pill-row"><span class="pill good">主线：waders</span><span class="pill warn">机会：blinds / heated</span><span class="pill bad">先修：售后与耐用证据</span></div>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>1. Waders 的问题词必须前置处理。</h3><p>靴子、拉链、漏水、尺码和 repair timeline 要进 PDP 首屏下方、FAQ、support 和对比页。</p></div>
+          <div class="card"><h3>2. Hunting blinds 可加码，但要有 90 天门槛。</h3><p>看父体 sell-out、评价增速、退货和配件 bundle 毛利；过线再加预算。</p></div>
+          <div class="card"><h3>3. Heated apparel 适合 Q4，但不能只讲便宜。</h3><p>要把电池安全、续航、洗护和低温场景讲清，避免季节流量只变成一次性促销。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blocks">
+    <div class="inner">
+      <span class="tagline">Business Blocks</span>
+      <h2>三大板块诊断：品牌有方向，Marketing 分散，电商要把信任问题讲清。</h2>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card" style="border-top:5px solid var(--amber);"><div class="metric"><strong style="color:var(--amber);">66</strong><h3>品牌板块</h3></div><p>TideWe 有清晰的 value outdoor gene，适合做水禽、钓鱼和狩猎装备的高性价比选择。</p><div class="grid two" style="margin-top:14px;"><p><b>做得好的：</b>官网品类完整，Amazon 品牌评分和专业评测能证明品牌不是空壳。</p><p><b>做得差的：</b>品线过多，品牌核心承诺没有聚焦到“干爽、保暖、耐用、好售后”。</p></div></div>
+        <div class="card" style="border-top:5px solid var(--amber);"><div class="metric"><strong style="color:var(--amber);">62</strong><h3>Marketing</h3></div><p>内容能展示场景和价格，但还没有系统性处理购买风险。</p><div class="grid two" style="margin-top:14px;"><p><b>做得好的：</b>评测、榜单和 Amazon 评论资产可用，heated apparel 有媒体背书。</p><p><b>做得差的：</b>waders 的问题词、blind 的结构顾虑、heated 的安全洗护没有被统一成内容资产。</p></div></div>
+        <div class="card" style="border-top:5px solid var(--green);"><div class="metric"><strong style="color:var(--green);">72</strong><h3>电商板块</h3></div><p>DTC 和 Amazon 都能承接成交，部分 ASIN 在西柚有明确动销信号。</p><div class="grid two" style="margin-top:14px;"><p><b>做得好的：</b>官网品线全，Amazon 有评价和父体订单，warranty 页面存在。</p><p><b>做得差的：</b>渠道角色、价格层级、售后 SLA 和问题词承接还不够清晰。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="issues">
+    <div class="inner">
+      <span class="tagline">Top 3 Issues</span>
+      <h2>三大关键问题：先修高意向用户的顾虑，再决定新品线预算。</h2>
+      <div class="grid" style="margin-top:24px;">
+        <article class="card problem">
+          <div class="problem-side"><span class="score-label">P0 · 严重度</span><strong>84</strong><p>waders 信任会直接影响主盘成交。</p></div>
+          <div class="problem-main"><h3>问题 1：waders 的靴子、拉链、漏水和 repair 解释不够前置。</h3><div class="impact"><div><strong>证据</strong><p>Reddit 多次出现 boots、zipper、leak 和 customer service 讨论；官网 warranty 有内容，但交易页承接弱。</p></div><div><strong>影响</strong><p>高意向用户会把 TideWe 当成低价试错，不敢买更高客单套装。</p></div><div><strong>先修</strong><p>30 天内把 boot fit、seam、zipper、repair timeline、退换条件放进 PDP、FAQ 和 support。</p></div></div></div>
+        </article>
+        <article class="card problem">
+          <div class="problem-side"><span class="score-label">P0 · 严重度</span><strong>78</strong><p>品线分散会吞掉预算效率。</p></div>
+          <div class="problem-main"><h3>问题 2：多品线都有机会，但职责不清。</h3><div class="impact"><div><strong>证据</strong><p>官网覆盖 waders、blinds、heated clothes、boots、rangefinder、chairs、bags；西柚显示不同品线动销差异明显。</p></div><div><strong>影响</strong><p>预算会被 SKU 数量稀释，Marketing 很难沉淀核心购买理由。</p></div><div><strong>先修</strong><p>建立品线经营表：waders 守主盘，blinds 设 90 天加码门槛，heated apparel 按季节计划，配件做加购。</p></div></div></div>
+        </article>
+        <article class="card problem">
+          <div class="problem-side"><span class="score-label">P1 · 严重度</span><strong>72</strong><p>售后口碑会影响品牌词复核。</p></div>
+          <div class="problem-main"><h3>问题 3：支持页有政策，但用户更想知道出问题的处理结果。</h3><div class="impact"><div><strong>证据</strong><p>Trustpilot 总体可用，但 1 星占 10%；Reddit 中也有客服和产品体验抱怨。</p></div><div><strong>影响</strong><p>用户查 review / customer service 时，会在下单前停住。</p></div><div><strong>先修</strong><p>90 天内公开典型 repair / replacement 案例、响应时间、退换边界和配件补发流程。</p></div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="competitor">
+    <div class="inner">
+      <span class="tagline">Competitor Structure</span>
+      <h2>竞品承接结构：TideWe 要把“值不值得替代老牌”讲得更清楚。</h2>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card"><h3>Frogg Toggs</h3><p>抢 waders 性价比和户外渠道认知。TideWe 要把 fit、repair 和套装组合讲得更细。</p></div>
+        <div class="card"><h3>Simms</h3><p>抢专业钓鱼、材料、保修和高端信任。TideWe 不适合硬抢高端，要做清晰 value alternative。</p></div>
+        <div class="card"><h3>Sitka / Drake</h3><p>抢 waterfowl / hunting 专业形象和材料心智。TideWe 要用真实场景、评价和售后证明可用性。</p></div>
+        <div class="card"><h3>Ororo / Venustas</h3><p>抢 heated apparel 搜索和榜单。TideWe 要用户外场景、洗护、电池安全和冬季套装做差异。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="position">
+    <div class="inner">
+      <span class="tagline">Positioning Upgrade</span>
+      <h2>定位升级：从“便宜户外装备”，升级为“可靠的水禽与冬季户外装备方案”。</h2>
+      <p class="lead">TideWe 不需要把所有户外人群一次吃下。更现实的升级路径是把 value gear 讲成可验证的 field-ready gear：适合谁、怎么选尺码、坏了怎么修、哪些场景最值得买。</p>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="copy-box"><strong>Homepage headline</strong><p>Field-ready gear for hunters, anglers, and cold-weather days.</p></div>
+        <div class="copy-box"><strong>Hero subhead</strong><p>Waders, blinds, heated apparel, and outdoor essentials built to keep you dry, warm, and ready without overpaying for the badge.</p></div>
+        <div class="copy-box"><strong>Product promise</strong><p>Clear sizing, repair-backed protection, and practical gear bundles for the conditions you actually face.</p></div>
+        <div class="copy-box"><strong>CTA</strong><p>Find your setup by season and terrain.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scores">
+    <div class="inner">
+      <span class="tagline">11 Scores</span>
+      <h2>11 维评分：机会大，交易基础好；售后、数据和品线取舍要进管理周会。</h2>
+      <div class="card" style="margin-top:24px;">
+        <div class="scores">
+          <div class="score-row"><span>市场机会</span><div class="bar-track"><span style="--w:82%;--tone:var(--green);"></span></div><span>82</span></div>
+          <div class="score-row"><span>Amazon 成交</span><div class="bar-track"><span style="--w:78%;--tone:var(--green);"></span></div><span>78</span></div>
+          <div class="score-row"><span>价格价值</span><div class="bar-track"><span style="--w:76%;--tone:var(--green);"></span></div><span>76</span></div>
+          <div class="score-row"><span>品牌声誉</span><div class="bar-track"><span style="--w:72%;--tone:var(--green);"></span></div><span>72</span></div>
+          <div class="score-row"><span>DTC 官网</span><div class="bar-track"><span style="--w:70%;--tone:var(--green);"></span></div><span>70</span></div>
+          <div class="score-row"><span>搜索心智</span><div class="bar-track"><span style="--w:66%;--tone:var(--amber);"></span></div><span>66</span></div>
+          <div class="score-row"><span>Marketing 内容</span><div class="bar-track"><span style="--w:62%;--tone:var(--amber);"></span></div><span>62</span></div>
+          <div class="score-row"><span>品线取舍</span><div class="bar-track"><span style="--w:58%;--tone:var(--red);"></span></div><span>58</span></div>
+          <div class="score-row"><span>售后承接</span><div class="bar-track"><span style="--w:56%;--tone:var(--red);"></span></div><span>56</span></div>
+          <div class="score-row"><span>数据增长</span><div class="bar-track"><span style="--w:54%;--tone:var(--red);"></span></div><span>54</span></div>
+          <div class="score-row"><span>第二曲线验证</span><div class="bar-track"><span style="--w:52%;--tone:var(--red);"></span></div><span>52</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="inner">
+      <span class="tagline">Budget Trade-off</span>
+      <h2>预算取舍：主线保效率，第二层机会按 90 天门槛加码。</h2>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card" style="border-top:5px solid var(--green);"><h3>40%-50% waders 主线</h3><p>守住 Amazon 高意图词、DTC 场景页、warranty 内容和核心 SKU 的评价增速。</p><div class="pill-row"><span class="pill good">继续投</span></div></div>
+        <div class="card" style="border-top:5px solid var(--blue);"><h3>20%-25% blinds 验证</h3><p>只看 sell-out、评价、退货、bundle 毛利和搜索词承接，过线再扩素材和库存。</p><div class="pill-row"><span class="pill blue">设门槛</span></div></div>
+        <div class="card" style="border-top:5px solid var(--amber);"><h3>15%-20% heated apparel</h3><p>Q4 前集中补安全、续航、洗护、尺码和低温场景内容，不做全年平均投放。</p><div class="pill-row"><span class="pill warn">季节预算</span></div></div>
+        <div class="card" style="border-top:5px solid var(--red);"><h3>收缩泛户外 SKU</h3><p>没有动销、评论、毛利和复购证据的周边 SKU 先减少营销资源。</p><div class="pill-row"><span class="pill bad">先收缩</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="inner">
+      <span class="tagline">Roadmap</span>
+      <h2>180 天路线图：先补信任页，再拆品线预算，最后做用户资产。</h2>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card"><h3>0-30 天：修 waders 购买顾虑</h3><p><b>Owner：</b>电商 / 客服 / 内容。<br>把 boot fit、zipper、leak、repair、return、sizing 和 cold-weather use 写进 PDP、FAQ、support、Amazon A+。</p><div class="pill-row"><span class="pill bad">先修</span><span class="pill blue">转化影响</span></div></div>
+        <div class="card"><h3>31-90 天：给 blind 和 heated 设门槛</h3><p><b>Owner：</b>品类 / Amazon / Marketing。<br>按 ASIN 父体订单、评价增速、退货率、毛利和内容复投率决定加码、维持或收缩。</p><div class="pill-row"><span class="pill warn">验证</span></div></div>
+        <div class="card"><h3>91-180 天：做套装和用户资产</h3><p><b>Owner：</b>DTC / CRM / 渠道。<br>按 waterfowl、fishing、cold-weather、deer hunting 建立套装和邮件路径，沉淀尺码、保修和复购数据。</p><div class="pill-row"><span class="pill good">沉淀复购</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="departments">
+    <div class="inner">
+      <span class="tagline">Department Audit</span>
+      <h2>职能部门专业度：红灯先看数据、客服和品类取舍。</h2>
+      <div class="dept-lights" style="margin-top:24px;">
+        <div class="card dept-group" style="--tone:var(--red);">
+          <div class="dept-head"><div><h3>Red Light · 先整顿</h3><p>这些部门直接影响预算、口碑和主品类利润质量。</p></div><span class="pill bad">3 个部门</span></div>
+          <div class="dept-cards" style="grid-template-columns:repeat(3,minmax(0,1fr));">
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">52</div><h3>数据 / 增长运营部</h3><p><b>最差点：</b>公开数据看不到分品线 GMV、渠道占比、退货率、毛利和复购。</p><div class="pill-row"><span class="pill bad">看板缺失</span></div></div>
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">54</div><h3>产品 / 品类部</h3><p><b>最差点：</b>品线太多，waders、blinds、heated、配件各自预算职责不清。</p><div class="pill-row"><span class="pill bad">取舍不足</span></div></div>
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">56</div><h3>客服 / 售后部</h3><p><b>最差点：</b>政策存在，但 repair、replacement、响应时长和典型案例不够前置。</p><div class="pill-row"><span class="pill bad">信任解释弱</span></div></div>
+          </div>
+        </div>
+        <div class="card dept-group" style="--tone:var(--amber);">
+          <div class="dept-head"><div><h3>Yellow Light · 带约束优化</h3><p>基础存在，但继续加码前要先明确每条线的验收标准。</p></div><span class="pill warn">3 个部门</span></div>
+          <div class="dept-cards" style="grid-template-columns:repeat(3,minmax(0,1fr));">
+            <div class="card dept-card" style="--tone:var(--amber);"><div class="num">62</div><h3>Marketing 部</h3><p><b>最差点：</b>场景内容多，问题词和对比页没有系统承接。</p></div>
+            <div class="card dept-card" style="--tone:var(--amber);"><div class="num">66</div><h3>品牌部</h3><p><b>最差点：</b>value outdoor 清楚，但核心承诺还不够聚焦。</p></div>
+            <div class="card dept-card" style="--tone:var(--amber);"><div class="num">68</div><h3>DTC / 电商部</h3><p><b>最差点：</b>官网能卖货，但保修、退换、尺码和渠道价格还要更靠前。</p></div>
+          </div>
+        </div>
+        <div class="card dept-group" style="--tone:var(--green);">
+          <div class="dept-head"><div><h3>Green Light · 可继续放大</h3><p>这部分已经给北美增长提供了明确交易入口。</p></div><span class="pill good">2 个部门</span></div>
+          <div class="dept-cards" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+            <div class="card dept-card" style="--tone:var(--green);"><div class="num">78</div><h3>Marketplace 部</h3><p><b>最差点：</b>Amazon 交易基础好，但 SKU 之间效率差异需要更快淘汰。</p><div class="pill-row"><span class="pill good">有基础</span></div></div>
+            <div class="card dept-card" style="--tone:var(--green);"><div class="num">80</div><h3>Offer / 价格部</h3><p><b>最差点：</b>价格有优势，但要把低价翻译成可验证的装备价值。</p><div class="pill-row"><span class="pill good">能打</span><span class="pill warn">需解释</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="inner">
+      <span class="tagline">Risks & Data Gaps</span>
+      <h2>风险预警：最大风险是“便宜好用”被具体缺陷词拖成“便宜但不放心”。</h2>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card"><h3>waders 信任风险</h3><p>boot fit、leak、zipper 和 repair 如果不前置解释，会直接影响主品类高意向成交。</p><div class="pill-row"><span class="pill bad">P0</span></div></div>
+        <div class="card"><h3>品线分散风险</h3><p>blinds、heated apparel、rangefinder、chair、backpack 都有机会，但没有预算门槛会拖慢主线。</p><div class="pill-row"><span class="pill warn">P1</span></div></div>
+        <div class="card"><h3>数据缺口</h3><p>已用西柚补 Amazon 样本下限；仍缺 DTC GMV、Walmart sell-out、退货率、毛利、尺码退换和保修工单。</p><div class="pill-row"><span class="pill blue">需内部校准</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <div class="inner evidence">
+      <span class="tagline">Evidence Table</span>
+      <h2>证据表：所有强判断回到公开证据和数据缺口。</h2>
+      <div class="table-wrap" style="margin-top:24px;">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>关键事实</th><th>支持判断</th></tr></thead>
+          <tbody>
+            <tr><td>E1</td><td><a href="https://www.tidewe.com/" target="_blank">TideWe 官网首页</a></td><td>2026-06-16</td><td>官网展示 waders、blinds、boots、heated clothes、rangefinder、chairs 等完整户外产品线。</td><td>品线结构、DTC 角色和品牌阶段。</td></tr>
+            <tr><td>E2</td><td><a href="https://www.tidewe.com/collections/waders" target="_blank">TideWe Waders Collection</a></td><td>2026-06-16</td><td>waders 产品矩阵和价格带清楚，覆盖防水、neoprene、boots 等多场景。</td><td>主品类判断和卖点匹配。</td></tr>
+            <tr><td>E3</td><td><a href="https://www.tidewe.com/pages/deepwade-zip-wader-limited-lifetime-warranty" target="_blank">DeepWade Zip Wader Warranty</a></td><td>2026-06-16</td><td>页面写明 Limited Lifetime Repair Service、Three-Year Warranty 和 7-10 working days repair period。</td><td>保修承接和售后信任。</td></tr>
+            <tr><td>E4</td><td><a href="https://www.tidewe.com/pages/contact-us" target="_blank">Contact Us</a></td><td>2026-06-16</td><td>公开 cs@tidewe.com、电话、chat 和 Nichelife Inc. 地址。</td><td>客服触点与 DTC 承接。</td></tr>
+            <tr><td>E5</td><td><a href="https://www.tidewe.com/pages/faq" target="_blank">FAQ / Returns</a></td><td>2026-06-16</td><td>30-day return policy，非质量问题退货运费由用户承担，要求图片和原包装。</td><td>退换边界和转化摩擦。</td></tr>
+            <tr><td>E6</td><td><a href="https://www.amazon.com/stores/TideWe/page/2462024D-7130-42FC-B022-6803622BC8F3" target="_blank">Amazon TideWe Store</a></td><td>2026-06-16</td><td>Amazon 品牌页显示 TideWe 为 outdoor enthusiasts 提供装备，产品线持续增长。</td><td>Amazon 货架和品牌叙事。</td></tr>
+            <tr><td>E7</td><td>Amazon Brand / ASIN snippets</td><td>2026-06-16</td><td>公开面可见 4.5 星、100K+ customer ratings；部分页面露出 50K+ orders past 3 months。</td><td>交易信任和品牌规模信号。</td></tr>
+            <tr><td>E8</td><td><a href="https://www.trustpilot.com/review/www.tidewe.com" target="_blank">Trustpilot TideWe</a></td><td>2026-06-16</td><td>4.4 / 5，1,394 reviews，过去 12 个月 790 条；5 星 76%，1 星 10%，回复 83% 负评。</td><td>声誉评分和售后风险。</td></tr>
+            <tr><td>E9</td><td><a href="https://fieldandstream.com/outdoor-gear/fishing-gear/tidewe-waders-review" target="_blank">Field & Stream TideWe Waders Review</a></td><td>2026-06-16</td><td>评测认为入门 waders 值得考虑，并提到 comfortable、waterproof、warm、breathable。</td><td>waders 正向证据。</td></tr>
+            <tr><td>E10</td><td><a href="https://www.newhuntersguide.com/2024/10/18/tidewe-seeker-neoprene-wader-review-the-best-cheap-hunting-wader/" target="_blank">New Hunters Guide Wader Review</a></td><td>2026-06-16</td><td>评测强调 value、dry、warm、durable。</td><td>水禽用户与性价比信任。</td></tr>
+            <tr><td>E11</td><td><a href="https://www.newhuntersguide.com/2024/05/19/tidewe-hunting-range-finder-review/" target="_blank">New Hunters Guide Range Finder Review</a></td><td>2026-06-16</td><td>rangefinder 被评价为低价但测距接近高价设备。</td><td>配件线效率判断。</td></tr>
+            <tr><td>E12</td><td><a href="https://www.goodhousekeeping.com/clothing/g45501050/best-heated-vests/" target="_blank">Good Housekeeping Heated Vests</a></td><td>2026-06-16</td><td>TideWe heated vest 进入预算型推荐。</td><td>heated apparel 媒体背书。</td></tr>
+            <tr><td>E13</td><td><a href="https://people.com/best-heated-jackets-6835907" target="_blank">People Heated Jackets</a></td><td>2026-06-16</td><td>TideWe hybrid / budget heated jacket 获得榜单露出。</td><td>冬季外扩机会。</td></tr>
+            <tr><td>E14</td><td>Reddit VOC sample</td><td>2026-06-16</td><td>r/Hunting、r/flyfishing、r/Waterfowl、r/Duckhunting 等讨论显示 value、warm、dry 正向，同时有 boots、zipper、blind 和客服抱怨。</td><td>VOC 词云、风险和卖点匹配。</td></tr>
+            <tr><td>E15</td><td><a href="https://www.walmart.com/c/brand/tidewe" target="_blank">Walmart TideWe Brand Page</a></td><td>2026-06-16</td><td>Walmart 有 TideWe see-through hunting blind 等产品触点，但评论样本较薄。</td><td>零售触点和渠道占比。</td></tr>
+            <tr><td>E16</td><td><a href="https://www.fortunebusinessinsights.com/hunting-apparel-market-113191" target="_blank">Fortune Business Insights Hunting Apparel</a></td><td>2026-06-16</td><td>North America hunting apparel 2025 年 USD 1.27B，2026 年 USD 1.34B。</td><td>户外服饰市场校准。</td></tr>
+            <tr><td>E17</td><td><a href="https://www.fortunebusinessinsights.com/heated-clothing-market-103861" target="_blank">Fortune Business Insights Heated Clothing</a></td><td>2026-06-16</td><td>North America heated clothing 2025 年 USD 160M，2026 年 USD 170M。</td><td>heated apparel 天花板。</td></tr>
+            <tr><td>E18</td><td><a href="https://www.factmr.com/report/fishing-waders-market" target="_blank">Fact.MR Fishing Waders Market</a></td><td>2026-06-16</td><td>全球 fishing waders 2023 年 USD 1.18B，2033 年 USD 2.28B。</td><td>waders 市场空间校准。</td></tr>
+            <tr><td>E19</td><td>西柚洞察 ASIN 反查</td><td>2026-06-16</td><td>B0DM2D38V8 rangefinder 父体近 30 天 450+；B0G4NQMRTR hunting blind 父体 150+ 且 Hunting Blinds #2；B09YMG4J7X backpack 100+；B08BRGWCGR chair 50+；多个 wader 单 ASIN &lt;50。</td><td>Amazon 动销、品线差异和渠道占比。</td></tr>
+            <tr><td>E20</td><td><a href="https://wise.com/us/currency-converter/usd-to-cny-rate/history" target="_blank">Wise USD/CNY History</a></td><td>2026-06-15</td><td>2026-06-15 附近 1 USD 约等于 6.757 CNY。</td><td>人民币换算。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <div><strong>远汐 Offing Atlas 北美业务诊断（免费版）</strong><br><span>2026-06-16 · TideWe · 公开数据 + 西柚样本 + VOC + 经营能力诊断</span></div>
+      <div>优先级：waders 信任页 > 品线预算门槛 > support 案例 > Q4 heated apparel</div>
+    </div>
+  </footer>
+</body>
+</html>
