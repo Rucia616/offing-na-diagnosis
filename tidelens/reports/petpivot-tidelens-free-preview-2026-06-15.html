@@ -149,27 +149,26 @@
 
     .hero {
       position: relative;
-      min-height: min(850px, calc(100dvh - 56px));
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
-      gap: clamp(28px, 5vw, 72px);
+      min-height: calc(100dvh - 56px);
+      display: flex;
       align-items: center;
-      padding: clamp(48px, 8vh, 78px) 0 46px;
+      padding: clamp(56px, 10vh, 96px) 0;
       overflow: hidden;
     }
     .hero::after {
       content: "";
       position: absolute;
-      right: 0;
-      top: 76px;
-      width: clamp(210px, 28vw, 370px);
+      right: 3vw;
+      top: clamp(84px, 18vh, 150px);
+      width: clamp(250px, 32vw, 430px);
       aspect-ratio: 1;
       background: conic-gradient(from 220deg, var(--tl-prism-teal), var(--tl-prism-sky), var(--tl-prism-pink), var(--tl-prism-lilac), var(--tl-prism-coral), var(--tl-prism-teal));
       clip-path: polygon(49% 0%, 100% 27%, 84% 100%, 12% 84%, 0 30%);
-      opacity: .16;
+      opacity: .13;
       pointer-events: none;
     }
     .hero > * { position: relative; z-index: 1; }
+    .hero-copy { max-width: 900px; }
     .client-logo {
       width: min(240px, 58vw);
       height: 70px;
@@ -189,8 +188,8 @@
       letter-spacing: .08em;
     }
     h1 {
-      max-width: 820px;
-      font-size: clamp(52px, 5.35vw, 74px);
+      max-width: 900px;
+      font-size: clamp(58px, 6vw, 88px);
       line-height: .98;
       font-weight: 950;
       letter-spacing: 0;
@@ -225,6 +224,12 @@
     }
     .chip strong { color: var(--tl-accent-text); margin-right: 5px; }
 
+    .diagnosis-detail {
+      min-height: calc(100dvh - 56px);
+      display: flex;
+      align-items: center;
+      padding: 58px 0 78px;
+    }
     .result-card {
       border: 1px solid color-mix(in srgb, var(--tl-line) 80%, #fff);
       border-radius: var(--radius);
@@ -234,7 +239,7 @@
     }
     .result-top {
       min-height: 300px;
-      padding: 30px;
+      padding: clamp(28px, 4vw, 44px);
       color: var(--tl-inverse-text);
       background:
         linear-gradient(135deg, rgba(50,214,198,.18), transparent 46%),
@@ -248,7 +253,7 @@
       font-weight: 800;
     }
     .verdict {
-      font-size: clamp(52px, 5.5vw, 78px);
+      font-size: clamp(58px, 6vw, 92px);
       line-height: .96;
       font-weight: 950;
       letter-spacing: 0;
@@ -293,7 +298,7 @@
       border-top: 1px solid var(--tl-line);
     }
     .result-cell {
-      min-height: 164px;
+      min-height: 148px;
       padding: 24px;
       border-right: 1px solid var(--tl-line);
       border-bottom: 1px solid var(--tl-line);
@@ -324,7 +329,117 @@
       font-weight: 620;
     }
 
-    section { padding: 82px 0; }
+    .score-layout {
+      display: grid;
+      grid-template-columns: minmax(270px, .38fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .score-main {
+      border: 1px solid var(--tl-line);
+      border-radius: var(--radius);
+      background: var(--tl-surface);
+      box-shadow: var(--shadow);
+    }
+    .score-main {
+      min-height: 384px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--tl-inverse-text);
+      background:
+        linear-gradient(145deg, rgba(91,43,255,.18), transparent 44%),
+        linear-gradient(35deg, rgba(50,214,198,.16), transparent 58%),
+        var(--tl-inverse-bg);
+    }
+    .score-number {
+      margin-top: 16px;
+      font-size: clamp(78px, 9.5vw, 126px);
+      line-height: .84;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .score-number span {
+      font-size: .22em;
+      color: rgba(255,255,255,.68);
+    }
+    .score-main h3 {
+      margin-top: 18px;
+      color: #fff;
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.08;
+      font-weight: 950;
+    }
+    .score-main p {
+      margin-top: 14px;
+      color: rgba(255,255,255,.82);
+      font-size: 15px;
+      line-height: 1.64;
+      font-weight: 640;
+    }
+    .score-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .score-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 56px;
+      gap: 10px 14px;
+      align-items: start;
+      min-height: 90px;
+      padding: 14px;
+      border: 1px solid var(--tl-line);
+      border-radius: var(--radius);
+      background: var(--tl-surface);
+      box-shadow: var(--shadow);
+    }
+    .score-title {
+      color: var(--tl-ink);
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+    .score-sub {
+      margin-top: 5px;
+      color: var(--tl-muted);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+    #score .section-head { margin-bottom: 22px; }
+    #score .section-head h2 { font-size: clamp(40px, 4.6vw, 64px); }
+    .score-bar {
+      height: 9px;
+      overflow: hidden;
+      grid-column: 1 / -1;
+      border-radius: 999px;
+      background: var(--tl-surface-2);
+      border: 1px solid var(--tl-line);
+    }
+    .score-fill {
+      width: var(--score);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--tl-action), var(--tl-prism-teal));
+    }
+    .score-val {
+      color: var(--tl-ink);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 950;
+      text-align: right;
+    }
+    .score-val small {
+      display: block;
+      margin-top: 3px;
+      color: var(--tl-muted);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    section { padding: 82px 0; scroll-margin-top: 74px; }
     .section-head {
       display: grid;
       grid-template-columns: minmax(0, .9fr) minmax(280px, .48fr);
@@ -843,8 +958,10 @@
       .chart-layout {
         grid-template-columns: 1fr;
       }
-      .hero { min-height: auto; padding-top: 44px; }
+      .hero { min-height: calc(100dvh - 92px); padding-top: 54px; }
+      .diagnosis-detail { min-height: auto; padding-top: 30px; }
       .result-grid,
+      .score-layout,
       .decision-grid,
       .proof-grid,
       .competitor-grid,
@@ -864,15 +981,23 @@
       .brand-lockup { flex-wrap: wrap; gap: 6px; line-height: 1.25; }
       .brand-lockup::after { display: none; }
       .hero::after { opacity: .10; }
-      h1 { font-size: clamp(46px, 13vw, 62px); }
-      h1 .hline:first-child { white-space: normal; }
+      h1 { font-size: clamp(38px, 10.4vw, 42px); }
+      h1 .hline:first-child { white-space: nowrap; }
       section { padding: 58px 0; }
+      .verdict { font-size: clamp(42px, 13vw, 58px); }
       .stage-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .stage:nth-child(2) { border-right: 0; }
       .stage:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.18); }
+      .score-list { grid-template-columns: 1fr; }
+      .score-row { grid-template-columns: 1fr 74px; gap: 12px; }
+      .score-bar { grid-column: 1 / -1; order: 3; }
+      .score-val { grid-column: 2; grid-row: 1 / span 2; }
       .legend-row { grid-template-columns: 1fr auto; }
       .legend-row span:last-child { grid-column: 2; }
       .big-number-card { min-height: auto; }
+    }
+    @media (max-width: 360px) {
+      h1 .hline:first-child { white-space: normal; }
     }
   </style>
 </head>
@@ -886,6 +1011,7 @@
       </a>
       <nav class="nav" aria-label="报告导航">
         <a href="#diagnosis">诊断</a>
+        <a href="#score">评分</a>
         <a href="#volume">上线量</a>
         <a href="#proof">证明缺口</a>
         <a href="#competitors">竞品</a>
@@ -897,7 +1023,7 @@
 
   <main>
     <section class="shell hero" id="diagnosis">
-      <div>
+      <div class="hero-copy">
         <div class="client-logo">
           <img src="../../assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" />
         </div>
@@ -913,7 +1039,10 @@
           <span class="chip"><strong>Mode</strong>Public-data diagnosis</span>
         </div>
       </div>
+    </section>
 
+    <section class="diagnosis-detail" id="decision">
+      <div class="shell">
       <aside class="result-card" aria-label="诊断摘要">
         <div class="result-top">
           <div class="verdict-label">一句话诊断</div>
@@ -951,6 +1080,104 @@
           </div>
         </div>
       </aside>
+      </div>
+    </section>
+
+    <section id="score">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">TideLens scorecard</div>
+            <h2>PetPivot 目前 62 / 100：有增长盘，但还不是复投系统。</h2>
+          </div>
+          <p>
+            评分按 TideLens 8 维模型：阶段目标、creator 组合、受众真实性、购买证明、平台分工、商业信号、素材复用和治理学习。总分不是评价“有没有投红人”，而是评价红人内容能不能持续降低购买顾虑。
+          </p>
+        </div>
+
+        <div class="score-layout" aria-label="PetPivot TideLens 红人营销评分">
+          <article class="score-main">
+            <div>
+              <div class="mini-label">Overall KOL growth score</div>
+              <div class="score-number">62<span>/100</span></div>
+              <h3>活跃，但效率在流失。</h3>
+              <p>
+                PetPivot 已经有 TikTok Shop、affiliate、Instagram Reels、YouTube review、Amazon 和 PR 信号；真正扣分的不是声量，而是 proof matrix、复投标准和平台分工还没有被系统化。
+              </p>
+            </div>
+            <p>
+              预算动作：先补 safety / durability / cat-fit / service / comparison proof，再决定哪些 creator 和内容值得继续加码。
+            </p>
+          </article>
+
+          <article class="score-list">
+            <div class="score-row">
+              <div>
+                <div class="score-title">阶段目标匹配</div>
+                <div class="score-sub">增长期判断清楚，但预算不应继续默认买发布数量。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
+              <div class="score-val">8<small>/10</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">Creator 组合质量</div>
+                <div class="score-sub">有铺量和 affiliate 入口，但高信任测评型 creator 需要加强。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
+              <div class="score-val">9<small>/15</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">受众与真实性审计</div>
+                <div class="score-sub">公开样本能看出活跃，但还缺账号级评论质量和赞助密度审计。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 50%"></div></div>
+              <div class="score-val">5<small>/10</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">购买证明矩阵</div>
+                <div class="score-sub">便利性讲得多，安全、耐用、猫适配、售后和比价证明不足。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 55%"></div></div>
+              <div class="score-val">11<small>/20</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">平台角色分工</div>
+                <div class="score-sub">TikTok 管转化，Instagram 管素材，YouTube 管信任；目前需要更明确 brief。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
+              <div class="score-val">9<small>/15</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">商业信号与测量</div>
+                <div class="score-sub">TikTok Shop / GMV / Amazon / PR 信号强，但 creator 级复投阈值不清楚。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
+              <div class="score-val">12<small>/15</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">素材复用与 paid boost</div>
+                <div class="score-sub">已有内容池，但需要按 ads、landing page、Amazon、email 复用价值筛选。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
+              <div class="score-val">6<small>/10</small></div>
+            </div>
+            <div class="score-row">
+              <div>
+                <div class="score-title">治理与学习循环</div>
+                <div class="score-sub">公开信号看不到月度复盘、内容权利、brand safety 和 rebook 规则。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 40%"></div></div>
+              <div class="score-val">2<small>/5</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="volume">
@@ -958,33 +1185,33 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Last 30 days public creator signal</div>
-            <h2>近 30 天可核验公开发布已经够，下一步筛复投效率。</h2>
+            <h2>TikTok Shop 已有商业信号，不能用品牌名搜索低估声量。</h2>
           </div>
           <p>
-            统计窗口：2026-05-16 至 2026-06-15。仅计公开视频 / Reels / review，品牌自有账号不计入 creator 数。平台不可见内容不计入，因此这里采用可核验下限。
+            统计窗口：2026-05-16 至 2026-06-15。本页只展示已核验公开视频样本；TikTok 正式统计必须追加品牌 hashtag、AutoScooper 产品词、Shop product anchor、affiliate/code、campaign 和 live-room surfaces，否则数字只可作保守下限。
           </p>
         </div>
 
         <div class="volume-grid">
           <article class="big-number-card">
-            <div class="mini-label">Verified lower-bound publishes</div>
+            <div class="mini-label">Verified public sample floor</div>
             <div class="num">55+</div>
-            <h3>公开可核验下限已经支撑增长期判断。</h3>
+            <h3>这是保守样本，不是全网总上线量。</h3>
             <p>
-              Instagram 已核验 creator Reels 下限 33 条；TikTok 当前可见样本中近 30 天下限 12 条；YouTube creator / review 近 30 天下限约 10 条。
+              已核验样本包括 Instagram creator Reels 33+、TikTok 品牌名可见样本 12+、YouTube creator / review 10 条。TikTok Shop 活动素材显示 AutoScooper 曾跑出 GMV $3.5M+ 和 US Top 1，说明 TikTok 需要按 Shop / hashtag 复扫，不能只按品牌名搜索判断规模。
             </p>
             <div class="evidence-note">
-              Instagram 可见池抽到 100 条去重 URL；平台包含 Top / Recent 混合和登录可见限制，因此报告不把 100 条全部写成最近 30 天精确数。
+              正式复扫口径：#PetPivot、#AutoScooper、#PetPivotAutoScooper、TikTok Shop product anchor、affiliate/code、campaign 页面和 creator live room 去重。
             </div>
           </article>
 
-          <article class="chart-card" aria-label="平台发布量占比">
+          <article class="chart-card" aria-label="已核验样本平台构成">
             <div class="chart-layout">
-              <div class="donut" aria-label="Instagram 60%, TikTok 22%, YouTube 18%">
+              <div class="donut" aria-label="已核验样本构成：Instagram 60%, TikTok 22%, YouTube 18%">
                 <div class="donut-center">
                   <div>
                     <strong>55+</strong>
-                    <span>lower bound</span>
+                    <span>sample floor</span>
                   </div>
                 </div>
               </div>
@@ -996,7 +1223,7 @@
                     <span>60%</span>
                   </div>
                   <div class="legend-row">
-                    <div class="platform-name"><span class="platform-icon tt">TT</span>TikTok / Shop</div>
+                    <div class="platform-name"><span class="platform-icon tt">TT</span>TikTok brand sample</div>
                     <strong>12+</strong>
                     <span>22%</span>
                   </div>
@@ -1007,7 +1234,7 @@
                   </div>
                 </div>
                 <div class="chart-callout">
-                  <strong>业务解读：</strong>PetPivot 当前不是缺声量，而是平台分工需要重排。TikTok 已经承担折扣码和 Shop 转化测试，Instagram 更适合沉淀可复用素材，YouTube 应该承担高意向用户的信任防守。
+                  <strong>业务解读：</strong>不要把 12+ 读成 TikTok 全量。PetPivot 的 TikTok Shop 盘子要按 hashtag / Shop / affiliate 重新取数；但阶段判断已经成立：它不是冷启动，下一步要筛哪些 TikTok 内容真的能复投、能转化、能沉淀成广告素材。
                 </div>
               </div>
             </div>
