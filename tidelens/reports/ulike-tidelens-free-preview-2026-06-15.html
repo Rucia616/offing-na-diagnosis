@@ -403,8 +403,9 @@
     }
     .score-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 14px;
+      align-items: stretch;
     }
     .score-card {
       min-height: 170px;
@@ -418,10 +419,10 @@
       justify-content: space-between;
       gap: 18px;
     }
-    .score-card.w20 { grid-column: span 3; min-height: 204px; }
-    .score-card.w15 { grid-column: span 3; }
-    .score-card.w10 { grid-column: span 2; }
-    .score-card.w5 { grid-column: span 2; }
+    .score-card.w20 { grid-column: span 7; min-height: 270px; }
+    .score-card.w15 { grid-column: span 5; min-height: 214px; }
+    .score-card.w10 { grid-column: span 4; min-height: 174px; }
+    .score-card.w5 { grid-column: span 3; min-height: 150px; }
     .score-card.good { border-top: 5px solid var(--green); }
     .score-card.watch { border-top: 5px solid var(--amber); }
     .score-card.weak { border-top: 5px solid var(--red); }
@@ -444,6 +445,8 @@
       line-height: 1.62;
       font-weight: 620;
     }
+    .score-card.w5 h3 { font-size: 18px; line-height: 1.18; }
+    .score-card.w5 p { font-size: 13px; line-height: 1.48; }
     .score-foot {
       display: flex;
       align-items: flex-end;
@@ -1072,12 +1075,12 @@
         </aside>
 
         <div class="score-grid" aria-label="8 维评分">
-          <article class="score-card good w10">
+          <article class="score-card weak w20">
             <div>
-              <h3><span>阶段目标匹配</span>增长判断清楚，预算要看效率。</h3>
-              <p>Ulike 已经进入 Growth / Scale 之间，继续只追发布量会稀释判断。</p>
+              <h3><span>购买证明矩阵</span>便利讲够了，风险还没讲透。</h3>
+              <p>这是 20 分最高权重项，也是当前最大拖累。痛感低、速度快、折扣码和夏季场景重复出现；安全、适配、长期效果和竞品比较需要更强 creator 证据。</p>
             </div>
-            <div class="score-foot"><span class="state good">做得好</span><span class="score-value"><b>8</b><span>/10</span></span></div>
+            <div class="score-foot"><span class="state weak">最大拖累</span><span class="score-value"><b>13</b><span>/20</span></span></div>
           </article>
           <article class="score-card watch w15">
             <div>
@@ -1085,20 +1088,6 @@
               <p>短视频、affiliate 和 review 都有，但安全边界、PCOS、肤色毛色和长期更新 creator 还要分层。</p>
             </div>
             <div class="score-foot"><span class="state watch">中等</span><span class="score-value"><b>11</b><span>/15</span></span></div>
-          </article>
-          <article class="score-card weak w10">
-            <div>
-              <h3><span>受众真实性审计</span>公开视频活跃，评论和人群质量要补审。</h3>
-              <p>公开样本能证明 Ulike 有声量，但还要继续审评论购买意图、地域匹配和赞助密度。</p>
-            </div>
-            <div class="score-foot"><span class="state weak">拖累</span><span class="score-value"><b>6</b><span>/10</span></span></div>
-          </article>
-          <article class="score-card weak w20">
-            <div>
-              <h3><span>购买证明矩阵</span>便利讲够了，风险还没讲透。</h3>
-              <p>痛感低、速度快、折扣码和夏季场景重复出现；安全、适配、长期效果和竞品比较需要更强 creator 证据。</p>
-            </div>
-            <div class="score-foot"><span class="state weak">最大拖累</span><span class="score-value"><b>13</b><span>/20</span></span></div>
           </article>
           <article class="score-card watch w15">
             <div>
@@ -1114,6 +1103,20 @@
             </div>
             <div class="score-foot"><span class="state watch">中等</span><span class="score-value"><b>11</b><span>/15</span></span></div>
           </article>
+          <article class="score-card good w10">
+            <div>
+              <h3><span>阶段目标匹配</span>增长判断清楚，预算要看效率。</h3>
+              <p>Ulike 已经进入 Growth / Scale 之间，继续只追发布量会稀释判断。</p>
+            </div>
+            <div class="score-foot"><span class="state good">做得好</span><span class="score-value"><b>8</b><span>/10</span></span></div>
+          </article>
+          <article class="score-card weak w10">
+            <div>
+              <h3><span>受众真实性审计</span>公开视频活跃，评论和人群质量要补审。</h3>
+              <p>公开样本能证明 Ulike 有声量，但还要继续审评论购买意图、地域匹配和赞助密度。</p>
+            </div>
+            <div class="score-foot"><span class="state weak">拖累</span><span class="score-value"><b>6</b><span>/10</span></span></div>
+          </article>
           <article class="score-card watch w10">
             <div>
               <h3><span>素材复用与 paid boost</span>内容池很大，winner 分级要更清楚。</h3>
@@ -1123,8 +1126,8 @@
           </article>
           <article class="score-card good w5">
             <div>
-              <h3><span>治理与学习循环</span>披露和样本有基础，复盘规则要产品化。</h3>
-              <p>ad、partner、code 和 tagged cluster 能辅助审计；下一步把 rights、brand safety 和 rebook 规则固化。</p>
+              <h3><span>治理与学习循环</span>可复盘，但规则要固化。</h3>
+              <p>下一步固化 rights、brand safety 和 rebook 规则。</p>
             </div>
             <div class="score-foot"><span class="state good">可提升</span><span class="score-value"><b>3</b><span>/5</span></span></div>
           </article>
