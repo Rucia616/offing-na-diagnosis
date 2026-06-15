@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PetPivot · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-15</title>
+  <meta name="description" content="PetPivot 北美业务诊断：低价自动猫砂盆已经跑出动销，下一步先补长期可靠、售后信任和渠道价格纪律。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Ccircle cx='32' cy='29' r='15' fill='none' stroke='%23F8FAF9' stroke-width='5'/%3E%3Cpath d='M14 37c8 5 14 5 22 0s14-5 14 0' fill='none' stroke='%2332D6C6' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M21 45h22' stroke='%239ED1FF' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg:#F5F5F7; --top:#FBFBFD; --surface:#FFFFFF; --surface-2:#F7F8FA;
+      --text:#101413; --body:#293331; --muted:#66716E; --line:#D7D9DC;
+      --accent:#2D6261; --accent-fill:#EAF1F0; --inverse:#13211F; --inverse-text:#F8FAF9;
+      --green:#157A38; --green-bg:#EAF6EE; --amber:#9A5B00; --amber-bg:#FFF3DF;
+      --red:#D70015; --red-bg:#FFF0F1; --blue:#1663D8; --blue-bg:#EEF5FF;
+      --prism-teal:#32D6C6; --prism-sky:#9ED1FF; --prism-pink:#F7A4D8; --prism-lilac:#9B7CFF;
+      --radius:8px; --shadow:0 18px 54px rgba(16,20,19,.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#0F1212; --top:#141817; --surface:#191E1D; --surface-2:#202625;
+        --text:#F4F7F6; --body:#D8DEDC; --muted:#A9B2AF; --line:#3A4240;
+        --accent:#9ED7D3; --accent-fill:#1C3433; --inverse:#E9EFED; --inverse-text:#101413;
+        --green:#5ED083; --green-bg:#183B27; --amber:#FFC46B; --amber-bg:#3B2B16;
+        --red:#FF6B7A; --red-bg:#3A1820; --blue:#8FB7FF; --blue-bg:#172A48;
+        --shadow:0 18px 54px rgba(0,0,0,.34);
+      }
+      .nav-links { color:#C2CAC7; }
+      .hero-sub { color:#E2E7E5; }
+      .chip { background:rgba(25,30,29,.82); color:#DDE4E2; }
+      .hero-product { background:linear-gradient(180deg,#202625,#151918); }
+      .bar-track, .mini-bar { background:#333A38; }
+      .stage-panel { background:#0A1110; }
+      .stage-cell.active { background:#F4F7F6; color:#101413; }
+      .hero-card { background:radial-gradient(circle at 86% 0%, rgba(50,214,198,.18), transparent 28%), linear-gradient(145deg,#08100F,#14201F); }
+      .problem-side { background:#0A1110; color:#F8FAF9; }
+      .verdict.good, .pill.good { border-color:#337C4B; }
+      .verdict.warn, .pill.warn { border-color:#7E551E; }
+      .verdict.bad, .pill.bad { border-color:#7E2A36; }
+      .verdict.blue, .pill.blue { border-color:#345A92; }
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.62; }
+    a { color:inherit; text-decoration:none; }
+    nav { position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:14px clamp(20px,5vw,76px); background:color-mix(in srgb,var(--top) 88%,transparent); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .nav-brand { color:var(--text); font-weight:850; line-height:1.08; }
+    .nav-brand small { display:block; margin-top:2px; color:var(--accent); font-size:12px; font-weight:780; }
+    .nav-links { display:flex; gap:18px; color:#394441; font-size:13px; font-weight:720; }
+    .nav-links a { white-space:nowrap; }
+    .inner { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
+    section { padding:82px 0; border-bottom:1px solid color-mix(in srgb,var(--line) 74%,transparent); }
+    .tagline { display:flex; align-items:center; gap:8px; color:var(--accent); font-size:12px; font-weight:860; letter-spacing:.06em; text-transform:uppercase; }
+    .tagline::before { content:""; width:18px; height:2px; border-radius:999px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-pink)); }
+    h1, h2, h3, p { margin:0; }
+    h1 { color:var(--text); font-size:clamp(64px,8.2vw,108px); line-height:.94; letter-spacing:0; }
+    h2 { max-width:940px; margin-top:10px; color:var(--text); font-size:clamp(32px,4.2vw,48px); line-height:1.08; letter-spacing:0; }
+    h3 { color:var(--text); font-size:22px; line-height:1.18; letter-spacing:0; }
+    .lead { max-width:760px; margin-top:18px; color:var(--body); font-size:17px; line-height:1.66; }
+    .hero { min-height:calc(100vh - 64px); display:grid; align-items:center; padding:52px 0 46px; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr); gap:40px; align-items:center; }
+    .hero-logo { width:238px; margin-bottom:34px; }
+    .hero-logo img { width:100%; height:auto; display:block; }
+    .hero-kicker { display:flex; align-items:center; gap:12px; margin-bottom:18px; color:var(--accent); font-size:13px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+    .hero-kicker::before { content:""; width:22px; height:2px; border-radius:999px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-pink)); }
+    .hero-sub { margin-top:24px; max-width:760px; color:#2E3936; font-size:25px; font-weight:780; line-height:1.42; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 11px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.7); color:#43504D; font-size:12px; font-weight:760; }
+    .hero-card { position:relative; padding:26px; overflow:hidden; background:radial-gradient(circle at 86% 0%, rgba(50,214,198,.16), transparent 28%), linear-gradient(145deg,#111B1A,#24302F); color:var(--inverse-text); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero-card::before { content:""; position:absolute; inset:0 0 auto 0; height:5px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-sky),var(--prism-pink)); }
+    .score-label { color:rgba(248,250,249,.82); font-size:12px; font-weight:820; }
+    .score-big { margin-top:10px; font-size:86px; line-height:.9; font-weight:900; letter-spacing:0; }
+    .stars { display:inline-flex; gap:2px; margin-top:20px; font-size:33px; line-height:1; color:rgba(255,255,255,.28); }
+    .stars .filled { color:#FFC24B; }
+    .stars .empty { color:rgba(255,255,255,.30); }
+    .star-verdict { margin-top:12px; color:rgba(248,250,249,.92); font-size:14px; font-weight:780; }
+    .formula { margin-top:18px; display:grid; gap:8px; color:rgba(248,250,249,.84); font-size:13px; }
+    .formula div { display:flex; justify-content:space-between; gap:14px; padding-top:8px; border-top:1px solid rgba(255,255,255,.14); }
+    .subscores { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
+    .subscore { min-height:136px; padding:16px; border:1px solid rgba(255,255,255,.18); border-radius:var(--radius); background:rgba(255,255,255,.07); }
+    .subscore strong { display:block; font-size:34px; line-height:1; color:#fff; }
+    .subscore span { display:block; margin-top:8px; font-weight:840; color:#fff; }
+    .subscore small { display:block; margin-top:8px; color:rgba(248,250,249,.74); font-size:12px; line-height:1.46; }
+    .hero-product { margin-top:22px; padding:20px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#f3f4f4); border-radius:var(--radius); }
+    .hero-product img { display:block; width:100%; max-height:390px; object-fit:contain; }
+    .grid { display:grid; gap:16px; }
+    .two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .four { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:0 12px 34px rgba(16,20,19,.04); }
+    .card h3 + p { margin-top:10px; }
+    .card p { color:var(--body); font-size:15px; line-height:1.64; }
+    .metric { display:grid; gap:10px; }
+    .metric strong { color:var(--text); font-size:34px; line-height:1; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .pill { display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:820; border:1px solid transparent; }
+    .good { color:var(--green); background:var(--green-bg); border-color:#BFE7CB; }
+    .warn { color:var(--amber); background:var(--amber-bg); border-color:#EBD4AD; }
+    .bad { color:var(--red); background:var(--red-bg); border-color:#FFC4CB; }
+    .blue { color:var(--blue); background:var(--blue-bg); border-color:#CFE0FF; }
+    .stage-wrap { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; align-items:stretch; }
+    .stage-panel { background:var(--inverse); color:var(--inverse-text); border-radius:var(--radius); padding:26px; }
+    .stage-panel h3 { color:#fff; font-size:30px; }
+    .stage-panel p { margin-top:12px; color:rgba(248,250,249,.78); }
+    .stage-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:22px; }
+    .stage-cell { padding:16px; min-height:104px; border:1px solid rgba(255,255,255,.18); border-radius:var(--radius); background:rgba(255,255,255,.08); color:rgba(255,255,255,.74); }
+    .stage-cell.active { background:#fff; color:var(--text); box-shadow:0 0 0 1px rgba(255,255,255,.75); }
+    .stage-cell strong { display:block; color:inherit; font-size:22px; }
+    .stage-cell span { display:block; margin-top:8px; font-size:12px; font-weight:760; }
+    .channel-bars { display:grid; gap:12px; }
+    .bar-row { display:grid; grid-template-columns:150px 1fr 82px; gap:12px; align-items:center; font-size:14px; font-weight:800; color:var(--text); }
+    .bar-track { height:13px; background:#E8EAEC; border-radius:999px; overflow:hidden; }
+    .bar-track span { display:block; height:100%; width:var(--w); background:var(--tone); border-radius:999px; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+    table { width:100%; border-collapse:collapse; min-width:820px; }
+    th, td { padding:15px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:14px; line-height:1.55; }
+    th { color:var(--text); background:var(--surface-2); font-size:13px; font-weight:850; }
+    tr:last-child td { border-bottom:0; }
+    .verdict { display:inline-flex; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:850; margin-right:7px; }
+    .fit-row { display:grid; grid-template-columns:1.1fr 180px 1.2fr; gap:18px; align-items:center; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+    .fit-row + .fit-row { margin-top:12px; }
+    .fit-score strong { display:block; font-size:30px; line-height:1; color:var(--tone); }
+    .mini-bar { height:10px; margin-top:10px; background:#E8EAEC; border-radius:999px; overflow:hidden; }
+    .mini-bar span { display:block; width:var(--w); height:100%; background:var(--tone); border-radius:999px; }
+    .wordcloud { min-height:210px; position:relative; overflow:hidden; }
+    .wordcloud span { position:absolute; font-weight:900; white-space:nowrap; transform:translate(-50%,-50%) rotate(var(--r)); color:var(--c); font-size:var(--s); }
+    .problem { display:grid; grid-template-columns:240px 1fr; overflow:hidden; padding:0; }
+    .problem-side { background:var(--inverse); color:#fff; padding:24px; }
+    .problem-side strong { display:block; font-size:56px; line-height:1; margin:12px 0; }
+    .problem-main { padding:22px; }
+    .impact { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+    .impact div { border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); padding:14px; }
+    .impact strong { display:block; color:var(--text); margin-bottom:6px; }
+    .scores { display:grid; gap:10px; }
+    .score-row { display:grid; grid-template-columns:190px 1fr 44px; gap:12px; align-items:center; color:var(--text); font-weight:800; }
+    .score-row .bar-track { height:10px; }
+    .dept-lights { display:grid; gap:18px; }
+    .dept-group { border-top:5px solid var(--tone); }
+    .dept-head { display:flex; justify-content:space-between; gap:16px; align-items:start; margin-bottom:16px; }
+    .dept-head h3 { color:var(--tone); }
+    .dept-cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .dept-card { border-top:4px solid var(--tone); }
+    .dept-card .num { color:var(--tone); font-size:36px; font-weight:900; line-height:1; }
+    .copy-box { background:linear-gradient(180deg,#fff,#F6F7F8); border:1px solid var(--line); border-radius:var(--radius); padding:18px; }
+    .copy-box strong { display:block; color:var(--text); font-size:18px; margin-bottom:8px; }
+    .evidence a { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+    footer { padding:32px 0; color:var(--muted); font-size:13px; }
+    footer .inner { display:flex; justify-content:space-between; gap:20px; }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme:dark; --bg:#0F1212; --top:#141817; --surface:#191E1D; --surface-2:#202625; --text:#F4F7F6; --body:#D8DEDC; --muted:#A9B2AF; --line:#3A4240; --accent:#9ED7D3; --accent-fill:#1C3433; --green:#8EE0A8; --green-bg:#173424; --amber:#F2C46D; --amber-bg:#3A2A12; --red:#FF8E99; --red-bg:#3B171D; --blue:#9ED1FF; --blue-bg:#162B45; }
+      .hero-sub { color:#DCE2E0; }
+      .chip { background:rgba(255,255,255,.08); color:#DDE4E2; border-color:#485351; }
+      .hero-product { background:rgba(255,255,255,.05); }
+      .hero-logo img { filter:none; }
+      .hero-product img { filter:drop-shadow(0 12px 40px rgba(0,0,0,.35)); }
+      .bar-track, .mini-bar { background:#303735; }
+    }
+    @media (max-width: 920px) {
+      nav { position:static; padding:12px 18px; }
+      .nav-links { display:none; }
+      .inner { width:min(100% - 28px, 1180px); }
+      section { padding:54px 0; }
+      .hero { min-height:auto; padding:34px 0 28px; }
+      .hero-grid, .stage-wrap, .two, .three, .four, .problem { grid-template-columns:1fr; }
+      .hero-logo { width:168px; margin-bottom:20px; }
+      h1 { font-size:clamp(38px,10.8vw,44px); }
+      h2 { font-size:clamp(25px,7vw,30px); line-height:1.14; }
+      .lead { font-size:16px; }
+      .hero-sub { font-size:17px; line-height:1.48; }
+      .score-big { font-size:66px; }
+      .stars { font-size:30px; }
+      .subscores, .stage-grid, .impact, .dept-cards { grid-template-columns:1fr; }
+      .bar-row, .score-row { grid-template-columns:1fr; gap:7px; }
+      .fit-row { grid-template-columns:1fr; }
+      .wordcloud { min-height:230px; }
+      footer .inner { display:grid; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+    <div class="nav-links">
+      <a href="#stage">阶段</a><a href="#channel">类型</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#issues">问题</a><a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="inner hero-grid">
+      <div>
+        <div class="hero-logo"><img src="assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div>
+        <div class="hero-kicker">North America Diagnosis</div>
+        <h1>PetPivot 北美业务诊断</h1>
+        <p class="hero-sub">PetPivot 已经把 $149-$199 自动猫砂盆卖出规模，下一阶段先补长期可靠、售后响应和多渠道价格信任，再继续放大 TikTok Shop 与 Amazon。</p>
+        <div class="hero-meta">
+          <span class="chip">品类：自动猫砂盆</span>
+          <span class="chip">阶段：10-100 初期</span>
+          <span class="chip">类型：TikTok Shop + Amazon 驱动</span>
+          <span class="chip">数据日期：2026-06-15</span>
+        </div>
+        <div class="hero-product"><img src="assets/petpivot/autoscooper-12-lite.png" alt="PetPivot AutoScooper 12 Lite product image" /></div>
+      </div>
+      <aside class="hero-card">
+        <div class="score-label">北美业务情况总分</div>
+        <div class="score-big">60</div>
+        <div class="stars" aria-label="3.0 out of 5 stars"><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="empty">★</span><span class="empty">★</span></div>
+        <div class="star-verdict">低价动销成立，信任和售后会决定下一阶段利润质量。</div>
+        <div class="formula">
+          <div><span>业务健康度 58 × 45%</span><strong>26.1</strong></div>
+          <div><span>业务机会分 82 × 35%</span><strong>28.7</strong></div>
+          <div><span>(100 - 问题致命度 72) × 20%</span><strong>5.6</strong></div>
+        </div>
+        <div class="subscores">
+          <div class="subscore"><strong>58</strong><span>业务健康度</span><small>300k+ 美国销量说明主线成立；扣分在口碑样本、退换售后、长期耐用和价格一致性。</small></div>
+          <div class="subscore"><strong>82</strong><span>业务机会分</span><small>自动猫砂盆仍在增长，PetPivot 的低价、open-top 和 no app 有清晰切口。</small></div>
+          <div class="subscore"><strong>72</strong><span>问题致命度</span><small>低价硬件一旦被贴上不耐用或售后慢，会直接压低高意向用户的下单信心。</small></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="stage">
+    <div class="inner">
+      <div class="stage-wrap">
+        <div class="stage-panel">
+          <span class="tagline">Stage Judgment</span>
+          <h3>当前阶段：10-100 初期，先把低价爆款变成可信赖的长期用品。</h3>
+          <p>公开披露显示 PetPivot 2025 年美国销量超过 300,000 台，官网也有 1M+ units sold 的规模表达。这个阶段不再按冷启动看；接下来要把“能卖出去”升级为“用户敢长期用、愿意复购耗材、愿意推荐”。</p>
+          <div class="stage-grid">
+            <div class="stage-cell"><strong>0-1</strong><span>需求验证</span></div>
+            <div class="stage-cell"><strong>1-10</strong><span>单品放量</span></div>
+            <div class="stage-cell active"><strong>10-100 初期</strong><span>利润与信任验证</span></div>
+            <div class="stage-cell"><strong>100+</strong><span>品类领导</span></div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card metric"><span class="tagline">Scale Floor</span><strong>USD 45M-54M</strong><p>按 300,000+ 美国销量和 $149-$179 主销价粗算，2025 美国零售销售额底线约 USD 45M-54M，约 RMB 3.0-3.7 亿。该数值用于阶段校准，不等同净收入或财务审计。</p><div class="pill-row"><span class="pill good">规模已成立</span><span class="pill warn">需后台校准</span></div></div>
+          <div class="card metric"><span class="tagline">Next Gate</span><strong>信任证明</strong><p>下一关要证明低价不牺牲安全、耐用、除臭、猫适应和售后响应。否则增长会被差评、退款和渠道价格拖住。</p><div class="pill-row"><span class="pill bad">售后警戒</span><span class="pill blue">30 天可修</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gene">
+    <div class="inner">
+      <span class="tagline">Brand Gene</span>
+      <h2>品牌基因：靠“低价、简单、open-top”成立，核心人群是想省事但不想买高价机器的猫家庭。</h2>
+      <p class="lead">PetPivot 靠 $149-$199 的自动清理门槛成立，最先打中的用户是多猫、老人、行动不便、租房和小空间家庭。大众外扩前必须让他们相信这台机器能稳定用超过一个促销周期。</p>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card"><h3>核心盘：预算敏感猫家庭</h3><p>这群人要少铲屎、少异味、少学习成本，也不想为 app、健康监测和高端外观多付 $400-$700。</p><div class="pill-row"><span class="pill good">最先成交</span><span class="pill warn">质量敏感</span></div></div>
+        <div class="card"><h3>相邻人群：多猫、老人、行动不便用户</h3><p>这类用户愿意为省力付费，但会更在意入口高度、安全传感器、售后换修和长期清洁成本。</p><div class="pill-row"><span class="pill blue">可扩展</span><span class="pill warn">要证据</span></div></div>
+        <div class="card"><h3>暂时边界：高端智能宠物硬件用户</h3><p>这群人会对比 Litter-Robot、PETKIT 和 Neakasa。PetPivot 可以做价格替代，但不能用参数堆叠抢“智能中心”心智。</p><div class="pill-row"><span class="pill warn">谨慎外扩</span><span class="pill bad">信任门槛高</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="channel">
+    <div class="inner">
+      <span class="tagline">Business Type</span>
+      <h2>经营类型：TikTok Shop + Amazon 驱动，官网更像品牌解释和售后信任入口。</h2>
+      <p class="lead">PetPivot 的公开增长证据集中在 TikTok Shop / affiliate、Amazon bestseller 信号和官网促销。Chewy 出现说明渠道外扩开始，但当前还不能把它看成稳定零售货架型品牌。</p>
+      <div class="grid two" style="margin-top:24px;">
+        <div class="card">
+          <h3>北美渠道销售额占比估算</h3>
+          <div class="channel-bars" style="margin-top:16px;">
+            <div class="bar-row"><span>TikTok Shop / affiliate</span><div class="bar-track"><span style="--w:40%;--tone:#157A38;"></span></div><span>35-45%</span></div>
+            <div class="bar-row"><span>Amazon</span><div class="bar-track"><span style="--w:34%;--tone:#2D6261;"></span></div><span>30-40%</span></div>
+            <div class="bar-row"><span>DTC / 官网</span><div class="bar-track"><span style="--w:20%;--tone:#1663D8;"></span></div><span>15-25%</span></div>
+            <div class="bar-row"><span>Chewy / 其他零售</span><div class="bar-track"><span style="--w:6%;--tone:#9A5B00;"></span></div><span>3-8%</span></div>
+          </div>
+          <p style="margin-top:14px;">置信度：中等偏低。原因是有 300k+ 美国销量和历史 TikTok Shop GMV 信号，但缺少 Seller Central、TikTok Shop 后台、官网订单和 Chewy sell-out。</p>
+        </div>
+        <div class="card">
+          <h3>渠道判断</h3>
+          <p>TikTok 负责低价爆点和 affiliate 铺量，Amazon 负责高意向成交和评论资产，官网负责解释为什么低价仍可靠。现在最需要修的是三个渠道讲同一套信任标准：保修、退换、耐用、适用猫型和清洁周期。</p>
+          <div class="pill-row"><span class="pill good">渠道入口成立</span><span class="pill warn">角色要分清</span><span class="pill bad">售后会拖转化</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="search">
+    <div class="inner">
+      <span class="tagline">Search Mindshare</span>
+      <h2>搜索心智：行业词量级最大，PetPivot 接住了低价兴趣，可靠性比较还没接牢。</h2>
+      <p class="lead">用户最大入口仍是 automatic litter box / self-cleaning litter box 这类行业词，之后才进入低价替代、竞品比较和品牌复核。PetPivot 已经能接住 TikTok coupon 和品牌词流量，薄弱点集中在 comparison、long-term review、warranty 和 support 类入口。</p>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card" style="border-top:4px solid var(--amber);"><h3>P0 · 行业词｜量级最大</h3><p>automatic litter box、self-cleaning litter box。需求最大，但强榜单和媒体入口更偏向 Litter-Robot、Neakasa、PETKIT 等成熟品牌。</p><div class="pill-row"><span class="pill warn">半接住</span><span class="pill blue">需内容资产</span></div></div>
+        <div class="card" style="border-top:4px solid var(--red);"><h3>P1 · 低价替代 / 比较词</h3><p>PetPivot vs Litter-Robot、Neakasa M1、cheap automatic litter box。购买意图最接近成交，目前缺少集中对比页和长期使用证据。</p><div class="pill-row"><span class="pill bad">没接牢</span><span class="pill warn">高意图</span></div></div>
+        <div class="card" style="border-top:4px solid var(--green);"><h3>P2 · 品牌词</h3><p>PetPivot、AutoScooper、PIVOTNOW。官网、Amazon、TikTok 和 YouTube 都有公开结果，能承接已有认知。</p><div class="pill-row"><span class="pill good">接住了</span></div></div>
+        <div class="card" style="border-top:4px solid var(--red);"><h3>P2 · 售后复核词</h3><p>PetPivot reviews、refund、warranty、stopped working。量级小于行业词，但会影响临门一脚。</p><div class="pill-row"><span class="pill bad">风险入口</span></div></div>
+      </div>
+      <div class="table-wrap" style="margin-top:18px;">
+        <table>
+          <thead><tr><th>搜索入口</th><th>用户真实意图</th><th>现在接得怎样</th><th>经营动作</th></tr></thead>
+          <tbody>
+            <tr><td>“automatic litter box / self-cleaning litter box”</td><td>先看品类榜单和主流品牌</td><td><span class="verdict warn">半接住</span>价格有吸引力，但媒体榜单和权威内容更偏成熟品牌。</td><td>补行业词 landing page：安全、除臭、猫适应、长期维护、价格理由一次讲清。</td></tr>
+            <tr><td>“best automatic litter box under $200”</td><td>找低价替代</td><td><span class="verdict warn">半接住</span>价格强，但需要补真实使用周期、清洁成本和售后承诺。</td><td>做 $149 价格页，直接对比 Litter-Robot、Neakasa 和 Amazon 低价款。</td></tr>
+            <tr><td>“PetPivot review / problems”</td><td>确认会不会坏、臭、难清理</td><td><span class="verdict bad">没接牢</span>Trustpilot 小样本负面显眼，Reddit 有维护和气味争议。</td><td>前置 warranty、退换、故障排查和 6 个月/12 个月 long-term review。</td></tr>
+            <tr><td>“open top automatic litter box”</td><td>猫能不能适应</td><td><span class="verdict good">接住了</span>open-top 和 cat acclimation 是 PetPivot 最清楚的购买理由。</td><td>继续用猫适应、老年猫、多猫家庭做内容分层。</td></tr>
+            <tr><td>“no app litter box”</td><td>想要简单、不要 Wi-Fi 麻烦</td><td><span class="verdict good">接住了</span>No app/no Wi-Fi 是差异点，但要避免被看成低配。</td><td>把 no app 翻译成 less setup、less failure points、easy for seniors。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="voc">
+    <div class="inner">
+      <span class="tagline">VOC & Reputation</span>
+      <h2>声誉总分 52：好评能证明便宜好用，负面集中在耐用、异味、维护和售后。</h2>
+      <p class="lead">PetPivot 的正向声音足够支撑首单转化，但 Trustpilot 2/5 的小样本、Reddit 的维护争议和专家评测里的 construction 低分，会影响谨慎型用户和高意向比较词。</p>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card"><h3>Trustpilot</h3><p>2 / 5，15 reviews；回复 15% 负评，通常 2 周内。样本小，但会在品牌词搜索里放大售后疑虑。</p><div class="pill-row"><span class="pill bad">售后警戒</span></div></div>
+        <div class="card"><h3>Amazon</h3><p>主 ASIN 公开面显示 4.2 / 5，1,176 ratings；另一 ASIN 约 3.9 / 5，469 ratings。动销存在，评分不算稳。</p><div class="pill-row"><span class="pill warn">动销有基础</span></div></div>
+        <div class="card"><h3>Cats.com</h3><p>整体 4.2 / 5，odor control 5/5，construction 3/5。对 PetPivot 最有用，也最尖锐。</p><div class="pill-row"><span class="pill blue">可做证据</span><span class="pill warn">耐用扣分</span></div></div>
+        <div class="card"><h3>Reddit / 社群</h3><p>正向集中在省事、便宜、开放式；负向集中在臭、维护、太小、机器故障和客服。</p><div class="pill-row"><span class="pill warn">混合口碑</span></div></div>
+      </div>
+      <div class="grid two" style="margin-top:16px;">
+        <div class="card wordcloud">
+          <h3>集中好评主题</h3>
+          <span style="--s:30px;--c:#157A38;--r:-3deg;left:20%;top:44%;">省时间</span>
+          <span style="--s:26px;--c:#157A38;--r:4deg;left:48%;top:34%;">open-top</span>
+          <span style="--s:24px;--c:#2D6261;--r:-6deg;left:72%;top:48%;">低价</span>
+          <span style="--s:20px;--c:#2D6261;--r:5deg;left:28%;top:69%;">no app</span>
+          <span style="--s:19px;--c:#157A38;--r:-4deg;left:57%;top:72%;">多猫家庭</span>
+          <span style="--s:16px;--c:#66716E;--r:6deg;left:78%;top:72%;">猫适应</span>
+        </div>
+        <div class="card wordcloud">
+          <h3>集中抱怨主题</h3>
+          <span style="--s:31px;--c:#D70015;--r:-4deg;left:24%;top:42%;">耐用</span>
+          <span style="--s:28px;--c:#D70015;--r:3deg;left:52%;top:35%;">异味</span>
+          <span style="--s:24px;--c:#9A5B00;--r:-6deg;left:75%;top:48%;">维护</span>
+          <span style="--s:20px;--c:#D70015;--r:5deg;left:36%;top:71%;">售后慢</span>
+          <span style="--s:18px;--c:#9A5B00;--r:-5deg;left:64%;top:72%;">太小</span>
+          <span style="--s:16px;--c:#66716E;--r:7deg;left:82%;top:75%;">说明不清</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ceiling">
+    <div class="inner">
+      <span class="tagline">Market Ceiling</span>
+      <h2>分品线天花板：自动猫砂盆是唯一主战场，耗材和配件还没有形成清晰复购收入。</h2>
+      <p class="lead">IMARC 估算全球 automatic self-cleaning cat litter box 2025 年约 USD 702.3M，北美占比超过 36.8%，对应北美约 USD 258M+。PetPivot 的公开 300k+ 美国销量说明它在低价段已经有份额，但现阶段仍是单品线驱动。</p>
+      <div class="table-wrap" style="margin-top:24px;">
+        <table>
+          <thead><tr><th>品线</th><th>北美市场天花板</th><th>PetPivot 当前证据</th><th>阶段判断</th><th>经营结论</th></tr></thead>
+          <tbody>
+            <tr><td>AutoScooper 12 Lite / 11</td><td>北美自动猫砂盆约 USD 250M+ 级别，仍在增长</td><td>300k+ 美国销量，$149-$199 主销价，Amazon/TikTok/官网/Chewy 触点</td><td><span class="verdict good">主线成立</span></td><td>继续做主线，但必须把 reliability、warranty、odor 和 maintenance 证据做厚。</td></tr>
+            <tr><td>耗材 / liner / mat</td><td>依赖设备保有量和复购频率</td><td>Amazon 已有 litter pad / liner 等配件露出，官网有 consumables 入口</td><td><span class="verdict warn">未成复购柱</span></td><td>先做设备注册、耗材提醒和售后场景，不要只靠一次性机器销售。</td></tr>
+            <tr><td>下一代智能款</td><td>高端智能猫砂盆由 Litter-Robot、PETKIT、Neakasa 主导</td><td>当前 PetPivot 核心叙事是 no app / no Wi-Fi，不是智能监测</td><td><span class="verdict warn">暂不抢高端</span></td><td>高端智能不是 90 天主战场；先证明低价可靠，再决定是否上智能线。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="intent">
+    <div class="inner">
+      <span class="tagline">User Intent Map</span>
+      <h2>用户下单前卡五件事：安全吗、会不会臭、猫用不用、能用多久、坏了谁管。</h2>
+      <div class="grid five" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px;">
+        <div class="card"><h3>安全</h3><p>自动猫砂盆用户最怕夹猫、误触发和传感器失灵。</p></div>
+        <div class="card"><h3>异味</h3><p>自动清理如果控味弱，用户会觉得不如手动清理。</p></div>
+        <div class="card"><h3>适应</h3><p>开放式是优势，但仍要教用户如何过渡。</p></div>
+        <div class="card"><h3>耐用</h3><p>低价硬件必须证明不是几个月后出故障。</p></div>
+        <div class="card"><h3>售后</h3><p>高客单宠物设备一旦坏，客服响应直接影响品牌信任。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fit">
+    <div class="inner">
+      <span class="tagline">Message-Market Fit</span>
+      <h2>卖点匹配度 67：价格和开放式接住了，可靠与售后证据不够硬。</h2>
+      <p class="lead">以下权重是公开样本方向性权重，来自评测、Amazon/Trustpilot/Reddit 主题、竞品页面和品类购买逻辑归纳，不是统计抽样。</p>
+      <div style="margin-top:22px;">
+        <div class="fit-row" style="--tone:var(--red);--w:58%;"><div><h3>安全与长期可靠 <span class="pill bad">30%</span></h3><p>用户会先看传感器、故障、保修和 6-12 个月表现。</p></div><div class="fit-score"><strong>58 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得差：</b>安全 claim 有，但公开口碑和第三方评测仍让耐用、故障和支持成为疑虑。</p></div>
+        <div class="fit-row" style="--tone:var(--amber);--w:62%;"><div><h3>异味与维护成本 <span class="pill warn">24%</span></h3><p>用户要确认省事是否真的成立。</p></div><div class="fit-score"><strong>62 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>勉强及格：</b>省事和控味有正向声音，但 Reddit 与评测指出维护和废物集中问题。</p></div>
+        <div class="fit-row" style="--tone:var(--green);--w:78%;"><div><h3>猫适应与 open-top <span class="pill good">18%</span></h3><p>从传统猫砂盆过渡，是 PetPivot 的真实强项。</p></div><div class="fit-score"><strong>78 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得好：</b>open-top、大入口和低学习成本比封闭桶式更容易被猫接受。</p></div>
+        <div class="fit-row" style="--tone:var(--green);--w:86%;"><div><h3>$149-$199 价格价值 <span class="pill good">16%</span></h3><p>低价是最直接的购买理由。</p></div><div class="fit-score"><strong>86 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得好：</b>价格显著低于 Litter-Robot、PETKIT 和 Neakasa，但不能只靠折扣解释价值。</p></div>
+        <div class="fit-row" style="--tone:var(--green);--w:74%;"><div><h3>No app / no Wi-Fi <span class="pill blue">12%</span></h3><p>用户想简单，但不能被理解成低配。</p></div><div class="fit-score"><strong>74 / 100</strong><div class="mini-bar"><span></span></div></div><p><b>做得好但要升级表达：</b>把 no app 讲成 fewer setup steps、fewer failure points 和 senior-friendly。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="summary">
+    <div class="inner">
+      <span class="tagline">One Page Summary</span>
+      <h2>一页看懂：PetPivot 下一步先修信任，再放大渠道。</h2>
+      <div class="grid two" style="margin-top:24px;">
+        <div class="card" style="background:var(--inverse);color:#fff;">
+          <h3 style="color:#fff;">经营判断</h3>
+          <p style="color:rgba(248,250,249,.84);">PetPivot 北美已经跨过单品验证，低价自动猫砂盆有明确需求和渠道入口。下一阶段最拖累增长质量的是低价硬件的长期可信度：耐用、异味、维护、保修和客服必须被前置证明。</p>
+          <div class="pill-row"><span class="pill good">主线：AutoScooper</span><span class="pill bad">先修：售后信任</span><span class="pill warn">预算：验证后加码</span></div>
+        </div>
+        <div class="grid">
+          <div class="card"><h3>1. 售后和长期可靠先补证据。</h3><p>PDP、Amazon、官网、YouTube long-term review 和 FAQ 要同步回答坏了怎么办、多久换、怎么清洁、哪些猫不适合。</p></div>
+          <div class="card"><h3>2. 渠道要分工，价格不能互相拆台。</h3><p>TikTok Shop 负责爆点，Amazon 负责高意向成交，官网负责信任和注册，Chewy 负责零售背书。</p></div>
+          <div class="card"><h3>3. 设备卖完后要有复购路径。</h3><p>耗材、liners、mats、warranty registration 和清洁提醒要进入 DTC 体系，否则 300k+ 设备保有量不会沉淀为用户资产。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blocks">
+    <div class="inner">
+      <span class="tagline">Business Blocks</span>
+      <h2>三大板块：Marketing 有声量，品牌和电商信任证明拖后腿。</h2>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card" style="border-top:5px solid var(--amber);"><div class="metric"><strong style="color:var(--amber);">64</strong><h3>品牌板块</h3></div><p>规模和低价心智成立，但 Trustpilot、Reddit 和耐用证据让品牌信任不够稳。</p><div class="grid two" style="margin-top:14px;"><p><b>做得好的：</b>300k+ 美国销量、1M+ sold、open-top 和 no app 定位清楚。</p><p><b>做得差的：</b>没有把“便宜但可靠”的证据讲成统一信任资产。</p></div></div>
+        <div class="card" style="border-top:5px solid var(--amber);"><div class="metric"><strong style="color:var(--amber);">66</strong><h3>Marketing</h3></div><p>TikTok、Instagram、YouTube 铺量强，PIVOTNOW 和 creator affiliate 能带来转化入口。</p><div class="grid two" style="margin-top:14px;"><p><b>做得好的：</b>已有 133+ 近 30 天 creator publish 下限和历史 GMV 信号。</p><p><b>做得差的：</b>内容还偏“省事+便宜”，长期可靠和售后证明不足。</p></div></div>
+        <div class="card" style="border-top:5px solid var(--red);"><div class="metric"><strong style="color:var(--red);">58</strong><h3>电商板块</h3></div><p>Amazon 和官网能卖货，Chewy 开始出现，但交易页还没有把高意向用户的最后顾虑处理干净。</p><div class="grid two" style="margin-top:14px;"><p><b>做得好的：</b>$149-$199 价格、Amazon 评分和 Chewy 上架提供基本交易信号。</p><p><b>做得差的：</b>保修、退换、故障排查、耗材复购和渠道价格解释不够前置。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="issues">
+    <div class="inner">
+      <span class="tagline">Top 3 Issues</span>
+      <h2>Top 3：先修售后信任、价格纪律和复购路径。</h2>
+      <div class="grid" style="margin-top:24px;">
+        <article class="card problem">
+          <div class="problem-side"><span class="score-label">P0 · 严重度</span><strong>88</strong><p>售后信任会直接影响高意向成交。</p></div>
+          <div class="problem-main"><h3>问题 1：低价硬件的长期可靠证据不足。</h3><div class="impact"><div><strong>证据</strong><p>Trustpilot 2/5，Cats.com construction 3/5，Reddit 有异味、维护和故障讨论。</p></div><div><strong>影响</strong><p>用户会把 PetPivot 看成低价试错，而不是可长期使用的家庭设备。</p></div><div><strong>先修</strong><p>30 天内重做 warranty、FAQ、troubleshooting、long-term review 和故障处理路径。</p></div></div></div>
+        </article>
+        <article class="card problem">
+          <div class="problem-side"><span class="score-label">P0 · 严重度</span><strong>82</strong><p>渠道价格会影响利润质量。</p></div>
+          <div class="problem-main"><h3>问题 2：TikTok、Amazon、官网和 Chewy 的角色没有被明确分工。</h3><div class="impact"><div><strong>证据</strong><p>官网 $149/$179，Amazon 有 $129.99/$199.99 等价格信号，TikTok Shop 强转化，Chewy 正在上架。</p></div><div><strong>影响</strong><p>用户会跨平台比价，品牌会被迫用折扣解释价值。</p></div><div><strong>先修</strong><p>建立渠道价格地图：TikTok 做促销，Amazon 做成交，官网做注册和售后，Chewy 做信任货架。</p></div></div></div>
+        </article>
+        <article class="card problem">
+          <div class="problem-side"><span class="score-label">P1 · 严重度</span><strong>76</strong><p>一次性设备销售没有自然变成 LTV。</p></div>
+          <div class="problem-main"><h3>问题 3：耗材、配件和设备注册还没有变成复购路径。</h3><div class="impact"><div><strong>证据</strong><p>已有 liner、mat、耗材入口，但公开页面没有把复购节奏和设备保养讲清楚。</p></div><div><strong>影响</strong><p>设备卖得越多，售后和维护问题越多；如果没有复购和注册，用户关系会留在平台手里。</p></div><div><strong>先修</strong><p>90 天内上线设备注册、耗材提醒、清洁周期邮件和配件 bundle。</p></div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="competitor">
+    <div class="inner">
+      <span class="tagline">Competitor Structure</span>
+      <h2>竞品压力：PetPivot 要防守四种购买理由，不只比价格。</h2>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card"><img src="assets/competitor-logos/litter-robot-logo.svg" alt="Litter-Robot logo" style="height:28px;margin-bottom:18px;"><h3>Litter-Robot</h3><p>抢高端可靠、app 监测、长期品牌信任。PetPivot 要证明低价也能稳定用。</p></div>
+        <div class="card"><img src="assets/competitor-logos/neakasa-logo.png" alt="Neakasa logo" style="height:26px;margin-bottom:18px;"><h3>Neakasa</h3><p>抢 open-top 中高端和 Amazon 评论资产。PetPivot 要守住低价 open-top 的价值解释。</p></div>
+        <div class="card"><img src="assets/competitor-logos/petkit-logo.png" alt="PETKIT logo" style="height:28px;margin-bottom:18px;"><h3>PETKIT</h3><p>抢智能、R&D、品牌年限和 U.S. support。PetPivot 不宜硬抢智能心智。</p></div>
+        <div class="card"><img src="assets/competitor-logos/amazon-logo.svg" alt="Amazon logo" style="height:26px;margin-bottom:18px;"><h3>低价 Amazon 款</h3><p>抢参数和更低价格。PetPivot 要用售后、评测和真实使用周期守住可信低价。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="position">
+    <div class="inner">
+      <span class="tagline">Positioning Upgrade</span>
+      <h2>定位升级：从“便宜自动猫砂盆”，升级为“简单可信的日常省力设备”。</h2>
+      <p class="lead">PetPivot 不需要马上变成高端智能宠物硬件。更现实的升级路径是把低价、简单、open-top 和 no app 变成可靠的家庭护理理由。</p>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="copy-box"><strong>Homepage headline</strong><p>Automatic scooping without the smart-home headache.</p></div>
+        <div class="copy-box"><strong>Hero subhead</strong><p>An open-top, no-app litter box built for cats that want comfort and owners who want less daily cleanup.</p></div>
+        <div class="copy-box"><strong>Product promise</strong><p>Simple daily cleaning, clear safety sensors, and support you can reach when something goes wrong.</p></div>
+        <div class="copy-box"><strong>CTA</strong><p>Find the AutoScooper that fits your cat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scores">
+    <div class="inner">
+      <span class="tagline">11 Scores</span>
+      <h2>11 维评分：机会和声量能放大，售后、数据和复购要进经营周会。</h2>
+      <div class="card" style="margin-top:24px;">
+        <div class="scores">
+          <div class="score-row"><span>市场机会</span><div class="bar-track"><span style="--w:82%;--tone:var(--green);"></span></div><span>82</span></div>
+          <div class="score-row"><span>价格价值</span><div class="bar-track"><span style="--w:78%;--tone:var(--green);"></span></div><span>78</span></div>
+          <div class="score-row"><span>红人声量</span><div class="bar-track"><span style="--w:76%;--tone:var(--green);"></span></div><span>76</span></div>
+          <div class="score-row"><span>搜索心智</span><div class="bar-track"><span style="--w:65%;--tone:var(--amber);"></span></div><span>65</span></div>
+          <div class="score-row"><span>Amazon / TikTok 成交</span><div class="bar-track"><span style="--w:68%;--tone:var(--amber);"></span></div><span>68</span></div>
+          <div class="score-row"><span>品牌信任</span><div class="bar-track"><span style="--w:64%;--tone:var(--amber);"></span></div><span>64</span></div>
+          <div class="score-row"><span>零售货架</span><div class="bar-track"><span style="--w:56%;--tone:var(--red);"></span></div><span>56</span></div>
+          <div class="score-row"><span>DTC 信任页</span><div class="bar-track"><span style="--w:54%;--tone:var(--red);"></span></div><span>54</span></div>
+          <div class="score-row"><span>产品可靠证明</span><div class="bar-track"><span style="--w:50%;--tone:var(--red);"></span></div><span>50</span></div>
+          <div class="score-row"><span>数据增长</span><div class="bar-track"><span style="--w:45%;--tone:var(--red);"></span></div><span>45</span></div>
+          <div class="score-row"><span>客服售后</span><div class="bar-track"><span style="--w:42%;--tone:var(--red);"></span></div><span>42</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="budget">
+    <div class="inner">
+      <span class="tagline">Budget Trade-off</span>
+      <h2>预算取舍：主线继续投，先把内容预算转向可靠证据和售后解释。</h2>
+      <div class="grid four" style="margin-top:24px;">
+        <div class="card" style="border-top:5px solid var(--green);"><h3>45%-55% 主线成交</h3><p>保 TikTok Shop、Amazon 高意图词、AutoScooper 主 PDP 和 creator retargeting。</p><div class="pill-row"><span class="pill good">继续投</span></div></div>
+        <div class="card" style="border-top:5px solid var(--blue);"><h3>25%-30% 信任资产</h3><p>投 long-term review、comparison page、warranty 页面、故障排查和真实清洁周期内容。</p><div class="pill-row"><span class="pill blue">必须补</span></div></div>
+        <div class="card" style="border-top:5px solid var(--amber);"><h3>15%-20% 复购和零售验证</h3><p>测试 Chewy sell-out、设备注册、耗材提醒、liner/mat bundle 和邮件复购。</p><div class="pill-row"><span class="pill warn">小预算验证</span></div></div>
+        <div class="card" style="border-top:5px solid var(--red);"><h3>收缩泛曝光</h3><p>只讲便宜、省事、开箱的 creator 内容先收缩；没有评论质量和复用价值就不加码。</p><div class="pill-row"><span class="pill bad">先收缩</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="inner">
+      <span class="tagline">Roadmap</span>
+      <h2>180 天路线图：先修售后信任，再做复购和零售 sell-out。</h2>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card"><h3>0-30 天：把信任问题前置</h3><p><b>Owner：</b>客服 / 电商 / 内容。<br>重写 warranty、return、FAQ、troubleshooting、清洁周期和猫适应指南；Amazon 与官网同步。</p><div class="pill-row"><span class="pill bad">先修</span><span class="pill blue">转化影响</span></div></div>
+        <div class="card"><h3>31-90 天：筛复投内容</h3><p><b>Owner：</b>Marketing / Amazon。<br>把 creator 内容按安全、异味、维护、cat fit、售后解释打分，筛出能进 ads 和 PDP 的素材。</p><div class="pill-row"><span class="pill warn">验证</span></div></div>
+        <div class="card"><h3>91-180 天：做用户资产</h3><p><b>Owner：</b>DTC / CRM / 渠道。<br>上线设备注册、耗材提醒、配件 bundle、Chewy sell-out 看板和售后反馈回流。</p><div class="pill-row"><span class="pill good">沉淀复购</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="departments">
+    <div class="inner">
+      <span class="tagline">Department Audit</span>
+      <h2>职能部门专业度：红灯先看客服、数据、产品可靠和 DTC 信任。</h2>
+      <div class="dept-lights" style="margin-top:24px;">
+        <div class="card dept-group" style="--tone:var(--red);">
+          <div class="dept-head"><div><h3>Red Light · 先整顿</h3><p>这些部门直接影响退款、差评、预算判断和用户留存。</p></div><span class="pill bad">4 个部门</span></div>
+          <div class="dept-cards">
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">42</div><h3>客服 / 售后部</h3><p><b>最差点：</b>公开负评回复率低，故障和退款解释不够前置。</p><div class="pill-row"><span class="pill bad">不达标</span></div></div>
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">45</div><h3>数据 / 增长运营部</h3><p><b>最差点：</b>看不到渠道 GMV、复购、退款率和 creator 复投标准。</p><div class="pill-row"><span class="pill bad">看板缺失</span></div></div>
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">50</div><h3>产品 / 品类部</h3><p><b>最差点：</b>长期可靠、清洁维护和耗材复购没有形成硬证据。</p><div class="pill-row"><span class="pill bad">证据不足</span></div></div>
+            <div class="card dept-card" style="--tone:var(--red);"><div class="num">54</div><h3>DTC / 电商部</h3><p><b>最差点：</b>官网交易页没有充分处理售后、保修、退换和对比顾虑。</p><div class="pill-row"><span class="pill bad">信任页薄</span></div></div>
+          </div>
+        </div>
+        <div class="card dept-group" style="--tone:var(--amber);">
+          <div class="dept-head"><div><h3>Yellow Light · 带约束放大</h3><p>基础存在，但继续加码前要先定验收指标。</p></div><span class="pill warn">3 个部门</span></div>
+          <div class="dept-cards" style="grid-template-columns:repeat(3,minmax(0,1fr));">
+            <div class="card dept-card" style="--tone:var(--amber);"><div class="num">66</div><h3>Marketing 部</h3><p><b>最差点：</b>声量强，但证明内容还不够回答长期使用风险。</p></div>
+            <div class="card dept-card" style="--tone:var(--amber);"><div class="num">64</div><h3>品牌部</h3><p><b>最差点：</b>规模和定位有基础，但信任口碑不够稳。</p></div>
+            <div class="card dept-card" style="--tone:var(--amber);"><div class="num">60</div><h3>渠道 / 供应链部</h3><p><b>最差点：</b>多渠道价格、售后和库存节奏需要统一。</p></div>
+          </div>
+        </div>
+        <div class="card dept-group" style="--tone:var(--green);">
+          <div class="dept-head"><div><h3>Green Light · 可继续放大</h3><p>这部分已经给北美增长提供了明确入口。</p></div><span class="pill good">1 个部门</span></div>
+          <div class="dept-cards" style="grid-template-columns:1fr;">
+            <div class="card dept-card" style="--tone:var(--green);"><div class="num">76</div><h3>创意 / 红人内容部</h3><p><b>最差点：</b>素材很多，但需要用复投标准筛出能解释安全、耐用和售后的内容。</p><div class="pill-row"><span class="pill good">有基础</span><span class="pill warn">需筛选</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="inner">
+      <span class="tagline">Risks & Data Gaps</span>
+      <h2>风险预警：最大风险是低价心智变成低质心智。</h2>
+      <div class="grid three" style="margin-top:24px;">
+        <div class="card"><h3>声誉风险</h3><p>Trustpilot 小样本很差，Reddit 有具体负面体验；如果官网不主动解释售后和故障处理，搜索会放大风险。</p><div class="pill-row"><span class="pill bad">P0</span></div></div>
+        <div class="card"><h3>渠道风险</h3><p>TikTok Shop 和 Amazon 可以驱动成交，但如果官网不掌握注册、售后和耗材复购，用户关系留在平台。</p><div class="pill-row"><span class="pill warn">P1</span></div></div>
+        <div class="card"><h3>数据缺口</h3><p>缺少 TikTok Shop 后台、Amazon Seller、官网 GMV、Chewy sell-out、退款率、复购率和故障率。</p><div class="pill-row"><span class="pill blue">需内部校准</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <div class="inner evidence">
+      <span class="tagline">Evidence Table</span>
+      <h2>证据表：所有强判断回到公开证据和数据缺口。</h2>
+      <div class="table-wrap" style="margin-top:24px;">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>关键事实</th><th>支持判断</th></tr></thead>
+          <tbody>
+            <tr><td>E1</td><td><a href="https://petpivot.com/" target="_blank">PetPivot 官网首页</a></td><td>2026-06-15</td><td>官网显示 Over 1 million sold，主推 AutoScooper，支持和政策入口完整。</td><td>品牌规模、主线品类和 DTC 角色。</td></tr>
+            <tr><td>E2</td><td><a href="https://petpivot.com/products/autoscooper-12-lite-cat-litter-box" target="_blank">AutoScooper 12 Lite PDP</a></td><td>2026-06-15</td><td>AutoScooper 12 Lite 美国站 sale price $149，regular price $179.99。</td><td>价格带和低价价值判断。</td></tr>
+            <tr><td>E3</td><td><a href="https://petpivot.com/collections/auto-scooper" target="_blank">AutoScooper collection</a></td><td>2026-06-15</td><td>AutoScooper 12 Lite $149，AutoScooper 11 $179，多个颜色和评分露出。</td><td>品线结构和单品集中。</td></tr>
+            <tr><td>E4</td><td><a href="https://www.globenewswire.com/news-release/2026/01/15/3219718/0/en/after-selling-300-000-units-petpivot-expands-to-five-new-markets-in-2026.html" target="_blank">GlobeNewswire</a></td><td>2026-01-15</td><td>披露 2025 年美国销量 300,000+，TikTok 和 Amazon bestseller 12 个月。</td><td>北美规模底线和阶段判断。</td></tr>
+            <tr><td>E5</td><td><a href="https://www.amazon.com/Cleaning-Litter-Multiple-Automatic-Included/dp/B0D8J5796M" target="_blank">Amazon B0D8J5796M</a></td><td>2026-06-15</td><td>Open-top automatic litter box，安全传感器，10L waste bin；公开面显示 4.2 / 5 和 1,176 ratings。</td><td>Amazon 动销和核心卖点。</td></tr>
+            <tr><td>E6</td><td><a href="https://www.amazon.com/PetPivot-Cleaning-Automatic-Anti-Pinch-Protection/dp/B0GL7Q6YXZ" target="_blank">Amazon B0GL7Q6YXZ</a></td><td>2026-06-15</td><td>另一 PetPivot ASIN 显示 3.9 / 5，469 ratings，other sellers from $199.99。</td><td>评分波动和价格一致性风险。</td></tr>
+            <tr><td>E7</td><td><a href="https://www.chewy.com/petpivot-autoscooper-12-lite/dp/4327766" target="_blank">Chewy AutoScooper 12 Lite</a></td><td>2026-06-15</td><td>Chewy 页面显示自动清理、front entry step、16.33 x 15.35 inch 入口和 3-22 lb cat fit。</td><td>零售货架和适用人群。</td></tr>
+            <tr><td>E8</td><td><a href="https://www.trustpilot.com/review/petpivot.com" target="_blank">Trustpilot PetPivot</a></td><td>2026-06-15</td><td>TrustScore 2 / 5，15 reviews，回复 15% 负评，通常 2 周内。</td><td>声誉和客服售后扣分。</td></tr>
+            <tr><td>E9</td><td><a href="https://cats.com/petpivot-litter-box-review" target="_blank">Cats.com Review</a></td><td>2026-06-15</td><td>Overall 4.2 / 5，odor control 5/5，construction 3/5，并提到耐用、噪音和 open-top 常见顾虑。</td><td>VOC、可靠性和卖点匹配。</td></tr>
+            <tr><td>E10</td><td><a href="https://the-gadgeteer.com/2025/05/03/petpivot-autoscooper-11-litterbox-review/" target="_blank">The Gadgeteer Review</a></td><td>2026-06-15</td><td>评测提到 open-top、传感器、按钮/说明复杂、废物集中和猫适应挑战。</td><td>安装、维护和 cat-fit 风险。</td></tr>
+            <tr><td>E11</td><td><a href="https://www.imarcgroup.com/automatic-self-cleaning-cat-litter-box-market" target="_blank">IMARC Market Outlook</a></td><td>2026-06-15</td><td>全球 automatic self-cleaning cat litter box 2025 年 USD 702.3M，北美占比超过 36.8%。</td><td>市场天花板校准。</td></tr>
+            <tr><td>E12</td><td><a href="https://www.amazon.com/Neakasa-M1-Open-Top-Automatic-Odor-Free/dp/B0CSKBWBF6" target="_blank">Neakasa M1 Amazon</a></td><td>2026-06-15</td><td>Neakasa M1 Plus $399.99，4.0 / 5，3,715 ratings。</td><td>竞品价格和 review pressure。</td></tr>
+            <tr><td>E13</td><td><a href="https://www.litter-robot.com/litter-robot-4.html" target="_blank">Litter-Robot 4</a></td><td>2026-06-15</td><td>Litter-Robot 主打 app、SmartScale、odor control、multi-cat 和 1.8M+ users。</td><td>高端竞品心智。</td></tr>
+            <tr><td>E14</td><td><a href="https://www.amazon.com/PETKIT-Automatic-Anti-Scratch-Self-Cleaning-Integration/dp/B0F1YMM29X" target="_blank">PETKIT Amazon</a></td><td>2026-06-15</td><td>PETKIT 主打 12 年智能宠物硬件、U.S.-based support、7 infrared + 4 weight sensors。</td><td>智能与品牌年限压力。</td></tr>
+            <tr><td>E15</td><td>本地 TideLens 公开采样数据</td><td>2026-06-15</td><td>近 30 天 creator publish 下限 133+，TikTok/Shop 64、Instagram 56、YouTube 13；历史 campaign creative 显示 GMV $3.5M+。</td><td>红人声量和渠道转化入口。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <div><strong>远汐 Offing Atlas 北美业务诊断（免费版）</strong><br><span>2026-06-15 · PetPivot · 公开数据 + 平台信号 + 经营能力诊断</span></div>
+      <div>优先级：售后信任 > 渠道价格纪律 > 复购路径 > creator 复投标准</div>
+    </div>
+  </footer>
+</body>
+</html>
