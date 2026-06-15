@@ -50,16 +50,18 @@
     .nav-links { display:flex; gap:18px; color:#394441; font-size:13px; font-weight:720; }
     .nav-links a { white-space:nowrap; }
     .inner { width:min(1180px, calc(100% - 40px)); margin:0 auto; }
-    section { padding:82px 0; border-bottom:1px solid color-mix(in srgb,var(--line) 74%,transparent); }
+    section { padding:82px 0; border-bottom:1px solid color-mix(in srgb,var(--line) 74%,transparent); scroll-margin-top:80px; }
     .tagline { display:flex; align-items:center; gap:8px; color:var(--accent); font-size:12px; font-weight:860; letter-spacing:.06em; text-transform:uppercase; }
     .tagline::before { content:""; width:18px; height:2px; border-radius:999px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-pink)); }
     h1, h2, h3, p { margin:0; }
     h1 { color:var(--text); font-size:clamp(64px,8.2vw,108px); line-height:.94; letter-spacing:0; }
-    h2 { max-width:940px; margin-top:10px; color:var(--text); font-size:clamp(32px,4.2vw,48px); line-height:1.08; letter-spacing:0; }
+    h2 { max-width:940px; margin-top:10px; color:var(--text); font-size:clamp(30px,3.4vw,42px); line-height:1.12; letter-spacing:0; }
     h3 { color:var(--text); font-size:22px; line-height:1.18; letter-spacing:0; }
     .lead { max-width:760px; margin-top:18px; color:var(--body); font-size:17px; line-height:1.66; }
     .hero { min-height:calc(100vh - 64px); display:grid; align-items:center; padding:52px 0 46px; }
     .hero-grid { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr); gap:40px; align-items:center; }
+    .hero-copy { grid-column:1; grid-row:1; }
+    .hero-card { grid-column:2; grid-row:1; align-self:center; }
     .hero-logo { width:238px; margin-bottom:34px; }
     .hero-logo img { width:100%; height:auto; display:block; }
     .hero-kicker { display:flex; align-items:center; gap:12px; margin-bottom:18px; color:var(--accent); font-size:13px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
@@ -78,11 +80,11 @@
     .formula { margin-top:18px; display:grid; gap:8px; color:rgba(248,250,249,.84); font-size:13px; }
     .formula div { display:flex; justify-content:space-between; gap:14px; padding-top:8px; border-top:1px solid rgba(255,255,255,.14); }
     .subscores { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
-    .subscore { min-height:136px; padding:16px; border:1px solid rgba(255,255,255,.18); border-radius:var(--radius); background:rgba(255,255,255,.07); }
+    .subscore { min-height:86px; padding:12px; border:1px solid rgba(255,255,255,.18); border-radius:var(--radius); background:rgba(255,255,255,.07); }
     .subscore strong { display:block; font-size:34px; line-height:1; color:#fff; }
     .subscore span { display:block; margin-top:8px; font-weight:840; color:#fff; }
-    .subscore small { display:block; margin-top:8px; color:rgba(248,250,249,.74); font-size:12px; line-height:1.46; }
-    .hero-product { margin-top:22px; padding:20px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#f3f4f4); border-radius:var(--radius); }
+    .subscore small { display:none; margin-top:8px; color:rgba(248,250,249,.74); font-size:12px; line-height:1.46; }
+    .hero-product { display:none; grid-column:1; grid-row:2; margin-top:22px; padding:20px; border:1px solid var(--line); background:linear-gradient(180deg,#fff,#f3f4f4); border-radius:var(--radius); }
     .hero-product img { display:block; width:100%; max-height:390px; object-fit:contain; }
     .grid { display:grid; gap:16px; }
     .two { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -108,6 +110,20 @@
     .stage-cell.active { background:#fff; color:var(--text); box-shadow:0 0 0 1px rgba(255,255,255,.75); }
     .stage-cell strong { display:block; color:inherit; font-size:22px; }
     .stage-cell span { display:block; margin-top:8px; font-size:12px; font-weight:760; }
+    .audience-layout { display:grid; grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr); gap:18px; align-items:stretch; margin-top:24px; }
+    .audience-map { position:relative; min-height:390px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(180deg,var(--surface),var(--surface-2)); overflow:hidden; }
+    .audience-ring { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:999px; display:flex; align-items:center; justify-content:center; text-align:center; border:1px solid var(--ring); background:var(--fill); color:var(--text); }
+    .audience-ring strong { display:block; font-size:22px; line-height:1.05; }
+    .audience-ring span { display:block; margin-top:6px; color:var(--muted); font-size:12px; font-weight:780; }
+    .ring-boundary { width:88%; height:72%; --ring:#E1C4CB; --fill:rgba(255,240,241,.42); }
+    .ring-adjacent { width:65%; height:48%; --ring:#C9DCEB; --fill:rgba(238,245,255,.70); }
+    .ring-core { width:38%; height:28%; --ring:#95DCC7; --fill:rgba(234,246,238,.92); }
+    .audience-pin { position:absolute; display:inline-flex; align-items:center; gap:6px; min-height:28px; padding:4px 9px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--body); font-size:12px; font-weight:840; box-shadow:0 8px 20px rgba(16,20,19,.06); }
+    .audience-pin.one { left:50%; top:50%; transform:translate(-50%,62px); }
+    .audience-pin.two { left:18%; top:28%; }
+    .audience-pin.three { right:8%; bottom:18%; }
+    .audience-notes { display:grid; gap:12px; }
+    .audience-card { border-left:5px solid var(--tone); }
     .channel-bars { display:grid; gap:12px; }
     .bar-row { display:grid; grid-template-columns:150px 1fr 82px; gap:12px; align-items:center; font-size:14px; font-weight:800; color:var(--text); }
     .bar-track { height:13px; background:#E8EAEC; border-radius:999px; overflow:hidden; }
@@ -162,18 +178,34 @@
       .inner { width:min(100% - 28px, 1180px); }
       section { padding:54px 0; }
       .hero { min-height:auto; padding:34px 0 28px; }
-      .hero-grid, .stage-wrap, .two, .three, .four, .problem { grid-template-columns:1fr; }
+      .hero-grid, .stage-wrap, .audience-layout, .two, .three, .four, .problem { grid-template-columns:1fr; }
+      .hero-copy, .hero-card, .hero-product { grid-column:auto; grid-row:auto; }
+      .hero-grid { gap:18px; }
       .hero-logo { width:168px; margin-bottom:20px; }
       h1 { font-size:clamp(38px,10.8vw,44px); }
       h2 { font-size:clamp(25px,7vw,30px); line-height:1.14; }
       .lead { font-size:16px; }
       .hero-sub { font-size:17px; line-height:1.48; }
-      .score-big { font-size:66px; }
-      .stars { font-size:30px; }
-      .subscores, .stage-grid, .impact, .dept-cards { grid-template-columns:1fr; }
+      .hero-card { padding:14px; }
+      .score-big { font-size:58px; }
+      .stars { margin-top:14px; font-size:28px; }
+      .formula { display:none; }
+      .star-verdict { font-size:13px; line-height:1.45; }
+      .subscores { grid-template-columns:repeat(3,1fr); gap:7px; }
+      .subscore { min-height:auto; padding:8px; }
+      .subscore strong { font-size:24px; }
+      .subscore span { font-size:12px; }
+      .subscore small { display:none; }
+      .stage-grid, .impact, .dept-cards { grid-template-columns:1fr; }
       .bar-row, .score-row { grid-template-columns:1fr; gap:7px; }
       .fit-row { grid-template-columns:1fr; }
       .wordcloud { min-height:230px; }
+      .audience-map { min-height:300px; }
+      .audience-ring strong { font-size:18px; }
+      .audience-pin { display:inline-flex; max-width:150px; min-height:24px; padding:3px 7px; font-size:10px; line-height:1.2; }
+      .audience-pin.one { left:50%; top:58%; transform:translate(-50%,0); }
+      .audience-pin.two { left:8%; top:24%; transform:none; }
+      .audience-pin.three { right:7%; bottom:12%; }
       footer .inner { display:grid; }
     }
   </style>
@@ -188,18 +220,17 @@
 
   <header class="hero">
     <div class="inner hero-grid">
-      <div>
+      <div class="hero-copy">
         <div class="hero-logo"><img src="assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div>
         <div class="hero-kicker">North America Diagnosis</div>
         <h1>PetPivot 北美业务诊断</h1>
-        <p class="hero-sub">PetPivot 已经把 $149-$199 自动猫砂盆卖出规模，下一阶段先补长期可靠、售后响应和多渠道价格信任，再继续放大 TikTok Shop 与 Amazon。</p>
+        <p class="hero-sub">PetPivot 已经把 $149-$199 自动猫砂盆卖出规模，下一阶段先补长期可靠、售后响应和多渠道价格信任，再决定 TikTok Shop、Amazon 和官网各自该承担多少预算。</p>
         <div class="hero-meta">
           <span class="chip">品类：自动猫砂盆</span>
           <span class="chip">阶段：10-100 初期</span>
-          <span class="chip">类型：TikTok Shop + Amazon 驱动</span>
+          <span class="chip">类型：TikTok Shop 主放量 + Amazon 信任货架</span>
           <span class="chip">数据日期：2026-06-15</span>
         </div>
-        <div class="hero-product"><img src="assets/petpivot/autoscooper-12-lite.png" alt="PetPivot AutoScooper 12 Lite product image" /></div>
       </div>
       <aside class="hero-card">
         <div class="score-label">北美业务情况总分</div>
@@ -217,6 +248,7 @@
           <div class="subscore"><strong>72</strong><span>问题致命度</span><small>低价硬件一旦被贴上不耐用或售后慢，会直接压低高意向用户的下单信心。</small></div>
         </div>
       </aside>
+      <div class="hero-product"><img src="assets/petpivot/autoscooper-12-lite.png" alt="PetPivot AutoScooper 12 Lite product image" /></div>
     </div>
   </header>
 
@@ -247,10 +279,20 @@
       <span class="tagline">Brand Gene</span>
       <h2>品牌基因：靠“低价、简单、open-top”成立，核心人群是想省事但不想买高价机器的猫家庭。</h2>
       <p class="lead">PetPivot 靠 $149-$199 的自动清理门槛成立，最先打中的用户是多猫、老人、行动不便、租房和小空间家庭。大众外扩前必须让他们相信这台机器能稳定用超过一个促销周期。</p>
-      <div class="grid three" style="margin-top:24px;">
-        <div class="card"><h3>核心盘：预算敏感猫家庭</h3><p>这群人要少铲屎、少异味、少学习成本，也不想为 app、健康监测和高端外观多付 $400-$700。</p><div class="pill-row"><span class="pill good">最先成交</span><span class="pill warn">质量敏感</span></div></div>
-        <div class="card"><h3>相邻人群：多猫、老人、行动不便用户</h3><p>这类用户愿意为省力付费，但会更在意入口高度、安全传感器、售后换修和长期清洁成本。</p><div class="pill-row"><span class="pill blue">可扩展</span><span class="pill warn">要证据</span></div></div>
-        <div class="card"><h3>暂时边界：高端智能宠物硬件用户</h3><p>这群人会对比 Litter-Robot、PETKIT 和 Neakasa。PetPivot 可以做价格替代，但不能用参数堆叠抢“智能中心”心智。</p><div class="pill-row"><span class="pill warn">谨慎外扩</span><span class="pill bad">信任门槛高</span></div></div>
+      <div class="audience-layout">
+        <div class="audience-map" aria-label="PetPivot audience concentric map">
+          <div class="audience-ring ring-boundary"><div><strong>03</strong><span>暂时边界</span></div></div>
+          <div class="audience-ring ring-adjacent"><div><strong>02</strong><span>相邻人群</span></div></div>
+          <div class="audience-ring ring-core"><div><strong>01</strong><span>核心盘</span></div></div>
+          <div class="audience-pin one">01 预算敏感猫家庭</div>
+          <div class="audience-pin two">02 多猫 / 老人 / 行动不便</div>
+          <div class="audience-pin three">03 高端智能硬件用户</div>
+        </div>
+        <div class="audience-notes">
+          <div class="card audience-card" style="--tone:var(--green);"><h3>核心盘：预算敏感猫家庭</h3><p>这群人要少铲屎、少异味、少学习成本，也不想为 app、健康监测和高端外观多付 $400-$700。</p><div class="pill-row"><span class="pill good">最先成交</span><span class="pill warn">质量敏感</span></div></div>
+          <div class="card audience-card" style="--tone:var(--blue);"><h3>相邻人群：多猫、老人、行动不便用户</h3><p>这类用户愿意为省力付费，但会更在意入口高度、安全传感器、售后换修和长期清洁成本。</p><div class="pill-row"><span class="pill blue">可扩展</span><span class="pill warn">要证据</span></div></div>
+          <div class="card audience-card" style="--tone:var(--red);"><h3>暂时边界：高端智能宠物硬件用户</h3><p>这群人会对比 Litter-Robot、PETKIT 和 Neakasa。PetPivot 可以做价格替代，但不能用参数堆叠抢“智能中心”心智。</p><div class="pill-row"><span class="pill warn">谨慎外扩</span><span class="pill bad">信任门槛高</span></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -258,22 +300,22 @@
   <section id="channel">
     <div class="inner">
       <span class="tagline">Business Type</span>
-      <h2>经营类型：TikTok Shop + Amazon 驱动，官网更像品牌解释和售后信任入口。</h2>
-      <p class="lead">PetPivot 的公开增长证据集中在 TikTok Shop / affiliate、Amazon bestseller 信号和官网促销。Chewy 出现说明渠道外扩开始，但当前还不能把它看成稳定零售货架型品牌。</p>
+      <h2>经营类型：TikTok Shop 负责放量，Amazon 负责高意向成交和信任复核。</h2>
+      <p class="lead">PetPivot 的公开增长证据集中在 TikTok Shop / affiliate、2025 美国 300k+ 销量披露和 Amazon 当前动销信号。西柚显示两个可读主 ASIN 近 30 天订单量合计至少 1,500+，说明 Amazon 有动销，但不足以单独解释全年美国规模。</p>
       <div class="grid two" style="margin-top:24px;">
         <div class="card">
           <h3>北美渠道销售额占比估算</h3>
           <div class="channel-bars" style="margin-top:16px;">
-            <div class="bar-row"><span>TikTok Shop / affiliate</span><div class="bar-track"><span style="--w:40%;--tone:#157A38;"></span></div><span>35-45%</span></div>
-            <div class="bar-row"><span>Amazon</span><div class="bar-track"><span style="--w:34%;--tone:#2D6261;"></span></div><span>30-40%</span></div>
-            <div class="bar-row"><span>DTC / 官网</span><div class="bar-track"><span style="--w:20%;--tone:#1663D8;"></span></div><span>15-25%</span></div>
+            <div class="bar-row"><span>TikTok Shop / affiliate</span><div class="bar-track"><span style="--w:56%;--tone:#157A38;"></span></div><span>50-60%</span></div>
+            <div class="bar-row"><span>Amazon</span><div class="bar-track"><span style="--w:22%;--tone:#2D6261;"></span></div><span>18-25%</span></div>
+            <div class="bar-row"><span>DTC / 官网</span><div class="bar-track"><span style="--w:17%;--tone:#1663D8;"></span></div><span>12-20%</span></div>
             <div class="bar-row"><span>Chewy / 其他零售</span><div class="bar-track"><span style="--w:6%;--tone:#9A5B00;"></span></div><span>3-8%</span></div>
           </div>
-          <p style="margin-top:14px;">置信度：中等偏低。原因是有 300k+ 美国销量和历史 TikTok Shop GMV 信号，但缺少 Seller Central、TikTok Shop 后台、官网订单和 Chewy sell-out。</p>
+          <p style="margin-top:14px;">置信度：中等。西柚已校准 Amazon 主 ASIN：B0D8J5796M 近 30 天订单量 500+，B0GL7Q6YXZ 近 30 天订单量 1,000+；TikTok Shop、官网订单和 Chewy sell-out 仍需后台校准。</p>
         </div>
         <div class="card">
           <h3>渠道判断</h3>
-          <p>TikTok 负责低价爆点和 affiliate 铺量，Amazon 负责高意向成交和评论资产，官网负责解释为什么低价仍可靠。现在最需要修的是三个渠道讲同一套信任标准：保修、退换、耐用、适用猫型和清洁周期。</p>
+          <p>TikTok 负责低价爆点和 affiliate 铺量，Amazon 负责高意向成交和评论资产，官网负责解释为什么低价仍可靠。现在要先统一三个渠道的信任标准：保修、退换、耐用、适用猫型和清洁周期。</p>
           <div class="pill-row"><span class="pill good">渠道入口成立</span><span class="pill warn">角色要分清</span><span class="pill bad">售后会拖转化</span></div>
         </div>
       </div>
@@ -552,7 +594,7 @@
       <div class="grid three" style="margin-top:24px;">
         <div class="card"><h3>声誉风险</h3><p>Trustpilot 小样本很差，Reddit 有具体负面体验；如果官网不主动解释售后和故障处理，搜索会放大风险。</p><div class="pill-row"><span class="pill bad">P0</span></div></div>
         <div class="card"><h3>渠道风险</h3><p>TikTok Shop 和 Amazon 可以驱动成交，但如果官网不掌握注册、售后和耗材复购，用户关系留在平台。</p><div class="pill-row"><span class="pill warn">P1</span></div></div>
-        <div class="card"><h3>数据缺口</h3><p>缺少 TikTok Shop 后台、Amazon Seller、官网 GMV、Chewy sell-out、退款率、复购率和故障率。</p><div class="pill-row"><span class="pill blue">需内部校准</span></div></div>
+        <div class="card"><h3>数据缺口</h3><p>Amazon 已用西柚补到可读 ASIN 月单下限；仍缺 TikTok Shop 后台、官网 GMV、Chewy sell-out、退款率、复购率和故障率。</p><div class="pill-row"><span class="pill blue">需内部校准</span></div></div>
       </div>
     </div>
   </section>
@@ -580,6 +622,7 @@
             <tr><td>E13</td><td><a href="https://www.litter-robot.com/litter-robot-4.html" target="_blank">Litter-Robot 4</a></td><td>2026-06-15</td><td>Litter-Robot 主打 app、SmartScale、odor control、multi-cat 和 1.8M+ users。</td><td>高端竞品心智。</td></tr>
             <tr><td>E14</td><td><a href="https://www.amazon.com/PETKIT-Automatic-Anti-Scratch-Self-Cleaning-Integration/dp/B0F1YMM29X" target="_blank">PETKIT Amazon</a></td><td>2026-06-15</td><td>PETKIT 主打 12 年智能宠物硬件、U.S.-based support、7 infrared + 4 weight sensors。</td><td>智能与品牌年限压力。</td></tr>
             <tr><td>E15</td><td>本地 TideLens 公开采样数据</td><td>2026-06-15</td><td>近 30 天 creator publish 下限 133+，TikTok/Shop 64、Instagram 56、YouTube 13；历史 campaign creative 显示 GMV $3.5M+。</td><td>红人声量和渠道转化入口。</td></tr>
+            <tr><td>E16</td><td>西柚洞察 ASIN 反查</td><td>2026-06-15</td><td>B0D8J5796M 近 30 天订单量 500+，价格 $169.99，评分 4.1，Ratings 1,269，小类 BSR Self-Cleaning Cat Litter Boxes #28；B0GL7Q6YXZ 近 30 天订单量 1,000+，价格 $149.99，评分 4.1，Ratings 510，小类 BSR #14。</td><td>Amazon 当前动销、渠道占比和 GMV 置信度校准。</td></tr>
           </tbody>
         </table>
       </div>
