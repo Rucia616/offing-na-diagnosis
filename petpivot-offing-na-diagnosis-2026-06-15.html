@@ -73,9 +73,11 @@
     .hero-card::before { content:""; position:absolute; inset:0 0 auto 0; height:5px; background:linear-gradient(90deg,var(--prism-teal),var(--prism-sky),var(--prism-pink)); }
     .score-label { color:rgba(248,250,249,.82); font-size:12px; font-weight:820; }
     .score-big { margin-top:10px; font-size:86px; line-height:.9; font-weight:900; letter-spacing:0; }
-    .stars { display:inline-flex; gap:2px; margin-top:20px; font-size:33px; line-height:1; color:rgba(255,255,255,.28); }
+    .star-row { display:flex; align-items:center; gap:14px; margin-top:20px; flex-wrap:wrap; }
+    .stars { display:inline-flex; gap:2px; font-size:33px; line-height:1; color:rgba(255,255,255,.28); }
     .stars .filled { color:#FFC24B; }
     .stars .empty { color:rgba(255,255,255,.30); }
+    .star-score { color:#FFC24B; font-size:18px; line-height:1; font-weight:900; letter-spacing:0; white-space:nowrap; }
     .star-verdict { margin-top:12px; color:rgba(248,250,249,.92); font-size:14px; font-weight:780; }
     .formula { margin-top:18px; display:grid; gap:8px; color:rgba(248,250,249,.84); font-size:13px; }
     .formula div { display:flex; justify-content:space-between; gap:14px; padding-top:8px; border-top:1px solid rgba(255,255,255,.14); }
@@ -188,7 +190,9 @@
       .hero-sub { font-size:17px; line-height:1.48; }
       .hero-card { padding:14px; }
       .score-big { font-size:58px; }
-      .stars { margin-top:14px; font-size:28px; }
+      .star-row { margin-top:14px; gap:10px; }
+      .stars { font-size:28px; }
+      .star-score { font-size:16px; }
       .formula { display:none; }
       .star-verdict { font-size:13px; line-height:1.45; }
       .subscores { grid-template-columns:repeat(3,1fr); gap:7px; }
@@ -235,7 +239,10 @@
       <aside class="hero-card">
         <div class="score-label">北美业务情况总分</div>
         <div class="score-big">60</div>
-        <div class="stars" aria-label="3.0 out of 5 stars"><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="empty">★</span><span class="empty">★</span></div>
+        <div class="star-row" aria-label="3.0 out of 5 stars">
+          <div class="stars" aria-hidden="true"><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="empty">★</span><span class="empty">★</span></div>
+          <div class="star-score">3.0 / 5 星</div>
+        </div>
         <div class="star-verdict">低价动销成立，信任和售后会决定下一阶段利润质量。</div>
         <div class="formula">
           <div><span>业务健康度 58 × 45%</span><strong>26.1</strong></div>
