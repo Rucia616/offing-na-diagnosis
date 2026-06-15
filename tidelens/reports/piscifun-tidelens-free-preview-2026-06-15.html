@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>Piscifun · 远汐 Offing 免费红人增长诊断 · 2026-06-15</title>
+  <meta name="description" content="Piscifun 红人增长诊断：北美公开 creator 内容已经活跃，下一步应把钓法场景、耐用时长、SKU 选择和竞品比较做成复投标准。" />
+  <link rel="icon" href="../../assets/offing/offing-symbol-b23.png" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f5f7;
+      --top: #fbfbfd;
+      --surface: #ffffff;
+      --surface-2: #f7f8fa;
+      --ink: #101413;
+      --body: #293331;
+      --muted: #66716e;
+      --line: #d7d9dc;
+      --line-strong: #c4c9c8;
+      --sea: #2d6261;
+      --sea-dark: #13211f;
+      --sea-soft: #eaf1f0;
+      --violet: #5b2bff;
+      --violet-dark: #3515b8;
+      --violet-soft: #f0eaff;
+      --teal: #32d6c6;
+      --sky: #9ed1ff;
+      --pink: #f7a4d8;
+      --green: #157a38;
+      --green-soft: #e8f8f1;
+      --amber: #9a5b00;
+      --amber-soft: #fff4d8;
+      --red: #d64b30;
+      --red-soft: #fff0ea;
+      --ig: #d300c5;
+      --ig-warm: #ff7a00;
+      --yt: #ff0000;
+      --tt: #101413;
+      --tt-cyan: #25f4ee;
+      --tt-red: #fe2c55;
+      --shadow: 0 14px 34px rgba(16, 20, 19, .07);
+      --shadow-strong: 0 28px 74px rgba(16, 20, 19, .12);
+      --radius: 8px;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --mono: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(132deg, rgba(50,214,198,.13), transparent 300px),
+        linear-gradient(224deg, rgba(247,164,216,.11), transparent 330px),
+        linear-gradient(180deg, var(--top), var(--bg) 680px);
+      font-family: var(--sans);
+      line-height: 1.58;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--sea); }
+    p, h1, h2, h3, h4 { margin: 0; }
+    img { display: block; max-width: 100%; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
+      background: color-mix(in srgb, var(--top) 94%, transparent);
+      backdrop-filter: saturate(160%) blur(18px);
+    }
+    .topbar-inner {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .brand-lockup::after {
+      content: "";
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--sea), var(--violet), var(--pink));
+    }
+    .brand-owner { color: var(--ink); }
+    .brand-product { color: var(--sea); }
+    .brand-edition {
+      min-height: 22px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 8px;
+      border: 1px solid color-mix(in srgb, var(--violet) 20%, var(--line));
+      border-radius: 999px;
+      color: var(--violet-dark);
+      background: var(--violet-soft);
+      font-size: 11px;
+      font-weight: 850;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .nav a {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      border-bottom: 1px solid transparent;
+    }
+    .nav a:hover { color: var(--ink); border-bottom-color: currentColor; }
+    .nav .cta {
+      min-height: 34px;
+      justify-content: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--violet);
+      border: 0;
+      box-shadow: 0 12px 28px rgba(91,43,255,.20);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100dvh - 56px);
+      display: flex;
+      align-items: center;
+      padding: clamp(56px, 10vh, 92px) 0;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 3vw;
+      top: clamp(86px, 16vh, 150px);
+      width: clamp(250px, 32vw, 430px);
+      aspect-ratio: 1;
+      background: conic-gradient(from 220deg, var(--teal), var(--sky), var(--pink), var(--violet), #ff6b4a, var(--teal));
+      clip-path: polygon(49% 0%, 100% 27%, 84% 100%, 12% 84%, 0 30%);
+      opacity: .12;
+      pointer-events: none;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-copy { max-width: 930px; }
+    .client-logo {
+      width: min(330px, 70vw);
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .client-logo img { max-height: 76px; width: auto; object-fit: contain; }
+    .kicker {
+      margin-bottom: 12px;
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 860;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    h1 {
+      max-width: 920px;
+      font-size: clamp(58px, 6vw, 88px);
+      line-height: .98;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    h1 .hline { display: block; }
+    h1 .hline:first-child { white-space: nowrap; }
+    .lead {
+      max-width: 790px;
+      margin-top: 26px;
+      color: var(--body);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.68;
+      font-weight: 650;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 26px;
+    }
+    .chip {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--body);
+      background: color-mix(in srgb, var(--surface) 82%, transparent);
+      font-size: 12px;
+      font-weight: 780;
+    }
+    .chip strong { color: var(--sea); margin-right: 5px; }
+    .hero-score {
+      width: min(720px, 100%);
+      min-height: 62px;
+      margin-top: 24px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface) 84%, transparent);
+      box-shadow: var(--shadow);
+    }
+    .hero-score b {
+      color: var(--ink);
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .hero-score span {
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .stars {
+      color: var(--ink);
+      font-size: 20px;
+      letter-spacing: 1px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .stars small {
+      margin-left: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0;
+      font-weight: 850;
+    }
+
+    .diagnosis-detail {
+      min-height: calc(100dvh - 56px);
+      display: flex;
+      align-items: center;
+      padding: 58px 0 78px;
+    }
+    .result-card {
+      border: 1px solid color-mix(in srgb, var(--line) 80%, #fff);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+    }
+    .result-top {
+      min-height: 420px;
+      display: grid;
+      grid-template-columns: .9fr 1fr;
+      background: var(--surface);
+    }
+    .result-left {
+      padding: clamp(34px, 5vw, 58px);
+      background:
+        linear-gradient(135deg, rgba(50,214,198,.12), transparent 70%),
+        var(--sea-dark);
+      color: #fff;
+    }
+    .result-label {
+      margin-bottom: 12px;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .result-title {
+      max-width: 430px;
+      font-size: clamp(46px, 5vw, 70px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .result-left p {
+      max-width: 430px;
+      margin-top: 22px;
+      color: rgba(255,255,255,.82);
+      font-size: 15px;
+      line-height: 1.78;
+      font-weight: 620;
+    }
+    .result-right {
+      padding: clamp(30px, 4vw, 46px);
+      display: grid;
+      align-content: center;
+      gap: 18px;
+    }
+    .result-right h2 {
+      max-width: 620px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.1;
+      font-weight: 930;
+      letter-spacing: 0;
+    }
+    .decision-list { display: grid; gap: 12px; }
+    .decision {
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.58;
+      font-weight: 720;
+    }
+    .decision strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 64px;
+      min-height: 28px;
+      margin-right: 10px;
+      border-radius: 6px;
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .decision.stop { border-color: color-mix(in srgb, var(--red) 45%, var(--line)); background: var(--red-soft); }
+    .decision.fix { border-color: color-mix(in srgb, var(--amber) 45%, var(--line)); background: var(--amber-soft); }
+    .decision.build { border-color: color-mix(in srgb, var(--green) 42%, var(--line)); background: var(--green-soft); }
+    .decision.stop strong { background: var(--red); }
+    .decision.fix strong { background: var(--amber); }
+    .decision.build strong { background: var(--green); }
+    .stage-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+    }
+    .stage {
+      min-height: 76px;
+      padding: 16px 18px;
+      border-right: 1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 720;
+    }
+    .stage:last-child { border-right: 0; }
+    .stage b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--body);
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .stage.active {
+      background: var(--sea-soft);
+      color: var(--sea);
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sea) 34%, transparent);
+    }
+
+    section { scroll-margin-top: 78px; }
+    .section {
+      padding: 86px 0;
+      border-top: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, .8fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .mini-kicker {
+      margin-bottom: 10px;
+      color: var(--sea);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    h2 {
+      max-width: 830px;
+      font-size: clamp(38px, 4.7vw, 66px);
+      line-height: 1.03;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .section-note {
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.74;
+      font-weight: 620;
+    }
+
+    .score-layout {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+    .total-score {
+      min-height: 620px;
+      padding: 30px 26px;
+      border-radius: var(--radius);
+      color: #fff;
+      background:
+        linear-gradient(155deg, rgba(91,43,255,.15), transparent 38%),
+        linear-gradient(330deg, rgba(50,214,198,.14), transparent 58%),
+        var(--sea-dark);
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: space-between;
+      gap: 26px;
+    }
+    .label {
+      color: rgba(255,255,255,.58);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .score-number {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 96px;
+      line-height: .86;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .score-number span {
+      color: rgba(255,255,255,.72);
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .total-score .stars { margin-top: 22px; color: #fff; }
+    .total-score h3 {
+      margin-top: 28px;
+      color: #fff;
+      font-size: 34px;
+      line-height: 1.06;
+      font-weight: 950;
+    }
+    .total-score p {
+      margin-top: 20px;
+      color: rgba(255,255,255,.84);
+      font-size: 15px;
+      line-height: 1.74;
+      font-weight: 650;
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+    .score-card {
+      min-height: 170px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-top-width: 5px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .score-card.w20 { grid-column: span 7; min-height: 270px; }
+    .score-card.w15 { grid-column: span 5; min-height: 214px; }
+    .score-card.w10 { grid-column: span 4; min-height: 174px; }
+    .score-card.w5 { grid-column: span 3; min-height: 150px; }
+    .score-card.good { border-top-color: var(--green); }
+    .score-card.watch { border-top-color: var(--amber); }
+    .score-card.weak { border-top-color: var(--red); }
+    .score-card h3 {
+      color: var(--ink);
+      font-size: 26px;
+      line-height: 1.12;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .score-card h3 span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--sea);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 930;
+    }
+    .score-card p {
+      margin-top: 10px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+    .score-card.w5 h3 { font-size: 18px; line-height: 1.18; }
+    .score-card.w5 p { font-size: 13px; line-height: 1.48; }
+    .score-foot {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .state {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .state.good { color: var(--green); background: var(--green-soft); }
+    .state.watch { color: var(--amber); background: var(--amber-soft); }
+    .state.weak { color: var(--red); background: var(--red-soft); }
+    .score-value {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      color: var(--ink);
+      line-height: 1;
+      font-weight: 900;
+    }
+    .score-value b { font-size: 38px; }
+    .score-value span { color: var(--muted); font-size: 15px; }
+
+    .volume-grid {
+      display: grid;
+      grid-template-columns: 380px minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .volume-total {
+      min-height: 360px;
+      padding: 28px;
+      border-radius: var(--radius);
+      color: #fff;
+      background:
+        linear-gradient(150deg, rgba(50,214,198,.13), transparent 54%),
+        var(--sea-dark);
+      box-shadow: var(--shadow);
+    }
+    .big-number {
+      margin-top: 22px;
+      color: #fff;
+      font-size: 104px;
+      line-height: .86;
+      font-weight: 950;
+    }
+    .volume-total h3 {
+      margin-top: 22px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 950;
+    }
+    .volume-total p {
+      margin-top: 14px;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      line-height: 1.68;
+      font-weight: 620;
+    }
+    .donut-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .donut {
+      width: 230px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: conic-gradient(var(--ig) 0 54%, var(--yt) 54% 100%);
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+    }
+    .donut::after {
+      content: "52+ sample";
+      width: 112px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 950;
+      box-shadow: 0 8px 22px rgba(16,20,19,.08);
+    }
+    .platform-list { display: grid; gap: 0; }
+    .platform-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .platform-row:last-child { border-bottom: 0; }
+    .platform-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 930;
+    }
+    .platform-logo {
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 7px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 950;
+    }
+    .platform-logo.yt { background: var(--yt); }
+    .platform-logo.ig { background: radial-gradient(circle at 20% 20%, #ffd15c, #f56040 35%, #d300c5 65%, #405de6); }
+    .platform-logo.tt { background: var(--tt); box-shadow: inset 3px 0 0 var(--tt-cyan), inset -3px 0 0 var(--tt-red); }
+    .platform-count {
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .platform-share {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 850;
+    }
+    .volume-note {
+      margin-top: 22px;
+      padding: 16px;
+      border: 1px solid color-mix(in srgb, var(--amber) 25%, var(--line));
+      border-radius: var(--radius);
+      background: var(--amber-soft);
+      color: color-mix(in srgb, var(--body) 80%, #000);
+      font-size: 14px;
+      line-height: 1.66;
+      font-weight: 650;
+    }
+
+    .evidence-grid,
+    .pressure-grid,
+    .platform-grid,
+    .gap-grid,
+    .unlock-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .evidence-grid { grid-template-columns: repeat(4, 1fr); }
+    .pressure-grid { grid-template-columns: repeat(4, 1fr); }
+    .platform-grid { grid-template-columns: repeat(3, 1fr); }
+    .gap-grid { grid-template-columns: repeat(2, 1fr); }
+    .unlock-grid { grid-template-columns: repeat(4, 1fr); }
+    .evidence-card,
+    .pressure-card,
+    .platform-card,
+    .gap-card,
+    .unlock-card,
+    .source-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .evidence-card {
+      min-height: 178px;
+      padding: 20px;
+    }
+    .evidence-card .num {
+      display: block;
+      color: var(--sea);
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .evidence-card h3 {
+      margin-top: 14px;
+      font-size: 19px;
+      line-height: 1.18;
+      font-weight: 930;
+    }
+    .evidence-card p {
+      margin-top: 10px;
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.58;
+      font-weight: 620;
+    }
+
+    .pressure-card {
+      min-height: 252px;
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .logo-box {
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .logo-box img { max-height: 42px; width: auto; object-fit: contain; }
+    .pressure-card h3 {
+      font-size: 24px;
+      line-height: 1.12;
+      font-weight: 950;
+    }
+    .pressure-card p,
+    .platform-card p,
+    .gap-card p,
+    .unlock-card p {
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.62;
+      font-weight: 620;
+    }
+    .response {
+      padding: 12px;
+      border-radius: var(--radius);
+      background: var(--sea-soft);
+      color: var(--sea-dark);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .platform-card {
+      min-height: 388px;
+      padding: 22px;
+      display: grid;
+      align-content: space-between;
+      border-top: 5px solid var(--line);
+    }
+    .platform-card.yt { border-top-color: var(--yt); }
+    .platform-card.ig { border-top-color: var(--ig); }
+    .platform-card.tt { border-top-color: var(--tt); }
+    .platform-card h3 {
+      margin-top: 14px;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .platform-card .role {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .task-list { display: grid; gap: 10px; margin-top: 18px; }
+    .task {
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.46;
+      font-weight: 780;
+    }
+
+    .gap-card {
+      min-height: 312px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+    }
+    .gap-top {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+    .gap-top h3 {
+      font-size: 28px;
+      line-height: 1.08;
+      font-weight: 950;
+    }
+    .gap-top h3 span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--sea);
+      font-size: 14px;
+      font-weight: 930;
+    }
+    .gap-score {
+      min-width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .gap-score small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .gap-body {
+      padding: 20px;
+      display: grid;
+      gap: 16px;
+    }
+    .gap-body h4 {
+      margin-bottom: 4px;
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 930;
+    }
+
+    .unlock {
+      padding: 54px 0;
+      color: #fff;
+      background:
+        linear-gradient(140deg, rgba(91,43,255,.18), transparent 42%),
+        var(--sea-dark);
+    }
+    .unlock .section-head { align-items: start; }
+    .unlock h2,
+    .unlock .mini-kicker { color: #fff; }
+    .unlock .section-note { color: rgba(255,255,255,.76); }
+    .unlock-card {
+      min-height: 204px;
+      padding: 20px;
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.14);
+      box-shadow: none;
+    }
+    .unlock-card h3 {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.12;
+      font-weight: 950;
+    }
+    .unlock-card p { color: rgba(255,255,255,.78); }
+    .unlock-cta {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--violet);
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 14px 34px rgba(91,43,255,.30);
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .source-card {
+      min-height: 168px;
+      padding: 18px;
+    }
+    .source-card h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 930;
+    }
+    .source-card p {
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.58;
+      font-weight: 620;
+    }
+    .source-card a {
+      display: inline-flex;
+      margin-top: 12px;
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    @media (max-width: 1080px) {
+      .score-layout,
+      .volume-grid,
+      .donut-card {
+        grid-template-columns: 1fr;
+      }
+      .total-score { min-height: auto; }
+      .donut { margin: 0 auto; }
+      .evidence-grid,
+      .pressure-grid,
+      .platform-grid,
+      .unlock-grid,
+      .source-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gap-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      .topbar-inner {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .brand-lockup {
+        flex-wrap: wrap;
+        row-gap: 6px;
+        white-space: normal;
+      }
+      .brand-lockup::after { display: none; }
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 2px;
+      }
+      .nav .cta { display: none; }
+      .hero {
+        min-height: auto;
+        padding: 42px 0 48px;
+      }
+      .client-logo { height: 64px; margin-bottom: 18px; }
+      .client-logo img { max-height: 58px; }
+      h1 { font-size: clamp(40px, 11.5vw, 46px); line-height: 1.03; }
+      h1 .hline:first-child { white-space: normal; }
+      .lead { margin-top: 18px; font-size: 17px; line-height: 1.62; }
+      .hero-score {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .diagnosis-detail {
+        min-height: auto;
+        padding: 28px 0 58px;
+      }
+      .result-top {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .result-title { font-size: clamp(40px, 12vw, 48px); }
+      .result-right h2 { font-size: 27px; }
+      .stage-row { grid-template-columns: repeat(2, 1fr); }
+      .stage:nth-child(2) { border-right: 0; }
+      .stage:nth-child(1), .stage:nth-child(2) { border-bottom: 1px solid var(--line); }
+      .section { padding: 58px 0; }
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      h2 { font-size: clamp(26px, 7.6vw, 30px); line-height: 1.12; }
+      .score-grid { grid-template-columns: 1fr; }
+      .score-card,
+      .score-card.w20,
+      .score-card.w15,
+      .score-card.w10,
+      .score-card.w5 { grid-column: span 1; min-height: auto; }
+      .score-card h3,
+      .score-card.w5 h3 { font-size: 22px; }
+      .evidence-grid,
+      .pressure-grid,
+      .platform-grid,
+      .unlock-grid,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+      .volume-total { min-height: auto; }
+      .big-number { font-size: 78px; }
+      .donut-card { padding: 20px; }
+      .donut { width: 210px; }
+      .platform-row { grid-template-columns: 1fr auto; }
+      .platform-share { grid-column: 2; }
+      .platform-card { min-height: auto; }
+      .gap-top {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand-lockup" href="../index.html">
+        <span class="brand-owner">远汐Offing</span>
+        <span class="brand-product">Tidelens红人营销诊断</span>
+        <span class="brand-edition">免费版</span>
+      </a>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#score">评分</a>
+        <a href="#volume">上线量</a>
+        <a href="#proof">证明缺口</a>
+        <a href="#competitors">竞品</a>
+        <a href="#platforms">平台打法</a>
+        <a href="#unlock" class="cta">申请完整分析</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <div class="client-logo">
+          <img src="../../assets/brand-logos/piscifun-logo.svg" alt="Piscifun logo" />
+        </div>
+        <div class="kicker">North America Creator Growth Diagnosis</div>
+        <h1><span class="hline">Piscifun 红人</span><span class="hline">增长诊断</span></h1>
+        <p class="lead">Piscifun 在北美已经有 affiliate、creator recruit、YouTube review、Instagram fishing creator 和 Amazon / 官网信任底座。下一阶段先把“便宜好用”拆成钓法场景、耐用时长、SKU 选择和竞品比较的复投标准。</p>
+        <div class="chips" aria-label="报告元信息">
+          <span class="chip"><strong>Brand</strong>Piscifun</span>
+          <span class="chip"><strong>Market</strong>US / North America</span>
+          <span class="chip"><strong>Updated</strong>2026-06-15</span>
+          <span class="chip"><strong>Window</strong>2026-05-16 至 2026-06-15</span>
+          <span class="chip"><strong>Mode</strong>Public-data diagnosis</span>
+        </div>
+        <div class="hero-score" aria-label="TideLens 总评分">
+          <span>总评分</span>
+          <b>67/100</b>
+          <div class="stars" aria-label="3.4 out of 5 stars">★★★☆☆<small>3.4 / 5</small></div>
+          <span>红人供给活跃，SKU 选择证据偏散。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="diagnosis-detail shell" id="diagnosis">
+      <div class="result-card">
+        <div class="result-top">
+          <div class="result-left">
+            <div class="result-label">一句话诊断</div>
+            <div class="result-title">先筛钓法场景，再加码 creator。</div>
+            <p>Piscifun 已经有足够多的钓鱼内容、折扣码和联盟入口。现在真正影响下一阶段效率的是：哪些内容能解释“我该买哪款”，哪些只是鱼获曝光和价格刺激。</p>
+          </div>
+          <div class="result-right">
+            <h2>当前最该停下的，是把新品曝光当成默认增长答案。</h2>
+            <div class="decision-list">
+              <div class="decision stop"><strong>STOP</strong>不要继续只按单品上新和折扣码扩大铺量。Piscifun SKU 很多，普通曝光会让用户更难判断 Carbon X、Alloy、AlinoX、Kraken 该怎么选。</div>
+              <div class="decision fix"><strong>FIX</strong>把 creator 内容按钓法、水域、鱼种、预算和耐用周期拆开。只说轻、顺、便宜，不足以说服更懂装备的钓鱼用户。</div>
+              <div class="decision build"><strong>BUILD</strong>建立 rebook 标准：谁能讲清 30/90 天使用、drag、corrosion、line capacity、saltwater / freshwater 边界和竞品比较，谁才值得继续投。</div>
+            </div>
+          </div>
+        </div>
+        <div class="stage-row" aria-label="阶段判断">
+          <div class="stage"><b>冷启动</b>已越过</div>
+          <div class="stage"><b>发布期</b>已经越过</div>
+          <div class="stage active"><b>增长期</b>当前主战场</div>
+          <div class="stage"><b>规模期</b>开始进入</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="score">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Overall KOL Growth Score</div>
+          <h2>供给已经活跃，复投标准还没接住产品线复杂度。</h2>
+        </div>
+        <p class="section-note">Piscifun 需要解决产品线多、价格带宽带来的选择成本。creator 内容必须帮助用户完成 SKU 选择和信任校验。</p>
+      </div>
+      <div class="score-layout">
+        <aside class="total-score">
+          <div>
+            <div class="label">Tidelens Score</div>
+            <div class="score-number">67<span>/100</span></div>
+            <div class="stars" aria-label="3.4 out of 5 stars">★★★☆☆<small>3.4 / 5</small></div>
+            <h3>有红人供给，选择证据偏散。</h3>
+            <p>Piscifun 已经拥有联盟、创作者招募、YouTube 评测、Instagram 鱼获内容、Amazon 评分和 Trustpilot 信任底座。下一阶段预算先服务复投审计，再决定哪些 creator 和钓法内容继续加码。</p>
+          </div>
+          <p>优先动作：把 baitcaster、spinning、saltwater、electric reel、rod combo 分别对应到使用场景、竞品替代和复购证据。</p>
+        </aside>
+
+        <div class="score-grid" aria-label="8 维评分">
+          <article class="score-card weak w20">
+            <div>
+              <h3><span>购买证明矩阵</span>场景讲了，耐用和对比还没讲透。</h3>
+              <p>这是 20 分最高权重项，也是当前最大拖累。轻、顺、便宜和鱼获内容已经出现；30/90 天耐用、盐水腐蚀、尺寸选择、drag 稳定和竞品比较需要更强 creator 证据。</p>
+            </div>
+            <div class="score-foot"><span class="state weak">最大拖累</span><span class="score-value"><b>12</b><span>/20</span></span></div>
+          </article>
+          <article class="score-card watch w15">
+            <div>
+              <h3><span>Creator 组合质量</span>垂类 creator 足够，高信任测评需要加厚。</h3>
+              <p>近期可见 creator 覆盖 inshore、bass、walleye、offshore、kayak 等场景；拆机、长期复测、硬核对比型 creator 还不够集中。</p>
+            </div>
+            <div class="score-foot"><span class="state watch">中等</span><span class="score-value"><b>10</b><span>/15</span></span></div>
+          </article>
+          <article class="score-card watch w15">
+            <div>
+              <h3><span>平台角色分工</span>YouTube 管信任，Instagram 管鱼获，TikTok / Shop 管交易。</h3>
+              <p>三类平台的购买决策不同。YouTube 应补长评测和比较，Instagram 应沉淀鱼获与关系，TikTok / Shop 应测低价试错和短 hook。</p>
+            </div>
+            <div class="score-foot"><span class="state watch">中等</span><span class="score-value"><b>10</b><span>/15</span></span></div>
+          </article>
+          <article class="score-card watch w15">
+            <div>
+              <h3><span>商业信号与测量</span>联盟入口清楚，复投阈值还要明确。</h3>
+              <p>官网 affiliate program 已有佣金、cookie 和素材支持；下一步要把 code、Amazon 点击、官网 PDP、评论购买意图和 rebook 门槛分开看。</p>
+            </div>
+            <div class="score-foot"><span class="state watch">中等</span><span class="score-value"><b>11</b><span>/15</span></span></div>
+          </article>
+          <article class="score-card good w10">
+            <div>
+              <h3><span>阶段目标匹配</span>增长判断清楚，预算要看效率。</h3>
+              <p>Piscifun 已经进入 Growth / early Scale，继续只追曝光会稀释 SKU 与场景判断。</p>
+            </div>
+            <div class="score-foot"><span class="state good">做得好</span><span class="score-value"><b>8</b><span>/10</span></span></div>
+          </article>
+          <article class="score-card weak w10">
+            <div>
+              <h3><span>受众真实性审计</span>垂类真实，但评论质量和地区要补审。</h3>
+              <p>钓鱼 creator 的场景真实性较强；还要审评论是否在问尺寸、线杯、鱼种、盐水、售后，以及是否集中在北美购买人群。</p>
+            </div>
+            <div class="score-foot"><span class="state weak">拖累</span><span class="score-value"><b>6</b><span>/10</span></span></div>
+          </article>
+          <article class="score-card watch w10">
+            <div>
+              <h3><span>素材复用与 paid boost</span>内容池有了，winner 分级要更清楚。</h3>
+              <p>鱼获、开箱、短测和折扣内容可复用；进入 ads、PDP、email 和 Amazon listing 的证据型内容需要先分级。</p>
+            </div>
+            <div class="score-foot"><span class="state watch">中等</span><span class="score-value"><b>7</b><span>/10</span></span></div>
+          </article>
+          <article class="score-card good w5">
+            <div>
+              <h3><span>治理与学习循环</span>入口存在，规则要固化。</h3>
+              <p>affiliate 和 creator recruit 已存在，下一步固化 rights、FTC disclosure、rebook 和产品线分发规则。</p>
+            </div>
+            <div class="score-foot"><span class="state good">可提升</span><span class="score-value"><b>3</b><span>/5</span></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="volume">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Last 30 Days Public Creator Sample</div>
+          <h2>公开样本显示 Piscifun 已进入增长期。</h2>
+        </div>
+        <p class="section-note">统计窗口为 2026-05-16 至 2026-06-15。YouTube 按视频 URL 和发布日期核验；Instagram 按公开搜索可见 post / Reel 样本计数；TikTok Shop 仅确认商品锚点存在，不混入公开视频总量。</p>
+      </div>
+      <div class="volume-grid">
+        <aside class="volume-total">
+          <div class="label">Verified Public Sample</div>
+          <div class="big-number">52+</div>
+          <h3>内容供给已经成型，下一步筛复投效率。</h3>
+          <p>YouTube 已核验 24 条近 30 天视频 / Shorts，其中 22 条来自 creator / affiliate 渠道；Instagram 公开搜索样本至少 28 条近期 post / Reel。TikTok Shop 已有 Piscifun 相关商品入口，但公开视频量需登录态继续补审。</p>
+        </aside>
+        <div class="donut-card">
+          <div class="donut" aria-label="公开样本平台占比图"></div>
+          <div>
+            <div class="platform-list" aria-label="平台样本分布">
+              <div class="platform-row">
+                <div class="platform-name"><span class="platform-logo ig">IG</span>Instagram</div>
+                <div class="platform-count">28+</div>
+                <div class="platform-share">54%</div>
+              </div>
+              <div class="platform-row">
+                <div class="platform-name"><span class="platform-logo yt">▶</span>YouTube</div>
+                <div class="platform-count">24</div>
+                <div class="platform-share">46%</div>
+              </div>
+              <div class="platform-row">
+                <div class="platform-name"><span class="platform-logo tt">TT</span>TikTok / Shop</div>
+                <div class="platform-count">确认入口</div>
+                <div class="platform-share">未并入总量</div>
+              </div>
+            </div>
+            <div class="volume-note">业务解读：Piscifun 当前要先筛内容效率。下一步判断哪些 creator 能把“低价钓具”讲成“这款适合我的鱼种、水域、线组和预算”。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="proof">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Evidence-Led Diagnosis</div>
+          <h2>公开信号共同指向：信任底座有了，SKU 决策证据要补齐。</h2>
+        </div>
+        <p class="section-note">每个数字只服务一个判断：Piscifun 已经有内容、联盟和用户口碑，下一步要让 creator 内容承担“买哪款、为什么现在买、为什么比替代品牌更值”的解释任务。</p>
+      </div>
+      <div class="evidence-grid">
+        <article class="evidence-card">
+          <span class="num">24</span>
+          <h3>YouTube 近 30 天已核验视频</h3>
+          <p>其中 22 条来自 creator / affiliate 渠道，覆盖 Alloy M2、Alloy S、Carbon R1、Carbon X3 和 Kraken 等产品。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">14</span>
+          <h3>YouTube creator channels</h3>
+          <p>公开样本中出现 14 个非官方频道，说明 Piscifun 已经具备垂类 creator 供给。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">10%+</span>
+          <h3>Affiliate commission signal</h3>
+          <p>官网联盟计划披露 10% 或更高佣金、30 天 cookie、素材和专属 affiliate manager。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">4.6</span>
+          <h3>Trustpilot trust base</h3>
+          <p>Trustpilot 显示 561 条评论、142 条近 12 个月评论；正向集中在质量、价格和交付，负向集中在物流、破损和部分功能体验。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">2,306</span>
+          <h3>Amazon Carbon X ratings</h3>
+          <p>Carbon X listing 显示 4.6 星、2,306 ratings、50+ bought in past month。低价信任已经有外部背书。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">724</span>
+          <h3>Amazon Carbon X II ratings</h3>
+          <p>Carbon X II listing 显示 4.6 星、724 ratings、100+ bought in past month。新旧产品线需要 creator 帮用户区分。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">3+1</span>
+          <h3>UGC exchange rule</h3>
+          <p>创作者招募页写明 3 photos + 1 video 换 1 free gift。这能扩内容量，但需要质量和使用场景标准。</p>
+        </article>
+        <article class="evidence-card">
+          <span class="num">多 SKU</span>
+          <h3>选择成本正在变高</h3>
+          <p>官网展示 reels、rods、combos、electric reels、saltwater、ice、fly 等多条产品线，creator brief 必须按场景拆开。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Competitor Pressure Map</div>
+          <h2>Piscifun 需要防守四类购买心智。</h2>
+        </div>
+        <p class="section-note">钓具用户不是只看价格。真正影响下单的是：低价是否可靠、长期是否耐用、盐水场景能不能扛住、是否比主流品牌更值。</p>
+      </div>
+      <div class="pressure-grid">
+        <article class="pressure-card">
+          <div class="logo-box"><img src="../../assets/competitors/kastking-logo.svg" alt="KastKing logo" /></div>
+          <div>
+            <h3>抢低价价值。</h3>
+            <p>KastKing 会在 Amazon / DTC 场景里抢同价位“性价比钓具”心智。</p>
+          </div>
+          <div class="response">Piscifun 反制：用 creator 做 side-by-side casting、drag、after-use 和 warranty proof。</div>
+        </article>
+        <article class="pressure-card">
+          <div class="logo-box"><img src="../../assets/competitors/daiwa-logo.svg" alt="Daiwa logo" /></div>
+          <div>
+            <h3>抢正统信任。</h3>
+            <p>Daiwa 更容易成为用户心里“少踩坑”的安全选择。</p>
+          </div>
+          <div class="response">Piscifun 反制：让高信任 creator 讲清为什么低价不等于短寿命。</div>
+        </article>
+        <article class="pressure-card">
+          <div class="logo-box"><img src="../../assets/competitors/shimano-logo.svg" alt="Shimano logo" /></div>
+          <div>
+            <h3>抢耐用权威。</h3>
+            <p>Shimano 抢的是长期使用、口碑和技术可靠性。</p>
+          </div>
+          <div class="response">Piscifun 反制：补 30/90 天复测、拆机、线杯和齿轮稳定性证据。</div>
+        </article>
+        <article class="pressure-card">
+          <div class="logo-box"><img src="../../assets/competitors/penn-logo.svg" alt="PENN logo" /></div>
+          <div>
+            <h3>抢盐水重载。</h3>
+            <p>PENN 在 offshore、saltwater、big game 场景里更容易被默认信任。</p>
+          </div>
+          <div class="response">Piscifun 反制：Kraken、Alloy S、saltwater rod 需要更硬的实钓和腐蚀后更新。</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="platforms">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Platform Budget Decision</div>
+          <h2>平台预算不要平均撒，按购买决策角色分配。</h2>
+        </div>
+        <p class="section-note">Piscifun 的产品选择复杂度高，三类平台不能共用一套 brief。YouTube 解决信任，Instagram 解决鱼获和关系，TikTok / Shop 解决短 hook 和交易试错。</p>
+      </div>
+      <div class="platform-grid">
+        <article class="platform-card yt">
+          <div>
+            <span class="role">Priority 1 · Trust Defense</span>
+            <h3>YouTube：先补购买前信任。</h3>
+            <p>钓具购买前会查 review、comparison、after-use 和“值不值”。YouTube 是 Piscifun 最应该加码的高意图防守位。</p>
+            <div class="task-list">
+              <div class="task">该投：30/90 天复测、vs KastKing / Daiwa / Shimano、saltwater after-trip update。</div>
+              <div class="task">该看：搜索占位、评论购买意图、视频寿命、PDP / Amazon 点击。</div>
+              <div class="task">不要只看：视频数量和一次性开箱。</div>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card ig">
+          <div>
+            <span class="role">Priority 2 · Scenario Proof</span>
+            <h3>Instagram：管鱼获和关系。</h3>
+            <p>Instagram 适合展示鱼种、水域、装备搭配和 creator relationship。它能做视觉可信度，也能为广告和官网沉淀素材。</p>
+            <div class="task-list">
+              <div class="task">该留：真实鱼获、钓法场景、Pro Team、产品搭配和短评。</div>
+              <div class="task">该复用：ads、landing page、email、Amazon video / image stack。</div>
+              <div class="task">不要承担：单独完成技术信任和竞品比较。</div>
+            </div>
+          </div>
+        </article>
+        <article class="platform-card tt">
+          <div>
+            <span class="role">Priority 3 · Hook / Shop Test</span>
+            <h3>TikTok / Shop：测低价试错。</h3>
+            <p>TikTok 更适合短 hook、deal、鱼获瞬间和 product-anchor conversion。它应该承担测试，不应该替代长评测。</p>
+            <div class="task-list">
+              <div class="task">该测：best reel under $100、first cast、drag test、code urgency。</div>
+              <div class="task">该补：品牌 hashtag、SKU hashtag、Shop anchor 和 affiliate code 统一审计。</div>
+              <div class="task">不要只做：折扣码和无使用证据的短曝光。</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="gaps">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Priority Drag Items</div>
+          <h2>先修四个拖累项，再决定加码谁。</h2>
+        </div>
+        <p class="section-note">下面拆的是当前评分里最影响预算效率的部分。免费版给出问题和修复方向，完整分析会补齐账号、预算、brief 和复投阈值。</p>
+      </div>
+      <div class="gap-grid">
+        <article class="gap-card">
+          <div class="gap-top">
+            <h3><span>购买证明矩阵：</span>低价讲清了，耐用和竞品比较还没讲透。</h3>
+            <div class="gap-score">12<small>/20</small></div>
+          </div>
+          <div class="gap-body">
+            <div><h4>拖累原因</h4><p>内容里反复出现轻、顺、便宜、鱼获和折扣，但用户真正会担心低价钓具的寿命、盐水腐蚀、线杯容量、drag 稳定和售后。</p></div>
+            <div><h4>业务影响</h4><p>如果 proof 只停留在价格和开箱，用户会把 Piscifun 当低价试错，很难相信它能长期替代 Daiwa / Shimano / PENN。</p></div>
+            <div><h4>先修动作</h4><p>优先补 30/90 天 update、saltwater after-trip、side-by-side comparison、drag under load 和 reel-size guide。</p></div>
+          </div>
+        </article>
+        <article class="gap-card">
+          <div class="gap-top">
+            <h3><span>SKU 选择路径：</span>产品线丰富，但用户买哪款不够直观。</h3>
+            <div class="gap-score">偏弱</div>
+          </div>
+          <div class="gap-body">
+            <div><h4>拖累原因</h4><p>Carbon X、Carbon X II、Carbon X3、Alloy S、Alloy M2、AlinoX、Kraken 等产品各有卖点，creator 内容容易变成单品碎片。</p></div>
+            <div><h4>业务影响</h4><p>用户对品牌有兴趣，但在“淡水 / 盐水 / bass / walleye / inshore / big game / 新手预算”之间不知道怎么选。</p></div>
+            <div><h4>先修动作</h4><p>把 creator brief 改成购买路径：鱼种、水域、预算、线组、目标鱼重量、是否新手、是否盐水。</p></div>
+          </div>
+        </article>
+        <article class="gap-card">
+          <div class="gap-top">
+            <h3><span>Creator 复投标准：</span>联盟内容有了，winner 规则还要明确。</h3>
+            <div class="gap-score">10<small>/15</small></div>
+          </div>
+          <div class="gap-body">
+            <div><h4>拖累原因</h4><p>官网联盟计划和创作者招募能扩大内容供给，但“谁值得继续投”不能只看发布和 code。</p></div>
+            <div><h4>业务影响</h4><p>没有复投阈值，预算容易流向会发内容的人，而不是能解释购买顾虑的人。</p></div>
+            <div><h4>先修动作</h4><p>建立 rebook score：钓法匹配、评论购买意图、PDP/Shop 点击、使用天数、比较能力、素材复用权。</p></div>
+          </div>
+        </article>
+        <article class="gap-card">
+          <div class="gap-top">
+            <h3><span>评论与人群审计：</span>真实场景不少，购买问题要被系统记录。</h3>
+            <div class="gap-score">6<small>/10</small></div>
+          </div>
+          <div class="gap-body">
+            <div><h4>拖累原因</h4><p>公开视频能看到真实 fishing 场景，但免费可见数据还不足以判断评论区里用户到底问价格、尺寸、耐用、鱼种还是售后。</p></div>
+            <div><h4>业务影响</h4><p>如果不审评论，Piscifun 会误把“看起来热闹”当成“有购买意图”。</p></div>
+            <div><h4>先修动作</h4><p>下一步按 creator 和 SKU 抓评论问题，建立 purchase-intent tags，再决定 paid boost 和 rebook。</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="unlock" id="unlock">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="mini-kicker">Full TideLens Unlock</div>
+            <h2>完整分析会把问题变成 30 天执行清单。</h2>
+          </div>
+          <p class="section-note">当前页面给出诊断方向。完整 TideLens 会继续补齐账号、预算、brief、复投阈值和平台执行顺序。</p>
+        </div>
+        <div class="unlock-grid">
+          <article class="unlock-card">
+            <h3>Creator shortlist</h3>
+            <p>给出适合 Piscifun 的 exact creators、优先级、合作类型和为什么值得联系。</p>
+          </article>
+          <article class="unlock-card">
+            <h3>Proof matrix</h3>
+            <p>把每条产品线拆成钓法、鱼种、预算、耐用、竞品比较和售后顾虑。</p>
+          </article>
+          <article class="unlock-card">
+            <h3>Budget / rebook rule</h3>
+            <p>明确哪些内容进入复投、paid boost、Amazon / PDP 复用和淘汰名单。</p>
+          </article>
+          <article class="unlock-card">
+            <h3>English creator brief</h3>
+            <p>输出可直接发给 creator 的英文 brief、deliverables、usage rights 和 FTC disclosure 要点。</p>
+          </article>
+        </div>
+        <a class="unlock-cta" href="mailto:hello@offing.ai?subject=Apply%20for%20full%20TideLens%20analysis%20-%20Piscifun">申请完整 TideLens 红人增长分析</a>
+      </div>
+    </section>
+
+    <section class="section shell" id="sources">
+      <div class="section-head">
+        <div>
+          <div class="mini-kicker">Evidence Sources</div>
+          <h2>主要公开证据。</h2>
+        </div>
+        <p class="section-note">统计时间：2026-06-15。公开平台不可见内容、后台转化、真实佣金和未公开合作不计入本报告。</p>
+      </div>
+      <div class="source-grid">
+        <article class="source-card">
+          <h3>Piscifun Affiliate Program</h3>
+          <p>官网披露 10%+ commission、30-day cookie、creatives 和 dedicated affiliate manager。</p>
+          <a href="https://www.piscifun.com/pages/affiliate-program">查看来源</a>
+        </article>
+        <article class="source-card">
+          <h3>Content Creators Recruit</h3>
+          <p>官网创作者招募页披露 3 photos + 1 video 换 free gift 的 UGC 机制。</p>
+          <a href="https://www.piscifun.com/pages/content-creators-recruit">查看来源</a>
+        </article>
+        <article class="source-card">
+          <h3>Trustpilot Reviews</h3>
+          <p>Trustpilot 显示 4.6 分、561 条评论、142 条近 12 个月评论。</p>
+          <a href="https://www.trustpilot.com/review/piscifun.com">查看来源</a>
+        </article>
+        <article class="source-card">
+          <h3>Amazon Carbon X</h3>
+          <p>Amazon listing 显示 Carbon X 4.6 星、2,306 ratings、50+ bought in past month。</p>
+          <a href="https://www.amazon.com/Piscifun-Carbon-Spinning-Reel-Saltwater/dp/B07FHXW2M6">查看来源</a>
+        </article>
+        <article class="source-card">
+          <h3>Amazon Carbon X II</h3>
+          <p>Amazon listing 显示 Carbon X II 4.6 星、724 ratings、100+ bought in past month。</p>
+          <a href="https://www.amazon.com/Piscifun-Carbon-Spinning-Upgrade-Fishing/dp/B0B4WNXDJF">查看来源</a>
+        </article>
+        <article class="source-card">
+          <h3>YouTube URL audit</h3>
+          <p>本地 evidence log 已核验 24 条 2026-05-16 至 2026-06-15 的 Piscifun 相关视频 / Shorts。</p>
+          <a href="https://www.youtube.com/results?search_query=piscifun">查看搜索入口</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <p>© 2026 远汐 Offing · Tidelens红人营销诊断（免费版） · Public-data diagnosis for Piscifun.</p>
+  </footer>
+</body>
+</html>
