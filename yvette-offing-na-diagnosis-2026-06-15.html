@@ -116,15 +116,15 @@
       gap: 0;
     }
     .logo-tile {
-      width: 118px;
-      height: 118px;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      background: #ec0650;
+      width: min(210px, 48vw);
+      height: auto;
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
     }
-    .logo-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .logo-tile img { width: 100%; height: auto; object-fit: contain; display: block; }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -697,7 +697,7 @@
       .hero { min-height: auto; padding-top: 28px; }
       h1 { font-size: 44px; }
       h2 { font-size: 28px; }
-      .logo-tile { width: 92px; height: 92px; border-radius: 18px; }
+      .logo-tile { width: min(164px, 52vw); height: auto; border-radius: 0; }
       .hero-score { padding: 24px; }
       .score-head, .score-pills, .grid-4, .grid-3, .grid-2, .mind-grid, .scoreboard, .dept-grid, .stage-cards { grid-template-columns: 1fr; }
       .score-head { gap: 14px; }
@@ -739,7 +739,7 @@
         <div class="hero-copy">
           <div>
             <div class="logo-tile" aria-label="Yvette logo">
-              <img src="assets/yvette-logo-alt.png" alt="Yvette logo" />
+              <img src="assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" />
             </div>
             <div class="eyebrow" style="margin-top:28px;">North America Diagnosis</div>
             <h1>Yvette 北美业务诊断</h1>
