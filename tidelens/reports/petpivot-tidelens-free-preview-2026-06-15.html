@@ -382,18 +382,53 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
+      align-content: start;
+      align-items: start;
     }
     .score-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 56px;
+      grid-template-columns: minmax(0, 1fr) 58px;
       gap: 10px 14px;
       align-items: start;
-      min-height: 90px;
+      grid-column: span 1;
+      min-height: 116px;
       padding: 14px;
       border: 1px solid var(--tl-line);
       border-radius: var(--radius);
       background: var(--tl-surface);
       box-shadow: var(--shadow);
+    }
+    .score-row.weight-20 {
+      grid-column: span 2;
+      min-height: 150px;
+      padding: 20px;
+    }
+    .score-row.weight-15 {
+      grid-column: span 1;
+      min-height: 132px;
+    }
+    .score-row.weight-10 {
+      grid-column: span 1;
+      min-height: 116px;
+    }
+    .score-row.weight-5 {
+      grid-column: span 1;
+      min-height: 94px;
+      padding: 12px 14px;
+      gap: 8px 12px;
+    }
+    .score-row.weight-5 .score-sub {
+      font-size: 11.5px;
+      line-height: 1.38;
+    }
+    .score-row.weight-20 .score-title {
+      font-size: 23px;
+      line-height: 1.15;
+    }
+    .score-row.weight-20 .score-sub {
+      max-width: 680px;
+      font-size: 14px;
+      line-height: 1.55;
     }
     .score-title {
       color: var(--tl-ink);
@@ -414,6 +449,7 @@
       height: 9px;
       overflow: hidden;
       grid-column: 1 / -1;
+      align-self: end;
       border-radius: 999px;
       background: var(--tl-surface-2);
       border: 1px solid var(--tl-line);
@@ -425,6 +461,9 @@
       background: linear-gradient(90deg, var(--tl-action), var(--tl-prism-teal));
     }
     .score-val {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: end;
       color: var(--tl-ink);
       font-size: 22px;
       line-height: 1;
@@ -685,6 +724,70 @@
     }
     .proof.good { border-color: color-mix(in srgb, var(--tl-verify) 36%, var(--tl-line)); background: var(--tl-verify-soft); }
     .proof.risk { border-color: color-mix(in srgb, var(--tl-risk) 32%, var(--tl-line)); background: var(--tl-risk-soft); }
+
+    .gap-breakdown {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .gap-card {
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--tl-line);
+      border-radius: var(--radius);
+      background: var(--tl-surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .gap-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: start;
+      padding: 20px;
+      border-bottom: 1px solid var(--tl-line);
+      background: var(--tl-surface-2);
+    }
+    .gap-head h3 {
+      color: var(--tl-ink);
+      font-size: 25px;
+      line-height: 1.14;
+      font-weight: 950;
+    }
+    .gap-score {
+      color: var(--tl-ink);
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 950;
+      text-align: right;
+    }
+    .gap-score small {
+      display: block;
+      margin-top: 4px;
+      color: var(--tl-muted);
+      font-size: 11px;
+      font-weight: 850;
+    }
+    .gap-body {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+    }
+    .gap-line b {
+      display: block;
+      color: var(--tl-accent-text);
+      font-size: 12px;
+      font-weight: 930;
+    }
+    .gap-line span {
+      display: block;
+      margin-top: 4px;
+      color: var(--tl-body);
+      font-size: 14px;
+      line-height: 1.62;
+      font-weight: 640;
+    }
 
     .competitor-grid {
       display: grid;
@@ -964,6 +1067,7 @@
       .score-layout,
       .decision-grid,
       .proof-grid,
+      .gap-breakdown,
       .competitor-grid,
       .platform-grid,
       .creator-grid,
@@ -978,8 +1082,17 @@
     }
     @media (max-width: 620px) {
       .shell { width: min(100% - 28px, 1180px); }
+      .topbar-inner { align-items: stretch; }
       .brand-lockup { flex-wrap: wrap; gap: 6px; line-height: 1.25; }
       .brand-lockup::after { display: none; }
+      .nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        overflow-x: visible;
+        padding-bottom: 0;
+      }
+      .nav a:not(.cta) { display: none; }
+      .nav .cta { width: 100%; min-height: 38px; }
       .hero::after { opacity: .10; }
       h1 { font-size: clamp(38px, 10.4vw, 42px); }
       h1 .hline:first-child { white-space: nowrap; }
@@ -989,6 +1102,14 @@
       .stage:nth-child(2) { border-right: 0; }
       .stage:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.18); }
       .score-list { grid-template-columns: 1fr; }
+      .score-row,
+      .score-row.weight-20,
+      .score-row.weight-15,
+      .score-row.weight-10,
+      .score-row.weight-5 {
+        grid-column: auto;
+        min-height: auto;
+      }
       .score-row { grid-template-columns: 1fr 74px; gap: 12px; }
       .score-bar { grid-column: 1 / -1; order: 3; }
       .score-val { grid-column: 2; grid-row: 1 / span 2; }
@@ -1012,6 +1133,7 @@
       <nav class="nav" aria-label="报告导航">
         <a href="#diagnosis">诊断</a>
         <a href="#score">评分</a>
+        <a href="#score-gaps">低分项</a>
         <a href="#volume">上线量</a>
         <a href="#proof">证明缺口</a>
         <a href="#competitors">竞品</a>
@@ -1111,15 +1233,15 @@
           </article>
 
           <article class="score-list">
-            <div class="score-row">
+            <div class="score-row weight-20">
               <div>
-                <div class="score-title">阶段目标匹配</div>
-                <div class="score-sub">增长期判断清楚，但预算不应继续默认买发布数量。</div>
+                <div class="score-title">购买证明矩阵</div>
+                <div class="score-sub">这是 20 分最高权重项，也是当前最大拖累。便利性已经讲得够多，但安全、耐用、猫适配、售后和比价证明没有被 creator 内容系统接住。</div>
               </div>
-              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
-              <div class="score-val">8<small>/10</small></div>
+              <div class="score-bar"><div class="score-fill" style="--score: 55%"></div></div>
+              <div class="score-val">11<small>/20</small></div>
             </div>
-            <div class="score-row">
+            <div class="score-row weight-15">
               <div>
                 <div class="score-title">Creator 组合质量</div>
                 <div class="score-sub">有铺量和 affiliate 入口，但高信任测评型 creator 需要加强。</div>
@@ -1127,23 +1249,7 @@
               <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
               <div class="score-val">9<small>/15</small></div>
             </div>
-            <div class="score-row">
-              <div>
-                <div class="score-title">受众与真实性审计</div>
-                <div class="score-sub">公开样本能看出活跃，但还缺账号级评论质量和赞助密度审计。</div>
-              </div>
-              <div class="score-bar"><div class="score-fill" style="--score: 50%"></div></div>
-              <div class="score-val">5<small>/10</small></div>
-            </div>
-            <div class="score-row">
-              <div>
-                <div class="score-title">购买证明矩阵</div>
-                <div class="score-sub">便利性讲得多，安全、耐用、猫适配、售后和比价证明不足。</div>
-              </div>
-              <div class="score-bar"><div class="score-fill" style="--score: 55%"></div></div>
-              <div class="score-val">11<small>/20</small></div>
-            </div>
-            <div class="score-row">
+            <div class="score-row weight-15">
               <div>
                 <div class="score-title">平台角色分工</div>
                 <div class="score-sub">TikTok 管转化，Instagram 管素材，YouTube 管信任；目前需要更明确 brief。</div>
@@ -1151,7 +1257,7 @@
               <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
               <div class="score-val">9<small>/15</small></div>
             </div>
-            <div class="score-row">
+            <div class="score-row weight-15">
               <div>
                 <div class="score-title">商业信号与测量</div>
                 <div class="score-sub">TikTok Shop / GMV / Amazon / PR 信号强，但 creator 级复投阈值不清楚。</div>
@@ -1159,7 +1265,23 @@
               <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
               <div class="score-val">12<small>/15</small></div>
             </div>
-            <div class="score-row">
+            <div class="score-row weight-10">
+              <div>
+                <div class="score-title">阶段目标匹配</div>
+                <div class="score-sub">增长期判断清楚，但预算不应继续默认买发布数量。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 80%"></div></div>
+              <div class="score-val">8<small>/10</small></div>
+            </div>
+            <div class="score-row weight-10">
+              <div>
+                <div class="score-title">受众与真实性审计</div>
+                <div class="score-sub">公开样本能看出活跃，但还缺账号级评论质量和赞助密度审计。</div>
+              </div>
+              <div class="score-bar"><div class="score-fill" style="--score: 50%"></div></div>
+              <div class="score-val">5<small>/10</small></div>
+            </div>
+            <div class="score-row weight-10">
               <div>
                 <div class="score-title">素材复用与 paid boost</div>
                 <div class="score-sub">已有内容池，但需要按 ads、landing page、Amazon、email 复用价值筛选。</div>
@@ -1167,13 +1289,113 @@
               <div class="score-bar"><div class="score-fill" style="--score: 60%"></div></div>
               <div class="score-val">6<small>/10</small></div>
             </div>
-            <div class="score-row">
+            <div class="score-row weight-5">
               <div>
                 <div class="score-title">治理与学习循环</div>
-                <div class="score-sub">公开信号看不到月度复盘、内容权利、brand safety 和 rebook 规则。</div>
+                <div class="score-sub">缺月度复盘、内容权利、brand safety 和 rebook 规则。</div>
               </div>
               <div class="score-bar"><div class="score-fill" style="--score: 40%"></div></div>
               <div class="score-val">2<small>/5</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="score-gaps">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Low-score gap breakdown</div>
+            <h2>真正拉低效率的，是四个还没被复投审计接住的环节。</h2>
+          </div>
+          <p>
+            PetPivot 已经有 133+ 条近 30 天 creator 上线样本。现在不该继续平均加码所有内容，而是先拆最影响复投的低分项：购买证明、受众真实性、素材复用和治理学习。
+          </p>
+        </div>
+
+        <div class="gap-breakdown">
+          <article class="gap-card">
+            <div class="gap-head">
+              <h3>购买证明矩阵：便利讲够了，风险还没讲透。</h3>
+              <div class="gap-score">11<small>/20</small></div>
+            </div>
+            <div class="gap-body">
+              <div class="gap-line">
+                <b>拖累原因</b>
+                <span>短视频里“省事、自动、少异味”已经重复出现，但自动猫砂盆真正阻碍付款的是安全、故障、猫是否愿意用、低价是否可靠。</span>
+              </div>
+              <div class="gap-line">
+                <b>业务影响</b>
+                <span>如果 proof 只停留在便利性，用户会把 PetPivot 当成低价试错，而不是可以长期使用的设备。</span>
+              </div>
+              <div class="gap-line">
+                <b>先修动作</b>
+                <span>优先补 safety test、30/90 天 update、大猫/多猫/胆小猫适配、售后响应和竞品对比内容。</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="gap-card">
+            <div class="gap-head">
+              <h3>受众真实性审计：账号在发，不等于买家有效。</h3>
+              <div class="gap-score">5<small>/10</small></div>
+            </div>
+            <div class="gap-body">
+              <div class="gap-line">
+                <b>拖累原因</b>
+                <span>公开数据能证明内容活跃，但还不足以证明受众地区、评论质量、赞助密度和真实购买意图都达标。</span>
+              </div>
+              <div class="gap-line">
+                <b>业务影响</b>
+                <span>继续按发布量加码，容易把预算投给“看起来热闹但不产生购买信号”的 creator。</span>
+              </div>
+              <div class="gap-line">
+                <b>先修动作</b>
+                <span>复投前必须看评论区购买问题、美国受众匹配、同类赞助频率、内容保存/转发价值和过往 affiliate 转化信号。</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="gap-card">
+            <div class="gap-head">
+              <h3>素材复用与 paid boost：内容池有了，winner 还没分级。</h3>
+              <div class="gap-score">6<small>/10</small></div>
+            </div>
+            <div class="gap-body">
+              <div class="gap-line">
+                <b>拖累原因</b>
+                <span>PetPivot 有足够多 creator 内容，但不是每条内容都值得进 ads、landing page、Amazon、email 或 TikTok Shop 素材库。</span>
+              </div>
+              <div class="gap-line">
+                <b>业务影响</b>
+                <span>没有复用分级，团队会继续买新内容，却没有把已验证的内容沉淀成可重复放大的资产。</span>
+              </div>
+              <div class="gap-line">
+                <b>先修动作</b>
+                <span>把内容按 hook、评论购买意图、产品证明、素材清晰度、可授权性和复用场景打分，再决定 paid boost。</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="gap-card">
+            <div class="gap-head">
+              <h3>治理与学习循环：最大管理缺口是复投规则不清楚。</h3>
+              <div class="gap-score">2<small>/5</small></div>
+            </div>
+            <div class="gap-body">
+              <div class="gap-line">
+                <b>拖累原因</b>
+                <span>公开信号看不到月度复盘、内容权利、brand safety、披露合规、售后反馈回流和 rebook 规则。</span>
+              </div>
+              <div class="gap-line">
+                <b>业务影响</b>
+                <span>如果没有固定学习循环，133+ 条内容会变成一次性曝光记录，而不是下一轮增长的判断依据。</span>
+              </div>
+              <div class="gap-line">
+                <b>先修动作</b>
+                <span>建立月度 rebook review：保留能降低购买顾虑的 creator，砍掉只会复读折扣码的内容。</span>
+              </div>
             </div>
           </article>
         </div>
