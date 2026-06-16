@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Offing TideLens">
+  <rect width="64" height="64" rx="14" fill="#101413"/>
+  <circle cx="31" cy="30" r="16" fill="none" stroke="#F8FAF9" stroke-width="5.5"/>
+  <path d="M43 42l9 9" fill="none" stroke="#F8FAF9" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M16 33c5.2 5.4 11.1 8.1 17.6 8.1 5.4 0 10.2-1.9 14.4-5.7" fill="none" stroke="#32D6C6" stroke-width="4.6" stroke-linecap="round"/>
+  <path d="M18 28c4.3-3.3 8.8-5 13.4-5 4.9 0 9.6 1.8 14.2 5.4" fill="none" stroke="#9B7CFF" stroke-width="3.8" stroke-linecap="round"/>
+</svg>
