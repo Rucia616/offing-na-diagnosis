@@ -2,75 +2,55 @@
 
 ## Project
 
-This repo powers Offing public delivery pages:
+This repo powers Offing public delivery pages on GitHub Pages.
 
-- Atlas North America business diagnosis reports and project entry.
-- TideLens public pages when present.
-- Static GitHub Pages files plus a small API prototype.
+- Root entry: `https://rucia616.github.io/offing-na-diagnosis/`
+- Atlas entry: `https://rucia616.github.io/offing-na-diagnosis/atlas/`
+- TideLens entry: `https://rucia616.github.io/offing-na-diagnosis/tidelens/`
 
-Live base URL:
+## Key Paths
 
-```text
-https://rucia616.github.io/offing-na-diagnosis/
-```
+- `index.html` - Offing free diagnosis entry.
+- `atlas/index.html` - Atlas report library and project entry.
+- `tidelens/index.html` - TideLens report library and project entry.
+- `tidelens/reports/` - TideLens client-facing reports.
+- `tidelens/research/` - TideLens public research/methodology pages.
+- `assets/` - favicons, brand logos, and public report assets.
+- `*-offing-na-diagnosis-*.html` - Atlas client reports; preserve filenames once links are shared.
 
-## Important Paths
+Local archives:
 
-- `index.html` - free diagnosis entry page.
-- `atlas/index.html` - Atlas project entry and report library.
-- `atlas/research/` - public research-library area.
-- `assets/` - favicon, logos, and public report assets.
-- `*-offing-na-diagnosis-*.html` - client-facing Atlas report files. Preserve existing filenames if links were already sent.
-- Local archive: `/Users/linsen/Desktop/远汐Offing/01_Offing_Atlas_远汐航图_北美业务诊断`
+- Atlas: `/Users/linsen/Desktop/远汐Offing/01_Offing_Atlas_远汐航图_北美业务诊断`
+- TideLens: `/Users/linsen/Desktop/远汐Offing/02_Offing_TideLens_远汐潮镜`
 
-## Deployment Rules
+## Operating Rules
 
-- GitHub Pages deploys from `main`.
-- Preserve old URLs by overwriting the same deployed filename unless Rucia asks for a new link.
-- Commit only files relevant to the current task. Do not include unrelated dirty files.
+- Check `git status` before editing. Do not revert unrelated work.
+- Commit only files relevant to the current request.
 - Never commit `.env.local` or secrets.
-- After changing a public page, verify the live URL with a cache-buster.
+- Preserve old URLs by overwriting the same deployed file unless Rucia asks for a new link.
+- After changing a public page, push to `main` and verify the live URL with a cache-buster.
+- When updating an Offing report or entry, keep deployed files, `/Users/linsen/Rucia/reports`, and the Desktop Offing archive in sync when applicable.
 
-## Offing QA Rules
+## Required QA
 
-Before sending or deploying any Offing HTML, apply:
+Before showing or deploying Offing HTML, apply the relevant skills:
 
 - `rucia-offing-common-roast-preflight`
 - `rucia-html-report-qa`
 - `rucia-offing-delivery-preflight`
-- Product VI skill: `rucia-offing-atlas-vi` or `rucia-tidelens-vi`
+- Product VI: `rucia-offing-atlas-vi` or `rucia-tidelens-vi`
 
-Atlas report hard gates:
+Hard gates:
 
-- First screen follows the Yvette benchmark: client logo, diagnosis, direct conclusion, total score, visible stars, numeric star score, stage/type/confidence tiles, and three subscore bars.
+- Client logo, direct diagnosis, score/verdict, and next decision must be obvious above the fold.
 - Mobile must not look like enlarged accessibility mode.
-- Search mindshare cards sort by estimated demand size, not template order.
-- Audience layers use a readable layered visual when relevant.
-- VOC includes praise/complaint themes and business impact.
-- Message-market fit rows include directional concern weight when used for scoring.
-- Report-library score cards show raw score plus tier, distribution, and score sort when scores cluster.
+- No awkward Chinese line breaks, clipped cards, hidden scores, or horizontal overflow.
+- Entry-page counters must match rendered DOM counts.
+- Report-library cards need balanced logo wells, clear title, one-sentence verdict, compact chips, and visible scores.
+- Report-library scores should be refined metadata pills/rows, not bulky top-right admin boxes.
+- Client-facing copy must be direct: no internal process notes, no `老板先看`, no `强相关`, no lazy `不是 X，而是 Y`.
 
-## Copy Rules
+## Delivery Note
 
-Client-facing copy must be direct and operational:
-
-- conclusion first
-- concrete business objects, pages, channels, owners, metrics
-- no internal process notes
-- no phrases like `老板先看`, `给老板看的`, `经营系统`, `不能误判`, `不应算`, or `语气采用`
-
-## Verification Checklist
-
-For HTML changes:
-
-- Check desktop light.
-- Check mobile width around 390px.
-- Confirm no horizontal overflow.
-- Confirm logos/images load.
-- Confirm counters match DOM counts.
-- Confirm sort/filter interactions if the report library changed.
-- Verify live content markers after push.
-
-## Current Caution
-
-There may be unrelated dirty work in `tidelens/index.html`. Leave it alone unless the task is explicitly about TideLens.
+Final replies for deployed work should include the live page link, the relevant project entry link, what changed, what was verified, and the commit hash.
