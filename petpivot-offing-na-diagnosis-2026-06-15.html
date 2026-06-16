@@ -135,7 +135,22 @@
     th, td { padding:15px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:14px; line-height:1.55; }
     th { color:var(--text); background:var(--surface-2); font-size:13px; font-weight:850; }
     tr:last-child td { border-bottom:0; }
-    .verdict { display:inline-flex; padding:4px 8px; border-radius:999px; font-size:12px; font-weight:850; margin-right:7px; }
+    .verdict { display:inline-flex; padding:4px 8px; border-radius:999px; font-size:12px; line-height:1.12; font-weight:850; margin-right:7px; white-space:nowrap; }
+    .ceiling-table { min-width:1040px; }
+    .ceiling-table th:nth-child(1), .ceiling-table td:nth-child(1) { width:150px; }
+    .ceiling-table th:nth-child(2), .ceiling-table td:nth-child(2) { width:255px; }
+    .ceiling-table th:nth-child(3), .ceiling-table td:nth-child(3) { width:270px; }
+    .ceiling-table th:nth-child(4), .ceiling-table td:nth-child(4) { width:132px; text-align:center; }
+    .ceiling-table th:nth-child(5), .ceiling-table td:nth-child(5) { min-width:300px; }
+    .ceiling-table .verdict {
+      min-width:92px;
+      justify-content:center;
+      margin-right:0;
+      padding:7px 10px;
+      border-radius:999px;
+      line-height:1.12;
+      white-space:nowrap;
+    }
     .fit-row { display:grid; grid-template-columns:1.1fr 180px 1.2fr; gap:18px; align-items:center; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
     .fit-row + .fit-row { margin-top:12px; }
     .fit-score strong { display:block; font-size:30px; line-height:1; color:var(--tone); }
@@ -203,6 +218,28 @@
       .stage-grid, .impact, .dept-cards { grid-template-columns:1fr; }
       .bar-row, .score-row { grid-template-columns:1fr; gap:7px; }
       .fit-row { grid-template-columns:1fr; }
+      .ceiling-table { min-width:0; }
+      .ceiling-table thead { display:none; }
+      .ceiling-table, .ceiling-table tbody, .ceiling-table tr, .ceiling-table td { display:block; width:100%; }
+      .ceiling-table tr { padding:14px; border-bottom:1px solid var(--line); }
+      .ceiling-table tr:last-child { border-bottom:0; }
+      .ceiling-table td {
+        display:grid;
+        grid-template-columns:82px 1fr;
+        gap:12px;
+        padding:7px 0;
+        border-bottom:0;
+        text-align:left;
+        font-size:13.5px;
+      }
+      .ceiling-table td::before {
+        content:attr(data-label);
+        color:var(--muted);
+        font-size:12px;
+        font-weight:850;
+      }
+      .ceiling-table td:nth-child(4) { text-align:left; }
+      .ceiling-table .verdict { justify-self:start; min-width:92px; }
       .wordcloud { min-height:230px; }
       .audience-map { min-height:300px; }
       .audience-ring strong { font-size:18px; }
@@ -395,12 +432,12 @@
       <h2>分品线天花板：自动猫砂盆是唯一主战场，耗材和配件还没有形成清晰复购收入。</h2>
       <p class="lead">IMARC 估算全球 automatic self-cleaning cat litter box 2025 年约 USD 702.3M，北美占比超过 36.8%，对应北美约 USD 258M+。PetPivot 的公开 300k+ 美国销量说明它在低价段已经有份额，但现阶段仍是单品线驱动。</p>
       <div class="table-wrap" style="margin-top:24px;">
-        <table>
+        <table class="ceiling-table">
           <thead><tr><th>品线</th><th>北美市场天花板</th><th>PetPivot 当前证据</th><th>阶段判断</th><th>经营结论</th></tr></thead>
           <tbody>
-            <tr><td>AutoScooper 12 Lite / 11</td><td>北美自动猫砂盆约 USD 250M+ 级别，仍在增长</td><td>300k+ 美国销量，$149-$199 主销价，Amazon/TikTok/官网/Chewy 触点</td><td><span class="verdict good">主线成立</span></td><td>继续做主线，但必须把 reliability、warranty、odor 和 maintenance 证据做厚。</td></tr>
-            <tr><td>耗材 / liner / mat</td><td>依赖设备保有量和复购频率</td><td>Amazon 已有 litter pad / liner 等配件露出，官网有 consumables 入口</td><td><span class="verdict warn">未成复购柱</span></td><td>先做设备注册、耗材提醒和售后场景，不要只靠一次性机器销售。</td></tr>
-            <tr><td>下一代智能款</td><td>高端智能猫砂盆由 Litter-Robot、PETKIT、Neakasa 主导</td><td>当前 PetPivot 核心叙事是 no app / no Wi-Fi，不是智能监测</td><td><span class="verdict warn">暂不抢高端</span></td><td>高端智能不是 90 天主战场；先证明低价可靠，再决定是否上智能线。</td></tr>
+            <tr><td data-label="品线">AutoScooper 12 Lite / 11</td><td data-label="天花板">北美自动猫砂盆约 USD 250M+ 级别，仍在增长</td><td data-label="当前证据">300k+ 美国销量，$149-$199 主销价，Amazon/TikTok/官网/Chewy 触点</td><td data-label="阶段"><span class="verdict good">主线成立</span></td><td data-label="结论">继续做主线，但必须把 reliability、warranty、odor 和 maintenance 证据做厚。</td></tr>
+            <tr><td data-label="品线">耗材 / liner / mat</td><td data-label="天花板">依赖设备保有量和复购频率</td><td data-label="当前证据">Amazon 已有 litter pad / liner 等配件露出，官网有 consumables 入口</td><td data-label="阶段"><span class="verdict warn">未成复购柱</span></td><td data-label="结论">先做设备注册、耗材提醒和售后场景，不要只靠一次性机器销售。</td></tr>
+            <tr><td data-label="品线">下一代智能款</td><td data-label="天花板">高端智能猫砂盆由 Litter-Robot、PETKIT、Neakasa 主导</td><td data-label="当前证据">当前 PetPivot 核心叙事是 no app / no Wi-Fi，不是智能监测</td><td data-label="阶段"><span class="verdict warn">暂不抢高端</span></td><td data-label="结论">高端智能不是 90 天主战场；先证明低价可靠，再决定是否上智能线。</td></tr>
           </tbody>
         </table>
       </div>
