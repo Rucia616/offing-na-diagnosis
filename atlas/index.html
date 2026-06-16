@@ -286,25 +286,30 @@
     .report-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 34%, var(--line)); }
     .report-card > div:first-child {
       display: grid;
-      grid-template-columns: 116px minmax(0, 1fr);
+      grid-template-columns: 116px minmax(0, 1fr) auto;
       grid-template-rows: auto auto;
       column-gap: 16px;
       align-content: start;
       align-items: start;
     }
     .report-card h3 {
+      grid-column: 2;
+      grid-row: 1;
       margin-top: 5px;
       font-size: 22px;
       line-height: 1.08;
     }
     .report-card p {
-      margin-top: 6px;
+      grid-column: 1 / 4;
+      grid-row: 2;
+      margin-top: 10px;
       color: var(--muted);
       font-size: 13.5px;
       line-height: 1.45;
     }
     .report-logo {
-      grid-row: 1 / span 2;
+      grid-column: 1;
+      grid-row: 1;
       width: 116px;
       height: 58px;
       display: flex;
@@ -329,6 +334,58 @@
       font-size: 20px;
       line-height: 1;
       font-weight: 950;
+    }
+    .report-score {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      align-self: start;
+      justify-self: end;
+      width: 58px;
+      min-height: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(16, 20, 19, .04);
+    }
+    .report-score b {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .report-score span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 880;
+    }
+    .report-score.score-good {
+      color: var(--success);
+      background: color-mix(in srgb, #eaf6ee 72%, var(--surface));
+      border-color: color-mix(in srgb, var(--success) 34%, var(--line));
+    }
+    .report-score.score-mid {
+      color: var(--warn);
+      background: color-mix(in srgb, #fff3df 72%, var(--surface));
+      border-color: color-mix(in srgb, var(--warn) 34%, var(--line));
+    }
+    .report-score.score-low {
+      color: var(--risk);
+      background: color-mix(in srgb, #fff0f1 76%, var(--surface));
+      border-color: color-mix(in srgb, var(--risk) 34%, var(--line));
+    }
+    @media (prefers-color-scheme: dark) {
+      .report-score.score-good { background: #173424; }
+      .report-score.score-mid { background: #3a2a12; }
+      .report-score.score-low { background: #3a171c; }
     }
     .report-meta { display: flex; flex-wrap: wrap; gap: 7px; }
     .empty-state {
@@ -395,15 +452,18 @@
       .filter, .search { width: 100%; }
       .report-card { min-height: 148px; padding: 14px; gap: 12px; }
       .report-card > div:first-child {
-        grid-template-columns: 88px minmax(0, 1fr);
-        column-gap: 12px;
+        grid-template-columns: 88px minmax(0, 1fr) auto;
+        column-gap: 10px;
       }
       .report-logo { width: 88px; height: 48px; }
       .report-logo img { max-width: 72px; max-height: 28px; }
       .report-logo.logo-wide img { max-width: 84px; max-height: 26px; }
       .report-wordmark { font-size: 17px; }
       .report-card h3 { margin-top: 2px; font-size: 20px; }
-      .report-card p { margin-top: 5px; font-size: 13px; line-height: 1.38; }
+      .report-card p { grid-column: 1 / 4; margin-top: 8px; font-size: 13px; line-height: 1.38; }
+      .report-score { grid-row: 1; width: 50px; min-height: 42px; }
+      .report-score b { font-size: 21px; }
+      .report-score span { font-size: 10.5px; }
       .report-meta { gap: 6px; }
       .pill { min-height: 24px; padding: 3px 8px; font-size: 11.5px; }
       .quick-card, .library-card, .file-card { min-height: auto; padding: 17px; }
@@ -540,55 +600,55 @@
       </div>
       <div class="report-grid" id="reportGrid">
         <a class="report-card" data-name="tidewe hunting waders fishing waders hunting blind heated apparel rangefinder outdoor amazon dtc" data-stage="10-100" data-category="hunting" data-type="dualchannel" data-status="latest" href="../tidewe-offing-na-diagnosis-2026-06-16.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/tidewe-logo-official.png" alt="TideWe logo" /></div><h3>TideWe</h3><p>狩猎 waders、see-through blinds、heated apparel、DTC/Amazon 双货架和售后信任。</p></div>
+          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/tidewe-logo-official.png" alt="TideWe logo" /></div><h3>TideWe</h3><p>狩猎 waders、see-through blinds、heated apparel、DTC/Amazon 双货架和售后信任。</p><div class="report-score score-mid" aria-label="北美业务总分 68 分"><b>68</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-16</span><span class="pill">10-100</span><span class="pill">狩猎户外</span></div>
         </a>
         <a class="report-card" data-name="gtracing gtplayer gaming chair gaming furniture footrest chair walmart amazon" data-stage="10-100" data-category="gaming" data-type="amazon" data-status="latest" href="../gtracing-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/gtracing-logo-darktext.png" alt="GTRacing logo" /></div><h3>GTRacing</h3><p>低价游戏椅、GTPlayer 命名、Amazon/Walmart 货架和售后信任。</p></div>
+          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/gtracing-logo-darktext.png" alt="GTRacing logo" /></div><h3>GTRacing</h3><p>低价游戏椅、GTPlayer 命名、Amazon/Walmart 货架和售后信任。</p><div class="report-score score-mid" aria-label="北美业务总分 62 分"><b>62</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">10-100</span><span class="pill">游戏家具</span></div>
         </a>
         <a class="report-card" data-name="piscifun fishing reels baitcaster spinning reel carbon x viper chaos" data-stage="10-100" data-category="fishing" data-type="amazon" data-status="latest" href="../piscifun-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo"><img src="../assets/brand-logos/piscifun-logo-transparent.png" alt="Piscifun logo" /></div><h3>Piscifun</h3><p>高性价比渔轮、Amazon 主货架、选型信任和售后承接。</p></div>
+          <div><div class="report-logo"><img src="../assets/brand-logos/piscifun-logo-transparent.png" alt="Piscifun logo" /></div><h3>Piscifun</h3><p>高性价比渔轮、Amazon 主货架、选型信任和售后承接。</p><div class="report-score score-mid" aria-label="北美业务总分 67 分"><b>67</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">10-100</span><span class="pill">户外渔具</span></div>
         </a>
         <a class="report-card" data-name="petpivot autoscooper automatic litter box self cleaning cat tiktok shop amazon" data-stage="10-100" data-category="pet" data-type="socialmarketplace" data-status="latest" href="../petpivot-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div><h3>PetPivot</h3><p>自动猫砂盆、TikTok Shop / Amazon 动销、低价可信和售后信任。</p></div>
+          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div><h3>PetPivot</h3><p>自动猫砂盆、TikTok Shop / Amazon 动销、低价可信和售后信任。</p><div class="report-score score-mid" aria-label="北美业务总分 60 分"><b>60</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">10-100</span><span class="pill">宠物智能</span></div>
         </a>
         <a class="report-card" data-name="coolcovery 3covery recovery boots compression cold heat therapy" data-stage="1-10" data-category="health" data-type="b2b" data-status="latest" href="../coolcovery-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/coolcovery-logo-wordmark-blue.png" alt="CoolCovery logo" /></div><h3>CoolCovery</h3><p>冷 / 热 / 压缩恢复设备、B2B 专业空间、PDP 信任和报价路径。</p></div>
+          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/coolcovery-logo-wordmark-blue.png" alt="CoolCovery logo" /></div><h3>CoolCovery</h3><p>冷 / 热 / 压缩恢复设备、B2B 专业空间、PDP 信任和报价路径。</p><div class="report-score score-low" aria-label="北美业务总分 49 分"><b>49</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">1-10</span><span class="pill">运动健康</span></div>
         </a>
         <a class="report-card" data-name="yvette sports bra activewear" data-stage="1-10" data-category="health" data-type="dtc" data-status="latest" href="../yvette-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo"><img src="../assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" /></div><h3>Yvette</h3><p>高支撑运动内衣、选码信心、换码与 DTC 留存。</p></div>
+          <div><div class="report-logo"><img src="../assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" /></div><h3>Yvette</h3><p>高支撑运动内衣、选码信心、换码与 DTC 留存。</p><div class="report-score score-mid" aria-label="北美业务总分 67 分"><b>67</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">1-10</span><span class="pill">运动健康</span></div>
         </a>
         <a class="report-card" data-name="plaud ai note recorder" data-stage="10-100" data-category="hardware" data-type="subscription" data-status="legacy" href="../plaud-ai-offing-na-diagnosis-2026-06-14.html">
-          <div><div class="report-logo"><img src="../assets/plaud-logo.png" alt="Plaud AI logo" /></div><h3>Plaud AI</h3><p>AI 录音硬件、订阅价值、团队采购和搜索入口。</p></div>
+          <div><div class="report-logo"><img src="../assets/plaud-logo.png" alt="Plaud AI logo" /></div><h3>Plaud AI</h3><p>AI 录音硬件、订阅价值、团队采购和搜索入口。</p><div class="report-score score-good" aria-label="北美业务总分 72 分"><b>72</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15 内容</span><span class="pill warn">旧链接覆盖</span><span class="pill">10-100</span></div>
         </a>
         <a class="report-card" data-name="ulike ipl beauty hair removal" data-stage="10-100" data-category="beauty" data-type="dtc" data-status="latest" href="../ulike-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo"><img src="../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div><h3>Ulike</h3><p>家用 IPL 脱毛仪、Air 10 主线、第二品线和售后信任。</p></div>
+          <div><div class="report-logo"><img src="../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div><h3>Ulike</h3><p>家用 IPL 脱毛仪、Air 10 主线、第二品线和售后信任。</p><div class="report-score score-mid" aria-label="北美业务总分 67 分"><b>67</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill green">2026-06-15</span><span class="pill">10-100</span><span class="pill">美容个护</span></div>
         </a>
         <a class="report-card" data-name="pixboom camera high speed imaging" data-stage="1-10" data-category="imaging" data-type="presale" data-status="archive" href="../pixboom-offing-na-diagnosis-2026-06-14.html">
-          <div><div class="report-logo"><span class="report-wordmark">Pixboom</span></div><h3>Pixboom</h3><p>高速电影机、专业创作者、预售兑现和北美渠道。</p></div>
+          <div><div class="report-logo"><span class="report-wordmark">Pixboom</span></div><h3>Pixboom</h3><p>高速电影机、专业创作者、预售兑现和北美渠道。</p><div class="report-score score-mid" aria-label="北美业务总分 61 分"><b>61</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill">2026-06-14</span><span class="pill">1-10</span><span class="pill">影像设备</span></div>
         </a>
         <a class="report-card" data-name="cosori air fryer kitchen appliance" data-stage="100+" data-category="kitchen" data-type="amazon" data-status="archive" href="../cosori-offing-na-diagnosis-2026-06-13.html">
-          <div><div class="report-logo"><img src="../assets/brand-logos/cosori-logo-official.svg" alt="COSORI logo" /></div><h3>COSORI</h3><p>空气炸锅主品类、Amazon 依赖、第二曲线和安全信任。</p></div>
+          <div><div class="report-logo"><img src="../assets/brand-logos/cosori-logo-official.svg" alt="COSORI logo" /></div><h3>COSORI</h3><p>空气炸锅主品类、Amazon 依赖、第二曲线和安全信任。</p><div class="report-score score-good" aria-label="北美业务总分 72 分"><b>72</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">100+</span><span class="pill">厨房家电</span></div>
         </a>
         <a class="report-card" data-name="zima nas zimaspace homelab" data-stage="10-100" data-category="hardware" data-type="community" data-status="archive" href="../zima-offing-na-diagnosis-2026-06-13.html">
-          <div><div class="report-logo"><img src="../assets/zima-logo-transparent.png" alt="Zima logo" /></div><h3>Zima</h3><p>极客社区、NAS 机会、开源基因和人群外扩边界。</p></div>
+          <div><div class="report-logo"><img src="../assets/zima-logo-transparent.png" alt="Zima logo" /></div><h3>Zima</h3><p>极客社区、NAS 机会、开源基因和人群外扩边界。</p><div class="report-score score-mid" aria-label="北美业务总分 63 分"><b>63</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">10-100</span><span class="pill">智能硬件</span></div>
         </a>
         <a class="report-card" data-name="usmile electric toothbrush water flosser oral care" data-stage="1-10" data-category="oralcare" data-type="amazon" data-status="archive" href="../usmile-offing-na-diagnosis-2026-06-13.html">
-          <div><div class="report-logo"><img src="https://usmile.us/cdn/shop/files/usmile_logo.png?v=1690797066&amp;width=420" alt="Usmile logo" /></div><h3>Usmile</h3><p>口腔护理、冲牙器与电动牙刷品线、动销和品类机会。</p></div>
+          <div><div class="report-logo"><img src="https://usmile.us/cdn/shop/files/usmile_logo.png?v=1690797066&amp;width=420" alt="Usmile logo" /></div><h3>Usmile</h3><p>口腔护理、冲牙器与电动牙刷品线、动销和品类机会。</p><div class="report-score score-low" aria-label="北美业务总分 58 分"><b>58</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">1-10</span><span class="pill">口腔护理</span></div>
         </a>
         <a class="report-card" data-name="kailash energy crystal jewelry dzi gemstone spiritual jewelry" data-stage="0-1" data-category="jewelry" data-type="dtc" data-status="archive" href="../kailash-energy-offing-na-diagnosis-2026-06-13.html">
-          <div><div class="report-logo"><img src="../assets/brand-logos/kailash-energy-logo-dark.png" alt="Kailash Energy logo" /></div><h3>Kailash Energy</h3><p>水晶珠宝、Dzi / Mala、信任证明和物流退换。</p></div>
+          <div><div class="report-logo"><img src="../assets/brand-logos/kailash-energy-logo-dark.png" alt="Kailash Energy logo" /></div><h3>Kailash Energy</h3><p>水晶珠宝、Dzi / Mala、信任证明和物流退换。</p><div class="report-score score-mid" aria-label="北美业务总分 62 分"><b>62</b><span>总分</span></div></div>
           <div class="report-meta"><span class="pill">2026-06-13</span><span class="pill">0-1</span><span class="pill">水晶珠宝</span></div>
         </a>
       </div>
