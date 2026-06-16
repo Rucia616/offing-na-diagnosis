@@ -426,6 +426,47 @@
       font-weight: 900;
       white-space: nowrap;
     }
+    .report-meta {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .report-score {
+      min-width: 112px;
+      padding: 10px 12px 11px;
+      border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line));
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--accent-fill), var(--surface));
+      color: var(--text);
+      text-align: left;
+    }
+    .score-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .score-num {
+      display: block;
+      color: var(--text);
+      font-size: 30px;
+      line-height: .9;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .score-num small {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 900;
+    }
     .report-card h3 {
       margin-bottom: 10px;
       color: var(--text);
@@ -558,6 +599,14 @@
         align-items: flex-start;
         flex-direction: column;
       }
+      .report-meta {
+        width: 100%;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .report-score { min-width: 118px; }
+      .score-num { font-size: 28px; }
       .logo-well { width: 100%; }
       .footer { flex-direction: column; }
     }
@@ -653,7 +702,13 @@
           <div>
             <div class="logo-row">
               <div class="logo-well"><img src="../assets/brand-logos/piscifun-logo.svg" alt="Piscifun logo" /></div>
-              <span class="report-badge">免费版</span>
+              <div class="report-meta">
+                <span class="report-badge">免费版</span>
+                <span class="report-score" aria-label="Piscifun TideLens Score 67 out of 100">
+                  <span class="score-label">总评分</span>
+                  <span class="score-num">67<small>/100</small></span>
+                </span>
+              </div>
             </div>
             <h3>Piscifun 红人增长诊断</h3>
             <p class="verdict">红人供给活跃，SKU 选择证据偏散。</p>
@@ -662,7 +717,7 @@
           <div class="tools">
             <span class="pill green">2026-06-15</span>
             <span class="pill">Fishing Gear</span>
-            <span class="pill">Score 67/100</span>
+            <span class="pill">8 维评分</span>
           </div>
         </a>
 
@@ -670,7 +725,13 @@
           <div>
             <div class="logo-row">
               <div class="logo-well petpivot"><img src="../assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div>
-              <span class="report-badge">免费版</span>
+              <div class="report-meta">
+                <span class="report-badge">免费版</span>
+                <span class="report-score" aria-label="PetPivot TideLens Score 62 out of 100">
+                  <span class="score-label">总评分</span>
+                  <span class="score-num">62<small>/100</small></span>
+                </span>
+              </div>
             </div>
             <h3>PetPivot 红人增长诊断</h3>
             <p class="verdict">声量入口已经建立，下一步先审内容再加预算。</p>
@@ -679,7 +740,7 @@
           <div class="tools">
             <span class="pill green">2026-06-15</span>
             <span class="pill">Pet Tech</span>
-            <span class="pill">Score 62/100</span>
+            <span class="pill">8 维评分</span>
           </div>
         </a>
 
@@ -687,7 +748,13 @@
           <div>
             <div class="logo-row">
               <div class="logo-well"><img src="../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div>
-              <span class="report-badge">免费版</span>
+              <div class="report-meta">
+                <span class="report-badge">免费版</span>
+                <span class="report-score" aria-label="Ulike TideLens Score 69 out of 100">
+                  <span class="score-label">总评分</span>
+                  <span class="score-num">69<small>/100</small></span>
+                </span>
+              </div>
             </div>
             <h3>Ulike 红人增长诊断</h3>
             <p class="verdict">声量很强，复投标准拖累效率。</p>
@@ -696,7 +763,7 @@
           <div class="tools">
             <span class="pill green">2026-06-15</span>
             <span class="pill">Beauty Tech</span>
-            <span class="pill">Score 69/100</span>
+            <span class="pill">8 维评分</span>
           </div>
         </a>
       </div>
