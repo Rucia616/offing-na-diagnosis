@@ -402,6 +402,9 @@
       max-width: 110px;
       max-height: 34px;
     }
+    @media (prefers-color-scheme: dark) {
+      .report-logo.logo-invert img { filter: invert(1); }
+    }
     .report-wordmark {
       color: var(--text);
       font-size: 20px;
@@ -534,7 +537,7 @@
         <div class="console-body">
           <div class="eyebrow" style="color:#8ee7df;">Project Map</div>
           <div class="metric-grid">
-            <div class="metric"><b id="archivedReportMetric">13</b><span>已归档品牌诊断</span></div>
+            <div class="metric"><b id="archivedReportMetric">14</b><span>已归档品牌诊断</span></div>
             <div class="metric"><b>1</b><span>调研资料库入口</span></div>
             <div class="metric"><b class="compact">2026-06-19</b><span>最近更新日期</span></div>
             <div class="metric"><b>GitHub Pages</b><span>公开交付链接</span></div>
@@ -549,7 +552,7 @@
         <a class="quick-card prism" href="#reports">
           <div>
             <h3>品牌报告库</h3>
-            <p>集中进入 Ulike、Plaud AI、Yvette、TideWe、CoolCovery、COSORI、Zima 等已生成诊断报告。</p>
+            <p>集中进入 Insta360、Ulike、Plaud AI、Yvette、TideWe、CoolCovery、COSORI、Zima 等已生成诊断报告。</p>
           </div>
           <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
         </a>
@@ -619,6 +622,7 @@
             <option value="presale">众筹 / 预售</option>
             <option value="socialmarketplace">TikTok + Amazon</option>
             <option value="dualchannel">DTC + Amazon</option>
+            <option value="allchannel">DTC + Amazon + Retail</option>
           </select>
           <select class="filter" id="statusFilter" aria-label="按报告状态筛选">
             <option value="">全部状态</option>
@@ -632,17 +636,21 @@
             <option value="score-asc">总分低到高</option>
           </select>
           <button class="reset-filter" id="resetFilters" type="button">重置</button>
-          <span class="pill" id="reportCount">共 13 份报告</span>
+          <span class="pill" id="reportCount">共 14 份报告</span>
         </div>
       </div>
       <div class="score-distribution" aria-label="报告总分档位分布">
-        <div class="score-band score-a" data-score-band="A"><b>2</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
+        <div class="score-band score-a" data-score-band="A"><b>3</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
         <div class="score-band score-b" data-score-band="B"><b>4</b><span>B档 65-69</span><small>主线成立，但短板会吃利润。</small></div>
         <div class="score-band score-c" data-score-band="C"><b>5</b><span>C档 60-64</span><small>有生意基础，治理优先于加码。</small></div>
         <div class="score-band score-d" data-score-band="D"><b>1</b><span>D档 50-59</span><small>明显拖累，需要先止损。</small></div>
         <div class="score-band score-e" data-score-band="E"><b>1</b><span>E档 &lt;50</span><small>信任或成交链路未闭合。</small></div>
       </div>
       <div class="report-grid" id="reportGrid">
+        <a class="report-card" data-name="insta360 x5 360 camera action camera luna ultra creator camera dji gopro amazon best buy" data-stage="10-100" data-category="imaging" data-type="allchannel" data-status="latest" data-score="74" data-tier="A" href="../insta360-offing-na-diagnosis-2026-06-19.html">
+          <div><div class="report-logo logo-wide logo-invert"><img src="../assets/brand-logos/insta360-logo-official-dark.svg" alt="Insta360 logo" /></div><h3>Insta360</h3><p>X5 360 相机、Luna Ultra、Amazon / Best Buy 货架、创作者心智和 DJI / GoPro 竞品压力。</p></div>
+          <div class="report-meta"><span class="pill score score-a" aria-label="北美业务总分 74 分，A 档">74 · A档</span><span class="pill green">2026-06-19</span><span class="pill">10-100</span><span class="pill">影像设备</span></div>
+        </a>
         <a class="report-card" data-name="tidewe hunting waders fishing waders hunting blind heated apparel rangefinder outdoor amazon dtc" data-stage="10-100" data-category="hunting" data-type="dualchannel" data-status="latest" data-score="68" data-tier="B" href="../tidewe-offing-na-diagnosis-2026-06-16.html">
           <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/tidewe-logo-official.png" alt="TideWe logo" /></div><h3>TideWe</h3><p>狩猎 waders、see-through blinds、heated apparel、DTC/Amazon 双货架和售后信任。</p></div>
           <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 68 分，B 档">68 · B档</span><span class="pill green">2026-06-16</span><span class="pill">10-100</span><span class="pill">狩猎户外</span></div>
