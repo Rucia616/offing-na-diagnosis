@@ -3,27 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Insta360 北美业务诊断｜Offing Atlas 远汐·航图</title>
-  <meta name="description" content="Offing Atlas｜远汐·航图为 Insta360 生成的北美业务诊断免费版，覆盖渠道、搜索、VOC、竞品压力、品线机会与公开证据。" />
+  <title>Insta360 · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-19</title>
+  <meta name="description" content="Insta360 北美业务诊断：阶段、人群、渠道、搜索心智、VOC、品线天花板、卖点匹配、关键问题、预算路线、部门红黄绿灯与公开证据。" />
   <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #f6f7f7;
-      --paper: #ffffff;
-      --paper-soft: #f1f4f3;
+      --bg: #f5f5f7;
+      --top: #fbfbfd;
+      --surface: #ffffff;
+      --surface-2: #f7f8fa;
       --text: #101413;
-      --body: #2b3432;
-      --muted: #65706d;
-      --line: #d8dcda;
-      --accent: #24635f;
-      --accent-2: #2aa79c;
-      --blue: #4577c4;
-      --pink: #c85b92;
-      --green: #157a38;
-      --amber: #9a5b00;
-      --red: #c8212f;
-      --shadow: 0 18px 46px rgba(16, 20, 19, .08);
+      --body: #293331;
+      --muted: #66716e;
+      --line: #d7d9dc;
+      --accent: #2d6261;
+      --accent-fill: #eaf1f0;
+      --inverse-bg: #13211f;
+      --inverse-text: #f8faf9;
+      --inverse-muted: rgba(248,250,249,.78);
+      --prism-teal: #32d6c6;
+      --prism-sky: #9ed1ff;
+      --prism-pink: #f7a4d8;
+      --prism-lilac: #9b7cff;
+      --success: #157a38;
+      --success-bg: #eaf6ee;
+      --warning: #9a5b00;
+      --warning-bg: #fff3df;
+      --risk: #d70015;
+      --risk-bg: #fff0f1;
+      --shadow: 0 14px 36px rgba(16, 20, 19, .07);
+      --result-shadow: 0 26px 72px rgba(16, 20, 19, .10);
       --radius: 8px;
       --max: 1180px;
       --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
@@ -32,20 +42,26 @@
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #0f1212;
-        --paper: #181d1c;
-        --paper-soft: #202725;
-        --text: #f5f7f6;
-        --body: #dbe1df;
-        --muted: #a7b1ae;
-        --line: #394240;
-        --accent: #8fd9d1;
-        --accent-2: #42d6ca;
-        --blue: #9fc5ff;
-        --pink: #f4a2cd;
-        --green: #75d995;
-        --amber: #e3b66b;
-        --red: #ff8a95;
-        --shadow: 0 18px 46px rgba(0, 0, 0, .34);
+        --top: #141817;
+        --surface: #191e1d;
+        --surface-2: #202625;
+        --text: #f4f7f6;
+        --body: #d8dedc;
+        --muted: #a9b2af;
+        --line: #3a4240;
+        --accent: #9ed7d3;
+        --accent-fill: #1c3433;
+        --inverse-bg: #e9efed;
+        --inverse-text: #101413;
+        --inverse-muted: #40504c;
+        --success: #8ee0a8;
+        --success-bg: #173424;
+        --warning: #f2c46d;
+        --warning-bg: #3a2a12;
+        --risk: #ff8e99;
+        --risk-bg: #3b171d;
+        --shadow: 0 14px 36px rgba(0, 0, 0, .36);
+        --result-shadow: 0 26px 72px rgba(0, 0, 0, .42);
       }
     }
 
@@ -55,12 +71,12 @@
       margin: 0;
       min-width: 320px;
       background:
-        linear-gradient(90deg, rgba(42,167,156,.08), transparent 46%),
-        linear-gradient(180deg, rgba(200,91,146,.06), transparent 420px),
+        linear-gradient(110deg, rgba(50,214,198,.07), transparent 44rem),
+        linear-gradient(250deg, rgba(247,164,216,.06), transparent 36rem),
         var(--bg);
       color: var(--text);
       font-family: var(--font);
-      line-height: 1.62;
+      line-height: 1.65;
       letter-spacing: 0;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -70,9 +86,9 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 40;
       border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      background: color-mix(in srgb, var(--top) 88%, transparent);
       backdrop-filter: blur(18px);
     }
     .topbar-inner {
@@ -84,74 +100,36 @@
       justify-content: space-between;
       gap: 18px;
     }
-    .product-lockup {
-      line-height: 1.12;
-      font-weight: 900;
-    }
-    .product-lockup span { display: block; }
-    .product-lockup span + span {
-      margin-top: 4px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 820;
-    }
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 780;
-    }
+    .product-lockup { color: var(--text); font-weight: 900; line-height: 1.1; white-space: nowrap; }
+    .product-lockup small { display: block; margin-top: 4px; color: var(--accent); font-size: 12px; font-weight: 830; }
+    .nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; color: var(--muted); font-size: 12px; font-weight: 780; }
     .nav a { text-decoration: none; }
     .nav a:hover { color: var(--text); }
     main { max-width: var(--max); margin: 0 auto; padding: 0 24px 72px; }
+
     .hero {
-      min-height: calc(100svh - 65px);
+      min-height: calc(100svh - 64px);
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 380px;
+      grid-template-columns: minmax(0, 1fr) 386px;
       align-items: center;
-      gap: 48px;
-      padding: 34px 0 28px;
-    }
-    .client-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 28px;
+      gap: clamp(34px, 6vw, 72px);
+      padding: 34px 0 30px;
     }
     .client-logo {
-      width: 190px;
-      height: 68px;
+      width: 196px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--paper);
-      box-shadow: 0 10px 28px rgba(16, 20, 19, .05);
+      background: var(--surface);
+      box-shadow: var(--shadow);
     }
-    .client-logo img { max-width: 150px; max-height: 42px; display: block; }
+    .client-logo img { max-width: 154px; max-height: 42px; display: block; }
     @media (prefers-color-scheme: dark) {
       .client-logo img { filter: invert(1); }
     }
-    .label {
-      display: inline-flex;
-      min-height: 30px;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--paper-soft);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 820;
-      text-decoration: none;
-    }
-    .label strong { color: var(--text); }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -159,356 +137,293 @@
       color: var(--accent);
       font-size: 12px;
       font-weight: 900;
-      text-transform: uppercase;
       letter-spacing: .04em;
+      text-transform: uppercase;
     }
     .eyebrow::before {
       content: "";
       width: 20px;
       height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent-2), var(--blue), var(--pink));
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-pink));
     }
-    h1 {
-      margin-top: 18px;
-      max-width: 760px;
-      font-size: 68px;
-      line-height: 1;
-      font-weight: 950;
-    }
-    .verdict {
-      max-width: 760px;
+    .hero .eyebrow { margin-top: 28px; }
+    h1 { margin-top: 16px; max-width: 760px; font-size: clamp(58px, 6.4vw, 94px); line-height: .98; font-weight: 950; }
+    .lead {
+      max-width: 790px;
       margin-top: 22px;
       color: var(--body);
-      font-size: 24px;
-      line-height: 1.36;
+      font-size: clamp(21px, 2.2vw, 29px);
+      line-height: 1.34;
       font-weight: 840;
     }
-    .hero-note {
-      max-width: 740px;
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-    .score-panel {
+    .sublead { max-width: 760px; margin-top: 14px; color: var(--muted); font-size: 15px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+      padding: 4px 9px;
       border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .score-panel::before {
-      content: "";
-      display: block;
-      height: 5px;
-      background: linear-gradient(90deg, var(--accent-2), var(--blue), var(--pink));
-    }
-    .score-body { padding: 24px; }
-    .score-top {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-    .score-label {
+      border-radius: 999px;
+      background: var(--surface-2);
       color: var(--muted);
       font-size: 12px;
-      font-weight: 860;
-      text-transform: uppercase;
-      letter-spacing: .04em;
+      font-weight: 830;
+      text-decoration: none;
+      white-space: nowrap;
     }
-    .score-number {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      line-height: .88;
-      font-size: 74px;
-      font-weight: 950;
+    .tag.green { color: var(--success); background: var(--success-bg); border-color: color-mix(in srgb, var(--success) 28%, var(--line)); }
+    .tag.amber { color: var(--warning); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning) 28%, var(--line)); }
+    .tag.red { color: var(--risk); background: var(--risk-bg); border-color: color-mix(in srgb, var(--risk) 28%, var(--line)); }
+    .tag.blue { color: var(--accent); background: var(--accent-fill); border-color: color-mix(in srgb, var(--accent) 28%, var(--line)); }
+
+    .score-panel {
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #101b1b, #13211f);
+      color: #fff;
+      box-shadow: var(--result-shadow);
     }
-    .score-number span {
-      color: var(--muted);
-      font-size: 20px;
-      font-weight: 820;
-    }
+    .score-panel::before { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-lilac), var(--prism-pink)); }
+    .score-body { padding: 24px; }
+    .score-label { color: rgba(255,255,255,.78); font-size: 12px; font-weight: 880; text-transform: uppercase; letter-spacing: .04em; }
+    .score-head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 14px; margin-top: 6px; }
+    .score-number { display: flex; align-items: baseline; gap: 6px; font-size: 84px; line-height: .86; font-weight: 950; }
+    .score-number span { color: rgba(255,255,255,.62); font-size: 22px; font-weight: 820; }
     .tier {
-      justify-self: end;
+      align-self: center;
       padding: 7px 10px;
-      border: 1px solid color-mix(in srgb, var(--green) 40%, var(--line));
+      border: 1px solid rgba(112,229,168,.38);
       border-radius: 999px;
-      color: var(--green);
-      background: color-mix(in srgb, #eaf6ee 60%, var(--paper));
+      color: #97efb4;
+      background: rgba(112,229,168,.12);
       font-size: 12px;
       font-weight: 900;
       white-space: nowrap;
     }
-    @media (prefers-color-scheme: dark) {
-      .tier { background: #173424; }
-    }
-    .stars {
-      color: #f4b83a;
-      font-size: 28px;
-      line-height: 1;
-      letter-spacing: 0;
-    }
-    .star-score {
-      margin-top: 7px;
-      color: var(--body);
-      font-size: 15px;
-      font-weight: 880;
-    }
-    .score-summary {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--body);
-      font-size: 15px;
-      font-weight: 760;
-    }
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 18px;
-    }
-    .mini {
-      min-height: 84px;
-      padding: 12px;
+    .stars { margin-top: 16px; color: #ffc857; font-size: 30px; line-height: 1; letter-spacing: 0; }
+    .star-score { margin-top: 7px; color: rgba(255,255,255,.92); font-size: 15px; font-weight: 850; }
+    .score-pills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; }
+    .score-pill { min-height: 78px; padding: 12px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); background: rgba(255,255,255,.07); }
+    .score-pill b { display: block; color: #fff; font-size: 17px; line-height: 1.15; }
+    .score-pill span { display: block; margin-top: 8px; color: rgba(255,255,255,.68); font-size: 11px; font-weight: 780; }
+    .score-grid { display: grid; gap: 12px; margin-top: 18px; }
+    .score-row { display: grid; grid-template-columns: 92px 1fr 34px; align-items: center; gap: 10px; color: rgba(255,255,255,.82); font-size: 12px; font-weight: 820; }
+    .score-row .track { height: 8px; border-radius: 99px; overflow: hidden; background: rgba(255,255,255,.15); }
+    .score-row .bar { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky)); }
+    .score-formula { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.72); font-size: 12px; }
+
+    section { padding-top: 68px; scroll-margin-top: 86px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 20px; }
+    h2 { max-width: 790px; margin-top: 12px; font-size: 36px; line-height: 1.14; font-weight: 940; }
+    .section-note { max-width: 450px; color: var(--muted); font-size: 14px; }
+    .card, .dark-panel, .mind-card, .biz-card, .issue, .score-card, .dept-card, .road-card, .onepage {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--paper-soft);
+      background: var(--surface);
+      box-shadow: var(--shadow);
     }
-    .mini b {
-      display: block;
-      font-size: 18px;
-      line-height: 1.1;
-      font-weight: 920;
-    }
-    .mini span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.25;
-      font-weight: 780;
-    }
-    .bar-list { display: grid; gap: 12px; margin-top: 18px; }
-    .bar-row {
-      display: grid;
-      grid-template-columns: 92px 1fr 34px;
-      align-items: center;
-      gap: 10px;
-      color: var(--body);
-      font-size: 12px;
-      font-weight: 820;
-    }
-    .bar-track {
-      height: 8px;
-      border-radius: 999px;
-      background: color-mix(in srgb, var(--line) 66%, transparent);
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--accent-2), var(--blue));
-    }
-    section {
-      padding-top: 68px;
-      scroll-margin-top: 86px;
-    }
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 28px;
-      margin-bottom: 20px;
-    }
-    h2 {
-      max-width: 760px;
-      margin-top: 12px;
-      font-size: 36px;
-      line-height: 1.12;
-      font-weight: 940;
-    }
-    .section-note {
-      max-width: 420px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .card, .mind-card, .score-card, .dept-card, .road-card { padding: 18px; }
+    .card h3, .mind-card h3, .score-card h3, .dept-card h3, .road-card h3 { font-size: 20px; line-height: 1.18; font-weight: 920; }
+    .card p, .mind-card p, .score-card p, .dept-card p, .road-card p { margin-top: 10px; color: var(--body); font-size: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .card {
+    .dark-panel { padding: 24px; background: linear-gradient(145deg, #101b1b, #13211f); color: #fff; box-shadow: var(--result-shadow); }
+    .dark-panel h2 { color: #fff; }
+    .dark-panel p { color: rgba(255,255,255,.78); }
+
+    .stage-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
+    .stage-card { min-height: 92px; padding: 14px; border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius); background: rgba(255,255,255,.07); }
+    .stage-card b { display: block; color: rgba(255,255,255,.82); font-size: 20px; line-height: 1.08; }
+    .stage-card span { display: block; margin-top: 8px; color: rgba(255,255,255,.62); font-size: 12px; font-weight: 760; }
+    .stage-card.active { border-color: rgba(50,214,198,.72); background: rgba(50,214,198,.12); }
+    .stage-card.active b { color: #fff; }
+
+    .audience-map { display: grid; grid-template-columns: .9fr 1.1fr; gap: 18px; align-items: center; }
+    .rings {
+      position: relative;
+      min-height: 330px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      padding: 18px;
+      background: radial-gradient(circle at center, rgba(50,214,198,.16) 0 24%, rgba(157,209,255,.14) 24% 46%, rgba(247,164,216,.12) 46% 68%, transparent 68%);
+      overflow: hidden;
     }
-    .card h3 {
-      font-size: 20px;
-      line-height: 1.18;
-      font-weight: 920;
-    }
-    .card p {
-      margin-top: 10px;
-      color: var(--body);
-      font-size: 14px;
-    }
-    .metric {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .metric:last-child { border-bottom: 0; }
-    .metric b {
-      color: var(--text);
-      font-size: 15px;
-      font-weight: 900;
-    }
-    .metric span {
-      color: var(--muted);
-      font-size: 13px;
-      text-align: right;
-      font-weight: 760;
-    }
-    .lane {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .lane:last-child { border-bottom: 0; }
-    .lane b {
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 920;
-    }
-    .lane p {
-      color: var(--body);
-      font-size: 14px;
-    }
-    .callout {
-      margin-top: 14px;
-      padding: 16px 18px;
-      border-left: 4px solid var(--accent-2);
-      border-radius: var(--radius);
-      background: var(--paper-soft);
-      color: var(--body);
-      font-size: 15px;
-      font-weight: 780;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-    table {
-      width: 100%;
-      min-width: 760px;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 14px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-      text-align: left;
-      font-size: 13.5px;
-    }
-    th {
-      color: var(--muted);
-      background: var(--paper-soft);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
+    .ring-label { position: absolute; left: 50%; transform: translateX(-50%); width: min(78%, 280px); padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--surface) 90%, transparent); text-align: center; font-size: 12px; font-weight: 900; box-shadow: 0 8px 22px rgba(16,20,19,.06); }
+    .ring-label.core { top: 84px; color: var(--success); }
+    .ring-label.adj { top: 150px; color: var(--accent); }
+    .ring-label.edge { top: 216px; color: var(--warning); }
+    .legend-list { display: grid; gap: 10px; }
+    .legend-item { padding: 15px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .legend-item b { display: block; font-size: 15px; }
+    .legend-item span { display: block; margin-top: 7px; color: var(--muted); font-size: 13px; }
+
+    .share-card { padding: 18px; }
+    .share-row { display: grid; grid-template-columns: 118px 1fr 54px; align-items: center; gap: 10px; margin-top: 13px; font-size: 13px; font-weight: 850; color: var(--body); }
+    .share-track { height: 10px; border-radius: 99px; overflow: hidden; background: color-mix(in srgb, var(--line) 70%, transparent); }
+    .share-fill { height: 100%; border-radius: inherit; }
+    .share-fill.amazon { background: var(--accent); }
+    .share-fill.retail { background: var(--prism-sky); }
+    .share-fill.dtc { background: var(--prism-teal); }
+    .share-fill.pro { background: var(--prism-pink); }
+
+    .mind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .mind-card { border-top: 4px solid var(--line); min-height: 250px; display: grid; align-content: start; }
+    .mind-card.green { border-top-color: var(--success); }
+    .mind-card.amber { border-top-color: var(--warning); }
+    .mind-card.red { border-top-color: var(--risk); }
+    .priority { color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .03em; }
+    .status { display: inline-flex; width: fit-content; margin: 10px 0 12px; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 900; }
+    .status.green { color: var(--success); background: var(--success-bg); }
+    .status.amber { color: var(--warning); background: var(--warning-bg); }
+    .status.red { color: var(--risk); background: var(--risk-bg); }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    table { width: 100%; min-width: 880px; border-collapse: collapse; }
+    th, td { padding: 14px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-size: 13.5px; }
+    th { background: var(--surface-2); color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
     tr:last-child td { border-bottom: 0; }
-    td a {
-      color: var(--accent);
-      font-weight: 840;
-      text-decoration: none;
-    }
+    td a { color: var(--accent); font-weight: 850; text-decoration: none; }
     td a:hover { text-decoration: underline; }
-    .evidence {
-      color: var(--accent);
-      font-weight: 880;
-      white-space: nowrap;
-    }
-    .priority {
-      display: inline-flex;
-      min-width: 46px;
-      min-height: 26px;
-      align-items: center;
-      justify-content: center;
-      padding: 2px 8px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--paper-soft);
-      color: var(--body);
-      font-size: 12px;
-      font-weight: 900;
-    }
-    .priority.high { color: var(--red); }
-    .priority.mid { color: var(--amber); }
-    .footer {
-      margin-top: 68px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .verdict-pill { display: inline-flex; align-items: center; white-space: nowrap; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 900; }
+    .verdict-pill.good { color: var(--success); background: var(--success-bg); }
+    .verdict-pill.mid { color: var(--warning); background: var(--warning-bg); }
+    .verdict-pill.bad { color: var(--risk); background: var(--risk-bg); }
+    .evidence { color: var(--accent); font-weight: 880; white-space: nowrap; }
 
-    @media (max-width: 980px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
+    .wordcloud-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wordcloud { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .cloud { min-height: 210px; position: relative; margin-top: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2); overflow: hidden; }
+    .cloud span { position: absolute; transform: translate(var(--x), var(--y)); font-weight: 930; white-space: nowrap; }
+    .cloud.good span { color: var(--success); }
+    .cloud.bad span { color: var(--risk); }
+    .s1 { font-size: 29px; left: 18%; top: 23%; }
+    .s2 { font-size: 23px; left: 46%; top: 20%; }
+    .s3 { font-size: 20px; left: 22%; top: 56%; }
+    .s4 { font-size: 16px; left: 56%; top: 56%; }
+    .s5 { font-size: 14px; left: 10%; top: 76%; }
+    .s6 { font-size: 14px; left: 62%; top: 76%; }
+
+    .line-card { padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .line-card h3 { font-size: 20px; line-height: 1.16; }
+    .line-card p { margin-top: 10px; color: var(--body); font-size: 14px; }
+    .fit-row { display: grid; grid-template-columns: 110px 1fr 90px; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .fit-row:last-child { border-bottom: 0; }
+    .fit-weight { font-size: 28px; font-weight: 950; color: var(--accent); line-height: 1; }
+    .mini-track { height: 8px; border-radius: 99px; background: color-mix(in srgb, var(--line) 68%, transparent); overflow: hidden; margin-top: 8px; }
+    .mini-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky)); }
+
+    .onepage { display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden; }
+    .summary-item { padding: 20px; border-bottom: 1px solid var(--line); }
+    .summary-item:nth-child(odd) { border-right: 1px solid var(--line); }
+    .summary-item b { display: block; color: var(--accent); font-size: 13px; margin-bottom: 8px; }
+    .summary-item p { color: var(--body); font-size: 14px; }
+
+    .biz-card { overflow: hidden; }
+    .biz-top { display: grid; grid-template-columns: 1fr 112px; gap: 16px; align-items: stretch; border-bottom: 1px solid var(--line); }
+    .biz-main { padding: 18px; }
+    .biz-score { display: grid; place-items: center; padding: 18px; border-left: 1px solid var(--line); background: var(--surface-2); text-align: center; }
+    .biz-score b { display: block; font-size: 36px; line-height: 1; }
+    .biz-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .biz-col { padding: 16px 18px; }
+    .biz-col:first-child { border-right: 1px solid var(--line); }
+    .biz-col b { font-size: 13px; color: var(--accent); }
+    .biz-col p { margin-top: 8px; color: var(--body); font-size: 14px; }
+
+    .issue { padding: 20px; border-top: 4px solid var(--risk); }
+    .issue h3 { font-size: 22px; line-height: 1.18; }
+    .issue-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+    .issue-box { padding: 13px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2); }
+    .issue-box b { color: var(--accent); font-size: 12px; }
+    .issue-box p { margin-top: 6px; color: var(--body); font-size: 13px; }
+
+    .comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .comp-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); border-top: 4px solid var(--line); }
+    .comp-card h3 { font-size: 20px; }
+    .comp-card p { margin-top: 10px; color: var(--body); font-size: 14px; }
+    .comp-card.red { border-top-color: var(--risk); }
+    .comp-card.amber { border-top-color: var(--warning); }
+    .comp-card.green { border-top-color: var(--success); }
+
+    .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .path-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .path-card b { display: block; margin-top: 8px; font-size: 19px; line-height: 1.18; }
+    .path-card p { margin-top: 9px; color: var(--body); font-size: 14px; }
+
+    .scoreboard, .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .score-card, .dept-card { border-top: 4px solid var(--line); }
+    .score-card.red, .dept-card.red { border-top-color: var(--risk); }
+    .score-card.amber, .dept-card.amber { border-top-color: var(--warning); }
+    .score-card.green, .dept-card.green { border-top-color: var(--success); }
+    .s { font-size: 36px; font-weight: 950; line-height: 1; }
+    .red .s { color: var(--risk); }
+    .amber .s { color: var(--warning); }
+    .green .s { color: var(--success); }
+
+    .budget-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 12px; }
+    .budget-list { display: grid; gap: 10px; }
+    .budget-item { padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .budget-item b { display: block; font-size: 15px; }
+    .budget-item p { margin-top: 6px; color: var(--body); font-size: 13.5px; }
+    .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    ul.clean { margin: 12px 0 0; padding-left: 18px; color: var(--body); font-size: 14px; }
+    ul.clean li + li { margin-top: 8px; }
+    .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .footer { margin-top: 68px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 1060px) {
+      .hero, .section-head, .audience-map, .onepage, .budget-grid { grid-template-columns: 1fr; }
       .score-panel { max-width: 620px; }
-      .grid-3 { grid-template-columns: 1fr 1fr; }
-      .section-head { display: grid; grid-template-columns: 1fr; }
+      .mind-grid, .comp-grid, .scoreboard, .dept-grid, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .roadmap, .path-grid, .grid-3 { grid-template-columns: 1fr 1fr; }
+      .summary-item:nth-child(odd) { border-right: 0; }
     }
-
     @media (max-width: 700px) {
       .topbar-inner { padding: 10px 16px; }
-      .product-lockup span + span { margin-top: 2px; font-size: 11px; }
+      .product-lockup small { margin-top: 2px; font-size: 11px; }
       .nav { display: none; }
       main { padding: 0 16px 56px; }
       .hero { padding: 22px 0 18px; gap: 18px; }
-      .client-strip { gap: 8px; margin-bottom: 14px; }
-      .client-logo { width: 132px; height: 48px; }
-      .client-logo img { max-width: 104px; max-height: 28px; }
-      .label { min-height: 26px; padding: 3px 9px; font-size: 11px; }
+      .client-logo { width: 136px; height: 50px; }
+      .client-logo img { max-width: 106px; max-height: 28px; }
+      .hero .eyebrow { margin-top: 14px; }
       .eyebrow { font-size: 11px; }
-      h1 { margin-top: 12px; font-size: 34px; line-height: 1.02; }
-      .verdict { margin-top: 12px; font-size: 17px; line-height: 1.34; }
-      .hero-note { margin-top: 10px; font-size: 12px; line-height: 1.42; }
-      .hero-tags { margin-top: 14px; gap: 6px; }
+      h1 { margin-top: 12px; font-size: 36px; line-height: 1.02; }
+      .lead { margin-top: 12px; font-size: 17px; line-height: 1.34; }
+      .sublead { margin-top: 9px; font-size: 12.5px; line-height: 1.45; }
+      .hero-tags { display: none; }
       .score-body { padding: 14px; }
-      .score-top { margin-bottom: 12px; }
-      .score-number { font-size: 52px; }
-      .stars { font-size: 24px; }
-      .star-score { margin-top: 5px; font-size: 13px; line-height: 1.3; }
-      .mini-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-      .bar-row { grid-template-columns: 84px 1fr 32px; }
+      .score-head { gap: 10px; margin-top: 4px; }
+      .score-number { font-size: 56px; }
+      .score-number span { font-size: 17px; }
+      .stars { margin-top: 12px; font-size: 24px; }
+      .star-score { margin-top: 5px; font-size: 13px; line-height: 1.28; }
+      .score-pills { margin-top: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .score-pill { min-height: 58px; padding: 9px; }
+      .score-pill b { font-size: 13px; }
+      .score-pill span { margin-top: 5px; font-size: 9.5px; }
+      .score-grid { margin-top: 12px; gap: 9px; }
+      .score-row { grid-template-columns: 74px 1fr 28px; gap: 8px; font-size: 10.5px; }
       section { padding-top: 48px; }
-      h2 { font-size: 28px; line-height: 1.14; }
-      .lane { grid-template-columns: 1fr; gap: 6px; }
-      .card { padding: 16px; }
+      h2 { font-size: 27px; line-height: 1.15; }
+      .section-note { font-size: 13.5px; }
+      .grid-4, .grid-3, .grid-2, .mind-grid, .comp-grid, .path-grid, .scoreboard, .dept-grid, .roadmap, .wordcloud-wrap, .risk-grid { grid-template-columns: 1fr; }
+      .stage-track { grid-template-columns: repeat(2, 1fr); }
+      .stage-card { min-height: 76px; padding: 12px; }
+      .stage-card b { font-size: 17px; }
+      .rings { min-height: 270px; }
+      .ring-label.core { top: 58px; }
+      .ring-label.adj { top: 122px; }
+      .ring-label.edge { top: 186px; }
+      .share-row { grid-template-columns: 92px 1fr 42px; }
+      .fit-row, .biz-top, .biz-body, .issue-grid { grid-template-columns: 1fr; }
+      .biz-score, .biz-col:first-child { border-left: 0; border-right: 0; border-top: 1px solid var(--line); }
+      .card, .mind-card, .score-card, .dept-card, .road-card, .issue, .dark-panel, .wordcloud, .line-card, .path-card { padding: 16px; }
+      .cloud { min-height: 190px; }
       .footer { display: grid; }
     }
   </style>
@@ -516,19 +431,26 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="product-lockup" aria-label="Offing Atlas 产品标识">
-        <span>远汐 Offing</span>
-        <span>Atlas 北美业务诊断（免费版）</span>
-      </div>
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
       <nav class="nav" aria-label="报告导航">
-        <a href="#summary">判断</a>
+        <a href="#stage">阶段</a>
         <a href="#audience">人群</a>
         <a href="#channel">渠道</a>
         <a href="#search">搜索</a>
         <a href="#voc">VOC</a>
-        <a href="#portfolio">品线</a>
-        <a href="#pressure">竞品</a>
-        <a href="#actions">路线</a>
+        <a href="#ceiling">品线</a>
+        <a href="#intent">意图</a>
+        <a href="#fit">卖点</a>
+        <a href="#onepage">总结</a>
+        <a href="#blocks">板块</a>
+        <a href="#issues">问题</a>
+        <a href="#competitors">竞品</a>
+        <a href="#positioning">定位</a>
+        <a href="#scores">评分</a>
+        <a href="#budget">预算</a>
+        <a href="#roadmap">路线</a>
+        <a href="#departments">部门</a>
+        <a href="#risk">风险</a>
         <a href="#evidence">证据</a>
       </nav>
     </div>
@@ -537,95 +459,80 @@
   <main>
     <section class="hero" id="top">
       <div>
-        <div class="client-strip">
-          <div class="client-logo">
-            <img src="assets/brand-logos/insta360-logo-official-dark.svg" alt="Insta360 logo" />
-          </div>
-          <span class="label"><strong>影像设备</strong> Creator Camera / 360 Camera</span>
-          <span class="label">采集日期 2026-06-19</span>
+        <div class="client-logo" aria-label="Insta360 logo">
+          <img src="assets/brand-logos/insta360-logo-official-dark.svg" alt="Insta360 logo" />
         </div>
-        <div class="eyebrow">North America Business Diagnosis</div>
+        <div class="eyebrow">North America Diagnosis</div>
         <h1>Insta360 北美业务诊断</h1>
-        <p class="verdict">北美增长入口已经成立，下一阶段关键是把创作者声量、零售信任和售后体验转成可复购的高客单理由。</p>
-        <p class="hero-note">本报告基于公开网页、零售货架、公开评价、公开财报与媒体信息生成；未接入品牌后台、广告账户、Amazon Seller Central、Shopify 或 Xiyou 数据。</p>
+        <p class="lead">Insta360 北美主线已经很强，下一阶段先修官网信任、竞品比较和新类目定位，才能把创作者声量转成更稳的高客单转化。</p>
+        <p class="sublead">X5 已经有 Amazon 与 Best Buy 交易信号；真正会拖累增长质量的是直营售后疑虑、DJI/GoPro 规格战，以及 Luna Ultra 进入新类目后的专利与定位压力。</p>
         <div class="hero-tags">
-          <span class="label">主线：X 系列 360 相机</span>
-          <span class="label">新增压力：DJI / GoPro</span>
-          <span class="label">第二曲线：Luna / Drone / Creator Ecosystem</span>
+          <span class="tag green">X5 主线成立</span>
+          <span class="tag amber">DTC 信任需补</span>
+          <span class="tag red">Luna 法务与比较压力</span>
         </div>
       </div>
-
-      <aside class="score-panel" aria-label="Insta360 北美业务诊断总分">
+      <aside class="score-panel" aria-label="北美业务总分">
         <div class="score-body">
-          <div class="score-top">
-            <div>
-              <div class="score-label">Atlas Total Score</div>
-              <div class="score-number">74<span>/100</span></div>
-            </div>
+          <div class="score-label">北美业务情况总分</div>
+          <div class="score-head">
+            <div class="score-number">74<span>/100</span></div>
             <div class="tier">A档</div>
           </div>
-          <div class="stars" aria-label="五星评分 3.7 分">★★★★☆</div>
-          <div class="star-score">3.7 / 5 · 主线强，第二曲线和售后信任决定利润质量</div>
-          <p class="score-summary">X5 的产品力、Amazon 与 Best Buy 交易信号都足够强，但直营体验、竞品规格战和 Luna 专利战会影响北美转化效率。<span class="evidence">[E01][E02][E03][E13][E14]</span></p>
-          <div class="mini-grid">
-            <div class="mini"><b>10-100</b><span>北美第二曲线验证期</span></div>
-            <div class="mini"><b>全渠道硬件</b><span>DTC + Amazon + Retail</span></div>
-            <div class="mini"><b>中高</b><span>公开证据置信度</span></div>
+          <div class="stars" aria-label="3.7 out of 5 stars">★★★★☆</div>
+          <div class="star-score">3.7 / 5 · 主线强，官网信任和第二曲线决定利润质量</div>
+          <div class="score-pills">
+            <div class="score-pill"><b>10-100</b><span>阶段判断</span></div>
+            <div class="score-pill"><b>全渠道硬件</b><span>经营类型</span></div>
+            <div class="score-pill"><b>中高</b><span>公开数据置信度</span></div>
           </div>
-          <div class="bar-list" aria-label="分项评分">
-            <div class="bar-row"><span>业务健康</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><strong>78</strong></div>
-            <div class="bar-row"><span>机会空间</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><strong>82</strong></div>
-            <div class="bar-row"><span>问题致命度</span><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><strong>64</strong></div>
+          <div class="score-grid">
+            <div class="score-row"><span>业务健康度</span><div class="track"><div class="bar" style="width:78%;"></div></div><span>78</span></div>
+            <div class="score-row"><span>业务机会分</span><div class="track"><div class="bar" style="width:82%;"></div></div><span>82</span></div>
+            <div class="score-row"><span>问题致命度</span><div class="track"><div class="bar" style="width:64%;"></div></div><span>64</span></div>
           </div>
+          <p class="score-formula">74 / 100 = 3.7 / 5。数据采集日期：2026-06-19。</p>
         </div>
       </aside>
     </section>
 
-    <section id="summary">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">Executive Read</div>
-          <h2>一句话：Insta360 已经有北美强产品入口，但信任链路还没有完全跟上品线扩张。</h2>
+    <section id="stage">
+      <div class="dark-panel">
+        <div class="eyebrow">Stage Judgment</div>
+        <h2>当前阶段：10-100 后段。360 相机主线接近领先，北美下一关是守住信任和验证第二曲线。</h2>
+        <p style="margin-top:16px;">2025 年公司营收 97.41 亿元，公开年报披露全景相机全球份额 66%；X5 在 Amazon 与 Best Buy 已有强交易和评价信号。Insta360 在北美不再是需求验证问题，而是多品线扩张后如何保持官网转化、渠道纪律和新品评价质量。<span class="evidence">[E2][E3][E7]</span></p>
+        <div class="stage-track" aria-label="阶段判断">
+          <div class="stage-card"><b>0-1</b><span>需求和人群验证</span></div>
+          <div class="stage-card"><b>1-10</b><span>单品和单渠道起量</span></div>
+          <div class="stage-card active"><b>10-100 后段</b><span>主线放大与第二曲线验证</span></div>
+          <div class="stage-card"><b>100+</b><span>广义创作者影像生态防守</span></div>
         </div>
-        <p class="section-note">这份免费版先判断增长优先级和风险位置，适合用来筛选是否进入付费深诊。</p>
       </div>
-      <div class="grid-3">
-        <article class="card">
-          <h3>最强资产：X5 的“创作自由”心智</h3>
-          <p>X5 把 8K 360、低光、可换镜片、15m 防水和长续航打成一个清晰卖点，天然适合骑行、滑雪、旅行、车拍和 solo creator 场景。<span class="evidence">[E01]</span></p>
-        </article>
-        <article class="card">
-          <h3>北美货架：交易信号已经成立</h3>
-          <p>Amazon X5 页面出现高评分、千级评论与月购买信号；Best Buy 也有高评分和数百条评价，说明品牌不只靠官网种草。<span class="evidence">[E02][E03]</span></p>
-        </article>
-        <article class="card">
-          <h3>最大变量：新类目扩张会稀释焦点</h3>
-          <p>Luna Ultra 把 Insta360 推进 gimbal camera 赛道，同时遇到 DJI 专利争议；这会放大北美合规、渠道解释和竞品对比成本。<span class="evidence">[E11][E12][E13][E14]</span></p>
-        </article>
+      <div class="grid-3" style="margin-top:16px;">
+        <div class="card"><h3>阶段最该做的事</h3><p>先把 X5 的高意图用户留在品牌解释体系里：官网 PDP、对比页、售后页、零售货架和配件套装要讲同一套购买理由。</p><div class="hero-tags"><span class="tag green">主线继续放大</span><span class="tag amber">官网补信任</span></div></div>
+        <div class="card"><h3>阶段最危险的动作</h3><p>把 Luna、无人机、麦克风、gimbal 和 360 主线混在同一套泛创作者叙事里，会让用户只记住参数，记不住该买哪一台。</p><div class="hero-tags"><span class="tag red">品线焦点风险</span></div></div>
+        <div class="card"><h3>北美 GMV 估算</h3><p>公开资料只能支撑方向性区间。按全球营收、Amazon/Best Buy 货架与北美影像硬件渠道权重估算，北美消费端 GMV 约 USD 180M-350M，需后台订单校准。</p><div class="hero-tags"><span class="tag amber">置信度中低</span><span class="tag blue">需后台校准</span></div></div>
       </div>
-      <div class="callout">阶段判断：Insta360 的 360 相机主线接近全球领先品牌状态，但北美的下一轮增长判断已经从 X 系列销量，扩展到新类目购买理由、售后口碑和可持续毛利。</div>
     </section>
 
     <section id="audience">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Audience Map</div>
-          <h2>人群要分三层打：极限运动创作者、日常 vlog 创作者、专业/半专业场景。</h2>
+          <div class="eyebrow">Brand Gene & Audience</div>
+          <h2>品牌基因：先守 360 创作者，再把 vlog 和专业场景分开增长。</h2>
         </div>
-        <p class="section-note">Insta360 的问题不在“有没有人喜欢”，而在不同人群对画质、编辑、耐用、售后和价格的权重完全不同。</p>
+        <p class="section-note">Insta360 的人群不是一团“内容创作者”。不同人群对画质、编辑、耐用、售后、价格和渠道信任的权重完全不同。</p>
       </div>
-      <div class="card">
-        <div class="lane">
-          <b>P0 核心人群</b>
-          <p>骑行、摩托、滑雪、水上运动、旅行和车拍创作者。购买理由是“先拍完整，之后再构图”，X5 的 360、稳定、防水、可换镜片和续航能直接回答他们的使用场景。<span class="evidence">[E01][E03]</span></p>
+      <div class="audience-map">
+        <div class="rings" aria-label="Insta360 核心人群层级">
+          <div class="ring-label core">核心盘：360 / Action 创作者</div>
+          <div class="ring-label adj">相邻人群：solo vlog / 旅行 / 小团队</div>
+          <div class="ring-label edge">外扩边界：专业空间 / B2B / 影像生态</div>
         </div>
-        <div class="lane">
-          <b>P1 增长人群</b>
-          <p>solo vlog、旅行博主、小团队内容创作者和短视频创作者。Luna Ultra 的 detachable OLED screen、Leica 联名、AI tracking 和 8K 叙事可以吸引这层人，但需要和 DJI Osmo Pocket 系列正面对比。<span class="evidence">[E09][E11][E12]</span></p>
-        </div>
-        <div class="lane">
-          <b>P2 专业场景</b>
-          <p>虚拟看房、户外赛事、教育培训、现场记录、安防巡检和轻量 B2B。公开市场资料显示 360 camera 需求仍在扩张，但这些场景更看重采购、保修、发票和服务稳定性。<span class="evidence">[E05][E08]</span></p>
+        <div class="legend-list">
+          <div class="legend-item"><b>核心盘：骑行、摩托、滑雪、水上运动、旅行和车拍</b><span>购买理由是“先拍完整，再后期构图”。X5 的 8K 360、稳定、防水、可换镜片和续航直接服务这层人。<span class="evidence">[E1][E3]</span></span></div>
+          <div class="legend-item"><b>相邻人群：solo vlog、旅行博主、小团队内容创作者</b><span>Luna Ultra 具备 detachable OLED screen、Leica、AI tracking 和 8K 亮点，但这层用户会把它和 DJI Osmo Pocket 系列放在同一张清单里比较。<span class="evidence">[E9][E11][E12]</span></span></div>
+          <div class="legend-item"><b>外扩边界：虚拟看房、赛事记录、教育培训、巡检和轻量 B2B</b><span>这些场景不只看设备参数，更看采购、保修、发票、配件和服务稳定性。<span class="evidence">[E5][E8]</span></span></div>
         </div>
       </div>
     </section>
@@ -633,72 +540,71 @@
     <section id="channel">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Channel Diagnosis</div>
-          <h2>渠道组合健康，但直营体验需要更像北美高客单硬件品牌。</h2>
+          <div class="eyebrow">Business Type & Channel</div>
+          <h2>经营类型：全渠道硬件。Amazon 和 Best Buy 负责交易信任，官网必须负责教育、套装和复购。</h2>
         </div>
-        <p class="section-note">估算只做方向性判断，最终应由后台订单、渠道结算和退换货数据校准。</p>
+        <p class="section-note">高客单影像硬件天然需要多渠道：Amazon 适合比较和即时成交，Best Buy 提供零售信任，官网承担毛利、教程、配件和保修解释。</p>
       </div>
       <div class="grid-2">
-        <article class="card">
-          <h3>北美消费端 GMV 公开估算</h3>
-          <div class="metric"><b>USD 180M-350M</b><span>方向性估算，中低置信度</span></div>
-          <div class="metric"><b>锚点</b><span>2025 年公司营收 97.41 亿元</span></div>
-          <div class="metric"><b>北美权重</b><span>按全球影像硬件品牌渠道分布推算</span></div>
-          <p>公开财报只能支撑规模锚点，无法拆出北美订单、退货、广告效率和渠道毛利，因此这里保留宽区间。<span class="evidence">[E07]</span></p>
-        </article>
-        <article class="card">
-          <h3>渠道角色分工</h3>
-          <div class="metric"><b>Amazon</b><span>30%-40% · 交易和比较入口</span></div>
-          <div class="metric"><b>Best Buy / Retail</b><span>20%-30% · 信任、即买即取、展示体验</span></div>
-          <div class="metric"><b>Official Store</b><span>25%-35% · 套装、教育、会员和毛利</span></div>
-          <div class="metric"><b>专业/企业</b><span>5%-10% · 项目采购和配件复购</span></div>
-        </article>
+        <div class="card share-card">
+          <h3>北美渠道销售额占比估算</h3>
+          <div class="share-row"><span>Amazon</span><div class="share-track"><div class="share-fill amazon" style="width:36%;"></div></div><span>30-40%</span></div>
+          <div class="share-row"><span>Best Buy / Retail</span><div class="share-track"><div class="share-fill retail" style="width:26%;"></div></div><span>20-30%</span></div>
+          <div class="share-row"><span>Official Store</span><div class="share-track"><div class="share-fill dtc" style="width:30%;"></div></div><span>25-35%</span></div>
+          <div class="share-row"><span>专业 / 企业</span><div class="share-track"><div class="share-fill pro" style="width:8%;"></div></div><span>5-10%</span></div>
+          <p style="margin-top:14px;color:var(--muted);font-size:13px;">估算依据：Amazon X5 购买信号、Best Buy 评价量、官网产品矩阵与公开财报。未接入 Seller Central、Shopify、Xiyou 或渠道结算，置信度中低。<span class="evidence">[E1][E2][E3][E7]</span></p>
+        </div>
+        <div class="grid-2">
+          <div class="card"><h3>Amazon 的角色</h3><p>主交易货架和比较入口。X5 页面已有 4.7 星、约 1,705 条评价和月购买信号，适合吃高意图搜索。<span class="evidence">[E2]</span></p><div class="hero-tags"><span class="tag green">继续守住</span></div></div>
+          <div class="card"><h3>Best Buy 的角色</h3><p>提供零售信任、线下可得性和高客单安全感。403 条左右评价和 4.8 星说明零售口碑可用。<span class="evidence">[E3]</span></p><div class="hero-tags"><span class="tag green">信任证明</span></div></div>
+          <div class="card"><h3>官网的角色</h3><p>应把保修、退换、配件套装、教程、场景组合和会员沉淀讲清楚。现在最该补的是售后解释和场景套装。</p><div class="hero-tags"><span class="tag amber">需要升级</span></div></div>
+          <div class="card"><h3>专业渠道的角色</h3><p>虚拟看房、赛事、教育、巡检和企业采购需要更完整的报价、服务和配件方案，不能只靠消费级 PDP。</p><div class="hero-tags"><span class="tag amber">需独立路径</span></div></div>
+        </div>
       </div>
-      <div class="callout">渠道优先级：Amazon 和 Best Buy 证明交易可以发生，官网需要承担更高毛利和更完整教育，但售后、税费、保修和退换货解释必须更清楚。公开评价里售后体验同时存在正向解决和负向不满。<span class="evidence">[E02][E03][E04][E05][E06]</span></div>
     </section>
 
     <section id="search">
       <div class="section-head">
         <div>
           <div class="eyebrow">Search Mindshare</div>
-          <h2>搜索心智不能只押品牌词，要吃下“场景 + 竞品比较 + 售后确认”。</h2>
+          <h2>搜索心智：行业场景词和竞品比较词最值钱，售后确认词决定官网能不能留住订单。</h2>
         </div>
-        <p class="section-note">这里按方向性需求强度排序，不代表实际搜索量；实际投放需接 Search Console、Amazon Brand Analytics 和 Google Ads。</p>
+        <p class="section-note">没有接入搜索后台，本节按公开 SERP、零售货架和购买路径做方向性排序。顺序按需求体量和购买意图综合排列。</p>
       </div>
-      <div class="table-wrap">
+      <div class="mind-grid">
+        <div class="mind-card amber">
+          <div class="priority">P0 · 量级高 · 行业/场景词</div>
+          <div class="status amber">半接住</div>
+          <h3>best 360 camera / action camera for biking, skiing, travel</h3>
+          <p>这是最大入口。X5 产品力强，但官网要把场景、配件和售后一起讲，不能只让用户记住 8K 参数。<span class="evidence">[E1][E3][E8]</span></p>
+        </div>
+        <div class="mind-card amber">
+          <div class="priority">P0 · 高意图 · 竞品比较词</div>
+          <div class="status amber">半接住</div>
+          <h3>Insta360 X5 vs DJI Osmo 360 / GoPro MAX2</h3>
+          <p>这类搜索最接近下单。DJI 和 GoPro 都用 8K、可换镜片、日志色彩、生态和编辑工具抢理由，Insta360 需要正式比较页。<span class="evidence">[E1][E9][E10]</span></p>
+        </div>
+        <div class="mind-card red">
+          <div class="priority">P1 · 高风险 · 售后确认词</div>
+          <div class="status red">没接牢</div>
+          <h3>Insta360 warranty / refund / overheating / authorized seller</h3>
+          <p>高客单硬件用户下单前会确认退换、保修、维修和授权渠道。售后解释弱时，官网订单会被 Amazon/Best Buy 分走。<span class="evidence">[E3][E4][E5][E6]</span></p>
+        </div>
+        <div class="mind-card amber">
+          <div class="priority">P1 · 新品类 · Luna 比较词</div>
+          <div class="status amber">需补解释</div>
+          <h3>Luna Ultra vs Osmo Pocket</h3>
+          <p>Luna Ultra 进入 DJI 强势心智区，又遇到专利争议。新品页需要把适用人群、差异和购买安全感前置。<span class="evidence">[E11][E12][E13][E14]</span></p>
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-top:16px;">
         <table>
-          <thead>
-            <tr><th>优先级</th><th>搜索入口</th><th>用户意图</th><th>Insta360 应该回答</th><th>证据</th></tr>
-          </thead>
+          <thead><tr><th>搜索入口</th><th>用户真实意图</th><th>当前表现</th><th>先修动作</th></tr></thead>
           <tbody>
-            <tr>
-              <td><span class="priority high">P0</span></td>
-              <td>best 360 camera / action camera for skiing, biking, travel</td>
-              <td>先选类目，再选品牌。</td>
-              <td>用“不会错过画面 + 后期重构 + 可换镜片 + 长续航”承接创作场景。</td>
-              <td><span class="evidence">[E01][E03][E08]</span></td>
-            </tr>
-            <tr>
-              <td><span class="priority high">P0</span></td>
-              <td>Insta360 X5 vs DJI Osmo 360 / GoPro MAX2</td>
-              <td>规格、生态、耐用和编辑难度比较。</td>
-              <td>把 X5 的可换镜片、软件体验、续航和 360 工作流讲成购买理由，避免只打参数。</td>
-              <td><span class="evidence">[E01][E09][E10]</span></td>
-            </tr>
-            <tr>
-              <td><span class="priority mid">P1</span></td>
-              <td>Insta360 X5 warranty / refund / overheating</td>
-              <td>下单前排雷，尤其是高客单硬件。</td>
-              <td>把 15 天退货、一年保修、授权渠道和维修路径放在 PDP 与 checkout 前后。</td>
-              <td><span class="evidence">[E03][E04][E05][E06]</span></td>
-            </tr>
-            <tr>
-              <td><span class="priority mid">P1</span></td>
-              <td>Luna Ultra vs Osmo Pocket</td>
-              <td>新类目认知和专利争议都会影响购买信心。</td>
-              <td>把 Luna 的 detachable screen、Leica、8K 和 AI tracking 讲清楚，同时准备法务争议下的渠道 FAQ。</td>
-              <td><span class="evidence">[E11][E12][E13][E14]</span></td>
-            </tr>
+            <tr><td>best 360 camera / action camera for travel</td><td>在 Insta360、DJI、GoPro 和低价品牌之间选设备。</td><td><span class="verdict-pill good">接住主线</span> X5 的规格和货架评价可用。</td><td>按场景建落地页：骑行、滑雪、旅行、潜水、车拍，每页绑定配件和售后解释。</td></tr>
+            <tr><td>Insta360 X5 vs DJI Osmo 360</td><td>比较画质、续航、镜片、编辑和生态。</td><td><span class="verdict-pill mid">半接住</span> 公开页面有卖点，但没有足够场景化比较。</td><td>建立 X5 vs DJI / GoPro 比较页，按用户场景排序，不只做参数表。</td></tr>
+            <tr><td>Insta360 return / warranty</td><td>确认买错、坏镜片、税费、维修周期和跨渠道购买风险。</td><td><span class="verdict-pill bad">没接牢</span> 政策存在，但对高客单用户不够前置。</td><td>在 PDP、checkout 和售后页前置 15 天退货、一年保修、授权渠道和维修路径。</td></tr>
+            <tr><td>Luna Ultra vs Osmo Pocket</td><td>判断 Luna 是替代设备还是更高端选择。</td><td><span class="verdict-pill mid">争议期</span> 产品卖点强，但专利战会提高购买不确定性。</td><td>增加 Luna FAQ：适合谁、和 Osmo 的差异、售后保障、法务争议下的购买安排。</td></tr>
           </tbody>
         </table>
       </div>
@@ -707,170 +613,310 @@
     <section id="voc">
       <div class="section-head">
         <div>
-          <div class="eyebrow">VOC Diagnosis</div>
-          <h2>VOC 的核心：把“画质爽感”转成“购买安心”。</h2>
+          <div class="eyebrow">VOC & Reputation</div>
+          <h2>声誉总分 69：产品爽感强，售后和直营体验会影响官网首单信任。</h2>
         </div>
-        <p class="section-note">公开评价只能反映可见样本，不能替代客服工单、退货原因和 NPS 数据。</p>
+        <p class="section-note">VOC 不是“好评多不多”的问题。对高客单影像硬件，用户会把售后、保修、税费和渠道安全感纳入购买决策。</p>
       </div>
-      <div class="grid-3">
-        <article class="card">
-          <h3>第一购买理由</h3>
-          <p>用户被 360 视角、稳定、低光、AI 编辑、可换镜片和长续航吸引。Best Buy 公开摘要也把画质、易用、低光、续航、稳定和可换镜片列为主要正向点。<span class="evidence">[E01][E03]</span></p>
-        </article>
-        <article class="card">
-          <h3>信任阻力</h3>
-          <p>高客单电子硬件的下单前犹豫集中在发热、退换、保修、税费、直营配送和授权渠道。公开评价里既有快速解决，也有负向不满。<span class="evidence">[E03][E04][E05][E06]</span></p>
-        </article>
-        <article class="card">
-          <h3>复购和配件</h3>
-          <p>可换镜片、自拍杆、潜水壳、备用电池、麦克风和安装件是复购抓手。它们需要用场景套装解释价值，而不是只作为 checkout 加购。<span class="evidence">[E01][E02]</span></p>
-        </article>
+      <div class="grid-4">
+        <div class="card"><h3>Amazon</h3><p><strong>4.7 星，约 1,705 条评价。</strong><br>X5 有高评分、Amazon's Choice 和月购买信号，说明主货架信任成立。<span class="evidence">[E2]</span></p><div class="hero-tags"><span class="tag green">交易可用</span></div></div>
+        <div class="card"><h3>Best Buy</h3><p><strong>4.8 星，约 403 条评价。</strong><br>公开摘要显示用户认可画质、易用、低光、续航、稳定和可换镜片，同时提到发热。<span class="evidence">[E3]</span></p><div class="hero-tags"><span class="tag green">零售信任</span></div></div>
+        <div class="card"><h3>Trustpilot</h3><p><strong>4.1 / 5，约 1,683 条评价。</strong><br>正向售后和负向税费/售后不满同时存在，说明品牌服务体验有波动。<span class="evidence">[E6]</span></p><div class="hero-tags"><span class="tag amber">体验波动</span></div></div>
+        <div class="card"><h3>Support Policy</h3><p><strong>15 天退货，一年相机保修。</strong><br>政策本身可用，但应被写进下单前信任层，而不是让用户自己找。<span class="evidence">[E4][E5]</span></p><div class="hero-tags"><span class="tag amber">需前置</span></div></div>
       </div>
-      <div class="callout">业务影响：如果售后解释弱，用户会转向 Amazon / Best Buy 购买以换取渠道安全感；如果官网能把套装教育、保修路径和场景服务做清楚，DTC 才能承担更高毛利。</div>
+      <div class="wordcloud-wrap" style="margin-top:16px;">
+        <div class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支撑首单</span></h3>
+          <div class="cloud good">
+            <span class="s1" style="--x:0;--y:0;">画质</span>
+            <span class="s2" style="--x:8px;--y:6px;">360 视角</span>
+            <span class="s3" style="--x:-6px;--y:12px;">稳定</span>
+            <span class="s4" style="--x:12px;--y:-4px;">低光</span>
+            <span class="s5" style="--x:2px;--y:0;">可换镜片</span>
+            <span class="s6" style="--x:-8px;--y:0;">续航</span>
+          </div>
+          <p style="margin-top:14px;color:var(--muted);font-size:14px;">正向声音能支撑高客单首单，尤其是 X5 的 360 创作自由和耐用叙事。业务影响：提高场景页、零售页和 Amazon PDP 的转化效率。</p>
+        </div>
+        <div class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响官网信任</span></h3>
+          <div class="cloud bad">
+            <span class="s1" style="--x:-4px;--y:2px;">售后</span>
+            <span class="s2" style="--x:8px;--y:16px;">税费</span>
+            <span class="s3" style="--x:-8px;--y:8px;">发热</span>
+            <span class="s4" style="--x:10px;--y:-5px;">退换</span>
+            <span class="s5" style="--x:2px;--y:0;">授权渠道</span>
+            <span class="s6" style="--x:-10px;--y:4px;">维修周期</span>
+          </div>
+          <p style="margin-top:14px;color:var(--muted);font-size:14px;">负向声音会影响官网首单和客服成本。业务影响：用户会优先选择 Amazon 或 Best Buy 来降低购买风险。</p>
+        </div>
+      </div>
     </section>
 
-    <section id="portfolio">
+    <section id="ceiling">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Portfolio Map</div>
-          <h2>品线扩张必须建立“主线、增长线、未来线”的层级，否则用户会被目录复杂度劝退。</h2>
+          <div class="eyebrow">Market Ceiling by Line</div>
+          <h2>分品线天花板：X 系列是现金主线，Luna 是第二曲线，配件与软件决定复购质量。</h2>
         </div>
-        <p class="section-note">这是当前公开产品与市场信号下的北美品线排序。</p>
+        <p class="section-note">360 camera 市场仍在扩张，公开资料显示 2023 年市场约 USD 1.38B，2030 年预计约 USD 8.13B。Insta360 的机会不小，但品线越多，越需要明确谁负责成交、谁负责复购、谁负责未来增长。</p>
+      </div>
+      <div class="grid-4">
+        <div class="line-card"><h3>X 系列 360 Camera</h3><p><strong>主现金线。</strong><br>X5 承担品牌心智、交易主力和零售口碑；应继续深挖运动、旅行、骑行、潜水和车拍场景。<span class="evidence">[E1][E2][E3]</span></p><div class="hero-tags"><span class="tag green">P0 主线</span></div></div>
+        <div class="line-card"><h3>Luna Ultra</h3><p><strong>第二曲线验证。</strong><br>Leica、8K、detachable screen 和 AI tracking 有亮点，但进入 DJI Pocket 心智区，需要更强比较页与购买 FAQ。<span class="evidence">[E11][E12][E13]</span></p><div class="hero-tags"><span class="tag amber">P1 验证</span></div></div>
+        <div class="line-card"><h3>Ace / GO / Flow / Mic</h3><p><strong>场景补位线。</strong><br>这些产品能补齐 action、随身、手机拍摄和音频场景，但官网需要把它们放进清晰人群路径，避免目录复杂。</p><div class="hero-tags"><span class="tag amber">P1 组合</span></div></div>
+        <div class="line-card"><h3>Drone / Professional</h3><p><strong>未来线。</strong><br>年报显示公司加大原创品类与研发投入，未来线可扩大估值叙事，但短期要管住库存、毛利和法务风险。<span class="evidence">[E7]</span></p><div class="hero-tags"><span class="tag red">P2 风险</span></div></div>
+      </div>
+      <div class="callout" style="margin-top:16px;">品线判断：X5 要继续做厚，Luna 要独立讲清，配件和软件要服务复购。当前不适合把所有产品都塞进“creator ecosystem”一个大口号里。</div>
+    </section>
+
+    <section id="intent">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：买前先问拍得好不好，再问会不会买错、坏了怎么办。</h2>
+        </div>
+        <p class="section-note">X5 的购买链路既有创作兴奋，也有硬件风险。官网要同时回答“想拍什么”和“出了问题怎么办”。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>场景</th><th>用户关心</th><th>当前表现</th><th>应补内容</th></tr></thead>
+          <tbody>
+            <tr><td>骑行 / 摩托 / 滑雪</td><td>稳定、防水、耐摔、可换镜片、续航。</td><td><span class="verdict-pill good">接得住</span> X5 卖点和用户评价匹配。</td><td>按场景给安装方案、镜片保护、低温续航和一键剪辑教程。<span class="evidence">[E1][E3]</span></td></tr>
+            <tr><td>旅行 / vlog</td><td>轻便、后期省心、构图自由、自拍杆效果。</td><td><span class="verdict-pill mid">半接住</span> X5 与 Luna 场景容易混。</td><td>增加“该买 X5 还是 Luna”的选择器，降低目录理解成本。</td></tr>
+            <tr><td>专业/半专业</td><td>画质、色彩、收音、文件流程、保修和发票。</td><td><span class="verdict-pill mid">半接住</span> 产品力强，但采购信息不足。</td><td>做专业采购页，写清保修、配件、发票、批量和支持路径。</td></tr>
+            <tr><td>售后排雷</td><td>退换、维修、税费、授权渠道、坏镜片。</td><td><span class="verdict-pill bad">没接牢</span> 政策存在但分散。</td><td>在 PDP 首屏附近放“买前安心卡”，并解释 Amazon/Best Buy/官网购买差异。<span class="evidence">[E4][E5][E6]</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：用户最在意画质和工作流，真正拖下单的是风险解释。</h2>
+        </div>
+        <p class="section-note">以下权重为公开样本方向性判断，用于排序卖点优先级，不代表后台精确占比。</p>
       </div>
       <div class="card">
-        <div class="lane">
-          <b>主线：X 系列</b>
-          <p>X5 承担品牌认知和交易主力，应该继续占据 360 creator camera 的第一心智。核心话术是“不丢画面、后期重构、运动稳定、可换镜片、长续航”。<span class="evidence">[E01][E02][E03]</span></p>
-        </div>
-        <div class="lane">
-          <b>增长线：Luna</b>
-          <p>Luna Ultra 进入 pocket gimbal / vlog camera，具备 Leica、8K、detachable OLED screen 和 AI tracking 亮点，但需要处理 DJI 对比和专利争议带来的购买疑问。<span class="evidence">[E11][E12][E13][E14]</span></p>
-        </div>
-        <div class="lane">
-          <b>支撑线：配件与软件</b>
-          <p>镜片、自拍杆、潜水壳、麦克风、安装件、编辑软件和云端工作流决定复购与留存。公开货架已能看到套装与配件价值，官网应把它们变成场景方案。<span class="evidence">[E01][E02]</span></p>
-        </div>
-        <div class="lane">
-          <b>未来线：无人机与影像生态</b>
-          <p>年报与公开资料显示公司正在扩大原创品类与研发投入，下一步会进入更广的创作者影像生态，但这也会带来利润率、库存和品牌焦点压力。<span class="evidence">[E07]</span></p>
-        </div>
+        <div class="fit-row"><div><div class="fit-weight">25%</div><div class="mini-track"><div class="mini-fill" style="width:25%;"></div></div></div><div><strong>画质 / 低光 / 8K 可信度</strong><br>这是 X5 能赢得首单的第一理由。</div><div><span class="verdict-pill good">接住</span></div></div>
+        <div class="fit-row"><div><div class="fit-weight">20%</div><div class="mini-track"><div class="mini-fill" style="width:20%;"></div></div></div><div><strong>后期工作流 / AI 编辑 / 省心程度</strong><br>360 相机的价值不只在拍摄，也在后期构图和发布效率。</div><div><span class="verdict-pill mid">半接住</span></div></div>
+        <div class="fit-row"><div><div class="fit-weight">15%</div><div class="mini-track"><div class="mini-fill" style="width:15%;"></div></div></div><div><strong>耐用 / 防水 / 可换镜片</strong><br>运动场景用户会把维修和损坏成本算进购买风险。</div><div><span class="verdict-pill good">接住</span></div></div>
+        <div class="fit-row"><div><div class="fit-weight">15%</div><div class="mini-track"><div class="mini-fill" style="width:15%;"></div></div></div><div><strong>渠道信任 / 退换 / 保修</strong><br>这是官网最该补的下单前信任层。</div><div><span class="verdict-pill bad">没接牢</span></div></div>
+        <div class="fit-row"><div><div class="fit-weight">15%</div><div class="mini-track"><div class="mini-fill" style="width:15%;"></div></div></div><div><strong>竞品比较</strong><br>DJI 和 GoPro 会直接进入同一组购买清单。</div><div><span class="verdict-pill mid">半接住</span></div></div>
+        <div class="fit-row"><div><div class="fit-weight">10%</div><div class="mini-track"><div class="mini-fill" style="width:10%;"></div></div></div><div><strong>价格 / 套装 / 配件价值</strong><br>套装如果讲不清，会被用户当成额外成本。</div><div><span class="verdict-pill mid">半接住</span></div></div>
       </div>
     </section>
 
-    <section id="pressure">
+    <section id="onepage">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Competitor Pressure</div>
-          <h2>竞品压力已经从“有没有 360 相机”升级成规格、生态、法务和渠道信任的组合战。</h2>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：Insta360 要先把 X5 信任层做厚，再决定 Luna 和无人机预算节奏。</h2>
         </div>
-        <p class="section-note">北美创作者会在 YouTube、Reddit、Amazon、Best Buy 和专业媒体之间反复比较。</p>
+        <p class="section-note">管理层现在最该追官网能否把高意图用户留住，以及新品是否有独立购买理由。</p>
       </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3>DJI：生态和规格压力</h3>
-          <p>DJI Osmo 360 官方叙事强调 1-inch 360 imaging、Native 8K、120MP photo、100-min 8K/30fps、D-Log M；Luna Ultra 又进入 DJI Pocket 系列优势区。<span class="evidence">[E09][E11][E12]</span></p>
-        </article>
-        <article class="card">
-          <h3>GoPro：运动场景和品牌习惯</h3>
-          <p>GoPro MAX2 强调 True 8K、可换镜片、10-bit、GP-Log、6 麦克风和 Quik App AI 编辑，会抢行动运动用户的熟悉品牌心智。<span class="evidence">[E10]</span></p>
-        </article>
-        <article class="card">
-          <h3>智能手机：轻量替代压力</h3>
-          <p>日常 vlog 用户会用 iPhone 或 Android 旗舰机作为默认拍摄工具。Insta360 必须把“拍摄角度自由”和“后期省心”讲到足够具体，才有额外设备价值。</p>
-        </article>
-        <article class="card">
-          <h3>低价 360 / action camera：试错价格压力</h3>
-          <p>预算型用户可能先买低价设备试水，Insta360 需要用可靠画质、编辑效率、保修和配件生态解释溢价。</p>
-        </article>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>10-100 后段。X 系列主线已成立，北美下一阶段看第二曲线验证和利润质量。</p></div>
+        <div class="summary-item"><b>增长主线</b><p>X5 继续吃 360 / action camera 高意图需求，官网补齐场景、售后和配件方案。</p></div>
+        <div class="summary-item"><b>Top 3 问题</b><p>官网售后信任不够前置；Luna 独立购买理由不够清；竞品比较页缺位。</p></div>
+        <div class="summary-item"><b>预算方向</b><p>加：X5 场景页、比较页、售后信任层。控：泛新品曝光、没有验证门槛的生态叙事。</p></div>
+        <div class="summary-item"><b>第一修复</b><p>30 天内重做 X5 PDP 信任层和 X5 vs DJI / GoPro 对比页。</p></div>
+        <div class="summary-item"><b>数据缺口</b><p>需要 Seller Central、Shopify、Xiyou、渠道结算、退货原因和配件 attach rate 校准。</p></div>
+      </div>
+    </section>
+
+    <section id="blocks">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Blocks</div>
+          <h2>三大板块诊断：品牌和产品强，Marketing 与电商还没把风险解释前置。</h2>
+        </div>
+        <p class="section-note">三块评分不平均。Insta360 的产品力很强，真正该补的是购买前解释和跨渠道信任。</p>
+      </div>
+      <div class="grid-3">
+        <div class="biz-card">
+          <div class="biz-top"><div class="biz-main"><h3>品牌板块：360 相机心智强，但新类目要避免稀释。</h3><p>全景相机份额和 X5 货架表现能支撑品牌权威；Luna 和未来线需要独立叙事。</p></div><div class="biz-score"><div><b style="color:var(--success);">82</b><span>强</span></div></div></div>
+          <div class="biz-body"><div class="biz-col"><b>做得好</b><p>X5 产品线、全球规模和零售信任都能支撑高客单。</p></div><div class="biz-col"><b>做得差</b><p>新类目容易把品牌从“360 创作自由”拉成宽泛硬件目录。</p></div></div>
+        </div>
+        <div class="biz-card">
+          <div class="biz-top"><div class="biz-main"><h3>Marketing：卖点强，但比较词和售后词没有变成购买路径。</h3><p>内容能讲 8K、低光、可换镜片，但还需要更直接回答 DJI/GoPro 比较和售后疑问。</p></div><div class="biz-score"><div><b style="color:var(--warning);">68</b><span>警戒</span></div></div></div>
+          <div class="biz-body"><div class="biz-col"><b>做得好</b><p>场景卖点清楚，创作者素材天然有传播性。</p></div><div class="biz-col"><b>做得差</b><p>比较页、售后 FAQ 和选择器不够强，用户要自己拼答案。</p></div></div>
+        </div>
+        <div class="biz-card">
+          <div class="biz-top"><div class="biz-main"><h3>电商板块：渠道健康，但官网应承担更高阶的信任和复购。</h3><p>Amazon/Best Buy 能成交，官网要靠套装、教程、保修和配件复购证明价值。</p></div><div class="biz-score"><div><b style="color:var(--warning);">66</b><span>待补</span></div></div></div>
+          <div class="biz-body"><div class="biz-col"><b>做得好</b><p>多渠道交易基础健康，零售和 marketplace 都有信任信号。</p></div><div class="biz-col"><b>做得差</b><p>DTC 购买风险解释不够前置，容易被零售和 Amazon 分走高意图订单。</p></div></div>
+        </div>
       </div>
     </section>
 
     <section id="issues">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Top Issues</div>
-          <h2>前三个问题：直营信任、第二曲线定位、竞品比较页。</h2>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：先修官网信任，再修 Luna 定位和竞品比较。</h2>
         </div>
-        <p class="section-note">这些问题会直接影响官网转化、零售分流和新品首批评价质量。</p>
+        <p class="section-note">这三件事会直接影响官网转化、渠道毛利、客服成本和新品首批评价质量。</p>
       </div>
-      <div class="grid-3">
-        <article class="card">
-          <h3>01 · 官网需要更强售后可视化</h3>
-          <p>15 天退货和一年保修是基础，但用户更想知道买错、坏镜片、发热、税费、维修周期和跨渠道购买怎么办。<span class="evidence">[E04][E05][E06]</span></p>
-        </article>
-        <article class="card">
-          <h3>02 · Luna 需要独立购买理由</h3>
-          <p>Luna 不能只靠“更高规格”进入 gimbal camera 赛道，需要明确服务哪类 creator、替代什么设备、和 Osmo Pocket 差异在哪里。<span class="evidence">[E09][E11][E12]</span></p>
-        </article>
-        <article class="card">
-          <h3>03 · 竞品比较要前置</h3>
-          <p>DJI 与 GoPro 都在用 8K、可换镜片、生态和编辑软件进攻。Insta360 需要正式比较页，而不是让用户去 Reddit 和 YouTube 自己拼答案。<span class="evidence">[E09][E10]</span></p>
-        </article>
+      <div class="issue">
+        <h3>问题 1：官网没有把退换、保修、授权渠道和维修路径前置成购买信任。</h3>
+        <div class="issue-grid">
+          <div class="issue-box"><b>严重度</b><p>高。它会把官网高意图用户推向 Amazon / Best Buy。</p></div>
+          <div class="issue-box"><b>证据</b><p>官方 15 天退货、一年保修存在；Trustpilot 同时有正向服务和负向不满。<span class="evidence">[E4][E5][E6]</span></p></div>
+          <div class="issue-box"><b>业务影响</b><p>DTC 毛利和套装复购被渠道安全感分走，客服成本被动上升。</p></div>
+          <div class="issue-box"><b>30 / 90 天动作</b><p>30 天做 PDP 信任层；90 天把退换、维修、授权渠道和配件保护纳入转化看板。</p></div>
+        </div>
+      </div>
+      <div class="issue" style="margin-top:12px;border-top-color:var(--warning);">
+        <h3>问题 2：Luna Ultra 需要独立购买理由，不能只靠规格进入 DJI Pocket 心智区。</h3>
+        <div class="issue-grid">
+          <div class="issue-box"><b>严重度</b><p>中高。新品第一波评价和法务争议会影响北美信心。</p></div>
+          <div class="issue-box"><b>证据</b><p>Luna Ultra 主打 Leica、8K、detachable OLED 和 AI tracking；DJI 诉讼增加不确定性。<span class="evidence">[E11][E12][E13][E14]</span></p></div>
+          <div class="issue-box"><b>业务影响</b><p>用户会把 Luna 当成 Osmo Pocket 替代品比较，价格和法务问题会压低下单安全感。</p></div>
+          <div class="issue-box"><b>30 / 90 天动作</b><p>30 天做 Luna 选择器和 FAQ；90 天用场景复盘决定预算是否继续加。</p></div>
+        </div>
+      </div>
+      <div class="issue" style="margin-top:12px;border-top-color:var(--warning);">
+        <h3>问题 3：X5 缺少正式竞品比较页，会让高意图搜索交给 YouTube、Reddit 和媒体。</h3>
+        <div class="issue-grid">
+          <div class="issue-box"><b>严重度</b><p>中高。竞品比较词通常更接近购买决策。</p></div>
+          <div class="issue-box"><b>证据</b><p>DJI Osmo 360 与 GoPro MAX2 都在用 8K、可换镜片、生态和编辑叙事竞争。<span class="evidence">[E9][E10]</span></p></div>
+          <div class="issue-box"><b>业务影响</b><p>用户在外部内容完成判断，官网只能接最后价格比较。</p></div>
+          <div class="issue-box"><b>30 / 90 天动作</b><p>30 天上线 X5 vs DJI/GoPro；90 天按点击、PDP 跳转、套装转化和售后咨询优化。</p></div>
+        </div>
       </div>
     </section>
 
-    <section id="actions">
+    <section id="competitors">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Action Route</div>
-          <h2>建议先做三件事：PDP 信任层、竞品比较层、场景套装层。</h2>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：DJI 抢生态和规格，GoPro 抢运动信任，手机和低价品牌抢轻量替代。</h2>
         </div>
-        <p class="section-note">免费版只给优先级，完整方案需要后台数据、广告账户、评论样本和页面热图。</p>
+        <p class="section-note">竞品压力要按购买理由拆：谁分走规格信任、谁分走运动可靠性、谁分走轻量替代。</p>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>周期</th><th>动作</th><th>目标</th><th>要看的指标</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>0-30 天</td>
-              <td>重写 X5 PDP 的 trust block：退货、保修、授权渠道、维修路径、配件保护、发热说明。</td>
-              <td>降低高客单硬件下单前不确定性。</td>
-              <td>PDP 到 checkout 点击率、售后相关搜索点击、客服咨询率、退款原因。</td>
-            </tr>
-            <tr>
-              <td>30-60 天</td>
-              <td>上线 X5 vs DJI Osmo 360 vs GoPro MAX2 比较页，按场景而非参数表组织。</td>
-              <td>截住竞品比较搜索，把优势转成可理解的购买理由。</td>
-              <td>比较页自然流量、跳转 PDP 率、品牌词 + 竞品词转化。</td>
-            </tr>
-            <tr>
-              <td>60-90 天</td>
-              <td>按骑行、滑雪、旅行、vlog、潜水、车拍拆场景套装，并绑定配件与使用教程。</td>
-              <td>提升客单价、减少买错配件、推动复购。</td>
-              <td>AOV、attach rate、套装转化率、配件复购、评论关键词。</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="comp-grid">
+        <div class="comp-card red"><h3>DJI 抢生态和规格</h3><p>Osmo 360 主打 1-inch imaging、Native 8K、120MP photo、100-min 8K/30fps 和 D-Log M。Luna 又进入 DJI Pocket 系列强势区。<span class="evidence">[E9][E11][E12]</span></p><div class="hero-tags"><span class="tag red">最大压力</span></div></div>
+        <div class="comp-card amber"><h3>GoPro 抢运动习惯</h3><p>MAX2 主打 True 8K、可换镜片、10-bit、GP-Log、6 麦克风和 Quik App 编辑，会抢行动运动用户的熟悉品牌心智。<span class="evidence">[E10]</span></p><div class="hero-tags"><span class="tag amber">运动心智</span></div></div>
+        <div class="comp-card amber"><h3>智能手机抢省事</h3><p>日常 vlog 用户会默认用手机。Insta360 需要把“先拍完整、后期构图”的价值讲得足够具体。</p><div class="hero-tags"><span class="tag amber">轻量替代</span></div></div>
+        <div class="comp-card green"><h3>低价品牌抢试错</h3><p>预算型用户会先用低价设备试水。Insta360 要用可靠画质、软件、保修和配件生态解释溢价。</p><div class="hero-tags"><span class="tag blue">价格防守</span></div></div>
       </div>
     </section>
 
-    <section id="copy">
+    <section id="positioning">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Message Draft</div>
-          <h2>可测试的北美英文话术：少讲“参数赢”，多讲“拍摄结果和风险降低”。</h2>
+          <div class="eyebrow">Positioning Upgrade</div>
+          <h2>定位调整：从“最强 360 相机”升级到“高风险场景也能放心拍的创作者影像工具”。</h2>
         </div>
-        <p class="section-note">以下是方向草稿，正式落地前要结合品牌语气和广告账户数据。</p>
+        <p class="section-note">下一阶段的溢价理由不只来自参数，而来自场景结果、售后安全感和跨设备工作流。</p>
       </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Homepage / PDP headline</h3>
-          <p>Capture every angle first. Frame the story later.</p>
-        </article>
-        <article class="card">
-          <h3>Retail shelf line</h3>
-          <p>8K 360 capture, replaceable lenses, and battery life built for real trips.</p>
-        </article>
-        <article class="card">
-          <h3>Trust block opener</h3>
-          <p>Buy with clear refund and exchange terms, one-year camera warranty, and support for the moments your gear takes a hit.</p>
-        </article>
-        <article class="card">
-          <h3>Comparison page promise</h3>
-          <p>Choose by how you shoot: action, travel, vlog, underwater, or creator workflow.</p>
-        </article>
+      <div class="path-grid">
+        <div class="path-card"><span class="tag amber">当前理由</span><b>8K 360 + 可换镜片 + 稳定 + 长续航</b><p>适合 X5 主线继续拿下 action / travel creator。</p></div>
+        <div class="path-card"><span class="tag green">下一阶段理由</span><b>拍摄结果 + 购买安心 + 配件方案</b><p>让官网不只是交易页，而是用户选择设备和场景方案的入口。</p></div>
+        <div class="path-card"><span class="tag red">必须避免</span><b>泛创作者硬件目录</b><p>如果 X5、Luna、drone、mic 都混在一个大叙事里，用户会更依赖外部比较内容。</p></div>
+      </div>
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card"><h3>Homepage headline</h3><p>Capture the whole moment. Choose the story after.</p></div>
+        <div class="card"><h3>PDP promise</h3><p>8K 360 capture, replaceable lenses, and a support path built for real trips.</p></div>
+        <div class="card"><h3>Comparison page line</h3><p>Choose by how you shoot: action, travel, vlog, underwater, or professional workflow.</p></div>
+        <div class="card"><h3>Retail shelf line</h3><p>The 360 camera for creators who want every angle and fewer second guesses.</p></div>
+      </div>
+    </section>
+
+    <section id="scores">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：产品和品牌高分，官网信任、比较内容和数据运营先追红黄灯。</h2>
+        </div>
+        <p class="section-note">分数用于管理优先级，不是平均主义。红灯先修，黄灯设 30/90 天验收。</p>
+      </div>
+      <div class="scoreboard">
+        <div class="score-card red"><div class="s">52</div><h3>DTC 售后信任</h3><p>退换、保修、授权渠道和维修路径没有足够前置。</p></div>
+        <div class="score-card red"><div class="s">55</div><h3>数据 / 增长运营</h3><p>缺公开可验证的北美 GMV、渠道、退货和 attach rate 看板。</p></div>
+        <div class="score-card amber"><div class="s">62</div><h3>Luna 新品定位</h3><p>卖点强，但和 DJI Pocket 心智区的差异还要讲清。</p></div>
+        <div class="score-card amber"><div class="s">64</div><h3>竞品比较内容</h3><p>高意图比较词需要官网正式接住。</p></div>
+        <div class="score-card amber"><div class="s">67</div><h3>专业/企业路径</h3><p>B2B 场景还缺采购、保修和服务表达。</p></div>
+        <div class="score-card amber"><div class="s">68</div><h3>官网电商</h3><p>交易可用，但还没承担足够的教育和复购价值。</p></div>
+        <div class="score-card green"><div class="s">74</div><h3>渠道组合</h3><p>Amazon、Best Buy、官网和专业渠道都有角色。</p></div>
+        <div class="score-card green"><div class="s">78</div><h3>Amazon 主货架</h3><p>X5 高评分和购买信号支撑交易。</p></div>
+        <div class="score-card green"><div class="s">82</div><h3>X5 产品力</h3><p>8K、低光、稳定、防水、可换镜片和续航形成强主线。</p></div>
+        <div class="score-card green"><div class="s">84</div><h3>品牌权威</h3><p>全球规模和份额能支撑北美高客单。</p></div>
+        <div class="score-card green"><div class="s">86</div><h3>类目机会</h3><p>360 camera 市场仍有增长空间，创作者场景继续扩张。</p></div>
+      </div>
+    </section>
+
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：继续投 X5 主线，但新品和泛生态预算必须设验证门槛。</h2>
+        </div>
+        <p class="section-note">预算要服务增长质量。没有售后信任、比较页和场景套装，继续加量会把高意图用户送去外部渠道完成判断。</p>
+      </div>
+      <div class="budget-grid">
+        <div class="budget-list">
+          <div class="budget-item"><b>应该加：X5 场景页和比较页</b><p>预算用于骑行、滑雪、旅行、潜水、车拍场景页，以及 X5 vs DJI / GoPro 页面。</p></div>
+          <div class="budget-item"><b>应该加：DTC 信任层</b><p>PDP、checkout、售后页和邮件流要解释退换、保修、授权渠道和维修路径。</p></div>
+          <div class="budget-item"><b>应该加：配件套装与教程</b><p>用场景套装提高 AOV 和配件 attach rate，减少用户买错配件。</p></div>
+        </div>
+        <div class="budget-list">
+          <div class="budget-item"><b>应该控：没有验证门槛的 Luna 曝光</b><p>Luna 预算要绑定比较页转化、首批评价、退货原因和法务问答点击。</p></div>
+          <div class="budget-item"><b>应该控：泛创作者生态叙事</b><p>没有具体产品选择路径时，宽叙事会增加用户理解成本。</p></div>
+          <div class="budget-item"><b>应该控：只追短期折扣的官网转化</b><p>官网要承担高毛利、套装、配件和售后解释，不能只和 Amazon 比价格。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线图：先让用户放心买 X5，再验证 Luna 和未来线。</h2>
+        </div>
+        <p class="section-note">每个阶段都必须有 owner、指标和业务影响，避免变成“内容优化”这种空任务。</p>
+      </div>
+      <div class="roadmap">
+        <div class="road-card"><h3>0-30 天：止住高意图流失</h3><ul class="clean"><li>Owner：DTC + 支持 + Marketing。</li><li>重写 X5 PDP 信任层：退换、保修、授权渠道、维修、坏镜片处理。</li><li>上线 X5 vs DJI / GoPro 轻量比较页。</li><li>验收：售后相关咨询率、PDP 到 checkout、比较页跳转率。</li></ul></div>
+        <div class="road-card"><h3>31-90 天：把官网做成选择器</h3><ul class="clean"><li>Owner：电商 + 内容 + 产品。</li><li>按骑行、滑雪、旅行、潜水、车拍拆场景页和套装。</li><li>上线“X5 / Luna / GO / Ace 怎么选”路径。</li><li>验收：AOV、attach rate、套装转化、退货原因结构化。</li></ul></div>
+        <div class="road-card"><h3>91-180 天：验证第二曲线</h3><ul class="clean"><li>Owner：品类 + 增长 + 渠道。</li><li>Luna 预算绑定独立 GMV、退货率、评价质量、比较页转化和法务 FAQ 点击。</li><li>专业/B2B 场景建立采购页和服务路径。</li><li>验收：Luna 是否能独立贡献高质量新增，而不是吃 X5 心智。</li></ul></div>
+      </div>
+    </section>
+
+    <section id="departments">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>职能部门红黄绿灯：红灯先看官网信任和数据，绿灯继续放大产品与渠道。</h2>
+        </div>
+        <p class="section-note">部门评分按“最差点”和“30 天第一修复”写，不做平均表扬。</p>
+      </div>
+      <div class="dept-grid">
+        <div class="dept-card red"><div class="s">52</div><h3>DTC / 售后体验部</h3><p><strong>最差点：</strong>退换、保修、维修、授权渠道没有前置成购买承诺。</p><div class="hero-tags"><span class="tag red">30 天重写信任层</span></div></div>
+        <div class="dept-card red"><div class="s">55</div><h3>数据 / 增长运营部</h3><p><strong>最差点：</strong>北美 GMV、渠道占比、退货、配件 attach rate 和新品评价没有统一看板。</p><div class="hero-tags"><span class="tag red">30 天补经营看板</span></div></div>
+        <div class="dept-card amber"><div class="s">62</div><h3>新品 / 品类部</h3><p><strong>最差点：</strong>Luna 和未来线需要独立购买理由和 30/90 天验证门槛。</p><div class="hero-tags"><span class="tag amber">30 天设验证门槛</span></div></div>
+        <div class="dept-card amber"><div class="s">64</div><h3>Marketing 部</h3><p><strong>最差点：</strong>比较词和售后疑问还没有被官网主动回答。</p><div class="hero-tags"><span class="tag amber">30 天上线对比页</span></div></div>
+        <div class="dept-card amber"><div class="s">67</div><h3>专业渠道部</h3><p><strong>最差点：</strong>B2B/专业场景缺采购、保修、发票和服务路径。</p><div class="hero-tags"><span class="tag amber">30 天补采购入口</span></div></div>
+        <div class="dept-card amber"><div class="s">68</div><h3>官网电商部</h3><p><strong>最差点：</strong>官网还没有把选择器、教程、套装和复购路径做清楚。</p><div class="hero-tags"><span class="tag amber">30 天重排 X5 PDP</span></div></div>
+        <div class="dept-card green"><div class="s">78</div><h3>Marketplace 运营部</h3><p><strong>最差点：</strong>Amazon 强信号没有稳定反哺官网比较页、FAQ 和套装策略。</p><div class="hero-tags"><span class="tag green">30 天导出高频问题</span></div></div>
+        <div class="dept-card green"><div class="s">82</div><h3>X5 产品部</h3><p><strong>最差点：</strong>产品力强，但还缺面向北美购买场景的正式比较证据包。</p><div class="hero-tags"><span class="tag green">30 天补场景证据</span></div></div>
+        <div class="dept-card green"><div class="s">84</div><h3>品牌部</h3><p><strong>最差点：</strong>全球份额和品牌权威已足够，第二类目表达还需要收束主线。</p><div class="hero-tags"><span class="tag green">30 天重写主线口径</span></div></div>
+        <div class="dept-card green"><div class="s">86</div><h3>零售渠道部</h3><p><strong>最差点：</strong>Best Buy 的信任优势还没有沉淀成官网可复用的购买证明。</p><div class="hero-tags"><span class="tag green">30 天沉淀零售证明</span></div></div>
+      </div>
+    </section>
+
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk & Data Gaps</div>
+          <h2>风险预警：公开数据能判断方向，北美预算优先级必须用后台和渠道数据校准。</h2>
+        </div>
+        <p class="section-note">以下数据缺口决定报告分数是否需要调整，也决定哪些动作能进入正式付费深诊。</p>
+      </div>
+      <div class="risk-grid">
+        <div class="card"><h3>需要内部后台校准</h3><ul class="clean"><li>North America GMV、订单、退款、退货原因。</li><li>Amazon Seller Central / Xiyou 的 ASIN 销量、BSR、关键词流量。</li><li>Shopify/官网转化、渠道毛利、配件 attach rate。</li><li>Luna 首批评价、退货、法务 FAQ 点击和客服咨询。</li></ul></div>
+        <div class="card"><h3>当前公开判断边界</h3><ul class="clean"><li>Amazon/Best Buy 评分和评价是交易信号，不等于完整北美销量。</li><li>全球营收只能做规模锚点，不能直接等同北美 GMV。</li><li>Trustpilot 是公开 VOC 样本，不等于全部客服体验。</li><li>DJI/Insta360 专利战仍在进展中，需持续跟踪对销售和渠道的影响。</li></ul></div>
       </div>
     </section>
 
@@ -878,30 +924,28 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Evidence Table</div>
-          <h2>证据表：本报告所有强判断都对应公开来源。</h2>
+          <h2>证据表：强判断全部回到公开证据 ID。</h2>
         </div>
-        <p class="section-note">页面访问和公开数据会变化，后续做付费深诊时应重新采样并截图留档。</p>
+        <p class="section-note">证据用于追溯判断。页面、价格、评分和政策会变化，正式深诊需要重新采样并截图留档。</p>
       </div>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr><th>ID</th><th>来源</th><th>关键信号</th></tr>
-          </thead>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>关键信号 / 用途</th><th>置信度</th></tr></thead>
           <tbody>
-            <tr><td>E01</td><td><a href="https://www.insta360.com/product/insta360-x5" target="_blank" rel="noopener">Insta360 X5 官方产品页</a></td><td>8K 360、1/1.28 英寸传感器、Triple AI Chip、可换镜片、15m 防水、最高 208 分钟续航、20 分钟充至 80%。</td></tr>
-            <tr><td>E02</td><td><a href="https://www.amazon.com/Insta360-Waterproof-Replaceable-Built-Stabilization/dp/B0DZCBYCNY" target="_blank" rel="noopener">Amazon X5 PDP</a></td><td>页面显示 4.7 星、约 1,705 条评价、Amazon's Choice、过去一个月 1K+ 购买。</td></tr>
-            <tr><td>E03</td><td><a href="https://www.bestbuy.com/product/insta360-x5-8k-360-action-camera-black/J39VLT4C63/sku/12076687/reviews" target="_blank" rel="noopener">Best Buy X5 评价页</a></td><td>页面显示 4.8 星、约 403 条评价；公开摘要集中在画质、易用、低光、续航、稳定、防换镜片，同时提到发热。</td></tr>
-            <tr><td>E04</td><td><a href="https://www.insta360.com/support/supportcourse?post_id=20726" target="_blank" rel="noopener">Insta360 退换政策</a></td><td>官方商城多数产品支持收货后 15 天内申请无理由退货，政策版本 2026-04-08 更新。</td></tr>
-            <tr><td>E05</td><td><a href="https://www.insta360.com/support/supportcourse?post_id=375" target="_blank" rel="noopener">Insta360 保修政策</a></td><td>相机产品保修期为一年；无法提供购买凭证时按出厂日期后 90 天起算。</td></tr>
-            <tr><td>E06</td><td><a href="https://www.trustpilot.com/review/www.insta360.com" target="_blank" rel="noopener">Trustpilot Insta360</a></td><td>公开页显示 4.1 / 5、约 1,683 条评价、近 12 个月约 1,098 条；页面同时出现积极维修体验与税费/售后不满。</td></tr>
-            <tr><td>E07</td><td><a href="https://stockmc.xueqiu.com/202604/688775_20260429_Z01R.pdf" target="_blank" rel="noopener">影石创新 2025 年报 PDF</a></td><td>年报披露 2025 年营收 97.41 亿元、同比增长 74.76%；股东信提及全景相机全球份额 66%、拇指相机全球份额 57%。</td></tr>
-            <tr><td>E08</td><td><a href="https://www.grandviewresearch.com/industry-analysis/360-degree-camera-market-report" target="_blank" rel="noopener">Grand View Research 360 Camera Market</a></td><td>360-degree camera 市场 2023 年约 13.814 亿美元，2030 年预计约 81.336 亿美元，2024-2030 CAGR 27.8%。</td></tr>
-            <tr><td>E09</td><td><a href="https://www.dji.com/360" target="_blank" rel="noopener">DJI Osmo 360 官方页</a></td><td>主打 1-inch 360 imaging、Native 8K、120MP photo、100-min 8K/30fps、D-Log M。</td></tr>
-            <tr><td>E10</td><td><a href="https://investor.gopro.com/press-releases/press-release-details/2025/GoPro-Announces-Three-New-Products---MAX2-360-Camera-with-True-8K-Resolution-and-Twist-and-Go-Replaceable-Lenses-LIT-HERO-Miniature-4K-Lifestyle-Camera-with-Built-In-Light-for-Whatever-Whenever-Capture-and-Fluid-Pro-AI-Gimbal-for-Stabilizing-GoPros-P/default.aspx" target="_blank" rel="noopener">GoPro MAX2 发布页</a></td><td>主打 True 8K、可换镜片、10-bit、GP-Log、6 麦克风和 Quik App AI 编辑。</td></tr>
-            <tr><td>E11</td><td><a href="https://www.insta360.com/product/insta360-luna-ultra" target="_blank" rel="noopener">Insta360 Luna Ultra 官方页</a></td><td>主打 detachable 2-inch OLED touchscreen、20m HD image transmission、内置麦克风。</td></tr>
-            <tr><td>E12</td><td><a href="https://www.insta360.com/blog/insta360-launches-luna-series-gimbal-cameras-Leica.html" target="_blank" rel="noopener">Insta360 Luna Ultra 官方博客</a></td><td>主打 1-inch 8K imaging、dual Leica Summicron lenses、Triple AI Chip、AI tracking。</td></tr>
-            <tr><td>E13</td><td><a href="https://www.techradar.com/cameras/video-cameras/dji-accuses-insta360-of-blatantly-copying-its-pocket-3-vlogging-camera-in-new-lawsuit-and-demands-ban-on-insta360-luna-cameras" target="_blank" rel="noopener">TechRadar DJI 诉 Insta360 报道</a></td><td>报道称 DJI 在美国起诉 Insta360 Luna 系列并寻求禁令，Insta360 以专利反诉回应。</td></tr>
-            <tr><td>E14</td><td><a href="https://www.prnewswire.com/news-releases/insta360-hits-back-at-dji-launch-day-lawsuits-with-us-patent-countersuits-302799258.html" target="_blank" rel="noopener">PRNewswire Insta360 反诉声明</a></td><td>Insta360 声明称 DJI 寻求阻止 Luna Ultra 进入美国市场，Insta360 否认侵权并发起美国专利反诉。</td></tr>
+            <tr><td>E1</td><td><a href="https://www.insta360.com/product/insta360-x5" target="_blank" rel="noopener">Insta360 X5 官方产品页</a></td><td>2026-06-19 checked</td><td>Official PDP</td><td>8K 360、1/1.28 英寸传感器、Triple AI Chip、可换镜片、15m 防水、最高 208 分钟续航、20 分钟充至 80%。</td><td>High</td></tr>
+            <tr><td>E2</td><td><a href="https://www.amazon.com/Insta360-Waterproof-Replaceable-Built-Stabilization/dp/B0DZCBYCNY" target="_blank" rel="noopener">Amazon X5 PDP</a></td><td>2026-06-19 checked</td><td>Marketplace</td><td>4.7 星、约 1,705 条评价、Amazon's Choice、过去一个月 1K+ 购买。</td><td>Medium</td></tr>
+            <tr><td>E3</td><td><a href="https://www.bestbuy.com/product/insta360-x5-8k-360-action-camera-black/J39VLT4C63/sku/12076687/reviews" target="_blank" rel="noopener">Best Buy X5 评价页</a></td><td>2026-06-19 checked</td><td>Retail reviews</td><td>4.8 星、约 403 条评价；用户摘要集中在画质、易用、低光、续航、稳定、可换镜片，同时提到发热。</td><td>Medium</td></tr>
+            <tr><td>E4</td><td><a href="https://www.insta360.com/support/supportcourse?post_id=20726" target="_blank" rel="noopener">Insta360 退换政策</a></td><td>Updated 2026-04-08</td><td>Support policy</td><td>官方商城多数产品支持收货后 15 天内申请无理由退货。</td><td>High</td></tr>
+            <tr><td>E5</td><td><a href="https://www.insta360.com/support/supportcourse?post_id=375" target="_blank" rel="noopener">Insta360 保修政策</a></td><td>2026-06-19 checked</td><td>Warranty policy</td><td>相机产品保修期为一年；无法提供购买凭证时按出厂日期后 90 天起算。</td><td>High</td></tr>
+            <tr><td>E6</td><td><a href="https://www.trustpilot.com/review/www.insta360.com" target="_blank" rel="noopener">Trustpilot Insta360</a></td><td>2026-06-19 checked</td><td>VOC</td><td>4.1 / 5、约 1,683 条评价、近 12 个月约 1,098 条；积极维修体验与税费/售后不满同时存在。</td><td>Medium</td></tr>
+            <tr><td>E7</td><td><a href="https://stockmc.xueqiu.com/202604/688775_20260429_Z01R.pdf" target="_blank" rel="noopener">影石创新 2025 年报 PDF</a></td><td>Published 2026-04</td><td>Financial filing</td><td>2025 年营收 97.41 亿元、同比增长 74.76%；全景相机全球份额 66%、拇指相机全球份额 57%。</td><td>High</td></tr>
+            <tr><td>E8</td><td><a href="https://www.grandviewresearch.com/industry-analysis/360-degree-camera-market-report" target="_blank" rel="noopener">Grand View Research 360 Camera Market</a></td><td>2026-06-19 checked</td><td>Market size</td><td>360-degree camera 市场 2023 年约 USD 1.381B，2030 年预计约 USD 8.134B，CAGR 27.8%。</td><td>Medium</td></tr>
+            <tr><td>E9</td><td><a href="https://www.dji.com/360" target="_blank" rel="noopener">DJI Osmo 360 官方页</a></td><td>2026-06-19 checked</td><td>Competitor PDP</td><td>1-inch 360 imaging、Native 8K、120MP photo、100-min 8K/30fps、D-Log M。</td><td>High</td></tr>
+            <tr><td>E10</td><td><a href="https://investor.gopro.com/press-releases/press-release-details/2025/GoPro-Announces-Three-New-Products---MAX2-360-Camera-with-True-8K-Resolution-and-Twist-and-Go-Replaceable-Lenses-LIT-HERO-Miniature-4K-Lifestyle-Camera-with-Built-In-Light-for-Whatever-Whenever-Capture-and-Fluid-Pro-AI-Gimbal-for-Stabilizing-GoPros-P/default.aspx" target="_blank" rel="noopener">GoPro MAX2 发布页</a></td><td>Published 2025</td><td>Competitor release</td><td>True 8K、可换镜片、10-bit、GP-Log、6 麦克风和 Quik App AI 编辑。</td><td>Medium</td></tr>
+            <tr><td>E11</td><td><a href="https://www.insta360.com/product/insta360-luna-ultra" target="_blank" rel="noopener">Insta360 Luna Ultra 官方页</a></td><td>2026-06-19 checked</td><td>Official PDP</td><td>detachable 2-inch OLED touchscreen、20m HD image transmission、内置麦克风。</td><td>High</td></tr>
+            <tr><td>E12</td><td><a href="https://www.insta360.com/blog/insta360-launches-luna-series-gimbal-cameras-Leica.html" target="_blank" rel="noopener">Insta360 Luna Ultra 官方博客</a></td><td>Published 2026-06</td><td>Official launch</td><td>1-inch 8K imaging、dual Leica Summicron lenses、Triple AI Chip、AI tracking。</td><td>High</td></tr>
+            <tr><td>E13</td><td><a href="https://www.techradar.com/cameras/video-cameras/dji-accuses-insta360-of-blatantly-copying-its-pocket-3-vlogging-camera-in-new-lawsuit-and-demands-ban-on-insta360-luna-cameras" target="_blank" rel="noopener">TechRadar DJI 诉 Insta360 报道</a></td><td>Published 2026-06</td><td>Media / legal</td><td>报道称 DJI 在美国起诉 Insta360 Luna 系列并寻求禁令，Insta360 以专利反诉回应。</td><td>Medium</td></tr>
+            <tr><td>E14</td><td><a href="https://www.prnewswire.com/news-releases/insta360-hits-back-at-dji-launch-day-lawsuits-with-us-patent-countersuits-302799258.html" target="_blank" rel="noopener">PRNewswire Insta360 反诉声明</a></td><td>Published 2026-06</td><td>Company statement</td><td>Insta360 声明称 DJI 寻求阻止 Luna Ultra 进入美国市场，Insta360 否认侵权并发起美国专利反诉。</td><td>Medium</td></tr>
           </tbody>
         </table>
       </div>
