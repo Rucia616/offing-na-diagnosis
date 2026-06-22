@@ -43,17 +43,18 @@
     .product-lockup small { margin-top:5px; color:var(--accent); font-size:12px; font-weight:780; }
     .nav { display:flex; gap:13px; overflow-x:auto; padding:16px 0; scrollbar-width:none; }
     .nav a { color:var(--muted); font-size:12px; font-weight:760; white-space:nowrap; }
-    main { width:min(1132px,calc(100% - 48px)); margin:0 auto; }
+    main { width:min(1184px,calc(100% - 56px)); margin:0 auto; }
     section { scroll-margin-top:88px; margin:96px 0; }
-    .hero { min-height:calc(100vh - 62px); display:grid; grid-template-columns:minmax(0,1.25fr) 386px; gap:72px; align-items:center; margin:0; }
-    .client-logo { width:max-content; max-width:min(340px,100%); padding:22px 24px; border:1px solid var(--line); border-radius:var(--radius); background:#fff; box-shadow:var(--shadow); margin-bottom:32px; }
-    .client-logo img { display:block; max-width:260px; max-height:64px; object-fit:contain; }
+    .hero { min-height:min(820px,calc(100vh - 62px)); display:grid; grid-template-columns:minmax(0,1fr) minmax(340px,400px); gap:clamp(36px,5vw,72px); align-items:center; margin:0; padding:42px 0; }
+    .hero-copy { max-width:660px; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:30px; }
+    .client-logo img { display:block; max-width:280px; max-height:76px; object-fit:contain; }
     .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:900; text-transform:uppercase; margin-bottom:20px; }
     .eyebrow::before { content:""; width:18px; height:2px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
     h1,h2,h3,p { margin:0; }
-    h1 { max-width:780px; color:var(--text); font-size:clamp(56px,7vw,92px); line-height:.98; font-weight:900; }
-    .lead { max-width:780px; margin-top:26px; color:var(--body); font-size:26px; line-height:1.35; font-weight:780; }
-    .sublead { max-width:760px; margin-top:16px; color:var(--muted); font-size:16px; }
+    h1 { max-width:660px; color:var(--text); font-size:clamp(56px,6.1vw,88px); line-height:1.04; font-weight:900; }
+    .lead { max-width:660px; margin-top:22px; color:var(--body); font-size:clamp(22px,2vw,26px); line-height:1.38; font-weight:780; }
+    .sublead { max-width:650px; margin-top:14px; color:var(--muted); font-size:15px; line-height:1.62; }
     .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
     .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
     .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
@@ -61,29 +62,29 @@
     .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
     .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
     .tag.neutral { color:var(--muted); background:var(--surface-2); }
-    .score-panel { position:relative; overflow:hidden; color:var(--inverse-text); background:var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:var(--result-shadow); padding:30px 24px; }
+    .score-panel { position:relative; overflow:hidden; color:var(--inverse-text); background:var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:var(--result-shadow); padding:28px 26px; }
     .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
     .score-kicker { color:var(--inverse-muted); font-size:13px; font-weight:800; margin-bottom:8px; }
     .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .score-number { font-size:66px; line-height:1; font-weight:900; }
+    .score-number { font-size:62px; line-height:1; font-weight:900; }
     .score-number span { font-size:24px; color:var(--inverse-muted); }
     .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
-    .stars { margin-top:16px; color:#ffc857; font-size:30px; line-height:1; }
-    .star-score { margin-top:8px; color:var(--inverse-text); font-size:15px; font-weight:850; }
-    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:18px; }
-    .score-meta div { border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:12px; background:rgba(255,255,255,.06); }
-    .score-meta b { display:block; color:var(--inverse-text); font-size:17px; line-height:1.2; }
+    .stars { margin-top:14px; color:#ffc857; font-size:28px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:16px; }
+    .score-meta div { border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:16px; line-height:1.2; }
     .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
-    .subscore-list { margin-top:20px; display:grid; gap:12px; }
+    .subscore-list { margin-top:16px; display:grid; gap:10px; }
     .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
     .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
     .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
-    .score-formula { margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:12px; }
+    .score-formula { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:12px; }
     .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
     h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
     .section-note { color:var(--muted); font-size:15px; align-self:center; }
     .wide-note { margin-top:18px; }
-    .grid-3,.grid-4,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid { display:grid; gap:12px; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid { display:grid; gap:12px; }
     .grid-3 { grid-template-columns:repeat(3,1fr); }
     .grid-4 { grid-template-columns:repeat(4,1fr); }
     .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; }
@@ -99,20 +100,32 @@
     .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
     .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
     .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
-    .audience-grid { grid-template-columns:1fr 1.15fr; align-items:center; margin-bottom:12px; }
-    .audience-map { position:relative; min-height:360px; border-radius:var(--radius); background:radial-gradient(circle at center,var(--surface) 0,var(--surface-2) 70%); border:1px solid var(--line); overflow:hidden; }
-    .audience-ring { position:absolute; display:grid; place-items:center; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:999px; border:2px solid var(--line); color:var(--text); font-weight:900; text-align:center; padding:16px; }
-    .ring-1 { width:40%; height:40%; z-index:4; background:var(--surface); }
-    .ring-2 { width:62%; height:62%; z-index:3; background:color-mix(in srgb,var(--accent-fill) 44%,transparent); }
-    .ring-3 { width:82%; height:82%; z-index:2; background:color-mix(in srgb,var(--surface-2) 80%,transparent); }
-    .ring-4 { width:96%; height:96%; z-index:1; background:transparent; }
+    .audience-grid { grid-template-columns:minmax(360px,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
     .legend-list { display:grid; gap:10px; }
     .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
     .legend-item.state-green { border-left-color:var(--success); border-top:0; }
     .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
     .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
     .legend-item b { display:block; color:var(--text); }
-    .legend-item span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
     .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
     .dark-panel h3 { color:var(--inverse-text); }
     .share-list { display:grid; gap:12px; margin-top:18px; }
@@ -123,7 +136,9 @@
     .share-track i.green { background:var(--success); }
     .share-track i.amber { background:var(--warning); }
     .share-track i.red { background:var(--risk); }
-    .mind-grid { grid-template-columns:repeat(4,1fr); }
+    .mind-grid { grid-template-columns:repeat(6,1fr); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
     .wordcloud-wrap { grid-template-columns:1fr 1fr; }
     .cloud { min-height:190px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
     .cloud span { position:absolute; font-weight:900; line-height:1; }
@@ -173,7 +188,8 @@
     .dept-card.amber { border-top-color:var(--warning); }
     .dept-card.green { border-top-color:var(--success); }
     .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
-    .evidence { color:var(--accent); font-weight:900; white-space:nowrap; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
     .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
     @media (max-width: 900px) {
       .topbar-inner,main { width:calc(100% - 32px); }
@@ -202,16 +218,23 @@
       .track,.mini-track { height:7px; }
       .score-formula { display:none; }
       .stage-track { grid-template-columns:1fr 1fr; }
-      .audience-map { min-height:300px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
       .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
-      .client-logo { padding:16px 18px; margin-bottom:22px; }
-      .client-logo img { max-width:220px; max-height:48px; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
       .eyebrow { margin-bottom:14px; }
       .hero-copy .sublead, .hero-copy .tag-row { display:none; }
       .tag-row { margin-top:16px; gap:6px; }
       .tag { font-size:11px; padding:5px 8px; }
       .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel { padding:16px; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
       .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:10px 12px; border:1px solid var(--line); background:#fff; box-shadow:none; }
+      .client-logo img { max-width:250px; max-height:64px; }
     }
   </style>
 </head>
@@ -232,7 +255,7 @@
           <img src="assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" />
         </div>
         <div class="eyebrow">North America Diagnosis</div>
-        <h1>Ulike 北美业务诊断</h1>
+        <h1>北美业务诊断</h1>
         <p class="lead">Ulike 北美主线已经由 Air 10 家族跑出来，下一步先守价格、适用边界和售后信任，再决定 ReGlow 与 JMOON 能否升级为第二增长柱。</p>
         <p class="sublead">Amazon 当前显示 Air 10 主 ASIN 4K+ bought、Air 10 Deluxe 2K+ bought，ReGlow 也有 1K+ bought；增长质量的扣分点集中在适用人群筛选、BBB / Reddit 售后疑虑、以及新品和主线之间的预算门槛。</p>
         <div class="tag-row"><span class="tag green">Air 10 家族主线成立</span><span class="tag amber">ReGlow 有动销但需验证</span><span class="tag red">售后信任与适用边界先修</span></div>
@@ -299,7 +322,7 @@
         <article class="card state-amber">
           <div class="card-state">需后台校准</div>
           <h3>北美 GMV 估算</h3>
-          <p>按 Amazon 可见动销、官网产品矩阵、Best Buy / Nordstrom 触点和品类盘子估算，北美公开可校准 GMV 约 USD 35M-90M，需 Seller Central / Shopify / 零售 sell-out 复核。<span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E14]</span></p>
+          <p>按 Amazon 可见动销、官网产品矩阵、Best Buy / Nordstrom 触点和品类盘子估算，北美公开可校准 GMV 约 USD 35M-90M，需 Seller Central / Shopify / 零售 sell-out 复核。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E14]</span></span></p>
         </article>
       </div>
     </section>
@@ -315,10 +338,25 @@
       </div>
       <div class="audience-grid">
         <div class="audience-map" aria-label="核心人群层级">
-          <div class="audience-ring ring-1 state-green"><span>Air 10 核心盘</span></div><div class="audience-ring ring-2 state-amber"><span>高问题人群</span></div><div class="audience-ring ring-3 state-amber"><span>ReGlow / JMOON</span></div><div class="audience-ring ring-4 state-red"><span>需先筛掉</span></div>
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>Air 10 核心盘</b><small>核心盘：浅至中等肤色、深色毛发、怕痛的女性用户</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>高问题人群</b><small>相邻人群：PCOS / 粗硬毛发 / 男士身体护理</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>ReGlow / JMOON</b><small>外扩边界：LED 护肤与家用美容仪用户</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>需先筛掉</b><small>暂时边界：深肤色、浅发色、纹身和光敏感用户</small></div>
+            </div>
+          </div>
         </div>
         <div class="legend-list">
-          <div class="legend-item state-green"><b>核心盘：浅至中等肤色、深色毛发、怕痛的女性用户</b><span>这层用户买的是有效、舒适、在家完成和长期省成本。Air 10 的冰感、SkinSensor 和 10 分钟全身治疗能直接回应她们。<span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></div><div class="legend-item state-amber"><b>相邻人群：PCOS / 粗硬毛发 / 男士身体护理</b><span>这层用户有更强痛点，但对效果稳定、使用时长和部位差异更敏感，需要单独 FAQ 和使用计划。</span></div><div class="legend-item state-amber"><b>外扩边界：LED 护肤与家用美容仪用户</b><span>这层用户会把 ReGlow 与 CurrentBody、Omnilux、Shark、Dr. Dennis Gross 对比，购买理由从脱毛转成护肤结果和长期坚持。<span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></div><div class="legend-item state-red"><b>暂时边界：深肤色、浅发色、纹身和光敏感用户</b><span>IPL 不适合所有人。把边界讲晚，会提高退款、差评和客服压力。<span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E16]</span></span></div>
+          <div class="legend-item state-green"><b>核心盘：浅至中等肤色、深色毛发、怕痛的女性用户</b><span>这层用户买的是有效、舒适、在家完成和长期省成本。Air 10 的冰感、SkinSensor 和 10 分钟全身治疗能直接回应她们。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></span></div><div class="legend-item state-amber"><b>相邻人群：PCOS / 粗硬毛发 / 男士身体护理</b><span>这层用户有更强痛点，但对效果稳定、使用时长和部位差异更敏感，需要单独 FAQ 和使用计划。</span></div><div class="legend-item state-amber"><b>外扩边界：LED 护肤与家用美容仪用户</b><span>这层用户会把 ReGlow 与 CurrentBody、Omnilux、Shark、Dr. Dennis Gross 对比，购买理由从脱毛转成护肤结果和长期坚持。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></span></div><div class="legend-item state-red"><b>暂时边界：深肤色、浅发色、纹身和光敏感用户</b><span>IPL 不适合所有人。把边界讲晚，会提高退款、差评和客服压力。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E16]</span></span></span></div>
         </div>
       </div>
       <div class="grid-3">
@@ -357,22 +395,22 @@
             <b>Amazon</b>
             <div class="share-track"><i class="green" style="width:55%;"></i></div>
             <span>55%</span>
-            <small>Air 10、Air 10 Deluxe、Air 4、ReGlow 均有可见评价和排名。<span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></small>
+            <small>Air 10、Air 10 Deluxe、Air 4、ReGlow 均有可见评价和排名。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></small>
           </div><div class="share-row">
             <b>DTC</b>
             <div class="share-track"><i class="amber" style="width:28%;"></i></div>
             <span>28%</span>
-            <small>官网有 quiz、HSA/FSA、100-day guarantee、产品矩阵和专家背书。<span class="evidence">[E1]</span><span class="evidence">[E2]</span></small>
+            <small>官网有 quiz、HSA/FSA、100-day guarantee、产品矩阵和专家背书。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></small>
           </div><div class="share-row">
             <b>Retail</b>
             <div class="share-track"><i class="amber" style="width:9%;"></i></div>
             <span>9%</span>
-            <small>Best Buy / Nordstrom 证明触点，但公开 sell-out 不足。<span class="evidence">[E6]</span><span class="evidence">[E9]</span></small>
+            <small>Best Buy / Nordstrom 证明触点，但公开 sell-out 不足。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E9]</span></span></small>
           </div><div class="share-row">
             <b>Social / PR</b>
             <div class="share-track"><i class="amber" style="width:8%;"></i></div>
             <span>8%</span>
-            <small>媒体长测和红人内容能拉兴趣，但必须回到适用边界和售后信任。<span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E13]</span><span class="evidence">[E16]</span></small>
+            <small>媒体长测和红人内容能拉兴趣，但必须回到适用边界和售后信任。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E13]</span><span class="evidence">[E16]</span></span></small>
           </div>
         </div>
       </div>
@@ -381,7 +419,7 @@
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>Amazon 的角色</h3>
-          <p>承担高意图成交、评价和类目防守。Air 10 主 ASIN 当前显示 4.3 星、2,621 ratings、4K+ bought in past month，类目 #7。<span class="evidence">[E3]</span></p>
+          <p>承担高意图成交、评价和类目防守。Air 10 主 ASIN 当前显示 4.3 星、2,621 ratings、4K+ bought in past month，类目 #7。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">需补强</div>
@@ -414,23 +452,23 @@
         <article class="mind-card state-amber">
           <div class="priority">P0 · 量级高</div>
           <h3>at home IPL / laser hair removal device</h3>
-          <p>这类词最大，会进入 Amazon 榜单、媒体榜单和 Braun / Philips / Nood 页面。Ulike 有 Air 10 动销，但官网还需要更强行业入口页。<span class="evidence">[E3]</span><span class="evidence">[E16]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></p>
+          <p>这类词最大，会进入 Amazon 榜单、媒体榜单和 Braun / Philips / Nood 页面。Ulike 有 Air 10 动销，但官网还需要更强行业入口页。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E16]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></p>
         </article><article class="mind-card state-green">
           <div class="priority">P1 · 量级中高</div>
           <h3>Ulike / Ulike Air 10 review</h3>
-          <p>品牌词和评测词能被官网、Amazon、Tom's Guide、Cosmopolitan、Trustpilot 接住，说明品牌心智已经成立。<span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E7]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></p>
+          <p>品牌词和评测词能被官网、Amazon、Tom's Guide、Cosmopolitan、Trustpilot 接住，说明品牌心智已经成立。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E7]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p>
         </article><article class="mind-card state-red">
           <div class="priority">P1 · 量级中</div>
           <h3>Ulike vs Braun / Philips / Nood</h3>
-          <p>比较词最接近下单选择。Braun 抢安全权威，Nood 抢低价试错，Philips 抢专业家电信任，Ulike 需要正式对比页。<span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></p>
+          <p>比较词最接近下单选择。Braun 抢安全权威，Nood 抢低价试错，Philips 抢专业家电信任，Ulike 需要正式对比页。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></p>
         </article><article class="mind-card state-red">
           <div class="priority">P2 · 量级中</div>
           <h3>Ulike refund / broken / stopped flashing</h3>
-          <p>售后词会在临门一脚出现。Trustpilot 1-star、BBB/F 和 Reddit 故障讨论必须被 FAQ、warranty 和 troubleshooting 页面主动消化。<span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></p>
+          <p>售后词会在临门一脚出现。Trustpilot 1-star、BBB/F 和 Reddit 故障讨论必须被 FAQ、warranty 和 troubleshooting 页面主动消化。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></p>
         </article><article class="mind-card state-amber">
           <div class="priority">P2 · 量级中</div>
           <h3>LED mask / ReGlow vs CurrentBody / Omnilux</h3>
-          <p>ReGlow 有 1K+ bought 和媒体评测，但 LED 面罩用户更看临床证据、波长、LED 数和佩戴舒适度，需要独立搜索入口。<span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></p>
+          <p>ReGlow 有 1K+ bought 和媒体评测，但 LED 面罩用户更看临床证据、波长、LED 数和佩戴舒适度，需要独立搜索入口。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
         </article>
       </div>
     </section>
@@ -449,22 +487,22 @@
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>Amazon</h3>
-          <p>Air 10 主 ASIN 4.3 星、2,621 ratings；Air 10 Deluxe 4.5 星、75 ratings；ReGlow 4.4 星、426 ratings。<span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></p>
+          <p>Air 10 主 ASIN 4.3 星、2,621 ratings；Air 10 Deluxe 4.5 星、75 ratings；ReGlow 4.4 星、426 ratings。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">需补强</div>
           <h3>Trustpilot</h3>
-          <p>Ulike.com 4.4 / 5、809 reviews，5-star 74%、1-star 14%，并显示负评回复 100%、通常 48 小时内。<span class="evidence">[E7]</span></p>
+          <p>Ulike.com 4.4 / 5、809 reviews，5-star 74%、1-star 14%，并显示负评回复 100%、通常 48 小时内。<span class="evidence-list"><span class="evidence">[E7]</span></span></p>
         </article>
         <article class="card state-red">
           <div class="card-state">先修复</div>
           <h3>BBB / Reddit</h3>
-          <p>BBB 显示 F rating 和 6 条投诉未回应；Reddit 可见退款、设备不闪、效果差异和客服慢的讨论。<span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></p>
+          <p>BBB 显示 F rating 和 6 条投诉未回应；Reddit 可见退款、设备不闪、效果差异和客服慢的讨论。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></p>
         </article>
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>媒体长测</h3>
-          <p>Tom's Guide、Cosmopolitan、Women's Health 和 Good Housekeeping 都支持产品可用性，但都提醒适用边界和长期坚持。<span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E13]</span><span class="evidence">[E16]</span></p>
+          <p>Tom's Guide、Cosmopolitan、Women's Health 和 Good Housekeeping 都支持产品可用性，但都提醒适用边界和长期坚持。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E13]</span><span class="evidence">[E16]</span></span></p>
         </article>
       </div>
       <div class="wordcloud-wrap">
@@ -494,12 +532,12 @@
           <div class="line-meta">P0 现金主线 · 规模化主卖期</div>
           <h3>Air 10 / Air 10 Deluxe / Air 4</h3>
           <b>全球 IPL device 2026 约 USD 470M，北美为领先区域</b>
-          <p>Air 10 主 ASIN、Deluxe 和 Air 4 均有 Amazon 可见排名与评价，主线仍是 Ulike 北美最确定的收入来源。<span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E14]</span></p>
+          <p>Air 10 主 ASIN、Deluxe 和 Air 4 均有 Amazon 可见排名与评价，主线仍是 Ulike 北美最确定的收入来源。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E14]</span></span></p>
         </article><article class="line-card state-amber">
           <div class="line-meta">P1 第二线验证 · 新品放量观察期</div>
           <h3>ReGlow LED Mask</h3>
           <b>北美 LED face masks 2026 约 USD 104.59M</b>
-          <p>ReGlow 已有 Amazon 1K+ bought、官网 511 reviews 和媒体评测，强于旧报告判断，但仍需要对比 CurrentBody / Omnilux / Shark 的证据页。<span class="evidence">[E1]</span><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></p>
+          <p>ReGlow 已有 Amazon 1K+ bought、官网 511 reviews 和媒体评测，强于旧报告判断，但仍需要对比 CurrentBody / Omnilux / Shark 的证据页。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
         </article><article class="line-card state-amber">
           <div class="line-meta">P1 相邻护肤设备实验 · 早期验证期</div>
           <h3>JMOON by Ulike</h3>
@@ -527,7 +565,7 @@
         <table>
           <thead><tr><th>入口</th><th>用户真正想判断</th><th>当前状态</th><th>应补页面动作</th></tr></thead>
           <tbody>
-            <tr><td>Amazon / Best Seller</td><td>Air 10 是否是值得信任的主流选择</td><td>基本接住</td><td>继续维护评价、排名、coupon 纪律和竞品防守。<span class="evidence">[E3]</span><span class="evidence">[E4]</span></td></tr><tr><td>Google / Media Review</td><td>是否真的有效、多久见效、是否痛</td><td>接住一半</td><td>把 2 周结果、12 周周期、适用边界和个体差异放在同一页。<span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></td></tr><tr><td>Comparison Search</td><td>Braun、Philips、Nood 和 Ulike 哪个更适合我</td><td>没接牢</td><td>上线 Ulike vs Braun / Philips / Nood，对比安全、舒适、速度、长期成本和客服承诺。<span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></td></tr><tr><td>Trustpilot / BBB / Reddit</td><td>买坏、无效、想退时会不会麻烦</td><td>明显扣分</td><td>建立 warranty / return / troubleshooting 页面，并把 SLA 写成可执行承诺。<span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></td></tr><tr><td>LED Mask Search</td><td>ReGlow 能否替代 CurrentBody / Omnilux / Shark</td><td>验证中</td><td>ReGlow 需要独立临床证据、波长、LED 数、佩戴舒适和使用周期对比页。<span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></td></tr>
+            <tr><td>Amazon / Best Seller</td><td>Air 10 是否是值得信任的主流选择</td><td>基本接住</td><td>继续维护评价、排名、coupon 纪律和竞品防守。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></td></tr><tr><td>Google / Media Review</td><td>是否真的有效、多久见效、是否痛</td><td>接住一半</td><td>把 2 周结果、12 周周期、适用边界和个体差异放在同一页。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></td></tr><tr><td>Comparison Search</td><td>Braun、Philips、Nood 和 Ulike 哪个更适合我</td><td>没接牢</td><td>上线 Ulike vs Braun / Philips / Nood，对比安全、舒适、速度、长期成本和客服承诺。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></td></tr><tr><td>Trustpilot / BBB / Reddit</td><td>买坏、无效、想退时会不会麻烦</td><td>明显扣分</td><td>建立 warranty / return / troubleshooting 页面，并把 SLA 写成可执行承诺。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></td></tr><tr><td>LED Mask Search</td><td>ReGlow 能否替代 CurrentBody / Omnilux / Shark</td><td>验证中</td><td>ReGlow 需要独立临床证据、波长、LED 数、佩戴舒适和使用周期对比页。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></td></tr>
           </tbody>
         </table>
       </div>
@@ -596,8 +634,8 @@
       </div>
       <div class="business-grid">
         <article class="biz-card state-green">
-          <div class="biz-top"><div><span>品牌板块</span><h3>全球规模和专业背书能支撑高客单。</h3><p>8M units、49 countries、100+ experts、1000+ patents 和专家背书让 Ulike 有专业基础。<span class="evidence">[E9]</span><span class="evidence">[E10]</span></p></div><b>76</b></div>
-          <div class="biz-body"><div><strong>做得好</strong><p>品牌规模、技术背书、PCOS / AAD 等内容能支持信任。</p></div><div><strong>做得差</strong><p>官网仍能看到 7M 和 8M 两套口径并存，会削弱专业精确感。<span class="evidence">[E9]</span><span class="evidence">[E10]</span></p></div></div>
+          <div class="biz-top"><div><span>品牌板块</span><h3>全球规模和专业背书能支撑高客单。</h3><p>8M units、49 countries、100+ experts、1000+ patents 和专家背书让 Ulike 有专业基础。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p></div><b>76</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>品牌规模、技术背书、PCOS / AAD 等内容能支持信任。</p></div><div><strong>做得差</strong><p>官网仍能看到 7M 和 8M 两套口径并存，会削弱专业精确感。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p></div></div>
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>Marketing</span><h3>声量服务 Air 10，比较词和边界页还要补。</h3><p>媒体评测和 Amazon 内容能证明有效与舒适，但 Braun / Nood / Philips 比较和不适配人群说明不够前置。</p></div><b>66</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Air 10 的冰感、速度、结果和媒体长测都容易转成内容。</p></div><div><strong>做得差</strong><p>广告若先放大 2 周 96% 结果，再晚讲限制条件，会提高不适配用户失望。</p></div></div>
@@ -621,7 +659,7 @@
         <h3>问题 1：适用边界没有和 2 周结果主张同等前置。</h3>
         <div class="issue-grid">
           <div><b>严重度</b><p>高。强结果主张会吸入不适配用户，随后转化成退款、低分评论和客服压力。</p></div>
-          <div><b>证据</b><p>官方 Air 10 页面说明个体结果受肤色、发色、部位和使用计划影响；Tom's Guide 也提醒深肤色、浅发色、纹身等限制。<span class="evidence">[E2]</span><span class="evidence">[E11]</span></p></div>
+          <div><b>证据</b><p>官方 Air 10 页面说明个体结果受肤色、发色、部位和使用计划影响；Tom's Guide 也提醒深肤色、浅发色、纹身等限制。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span></span></p></div>
           <div><b>业务影响</b><p>广告转化看似更高，真实利润会被退货、差评和客服吞掉。</p></div>
           <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重写 Air 10 PDP：2 周结果旁边放适用人群、12 周周期和不适用条件。<br><strong>90 天：</strong>按退货原因、低分评论、quiz 拦截率和客服咨询主题复盘页面效果。</p></div>
         </div>
@@ -629,7 +667,7 @@
         <h3>问题 2：售后信任没有主动覆盖 BBB / Reddit / Trustpilot 的负面主题。</h3>
         <div class="issue-grid">
           <div><b>严重度</b><p>高。高客单家用美容仪用户会在下单前搜索故障、退款和客服体验。</p></div>
-          <div><b>证据</b><p>Trustpilot 1-star 14%；BBB rating F 并列出 6 条投诉未回应；Reddit 有退款和设备不闪讨论。<span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></p></div>
+          <div><b>证据</b><p>Trustpilot 1-star 14%；BBB rating F 并列出 6 条投诉未回应；Reddit 有退款和设备不闪讨论。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></p></div>
           <div><b>业务影响</b><p>官网首单会流向 Amazon / Best Buy，DTC 毛利、注册和复购机会被削弱。</p></div>
           <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 return / warranty / troubleshooting 信任页，并在 PDP、cart、checkout 前置。<br><strong>90 天：</strong>建立售后 SLA、replacement timeline、退货条件解释和故障处理内容看板。</p></div>
         </div>
@@ -637,7 +675,7 @@
         <h3>问题 3：ReGlow / JMOON 需要独立验证，不能直接借 Air 10 心智扩张。</h3>
         <div class="issue-grid">
           <div><b>严重度</b><p>中高。新品有动销，但 LED 面罩和家用护肤仪的购买理由不同。</p></div>
-          <div><b>证据</b><p>ReGlow 有 Amazon 1K+ bought 和媒体评测；北美 LED face masks 2026 约 USD 104.59M，竞品 CurrentBody、Omnilux、Shark 证据要求更高。<span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></p></div>
+          <div><b>证据</b><p>ReGlow 有 Amazon 1K+ bought 和媒体评测；北美 LED face masks 2026 约 USD 104.59M，竞品 CurrentBody、Omnilux、Shark 证据要求更高。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p></div>
           <div><b>业务影响</b><p>若提前加大新品预算，会稀释 Air 10 主线资源，并拉高库存和广告试错成本。</p></div>
           <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>给 ReGlow 和 JMOON 设置订单、评价、退款、ROAS 和复购门槛。<br><strong>90 天：</strong>达标再扩大内容和零售；未达标则回到 Air 10 买后加购与套装验证。</p></div>
         </div>
@@ -655,22 +693,22 @@
         <article class="card state-red">
           <div class="card-state">安全感压力</div>
           <h3>Braun 抢安全权威</h3>
-          <p>Silk-expert Pro 5 主打 2 sessions visible results、95% hair reduction in 1 month 和 2 years smooth skin，品牌信任强。<span class="evidence">[E17]</span></p>
+          <p>Silk-expert Pro 5 主打 2 sessions visible results、95% hair reduction in 1 month 和 2 years smooth skin，品牌信任强。<span class="evidence-list"><span class="evidence">[E17]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">专业心智</div>
           <h3>Philips 抢专业家电信任</h3>
-          <p>Lumea 用 SmartPulse / SenseIQ、2 次治疗可见结果和月度维护教育用户，适合抢走谨慎型用户。<span class="evidence">[E20]</span></p>
+          <p>Lumea 用 SmartPulse / SenseIQ、2 次治疗可见结果和月度维护教育用户，适合抢走谨慎型用户。<span class="evidence-list"><span class="evidence">[E20]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">低价压力</div>
           <h3>Nood 抢低价试错</h3>
-          <p>Target 的 Flasher 2.0 以 3 周可见、8 周 permanent hair removal 和低门槛试错吸引入门用户。<span class="evidence">[E18]</span></p>
+          <p>Target 的 Flasher 2.0 以 3 周可见、8 周 permanent hair removal 和低门槛试错吸引入门用户。<span class="evidence-list"><span class="evidence">[E18]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">第二线压力</div>
           <h3>CurrentBody / Omnilux / Shark 抢 LED 证据</h3>
-          <p>CurrentBody Series 2 用 236 LEDs、633/830/1072nm 波长和 $469.99 价格带建立护肤证据，ReGlow 必须独立对比。<span class="evidence">[E19]</span></p>
+          <p>CurrentBody Series 2 用 236 LEDs、633/830/1072nm 波长和 $469.99 价格带建立护肤证据，ReGlow 必须独立对比。<span class="evidence-list"><span class="evidence">[E19]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">价格带压力</div>
@@ -729,7 +767,7 @@
         <article class="score-card state-red">
           <div class="score-card-top"><b>48</b><span>售后信任</span></div>
           <div class="mini-track"><i style="width:48%;"></i></div>
-          <p>BBB/F、Trustpilot 1-star 和 Reddit 故障讨论没有被官网主动吸收。<span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></p>
+          <p>BBB/F、Trustpilot 1-star 和 Reddit 故障讨论没有被官网主动吸收。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></p>
         </article><article class="score-card state-red">
           <div class="score-card-top"><b>54</b><span>数据看板</span></div>
           <div class="mini-track"><i style="width:54%;"></i></div>
@@ -737,7 +775,7 @@
         </article><article class="score-card state-red">
           <div class="score-card-top"><b>58</b><span>适用边界</span></div>
           <div class="mini-track"><i style="width:58%;"></i></div>
-          <p>肤色、发色、纹身、光敏感和 12 周周期需要与结果主张同等前置。<span class="evidence">[E2]</span><span class="evidence">[E11]</span></p>
+          <p>肤色、发色、纹身、光敏感和 12 周周期需要与结果主张同等前置。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span></span></p>
         </article><article class="score-card state-amber">
           <div class="score-card-top"><b>62</b><span>新品验证</span></div>
           <div class="mini-track"><i style="width:62%;"></i></div>
@@ -757,7 +795,7 @@
         </article><article class="score-card state-green">
           <div class="score-card-top"><b>78</b><span>Marketplace</span></div>
           <div class="mini-track"><i style="width:78%;"></i></div>
-          <p>Amazon 多 ASIN 有排名、评价和 bought 信号。<span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></p>
+          <p>Amazon 多 ASIN 有排名、评价和 bought 信号。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p>
         </article><article class="score-card state-green">
           <div class="score-card-top"><b>82</b><span>Air 10 产品力</span></div>
           <div class="mini-track"><i style="width:82%;"></i></div>
@@ -765,11 +803,11 @@
         </article><article class="score-card state-green">
           <div class="score-card-top"><b>80</b><span>品牌权威</span></div>
           <div class="mini-track"><i style="width:80%;"></i></div>
-          <p>8M units、49 countries、专家和专利能支撑高客单。<span class="evidence">[E9]</span><span class="evidence">[E10]</span></p>
+          <p>8M units、49 countries、专家和专利能支撑高客单。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p>
         </article><article class="score-card state-green">
           <div class="score-card-top"><b>84</b><span>类目机会</span></div>
           <div class="mini-track"><i style="width:84%;"></i></div>
-          <p>IPL 和家用美容科技仍有增长空间，北美为核心区域。<span class="evidence">[E14]</span><span class="evidence">[E15]</span></p>
+          <p>IPL 和家用美容科技仍有增长空间，北美为核心区域。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span></span></p>
         </article>
       </div>
     </section>
@@ -907,17 +945,17 @@
         <article class="card state-amber">
           <div class="card-state">需补强</div>
           <h3>北美 GMV 和渠道占比需校准</h3>
-          <p>Amazon bought signal 只能给公开下限，DTC、Best Buy、Nordstrom、coupon、退货和广告成本需要后台复核。<span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></p>
+          <p>Amazon bought signal 只能给公开下限，DTC、Best Buy、Nordstrom、coupon、退货和广告成本需要后台复核。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
         </article>
         <article class="card state-red">
           <div class="card-state">先修复</div>
           <h3>结果主张和适用边界需同步管理</h3>
-          <p>96% / 2 weeks 的冲击力强，必须和肤色、发色、部位、周期、个体差异、禁用场景一起展示。<span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E16]</span></p>
+          <p>96% / 2 weeks 的冲击力强，必须和肤色、发色、部位、周期、个体差异、禁用场景一起展示。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E16]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">需补强</div>
           <h3>ReGlow / JMOON 不能只靠主品牌背书</h3>
-          <p>LED 面罩和家用美容仪用户看波长、LED 数、临床证据、佩戴舒适和长期坚持，购买理由与 IPL 不同。<span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></p>
+          <p>LED 面罩和家用美容仪用户看波长、LED 数、临床证据、佩戴舒适和长期坚持，购买理由与 IPL 不同。<span class="evidence-list"><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">需补强</div>
