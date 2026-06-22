@@ -158,6 +158,13 @@
     th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; }
     th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
     tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
     .fit-list { display:grid; gap:10px; }
     .fit-row { display:grid; grid-template-columns:120px 1fr 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
     .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
@@ -571,10 +578,10 @@
         <p class="section-note">每个入口都要落到页面动作。关键词列表本身不产生转化。</p>
       </div>
       <div class="table-wrap">
-        <table>
-          <thead><tr><th>入口</th><th>用户真正想判断</th><th>当前状态</th><th>应补页面动作</th></tr></thead>
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
           <tbody>
-            <tr><td>Amazon / Best Seller</td><td>Air 10 是否是值得信任的主流选择</td><td>基本接住</td><td>继续维护评价、排名、coupon 纪律和竞品防守。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></td></tr><tr><td>Google / Media Review</td><td>是否真的有效、多久见效、是否痛</td><td>接住一半</td><td>把 2 周结果、12 周周期、适用边界和个体差异放在同一页。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></td></tr><tr><td>Comparison Search</td><td>Braun、Philips、Nood 和 Ulike 哪个更适合我</td><td>没接牢</td><td>上线 Ulike vs Braun / Philips / Nood，对比安全、舒适、速度、长期成本和客服承诺。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></td></tr><tr><td>Trustpilot / BBB / Reddit</td><td>买坏、无效、想退时会不会麻烦</td><td>明显扣分</td><td>建立 warranty / return / troubleshooting 页面，并把 SLA 写成可执行承诺。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></td></tr><tr><td>LED Mask Search</td><td>ReGlow 能否替代 CurrentBody / Omnilux / Shark</td><td>验证中</td><td>ReGlow 需要独立临床证据、波长、LED 数、佩戴舒适和使用周期对比页。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></td></tr>
+            <tr><td>Amazon / Best Seller</td><td>Air 10 是否是值得信任的主流选择</td><td class="status-cell"><span class="table-status green">基本接住</span></td><td>继续维护评价、排名、coupon 纪律和竞品防守。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></td></tr><tr><td>Google / Media Review</td><td>是否真的有效、多久见效、是否痛</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>把 2 周结果、12 周周期、适用边界和个体差异放在同一页。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></td></tr><tr><td>Comparison Search</td><td>Braun、Philips、Nood 和 Ulike 哪个更适合我</td><td class="status-cell"><span class="table-status red">没接牢</span></td><td>上线 Ulike vs Braun / Philips / Nood，对比安全、舒适、速度、长期成本和客服承诺。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></td></tr><tr><td>Trustpilot / BBB / Reddit</td><td>买坏、无效、想退时会不会麻烦</td><td class="status-cell"><span class="table-status red">明显扣分</span></td><td>建立 warranty / return / troubleshooting 页面，并把 SLA 写成可执行承诺。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></td></tr><tr><td>LED Mask Search</td><td>ReGlow 能否替代 CurrentBody / Omnilux / Shark</td><td class="status-cell"><span class="table-status amber">验证中</span></td><td>ReGlow 需要独立临床证据、波长、LED 数、佩戴舒适和使用周期对比页。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></td></tr>
           </tbody>
         </table>
       </div>
