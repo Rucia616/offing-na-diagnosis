@@ -146,12 +146,12 @@
     .mind-card { grid-column:span 2; }
     .mind-card:nth-child(n+4) { grid-column:span 3; }
     .wordcloud-wrap { grid-template-columns:1fr 1fr; }
-    .cloud { min-height:190px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
-    .cloud span { position:absolute; font-weight:900; line-height:1; }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
     .positive span { color:var(--success); }
     .negative span { color:var(--risk); }
-    .w1 { font-size:16px; } .w2 { font-size:20px; } .w3 { font-size:25px; } .w4 { font-size:31px; } .w5 { font-size:38px; }
-    .p0 { left:16%; top:24%; } .p1 { left:52%; top:18%; } .p2 { left:34%; top:48%; } .p3 { left:68%; top:58%; } .p4 { left:18%; top:70%; } .p5 { left:58%; top:76%; }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
     .line-grid { grid-template-columns:repeat(4,1fr); }
     .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); }
     table { width:100%; min-width:900px; border-collapse:collapse; }
@@ -224,6 +224,9 @@
       .track,.mini-track { height:7px; }
       .score-formula { display:none; }
       .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
       .audience-map { min-height:auto; padding:14px; }
       .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
       .audience-band b { font-size:16px; }
@@ -514,11 +517,11 @@
       <div class="wordcloud-wrap">
         <article class="wordcloud">
           <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
-          <div class="cloud positive"><span class="w5 p0">有效</span><span class="w5 p1">痛感低</span><span class="w4 p2">方便</span><span class="w4 p3">冰感</span><span class="w3 p4">省 salon 成本</span><span class="w3 p5">易上手</span></div>
+          <div class="cloud positive"><span class="w5 p0">有效</span><span class="w5 p1">痛感低</span><span class="w4 p2">方便</span><span class="w4 p3">冰感</span><span class="w4 p4">省 salon 成本</span><span class="w3 p5">易上手</span><span class="w3 p6">皮肤变顺</span><span class="w3 p7">速度快</span><span class="w3 p8">在家完成</span><span class="w3 p9">长期省钱</span><span class="w3 p10">少刺激</span><span class="w3 p11">全身 10 分钟</span><span class="w2 p12">无需预约</span><span class="w2 p13">bikini 友好</span></div>
         </article>
         <article class="wordcloud">
           <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
-          <div class="cloud negative"><span class="w5 p0">退款</span><span class="w4 p1">设备不闪</span><span class="w4 p2">肤色发色限制</span><span class="w3 p3">客服慢</span><span class="w3 p4">坚持成本</span><span class="w3 p5">效果差异</span></div>
+          <div class="cloud negative"><span class="w5 p0">退款</span><span class="w5 p1">设备不闪</span><span class="w5 p2">肤色发色限制</span><span class="w4 p3">客服慢</span><span class="w4 p4">效果差异</span><span class="w3 p5">坚持成本</span><span class="w3 p6">见效周期长</span><span class="w4 p7">退货麻烦</span><span class="w3 p8">保修不确定</span><span class="w3 p9">说明不清</span><span class="w3 p10">深肤色限制</span><span class="w3 p11">浅发色不适用</span><span class="w2 p12">灼热担心</span><span class="w2 p13">价格波动</span></div>
         </article>
       </div>
       <p class="section-note wide-note">正向 VOC 足以支持 Air 10 继续做主销 SKU；负向 VOC 应被转成购买前筛选、12 周使用计划、退货条件、保修注册和故障排查页面，降低退款和客服压力。</p>
