@@ -93,6 +93,12 @@
     .state-red { border-top:4px solid var(--risk); }
     .state-blue { border-top:4px solid var(--blue); }
     .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
     h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
     .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p { margin-top:10px; color:var(--body); font-size:14.5px; }
     .stage-track { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:12px; }
@@ -450,23 +456,23 @@
       </div>
       <div class="mind-grid">
         <article class="mind-card state-amber">
-          <div class="priority">P0 · 量级高</div>
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
           <h3>at home IPL / laser hair removal device</h3>
           <p>这类词最大，会进入 Amazon 榜单、媒体榜单和 Braun / Philips / Nood 页面。Ulike 有 Air 10 动销，但官网还需要更强行业入口页。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E16]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></p>
         </article><article class="mind-card state-green">
-          <div class="priority">P1 · 量级中高</div>
+          <div class="priority"><span>P1 · 量级中高</span><b class="search-capture green">吃掉了</b></div>
           <h3>Ulike / Ulike Air 10 review</h3>
           <p>品牌词和评测词能被官网、Amazon、Tom's Guide、Cosmopolitan、Trustpilot 接住，说明品牌心智已经成立。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E7]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p>
         </article><article class="mind-card state-red">
-          <div class="priority">P1 · 量级中</div>
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">没吃掉</b></div>
           <h3>Ulike vs Braun / Philips / Nood</h3>
           <p>比较词最接近下单选择。Braun 抢安全权威，Nood 抢低价试错，Philips 抢专业家电信任，Ulike 需要正式对比页。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E20]</span></span></p>
         </article><article class="mind-card state-red">
-          <div class="priority">P2 · 量级中</div>
+          <div class="priority"><span>P2 · 量级中</span><b class="search-capture red">没吃掉</b></div>
           <h3>Ulike refund / broken / stopped flashing</h3>
           <p>售后词会在临门一脚出现。Trustpilot 1-star、BBB/F 和 Reddit 故障讨论必须被 FAQ、warranty 和 troubleshooting 页面主动消化。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E22]</span><span class="evidence">[E23]</span></span></p>
         </article><article class="mind-card state-amber">
-          <div class="priority">P2 · 量级中</div>
+          <div class="priority"><span>P2 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
           <h3>LED mask / ReGlow vs CurrentBody / Omnilux</h3>
           <p>ReGlow 有 1K+ bought 和媒体评测，但 LED 面罩用户更看临床证据、波长、LED 数和佩戴舒适度，需要独立搜索入口。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E13]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
         </article>
