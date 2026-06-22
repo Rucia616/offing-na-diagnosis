@@ -69,7 +69,8 @@
     .topbar-inner {
       max-width: var(--tl-max);
       margin: 0 auto;
-      padding: 13px 24px;
+      min-height: 52px;
+      padding: 10px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -79,6 +80,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 15px;
       font-weight: 930;
       line-height: 1.1;
       white-space: nowrap;
@@ -113,10 +115,10 @@
     .hero {
       min-height: calc(100svh - 52px);
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(310px, .42fr);
-      gap: clamp(28px, 5vw, 68px);
+      grid-template-columns: minmax(0, 1fr) minmax(330px, .44fr);
+      gap: 56px;
       align-items: center;
-      padding: 44px 0 48px;
+      padding: 38px 0 40px;
     }
     .brand-logo {
       max-width: min(320px, 72vw);
@@ -150,8 +152,8 @@
       margin-top: 22px;
       color: var(--tl-body);
       font-size: 24px;
-      line-height: 1.38;
-      font-weight: 820;
+      line-height: 1.34;
+      font-weight: 800;
     }
     .chips {
       display: flex;
@@ -183,7 +185,7 @@
       background: linear-gradient(145deg, #101b1b, #152724);
       color: var(--tl-inverse-text);
       box-shadow: var(--tl-shadow);
-      padding: 24px;
+      padding: 22px;
     }
     .score-label {
       color: rgba(255, 255, 255, .72);
@@ -232,19 +234,21 @@
       font-weight: 930;
     }
     .score-copy {
-      margin-top: 12px;
+      margin-top: 10px;
       color: rgba(255, 255, 255, .78);
       font-size: 14px;
-      line-height: 1.72;
+      line-height: 1.58;
       font-weight: 560;
     }
     .decision-grid {
       display: grid;
-      gap: 10px;
-      margin-top: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 16px;
     }
     .decision-cell {
-      padding: 12px;
+      min-height: 70px;
+      padding: 10px;
       border-radius: var(--tl-radius);
       background: rgba(255, 255, 255, .07);
       border: 1px solid rgba(255, 255, 255, .12);
@@ -258,21 +262,21 @@
     }
     .decision-cell span {
       color: rgba(255, 255, 255, .86);
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 12px;
+      line-height: 1.38;
       font-weight: 680;
     }
     .subscore-grid {
       display: grid;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 8px;
+      margin-top: 14px;
     }
     .hero-subscore {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 8px 12px;
       align-items: center;
-      padding: 12px;
+      padding: 10px;
       border-radius: var(--tl-radius);
       background: rgba(255, 255, 255, .07);
       border: 1px solid rgba(255, 255, 255, .12);
@@ -373,7 +377,7 @@
     .dimension-card.weight-20 { grid-column: span 3; min-height: 250px; }
     .dimension-card.weight-15 { grid-column: span 2; min-height: 222px; }
     .dimension-card.weight-10 { grid-column: span 2; min-height: 196px; }
-    .dimension-card.weight-5 { grid-column: span 1; min-height: 172px; }
+    .dimension-card.weight-5 { grid-column: span 2; min-height: 154px; }
     .dimension-top {
       display: flex;
       justify-content: space-between;
@@ -390,6 +394,10 @@
       font-size: 21px;
       line-height: 1.16;
       font-weight: 930;
+    }
+    .dimension-card.weight-5 h3 {
+      font-size: 19px;
+      line-height: 1.2;
     }
     .dimension-card p {
       color: var(--tl-muted);
@@ -597,8 +605,8 @@
       .two-col {
         grid-template-columns: 1fr;
       }
-      h1 { font-size: 74px; }
-      .lead { font-size: 22px; }
+      h1 { font-size: 72px; }
+      .lead { font-size: 21px; }
       h2 { font-size: 36px; }
       .dimension-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -618,33 +626,91 @@
 
     @media (max-width: 700px) {
       .topbar-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-        padding: 10px 18px;
+        align-items: center;
+        flex-direction: row;
+        min-height: 48px;
+        padding: 8px 16px;
       }
       .lockup {
-        flex-wrap: wrap;
-        white-space: normal;
+        gap: 6px;
+        font-size: 13px;
+        white-space: nowrap;
       }
-      .top-meta { white-space: normal; }
-      main { padding: 0 18px 54px; }
+      .lockup .edition {
+        min-height: 22px;
+        padding: 3px 8px;
+        font-size: 11px;
+      }
+      .top-meta { display: none; }
+      main { padding: 0 16px 54px; }
       .hero {
         min-height: auto;
-        padding: 26px 0 28px;
+        gap: 18px;
+        padding: 22px 0 28px;
       }
-      h1 { font-size: 42px; line-height: 1; }
-      .lead { font-size: 17px; line-height: 1.46; }
+      h1 { font-size: 38px; line-height: 1.02; }
+      .lead { margin-top: 14px; font-size: 16px; line-height: 1.48; }
+      .chips { display: none; }
       .brand-logo {
-        min-height: 44px;
-        margin-bottom: 18px;
+        min-height: 36px;
+        margin-bottom: 14px;
       }
       .brand-logo img {
-        width: 210px;
-        max-width: 66vw;
-        max-height: 44px;
+        width: 168px;
+        max-width: 58vw;
+        max-height: 36px;
       }
-      .score-main strong { font-size: 62px; }
+      .kicker { font-size: 11px; line-height: 1.3; }
+      .hero-score { padding: 16px; }
+      .score-main { margin-top: 5px; }
+      .score-main strong { font-size: 52px; }
+      .score-main span { font-size: 19px; }
+      .stars {
+        margin-top: 6px;
+        gap: 3px;
+        font-size: 19px;
+      }
+      .star-score {
+        margin-left: 6px;
+        font-size: 12px;
+      }
+      .score-verdict {
+        margin-top: 10px;
+        font-size: 22px;
+      }
+      .score-copy {
+        margin-top: 8px;
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      .decision-grid {
+        gap: 6px;
+        margin-top: 12px;
+      }
+      .decision-cell {
+        min-height: 58px;
+        padding: 8px;
+      }
+      .decision-cell b {
+        margin-bottom: 3px;
+        font-size: 11px;
+      }
+      .decision-cell span {
+        font-size: 11.5px;
+        line-height: 1.3;
+      }
+      .subscore-grid {
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .hero-subscore {
+        padding: 8px;
+        gap: 6px 10px;
+      }
+      .hero-subscore b { font-size: 11.5px; }
+      .hero-subscore span { display: none; }
+      .hero-subscore strong { font-size: 15px; }
+      .subscore-bar { height: 5px; }
       section { padding-top: 50px; }
       .section-head {
         align-items: flex-start;
@@ -671,7 +737,7 @@
     <div class="topbar-inner">
       <div class="lockup" aria-label="TideLens report lockup">
         <span class="owner">远汐Offing</span>
-        <span class="product">TideLens 红人营销诊断</span>
+        <span class="product">Tidelens红人营销诊断</span>
         <span class="edition">（免费版）</span>
       </div>
       <div class="top-meta">US / CA / UK · 2026-06-22 · 数据置信度 Medium</div>
@@ -684,7 +750,7 @@
         <div class="brand-logo"><img src="../../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div>
         <div class="kicker">Ulike · KOL Growth Diagnosis · 2026-06-22</div>
         <h1><span class="hline">Ulike 红人</span><span class="hline">增长诊断</span></h1>
-        <p class="lead">Ulike 的红人内容已经持续覆盖 YouTube、Instagram 和 TikTok，但购买证明仍分散在单条评测、折扣码和平台活动里。下一阶段要把 Air 10 的临床感、适用边界、PCOS / 敏感肌场景和复购素材沉淀成可复投的证明链。</p>
+        <p class="lead">Ulike 已经有多平台红人供给。下一阶段要把 Air 10 的专业证明、PCOS / 敏感肌场景和折扣成交统一成可复投的证明链。</p>
         <div class="chips"><span class="pill action">免费版</span><span class="pill action">IPL hair removal</span><span class="pill action">Air 10 / Air 3</span><span class="pill action">YouTube + Instagram + TikTok</span><span class="pill action">US / CA / UK public sample</span></div>
       </div>
 
@@ -693,11 +759,11 @@
         <div class="score-main"><strong>72</strong><span>/100</span></div>
         <div class="stars" aria-label="3.6 out of 5 stars"><span class="star filled" aria-hidden="true">&#9733;</span><span class="star filled" aria-hidden="true">&#9733;</span><span class="star filled" aria-hidden="true">&#9733;</span><span class="star filled" aria-hidden="true">&#9733;</span><span class="star" aria-hidden="true">&#9733;</span><span class="star-score">3.6/5</span></div>
         <div class="score-verdict">活跃但效率漏损</div>
-        <p class="score-copy">Ulike 已经有产品背书、折扣码、平台活动和 creator 供给；目前最影响效率的是证据链没有被统一编排，导致同样的预算在评测、促销和品牌信任之间分散消耗。</p>
+        <p class="score-copy">Ulike 已经有产品背书、折扣码、平台活动和 creator 供给；当前最影响效率的是证据链没有统一编排。</p>
         <div class="decision-grid">
-          <div class="decision-cell"><b>阶段</b><span>活跃放量期 · 内容供给足够，复投规则需要变硬</span></div>
-          <div class="decision-cell"><b>下一步判断</b><span>把 6 月样本按「专业证明、真实使用、折扣成交、复用素材」四类重标，决定 7 月复投名单。</span></div>
-          <div class="decision-cell"><b>预算方向</b><span>减少一次性促销型内容占比，把可复用评测与问题场景内容设为主预算池。</span></div>
+          <div class="decision-cell"><b>阶段</b><span>活跃放量期</span></div>
+          <div class="decision-cell"><b>下一步</b><span>重标 6 月样本</span></div>
+          <div class="decision-cell"><b>预算</b><span>转向复用评测</span></div>
         </div>
         <div class="subscore-grid" aria-label="Priority subscores">
         <div class="hero-subscore caution">
@@ -734,7 +800,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Scorecard</div>
-          <h2>Ulike 当前最大的拖累项，已经落在购买证明和平台分工。</h2>
+          <h2>Ulike 最大拖累：购买证明和平台分工。</h2>
         </div>
         <p class="section-note">8 维评分按权重展示。卡片面积代表该维度最高分，颜色代表当前状态。</p>
       </div>
@@ -873,7 +939,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Evidence-Led Diagnosis</div>
-          <h2>公开信号已经足够支持方向判断，账号级数据需要进入完整审计。</h2>
+          <h2>公开样本足够支撑方向判断。</h2>
         </div>
         <p class="section-note">窗口：2026-05-15 至 2026-06-22，公开网页与 TideLens 样本归档 · 置信度：Medium</p>
       </div>
@@ -935,7 +1001,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Platform Roles</div>
-          <h2>平台要按购买决策分工，不按声量大小排序。</h2>
+          <h2>平台按购买决策分工。</h2>
         </div>
         <p class="section-note">每个平台只承担一个主要任务：信任、测试、素材沉淀或成交辅助。</p>
       </div>
@@ -982,7 +1048,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Competitor Pressure</div>
-          <h2>Ulike 需要先守住专业信任，再扩大红人声量。</h2>
+          <h2>Ulike 先守住专业信任。</h2>
         </div>
         <p class="section-note">本页先给购买心智压力判断；具体打法、账号和节奏进入完整报告。</p>
       </div>
@@ -1017,7 +1083,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Creator Archetypes</div>
-          <h2>第一批红人先产出信任样板，再进入放量测试。</h2>
+          <h2>第一批红人先产出信任样板。</h2>
         </div>
         <p class="section-note">这里展示 creator 画像，不展示具体账号。候选名单、数量和报价进入完整报告。</p>
       </div>
@@ -1060,7 +1126,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Full Report Unlocks</div>
-          <h2>完整 TideLens 报告解锁执行资产，不只补充更多解释。</h2>
+          <h2>完整报告给执行资产和复投表。</h2>
         </div>
         <p class="section-note">每个锁定模块都对应一个可执行决策：找谁、讲什么、投多少、怎么复投。</p>
       </div>
@@ -1166,7 +1232,7 @@
     </section>
 
     <div class="footer">
-      <span>远汐Offing · TideLens 红人营销诊断（免费版）</span>
+      <span>远汐Offing · Tidelens红人营销诊断（免费版）</span>
       <span>2026-06-22 · 公开信息与样本信号整理</span>
     </div>
   </main>
