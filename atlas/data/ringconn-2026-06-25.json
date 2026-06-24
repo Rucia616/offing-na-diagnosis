@@ -1,0 +1,331 @@
+{
+  "meta": {
+    "client": "RingConn",
+    "date": "2026-06-25",
+    "market": "North America",
+    "edition": "免费版",
+    "outputSlug": "ringconn-2026-06-25-atlas-free-diagnosis",
+    "category": "Smart ring / consumer health wearable",
+    "stage": "1-10 → 10-100",
+    "confidence": "中等",
+    "intakeMode": "brand-name-only",
+    "entryInput": "RINGCONN",
+    "acceptedDecisionDate": "2026-06-25"
+  },
+  "assets": {
+    "logoSrc": "../assets/brand-logos/ringconn-logo-official.png",
+    "logoAlt": "RingConn logo",
+    "faviconSrc": "../../../02_品牌诊断报告_最新版/assets/offing-atlas-favicon.svg"
+  },
+  "hero": {
+    "eyebrow": "North America Diagnosis",
+    "h1": "北美业务诊断",
+    "lead": "RingConn 的无订阅、长续航和 Gen 3 健康提醒已经形成清楚的购买理由，下一阶段先修 app 可信度、售后响应和 DTC 购买安全感，才能把新品声量转成稳定订单。",
+    "sublead": "公开数据看到三条线：Gen 3 抢 vascular insights 与 vibration alerts，Gen 2 守 sleep apnea 和长续航，Gen 2 Air 做 $199 入门；主要扣分集中在 Google Play / App Store 口碑、BBB 投诉和退换保修解释。",
+    "tags": [
+      { "label": "无订阅心智强", "status": "green" },
+      { "label": "Gen 3 新品声量可用", "status": "amber" },
+      { "label": "App 与售后信任先修", "status": "red" }
+    ],
+    "score": {
+      "total": 66,
+      "stars": 3.3,
+      "verdict": "购买理由强，但 app 与售后信任拖累 DTC",
+      "tier": "B档",
+      "stage": "1-10 → 10-100",
+      "businessType": "DTC + Amazon 硬件",
+      "confidence": "中等",
+      "subscores": [
+        { "label": "业务健康度", "value": 66 },
+        { "label": "业务机会分", "value": 78 },
+        { "label": "问题致命度", "value": 61 }
+      ]
+    }
+  },
+  "stage": {
+    "h2": "阶段判断：RingConn 已过早期验证，Gen 3 要用信任修复把新品声量变成北美规模。",
+    "note": "智能戒指赛道仍在被 Oura、Samsung、Ultrahuman 和价格带玩家教育。RingConn 已经有产品线、媒体曝光、Amazon 货架和 app 用户，但还没有把 DTC 信任闭环打稳。",
+    "cards": [
+      { "tag": "0-1", "title": "需求验证", "body": "睡眠、恢复、压力、活动监测已经是成熟需求，RingConn 不需要再证明 smart ring 需求存在。[E1][E13]", "status": "green" },
+      { "tag": "1-10", "title": "当前基础", "body": "Gen 2 以 sleep apnea、无订阅、长续航建立差异，Amazon 和媒体榜单都有可见信号。[E3][E6][E13]", "status": "green" },
+      { "tag": "10-100", "title": "下一关", "body": "Gen 3 推 vascular health insights 与 vibration alerts，但健康场景的信任要求更高，app、客服和声明边界必须同步升级。[E2][E14]", "status": "amber" },
+      { "tag": "100+", "title": "品类领导防守", "body": "Oura 继续占 premium health ring 心智，Samsung 占 Galaxy ecosystem 信任，RingConn 还需要把无订阅优势转成可被搜索和比较验证的理由。[E17][E18]", "status": "neutral" },
+      { "tag": "主线动作", "title": "阶段最该做的事", "body": "把 Gen 3 的健康提醒、血管趋势、非血压测量边界、app 更新和售后路径放进同一条下单前说明链。", "status": "green" },
+      { "tag": "主要风险", "title": "阶段最危险的动作", "body": "只用新品功能和联名活动拉流量，却不处理 app 评分、Google Play 口碑、BBB 投诉和退货解释，会把 DTC 首单推向 Amazon。", "status": "red" },
+      { "tag": "需后台校准", "title": "北美 GMV 估算", "body": "按官网产品矩阵、Amazon 可见评价、app 下载量和媒体曝光粗估，北美消费端公开可校准 GMV 约 USD 15M-45M；需要 Shopify、Amazon、Xiyou、退款和广告数据复核。[E1][E6][E11][E12][E13]", "status": "amber" }
+    ]
+  },
+  "audience": {
+    "h2": "核心人群是反订阅、重睡眠恢复、愿意戴戒指长期追踪的人。",
+    "note": "RingConn 的机会不在于把所有 smartwatch 用户都转化，而在于抓住想要轻量、长续航、低干扰、无月费的健康追踪用户。",
+    "layers": [
+      { "label": "核心盘：反订阅的睡眠和恢复追踪用户", "short": "无月费健康追踪", "body": "这层用户会直接对比 Oura membership。RingConn 的 no subscription、长续航和 charging case 是强购买理由。[E3][E6]", "status": "green" },
+      { "label": "相邻盘：Oura / Samsung / Ultrahuman 比较用户", "short": "比较型买家", "body": "这层用户会查 app、accuracy、battery、return、warranty 和 Apple Health / Google Fit integration，需要比较页和 FAQ 承接。[E11][E12][E17][E18]", "status": "amber" },
+      { "label": "扩展盘：关注 sleep apnea、vascular trends、健康提醒的人", "short": "健康焦虑型用户", "body": "这层用户需求更强，但也更敏感。页面要解释监测边界、非医疗诊断、数据趋势和医生判断的关系。[E2][E3][E11]", "status": "amber" },
+      { "label": "边界盘：重运动训练、实时心率和手表生态用户", "short": "运动主导用户", "body": "如果用户主要要 workout tracking、实时训练和屏幕交互，Apple Watch、Garmin 或 Samsung Watch 可能更顺手。RingConn 要主动界定场景。", "status": "red" }
+    ],
+    "cards": [
+      { "title": "核心盘要继续放大", "body": "无订阅、长续航、轻薄佩戴和睡眠洞察是 RingConn 当前最能打的组合，适合承接 Oura 订阅疲劳。", "status": "green" },
+      { "title": "比较型用户要补证据", "body": "用户会横向比较 battery、accuracy、app、生态、售后和价格。RingConn 需要正式对比页，而不能只靠 PDP 句子解释。", "status": "amber" },
+      { "title": "健康焦虑用户要控制承诺", "body": "sleep apnea、vascular trends、vibration alerts 都会提升购买兴趣，也会提高证明成本和客服解释成本。", "status": "red" }
+    ]
+  },
+  "channel": {
+    "h2": "经营类型：DTC + Amazon 双通路，Amazon 提供低风险交易，官网承担新品解释和信任修复。",
+    "note": "智能硬件的成交会同时看产品功能、评价、退货、app 评分和售后声誉。RingConn 官网负责讲清价值，Amazon 负责给用户低风险下单入口。",
+    "businessType": "DTC + Amazon + review-driven smart wearable：官网负责 Gen 3、sizing、Care+、健康边界和品牌叙事，Amazon 负责交易安全感和评价背书。",
+    "shares": [
+      { "label": "DTC", "value": 45, "status": "amber", "note": "官网有 Gen 3、Gen 2、Gen 2 Air、Care+、sizing kit 和活动页，但售后信任解释还不够前置。[E1][E2][E8][E16]" },
+      { "label": "Amazon", "value": 40, "status": "green", "note": "Amazon 官方店承接 Gen 2 成交，显示 free returns、官方店铺和 HSA/FSA 等交易信号。[E6]" },
+      { "label": "App stores", "value": 8, "status": "red", "note": "App Store 3.7 与 Google Play 2.6 会直接影响健康硬件信任，尤其影响 iOS / Android 用户的最后判断。[E11][E12]" },
+      { "label": "PR / Campaign", "value": 7, "status": "amber", "note": "Gen 3 和 LOTR 25th campaign 能带来声量，但要回流到 proof、support 和 comparison 内容。[E14][E15][E16]" }
+    ],
+    "cards": [
+      { "title": "Amazon 的角色", "body": "用户能看到官方店、30-day free returns、12-month warranty、HSA/FSA 与 Gen 2 评价，适合承接高意图成交。[E6]", "status": "green" },
+      { "title": "DTC 的角色", "body": "官网要解释 Gen 3 和 Gen 2 差异、sizing、Care+、battery、health boundary、shipping timeline 与售后路径。[E2][E8]", "status": "amber" },
+      { "title": "App store 的角色", "body": "健康硬件最终要落在 app 体验。Google Play 2.6 和 App Store 3.7 会让用户怀疑数据准确性和长期使用体验。[E11][E12]", "status": "red" },
+      { "title": "PR / 联名的角色", "body": "TechRadar 的 Gen 3 vibration alerts 报道和 LOTR campaign 能带来注意力，但不能替代 app 和客服信任建设。[E14][E15][E16]", "status": "amber" }
+    ]
+  },
+  "search": {
+    "h2": "搜索心智：无订阅和长续航能吃到一部分，app / warranty / comparison 词还没接牢。",
+    "note": "RingConn 的搜索战场集中在 smart ring、no subscription、RingConn vs Oura / Samsung、RingConn app、return / warranty 这些临门判断词，而不只靠品牌词本身。",
+    "cards": [
+      { "priority": "P0", "title": "best smart ring / smart ring no subscription", "demand": "量级高", "capture": "半吃掉", "status": "amber", "body": "Wareable 把 RingConn Gen 2 评为 best smart ring，说明外部评测可用；但 Oura 和 Samsung 仍会抢走高信任用户。[E13][E17][E18]" },
+      { "priority": "P1", "title": "RingConn Gen 2 / Gen 3 review", "demand": "量级中高", "capture": "吃掉了", "status": "green", "body": "Gen 2 的 sleep apnea、长续航和无订阅有清楚材料；Gen 3 的 vascular insights 与 vibration alerts 也有媒体报道可承接。[E2][E3][E14]" },
+      { "priority": "P1", "title": "RingConn vs Oura / Samsung / Ultrahuman", "demand": "量级中", "capture": "半吃掉", "status": "amber", "body": "对比词会看功能、app、subscription、battery、ecosystem 和 return。RingConn 有价格与无订阅优势，但需要更正式的比较页。" },
+      { "priority": "P2", "title": "RingConn app / Apple Health / Google Play", "demand": "量级中", "capture": "没吃掉", "status": "red", "body": "App Store 3.7、Google Play 2.6，以及用户对 Apple Health、同步、直觉性和数据准确性的抱怨，会影响健康硬件的最后一跳。[E11][E12]" },
+      { "priority": "P2", "title": "RingConn warranty / return / BBB / customer service", "demand": "量级中", "capture": "没吃掉", "status": "red", "body": "官网退货要求 14 天内有效理由，BBB 显示 F rating 与未回应投诉，Care+ 又加入 replacement / theft / activation 规则，用户需要更简单的解释页。[E7][E8][E10]" }
+    ]
+  },
+  "voc": {
+    "h2": "VOC 判断：硬件卖点支撑首单，app 和售后声誉决定用户敢不敢留在 DTC。",
+    "note": "RingConn 的正面声音集中在 no subscription、battery、comfort、sleep tracking；负面声音集中在 app、sync、accuracy、customer service 和 warranty。",
+    "cards": [
+      { "title": "Amazon", "body": "RingConn Gen 2 官方店页面强调 sleep apnea monitoring、no subscription、10-12 days battery、100m water resistance、HSA/FSA 和 12-month warranty。[E6]", "status": "green" },
+      { "title": "App Store", "body": "App Store 显示 3.7 / 5、725 ratings；近期版本更新加入 refreshed app design 和 Gen 3 vibration notifications，评论同时提到硬件好、app 仍需改善。[E11]", "status": "amber" },
+      { "title": "Google Play", "body": "Google Play 显示 2.6 stars、约 1.46K reviews、100K+ downloads，近期评论提到数据准确性、直觉性和 app 更新体验问题。[E12]", "status": "red" },
+      { "title": "BBB / Trustpilot", "body": "Trustpilot 页面显示产品体验正向与客服 / app 评价分化；BBB 页面显示 not accredited、F rating 和投诉未回应，是 DTC 信任的硬伤。[E9][E10]", "status": "red" }
+    ],
+    "praiseWords": [
+      { "label": "no subscription", "weight": 5 },
+      { "label": "battery life", "weight": 5 },
+      { "label": "sleep tracking", "weight": 5 },
+      { "label": "comfort", "weight": 4 },
+      { "label": "lightweight", "weight": 4 },
+      { "label": "charging case", "weight": 4 },
+      { "label": "sleep apnea", "weight": 4 },
+      { "label": "smart vibration", "weight": 3 },
+      { "label": "100m water resistance", "weight": 3 },
+      { "label": "HSA/FSA", "weight": 3 },
+      { "label": "value", "weight": 3 },
+      { "label": "health trends", "weight": 3 }
+    ],
+    "complaintWords": [
+      { "label": "app rating", "weight": 5 },
+      { "label": "Google Play", "weight": 5 },
+      { "label": "Apple Health", "weight": 4 },
+      { "label": "sync delay", "weight": 4 },
+      { "label": "data accuracy", "weight": 4 },
+      { "label": "customer service", "weight": 5 },
+      { "label": "BBB", "weight": 5 },
+      { "label": "battery degradation", "weight": 3 },
+      { "label": "warranty wait", "weight": 4 },
+      { "label": "return limitation", "weight": 4 },
+      { "label": "sizing", "weight": 3 },
+      { "label": "workout tracking", "weight": 3 }
+    ],
+    "impact": "正向 VOC 足以支持首单，尤其是反订阅和长续航；负向 VOC 会影响官网成交和长期留存，应被转成 app release notes、support SLA、warranty flow、comparison FAQ 和数据准确性解释。"
+  },
+  "ceiling": {
+    "h2": "品线天花板：Gen 2 是现金线，Gen 3 是升级线，Gen 2 Air 是入门线。",
+    "note": "RingConn 现在有清楚的三层产品结构，但每层都要配不同的证明方式，不能只用一个无订阅卖点打全场。",
+    "lines": [
+      { "name": "RingConn Gen 3", "role": "P0 新品升级线", "ceiling": "vascular health insights + vibration alerts 抢下一代健康提醒心智", "lifecycle": "新品发售期", "status": "amber", "body": "Gen 3 官方价 $349，主打 vascular health insights、smart vibration alerts、next-gen sensing、up to 14 days 和 universal charging case；部分型号显示 June WK4-July WK1 发货。[E2]" },
+      { "name": "RingConn Gen 2", "role": "P0 当前现金线", "ceiling": "sleep apnea + long battery + no subscription 抢反订阅用户", "lifecycle": "主卖成熟期", "status": "green", "body": "Gen 2 官方页面主打 sleep apnea monitoring、90.7% sleep apnea accuracy、10-12 days battery、150 days with case、2g / 2mm 和 no subscription。[E3][E4]" },
+      { "name": "RingConn Gen 2 Air", "role": "P1 入门线", "ceiling": "$199 price point 承接轻量试错", "lifecycle": "入门扩张期", "status": "amber", "body": "Gen 2 Air 官方价 $199，定位 entry-level smart ring；官方页面访问时显示 out of stock，说明供需和库存节奏要单独看。[E1][E5]" },
+      { "name": "Care+ / Sizing / Accessories", "role": "P2 信任与服务线", "ceiling": "用保护计划和 sizing 降低退货、换货和购买焦虑", "lifecycle": "买前买后路径建设期", "status": "amber", "body": "Care+ 提供 1-year $29.99、2-year $49.99，并包含 replacement、damage、theft 等规则；sizing kit 对 Gen 3 尺寸差异很关键。[E2][E8]" }
+    ]
+  },
+  "intent": {
+    "h2": "用户意图地图：先问有没有月费，再问准不准、退不退、app 好不好。",
+    "note": "RingConn 的页面和内容要按决策顺序铺开，而不是只把功能堆在 PDP。",
+    "headers": ["入口", "用户真正想判断", "当前状态", "应补页面动作"],
+    "rows": [
+      ["Amazon / 官方店", "官方售卖、退货是否低风险、评价是否够", "基本接住", "继续维护 official store、free returns、HSA/FSA、warranty 和 review FAQ。[E6]"],
+      ["官网 Gen 3 PDP", "新功能值不值得从 Gen 2 / Oura / Samsung 升级", "半接住", "把 vascular trends、vibration alerts、非血压测量边界和 app 支持放在一页讲清。[E2][E14]"],
+      ["App Store / Google Play", "买后每天打开 app 会不会顺手，数据值不值得信", "明显扣分", "建立 app trust page：版本更新、已修复问题、数据同步、Apple Health / Google Fit 说明。[E11][E12]"],
+      ["Warranty / Return / BBB", "买错、尺寸不合、设备坏了时谁负责", "没接住", "用一页解释 14-day return、warranty、Care+、replacement timeline 和 customer support SLA。[E7][E8][E10]"],
+      ["Review / comparison search", "RingConn 与 Oura / Samsung / Ultrahuman 谁更适合我", "半接住", "上线 comparison hub：subscription、battery、app、health features、ecosystem、support 风险分开对比。[E13][E17][E18]"]
+    ]
+  },
+  "fit": {
+    "h2": "卖点匹配 72：无订阅和长续航很强，app 信任与售后承诺拉低整体匹配。",
+    "note": "权重是公开数据下的方向性判断，用于决定免费诊断后的深度路由。",
+    "rows": [
+      { "weight": 22, "concern": "无订阅与长期成本", "claim": "RingConn 对 Oura 订阅疲劳有直接吸引力，Gen 2 和 Amazon 页面都强调 no subscription。", "verdict": "接住", "status": "green" },
+      { "weight": 20, "concern": "续航、佩戴和硬件便利", "claim": "Gen 2 10-12 days，Gen 3 up to 14 days，charging case 和轻薄佩戴能支撑长期使用。", "verdict": "接住", "status": "green" },
+      { "weight": 18, "concern": "健康数据可信度", "claim": "sleep apnea、vascular trends 和 health alerts 都有吸引力，但健康场景必须解释准确性、边界和数据趋势。", "verdict": "半接住", "status": "amber" },
+      { "weight": 15, "concern": "App 体验与生态整合", "claim": "App Store 3.7、Google Play 2.6 和 Apple Health / sync 抱怨，会削弱智能硬件的长期价值。", "verdict": "没接牢", "status": "red" },
+      { "weight": 13, "concern": "退货、保修和客服", "claim": "14-day return、Care+ 和 warranty 存在，但规则不够一眼看懂，BBB 风险会让谨慎用户退回 Amazon。", "verdict": "没接牢", "status": "red" },
+      { "weight": 12, "concern": "与 Oura / Samsung 的替代理由", "claim": "RingConn 能用 no subscription、battery 和 price 形成替代理由，但 comparison content 还要更主动。", "verdict": "半接住", "status": "amber" }
+    ]
+  },
+  "onepage": {
+    "h2": "一页看懂：RingConn 先把 app 和售后信任补上，再放大 Gen 3。",
+    "note": "管理层现在最该追 app 评分、客服响应、DTC 转化、Gen 3 证明内容和 Amazon / DTC 渠道质量。",
+    "items": [
+      { "label": "阶段", "body": "1-10 已成立，正在进入 10-100。品牌有产品线和外部信号，但 DTC 信任还没有完全跟上。"},
+      { "label": "增长主线", "body": "Gen 2 保持 no subscription + sleep apnea + battery 的现金线，Gen 3 用 vascular insights 和 vibration alerts 做升级线。"},
+      { "label": "Top 3 问题", "body": "App 口碑拖累长期价值；售后 / BBB 拉低 DTC 信任；Gen 3 健康功能的证明和边界要补。"},
+      { "label": "预算方向", "body": "加：app trust page、support / warranty page、comparison hub、Gen 3 proof content。控：只靠联名礼品和折扣拉新。"},
+      { "label": "第一修复", "body": "30 天内重做 Gen 3 PDP 后三屏：health boundary、app support、warranty return、comparison proof。"},
+      { "label": "数据缺口", "body": "需要 Shopify、Amazon、Xiyou、app cohort、退货原因、replacement cost、support SLA 和 Gen 3 cohort 数据校准。"},
+      { "label": "路由建议", "body": "Atlas 保留总控；下一步优先进入 CommerceFlow 修官网承接和售后信任，同时用 SignalMark 清理健康证明；TideLens 等 proof matrix 稳定后再加深。"}
+    ]
+  },
+  "blocks": {
+    "h2": "专项分数：SignalMark 有基础，CommerceFlow 最该先修，TideLens 等证明矩阵稳定后加深。",
+    "note": "最低分只是警报，路由看哪一个专项最能改变下一步经营决策。RingConn 现在最需要解决 DTC 信任和承接质量。",
+    "cards": [
+      { "name": "SignalMark", "score": 70, "status": "amber", "title": "品牌理由清楚，但健康证明和 app 信任还要同频。", "body": "无订阅、长续航、sleep apnea、vascular trends、vibration alerts 都能形成差异，但健康相邻品牌必须把边界和可信度讲得更严谨。", "good": "RingConn 已经有清楚产品线、媒体报道、无订阅价值和长续航心智。[E1][E2][E13][E14]", "bad": "App 评分和 BBB 风险会反向伤害健康硬件品牌信任。[E10][E11][E12]" },
+      { "name": "CommerceFlow", "score": 60, "status": "red", "title": "官网能解释新品，但交易安全感还没有完全接住。", "body": "Amazon 提供 free returns 和官方店信任；官网需要把 return、warranty、Care+、sizing、shipping、support SLA 做成更短路径。", "good": "DTC 有 Gen 3 首发、sizing kit、Care+、活动页和完整产品线。[E2][E8][E16]", "bad": "14-day return、BBB F rating、app 评分和客服疑虑会把高意图用户推向 Amazon 或竞品。[E7][E10][E11][E12]" },
+      { "name": "TideLens", "score": 63, "status": "amber", "title": "PR 和 creator 可用，但内容要优先处理 objections。", "body": "LOTR campaign 和 Gen 3 媒体报道有声量，但内容工厂要围绕 app、accuracy、comparison、support 和 sizing 做复用。", "good": "Gen 3 vibration alerts 有新鲜话题，LOTR campaign 有事件营销钩子。[E14][E15][E16]", "bad": "如果内容只放大新品亮点，不处理 app / warranty / comparison，流量会在临门搜索环节流失。" }
+    ]
+  },
+  "issues": {
+    "h2": "Top 3 关键问题：app 可信度、售后安全感、Gen 3 健康证明。",
+    "note": "这三件事直接影响官网转化、复购、口碑扩散和 Gen 3 发布效率。",
+    "items": [
+      { "title": "App 可信度不足，削弱健康硬件的长期价值。", "severity": "高。智能戒指每天都要回到 app，评分和同步体验会直接影响用户是否相信数据。", "evidence": "App Store 显示 3.7 / 5、725 ratings；Google Play 显示 2.6 stars、约 1.46K reviews、100K+ downloads，近期评论提到数据准确性、直觉性和更新体验问题。[E11][E12]", "impact": "用户会把硬件卖点打折，官网成交、留存、推荐和 Gen 3 升级都会受影响。", "action30": "上线 app trust page：版本更新、已修复问题、Apple Health / Google Fit、数据同步和 known issues。", "action90": "按 iOS / Android 分开追踪 rating、crash、sync ticket、active users、Gen 3 vibration adoption 和 review response。", "status": "red" },
+      { "title": "售后、退货和 BBB 风险没有被官网主动解释。", "severity": "高。健康硬件客单价高，用户会在下单前查 return、warranty、BBB 和 customer service。", "evidence": "RingConn return policy 要求交付后 14 calendar days 内申请并有 valid reason；BBB 显示 not accredited、F rating 和未回应投诉；Care+ 规则又加入 replacement、damage、theft 与 activation。[E7][E8][E10]", "impact": "DTC 会失去交易安全感，用户更可能转到 Amazon free returns 或选择 Oura / Samsung 等更强信任品牌。", "action30": "把 return、warranty、Care+、replacement timeline、sizing exchange 和 support SLA 合并成一页，并接入 PDP / cart。", "action90": "用后台数据复盘 refund reason、replacement cost、first response time、ticket close time、DTC vs Amazon return gap。", "status": "red" },
+      { "title": "Gen 3 健康功能需要更严谨的 proof matrix。", "severity": "中高。vascular insights 和 vibration alerts 有话题，但健康 claim 会提高证明和解释成本。", "evidence": "Gen 3 官方页强调 vascular health insights、smart vibration alerts、up to 14 days；官方 FAQ 说明 Gen 3 给 vascular health trends，不提供 blood pressure 单次测量。[E2]", "impact": "如果用户把趋势提醒理解成医疗测量，会增加退货、投诉和客服解释压力，也会影响 PR 与 KOL 内容可复用性。", "action30": "建立 Gen 3 proof matrix：功能、数据来源、用户能看见什么、不能替代什么、和竞品差异。", "action90": "把 proof matrix 转成 PDP、comparison hub、creator brief、客服话术和 app onboarding。", "status": "amber" }
+    ]
+  },
+  "competitors": {
+    "h2": "竞品压力：Oura 抢 premium trust，Samsung 抢生态信任，Ultrahuman 抢无订阅生物黑客心智。",
+    "note": "RingConn 的防守要按购买理由拆：订阅、续航、app、健康准确性、生态和售后。",
+    "cards": [
+      { "title": "Oura 抢高信任健康戒指心智", "body": "Oura Ring 4 官方资料强调 Smart Sensing、titanium、100m water resistance、5-8 days battery 和会员功能，虽然有 subscription，但 premium trust 强。[E17]", "status": "red", "tag": "信任压力" },
+      { "title": "Samsung 抢 Android / Galaxy 生态", "body": "Galaxy Ring 官方主打 up to 7 days battery，品牌和生态信任强；Amazon 页面也强调 no app subscription，能吸走 Android 用户。[E18][E19]", "status": "amber", "tag": "生态压力" },
+      { "title": "Ultrahuman 抢无订阅高阶用户", "body": "Ultrahuman 常被用户放进 no subscription smart ring comparison，RingConn 需要用 battery、price、sleep apnea、Gen 3 alerts 做清楚替代理由。", "status": "amber", "tag": "心智压力" },
+      { "title": "低价 smart ring 抢入门试错", "body": "低价戒指会用便宜和功能列表吸引试错用户。RingConn 要把 app、accuracy、support 和长期使用解释清楚，避免被简单价格锚定。", "status": "amber", "tag": "价格压力" }
+    ]
+  },
+  "positioning": {
+    "h2": "定位升级：从无订阅智能戒指，升级为值得长期相信的轻量健康提醒。",
+    "note": "RingConn 不能只讲 no subscription。下一阶段要把轻量佩戴、健康趋势、app 可信度和售后确定性连成一条购买理由。",
+    "paths": [
+      { "title": "当前理由", "body": "A smart ring with long battery life and no subscription for sleep, recovery, stress, and activity tracking.", "status": "amber", "tag": "现在能卖" },
+      { "title": "下一阶段理由", "body": "A subscription-free health ring you can trust every day because the app, support path, and health boundaries are clear.", "status": "green", "tag": "下一步升级" },
+      { "title": "必须避免", "body": "把 Gen 3 的 vascular trends 和 vibration alerts 写得过度医疗化，会拉高客服解释和信任风险。", "status": "red", "tag": "健康边界" }
+    ],
+    "englishCopy": {
+      "headline": "Health insights that stay with you, without another subscription.",
+      "subhead": "RingConn helps you track sleep, recovery, stress, and emerging health trends in a lightweight ring built for long battery life.",
+      "productPromise": "Long-lasting smart ring data, clear app guidance, and support paths that help users trust what they see.",
+      "outreachOpener": "For buyers comparing RingConn with Oura, Samsung, and Ultrahuman, the strongest reason to switch is clear health insight without a monthly fee.",
+      "cta": "Find your RingConn fit"
+    }
+  },
+  "scores": {
+    "h2": "11 维评分：机会分高，app、售后和 DTC 政策清晰度拖低总分。",
+    "note": "评分按下一步动作价值排序。红灯项优先进入 30 天修复。",
+    "items": [
+      { "label": "App 可信度", "score": 48, "status": "red", "note": "Google Play 2.6 与 App Store 3.7 对健康硬件伤害较大，需要独立信任页和版本修复节奏。[E11][E12]" },
+      { "label": "售后声誉", "score": 50, "status": "red", "note": "BBB F rating 与未回应投诉会削弱 DTC 成交安全感。[E10]" },
+      { "label": "DTC 政策清晰度", "score": 56, "status": "red", "note": "14-day return、valid reason、Care+、warranty、replacement 需要合并为更易懂的用户路径。[E7][E8]" },
+      { "label": "Gen 3 健康证明", "score": 61, "status": "amber", "note": "vascular trends 和 vibration alerts 有新意，但要清楚解释非血压测量和健康边界。[E2][E14]" },
+      { "label": "比较搜索防守", "score": 64, "status": "amber", "note": "RingConn vs Oura / Samsung / Ultrahuman 的正式比较页不足。" },
+      { "label": "内容复用效率", "score": 65, "status": "amber", "note": "LOTR campaign 和 Gen 3 PR 有钩子，但 objection-handling content 还不够系统地复用。[E15][E16]" },
+      { "label": "Amazon 交易货架", "score": 68, "status": "amber", "note": "官方店、free returns、HSA/FSA、12-month warranty 能降低下单风险，但需要更多后台动销数据。[E6]" },
+      { "label": "产品线结构", "score": 70, "status": "amber", "note": "Gen 3 / Gen 2 / Gen 2 Air 三层结构清楚，入门线库存和升级线证明要跟上。[E1][E2][E5]" },
+      { "label": "无订阅价值", "score": 82, "status": "green", "note": "对 Oura membership 疲劳用户有直接吸引力，是 RingConn 最清楚的替代理由。[E3][E6]" },
+      { "label": "续航与佩戴", "score": 84, "status": "green", "note": "Gen 2 10-12 days，Gen 3 up to 14 days，加上轻薄和 charging case，硬件便利性强。[E2][E3]" },
+      { "label": "类目机会", "score": 86, "status": "green", "note": "Smart ring 正在被 Oura、Samsung 和媒体榜单持续教育，RingConn 有机会吃到 no subscription 细分需求。[E13][E17][E18]" }
+    ]
+  },
+  "budget": {
+    "h2": "预算取舍：加信任承接和证明内容，控制只靠活动礼品放大的拉新。",
+    "note": "RingConn 现在有卖点，关键是把卖点变成可下单、可留存、可复购的信任路径。",
+    "cards": [
+      { "title": "加预算：App Trust Page", "body": "汇总版本更新、已修复问题、数据同步、Apple Health / Google Fit、Gen 3 vibration onboarding 和用户教育。", "status": "green", "tag": "立即加" },
+      { "title": "加预算：Support / Warranty Hub", "body": "把 return、warranty、Care+、sizing exchange、replacement timeline 和 contact SLA 做成一页。", "status": "green", "tag": "立即加" },
+      { "title": "加预算：Comparison Hub", "body": "建立 RingConn vs Oura / Samsung / Ultrahuman，对比 subscription、battery、app、health features、ecosystem 和 support。", "status": "green", "tag": "立即加" },
+      { "title": "控预算：联名活动拉新", "body": "LOTR campaign 可以做声量，但需要绑定 email capture、Gen 3 proof、sizing 和 support FAQ，避免只换来一次性访问。", "status": "amber", "tag": "设门槛" },
+      { "title": "设门槛：Gen 3 广告放大", "body": "等 app trust、support hub、comparison hub 和 Gen 3 proof matrix 上线后，再扩大 broad paid spend。", "status": "amber", "tag": "先修再放" }
+    ]
+  },
+  "roadmap": {
+    "h2": "90 天路线：先修 DTC 信任，再把 Gen 3 声量接进可复用内容。",
+    "note": "免费版只给方向和优先级；执行时需要后台数据确认 owner、预算和 KPI。",
+    "phases": [
+      {
+        "label": "0-30 天：修下单前信任",
+        "actions": [
+          { "owner": "DTC / Web", "action": "重做 Gen 3 PDP 后三屏：health boundary、app trust、warranty return、comparison proof。", "metric": "PDP scroll depth、FAQ click、add-to-cart、checkout rate", "impact": "降低新品解释成本，提高官网首单安全感。", "status": "green" },
+          { "owner": "Support", "action": "上线 support / warranty hub，并定义 first response、replacement timeline、sizing exchange 规则。", "metric": "ticket first response、refund reason、replacement cycle", "impact": "减少 DTC 客服疑虑和 BBB / review 外溢。", "status": "green" },
+          { "owner": "App / Product", "action": "发布 app trust notes：已修复、待修复、同步限制、health data disclaimer、Gen 3 vibration guide。", "metric": "app rating、sync ticket、review response time", "impact": "提高用户对每日数据的信任。", "status": "amber" }
+        ]
+      },
+      {
+        "label": "31-90 天：建立对比与内容复用",
+        "actions": [
+          { "owner": "Brand / Content", "action": "建立 RingConn vs Oura / Samsung / Ultrahuman comparison hub。", "metric": "comparison page traffic、email capture、assisted conversion", "impact": "承接高意图比较词，减少用户流向竞品。", "status": "green" },
+          { "owner": "PR / Creator", "action": "把 Gen 3 vibration alerts、LOTR campaign、no subscription、app trust FAQ 做成 creator brief。", "metric": "creator post save rate、FAQ click、Gen 3 PDP assisted visits", "impact": "让内容不只拉兴趣，也能处理真实 objections。", "status": "amber" },
+          { "owner": "Growth / Data", "action": "建立 DTC vs Amazon cohort：channel share、refund、support tickets、review themes、Gen 3 conversion。", "metric": "channel margin、return gap、support cost per order", "impact": "决定 Gen 3 放量和专项诊断是否进入付费。", "status": "amber" }
+        ]
+      }
+    ]
+  },
+  "departments": {
+    "h2": "部门体检：App / Support / DTC 是红灯，硬件产品和类目机会是绿灯。",
+    "note": "这部分用于定位下一步最该让哪些 owner 进入同一张 30 天修复表，并不评价组织本身。",
+    "cards": [
+      { "name": "App / Product", "score": 48, "status": "red", "worst": "Google Play 2.6、App Store 3.7 和同步 / 准确性抱怨影响健康硬件信任。", "fix30": "发布 app trust page 和 release notes，把已修复、待修复和集成边界讲清。" },
+      { "name": "Customer Support", "score": 50, "status": "red", "worst": "BBB F rating、投诉未回应和 warranty / return 解释分散。", "fix30": "定义 SLA、replacement timeline、return reason examples，并接入 PDP / cart。" },
+      { "name": "DTC Ecommerce", "score": 58, "status": "red", "worst": "官网承接新品和活动，但交易安全感弱于 Amazon。", "fix30": "把 support hub、Care+、sizing、shipping 和 comparison 放进购买路径。" },
+      { "name": "Brand / Proof", "score": 64, "status": "amber", "worst": "Gen 3 health features 的 proof matrix 不够清晰，容易被误解为医疗测量。", "fix30": "建立功能 / 数据 / 边界 / 用户可见结果 / 竞品差异的证明表。" },
+      { "name": "Amazon Marketplace", "score": 68, "status": "amber", "worst": "公开页面能看到交易信号，但缺少动销、利润、广告和退货后台校准。", "fix30": "拉取 ASIN 动销、review velocity、refund、ACOS / TACOS 和 buybox 数据。" },
+      { "name": "PR / Creator", "score": 66, "status": "amber", "worst": "活动和报道有声量，但 objection-handling 内容复用不足。", "fix30": "把 app、support、comparison、sizing、battery 统一进 creator brief。" },
+      { "name": "Growth / Data", "score": 55, "status": "red", "worst": "公开数据无法判断 DTC vs Amazon 真实利润、退款和 support cost。", "fix30": "搭建 channel margin、refund reason、ticket cost、cohort retention 看板。" },
+      { "name": "Hardware Product", "score": 80, "status": "green", "worst": "硬件优势清楚，但 app 和服务体验会稀释硬件价值。", "fix30": "把 Gen 2 / Gen 3 / Gen 2 Air 差异整理成一页，减少买错和尺寸错配。" },
+      { "name": "Community / Review Ops", "score": 62, "status": "amber", "worst": "Trustpilot、App Store、Google Play、Reddit 和 BBB 的主题没有统一回收。", "fix30": "建立 weekly VOC digest，按 app、support、battery、sizing、accuracy 分桶。" }
+    ]
+  },
+  "risk": {
+    "h2": "风险说明：这是一份品牌名启动的公开数据诊断，适合判断方向，不适合替代后台经营复盘。",
+    "note": "公开证据足以看出 DTC 信任和 app 口碑问题，但利润、库存和广告效率必须用后台校准。",
+    "cards": [
+      { "title": "公开数据限制", "body": "Amazon monthly sold、DTC conversion、Shopify revenue、refund、support cost、ad spend 和 cohort retention 没有后台数据，GMV 与渠道占比只能方向性估算。", "status": "amber", "tag": "需校准" },
+      { "title": "健康相邻 claim 风险", "body": "sleep apnea、vascular trends、vibration alerts 等功能要明确健康数据边界，不能让用户误以为戒指可替代医疗判断。", "status": "red", "tag": "需谨慎" },
+      { "title": "活动声量误读风险", "body": "LOTR campaign 能提高关注，但若没有 email capture、proof content 和 support FAQ，活动不会自然转成长期订单质量。", "status": "amber", "tag": "需跟踪" },
+      { "title": "下一步数据需求", "body": "进入付费版前，应补 Shopify、Amazon、Xiyou、App analytics、support tickets、return reasons、creator spend 和 paid media 数据。", "status": "blue", "tag": "数据清单" }
+    ]
+  },
+  "evidence": {
+    "h2": "证据表：公开数据采集于 2026-06-25。",
+    "note": "证据表只记录本次免费诊断用到的关键公开来源。后台数据进入后，评分和路由可以二次校准。",
+    "rows": [
+      { "id": "E1", "source": "RingConn official homepage", "url": "https://ringconn.com/", "date": "2026-06-25", "type": "Official site", "usage": "产品线、品牌主张、Gen 3 / Gen 2 / Gen 2 Air 结构。", "confidence": "High" },
+      { "id": "E2", "source": "RingConn Gen 3 product page", "url": "https://ringconn.com/products/ringconn-gen-3", "date": "2026-06-25", "type": "Official product page", "usage": "Gen 3 价格、功能、shipping、sizing、battery 和 vascular health boundary。", "confidence": "High" },
+      { "id": "E3", "source": "RingConn Gen 2 product page", "url": "https://ringconn.com/products/ringconn-gen-2", "date": "2026-06-25", "type": "Official product page", "usage": "Gen 2 sleep apnea、battery、no subscription、hardware spec。", "confidence": "High" },
+      { "id": "E4", "source": "RingConn Gen 2 campaign page", "url": "https://ringconn.com/pages/ringconn-gen-2", "date": "2026-06-25", "type": "Official product page", "usage": "sleep apnea accuracy、SpO2 / HR sensing、Gen 2 vs Gen 2 Air。", "confidence": "High" },
+      { "id": "E5", "source": "RingConn Gen 2 Air product page", "url": "https://ringconn.com/products/ringconn-gen-2-air", "date": "2026-06-25", "type": "Official product page", "usage": "$199 入门线、review count、库存状态。", "confidence": "High" },
+      { "id": "E6", "source": "Amazon RingConn Gen 2 official store page", "url": "https://www.amazon.com/RingConn-Monitoring-Subscription-Battery-Compatible/dp/B0DG2QKMFX", "date": "2026-06-25", "type": "Marketplace page", "usage": "official store、free returns、HSA/FSA、warranty、product bullets、Amazon 成交安全感。", "confidence": "Medium" },
+      { "id": "E7", "source": "RingConn return and refund policy", "url": "https://ringconn.com/pages/return-refund-policy", "date": "2026-06-25", "type": "Official policy", "usage": "14 calendar days、valid reason、退货流程风险。", "confidence": "High" },
+      { "id": "E8", "source": "RingConn Care+", "url": "https://ringconn.com/pages/ringconn-care-plus", "date": "2026-06-25", "type": "Official policy", "usage": "1-year / 2-year Care+、replacement、damage、theft、activation。", "confidence": "High" },
+      { "id": "E9", "source": "Trustpilot RingConn review page", "url": "https://www.trustpilot.com/review/ringconn.com", "date": "2026-06-25", "type": "Review platform", "usage": "产品体验、客服和 app 评价分化。", "confidence": "Medium" },
+      { "id": "E10", "source": "BBB RingConn business profile", "url": "https://www.bbb.org/us/de/wilmington/profile/online-retailer/ringconn-0251-92032301", "date": "2026-06-25", "type": "Review / complaint platform", "usage": "not accredited、F rating、投诉未回应信号。", "confidence": "Medium" },
+      { "id": "E11", "source": "Apple App Store RingConn app", "url": "https://apps.apple.com/us/app/ringconn/id6444470583", "date": "2026-06-25", "type": "App store", "usage": "3.7 rating、725 ratings、version history、iOS 用户反馈。", "confidence": "High" },
+      { "id": "E12", "source": "Google Play RingConn app", "url": "https://play.google.com/store/apps/details?hl=en_US&id=com.gdjztech.ringconn", "date": "2026-06-25", "type": "App store", "usage": "2.6 rating、1.46K reviews、100K+ downloads、recent Android feedback。", "confidence": "High" },
+      { "id": "E13", "source": "Wareable best smart rings 2026", "url": "https://www.wareable.com/fashion/best-smart-rings-1340", "date": "2026-06-25", "type": "Media review", "usage": "RingConn Gen 2 外部榜单、best smart ring 证据。", "confidence": "Medium" },
+      { "id": "E14", "source": "TechRadar RingConn Gen 3 feature coverage", "url": "https://www.techradar.com/health-fitness/gen-3-is-not-trying-to-become-a-noisy-mini-smartwatch-the-ringconn-gen-3-smart-ring-boasts-a-feature-that-even-the-oura-ring-4-and-the-samsung-galaxy-ring-dont-have-vibration-alerts", "date": "2026-06-25", "type": "Media coverage", "usage": "Gen 3 vibration alerts、非 smartwatch 干扰定位。", "confidence": "Medium" },
+      { "id": "E15", "source": "The Verge RingConn LOTR campaign coverage", "url": "https://www.theverge.com/gadgets/953655/ringconn-lord-of-the-rings", "date": "2026-06-25", "type": "Media coverage", "usage": "LOTR 25th anniversary campaign、Gen 3 launch attention。", "confidence": "Medium" },
+      { "id": "E16", "source": "RingConn anniversary campaign page", "url": "https://ringconn.com/pages/ringconn-anniversary-campaign", "date": "2026-06-25", "type": "Official campaign page", "usage": "first 3,500 Gen 3 orders、collectible set、digital movies、campaign rules。", "confidence": "High" },
+      { "id": "E17", "source": "Oura Ring 4 official support page", "url": "https://support.ouraring.com/hc/en-us/articles/33045011508115-Oura-Ring-4", "date": "2026-06-25", "type": "Competitor official page", "usage": "Oura Ring 4 Smart Sensing、materials、battery、membership features。", "confidence": "High" },
+      { "id": "E18", "source": "Samsung Galaxy Ring official page", "url": "https://www.samsung.com/us/rings/galaxy-ring/", "date": "2026-06-25", "type": "Competitor official page", "usage": "Galaxy Ring battery and ecosystem positioning。", "confidence": "High" },
+      { "id": "E19", "source": "Amazon Samsung Galaxy Ring page", "url": "https://www.amazon.com/SAMSUNG-Tracking-Wellness-Resistant-Battery/dp/B0D1YGD7QZ", "date": "2026-06-25", "type": "Marketplace competitor page", "usage": "Galaxy Ring marketplace rating、review count、no subscription positioning。", "confidence": "Medium" }
+    ]
+  }
+}
