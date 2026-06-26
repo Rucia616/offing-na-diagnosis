@@ -3,1488 +3,1312 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Usmile · 远汐 Offing 免费北美业务诊断 · 2026-06-13</title>
+  <title>Usmile · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
-      --paper: #f8faf6;
-      --surface: #fffffb;
-      --ink: #0d1716;
-      --body: #253735;
-      --muted: #52635f;
-      --line: #d8e2dc;
-      --sea: #2d6261;
-      --sea-soft: #e6f0ec;
-      --slate: #13211f;
-      --brand: #005fbf;
-      --brand-soft: #eaf5ff;
-      --brand-deep: #081f35;
-      --brand-green: #108474;
-      --red: #d70015;
-      --amber: #9a5b00;
-      --green: #157a38;
-      --hairline: rgba(13, 23, 22, 0.08);
-      --shadow: 0 10px 30px rgba(13, 23, 22, 0.06);
-      --radius: 8px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      line-height: 1.62;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background:
-        linear-gradient(180deg, rgba(234, 245, 255, 0.38), rgba(248, 250, 246, 0.98) 30%, var(--paper)),
-        linear-gradient(90deg, rgba(45, 98, 97, 0.018) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(45, 98, 97, 0.016) 1px, transparent 1px),
-        var(--paper);
-      background-size: auto, 64px 64px, 64px 64px;
-    }
-
-    a { color: var(--sea); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1, h2, h3, h4 { margin: 0; letter-spacing: 0; }
-    p { margin: 0; }
-    ul { margin: 0; }
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 14px 32px;
-      background: rgba(248, 250, 246, 0.9);
-      border-bottom: 1px solid var(--hairline);
-      backdrop-filter: blur(16px);
-    }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 760;
-      line-height: 1.15;
-    }
-    .nav-mark {
-      display: grid;
-      place-items: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 7px;
-      color: var(--sea);
-      background: var(--sea-soft);
-      border: 1px solid rgba(45, 98, 97, 0.22);
-    }
-    .nav-brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 650; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }
-
-    .hero {
-      min-height: 84vh;
-      display: grid;
-      align-items: center;
-      padding: 78px 48px 48px;
-    }
-    .inner { width: min(1180px, 100%); margin: 0 auto; }
-    .hero-logo {
-      display: inline-flex;
-      margin-bottom: 26px;
-      padding: 12px 14px;
-      border-radius: var(--radius);
-      border: 1px solid var(--hairline);
-      background: rgba(255, 255, 251, 0.78);
-      box-shadow: 0 16px 46px rgba(13, 23, 22, 0.08);
-    }
-    .hero-logo img { width: clamp(142px, 14vw, 196px); height: auto; display: block; }
-    h1 {
-      max-width: 840px;
-      font-size: clamp(54px, 8.4vw, 100px);
-      line-height: 0.96;
-      font-weight: 820;
-    }
-    .hero-sub {
-      max-width: 820px;
-      margin-top: 22px;
-      color: var(--body);
-      font-size: clamp(16px, 2vw, 20px);
-    }
-    .hero-score {
-      display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
-      max-width: 980px;
-      margin-top: 34px;
-      overflow: hidden;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: var(--line);
-      box-shadow: var(--shadow);
-    }
-    .hero-total {
-      padding: 28px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 84% 18%, rgba(0, 115, 230, 0.26), transparent 38%),
-        linear-gradient(145deg, var(--brand-deep), var(--slate));
-    }
-    .label {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 760;
-    }
-    .hero-total .label { color: rgba(255, 255, 255, 0.82); }
-    .star-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
-    .stars {
-      position: relative;
-      display: inline-block;
-      color: rgba(255, 255, 255, 0.32);
-      font-size: clamp(34px, 4vw, 50px);
-      line-height: 1;
-      letter-spacing: 0;
-    }
-    .stars::before {
-      content: "★★★★★";
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 60%;
-      overflow: hidden;
-      white-space: nowrap;
-      color: var(--brand);
-    }
-    .score-number { font-size: 40px; font-weight: 840; line-height: 1; }
-    .score-note {
-      margin-top: 14px;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 12px;
-      line-height: 1.42;
-    }
-    .subscores {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
-    }
-    .subscore {
-      position: relative;
-      min-height: 190px;
-      padding: 24px 22px;
-      background: var(--surface);
-    }
-    .subscore::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 18px;
-      right: 18px;
-      height: 3px;
-      border-radius: 0 0 999px 999px;
-      background: var(--tone);
-    }
-    .subscore strong {
-      display: block;
-      color: var(--tone);
-      font-size: 38px;
-      line-height: 1;
-      font-weight: 840;
-      font-variant-numeric: tabular-nums;
-    }
-    .subscore span { display: block; margin-top: 10px; font-size: 14px; font-weight: 760; }
-    .subscore small { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.42; }
-    .health { --tone: var(--amber); background: linear-gradient(180deg, rgba(255, 159, 10, 0.11), var(--surface) 48%); }
-    .opportunity { --tone: var(--brand); background: linear-gradient(180deg, rgba(0, 115, 230, 0.11), var(--surface) 48%); }
-    .fatality { --tone: var(--red); background: linear-gradient(180deg, rgba(215, 0, 21, 0.08), var(--surface) 48%); }
-
-    section { padding: 82px 48px; }
-    .section-head { display: grid; gap: 10px; margin-bottom: 26px; }
-    .tagline { color: var(--brand); font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    h2 { max-width: 940px; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.06; font-weight: 820; }
-    .lead { max-width: 880px; color: var(--muted); font-size: 16px; }
-    .grid { display: grid; gap: 16px; }
-    .two { grid-template-columns: 1.04fr 0.96fr; }
-    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .card {
-      min-width: 0;
-      padding: 24px;
-      background: var(--surface);
-      border: 1px solid var(--hairline);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .dark {
-      color: #fff;
-      background:
-        radial-gradient(circle at 88% 0%, rgba(0, 115, 230, 0.23), transparent 34%),
-        linear-gradient(145deg, var(--slate), #0c1817);
-    }
-    .dark p, .dark .muted, .dark .small { color: rgba(255, 255, 255, 0.82); }
-    .muted { color: var(--muted); }
-    .small { font-size: 13px; line-height: 1.48; }
-    .pill {
-      display: inline-flex;
-      width: fit-content;
-      min-height: 24px;
-      align-items: center;
-      padding: 3px 9px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 780;
-      color: var(--ink);
-      background: var(--sea-soft);
-      white-space: nowrap;
-    }
-    .pill.blue { color: var(--brand); background: var(--brand-soft); }
-    .pill.green { color: var(--green); background: rgba(40, 167, 69, 0.1); }
-    .pill.amber { color: #9a5b00; background: rgba(255, 159, 10, 0.14); }
-    .pill.red { color: var(--red); background: rgba(215, 0, 21, 0.09); }
-    .big {
-      display: block;
-      font-size: 54px;
-      line-height: 1;
-      font-weight: 840;
-      font-variant-numeric: tabular-nums;
-    }
-    .bar {
-      height: 8px;
-      overflow: hidden;
-      margin-top: 14px;
-      border-radius: 999px;
-      background: #d8e2dc;
-    }
-    .bar span {
-      display: block;
-      width: var(--w);
-      height: 100%;
-      border-radius: inherit;
-      background: var(--c, var(--brand));
-    }
-
-    .stage-track, .gate-grid, .sales-grid, .match-grid, .trust-grid, .ceiling-grid {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .stage-track { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .gate-grid, .sales-grid, .match-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .ceiling-grid { grid-template-columns: 1fr 1fr; }
-    .trust-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-    .stage-step, .gate, .sales-card, .match-card, .trust-card {
-      min-width: 0;
-      padding: 14px;
-      border-radius: var(--radius);
-      border: 1px solid var(--hairline);
-      background: #fff;
-      overflow-wrap: anywhere;
-    }
-    .stage-step::before {
-      content: "";
-      display: block;
-      width: 22px;
-      height: 4px;
-      margin-bottom: 14px;
-      border-radius: 999px;
-      background: var(--line);
-    }
-    .stage-step.done::before { background: var(--green); }
-    .stage-step.active { border-color: rgba(255, 159, 10, 0.3); background: rgba(255, 159, 10, 0.06); }
-    .stage-step.active::before { background: var(--amber); }
-    .stage-step strong, .gate strong, .sales-card strong, .match-card strong, .trust-card strong { display: block; line-height: 1.34; }
-    .stage-step span, .gate span, .sales-card span, .match-card span, .trust-card span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.42;
-    }
-    .gate b, .sales-card b, .match-card b, .trust-card b {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-    .fit-good { background: rgba(40, 167, 69, 0.055); border-color: rgba(40, 167, 69, 0.18); }
-    .fit-warn { background: rgba(255, 159, 10, 0.07); border-color: rgba(255, 159, 10, 0.24); }
-    .fit-bad { background: rgba(215, 0, 21, 0.045); border-color: rgba(215, 0, 21, 0.16); }
-
-    .logic-chain {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      overflow: hidden;
-      margin-bottom: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--line);
-      box-shadow: var(--shadow);
-    }
-    .logic-step {
-      min-width: 0;
-      padding: 18px;
-      background: var(--surface);
-      overflow-wrap: anywhere;
-    }
-    .logic-step b {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--brand);
-      font-size: 12px;
-      font-weight: 820;
-    }
-    .logic-step strong {
-      display: block;
-      font-size: 18px;
-      line-height: 1.24;
-    }
-    .logic-step span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.44;
-    }
-
-    .ceiling-card {
-      display: grid;
-      gap: 16px;
-      min-width: 0;
-      padding: 22px;
-      border-radius: var(--radius);
-      border: 1px solid var(--hairline);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      overflow-wrap: anywhere;
-    }
-    .ceiling-card h3 { font-size: 28px; line-height: 1.14; }
-    .ceiling-top {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      align-items: start;
-    }
-    .ceiling-size {
-      color: var(--brand);
-      font-size: 38px;
-      line-height: 1;
-      font-weight: 840;
-      font-variant-numeric: tabular-nums;
-    }
-    .share-meter {
-      display: grid;
-      gap: 8px;
-      padding: 14px;
-      border-radius: var(--radius);
-      background: #f3f7f1;
-      border: 1px solid var(--line);
-    }
-    .share-meter span {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 740;
-    }
-    .share-track {
-      height: 10px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: #d8e2dc;
-    }
-    .share-track i {
-      display: block;
-      width: var(--w);
-      height: 100%;
-      border-radius: inherit;
-      background: var(--c, var(--brand));
-    }
-
-    .matrix {
-      display: grid;
-      gap: 1px;
-      overflow: hidden;
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--line);
-    }
-    .matrix-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 120px 1.2fr;
-      gap: 1px;
-      background: var(--line);
-    }
-    .matrix-row > div {
-      min-width: 0;
-      padding: 14px;
-      background: #fff;
-      font-size: 13px;
-      line-height: 1.45;
-    }
-    .matrix-row.header > div { color: var(--muted); background: #f3f7f1; font-size: 12px; font-weight: 760; }
-    .status { font-weight: 820; }
-    .status.good { color: var(--green); }
-    .status.warn { color: #9a5b00; }
-    .status.bad { color: var(--red); }
-
-    .fit-board {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .fit-legend, .fit-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) 168px minmax(0, 1.2fr);
-      gap: 10px;
-      align-items: stretch;
-    }
-    .fit-legend {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 780;
-    }
-    .fit-row {
-      --fit-color: var(--brand);
-      --fit-bg: var(--brand-soft);
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #f3f7f1;
-    }
-    .fit-row.good { --fit-color: var(--green); --fit-bg: rgba(21, 122, 56, 0.09); }
-    .fit-row.warn { --fit-color: var(--amber); --fit-bg: rgba(154, 91, 0, 0.1); }
-    .fit-row.bad { --fit-color: var(--red); --fit-bg: rgba(215, 0, 21, 0.08); }
-    .fit-cell, .fit-meter, .fit-impact {
-      min-width: 0;
-      padding: 16px;
-      border: 1px solid var(--hairline);
-      border-radius: 6px;
-      background: var(--surface);
-      overflow-wrap: anywhere;
-    }
-    .fit-cell h4, .fit-impact h4 {
-      margin: 0 0 10px;
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.28;
-    }
-    .fit-cell p, .fit-impact p {
-      color: var(--body);
-      font-size: 13px;
-      line-height: 1.46;
-    }
-    .fit-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
-    .fit-tags span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 22px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      color: var(--fit-color);
-      background: var(--fit-bg);
-      font-size: 11px;
-      font-weight: 780;
-    }
-    .fit-meter {
-      display: grid;
-      align-content: center;
-      justify-items: center;
-      gap: 10px;
-      background: var(--fit-bg);
-      text-align: center;
-    }
-    .fit-meter strong {
-      color: var(--fit-color);
-      font-size: 32px;
-      line-height: 1;
-      font-weight: 860;
-      font-variant-numeric: tabular-nums;
-    }
-    .fit-meter span {
-      color: var(--fit-color);
-      font-size: 13px;
-      font-weight: 840;
-    }
-    .fit-rail {
-      width: 100%;
-      height: 8px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(13, 23, 22, 0.12);
-    }
-    .fit-rail i {
-      display: block;
-      width: var(--fit);
-      height: 100%;
-      border-radius: inherit;
-      background: var(--fit-color);
-    }
-    .fit-impact b {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--fit-color);
-      font-size: 12px;
-    }
-
-    .issue-list { display: grid; gap: 10px; margin-top: 18px; }
-    .issue-row {
-      display: grid;
-      grid-template-columns: 46px 1fr 98px;
-      gap: 12px;
-      align-items: center;
-      padding: 14px;
-      border-radius: var(--radius);
-      border: 1px solid var(--hairline);
-      background: #fff;
-    }
-    .rank {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      color: #fff;
-      background: var(--slate);
-      font-size: 12px;
-      font-weight: 820;
-    }
-    .issue-row strong { display: block; line-height: 1.34; }
-    .issue-row span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
-    .severity { text-align: right; color: var(--red); font-weight: 840; }
-
-    .segment {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      gap: 18px;
-    }
-    .segment-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: start;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-    .segment-score { color: var(--brand); font-size: 38px; line-height: 1; font-weight: 840; }
-    .segment h3 { font-size: 24px; line-height: 1.16; }
-    .segment-body { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .goodbad {
-      padding: 16px;
-      border: 1px solid var(--hairline);
-      border-radius: var(--radius);
-      background: #fff;
-    }
-    .goodbad h4 { margin-bottom: 12px; font-size: 14px; }
-    .goodbad ul { display: grid; gap: 11px; padding-left: 18px; color: var(--body); font-size: 13px; }
-    .goodbad li::marker { color: var(--brand); }
-
-    .problem {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 0;
-      overflow: hidden;
-      padding: 0;
-    }
-    .problem-visual {
-      padding: 24px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 88% 6%, rgba(0, 115, 230, 0.28), transparent 32%),
-        linear-gradient(150deg, var(--slate), #081f35);
-    }
-    .problem-visual h3 { margin-top: 16px; font-size: 28px; line-height: 1.15; }
-    .problem-visual p { margin-top: 12px; color: rgba(255, 255, 255, 0.82); font-size: 14px; }
-    .mini-bars { display: grid; gap: 12px; margin-top: 22px; }
-    .mini-bar {
-      display: grid;
-      grid-template-columns: 92px 1fr 42px;
-      gap: 10px;
-      align-items: center;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 12px;
-    }
-    .mini-track { height: 7px; overflow: hidden; border-radius: 999px; background: rgba(255, 255, 255, 0.16); }
-    .mini-track span { display: block; width: var(--w); height: 100%; background: var(--tone); }
-    .problem-body { padding: 24px; background: var(--surface); }
-    .impact-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 16px 0; }
-    .impact {
-      padding: 14px;
-      border: 1px solid var(--hairline);
-      border-radius: var(--radius);
-      background: #fff;
-    }
-    .impact b { display: block; margin-bottom: 8px; color: var(--brand); font-size: 12px; }
-    .impact span { color: var(--body); font-size: 13px; line-height: 1.42; }
-    .actions { display: grid; gap: 8px; margin-top: 14px; }
-    .action {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 12px;
-      padding: 12px;
-      border-radius: var(--radius);
-      border: 1px solid var(--hairline);
-      background: #fff;
-    }
-    .action b {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 26px;
-      border-radius: 999px;
-      color: #fff;
-      background: var(--slate);
-      font-size: 11px;
-    }
-    .action strong { display: block; font-size: 13px; line-height: 1.36; }
-    .action span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.42; }
-    .source-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .source {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--sea);
-      font-size: 12px;
-      font-weight: 740;
-    }
-    .source::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); }
-
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-    table { width: 100%; min-width: 820px; border-collapse: collapse; font-size: 13px; }
-    th, td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-    th { color: var(--muted); background: #f3f7f1; font-size: 12px; font-weight: 760; }
-    tr:last-child td { border-bottom: 0; }
-    td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-    .scorebar { display: grid; grid-template-columns: 54px 1fr; gap: 10px; align-items: center; min-width: 160px; }
-    .scorebar .bar { margin-top: 0; }
-
-    .timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-    .timeline-card { padding: 22px; border: 1px solid var(--hairline); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
-    .timeline-card h3 { margin-top: 14px; font-size: 22px; line-height: 1.18; }
-    .timeline-card ul { display: grid; gap: 10px; margin-top: 16px; padding-left: 18px; color: var(--body); font-size: 13px; }
-    .evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    .evidence-card { padding: 16px; border: 1px solid var(--hairline); border-radius: var(--radius); background: #fff; }
-    .evidence-card b { display: inline-flex; margin-bottom: 10px; padding: 3px 8px; border-radius: 999px; color: var(--brand); background: var(--brand-soft); font-size: 11px; }
-    .evidence-card strong { display: block; line-height: 1.38; font-size: 14px; }
-    .evidence-card span { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.42; }
-    footer { padding: 38px 48px 54px; color: rgba(255, 255, 255, 0.82); background: var(--slate); font-size: 12px; }
-    footer .inner { display: grid; gap: 8px; }
-
-    @media (max-width: 940px) {
-      nav { padding: 12px 18px; }
-      .nav-links { display: none; }
-      .hero { min-height: auto; padding: 72px 20px 40px; }
-      section { padding: 60px 20px; }
-      .hero-score, .two, .problem, .segment-body { grid-template-columns: 1fr; }
-      .subscores, .three, .four, .stage-track, .gate-grid, .sales-grid, .match-grid, .trust-grid, .ceiling-grid, .logic-chain, .impact-path, .timeline, .evidence-grid { grid-template-columns: 1fr; }
-      .subscore { min-height: 150px; }
-      .issue-row { grid-template-columns: 38px 1fr; }
-      .issue-row .severity { grid-column: 2; text-align: left; }
-      .matrix-row { grid-template-columns: 1fr; }
-      .matrix-row.header { display: none; }
-      .fit-legend { display: none; }
-      .fit-row { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(46px, 14vw, 72px); }
-    }
-
-    @media print {
-      nav { display: none; }
-      body { background: #fff; }
-      section, .hero { padding: 32px 0; }
-      .card, .table-wrap, .timeline-card { box-shadow: none; break-inside: avoid; }
-      a { color: inherit; text-decoration: none; }
+      color-scheme: light;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
   </style>
 </head>
-
 <body>
-
-  <nav>
-    <div class="nav-brand">
-      <span class="nav-mark">汐</span>
-      <span>远汐 Offing<br><small>免费北美业务诊断</small></span>
-    </div>
-    <div class="nav-links">
-      <a href="#stage">阶段</a>
-      <a href="#ceiling">天花板</a>
-      <a href="#match">卖点匹配</a>
-      <a href="#overview">一页看懂</a>
-      <a href="#segments">三大板块</a>
-      <a href="#problems">关键问题</a>
-      <a href="#competitors">竞品</a>
-      <a href="#roadmap">路线图</a>
-      <a href="#evidence">证据</a>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="inner">
-      <div class="hero-logo">
-        <img src="https://usmile.us/cdn/shop/files/usmile_logo.png?v=1690797066&amp;width=2008" alt="Usmile logo" />
-      </div>
-      <h1><span class="visually-hidden">Usmile 北美业务诊断</span>北美业务诊断</h1>
-      <p class="hero-sub">Usmile 北美的核心矛盾不是流量少，而是增长顺序做反了：C10（便携冲牙器 / 水牙线）更容易被北美用户理解，却没有被推成入口；Y 系列（AI 智能电动牙刷）更需要信任和解释，却承担了官网和投放主线。结果是单品有动销，生意不成系统。</p>
-
-      <div class="hero-score">
-        <div class="hero-total">
-          <span class="label">北美业务情况总分</span>
-          <div class="star-row">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <strong class="score-number">3.0 / 5</strong>
-          </div>
-          <p class="score-note">加权公式：业务健康度 45% + 业务机会分 35% +（100 - 问题致命度）20%。数据口径：2026-06-13 可复查公开信息。</p>
-        </div>
-        <div class="subscores">
-          <div class="subscore health">
-            <strong>58</strong>
-            <span>业务健康度</span>
-            <small>北美有销售线索，但系统化承接不达标。</small>
-          </div>
-          <div class="subscore opportunity">
-            <strong>78</strong>
-            <span>业务机会分</span>
-            <small>智能牙刷和便携水牙线仍有窗口，前提是重排卖点。</small>
-          </div>
-          <div class="subscore fatality">
-            <strong>66</strong>
-            <span>问题致命度</span>
-            <small>卖点错配和货架混乱正在拖累转化与投放效率。</small>
-          </div>
-        </div>
-      </div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
     </div>
   </header>
-
-  <section id="stage">
-    <div class="inner">
-      <div class="section-head">
-        <div class="tagline">00 / Brand Stage</div>
-        <h2>先别加预算：北美只是少数 SKU 动了，长尾还没跑出来。</h2>
-        <p class="lead">全球官网披露 30+ 国家、86 million 用户触达、20,000+ 件产品日销、750+ 技术专利和 ADA 认证口径。但北美公开动销集中在 Y10 Pro、Y20 Pro、C10 少数 SKU，其他 SKU、套装和耗材还没有形成足够清楚的销售证据。现在不是扩声量的问题，是先把主推品线、购买理由和货架秩序排对。</p>
-      </div>
-
-      <div class="grid two">
-        <div class="card dark">
-          <span class="pill amber">当前阶段判断</span>
-          <h3 style="margin-top:18px;font-size:36px;line-height:1.12;">阶段判断：少数 SKU 能卖，多 SKU 放量还没成立。</h3>
-          <p style="margin-top:18px;">如果内部北美 GMV 已经高于公开信号，需要用后台数据复核。但从公开页面看，Usmile 还没有把全球背书、核心卖点、渠道证据、SKU 梯度和耗材复购打成一个可复制系统。继续铺产品和加投放，只会把这个问题放大。</p>
-          <div class="bar" style="--w:58%;--c:var(--amber);"><span></span></div>
-          <p class="small" style="margin-top:10px;">阶段适配度：58/100。不达标，主要卡在卖点匹配、信任证据和货架秩序。</p>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Usmile logo">
+          <img src="assets/brand-logos/usmile-logo.png" alt="Usmile logo" />
         </div>
-        <div class="card">
-          <div class="stage-track">
-            <div class="stage-step done"><strong>0-1 产品与品类验证</strong><span>已通过。Y10/Y20/C10 有明确功能和公开评价。</span></div>
-            <div class="stage-step active"><strong>1-10 单品规模化</strong><span>当前所在。C10 与 Y10 有动销，Y20 仍在爬坡。</span></div>
-            <div class="stage-step"><strong>10-100 经营系统化</strong><span>未达标。证据、卖点、货架、复购系统没有统一。</span></div>
-            <div class="stage-step"><strong>100+ 品类领导</strong><span>公开证据不足。缺少北美品类话语权和零售规模证明。</span></div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">Usmile 的 v3 总分为 45。当前不是只看规模和声量，优先判断 牙医信任、替换耗材 和渠道承接能否支撑下一阶段预算效率。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-red">
+            <b>45/100</b>
+            <span>Atlas v3 总分，旧分 48.5。 <span class="evidence-list"><span class="evidence">[E20]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>Cap 68</b>
+            <span>当前活跃分数封顶来自 牙医信任。 <span class="evidence-list"><span class="evidence">[E10]</span></span></span>
+          </div>
+          <div class="hero-metric state-red">
+            <b>P0</b>
+            <span>风险优先级：全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
           </div>
         </div>
+        <p class="sublead">本页按 Atlas v3 规则覆盖旧 GitHub HTML：加入品类购买契约、风险路径、假增长信号、分数封顶、三专项评分和路由建议。<span class="evidence-list"><span class="evidence">[E20]</span><span class="evidence">[E10]</span><span class="evidence">[E2]</span></span></p>
+        <div class="tag-row"><span class="tag red">v3 45 分</span><span class="tag red">E档</span><span class="tag blue">公开数据置信度 中等</span></div>
       </div>
-
-      <div class="card" style="margin-top:16px;">
-        <div class="segment-head">
+      <aside class="score-panel" aria-label="Usmile Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">45<span>/100</span></div>
+          <span class="tier green">E档</span>
+        </div>
+        <div class="stars" aria-label="2.3 out of 5 stars">★★☆☆☆</div>
+        <div class="star-score">2.3 / 5 · E档 · 先修 牙医信任，再谈放大</div>
+        <div class="score-meta">
+          <div><b>1-10</b><span>阶段判断</span></div>
+          <div><b>Global brand + weak North America shelf</b><span>经营类型</span></div>
+          <div><b>中等</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:48%;"></i></div>
+            <b>48</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:55%;"></i></div>
+            <b>55</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:71%;"></i></div>
+            <b>71</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>牙医信任</b>
+          <span>先把购买前信任和售后解释做成页面与客服承诺。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>替换耗材</b>
+          <span>把品类边界、竞品比较和渠道角色讲清楚。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索承接</b>
+          <span>行业词、review 词、比较词和售后词需要按需求量级重排。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>第二品线</b>
+          <span>用独立证据验证，不用主线声量外推。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>Atlas 总控，CommerceFlow 先收主推品线和货架秩序，SignalMark 补功效证明边界。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>Usmile</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>Atlas 总控，CommerceFlow 先收主推品线和货架秩序，SignalMark 补功效证明边界。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 35</span>
+          <span class="route-chip">分数封顶：68 · 牙医信任 封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">40<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>口腔护理 购买理由已经出现，但 proof 和语言边界还要补。</h3>
+              <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">35<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
+              <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">39<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
+              <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
           <div>
-            <span class="pill blue">销售规模校准</span>
-            <h3 style="margin-top:12px;font-size:28px;line-height:1.16;">全球体量证明品牌有基础，北美放量必须看本地动销。</h3>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
           </div>
-          <span class="pill amber">置信度：中</span>
-        </div>
-        <div class="sales-grid">
-          <div class="sales-card"><b>全球公开底线</b><strong>20,000+ units / day</strong><span>官网披露日销 20,000+ 件，未披露累计 units sold。E1</span></div>
-          <div class="sales-card"><b>全球年化终端销售额</b><strong>$1.83亿 - $4.02亿</strong><span>按 7.3M 件/年 x $25-$55 折后 ASP 估算，只作阶段校准。E1</span></div>
-          <div class="sales-card"><b>人民币换算</b><strong>约 ￥12.4亿 - ￥27.2亿</strong><span>按 USD/CNY 6.7638，2026-06-12 Yahoo Finance 历史价。E16</span></div>
-          <div class="sales-card"><b>北美年零售 GMV</b><strong>$200万 - $600万</strong><span>已用官网、Amazon、套装页、行业市场规模做多源交叉校准；仍需内部订单复核。E3-E8, E19-E22</span></div>
-        </div>
+          <ol>
+            <li>牙医信任 没有被放到购买前第一层。</li><li>water flosser / replacement heads / oral care accessories 需要独立证据。</li><li>搜索、VOC 和内容没有形成同一个承接闭环。</li>
+          </ol>
+        </article>
       </div>
-
-      <div class="card" style="margin-top:16px;">
-        <span class="label">成熟度闸口</span>
-        <div class="gate-grid">
-          <div class="gate fit-good"><b>产品验证</b><strong>通过</strong><span>Y10、Y20、C10 均有明确功能卖点和公开评价。</span></div>
-          <div class="gate fit-warn"><b>渠道验证</b><strong>部分通过</strong><span>Amazon 和官网成立，但动销主力分散，C10 明显强于 Y 系列。</span></div>
-          <div class="gate fit-bad"><b>信任资产</b><strong>不达标</strong><span>ADA、临床、媒体评测没有被稳定编排到北美购买路径。</span></div>
-          <div class="gate fit-bad"><b>经营系统</b><strong>做得差</strong><span>SKU 梯度、耗材复购、价格理由和导购路径没有形成管理秩序。</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ceiling">
-    <div class="inner">
+    </section>
+    
+    <section id="death-path">
+      
       <div class="section-head">
-        <div class="tagline">00A / Market Ceiling</div>
-        <h2>大盘不是问题，品线优先级才是问题。</h2>
-        <p class="lead">Usmile 不能只用整个 oral care 大盘来证明机会。它当前在北美真正需要拆开的，是电动牙刷和冲牙器两条品线：前者盘子更大、竞争更硬；后者盘子较小，但 C10 的需求匹配和公开动销更清楚。管理层要先判断哪条线先打，哪条线暂时别烧钱。</p>
-      </div>
-
-      <div class="grid two">
-        <div class="card dark">
-          <span class="pill amber">天花板判断</span>
-          <h3 style="margin-top:18px;font-size:34px;line-height:1.12;">机会不是没有，问题是先攻方向不够狠。</h3>
-          <p style="margin-top:16px;">电动牙刷要先打过 Oral-B、Sonicare 的信任和价格锚点；冲牙器要正面抢 Waterpik 的专业背书和场景心智。Usmile 现在把智能牙刷和便携冲牙器放在同一套泛智能叙事里，资源没有压到最容易突破的入口。</p>
-          <div class="bar" style="--w:66%;--c:var(--amber);"><span></span></div>
-          <p class="small" style="margin-top:10px;">市场吸引力：66/100。大盘成立，但份额小、竞争强，不能用“大市场”掩盖产品线选择问题。</p>
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。</h2>
         </div>
-        <div class="card">
-          <span class="label">分品线口径</span>
-          <div class="sales-grid">
-            <div class="sales-card"><b>可打总盘</b><strong>$13亿 - $22亿</strong><span>仅统计电动牙刷 + 冲牙器北美零售口径，非整个 oral care 大盘。E19-E22</span></div>
-            <div class="sales-card"><b>Usmile 北美份额</b><strong>约 0.09% - 0.40%</strong><span>按 $200万-$600万公开估算 GMV / 两条品线可打总盘推算。E3-E8, E19-E22</span></div>
-            <div class="sales-card"><b>优先突破线</b><strong>C10 冲牙器</strong><span>公开 Amazon 月销信号强于 Y20，需求场景也更清楚。E5, E7</span></div>
-            <div class="sales-card"><b>高难度放量线</b><strong>Y10 / Y20 电动牙刷</strong><span>盘子更大，但需要先补信任证据、价格理由和耗材承接。E10-E15</span></div>
+        <p class="section-note">Atlas v3 先看品类购买契约，再判断 Usmile 当前分数为什么被封顶。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-red">
+          <div class="module-label">品类购买契约</div>
+          <h3>口腔护理 买的是确定性，不只是单个卖点。</h3>
+          <p><strong>用户买的确定性：</strong>口腔护理买的是功效可信、安全认证、主推品线清晰和耗材复购。</p>
+          <p><strong>当前匹配：</strong>Usmile 已有公开需求信号；当前扣分集中在 全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。。<span class="evidence-list"><span class="evidence">[E20]</span><span class="evidence">[E10]</span><span class="evidence">[E2]</span></span></p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E20]</span><span class="evidence">[E10]</span><span class="evidence">[E2]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">68<span>/100</span></div>
+          <h3>牙医信任 封顶</h3>
+          <p>全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。 会限制下一阶段预算效率。<span class="evidence-list"><span class="evidence">[E20]</span><span class="evidence">[E10]</span><span class="evidence">[E2]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是高估 Amazon，低估 牙医信任。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>全球用户触达、专利和 ADA 口径会掩盖北美少数 SKU 动销与货架秩序不足。</dd></div>
+            <div><dt>低估</dt><dd>牙医信任、替换耗材、北美动销 对首单、复购和渠道信任的影响。</dd></div>
+            <div><dt>安慰指标</dt><dd>总销量、评分均值、内容声量或渠道铺货。</dd></div>
+            <div><dt>先别做</dt><dd>先不要把预算平均加到所有渠道；先补 牙医信任、替换耗材 和可复盘的承接页。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 68</b></div>
+            <h3>牙医信任</h3>
+            <p>全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E20]</span><span class="evidence">[E10]</span><span class="evidence">[E2]</span></span></p>
+            <span class="tag red">Atlas 总控，CommerceFlow 先收主推品线和货架秩序，SignalMark 补功效证明边界。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 71</b></div>
+            <h3>公开增长信号被高估</h3>
+            <p>全球用户触达、专利和 ADA 口径会掩盖北美少数 SKU 动销与货架秩序不足。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E4]</span></span></p>
+            <span class="tag amber">SignalMark 与 CommerceFlow 共同校准</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 73</b></div>
+            <h3>渠道承接没有完全闭合</h3>
+            <p>Amazon、DTC、Retail / distributor 同时存在时，用户会在搜索、评价、售后和价格之间反复比较。缺少统一承接会降低利润质量。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E5]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是 Amazon 信号和单点声量。</h3>
+            <p>v3 把公开动销、PR、平台评价和社媒声量拆开看，避免把注意力直接当作经营质量。</p>
           </div>
+          <article class="signal-card state-amber">
+            <span>渠道</span>
+            <h3>Amazon</h3>
+            <p>Amazon 能证明现有需求，但如果 牙医信任 没有补强，预算放大后会把问题一起放大。<span class="evidence-list"><span class="evidence">[E20]</span></span></p>
+          </article><article class="signal-card state-amber">
+            <span>声量</span>
+            <h3>公开评价和内容声量</h3>
+            <p>评价、媒体和创作者内容可以降低陌生感；它们还需要回答 牙医信任、替换耗材、北美动销，才会改变成交质量。<span class="evidence-list"><span class="evidence">[E10]</span></span></p>
+          </article><article class="signal-card state-red">
+            <span>品线</span>
+            <h3>产品线宽度</h3>
+            <p>electric toothbrush、water flosser、replacement heads / oral care accessories 不能只靠宽度证明第二阶段成立，必须用 SKU 角色、复购和渠道效率拆清。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>Usmile 当前总分被 牙医信任 和渠道承接封顶。</h3>
+            <p>旧体系分数为 48.5，v3 重新压到 45，核心原因是 全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>68</b>
+            <div><h3>牙医信任</h3><p>牙医信任 是当前最先影响成交确定性的因素。<span class="evidence-list"><span class="evidence">[E20]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>72</b>
+            <div><h3>渠道承接</h3><p>Amazon、DTC、Retail / distributor 需要统一价格、评价、FAQ、售后和 proof。<span class="evidence-list"><span class="evidence">[E10]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>74</b>
+            <div><h3>第二阶段证据</h3><p>water flosser、replacement heads / oral care accessories 需要独立证明，不适合被主线声量直接外推。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div>
+          </article>
         </div>
       </div>
-
-      <div class="ceiling-grid">
-        <div class="ceiling-card">
-          <div class="ceiling-top">
-            <div>
-              <span class="pill blue">品线 01</span>
-              <h3 style="margin-top:12px;">电动牙刷</h3>
+    </section>
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：Usmile 进入 1-10，下一步先修 牙医信任。</h2>
+        </div>
+        <p class="section-note">这个阶段的重点是把公开需求信号变成可复盘的成交、评价、售后和复购质量。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>口腔护理 的基础需求已经通过公开渠道和旧报告证据出现。<span class="evidence-list"><span class="evidence">[E20]</span></span></p></div><div class="stage-step state-amber"><span>1-10</span><b>单点放大</b><p>electric toothbrush 是当前最清楚的北美入口，需要继续验证人群和渠道效率。<span class="evidence-list"><span class="evidence">[E10]</span></span></p></div><div class="stage-step state-neutral"><span>10-100</span><b>质量管理</b><p>多渠道和多品线开始并行时，牙医信任 与 替换耗材 会决定预算效率。</p></div><div class="stage-step state-neutral"><span>100+</span><b>防守与护城河</b><p>只有当品类权威、服务确定性、复购和渠道权都成立，才适合进入 80+ 评分区。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">v3 总分</div>
+          <h3>45 / 100</h3>
+          <p>旧分 48.5，v3 分数 45；分数变化来自品类契约和风险封顶。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">阶段动作</div>
+          <h3>先修 牙医信任</h3>
+          <p>用 30 天补 proof / FAQ / support / channel page，再用 90 天看评价、转化和复购变化。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>人群判断：核心盘已经清楚，外扩前先守住适用边界。</h2>
+        </div>
+        <p class="section-note">人群层级按购买确定性排序，越往外越需要 proof、FAQ、比较页和售后承诺。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>电动牙刷、水牙线和入门口腔护理用户</b><small>核心盘</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>礼品、旅行、儿童和 Amazon 价格敏感用户</b><small>相邻人群</small></div>
+            </div><div class="audience-band layer-3 state-red">
+              <span class="audience-index">L3</span>
+              <div><b>要求牙医背书、成熟评价和替换刷头稳定供应的人群</b><small>外扩边界</small></div>
+            </div><div class="audience-band layer-4 state-blue">
+              <span class="audience-index">L4</span>
+              <div><b>高证明成本 / 高售后敏感用户</b><small>暂缓边界</small></div>
             </div>
-            <strong class="ceiling-size">$9亿 - $18亿</strong>
           </div>
-          <p class="muted small">北美/美国电动牙刷公开口径存在差异：GMI 给出北美 2023 年约 $15亿、美国 2023 年约 $12亿；Precedence 给出美国 2025 年约 $9.07亿。报告采用 $9亿-$18亿作为 2025-2026 北美零售天花板方向区间。E19, E20</p>
-          <div class="share-meter">
-            <span><b>Usmile 当前估算 GMV</b><b>$90万 - $240万</b></span>
-            <div class="share-track"><i style="--w:18%;--c:var(--brand);"></i></div>
-            <span><b>估算市场占有率</b><b>约 0.05% - 0.27%</b></span>
-          </div>
-          <p class="small muted">判断：这条线天花板大，但 Usmile 当前还不是主要竞争者。Y10/Y20 继续主推 AI 前，必须先把安全有效、牙龈保护、刷头成本、认证背书讲清楚。</p>
         </div>
-
-        <div class="ceiling-card">
-          <div class="ceiling-top">
-            <div>
-              <span class="pill blue">品线 02</span>
-              <h3 style="margin-top:12px;">冲牙器 / 水牙线</h3>
-            </div>
-            <strong class="ceiling-size">$4.0亿 - $4.3亿</strong>
-          </div>
-          <p class="muted small">Fortune Business Insights 披露 2025 年北美 water flosser 市场约 $4.2亿，North America 份额 38.88%；另一行业口径给出北美约 $4.03亿、美国约 $3.5亿。E21, E22</p>
-          <div class="share-meter">
-            <span><b>Usmile 当前估算 GMV</b><b>$110万 - $320万</b></span>
-            <div class="share-track"><i style="--w:42%;--c:var(--green);"></i></div>
-            <span><b>估算市场占有率</b><b>约 0.26% - 0.80%</b></span>
-          </div>
-          <p class="small muted">判断：这条线盘子比电动牙刷小，但 C10 的公开动销、便携、敏感牙龈、牙套/植牙场景更贴近北美购买理由，短期更适合做 acquisition SKU。</p>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘</b><span>最容易被 electric toothbrush 说服，是当前成交和评价的主盘。</span></div><div class="legend-item state-amber"><b>相邻人群</b><span>有明确需求，但会比较竞品、渠道和价格，需要承接页降低犹豫。</span></div><div class="legend-item state-red"><b>外扩边界</b><span>需要更强证据、售后和适用边界，不适合直接用主盘话术外推。</span></div><div class="legend-item state-blue"><b>暂缓边界</b><span>公开版先标成后台校准对象，等内部退货、复购、客服和渠道数据确认。</span></div>
         </div>
       </div>
-
-      <div class="table-wrap" style="margin-top:16px;">
-        <table>
-          <thead>
-            <tr>
-              <th>品线</th>
-              <th class="num">北美市场规模预估</th>
-              <th class="num">Usmile 北美 GMV 预估</th>
-              <th class="num">市场占有率预估</th>
-              <th>结论</th>
-              <th>证据</th>
-            </tr>
-          </thead>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘先转化</h3>
+          <p>先把 电动牙刷、水牙线和入门口腔护理用户 的下单疑虑变成 PDP、FAQ、比较页和售后承诺。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻人群先筛选</h3>
+          <p>礼品、旅行、儿童和 Amazon 价格敏感用户 可以扩，但要用独立 landing page 区分动机、价格和 proof。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>外扩人群先设边界</h3>
+          <p>要求牙医背书、成熟评价和替换刷头稳定供应的人群 不适合被泛化承诺，需要禁忌、适用条件、维修/退换和客服路径。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：Global brand + weak North America shelf 已成立，问题在成交解释权没有完全回到品牌手里。</h2>
+        </div>
+        <p class="section-note">占比是公开数据方向性估计，不代表后台财务口径；用于判断优先修哪一条承接链。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Global brand + weak North America shelf</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="green" style="width:46%;"></i></div>
+            <span>46%</span>
+            <small>Amazon 当前承担 主成交 / 主证明。</small>
+          </div><div class="share-row">
+            <b>DTC</b>
+            <div class="share-track"><i class="amber" style="width:24%;"></i></div>
+            <span>24%</span>
+            <small>DTC 当前承担 次级成交 / 信任补充。</small>
+          </div><div class="share-row">
+            <b>Retail / distributor</b>
+            <div class="share-track"><i class="blue" style="width:14%;"></i></div>
+            <span>14%</span>
+            <small>Retail / distributor 当前承担 补充触达。</small>
+          </div><div class="share-row">
+            <b>Social / PR</b>
+            <div class="share-track"><i class="blue" style="width:16%;"></i></div>
+            <span>16%</span>
+            <small>Social / PR 当前承担 补充触达。</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>主渠道继续守</h3>
+          <p>Amazon 仍是 Usmile 的首要证明面，先守评价、价格、FAQ 和售后。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网补交易安全感</h3>
+          <p>DTC 或官网必须解释为什么直购更稳，而不是只放品牌故事和产品列表。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>渠道预算要绑定质量</h3>
+          <p>预算不能只看流量和订单，必须同时看退款、评价、客服和复购。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：最大入口要先判断是否吃掉，比较词和售后词不能放任竞品接走。</h2>
+        </div>
+        <p class="section-note">本版按需求量级和购买意图排序；精确搜索量需要 SEO / Google Trends 后台补数。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高 · 量级高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>oral care devices / electric toothbrush</h3>
+          <p>行业词是最大入口，Usmile 有公开信号，但还要用类目页和比较页守住高意图流量。<span class="evidence-list"><span class="evidence">[E20]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级中高 · 量级中高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Usmile reviews / problems / warranty / return</h3>
+          <p>临门搜索会直接影响下单，尤其是 牙医信任、替换耗材、北美动销。官网需要主动承接，而不是让 Trustpilot、Reddit、Amazon 或竞品页面先回答。<span class="evidence-list"><span class="evidence">[E10]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Usmile vs Philips Sonicare / Oral-B / Waterpik</h3>
+          <p>比较词最接近下单选择，需要把安全、价格、服务、适用边界和长期成本做成固定对比页。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Amazon / DTC purchase intent</h3>
+          <p>渠道词能承接现有订单，但也会把价格和售后解释权留在平台侧。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级低中 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>water flosser / replacement heads / oral care accessories</h3>
+          <p>第二品线搜索更适合做验证和筛选，不适合直接用主线声量证明可放大。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC 判断：好评能支撑首单，抱怨会进入临门搜索和售后成本。</h2>
+        </div>
+        <p class="section-note">公开版先按主题聚类，不伪造精确百分比；后续深诊需要补评论样本和工单数据。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>集中好评主题</h3>
+          <p>design、travel、gift、sonic、water flosser 说明 Usmile 有可转化的正向购买理由。<span class="evidence-list"><span class="evidence">[E20]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>集中抱怨主题</h3>
+          <p>reviews、replacement heads、North America shelf、dentist proof、support 会影响首单信任、复购和客服成本。<span class="evidence-list"><span class="evidence">[E10]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>经营影响</h3>
+          <p>VOC 不能只被客服处理，要进入 PDP、FAQ、比较页、售后 SLA 和内容 brief。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">design</span><span class="w5 p1">travel</span><span class="w5 p2">gift</span><span class="w4 p3">sonic</span><span class="w4 p4">water flosser</span><span class="w4 p5">battery</span><span class="w3 p6">value</span><span class="w3 p7">global</span><span class="w3 p8">kids</span><span class="w2 p9">quiet</span><span class="w2 p10">aesthetic</span><span class="w2 p11">bundle</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">reviews</span><span class="w5 p1">replacement heads</span><span class="w5 p2">North America shelf</span><span class="w4 p3">dentist proof</span><span class="w4 p4">support</span><span class="w4 p5">warranty</span><span class="w3 p6">Amazon volume</span><span class="w3 p7">price</span><span class="w3 p8">availability</span><span class="w2 p9">trust</span><span class="w2 p10">app</span><span class="w2 p11">returns</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向 VOC 继续支持 Amazon 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：electric toothbrush 是主线，其他品线先按验证对象管理。</h2>
+        </div>
+        <p class="section-note">公开版先做方向性拆分，不把品线宽度直接当成第二增长柱。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">当前主线 / 最大证明面 · 已验证，需守质量</div>
+          <h3>electric toothbrush</h3>
+          <b>中高</b>
+          <p>electric toothbrush 决定当前北美分数和主要入口。<span class="evidence-list"><span class="evidence">[E20]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">第二验证线 · 待独立证明</div>
+          <h3>water flosser</h3>
+          <b>中</b>
+          <p>water flosser 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E10]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">补充利润或服务线 · 待独立证明</div>
+          <h3>replacement heads / oral care accessories</h3>
+          <b>中</b>
+          <p>replacement heads / oral care accessories 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图：买前最关心能否选对、用稳、出问题有人管。</h2>
+        </div>
+        <p class="section-note">状态列必须先告诉团队有没有接住，再看页面动作。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
           <tbody>
-            <tr>
-              <td>电动牙刷</td>
-              <td class="num">$9亿 - $18亿</td>
-              <td class="num">$90万 - $240万</td>
-              <td class="num">0.05% - 0.27%</td>
-              <td>大盘最大，但 Usmile 还没有越过信任和价格锚点。AI 不能替代基础购买理由。</td>
-              <td>E2-E5, E12-E15, E19, E20</td>
-            </tr>
-            <tr>
-              <td>冲牙器 / 水牙线</td>
-              <td class="num">$4.0亿 - $4.3亿</td>
-              <td class="num">$110万 - $320万</td>
-              <td class="num">0.26% - 0.80%</td>
-              <td>盘子较小，但 C10 已有更清楚的需求匹配，短期更像北美突破口。</td>
-              <td>E6, E7, E10, E17, E21, E22</td>
-            </tr>
-            <tr>
-              <td>套装 / 耗材</td>
-              <td class="num">不单独给 TAM</td>
-              <td class="num">$20万 - $60万</td>
-              <td class="num">不建议单点估算</td>
-              <td>应作为 LTV 和复购承接，而不是独立市场故事；当前承接弱。</td>
-              <td>E2, E6, E8, E12, E13</td>
-            </tr>
+            <tr><td>SERP / Google</td><td>牙医信任 是否可靠</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线 牙医信任 解释页、FAQ 和比较页。<span class="evidence-list"><span class="evidence">[E20]</span></span></td></tr><tr><td>Amazon / Marketplace</td><td>评分、价格、退换和竞品替代</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>守评价结构、coupon 纪律和平台 PDP proof。<span class="evidence-list"><span class="evidence">[E10]</span></span></td></tr><tr><td>Reddit / BBB / Trustpilot</td><td>差评是否会影响购买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>把负面主题转成 support hub、SLA 和售后承诺。<span class="evidence-list"><span class="evidence">[E2]</span></span></td></tr><tr><td>YouTube / TikTok</td><td>演示是否能降低疑虑</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>内容 brief 必须回答 牙医信任、替换耗材、北美动销。<span class="evidence-list"><span class="evidence">[E4]</span></span></td></tr><tr><td>官网 / DTC</td><td>为什么要在官网买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>补直购权益、保修、退换、客服和渠道价格解释。<span class="evidence-list"><span class="evidence">[E5]</span></span></td></tr>
           </tbody>
         </table>
       </div>
-    </div>
-  </section>
-
-  <section id="match">
-    <div class="inner">
+    </section>
+    
+    <section id="fit">
+      
       <div class="section-head">
-        <div class="tagline">00B / Core Selling Point Fit</div>
-        <h2>真正的卡点：Y 系列讲 AI 讲早了，C10 讲得不够前。</h2>
-        <p class="lead">北美消费者买电动牙刷和水牙线，第一层看安全有效、牙龈保护、价格理由、刷头/喷嘴复购、使用便利和专业背书。Usmile Y 系列把 AI、3D map、voice reminder 放得太靠前，证明和购买理由承接不足。C10 的便携、敏感牙龈、牙套/植牙场景更贴近北美需求，却没有被设成清晰的北美入口。</p>
-      </div>
-
-      <div class="grid two">
-        <div class="card dark">
-          <span class="pill red">独立闸门分</span>
-          <span class="big" style="margin-top:16px;color:#fff;">62</span>
-          <h3 style="font-size:30px;line-height:1.16;margin-top:8px;">部分匹配，但增长主线排错了。</h3>
-          <p style="margin-top:14px;">北美市场不是不接受智能牙刷，而是智能功能必须服务于更基础的购买理由：清洁有效、安全不伤牙龈、刷头好买、价格说得通、证据可信。Usmile 目前把“AI”讲得太早，把 C10 这种更容易解释的需求入口讲得太轻。</p>
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：先回答最高权重疑虑，再谈扩品和内容放大。</h2>
         </div>
-        <div class="card">
-          <span class="label">当地消费者品类关注点</span>
-          <div class="trust-grid">
-            <div class="trust-card fit-warn"><b>01</b><strong>安全有效</strong><span>ADA 强调 plaque / gingivitis 的安全有效证据。E12</span></div>
-            <div class="trust-card fit-warn"><b>02</b><strong>牙龈保护</strong><span>压力传感、软刷毛、敏感牙龈是核心购买理由。E12, E13</span></div>
-            <div class="trust-card fit-warn"><b>03</b><strong>价格和刷头成本</strong><span>Oral-B iO2、Sonicare 4100 把 $50-$70 形成强锚点。E14, E15</span></div>
-            <div class="trust-card fit-warn"><b>04</b><strong>便利性</strong><span>续航、旅行、USB-C 有价值，但不能代替清洁和证据。</span></div>
-            <div class="trust-card fit-warn"><b>05</b><strong>专业背书</strong><span>Waterpik 用 ADA/dentist recommended 直接降低水牙线信任成本。E10</span></div>
-          </div>
-        </div>
+        <p class="section-note">权重为公开数据版方向性判断，用于排序，不代表统计抽样。</p>
       </div>
-
-      <div class="card" style="margin-top:16px;">
-        <span class="pill blue">匹配矩阵</span>
-        <div class="fit-board">
-          <div class="fit-legend">
-            <div>Usmile 现在在讲什么</div>
-            <div>匹配度</div>
-            <div>北美用户真正要听什么 / 经营影响</div>
-          </div>
-          <div class="fit-row bad" style="--fit:38%;">
-            <div class="fit-cell">
-              <h4>Y20 / Y10：AI、3D oral map、missed spots、voice reminder</h4>
-              <p>技术感强，但默认用户已经相信“这把牙刷安全有效”。E2, E4, E5</p>
-              <div class="fit-tags"><span>AI 先行</span><span>解释成本高</span></div>
-            </div>
-            <div class="fit-meter">
-              <strong>38</strong>
-              <span>弱匹配</span>
-              <div class="fit-rail"><i></i></div>
-            </div>
-            <div class="fit-impact">
-              <b>先缺基础信任</b>
-              <h4>用户先问安全、牙龈、刷头成本和价格理由。</h4>
-              <p>智能功能没有先解决“为什么值 $87-$109”，广告点击后的转化会被拉低。E12-E15</p>
-            </div>
-          </div>
-          <div class="fit-row good" style="--fit:82%;">
-            <div class="fit-cell">
-              <h4>180-day / 90-day runtime、USB-C、travel-friendly</h4>
-              <p>这是 Y 系列和 C10 共同存在的真实产品证据。E2, E4, E5</p>
-              <div class="fit-tags"><span>续航</span><span>旅行</span><span>少充电</span></div>
-            </div>
-            <div class="fit-meter">
-              <strong>82</strong>
-              <span>强匹配</span>
-              <div class="fit-rail"><i></i></div>
-            </div>
-            <div class="fit-impact">
-              <b>应该前置</b>
-              <h4>便利性是北美用户能马上理解的购买理由。</h4>
-              <p>它应出现在导购、竞品对比和广告落地页首屏，而不是埋在参数清单里。E13, E17</p>
-            </div>
-          </div>
-          <div class="fit-row good" style="--fit:86%;">
-            <div class="fit-cell">
-              <h4>C10：95-day battery、4 pressure modes、sensitive gums、braces / implants</h4>
-              <p>C10 的功能语言天然贴近具体人群和使用场景。E6, E7</p>
-              <div class="fit-tags"><span>敏感牙龈</span><span>牙套/植牙</span><span>便携</span></div>
-            </div>
-            <div class="fit-meter">
-              <strong>86</strong>
-              <span>强匹配</span>
-              <div class="fit-rail"><i></i></div>
-            </div>
-            <div class="fit-impact">
-              <b>最适合做入口</b>
-              <h4>C10 的动销已经验证这条需求更容易被北美用户理解。</h4>
-              <p>它应该成为 acquisition SKU，而不是普通附属品。E7, E10, E17</p>
-            </div>
-          </div>
-          <div class="fit-row warn" style="--fit:58%;">
-            <div class="fit-cell">
-              <h4>20x / 25x plaque removal、99.99% plaque claim</h4>
-              <p>数字有冲击力，但需要实验边界和专业背书承接。E2, E4, E6</p>
-              <div class="fit-tags"><span>强 claim</span><span>证据要补</span></div>
-            </div>
-            <div class="fit-meter">
-              <strong>58</strong>
-              <span>部分匹配</span>
-              <div class="fit-rail"><i></i></div>
-            </div>
-            <div class="fit-impact">
-              <b>有用但危险</b>
-              <h4>没有口径解释，倍数 claim 会被当成营销话术。</h4>
-              <p>北美页面应把实验条件、适用边界、ADA/牙医背书放在 claim 附近。E12</p>
-            </div>
-          </div>
-          <div class="fit-row bad" style="--fit:28%;">
-            <div class="fit-cell">
-              <h4>耗材、刷头、喷嘴、bundle、1-year oral care kit</h4>
-              <p>有货，但替换周期、长期成本和订阅承接没有说清。E2, E5, E8</p>
-              <div class="fit-tags"><span>复购断层</span><span>LTV 未承接</span></div>
-            </div>
-            <div class="fit-meter">
-              <strong>28</strong>
-              <span>未覆盖</span>
-              <div class="fit-rail"><i></i></div>
-            </div>
-            <div class="fit-impact">
-              <b>长期价值漏掉</b>
-              <h4>用户会关心刷头/喷嘴是否好买、多久换、贵不贵。</h4>
-              <p>这块不补，Amazon Subscribe &amp; Save、DTC 留存和套装客单都会被拖累。E12, E13</p>
-            </div>
-          </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">32%</div><div class="mini-track"><i style="width:32%;"></i></div></div>
+          <div><strong>牙医信任</strong><p>electric toothbrush 的核心承诺</p></div>
+          <div><span class="verdict red">接住一半</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">24%</div><div class="mini-track"><i style="width:24%;"></i></div></div>
+          <div><strong>替换耗材</strong><p>DTC 触点里的证明</p></div>
+          <div><span class="verdict amber">接住一半</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>北美动销</strong><p>Retail / distributor 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">14%</div><div class="mini-track"><i style="width:14%;"></i></div></div>
+          <div><strong>平台评价</strong><p>Social / PR 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>售后保修</strong><p>Amazon 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
         </div>
       </div>
-
-      <div class="grid three" style="margin-top:16px;">
-        <div class="card"><span class="pill red">错配类型</span><h3 style="margin-top:14px;font-size:22px;">卖点过于技术化</h3><p class="muted small" style="margin-top:10px;">Y20 的 3D map、voice reminder、AM/PM 模式没有先回答安全有效和价值理由。</p></div>
-        <div class="card"><span class="pill red">立住风险</span><h3 style="margin-top:14px;font-size:22px;">投放效率会被拖低</h3><p class="muted small" style="margin-top:10px;">用户被 AI 吸引进来，但购买前仍要解决牙龈保护、认证、刷头成本和价格对比。</p></div>
-        <div class="card"><span class="pill amber">修正方向</span><h3 style="margin-top:14px;font-size:22px;">把 C10 当突破口</h3><p class="muted small" style="margin-top:10px;">C10 的便携和敏感牙龈场景已经匹配北美需求，应作为内容和 bundle 主轴。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="overview">
-    <div class="inner">
+    </section>
+    
+    <section id="onepage">
+      
       <div class="section-head">
-        <div class="tagline">01 / One Page Read</div>
-        <h2>一页看懂：北美增长主线排反了。</h2>
-        <p class="lead">公开信号显示机会还在，但顺序错了。Y 系列有技术感，销售说服成本高；C10 更贴近北美即时需求，却没有被推到前台。管理层现在要拍的不是加不加预算，而是先把哪条线打成入口。</p>
-      </div>
-
-      <div class="logic-chain">
-        <div class="logic-step"><b>01 / 公开信号</b><strong>少数 SKU 有动销</strong><span>Y10、Y20、C10 有销售线索，但长尾 SKU、套装和耗材还没跑出清晰承接。E3-E8</span></div>
-        <div class="logic-step"><b>02 / 市场判断</b><strong>大盘够，份额很小</strong><span>电动牙刷 + 冲牙器北美可打总盘约 $13亿-$22亿，Usmile 估算份额约 0.09%-0.40%。E19-E22</span></div>
-        <div class="logic-step"><b>03 / 真正卡点</b><strong>主推顺序错了</strong><span>Y 系列先讲 AI，C10 没成为入口；北美用户先问安全、牙龈、价格、耗材和背书。E10-E15</span></div>
-        <div class="logic-step"><b>04 / 先做动作</b><strong>先收敛，再放量</strong><span>先把 C10 拉成 acquisition SKU，再重写 Y 系列购买理由，最后才是加投放和扩渠道。</span></div>
-      </div>
-
-      <div class="grid two">
-        <div class="card">
-          <span class="pill red">Top 3 关键问题</span>
-          <div class="issue-list">
-            <div class="issue-row"><span class="rank">01</span><div><strong>增长主线排反：Y 系列 AI 先行，C10 没成为入口。</strong><span>当地消费者优先看安全有效、牙龈保护、价格理由和耗材复购。</span></div><span class="severity">82/100</span></div>
-            <div class="issue-row"><span class="rank">02</span><div><strong>信任证据链做得差：ADA、临床、媒体、Amazon 评价没有统一。</strong><span>强 claim 多，但购买路径里缺少稳定证据排序。</span></div><span class="severity">78/100</span></div>
-            <div class="issue-row"><span class="rank">03</span><div><strong>电商货架不达标：C10 强信号没有被系统放大。</strong><span>SKU 很多，但导购、bundle、耗材复购和价格梯度不清楚。</span></div><span class="severity">72/100</span></div>
-          </div>
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：Usmile 有公开需求信号，下一步先修 牙医信任。</h2>
         </div>
-        <div class="card">
-          <span class="pill blue">SKU 信号看板</span>
-          <div class="match-grid">
-            <div class="match-card fit-warn"><b>Y10 Pro</b><strong>$87 / 315 ratings</strong><span>Amazon 200+ bought/month，官网 152 reviews。E2, E3</span></div>
-            <div class="match-card fit-warn"><b>Y20 Pro</b><strong>$109 / 76 ratings</strong><span>Amazon 50+ bought/month，官网 11 reviews。E4, E5</span></div>
-            <div class="match-card fit-good"><b>C10</b><strong>$59.98 / 973 ratings</strong><span>Amazon 900+ bought/month，需求匹配最清楚。E6, E7</span></div>
-            <div class="match-card fit-bad"><b>耗材/Bundle</b><strong>承接弱</strong><span>有刷头、喷嘴、套装，但没有强复购机制。E2, E6, E8</span></div>
-          </div>
-        </div>
+        <p class="section-note">旧分 48.5，v3 分 45；本次覆盖旧 GitHub HTML 的核心变化是加入 v3 风险封顶和专项路由。</p>
       </div>
-    </div>
-  </section>
-
-  <section id="segments">
-    <div class="inner">
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>1-10 · Global brand + weak North America shelf</p></div><div class="summary-item"><b>主线</b><p>electric toothbrush 仍是当前北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>45 / 100 · E档，活跃封顶 68。</p></div><div class="summary-item"><b>Top 1 问题</b><p>牙医信任 正在限制成交确定性。</p></div><div class="summary-item"><b>路由</b><p>Atlas 总控，CommerceFlow 先收主推品线和货架秩序，SignalMark 补功效证明边界。</p></div><div class="summary-item"><b>预算取舍</b><p>先把 牙医信任、替换耗材 和搜索承接修到可验收，再考虑扩大投放。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
       <div class="section-head">
-        <div class="tagline">02 / Business Segments</div>
-        <h2>三大板块诊断：全球背书和 C10 动销信号，还没有变成北美增长资产。</h2>
-        <p class="lead">这里说的“资产”不是抽象优势，而是两类公开证据：一是 Usmile 已有全球体量、专利和 ADA 认证；二是 C10 在北美更贴近水牙线用户的即时需求。真正拖分的是 Marketing 没把这些证据翻译成购买理由，电商货架也没把 C10 推成清晰入口。</p>
-      </div>
-
-      <div class="grid">
-        <div class="card segment">
-          <div class="segment-head">
-            <div><h3>品牌板块</h3><p class="muted small">全球背书强，北美本地信任承接不够。</p></div>
-            <div class="segment-score">63</div>
-          </div>
-          <div class="segment-body">
-            <div class="goodbad">
-              <h4>做得好的</h4>
-              <ul>
-                <li>全球官网披露 30+ 国家、86 million 用户、20,000+ 日销、750+ 专利，品牌不是小体量玩家。E1</li>
-                <li>ADA 认证、4 dental laboratories、设计奖和专利信息足够做权威背书。E1</li>
-                <li>产品视觉和技术语言有辨识度，符合 smart oral care 新锐品牌心智。E1, E2, E4</li>
-              </ul>
-            </div>
-            <div class="goodbad">
-              <h4>做得不好的</h4>
-              <ul>
-                <li>北美品牌信任承接不达标。ADA、临床、媒体评测和 Amazon 评价没有在首页/PDP/Brand Store 形成统一证据链。E1-E5</li>
-                <li>全球数字不能替代北美本地证明。Y20 Amazon 只有 76 ratings、50+ bought/month，远不能支撑“品类领导”叙事。E5</li>
-                <li>品牌主张偏“智能领先”，但北美购买决策里更基础的安全有效、牙医推荐、耗材成本解释不足。E12-E15</li>
-              </ul>
-            </div>
-          </div>
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：路由按经营杠杆判断，不只看最低分。</h2>
         </div>
-
-        <div class="card segment">
-          <div class="segment-head">
-            <div><h3>市场营销板块</h3><p class="muted small">不达标。卖点排序做错，内容漏斗没有打中决策点。</p></div>
-            <div class="segment-score" style="color:var(--red);">48</div>
-          </div>
-          <div class="segment-body">
-            <div class="goodbad">
-              <h4>做得好的</h4>
-              <ul>
-                <li>Y10/Y20 有智能屏、3D map、missed spots、AM/PM 模式，内容素材数量足够。E2, E4, E5</li>
-                <li>C10 的敏感牙龈、牙套/植牙、旅行和 95-day battery 场景很清楚，适合短视频和搜索承接。E6, E7</li>
-                <li>第三方评测认可 Y10 的 180-day battery 和中端价格，能作为外部 trust hook。E9</li>
-              </ul>
-            </div>
-            <div class="goodbad">
-              <h4>做得不好的</h4>
-              <ul>
-                <li>Y 系列内容做得差。AI/3D/voice 被放在前面，但没有先回答“是否安全有效、是否保护牙龈、刷头成本如何”。E2, E4, E12-E15</li>
-                <li>Y20 新品承接不达标。官网只有 11 reviews，Amazon 50+ bought/month，仍在爬坡，却用大量高级技术词承接，会放大信任成本。E4, E5</li>
-                <li>增长主线排反。C10 是当前最接近北美需求的 SKU，却没有成为导购页和内容投放主线；Y 系列反而承担了更重的获客任务。E6, E7, E10</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card segment">
-          <div class="segment-head">
-            <div><h3>电商板块</h3><p class="muted small">及格但有硬伤，货架和复购机制做得差。</p></div>
-            <div class="segment-score">61</div>
-          </div>
-          <div class="segment-body">
-            <div class="goodbad">
-              <h4>做得好的</h4>
-              <ul>
-                <li>Y10 官网和 Amazon 均为 $87，主力牙刷没有明显渠道价格冲突。E2, E3</li>
-                <li>C10 Amazon 4.6 星、973 ratings、900+ bought/month，已经出现强于牙刷的公开动销线索。E7</li>
-                <li>官网具备 90-day money back、1-year warranty、local fast shipping 基础承接。E2, E4, E6</li>
-              </ul>
-            </div>
-            <div class="goodbad">
-              <h4>做得不好的</h4>
-              <ul>
-                <li>货架不达标。Y10、Y20、P10S、C10、C30、家庭套装、旅行套装同时出现，但缺少按场景选择的导购秩序。E2, E4, E6</li>
-                <li>复购机制做得差。刷头、喷嘴、牙线和套装存在，但没有明确替换周期、成本解释和订阅承接。E2, E6, E8</li>
-                <li>价格梯度没有讲清。Oral-B iO2 在 $49.99 形成强锚点，Y10/Y20 必须讲清 $87-$109 的升级理由，目前不够。E14, E15</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <p class="section-note">三项分数用于判断下一步该由 Atlas 继续总控，还是进入 SignalMark、CommerceFlow 或 TideLens 深诊。</p>
       </div>
-    </div>
-  </section>
-
-  <section id="problems">
-    <div class="inner">
-      <div class="section-head">
-        <div class="tagline">03 / Key Problems</div>
-        <h2>三大关键问题：先把增长主线拨正，再谈放大投放。</h2>
-        <p class="lead">这三个问题会同时影响转化率、广告效率、Amazon 评价增长、DTC 留存和零售渠道谈判。它们都不是美化文案能解决的，需要改主推品线、改页面、改导购、改证据顺序。</p>
-      </div>
-
-      <div class="grid">
-        <article class="card problem">
-          <div class="problem-visual">
-            <span class="pill red">P0 · 30 天内</span>
-            <h3>增长主线排反：Y 系列 AI 先行，C10 没成为入口。</h3>
-            <p>Y20/Y10 的智能功能不是没价值，但它们不能替代安全有效、牙龈保护、专业背书、刷头成本和价格理由。C10 更容易解释，却没有被压成北美获客主线。</p>
-            <div class="mini-bars">
-              <div class="mini-bar"><span>AI 卖点</span><div class="mini-track"><span style="--w:78%;--tone:var(--brand);"></span></div><b>强</b></div>
-              <div class="mini-bar"><span>购买理由</span><div class="mini-track"><span style="--w:48%;--tone:var(--amber);"></span></div><b>弱</b></div>
-              <div class="mini-bar"><span>耗材解释</span><div class="mini-track"><span style="--w:35%;--tone:var(--red);"></span></div><b>差</b></div>
-            </div>
-          </div>
-          <div class="problem-body">
-            <span class="pill red">严重度 82/100</span>
-            <div class="impact-path">
-              <div class="impact"><b>现象</b><span>Y20 首屏主推 AM/PM、App、3D map、voice reminder；C10 的敏感牙龈、牙套和旅行场景没有成为主入口。</span></div>
-              <div class="impact"><b>损耗</b><span>北美用户先关心 safety, gum protection, value, replacement heads。AI 没有先解决这些问题，C10 的低解释成本也被浪费。</span></div>
-              <div class="impact"><b>需要修</b><span>把 C10 设成获客入口；把“智能”改成证明清洁习惯和覆盖率的证据，而不是单独当卖点。</span></div>
-            </div>
-            <div class="actions">
-              <div class="action"><b>P0</b><div><strong>把 C10 设为北美 acquisition SKU。</strong><span>先承接 braces、sensitive gums、travel 三类需求，再用套装带动牙刷和耗材。</span></div></div>
-              <div class="action"><b>P0</b><div><strong>重写 Y 系列首屏卖点顺序。</strong><span>先写 safe effective clean、pressure protection、ADA/clinical proof、brush-head cost，再放 AI tracking。</span></div></div>
-              <div class="action"><b>P0</b><div><strong>新增 Why It Is Worth $87-$109 模块。</strong><span>对比 Oral-B iO2、Sonicare 4100、Oclean，解释升级理由和耗材成本。</span></div></div>
-            </div>
-            <div class="source-list">
-              <a class="source" href="https://usmile.us/products/usmile-y20-pro-electric-toothbrush" target="_blank" rel="noreferrer">E4 Y20 官网</a>
-              <a class="source" href="https://www.amazon.com/usmile-Y20PRO-Toothbrush-AI-Powered-Real-Time/dp/B0F186TLCJ" target="_blank" rel="noreferrer">E5 Y20 Amazon</a>
-              <a class="source" href="https://www.ada.org/resources/ada-library/oral-health-topics/toothbrushes" target="_blank" rel="noreferrer">E12 ADA</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card problem">
-          <div class="problem-visual">
-            <span class="pill red">P0 · 45 天内</span>
-            <h3>信任证据链做得差：强 claim 没有被讲成可信购买理由。</h3>
-            <p>20x、25x、99.99% plaque、ADA、临床、Live Science 评测都能用，但现在分散在不同页面和来源里。</p>
-            <div class="mini-bars">
-              <div class="mini-bar"><span>Claim 强度</span><div class="mini-track"><span style="--w:84%;--tone:var(--brand);"></span></div><b>强</b></div>
-              <div class="mini-bar"><span>证据顺序</span><div class="mini-track"><span style="--w:44%;--tone:var(--red);"></span></div><b>差</b></div>
-              <div class="mini-bar"><span>本地背书</span><div class="mini-track"><span style="--w:50%;--tone:var(--amber);"></span></div><b>弱</b></div>
-            </div>
-          </div>
-          <div class="problem-body">
-            <span class="pill red">严重度 78/100</span>
-            <div class="impact-path">
-              <div class="impact"><b>现象</b><span>官网有 ADA、labs、patents；Y10/Y20 有临床倍数；Live Science 同时认可电池并指出 pressure sensor 可更敏感。</span></div>
-              <div class="impact"><b>损耗</b><span>证据散乱会让高客单 SKU 看起来像参数堆叠，不像经过验证的口腔护理方案。</span></div>
-              <div class="impact"><b>需要修</b><span>建立北美 proof hierarchy：安全有效、适用人群、限制条件、第三方评价、真实口碑。</span></div>
-            </div>
-            <div class="actions">
-              <div class="action"><b>P0</b><div><strong>新建 North America Proof 模块。</strong><span>首页、Y10/Y20 PDP、Amazon A+ 同步：ADA/lab/patent/ratings/media review。</span></div></div>
-              <div class="action"><b>P0</b><div><strong>给每个强 claim 补口径。</strong><span>说明实验条件、对照对象、适用人群和不适用场景，降低合规与信任风险。</span></div></div>
-              <div class="action"><b>P1</b><div><strong>把负面/限制写进 FAQ。</strong><span>pressure sensor、brush head availability、replacement cost、app necessity 必须直接回答。</span></div></div>
-            </div>
-            <div class="source-list">
-              <a class="source" href="https://www.usmile.com/about" target="_blank" rel="noreferrer">E1 官方背书</a>
-              <a class="source" href="https://www.livescience.com/health/usmile-y10-pro-sonic-electric-toothbrush-review" target="_blank" rel="noreferrer">E9 Live Science</a>
-              <a class="source" href="https://usmile.us/products/usmile-y10-pro-smart-toothbrush" target="_blank" rel="noreferrer">E2 Y10 官网</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card problem">
-          <div class="problem-visual">
-            <span class="pill amber">P1 · 60-90 天</span>
-            <h3>电商货架不达标：C10 强信号没有被系统放大。</h3>
-            <p>C10 比 Y 系列更贴近北美即时购买理由，但官网和 Amazon 没有把它上升为主入口和套装增长抓手。</p>
-            <div class="mini-bars">
-              <div class="mini-bar"><span>C10 动销</span><div class="mini-track"><span style="--w:78%;--tone:var(--green);"></span></div><b>强</b></div>
-              <div class="mini-bar"><span>导购秩序</span><div class="mini-track"><span style="--w:45%;--tone:var(--red);"></span></div><b>差</b></div>
-              <div class="mini-bar"><span>复购系统</span><div class="mini-track"><span style="--w:34%;--tone:var(--red);"></span></div><b>差</b></div>
-            </div>
-          </div>
-          <div class="problem-body">
-            <span class="pill amber">严重度 72/100</span>
-            <div class="impact-path">
-              <div class="impact"><b>现象</b><span>C10 Amazon 900+ bought/month，而 Y20 只有 50+ bought/month；官网却没有把 C10 定义成北美核心突破口。</span></div>
-              <div class="impact"><b>损耗</b><span>流量被 SKU 列表稀释，用户不知道先买牙刷、水牙线还是套装；耗材加购也被动。</span></div>
-              <div class="impact"><b>需要修</b><span>按场景重建货架：Braces, Sensitive Gums, Travel, Smart Brush Upgrade, Family Routine。</span></div>
-            </div>
-            <div class="actions">
-              <div class="action"><b>P0</b><div><strong>把 C10 设为北美 acquisition SKU。</strong><span>单独做 braces/sensitive gums/travel 三个落地页，承接搜索和短视频。</span></div></div>
-              <div class="action"><b>P1</b><div><strong>重建 Choose Your Routine 导购。</strong><span>按人群和场景导购，不按型号堆产品。</span></div></div>
-              <div class="action"><b>P1</b><div><strong>把刷头/喷嘴做成 90 天复购系统。</strong><span>明确替换周期、耗材成本和套装省钱逻辑，测试 email/SMS 留存。</span></div></div>
-            </div>
-            <div class="source-list">
-              <a class="source" href="https://www.amazon.com/usmile-C10-Portable-Water-Flosser/dp/B0FNCYLZZV" target="_blank" rel="noreferrer">E7 C10 Amazon</a>
-              <a class="source" href="https://usmile.us/products/usmile-c10-portable-dental-flosser" target="_blank" rel="noreferrer">E6 C10 官网</a>
-              <a class="source" href="https://www.waterpik.com/buying-guide/" target="_blank" rel="noreferrer">E17 Waterpik Guide</a>
-            </div>
-          </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3>口腔护理 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>40</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Usmile 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>牙医信任、替换耗材 还需要被页面和内容前置。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>35</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Amazon 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 牙医信任 解释还不够集中。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>39</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Social / PR 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 牙医信任、替换耗材、北美动销。</p></div></div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section id="competitors">
-    <div class="inner">
+    </section>
+    
+    <section id="issues">
+      
       <div class="section-head">
-        <div class="tagline">04 / Competitor Calibration</div>
-        <h2>竞品校准：北美不是没人买智能功能，而是基础购买理由必须先过关。</h2>
-        <p class="lead">Oral-B 和 Philips 用信任、价格和刷头生态降低风险；Waterpik 用 ADA/dentist recommended 占住水牙线心智；Oclean 证明智能报告有市场，但 AI voice 也会被评测挑刺。Usmile 必须把智能卖点降到“证据工具”，而不是当作全部购买理由。</p>
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：牙医信任、替换耗材、北美动销。</h2>
+        </div>
+        <p class="section-note">每个问题都要同时落到证据、影响和 30 / 90 天动作。</p>
       </div>
-
+      <article class="issue state-red">
+        <h3>问题 1：牙医信任 没有被放到购买前第一层。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。它直接影响首单信任、渠道选择和售后成本。</p></div>
+          <div><b>证据</b><p>全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。 <span class="evidence-list"><span class="evidence">[E20]</span><span class="evidence">[E10]</span><span class="evidence">[E2]</span></span></p></div>
+          <div><b>业务影响</b><p>用户会回到平台、竞品或第三方负面页面寻找答案，品牌失去解释权。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 牙医信任 承接页，插入 PDP、FAQ、checkout 和客服宏。<br><strong>90 天：</strong>把评价、退款、客服、复购和渠道转化放入同一张周报，验证修复效果。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：water flosser / replacement heads / oral care accessories 需要独立证据。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。第二线不能只靠主线声量外推。</p></div>
+          <div><b>证据</b><p>electric toothbrush、water flosser、replacement heads / oral care accessories 的角色需要用公开动销和后台数据拆清。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>预算会被摊薄，团队容易同时推太多页面、SKU 和内容主题。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 SKU role map：Hero / Validation / Add-on / Retention / Proof。<br><strong>90 天：</strong>按 SKU role 看 GMV、毛利、评价、退货、复购和渠道冲突，关掉低质量长尾。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：搜索、VOC 和内容没有形成同一个承接闭环。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。高意图用户会在搜索和社群里看到分散答案。</p></div>
+          <div><b>证据</b><p>搜索词、评价和 VOC 需要统一到承接页与内容 brief。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>投放和内容会增加注意力，但没有稳定降低购买犹豫。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重排搜索入口：行业词、品牌 review、竞品比较、售后词。<br><strong>90 天：</strong>把 creator brief、SEO 页面、FAQ、PDP 和 support macro 合并为一套 proof matrix。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：用户会拿 Philips Sonicare、Oral-B、Waterpik 来判断安全感和价格合理性。</h2>
+        </div>
+        <p class="section-note">竞品当前重点是比谁更快降低购买风险。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 对比</div>
+          <h3>Philips Sonicare</h3>
+          <p>最直接抢走高意图比较词，需要用对比页回答价格、服务和适用边界。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Oral-B</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Waterpik</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Quip</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从“能买到”升级成“为什么现在放心买”。</h2>
+        </div>
+        <p class="section-note">英文 copy 只给可测试方向，不替代后续品牌文案打磨。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">Now</div>
+          <h3>当前购买理由</h3>
+          <p>electric toothbrush 已经能解释基础需求。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Next</div>
+          <h3>下一阶段理由</h3>
+          <p>把 牙医信任、替换耗材、北美动销 讲成确定性，支撑更高质量成交。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>不要先放大的方向</h3>
+          <p>不要在 proof 和售后承接前平均扩大所有渠道预算。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Usmile helps North America buyers choose oral care devices with clearer proof and lower purchase risk.</p>
+        <p><b>Hero subhead:</b> Compare use cases, support, warranty, and fit before you buy.</p>
+        <p><b>Product promise:</b> A clearer path from first interest to confident daily use.</p>
+        <p><b>Sales opener:</b> We found the next growth constraint is not awareness alone; it is purchase certainty around 牙医信任.</p>
+        <p><b>CTA:</b> Build the proof and support path before scaling spend.</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：红灯先修，黄灯进周会，绿灯继续放大。</h2>
+        </div>
+        <p class="section-note">分数来自 v3 方向性重算和旧报告公开证据迁移，后台数据会校准权重。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>47</b><span>品类购买契约</span></div>
+          <div class="mini-track"><i style="width:47%;"></i></div>
+          <p>品类购买契约 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>51</b><span>主线产品清晰度</span></div>
+          <div class="mini-track"><i style="width:51%;"></i></div>
+          <p>主线产品清晰度 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>40</b><span>第二品线验证</span></div>
+          <div class="mini-track"><i style="width:40%;"></i></div>
+          <p>第二品线验证 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>45</b><span>渠道角色</span></div>
+          <div class="mini-track"><i style="width:45%;"></i></div>
+          <p>渠道角色 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>43</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:43%;"></i></div>
+          <p>搜索心智 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>37</b><span>VOC / 售后</span></div>
+          <div class="mini-track"><i style="width:37%;"></i></div>
+          <p>牙医信任 是当前重点。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>40</b><span>SignalMark</span></div>
+          <div class="mini-track"><i style="width:40%;"></i></div>
+          <p>SignalMark 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>35</b><span>CommerceFlow</span></div>
+          <div class="mini-track"><i style="width:35%;"></i></div>
+          <p>CommerceFlow 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>39</b><span>TideLens</span></div>
+          <div class="mini-track"><i style="width:39%;"></i></div>
+          <p>TideLens 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>41</b><span>预算纪律</span></div>
+          <div class="mini-track"><i style="width:41%;"></i></div>
+          <p>预算纪律 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>42</b><span>组织执行</span></div>
+          <div class="mini-track"><i style="width:42%;"></i></div>
+          <p>组织执行 需要服务于下一步预算取舍。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先把 牙医信任 修成可验证，再放大渠道。</h2>
+        </div>
+        <p class="section-note">公开版只给方向，真实预算需要后台 GMV、毛利、CAC、退货和复购校准。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">Keep</div>
+          <h3>先保留</h3>
+          <p>Amazon 和 electric toothbrush 继续作为主验证面，但必须绑定评价和售后指标。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>先压住</h3>
+          <p>暂缓平均加码长尾 SKU、泛流量和没有 proof 的 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Fix</div>
+          <h3>先补强</h3>
+          <p>把预算优先放到 牙医信任、替换耗材、北美动销 的页面、内容和客服承接。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">Scale gate</div>
+          <h3>放大条件</h3>
+          <p>当搜索承接、负面 VOC、退款/售后和渠道转化都有改善，再提高投放或渠道拓展。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先修承接，再验证第二线。</h2>
+        </div>
+        <p class="section-note">路线以 owner 和验收指标组织，避免只写方向。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>DTC / Ecommerce｜上线 牙医信任 承接页和 PDP FAQ</b><p>验收：FAQ 点击、转化、退款原因。影响：减少临门犹豫</p></div><div class="road-action state-red"><b>Support｜整理退换、保修、故障和客服 SLA</b><p>验收：首次响应、解决周期、负面主题。影响：降低售后不确定性</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-amber"><b>Marketing｜重写 Philips Sonicare / Oral-B / Waterpik 比较页和 creator brief</b><p>验收：比较词排名、页面转化、内容复用。影响：夺回解释权</p></div><div class="road-action state-amber"><b>Product / Growth｜建立 SKU role map 和渠道看板</b><p>验收：GMV、毛利、评价、退货、复购。影响：减少资源摊薄</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-blue"><b>Leadership｜决定第二线是否进入预算放大</b><p>验收：独立动销、复购、渠道效率。影响：避免主线外推</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas v3 分数</b><p>验收：CAC、ROAS、TACOS、LTV、退款率。影响：把公开诊断变成经营决策</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：先修售后和电商承接，再让内容与渠道放大。</h2>
+        </div>
+        <p class="section-note">红灯排在前面，方便管理层先安排 owner。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">33</div>
+          <h3>客服 / 售后</h3>
+          <p><strong>最差点：</strong>牙医信任 还没有被 SLA 和公开承诺接住。</p>
+          <span class="tag red">30 天：30 天内上线 support hub、退换/保修说明和客服宏。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">37</div>
+          <h3>电商 / DTC</h3>
+          <p><strong>最差点：</strong>官网没有充分说明为什么直购更稳。</p>
+          <span class="tag red">30 天：30 天内补 PDP、FAQ、comparison 和 checkout 信任点。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">46</div>
+          <h3>Channel</h3>
+          <p><strong>最差点：</strong>渠道能出信号，但价格和评价解释权分散。</p>
+          <span class="tag red">30 天：30 天内统一平台 PDP、DTC 和零售话术。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">40</div>
+          <h3>Data / Growth</h3>
+          <p><strong>最差点：</strong>公开分数不能替代后台口径。</p>
+          <span class="tag amber">30 天：30 天内补 GMV、毛利、退款、复购和渠道效率表。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">41</div>
+          <h3>Product</h3>
+          <p><strong>最差点：</strong>SKU 角色和第二线验证不够清晰。</p>
+          <span class="tag amber">30 天：30 天内做 Hero / Validation / Add-on / Retention map。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">42</div>
+          <h3>Brand / Signal</h3>
+          <p><strong>最差点：</strong>购买理由存在，但边界和 proof 还不够集中。</p>
+          <span class="tag amber">30 天：30 天内完成 claim / proof / audience matrix。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">43</div>
+          <h3>Marketing</h3>
+          <p><strong>最差点：</strong>内容还没有持续回答 牙医信任、替换耗材、北美动销。</p>
+          <span class="tag amber">30 天：30 天内更新 creator brief 和搜索内容结构。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">72</div>
+          <h3>Existing Demand Proof</h3>
+          <p><strong>最差点：</strong>公开证据已经能说明存在可转化需求。</p>
+          <span class="tag green">30 天：30 天内把最强正向证据放进首页、PDP、比较页和内容 brief。</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险和数据缺口：公开版能判断方向，不能替代后台校准。</h2>
+        </div>
+        <p class="section-note">上线旧 GitHub HTML 时必须保留数据缺口，避免把方向性估计写成确定财务口径。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-blue">
+          <div class="card-state">Data</div>
+          <h3>后台数据缺口</h3>
+          <p>需要补 Usmile 的北美 GMV、渠道占比、毛利、退货、复购、客服和广告数据。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Risk</div>
+          <h3>当前最大风险</h3>
+          <p>全球背书很强，但北美公开动销集中在少数 SKU，长尾和耗材还没有形成清楚销售证据。 是当前 v3 分数封顶的核心原因。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Scope</div>
+          <h3>上线备注</h3>
+          <p>本页是旧报告按 Atlas v3 规则重跑后的公开数据版，证据沿用旧公开来源和 2026-06-25 v3 重算结果。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：新版 v3 判断沿用旧公开来源，并标记需要后台校准的地方。</h2>
+        </div>
+        <p class="section-note">证据来自旧 Atlas 公开诊断与 2026-06-25 v3 重算结果；后续深诊需要重新逐源更新 Xiyou、Amazon、搜索、VOC 和后台数据。</p>
+      </div>
       <div class="table-wrap">
         <table>
-          <thead>
-            <tr>
-              <th>品牌 / SKU</th>
-              <th>公开信号</th>
-              <th>消费者购买理由</th>
-              <th>对 Usmile 的判断</th>
-              <th>证据</th>
-            </tr>
-          </thead>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>Usmile Y20 Pro</strong></td>
-              <td>$109；Amazon 4.4 / 76 ratings / 50+ bought/month</td>
-              <td>AI、App、3D map、90-day battery</td>
-              <td>卖点偏技术化，北美承接不达标。必须补安全有效、耗材成本和价值理由。</td>
-              <td>E4, E5</td>
-            </tr>
-            <tr>
-              <td><strong>Usmile C10</strong></td>
-              <td>$59.98 Amazon；4.6 / 973 ratings / 900+ bought/month</td>
-              <td>便携、敏感牙龈、牙套/植牙、压力模式</td>
-              <td>匹配度最好，应成为北美短期增长入口。</td>
-              <td>E6, E7</td>
-            </tr>
-            <tr>
-              <td><strong>Oral-B iO2</strong></td>
-              <td>$49.99，自动压力传感，2 brush heads</td>
-              <td>低风险升级、价格锚点、品牌信任</td>
-              <td>压制 Usmile 入门和中端牙刷价格解释，Y 系列必须讲清为何更值。</td>
-              <td>E14</td>
-            </tr>
-            <tr>
-              <td><strong>Waterpik Cordless Advanced</strong></td>
-              <td>4.2 / 76,126 ratings / 10K+ bought/month</td>
-              <td>ADA accepted、dentist recommended、travel、4 tips、gum health</td>
-              <td>水牙线品类已经被“专业安全有效”教育过，C10 必须正面回应。</td>
+              <td>E20</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">$109；Amazon 4.4 / 76 ratings / 50+ bought / month</a></td>
+              <td>2026-06-13</td>
+              <td>Public source</td>
+              <td>Public source；AI、App、3D map、90-day battery；卖点偏技术化，北美承接不达标。必须补安全有效、耗材成本和价值理由。</td>
+              <td>Medium</td>
+            </tr><tr>
               <td>E10</td>
-            </tr>
-            <tr>
-              <td><strong>Oclean X Ultra S</strong></td>
-              <td>$129；3D graphic、in-app reports，评测指出 AI voice 不够有用</td>
-              <td>理解刷牙习惯、智能反馈、长续航</td>
-              <td>智能可以卖，但必须避免让 AI 功能显得多余或怪。</td>
-              <td>E11</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">$59.98 Amazon；4.6 / 973 ratings / 900+ bought / month</a></td>
+              <td>2026-06-13</td>
+              <td>Public source</td>
+              <td>Public source；便携、敏感牙龈、牙套/植牙、压力模式；匹配度最好，应成为北美短期增长入口。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">$49.99，自动压力传感，2 brush heads</a></td>
+              <td>2026-06-13</td>
+              <td>Public source</td>
+              <td>Public source；低风险升级、价格锚点、品牌信任；压制 Usmile 入门和中端牙刷价格解释，Y 系列必须讲清为何更值。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">Usmile existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">Usmile existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">Usmile existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">Usmile existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/usmile-offing-na-diagnosis-2026-06-13.html" target="_blank" rel="noopener">Usmile existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
-  </section>
-
-  <section id="scores">
-    <div class="inner">
-      <div class="section-head">
-        <div class="tagline">05 / 11-Dimension Score</div>
-        <h2>11 维评分：低分来自 Marketing、用户洞察、订阅复购和转化链路。</h2>
-        <p class="lead">分数下调的核心原因是：卖点没有对齐北美购买理由，导致产品力和全球背书无法充分转化为平台销量和 DTC 留存。</p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>维度</th>
-              <th class="num">权重</th>
-              <th>得分</th>
-              <th>一句话判断</th>
-              <th>证据</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Marketing 板块</td><td class="num">5</td><td><div class="scorebar"><strong>48</strong><div class="bar" style="--w:48%;--c:var(--red);"><span></span></div></div></td><td>不达标。增长主线排反，Y 系列承担过重获客任务，C10 的需求匹配证据没有被放大。</td><td>E2-E7, E12-E15</td></tr>
-            <tr><td>订阅与会员体系</td><td class="num">3</td><td><div class="scorebar"><strong>35</strong><div class="bar" style="--w:35%;--c:var(--red);"><span></span></div></div></td><td>做得差。耗材存在，但没有明确替换周期、成本解释和订阅承接。</td><td>E2, E6, E8</td></tr>
-            <tr><td>流量与转化漏斗</td><td class="num">4</td><td><div class="scorebar"><strong>55</strong><div class="bar" style="--w:55%;--c:var(--red);"><span></span></div></div></td><td>不达标。PDP 先讲技术，后讲信任，转化顺序错。</td><td>E2, E4, E6</td></tr>
-            <tr><td>用户与人群洞察</td><td class="num">3</td><td><div class="scorebar"><strong>50</strong><div class="bar" style="--w:50%;--c:var(--red);"><span></span></div></div></td><td>做得差。没有把北美消费者最在意的品类决策点作为卖点排序基础。</td><td>E12-E17</td></tr>
-            <tr><td>竞品对比</td><td class="num">4</td><td><div class="scorebar"><strong>56</strong><div class="bar" style="--w:56%;--c:var(--red);"><span></span></div></div></td><td>竞品校准不足，没正面拆 Oral-B、Waterpik 的价格锚点和专业背书。</td><td>E10, E11, E14, E15</td></tr>
-            <tr><td>风险与预警</td><td class="num">3</td><td><div class="scorebar"><strong>58</strong><div class="bar" style="--w:58%;--c:var(--red);"><span></span></div></div></td><td>中高风险。强 claim 和 AI 卖点若无证据边界，会伤害信任。</td><td>E1, E2, E4, E9</td></tr>
-            <tr><td>电商板块</td><td class="num">5</td><td><div class="scorebar"><strong>61</strong><div class="bar" style="--w:61%;--c:var(--amber);"><span></span></div></div></td><td>及格但有硬伤。C10 动销好，货架和复购系统差。</td><td>E3-E8</td></tr>
-            <tr><td>品牌板块</td><td class="num">4</td><td><div class="scorebar"><strong>63</strong><div class="bar" style="--w:63%;--c:var(--amber);"><span></span></div></div></td><td>全球强，北美本地信任承接不足。</td><td>E1, E9</td></tr>
-            <tr><td>产品与品类</td><td class="num">4</td><td><div class="scorebar"><strong>68</strong><div class="bar" style="--w:68%;--c:var(--amber);"><span></span></div></div></td><td>产品力成立，但 Y 系列卖点匹配度低；C10 是更稳入口。</td><td>E2-E7</td></tr>
-            <tr><td>客服与售后</td><td class="num">3</td><td><div class="scorebar"><strong>67</strong><div class="bar" style="--w:67%;--c:var(--amber);"><span></span></div></div></td><td>基础政策可见，售后口碑和本地服务体验缺少公开证明。</td><td>E2, E4, E6</td></tr>
-            <tr><td>增长机会与战略</td><td class="num">5</td><td><div class="scorebar"><strong>67</strong><div class="bar" style="--w:67%;--c:var(--amber);"><span></span></div></div></td><td>机会还在，但预算不能先加。先按品线重排优先级、改卖点和货架。</td><td>E10-E22</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section id="roadmap">
-    <div class="inner">
-      <div class="section-head">
-        <div class="tagline">06 / Roadmap</div>
-        <h2>90/180 天路线图：先收敛主线，再放大预算。</h2>
-        <p class="lead">Usmile 北美不该先加大声量。先把 C10 拉成低解释成本的获客入口，再重写 Y 系列购买理由，最后用渠道和复购放大。</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-card">
-          <span class="pill red">0-30 天</span>
-          <h3>先确定北美入口</h3>
-          <ul>
-            <li>把 C10 定义为北美 acquisition SKU，承接 braces、sensitive gums、travel 三类需求。</li>
-            <li>重写 Y10/Y20 PDP：安全有效、牙龈保护、价格理由、刷头成本先于 AI。</li>
-            <li>建立 North America Proof 模块：ADA、labs、clinical claims、media review、Amazon ratings。</li>
-          </ul>
-        </div>
-        <div class="timeline-card">
-          <span class="pill amber">31-90 天</span>
-          <h3>重建导购和套装</h3>
-          <ul>
-            <li>上线 Choose Your Routine：Smart Brush、Travel Flosser、Braces Care、Family Set。</li>
-            <li>重新包装 bundle，不只讲折扣，讲一年口腔护理方案。</li>
-            <li>为 20x/25x/99.99% claim 增加实验边界和适用人群。</li>
-          </ul>
-        </div>
-        <div class="timeline-card">
-          <span class="pill blue">91-180 天</span>
-          <h3>再放大渠道和复购</h3>
-          <ul>
-            <li>建立刷头、喷嘴、牙线的 90 天替换提醒和订阅路径。</li>
-            <li>用 Amazon Brand Analytics、Shopify、广告后台复核卖点修改后的转化提升。</li>
-            <li>如果 C10 继续跑赢，优先扩水牙线和套装渠道，再推高客单智能牙刷。</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="risk">
-    <div class="inner">
-      <div class="section-head">
-        <div class="tagline">07 / Risks &amp; Data Gaps</div>
-        <h2>数据缺口：公开数据能判断方向，预算决策必须接内部后台。</h2>
-        <p class="lead">本报告基于公开页面，不构成财务审计。下一步需要品牌后台验证 GMV、ROAS、CVR、Amazon 搜索词和耗材复购。</p>
-      </div>
-      <div class="grid three">
-        <div class="card"><span class="pill red">数据缺口</span><h3 style="margin-top:14px;font-size:22px;">北美真实 GMV</h3><p class="muted small" style="margin-top:10px;">公开月销提示只能给下限。需要 Seller Central、Shopify、Walmart/零售渠道验证。</p></div>
-        <div class="card"><span class="pill red">数据缺口</span><h3 style="margin-top:14px;font-size:22px;">卖点转化效率</h3><p class="muted small" style="margin-top:10px;">需要 A/B 测试 Y 系列“AI优先”与“信任/价值优先”两种 PDP。</p></div>
-        <div class="card"><span class="pill amber">经营风险</span><h3 style="margin-top:14px;font-size:22px;">C10 被低估</h3><p class="muted small" style="margin-top:10px;">如果继续把资源压在技术感更强但需求错配的 Y 系列，C10 的增长窗口会被 Waterpik 和低价竞品吃掉。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="evidence">
-    <div class="inner">
-      <div class="section-head">
-        <div class="tagline">08 / Evidence</div>
-        <h2>证据表：本报告引用的公开来源。</h2>
-        <p class="lead">抓取日期：2026-06-13。价格、Amazon bought/month、评价数和汇率会变化，正式对外提案前需要刷新。</p>
-      </div>
-      <div class="evidence-grid">
-        <a class="evidence-card" href="https://www.usmile.com/about" target="_blank" rel="noreferrer"><b>E1</b><strong>Usmile 官方 About</strong><span>30+ countries、86 million users、20,000+ units/day、750+ patents、4 labs、ADA certification 口径。</span></a>
-        <a class="evidence-card" href="https://usmile.us/products/usmile-y10-pro-smart-toothbrush" target="_blank" rel="noreferrer"><b>E2</b><strong>Y10 Pro 美国官网页</strong><span>$87、152 reviews、20x plaque removal、AI missed spots、dual-pressure sensor、180-day runtime。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/usmile-Electric-Toothbrush-Rechargeable-Waterproof/dp/B0D31TCH66" target="_blank" rel="noreferrer"><b>E3</b><strong>Amazon Y10 Pro</strong><span>$87、4.4 stars、315 ratings、200+ bought/month、100+ bought/week 摘要。</span></a>
-        <a class="evidence-card" href="https://usmile.us/products/usmile-y20-pro-electric-toothbrush" target="_blank" rel="noreferrer"><b>E4</b><strong>Y20 Pro 美国官网页</strong><span>$109、11 reviews、25x effectiveness、AM/PM auto-switch、App、3D oral map、90-day battery。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/usmile-Y20PRO-Toothbrush-AI-Powered-Real-Time/dp/B0F186TLCJ" target="_blank" rel="noreferrer"><b>E5</b><strong>Amazon Y20 Pro</strong><span>4.4 stars、76 ratings、50+ bought/month、App、live 3D oral map、90-day battery。</span></a>
-        <a class="evidence-card" href="https://usmile.us/products/usmile-c10-portable-dental-flosser" target="_blank" rel="noreferrer"><b>E6</b><strong>C10 美国官网页</strong><span>$69.99、126 reviews、99.99% plaque claim、4 pressure modes、sensitive gums、braces/Invisalign、95-day battery。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/usmile-C10-Portable-Water-Flosser/dp/B0FNCYLZZV" target="_blank" rel="noreferrer"><b>E7</b><strong>Amazon C10 Water Flosser</strong><span>$59.98、4.6 stars、973 ratings、Amazon's Choice、900+ bought/month、sensitive gums/braces/implants。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/usmile-Electric-Toothbrush-C10-Toiletry/dp/B0FBWNQDZ8" target="_blank" rel="noreferrer"><b>E8</b><strong>Y20 Pro x C10 套装 Amazon</strong><span>1-year oral care kit、Y20 Pro + C10 + replacement heads/nozzles，说明耗材和套装素材存在。</span></a>
-        <a class="evidence-card" href="https://www.livescience.com/health/usmile-y10-pro-sonic-electric-toothbrush-review" target="_blank" rel="noreferrer"><b>E9</b><strong>Live Science Y10 Pro 评测</strong><span>认可 180-day battery、premium features、mid-range price，同时指出 pressure sensor could be more sensitive。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/Waterpik-Cordless-Rechargeable-Portable-Irrigator/dp/B01GNVF8S8" target="_blank" rel="noreferrer"><b>E10</b><strong>Waterpik Cordless Advanced Amazon</strong><span>4.2 stars、76,126 ratings、10K+ bought/month、ADA accepted、dentist recommended、4 tips、portable waterproof。</span></a>
-        <a class="evidence-card" href="https://www.tomsguide.com/home/oclean-x-ultra-s-toothbrush-review" target="_blank" rel="noreferrer"><b>E11</b><strong>Oclean X Ultra S 评测</strong><span>3D graphic 和 in-app reports 有价值，但 AI voice alerts 不够有用，智能卖点需谨慎表达。</span></a>
-        <a class="evidence-card" href="https://www.ada.org/resources/ada-library/oral-health-topics/toothbrushes" target="_blank" rel="noreferrer"><b>E12</b><strong>ADA Toothbrushes</strong><span>ADA 强调 soft bristles、安全有效、plaque / gingivitis 证据、Seal of Acceptance。</span></a>
-        <a class="evidence-card" href="https://www.consumerreports.org/health/toothbrushes/buying-guide/" target="_blank" rel="noreferrer"><b>E13</b><strong>Consumer Reports Buying Guide</strong><span>压力传感、2-minute timer、刷头替换等是电动牙刷购买重点。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/Oral-B-Rechargeable-Electric-Powered-Toothbrush/dp/B0D1DQ7BH9" target="_blank" rel="noreferrer"><b>E14</b><strong>Oral-B iO2 Amazon</strong><span>$49.99、3 cleaning modes、automatic pressure sensor、2 brush heads，形成低价信任锚点。</span></a>
-        <a class="evidence-card" href="https://www.amazon.com/phillips-4100/s?k=phillips+4100" target="_blank" rel="noreferrer"><b>E15</b><strong>Philips Sonicare 4100 Amazon 搜索</strong><span>Sonicare 4100 以压力传感、刷头提醒和 $40-$70 价格带形成主流锚点。</span></a>
-        <a class="evidence-card" href="https://finance.yahoo.com/quote/CNY%3DX/history/" target="_blank" rel="noreferrer"><b>E16</b><strong>USD/CNY Yahoo Finance</strong><span>2026-06-12 USD/CNY 6.7638，用于美元销售规模换算人民币。</span></a>
-        <a class="evidence-card" href="https://www.waterpik.com/buying-guide/" target="_blank" rel="noreferrer"><b>E17</b><strong>Waterpik Buying Guide</strong><span>水牙线购买决策包含生活方式、空间、便携、压力设置、水箱容量和 tips。</span></a>
-        <a class="evidence-card" href="https://www.grandviewresearch.com/industry-analysis/us-oral-care-products-market-report" target="_blank" rel="noreferrer"><b>E18</b><strong>Grand View Research</strong><span>U.S. oral care products market 2024 年 $11.41B，2025 年 $11.99B，2030 年 $15.71B 预测。</span></a>
-        <a class="evidence-card" href="https://www.gminsights.com/industry-analysis/electric-toothbrush-market" target="_blank" rel="noreferrer"><b>E19</b><strong>GMI Electric Toothbrush Market</strong><span>North America electric toothbrush 2023 年约 $1.5B；U.S. 2023 年约 $1.2B，作为电动牙刷天花板口径之一。</span></a>
-        <a class="evidence-card" href="https://www.precedenceresearch.com/electric-toothbrush-market" target="_blank" rel="noreferrer"><b>E20</b><strong>Precedence Electric Toothbrush</strong><span>U.S. electric toothbrush 2025 年约 $907.2M，2035 年预测约 $1.45B，用于校准电动牙刷区间下沿。</span></a>
-        <a class="evidence-card" href="https://www.fortunebusinessinsights.com/water-flosser-market-106308" target="_blank" rel="noreferrer"><b>E21</b><strong>Fortune Business Insights Water Flosser</strong><span>Global water flosser 2025 年 $1.08B；North America 2025 年约 $0.42B，占 38.88%。</span></a>
-        <a class="evidence-card" href="https://relish-tech.com/water-flosser-market-size/" target="_blank" rel="noreferrer"><b>E22</b><strong>Water Flosser Regional Estimate</strong><span>行业口径给出 North America water flosser 2025 年约 $403M、U.S. 约 $350M，用于交叉校准冲牙器天花板。</span></a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="inner">
-      <strong>远汐 Offing 免费北美业务诊断</strong>
-      <span>在抵达之前，先判断潮水。公开数据版报告用于经营判断和增长优先级讨论，不构成财务审计、投资建议或平台销售额确证。</span>
-      <span>Report generated on 2026-06-13 · Usmile North America Diagnosis · Skill v1.26.0</span>
-    </div>
-  </footer>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Usmile · 2026-06-26 · North America</span>
+    </footer>
+  </main>
 </body>
 </html>

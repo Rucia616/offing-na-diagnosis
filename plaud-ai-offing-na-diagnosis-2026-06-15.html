@@ -1,1414 +1,1412 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plaud AI · 远汐 Offing Atlas 北美业务诊断（免费版）· 2026-06-15</title>
-  <meta name="description" content="Plaud AI 北美业务诊断：硬件入口已成立，下一阶段关键在订阅续费、团队席位、合规采购和渠道纪律。">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Cpath d='M16 42V18h12c8 0 13 4 13 11s-5 11-13 11h-5v2z' fill='%23F8FAF9'/%3E%3Cpath d='M44 18h4v24h-4z' fill='%238F53ED'/%3E%3C/svg%3E">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plaud AI · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
       color-scheme: light;
-      --bg: #F5F5F7;
-      --top: #FBFBFD;
-      --surface: #FFFFFF;
-      --surface-2: #F7F8FA;
-      --text: #101413;
-      --body: #293331;
-      --muted: #66716E;
-      --line: #D7D9DC;
-      --link: #2D6261;
-      --accent-text: #2D6261;
-      --accent-fill: #EAF1F0;
-      --success-text: #157A38;
-      --success-bg: #EAF6EE;
-      --warning-text: #9A5B00;
-      --warning-bg: #FFF3DF;
-      --risk-text: #D70015;
-      --risk-bg: #FFF0F1;
-      --inverse-bg: #13211F;
-      --inverse-text: #F8FAF9;
-      --inverse-muted: rgba(248,250,249,.84);
-      --brand: #111111;
-      --brand-purple: #6C3BEF;
-      --brand-blue: #0077B8;
-      --brand-soft: #F3F2FA;
-      --prism-teal: #32D6C6;
-      --prism-sky: #9ED1FF;
-      --prism-pink: #F7A4D8;
-      --prism-lilac: #9B7CFF;
-      --prism-coral: #FF6B4A;
-      --prism-green: #70E5A8;
-      --shadow: 0 12px 34px rgba(16,20,19,.07);
-      --result-shadow: 0 26px 72px rgba(16,20,19,.10);
-      --radius: 8px;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        color-scheme: dark;
-        --bg: #0F1212;
-        --top: #141817;
-        --surface: #191E1D;
-        --surface-2: #202625;
-        --text: #F4F7F6;
-        --body: #D8DEDC;
-        --muted: #A9B2AF;
-        --line: #3A4240;
-        --link: #8CC7C3;
-        --accent-text: #9ED7D3;
-        --accent-fill: #1C3433;
-        --success-text: #8EE0A8;
-        --success-bg: #173424;
-        --warning-text: #F2C46D;
-        --warning-bg: #3A2A12;
-        --risk-text: #FF8E99;
-        --risk-bg: #3B171D;
-        --inverse-bg: #E9EFED;
-        --inverse-text: #101413;
-        --inverse-muted: #40504C;
-        --brand-soft: #24202E;
-        --prism-teal: #57E6DA;
-        --prism-sky: #9ED1FF;
-        --prism-pink: #FFB3E2;
-        --prism-lilac: #B7A8FF;
-        --prism-coral: #FF8A70;
-        --prism-green: #8AF0B8;
-        --shadow: 0 12px 34px rgba(0,0,0,.36);
-        --result-shadow: 0 26px 72px rgba(0,0,0,.42);
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
       }
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background-color: var(--bg);
-      background-image:
-        radial-gradient(circle at 7% -8%, rgba(50,214,198,.16), transparent 32vw),
-        radial-gradient(circle at 93% 0%, rgba(247,164,216,.14), transparent 30vw),
-        radial-gradient(circle at 72% 20%, rgba(158,209,255,.10), transparent 28vw),
-        linear-gradient(180deg, var(--top), var(--bg) 560px);
-      color: var(--body);
-      line-height: 1.65;
-      font-size: 15px;
-      letter-spacing: 0;
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
     }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: saturate(180%) blur(18px);
-      background: color-mix(in srgb, var(--surface) 88%, transparent);
-      border-bottom: 1px solid var(--line);
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
     }
-    .nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 10px 24px;
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .nav-lockup { position: relative; display: grid; gap: 1px; margin-right: 8px; padding-right: 4px; }
-    .nav-mark { color: var(--text); font-weight: 850; line-height: 1.08; }
-    .nav-sub { color: var(--muted); font-size: 11px; font-weight: 750; line-height: 1.08; }
-    .nav-lockup::after { content: ""; display: block; width: 48px; height: 2px; margin-top: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-pink), var(--prism-lilac)); }
-    .nav-inner a { color: var(--muted); font-size: 13px; font-weight: 650; }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      max-width: 1180px;
-      margin: 0 auto;
-      min-height: 92vh;
-      padding: 60px 24px 34px;
-      display: grid;
-      align-content: center;
-      gap: 30px;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      top: 82px;
-      right: min(5vw, 66px);
-      width: clamp(170px, 24vw, 312px);
-      aspect-ratio: 1;
-      background: conic-gradient(from 210deg, var(--prism-teal), var(--prism-sky), var(--prism-pink), var(--prism-lilac), var(--prism-coral), var(--prism-green), var(--prism-teal));
-      clip-path: polygon(48% 0%, 100% 28%, 84% 100%, 12% 83%, 0% 30%);
-      opacity: .16;
-      pointer-events: none;
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .logo { width: 170px; max-width: 52vw; display: block; margin-bottom: 24px; }
-    .logo img { width: 100%; height: auto; display: block; }
-    @media (prefers-color-scheme: dark) {
-      .logo img { filter: invert(1); }
-    }
-    .eyebrow {
-      color: var(--accent-text);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-    h1, h2, h3 { color: var(--text); margin: 0; line-height: 1.12; letter-spacing: 0; }
-    h1 { font-size: clamp(56px, 10vw, 116px); font-weight: 900; margin: 0 0 18px; }
-    h1 span { display: block; }
-    .hero-lead {
-      max-width: 980px;
-      color: var(--body);
-      font-size: clamp(18px, 2.2vw, 26px);
-      line-height: 1.45;
-      font-weight: 650;
-      margin: 0;
-    }
-    .score-wrap { position: relative; display: grid; grid-template-columns: minmax(280px, .86fr) 1.2fr; gap: 1px; align-items: stretch; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); box-shadow: var(--result-shadow); }
-    .score-wrap::before { content: ""; position: absolute; z-index: 2; inset: 0 0 auto; height: 5px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-pink), var(--prism-lilac), var(--prism-coral), var(--prism-green)); }
-    .total-card {
-      background:
-        radial-gradient(circle at 86% 18%, rgba(50,214,198,.22), transparent 33%),
-        radial-gradient(circle at 14% 88%, rgba(247,164,216,.16), transparent 32%),
-        var(--inverse-bg);
-      color: var(--inverse-text);
-      border-radius: 0;
-      padding: 24px;
-      box-shadow: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 220px;
-    }
-    .total-card .label, .total-card p { color: var(--inverse-muted); }
-    .total-number { font-size: 74px; line-height: .95; font-weight: 850; color: var(--inverse-text); margin: 12px 0 8px; }
-    .star-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
-    .stars { color: #F3BC49; font-size: 28px; letter-spacing: 0; line-height: 1; }
-    .star-score { color: var(--inverse-text); font-size: 22px; line-height: 1; font-weight: 850; }
-    .star-caption { color: var(--inverse-muted); font-size: 13px; font-weight: 750; }
-    .subscores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
-    .subscore, .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .subscore { position: relative; padding: 20px; min-height: 220px; border-radius: 0; border: 0; box-shadow: none; background: linear-gradient(180deg, color-mix(in srgb, var(--tone) 7%, var(--surface)) 0%, var(--surface) 44%); }
-    .subscore::before { content: ""; position: absolute; top: 0; left: 18px; right: 18px; height: 5px; border-radius: 0 0 999px 999px; background: var(--tone); }
-    .subscore:nth-child(1) { --tone: var(--success-text); }
-    .subscore:nth-child(2) { --tone: var(--prism-lilac); }
-    .subscore:nth-child(3) { --tone: var(--risk-text); }
-    .subscore strong { display: block; color: var(--tone); font-size: 44px; line-height: 1; margin: 14px 0; }
-    .bar { height: 8px; border-radius: 999px; background: color-mix(in srgb, var(--line) 60%, transparent); overflow: hidden; margin: 10px 0 14px; }
-    .fill { height: 100%; border-radius: inherit; background: var(--accent-text); }
-    .fill.good { background: var(--success-text); }
-    .fill.warn { background: var(--warning-text); }
-    .fill.bad { background: var(--risk-text); }
-    .label { display: inline-block; color: var(--accent-text); font-size: 12px; font-weight: 850; letter-spacing: 0; }
-    section { padding: 58px 24px; scroll-margin-top: 78px; }
-    .hero { scroll-margin-top: 78px; }
-    .inner { max-width: 1180px; margin: 0 auto; }
-    .section-head { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items: end; margin-bottom: 20px; }
-    .section-head .eyebrow { display: inline-flex; align-items: center; gap: 8px; }
-    .section-head .eyebrow::before { content: ""; width: 18px; height: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--prism-teal), var(--prism-pink), var(--prism-lilac)); }
-    .section-head h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 880; }
-    .lead { margin: 0; color: var(--body); font-size: 16px; }
-    .grid { display: grid; gap: 16px; }
-    .two { grid-template-columns: repeat(2, 1fr); }
-    .three { grid-template-columns: repeat(3, 1fr); }
-    .four { grid-template-columns: repeat(4, 1fr); }
-    .card { padding: 22px; }
-    .card.metric, .card.result-card { background: var(--surface); }
-    .card h3 { font-size: 21px; margin: 8px 0 12px; }
-    .card p, .card li { color: var(--body); margin: 0; }
-    .gene-map {
-      display: grid;
-      grid-template-columns: minmax(360px, .9fr) 1.1fr;
-      gap: 24px;
-      align-items: center;
-      margin-top: 18px;
-    }
-    .gene-orbit {
-      position: relative;
-      width: min(100%, 520px);
-      aspect-ratio: 1;
-      margin: 0 auto;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--surface) 96%, var(--prism-teal)) 0 28%, transparent 29%),
-        radial-gradient(circle at 50% 50%, transparent 0 41%, color-mix(in srgb, var(--prism-lilac) 15%, var(--surface)) 42% 56%, transparent 57%),
-        radial-gradient(circle at 50% 50%, transparent 0 66%, color-mix(in srgb, var(--prism-pink) 14%, var(--surface)) 67% 100%);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .gene-orbit::before,
-    .gene-orbit::after {
-      content: "";
-      position: absolute;
-      inset: 19%;
-      border: 1px solid color-mix(in srgb, var(--accent-text) 24%, transparent);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .gene-orbit::after {
-      inset: 36%;
-      border-color: color-mix(in srgb, var(--success-text) 30%, transparent);
-    }
-    .orbit-ring {
-      position: absolute;
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: color-mix(in srgb, var(--surface) 86%, transparent);
-      border: 1px solid var(--line);
-      box-shadow: 0 8px 20px rgba(16,20,19,.08);
-      max-width: 188px;
-    }
-    .orbit-ring strong {
-      display: block;
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.2;
-    }
-    .orbit-ring span {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 3px;
-    }
-    .orbit-core {
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      border-color: color-mix(in srgb, var(--inverse-text) 20%, transparent);
-      max-width: 210px;
-      padding: 14px 16px;
-    }
-    .orbit-core strong,
-    .orbit-core span { color: var(--inverse-text); }
-    .orbit-mid { right: 10%; top: 26%; }
-    .orbit-outer { left: 8%; bottom: 20%; }
-    .orbit-caption {
-      position: absolute;
-      right: 9%;
-      bottom: 10%;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 750;
-      max-width: 168px;
-    }
-    .gene-copy { display: grid; gap: 10px; }
-    .gene-note {
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-    .gene-note-num {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      font-weight: 900;
-      color: var(--text);
-      background: linear-gradient(135deg, color-mix(in srgb, var(--prism-teal) 24%, var(--surface)), color-mix(in srgb, var(--prism-pink) 22%, var(--surface)));
-      border: 1px solid var(--line);
-    }
-    .gene-note h3 { margin: 0 0 6px; font-size: 18px; }
-    .gene-note p { margin: 0; color: var(--body); }
-    .voc-clouds {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .cloud-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      padding: 22px;
-      overflow: hidden;
-    }
-    .cloud-card.positive { border-top: 5px solid var(--success-text); }
-    .cloud-card.negative { border-top: 5px solid var(--risk-text); }
-    .cloud-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .cloud-head h3 { margin: 0; font-size: 20px; }
-    .word-cloud {
-      position: relative;
-      min-height: 178px;
-    }
-    .word-cloud span {
-      --s: 18px;
-      --x: 50%;
-      --y: 50%;
-      --r: 0deg;
-      position: absolute;
-      left: var(--x);
-      top: var(--y);
-      transform: translate(-50%, -50%) rotate(var(--r));
-      display: inline-block;
-      font-size: var(--s);
-      line-height: 1.05;
-      font-weight: 850;
-      white-space: nowrap;
-      color: var(--accent-text);
-    }
-    .positive .word-cloud span { color: var(--success-text); }
-    .positive .word-cloud span:nth-child(3n) { color: var(--text); }
-    .positive .word-cloud span:nth-child(4n) { color: var(--accent-text); }
-    .negative .word-cloud span { color: var(--risk-text); }
-    .negative .word-cloud span:nth-child(3n) { color: var(--text); }
-    .negative .word-cloud span:nth-child(4n) { color: var(--body); }
-    .cloud-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
-    ul { padding-left: 1.1em; margin: 12px 0 0; }
-    li + li { margin-top: 9px; }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .pill, .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 9px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .pill.good, .tag.good { color: var(--success-text); background: var(--success-bg); border-color: color-mix(in srgb, var(--success-text) 25%, transparent); }
-    .pill.warn, .tag.warn { color: var(--warning-text); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning-text) 25%, transparent); }
-    .pill.bad, .tag.bad { color: var(--risk-text); background: var(--risk-bg); border-color: color-mix(in srgb, var(--risk-text) 25%, transparent); }
-    .pill.neutral, .tag.neutral { color: var(--accent-text); background: var(--accent-fill); border-color: color-mix(in srgb, var(--accent-text) 20%, transparent); }
-    .stage-card {
-      position: relative;
-      background:
-        linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, var(--prism-sky)), var(--surface));
-      color: var(--body);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .stage-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 4px;
-      background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-pink), var(--prism-lilac));
-    }
-    .stage-card h2 { color: var(--text); }
-    .stage-card .label { color: var(--accent-text); }
-    .stage-card p { color: var(--body); }
-    .stage-path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
-    .stage-step {
-      background: var(--surface-2);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
-      min-height: 112px;
-      color: var(--body);
-    }
-    .stage-step.active {
-      background:
-        radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--prism-teal) 22%, transparent), transparent 42%),
-        var(--inverse-bg);
-      color: var(--inverse-text);
-      border-color: color-mix(in srgb, var(--inverse-bg) 80%, var(--line));
-      box-shadow: 0 14px 34px rgba(16,20,19,.12);
-    }
-    .stage-step strong { display: block; font-size: 20px; margin-bottom: 6px; }
-    .stage-step p { margin: 0; font-size: 13px; color: inherit; opacity: .84; }
-    #stage .stage-metrics .card.metric {
-      border-top: 1px solid var(--line);
-      border-left: 4px solid var(--line);
-      background: var(--surface);
-    }
-    #stage .stage-metrics .card.metric.good { border-left-color: var(--success-text); }
-    #stage .stage-metrics .card.metric.warn { border-left-color: var(--warning-text); }
-    #search .search-priority .card.metric {
-      border-top: 1px solid var(--line);
-      border-left: 4px solid var(--line);
-      background: var(--surface);
-    }
-    #search .search-priority .card.metric.bad { border-left-color: var(--risk-text); }
-    #search .search-priority .card.metric.warn { border-left-color: var(--warning-text); }
-    #search .search-priority .card.metric.good { border-left-color: var(--success-text); }
-    #search .search-priority .card.metric .label { color: var(--accent-text); }
-    .metric { border-top: 5px solid var(--line); }
-    .metric.good { --tone: var(--success-text); border-top-color: var(--success-text); }
-    .metric.warn { --tone: var(--warning-text); border-top-color: var(--warning-text); }
-    .metric.bad { --tone: var(--risk-text); border-top-color: var(--risk-text); }
-    .score-badge { font-size: 36px; font-weight: 850; line-height: 1; color: var(--text); }
-    .stacked {
-      display: flex;
-      height: 34px;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--surface-2);
-      margin: 18px 0;
-    }
-    .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 850; min-width: 44px; }
-    .seg.a { background: #111111; }
-    .seg.b { background: #101413; }
-    .seg.c { background: var(--prism-lilac); }
-    .seg.d { background: var(--prism-teal); color: #111; }
-    .seg.e { background: var(--prism-pink); color: #111; }
-    .match-row {
-      display: grid;
-      grid-template-columns: 1.1fr .78fr 1fr;
-      gap: 16px;
-      align-items: center;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-    }
-    .concern-head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-    .concern-head strong { color: var(--text); }
-    .weight-badge {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 4px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid color-mix(in srgb, var(--accent-text) 22%, transparent);
-      background: var(--accent-fill);
-      color: var(--accent-text);
-      font-size: 12px;
-      font-weight: 850;
-      line-height: 1;
-      white-space: nowrap;
-    }
-    .weight-badge b {
-      font-size: 17px;
-      line-height: 1;
-    }
-    .match-score { font-size: 26px; font-weight: 850; color: var(--text); }
-    .problem {
-      display: grid;
-      grid-template-columns: .78fr 1.22fr;
-      padding: 0;
-      overflow: hidden;
-    }
-    .problem-side {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      padding: 24px;
-    }
-    .problem-side h3, .problem-side .label { color: var(--inverse-text); }
-    .problem-side .score-badge { color: var(--inverse-text); }
-    .problem-side p { color: var(--inverse-muted); }
-    .problem-body { padding: 24px; }
-    .impact-path {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 14px 0;
-    }
-    .impact-path div {
-      background: var(--surface-2);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 12px;
-      min-height: 98px;
-    }
-    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
-    table { width: 100%; border-collapse: collapse; min-width: 880px; }
-    th, td { border-bottom: 1px solid var(--line); padding: 12px 14px; text-align: left; vertical-align: top; }
-    th { background: var(--surface-2); color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: 0; }
-    td { color: var(--body); }
-    tr:last-child td { border-bottom: 0; }
-    .dept-group { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
-    .dept-head { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); background: var(--surface-2); }
-    .dept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-    .dept-card { padding: 18px; border-right: 1px solid var(--line); border-top: 5px solid var(--line); min-height: 190px; }
-    .dept-card:last-child { border-right: 0; }
-    .dept-card.badline { border-top-color: var(--risk-text); }
-    .dept-card.warnline { border-top-color: var(--warning-text); }
-    .dept-card.goodline { border-top-color: var(--success-text); }
-    .footnote { font-size: 12px; color: var(--muted); margin-top: 10px; }
-    footer { background: var(--inverse-bg); color: var(--inverse-text); padding: 38px 24px; margin-top: 44px; }
-    footer p, footer small { color: var(--inverse-muted); }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
     @media (max-width: 900px) {
-      nav { position: static; }
-      .hero { min-height: auto; padding-top: 44px; }
-      .score-wrap, .section-head, .problem, .gene-map, .voc-clouds { grid-template-columns: 1fr; }
-      .subscores, .three, .four, .two, .dept-grid { grid-template-columns: 1fr; }
-      .stage-path { grid-template-columns: 1fr 1fr; }
-      .match-row, .impact-path { grid-template-columns: 1fr; }
-      h1 { font-size: 58px; }
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
     }
-    @media (max-width: 560px) {
-      body { font-size: 14px; }
-      section { padding: 42px 16px; }
-      .hero { padding-left: 16px; padding-right: 16px; }
-      h1 { font-size: 48px; }
-      .stage-path { grid-template-columns: 1fr; }
-      .total-number { font-size: 56px; }
-      .star-score { font-size: 20px; }
-      .gene-orbit { width: min(100%, 360px); }
-      .orbit-ring { max-width: 164px; padding: 7px 10px; }
-      .orbit-ring strong { font-size: 13px; }
-      .orbit-caption { position: static; max-width: none; margin: 18px auto 0; text-align: center; }
-      .gene-note { grid-template-columns: 42px 1fr; }
-      .gene-note-num { width: 36px; height: 36px; }
-      .word-cloud { min-height: 220px; }
-      .word-cloud span { font-size: calc(var(--s) * .82); }
-      .seg { font-size: 10px; min-width: 34px; }
-    }
-    @media print {
-      nav { display: none; }
-      body { background: #fff; }
-      section, .hero { break-inside: avoid; min-height: auto; }
-      .card, .table-wrap, .dept-group { box-shadow: none; }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-lockup" aria-label="远汐 Offing Atlas 北美业务诊断免费版">
-        <span class="nav-mark">远汐 Offing</span>
-        <span class="nav-sub">Atlas 北美业务诊断（免费版）</span>
-      </span>
-      <a href="#stage">阶段</a>
-      <a href="#gene">人群</a>
-      <a href="#type">类型</a>
-      <a href="#search">搜索</a>
-      <a href="#voc">VOC</a>
-      <a href="#ceiling">天花板</a>
-      <a href="#intent">意图</a>
-      <a href="#fit">卖点匹配</a>
-      <a href="#summary">一页看懂</a>
-      <a href="#blocks">三大板块</a>
-      <a href="#problems">关键问题</a>
-      <a href="#competitors">竞品</a>
-      <a href="#positioning">定位</a>
-      <a href="#scores">评分</a>
-      <a href="#budget">预算</a>
-      <a href="#roadmap">路线图</a>
-      <a href="#departments">组织</a>
-      <a href="#evidence">证据</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
     </div>
-  </nav>
-
+  </header>
   <main>
-    <header class="hero">
-      <div>
-        <div class="logo" aria-label="Plaud 官方 logo">
-          <img src="assets/plaud-logo.png" alt="Plaud">
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Plaud AI logo">
+          <img src="assets/plaud-logo.png" alt="Plaud AI logo" />
         </div>
-        <div class="eyebrow">North America Business Diagnosis</div>
-        <h1><span>北美业务诊断</span></h1>
-        <p class="hero-lead">Plaud 北美的硬件入口已经成立，真正要补的是硬件之后的经营系统：让 Note Pro（AI 录音卡片）和 NotePin S（可穿戴 AI 录音器）的用户继续订阅、进入团队席位，并相信合规与售后。未来 90 天资源优先投订阅转化、团队版证据、合规采购页和渠道价格纪律。</p>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">Plaud AI 的 v3 总分为 68。当前不是只看规模和声量，优先判断 续费价值、准确率 和渠道承接能否支撑下一阶段预算效率。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-amber">
+            <b>68/100</b>
+            <span>Atlas v3 总分，旧分 72。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>Cap 70</b>
+            <span>当前活跃分数封顶来自 续费价值。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>P1</b>
+            <span>风险优先级：硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。。 <span class="evidence-list"><span class="evidence">[E31]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">本页按 Atlas v3 规则覆盖旧 GitHub HTML：加入品类购买契约、风险路径、假增长信号、分数封顶、三专项评分和路由建议。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E31]</span></span></p>
+        <div class="tag-row"><span class="tag amber">v3 68 分</span><span class="tag amber">B档</span><span class="tag blue">公开数据置信度 中高</span></div>
       </div>
-      <div class="score-wrap">
-        <div class="total-card">
-          <div>
-            <span class="label">北美业务情况总分</span>
-            <div class="total-number">72</div>
-            <div class="star-row" aria-label="综合星级 3.6 / 5，满分五颗星">
-              <span class="star-score">3.6 / 5 星</span>
-              <span class="stars" aria-hidden="true">★★★★☆</span>
-              <span class="star-caption">满分五颗星</span>
+      <aside class="score-panel" aria-label="Plaud AI Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">68<span>/100</span></div>
+          <span class="tier green">B档</span>
+        </div>
+        <div class="stars" aria-label="3.4 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">3.4 / 5 · B档 · 先修 续费价值，再谈放大</div>
+        <div class="score-meta">
+          <div><b>10-100</b><span>阶段判断</span></div>
+          <div><b>DTC + Amazon + subscription</b><span>经营类型</span></div>
+          <div><b>中高</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:71%;"></i></div>
+            <b>71</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:78%;"></i></div>
+            <b>78</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:48%;"></i></div>
+            <b>48</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-amber">
+          <i>P0</i>
+          <b>续费价值</b>
+          <span>先把购买前信任和售后解释做成页面与客服承诺。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>准确率</b>
+          <span>把品类边界、竞品比较和渠道角色讲清楚。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索承接</b>
+          <span>行业词、review 词、比较词和售后词需要按需求量级重排。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>第二品线</b>
+          <span>用独立证据验证，不用主线声量外推。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>SignalMark + CommerceFlow 并行：一边证明专业工作流，一边校准订阅和团队转化。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>Plaud AI</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中高 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>SignalMark + CommerceFlow 并行：一边证明专业工作流，一边校准订阅和团队转化。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 66</span>
+          <span class="route-chip">分数封顶：70 · 续费价值 封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-green">
+            <div class="specialist-score">73<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>AI 硬件 购买理由已经出现，但 proof 和语言边界还要补。</h3>
+              <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
             </div>
-          </div>
-          <p>72 / 100 = 3.6 / 5。业务健康度 74 × 45% = 33.3；业务机会分 83 × 35% = 29.1；安全余量（100 - 问题致命度 52）× 20% = 9.6。数据抓取日期：2026-06-15。</p>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">66<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
+              <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
+            </div>
+          </article><article class="specialist-card state-green">
+            <div class="specialist-score">74<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
+              <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
+            </div>
+          </article>
         </div>
-        <div class="subscores">
-          <div class="subscore">
-            <span class="label">业务健康度</span>
-            <strong>74</strong>
-            <div class="bar"><div class="fill warn" style="width:74%"></div></div>
-            <p>硬件销量、DTC、Amazon 评价和品牌声誉成立；短板在订阅续费、团队化和非自营零售的经营纪律。</p>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
           </div>
-          <div class="subscore">
-            <span class="label">业务机会分</span>
-            <strong>83</strong>
-            <div class="bar"><div class="fill good" style="width:83%"></div></div>
-            <p>AI meeting assistant、专业记录、医疗/法律/销售场景和企业合规采购仍有明显空间。</p>
+          <ol>
+            <li>续费价值 没有被放到购买前第一层。</li><li>AI transcription subscription / team / workflow use cases 需要独立证据。</li><li>搜索、VOC 和内容没有形成同一个承接闭环。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。</h2>
+        </div>
+        <p class="section-note">Atlas v3 先看品类购买契约，再判断 Plaud AI 当前分数为什么被封顶。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>AI 硬件 买的是确定性，不只是单个卖点。</h3>
+          <p><strong>用户买的确定性：</strong>AI 硬件买的是高频工作流、数据准确、订阅价值和团队协作确定性。</p>
+          <p><strong>当前匹配：</strong>Plaud AI 已有公开需求信号；当前扣分集中在 硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E31]</span></span></p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E31]</span></span></p>
+        </article>
+        <article class="score-cap state-amber">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">70<span>/100</span></div>
+          <h3>续费价值 封顶</h3>
+          <p>硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。 会限制下一阶段预算效率。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E31]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-amber">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是高估 DTC，低估 续费价值。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>用户数、国家覆盖和硬件销售会让团队高估订阅与团队化成熟度。</dd></div>
+            <div><dt>低估</dt><dd>续费价值、准确率、隐私安全 对首单、复购和渠道信任的影响。</dd></div>
+            <div><dt>安慰指标</dt><dd>总销量、评分均值、内容声量或渠道铺货。</dd></div>
+            <div><dt>先别做</dt><dd>先不要把预算平均加到所有渠道；先补 续费价值、准确率 和可复盘的承接页。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 70</b></div>
+            <h3>续费价值</h3>
+            <p>硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E31]</span></span></p>
+            <span class="tag amber">SignalMark + CommerceFlow 并行：一边证明专业工作流，一边校准订阅和团队转化。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 72</b></div>
+            <h3>公开增长信号被高估</h3>
+            <p>用户数、国家覆盖和硬件销售会让团队高估订阅与团队化成熟度。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E91]</span></span></p>
+            <span class="tag amber">SignalMark 与 CommerceFlow 共同校准</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 74</b></div>
+            <h3>渠道承接没有完全闭合</h3>
+            <p>DTC、Amazon、B2B / team 同时存在时，用户会在搜索、评价、售后和价格之间反复比较。缺少统一承接会降低利润质量。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E31]</span><span class="evidence">[E3]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是 DTC 信号和单点声量。</h3>
+            <p>v3 把公开动销、PR、平台评价和社媒声量拆开看，避免把注意力直接当作经营质量。</p>
           </div>
-          <div class="subscore">
-            <span class="label">问题致命度</span>
-            <strong>52</strong>
-            <div class="bar"><div class="fill bad" style="width:52%"></div></div>
-            <p>越高越危险。当前风险来自硬件溢价被压缩、软件续费不透明、零售触点不一致和隐私顾虑。</p>
+          <article class="signal-card state-amber">
+            <span>渠道</span>
+            <h3>DTC</h3>
+            <p>DTC 能证明现有需求，但如果 续费价值 没有补强，预算放大后会把问题一起放大。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+          </article><article class="signal-card state-amber">
+            <span>声量</span>
+            <h3>公开评价和内容声量</h3>
+            <p>评价、媒体和创作者内容可以降低陌生感；它们还需要回答 续费价值、准确率、隐私安全，才会改变成交质量。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+          </article><article class="signal-card state-amber">
+            <span>品线</span>
+            <h3>产品线宽度</h3>
+            <p>Plaud Note / NotePin、AI transcription subscription、team / workflow use cases 不能只靠宽度证明第二阶段成立，必须用 SKU 角色、复购和渠道效率拆清。<span class="evidence-list"><span class="evidence">[E31]</span></span></p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>Plaud AI 当前总分被 续费价值 和渠道承接封顶。</h3>
+            <p>旧体系分数为 72，v3 重新压到 68，核心原因是 硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。。</p>
           </div>
+          <article class="cap-reason state-amber">
+            <b>70</b>
+            <div><h3>续费价值</h3><p>续费价值 是当前最先影响成交确定性的因素。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>72</b>
+            <div><h3>渠道承接</h3><p>DTC、Amazon、B2B / team 需要统一价格、评价、FAQ、售后和 proof。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>74</b>
+            <div><h3>第二阶段证据</h3><p>AI transcription subscription、team / workflow use cases 需要独立证明，不适合被主线声量直接外推。<span class="evidence-list"><span class="evidence">[E31]</span></span></p></div>
+          </article>
         </div>
       </div>
-    </header>
-
+    </section>
+    
     <section id="stage">
-      <div class="inner">
-        <div class="stage-card">
-          <span class="label">Stage Judgment</span>
-            <h2>当前阶段：10-100 中期，硬件爆款成立，订阅和团队化决定下一层增长。</h2>
-          <p class="lead">Plaud 已经跨过单品验证和早期放量：公开页面显示 2M+ 用户、170+ 国家覆盖，第三方报道给出 2025 年收入年化约 USD 250M 的规模信号。它还没有进入完全成熟的品类领导阶段，因为北美公开证据仍更强地指向硬件销售和单人订阅，团队席位、垂直行业工作流和跨渠道利润质量还需要继续证明。</p>
-          <div class="stage-path">
-            <div class="stage-step"><strong>0-1</strong><p>产品需求验证</p></div>
-            <div class="stage-step"><strong>1-10</strong><p>单品规模化</p></div>
-            <div class="stage-step active"><strong>10-100 中期</strong><p>硬件 + 订阅系统化</p></div>
-            <div class="stage-step"><strong>100+</strong><p>AI 记录品类领导</p></div>
-          </div>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：Plaud AI 进入 10-100，下一步先修 续费价值。</h2>
         </div>
-        <div class="grid three stage-metrics" style="margin-top:16px">
-          <div class="card metric good">
-            <span class="label">销售规模校准</span>
-            <h3>全球年化收入公开估算约 USD 250M，约 RMB 16.9 亿。</h3>
-            <p>Sacra 估算 Plaud 2025 年 9 月年化收入约 USD 250M；按 2026-06-15 约 1 USD = 6.76 RMB 换算，约 RMB 16.9 亿。北美 GMV 估算 USD 90M-145M，需用 Shopify、Amazon Seller Central 与订阅后台复核。E12, E13</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">阶段动作适配</span>
-            <h3>渠道铺开是对的，经营重心要从硬件订单转向 LTV。</h3>
-            <p>官网、Amazon、Best Buy、Walmart 和 Target 触点已经出现；下一阶段必须看硬件后的付费续费、团队席位、售后成本和渠道毛利。E1, E4-E9</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">下一阶段卡点</span>
-            <h3>单机销量不能替代订阅续费和企业化能力。</h3>
-            <p>AI 记录赛道有 Otter、Granola、Fireflies、Fathom 等纯软件竞品，也有系统级录音/总结功能挤压硬件必要性。Plaud 必须把硬件入口沉淀成持续工作流。E14-E18</p>
-          </div>
-        </div>
+        <p class="section-note">这个阶段的重点是把公开需求信号变成可复盘的成交、评价、售后和复购质量。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-amber"><span>0-1</span><b>需求验证</b><p>AI 硬件 的基础需求已经通过公开渠道和旧报告证据出现。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>Plaud Note / NotePin 是当前最清楚的北美入口，需要继续验证人群和渠道效率。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div><div class="stage-step state-amber"><span>10-100</span><b>质量管理</b><p>多渠道和多品线开始并行时，续费价值 与 准确率 会决定预算效率。</p></div><div class="stage-step state-neutral"><span>100+</span><b>防守与护城河</b><p>只有当品类权威、服务确定性、复购和渠道权都成立，才适合进入 80+ 评分区。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">v3 总分</div>
+          <h3>68 / 100</h3>
+          <p>旧分 72，v3 分数 68；分数变化来自品类契约和风险封顶。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">阶段动作</div>
+          <h3>先修 续费价值</h3>
+          <p>用 30 天补 proof / FAQ / support / channel page，再用 90 天看评价、转化和复购变化。</p>
+        </article>
       </div>
     </section>
-
-    <section id="gene">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Brand Gene</span>
-            <h2>Plaud 靠高频知识工作者买单，大众礼品只是外扩边界。</h2>
-          </div>
-          <p class="lead">核心人群是会议、拜访、采访、电话沟通和现场记录密度高的人：销售、咨询、创业者、律师、医生、记者、学生和管理者。报告后续建议会按这个人群校准，Plaud 要按专业记录工作流管理，而不是按普通录音笔或手机配件管理。</p>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>人群判断：核心盘已经清楚，外扩前先守住适用边界。</h2>
         </div>
-        <div class="gene-map">
-          <div class="gene-orbit" aria-label="Plaud 人群同心圆：核心盘、相邻人群、外扩边界">
-            <div class="orbit-ring orbit-core"><span>核心盘</span><strong>专业记录与高频会议人群</strong></div>
-            <div class="orbit-ring orbit-mid"><span>相邻人群</span><strong>医疗 / 法律 / 销售团队 / 教育</strong></div>
-            <div class="orbit-ring orbit-outer"><span>外扩边界</span><strong>大众消费者与礼品用户</strong></div>
-            <div class="orbit-caption">资源优先级从中心向外递减；外圈不是当前主打法。</div>
-          </div>
-          <div class="gene-copy">
-            <div class="gene-note">
-              <div class="gene-note-num">01</div>
-              <div>
-                <h3>核心盘：先服务高频知识工作者。</h3>
-                <p>他们愿意为免手动记录、自动摘要、多语言转写和 CRM/团队协同付费。官网、Amazon 评价和 App Store 评论都集中在会议、采访、电话和学习场景。E1, E4, E11</p>
-              </div>
-            </div>
-            <div class="gene-note">
-              <div class="gene-note-num">02</div>
-              <div>
-                <h3>相邻人群：能拉高 LTV，但要先补行业证据。</h3>
-                <p>医疗、法律、销售团队和教育场景需要更强的合规、权限、审计、模板和团队管理。Plaud Business 与 Trust Center 已经给出入口，公开案例和行业化证明还应继续补。E3, E17</p>
-              </div>
-            </div>
-            <div class="gene-note">
-              <div class="gene-note-num">03</div>
-              <div>
-                <h3>外扩边界：大众礼品不能承担主增长。</h3>
-                <p>大众用户会被硬件新鲜感吸引，但付费续费和长期使用频率不稳定。投放不能只讲“AI 录音神器”，必须让用户看到真实工作流收益。E10, E11</p>
-              </div>
+        <p class="section-note">人群层级按购买确定性排序，越往外越需要 proof、FAQ、比较页和售后承诺。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>会议、访谈、销售、医疗和知识工作者</b><small>核心盘</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>团队采购、专业服务、学生和跨境工作者</b><small>相邻人群</small></div>
+            </div><div class="audience-band layer-3 state-red">
+              <span class="audience-index">L3</span>
+              <div><b>对隐私、准确率、订阅价值和团队权限敏感的企业用户</b><small>外扩边界</small></div>
+            </div><div class="audience-band layer-4 state-blue">
+              <span class="audience-index">L4</span>
+              <div><b>高证明成本 / 高售后敏感用户</b><small>暂缓边界</small></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="type">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Business Type</span>
-            <h2>经营类型：DTC + Amazon 双轮，软件订阅负责长期价值。</h2>
-          </div>
-          <p class="lead">Plaud 的北美业务由 DTC 与 Amazon 双轮驱动。官网承担品牌解释、订阅和用户资产；Amazon 承担搜索比较、评价和硬件成交；零售负责背书；团队版和企业采购是利润质量上行的关键。</p>
-        </div>
-        <div class="card">
-          <span class="label">平台销售额占比估算 · 北美公开数据推断区间</span>
-          <div class="stacked" aria-label="platform sales mix">
-            <div class="seg a" style="width:45%">DTC 45%</div>
-            <div class="seg b" style="width:28%">Amazon 28%</div>
-            <div class="seg c" style="width:12%">Retail 12%</div>
-            <div class="seg d" style="width:8%">App 8%</div>
-            <div class="seg e" style="width:7%">B2B 7%</div>
-          </div>
-          <p class="footnote">区间中位数用于可视化：DTC/官网与订阅 38-52%，Amazon 22-34%，Best Buy/Walmart/Target/Costco 等零售 8-16%，App/订阅内购 5-12%，团队/B2B 4-12%。置信度：中；需内部订单、订阅后台和零售 sell-out 校准。E1-E9, E13</p>
-        </div>
-        <div class="grid three" style="margin-top:16px">
-          <div class="card">
-            <span class="label">品类天然主渠道</span>
-            <h3>DTC 与专业内容应承担主解释，Amazon 承担高意图成交。</h3>
-            <p>$159-$189 硬件 + 订阅的组合需要教育、隐私解释和工作流承接；Amazon 能成交，但不适合单独解释会员价值和企业场景。</p>
-          </div>
-          <div class="card">
-            <span class="label">渠道集中度</span>
-            <h3>双轮基本成立，但零售触点质量不均。</h3>
-            <p>Amazon 评价资产强，官网资产也强；Best Buy 样本少且评分不稳，Target 第三方页面评分低，会稀释高信任产品的专业感。E4-E9</p>
-          </div>
-          <div class="card">
-            <span class="label">内部数据校准</span>
-            <h3>最该补三张表。</h3>
-            <p>Amazon 30/90/180 天 GMV 与广告效率、Shopify 硬件订单 + 订阅转化、团队版 ARR / seats / churn。没有这些，北美利润质量只能做中等置信度判断。</p>
-          </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘</b><span>最容易被 Plaud Note / NotePin 说服，是当前成交和评价的主盘。</span></div><div class="legend-item state-amber"><b>相邻人群</b><span>有明确需求，但会比较竞品、渠道和价格，需要承接页降低犹豫。</span></div><div class="legend-item state-red"><b>外扩边界</b><span>需要更强证据、售后和适用边界，不适合直接用主盘话术外推。</span></div><div class="legend-item state-blue"><b>暂缓边界</b><span>公开版先标成后台校准对象，等内部退货、复购、客服和渠道数据确认。</span></div>
         </div>
       </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘先转化</h3>
+          <p>先把 会议、访谈、销售、医疗和知识工作者 的下单疑虑变成 PDP、FAQ、比较页和售后承诺。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻人群先筛选</h3>
+          <p>团队采购、专业服务、学生和跨境工作者 可以扩，但要用独立 landing page 区分动机、价格和 proof。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>外扩人群先设边界</h3>
+          <p>对隐私、准确率、订阅价值和团队权限敏感的企业用户 不适合被泛化承诺，需要禁忌、适用条件、维修/退换和客服路径。</p>
+        </article>
+      </div>
     </section>
-
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：DTC + Amazon + subscription 已成立，问题在成交解释权没有完全回到品牌手里。</h2>
+        </div>
+        <p class="section-note">占比是公开数据方向性估计，不代表后台财务口径；用于判断优先修哪一条承接链。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>DTC + Amazon + subscription</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>DTC</b>
+            <div class="share-track"><i class="green" style="width:42%;"></i></div>
+            <span>42%</span>
+            <small>DTC 当前承担 主成交 / 主证明。</small>
+          </div><div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="amber" style="width:22%;"></i></div>
+            <span>22%</span>
+            <small>Amazon 当前承担 次级成交 / 信任补充。</small>
+          </div><div class="share-row">
+            <b>B2B / team</b>
+            <div class="share-track"><i class="blue" style="width:18%;"></i></div>
+            <span>18%</span>
+            <small>B2B / team 当前承担 补充触达。</small>
+          </div><div class="share-row">
+            <b>Creator / PR</b>
+            <div class="share-track"><i class="blue" style="width:18%;"></i></div>
+            <span>18%</span>
+            <small>Creator / PR 当前承担 补充触达。</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>主渠道继续守</h3>
+          <p>DTC 仍是 Plaud AI 的首要证明面，先守评价、价格、FAQ 和售后。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网补交易安全感</h3>
+          <p>DTC 或官网必须解释为什么直购更稳，而不是只放品牌故事和产品列表。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>渠道预算要绑定质量</h3>
+          <p>预算不能只看流量和订单，必须同时看退款、评价、客服和复购。</p>
+        </article>
+      </div>
+    </section>
+    
     <section id="search">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Search Mindshare</span>
-            <h2>搜索心智：按入口价值排序，比较词没接住最伤转化。</h2>
-          </div>
-          <p class="lead">搜索入口不能按模板顺序看，要按“搜索量级 × 购买意图 × 当前承接缺口”排序。Plaud 的品牌词已经比较稳；真正影响预算效率的是高量级行业词被软件会议助手分流，以及高意图比较词没有系统承接。量级为公开样本方向性判断，需用 Google Ads / Search Console / Semrush 复核。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：最大入口要先判断是否吃掉，比较词和售后词不能放任竞品接走。</h2>
         </div>
-        <div class="grid four search-priority">
-          <div class="card metric bad">
-            <span class="label">P0 · 竞品 / 替代比较词</span>
-            <h3>没接住，最影响购买判断。</h3>
-            <p>Plaud vs Otter、Plaud vs Granola、Plaud vs Google Recorder、Plaud vs phone recorder 这类入口未必是最大量级，但购买意图最接近成交。用户在这里判断“是否需要专门硬件、是否值得订阅”。</p>
-            <div class="pill-row"><span class="pill warn">量级中高</span><span class="pill bad">意图极高</span><span class="pill bad">应补对比页</span></div>
-          </div>
-          <div class="card metric warn">
-            <span class="label">P0 · 行业大词</span>
-            <h3>量级最大，但只半接住。</h3>
-            <p>AI note taker、AI meeting assistant、voice recorder for meetings 会把 Plaud、Otter、Granola、Fireflies、Fathom 和手机系统功能放到同一个比较框里。Plaud 有硬件差异化，但不能只讲录音设备。</p>
-            <div class="pill-row"><span class="pill bad">量级高</span><span class="pill warn">半接住</span><span class="pill warn">需方案页</span></div>
-          </div>
-          <div class="card metric bad">
-            <span class="label">P1 · 订阅成本 / 会员词</span>
-            <h3>没接牢，会拖累续费。</h3>
-            <p>Plaud subscription cost、Plaud membership、Plaud Pro plan 这类词说明用户已经接近购买或续费决策。价格页清楚，但 ROI、团队收益和不用订阅的边界还不够前置。</p>
-            <div class="pill-row"><span class="pill warn">量级中</span><span class="pill bad">续费敏感</span><span class="pill bad">ROI 缺口</span></div>
-          </div>
-          <div class="card metric good">
-            <span class="label">P2 · 品牌 / 产品词</span>
-            <h3>接住了，继续守住。</h3>
-            <p>Plaud、Plaud Note、Plaud Note Pro、Plaud NotePin S 已经能被官网、Amazon、媒体评测、Trustpilot 和社区讨论承接。品牌词是当前最稳的高意图资产，但不是最大增量入口。</p>
-            <div class="pill-row"><span class="pill good">承接强</span><span class="pill neutral">继续放大</span></div>
-          </div>
-        </div>
-        <div class="table-wrap" style="margin-top:16px">
-          <table>
-            <thead><tr><th>优先级</th><th>搜索入口</th><th>量级 / 意图</th><th>承接判定</th><th>经营动作</th></tr></thead>
-            <tbody>
-              <tr><td>P0</td><td>“Plaud vs Otter / Granola / Google Recorder”</td><td>量级中高，购买意图极高</td><td><span class="tag bad">没接住</span><p>这是 Plaud 最该主动解释的入口。轻度会议用户可能被软件方案和手机功能拿走。E18, E20</p></td><td>做对比页：线下、电话、跨设备、隐私敏感和合规场景由 Plaud 赢；纯线上轻会议不硬抢。</td></tr>
-              <tr><td>P0</td><td>“best AI note taker / AI meeting assistant”</td><td>量级高，方案比较意图高</td><td><span class="tag warn">半接住</span><p>Plaud 有硬件入口，但软件竞品在会议生态里更自然，用户会把 Plaud 当作工作流方案比较。E14-E18</p></td><td>建立“硬件 + Desktop + Plaud Intelligence”完整工作流页，对比 Otter / Granola / Fireflies。</td></tr>
-              <tr><td>P1</td><td>“Plaud subscription cost / membership”</td><td>量级中，续费意图高</td><td><span class="tag bad">没接牢</span><p>价格页清楚，但价值证明偏功能表；用户真正要看节省时间、团队收益和不用订阅时损失什么。E3, E10, E11</p></td><td>会员页按角色展示 ROI：销售、咨询、医疗、法律、教育，而不是只列分钟数。</td></tr>
-              <tr><td>P2</td><td>“Plaud Note Pro review”</td><td>量级中，产品验证意图高</td><td><span class="tag good">接住了</span><p>媒体、Amazon 和 YouTube 能支撑首单信任；Note Pro 的屏幕、四麦、自动切换和 highlight button 有辨识度。E5, E19</p></td><td>把 review landing page 做成“高频专业场景证明页”，不只放媒体 quote。</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="section-note">本版按需求量级和购买意图排序；精确搜索量需要 SEO / Google Trends 后台补数。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>AI note-taking hardware / Plaud Note / NotePin</h3>
+          <p>行业词是最大入口，Plaud AI 有公开信号，但还要用类目页和比较页守住高意图流量。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级中高 · 量级中高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Plaud AI reviews / problems / warranty / return</h3>
+          <p>临门搜索会直接影响下单，尤其是 续费价值、准确率、隐私安全。官网需要主动承接，而不是让 Trustpilot、Reddit、Amazon 或竞品页面先回答。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Plaud AI vs Otter / Fireflies / Notion AI</h3>
+          <p>比较词最接近下单选择，需要把安全、价格、服务、适用边界和长期成本做成固定对比页。<span class="evidence-list"><span class="evidence">[E31]</span></span></p>
+        </article><article class="mind-card state-green">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture green">吃掉了</b></div>
+          <h3>DTC / Amazon purchase intent</h3>
+          <p>渠道词能承接现有订单，但也会把价格和售后解释权留在平台侧。<span class="evidence-list"><span class="evidence">[E91]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级低中 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>AI transcription subscription / team / workflow use cases</h3>
+          <p>第二品线搜索更适合做验证和筛选，不适合直接用主线声量证明可放大。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article>
       </div>
     </section>
-
+    
     <section id="voc">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">VOC &amp; Reputation</span>
-            <h2>声誉总分 76：品牌信任可用，付费与集成抱怨会影响续费。</h2>
-          </div>
-          <p class="lead">Plaud 的公开口碑整体健康：Trustpilot 高分、Amazon 评论量大、App Store 评分强。但负面声音集中在订阅成本、功能边界、取消/售后、集成不足和某些零售触点体验；这些问题主要影响软件续费和团队采购，而不是首单硬件认知。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC 判断：好评能支撑首单，抱怨会进入临门搜索和售后成本。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric good">
-            <span class="label">Trustpilot</span>
-            <h3>4.5 / 5，1,944 reviews。</h3>
-            <p>86% 五星，负评回复覆盖高，说明服务闭环比多数硬件新品牌更成熟。E10</p>
-          </div>
-          <div class="card metric good">
-            <span class="label">App Store</span>
-            <h3>4.9 / 5，16K ratings。</h3>
-            <p>App 层体验给硬件复购和订阅承接提供基础，但评论里仍能看到价格、集成和账户管理疑虑。E1, E11</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">Amazon</span>
-            <h3>Note / Note Pro 评价资产强。</h3>
-            <p>主力 SKU 4.5-4.6 分、数千评论，证明硬件首单信任成立；NotePin 系列评分更低，说明可穿戴形态还需继续打磨。E4-E6</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">零售触点</span>
-            <h3>部分页面会拖低专业感。</h3>
-            <p>Best Buy 评论样本很少，Target 第三方页面评分低且不是品牌自营承接，这类触点应纳入渠道治理。E7, E9</p>
-          </div>
-        </div>
-        <div class="voc-clouds" aria-label="Plaud 公开 VOC 集中主题词云">
-          <div class="cloud-card positive">
-            <div class="cloud-head">
-              <h3>集中好评主题</h3>
-              <span class="tag good">转化可用</span>
-            </div>
-            <div class="word-cloud">
-              <span style="--s:34px; --x:18%; --y:34%; --r:-2deg">省时间</span>
-              <span style="--s:30px; --x:43%; --y:28%; --r:1deg">易用</span>
-              <span style="--s:28px; --x:73%; --y:34%; --r:-1deg">会议记录</span>
-              <span style="--s:24px; --x:34%; --y:58%; --r:2deg">转写准确</span>
-              <span style="--s:22px; --x:72%; --y:57%; --r:-2deg">自动摘要</span>
-              <span style="--s:20px; --x:17%; --y:76%; --r:1deg">轻薄硬件</span>
-              <span style="--s:19px; --x:48%; --y:78%; --r:-1deg">采访场景</span>
-              <span style="--s:18px; --x:78%; --y:79%; --r:2deg">多语言</span>
-              <span style="--s:17px; --x:32%; --y:91%; --r:-2deg">学习笔记</span>
-              <span style="--s:16px; --x:91%; --y:90%; --r:1deg">专业感</span>
-            </div>
-            <p class="cloud-note">公开样本显示正向购买理由主要集中在“少整理时间”和“把记录变成摘要”。这支撑首单转化，但还需要继续转成续费价值。E4-E6, E10, E11, E19</p>
-          </div>
-          <div class="cloud-card negative">
-            <div class="cloud-head">
-              <h3>集中抱怨主题</h3>
-              <span class="tag bad">影响续费</span>
-            </div>
-            <div class="word-cloud">
-              <span style="--s:34px; --x:20%; --y:32%; --r:-2deg">订阅成本</span>
-              <span style="--s:29px; --x:54%; --y:28%; --r:1deg">集成不顺</span>
-              <span style="--s:25px; --x:82%; --y:34%; --r:-1deg">取消 / 账户</span>
-              <span style="--s:24px; --x:70%; --y:56%; --r:2deg">功能边界</span>
-              <span style="--s:22px; --x:20%; --y:61%; --r:-1deg">云端等待</span>
-              <span style="--s:21px; --x:43%; --y:73%; --r:1deg">手机替代</span>
-              <span style="--s:19px; --x:63%; --y:82%; --r:-2deg">隐私顾虑</span>
-              <span style="--s:18px; --x:88%; --y:73%; --r:1deg">零售评分</span>
-              <span style="--s:17px; --x:31%; --y:91%; --r:-1deg">售后触点</span>
-              <span style="--s:16px; --x:79%; --y:93%; --r:2deg">价格解释</span>
-            </div>
-            <p class="cloud-note">负面主题更偏软件商业化和购买后管理，不是硬件首单认知问题。它会影响 Pro / Unlimited 续费、团队采购和高信任行业场景。E3, E7, E9-E11, E17, E20</p>
-          </div>
-        </div>
+        <p class="section-note">公开版先按主题聚类，不伪造精确百分比；后续深诊需要补评论样本和工单数据。</p>
       </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>集中好评主题</h3>
+          <p>AI notes、recording、transcription、meetings、workflow 说明 Plaud AI 有可转化的正向购买理由。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>集中抱怨主题</h3>
+          <p>subscription、accuracy、privacy、app、export 会影响首单信任、复购和客服成本。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>经营影响</h3>
+          <p>VOC 不能只被客服处理，要进入 PDP、FAQ、比较页、售后 SLA 和内容 brief。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">AI notes</span><span class="w5 p1">recording</span><span class="w5 p2">transcription</span><span class="w4 p3">meetings</span><span class="w4 p4">workflow</span><span class="w4 p5">portable</span><span class="w3 p6">summary</span><span class="w3 p7">NotePin</span><span class="w3 p8">creator</span><span class="w2 p9">Amazon</span><span class="w2 p10">team</span><span class="w2 p11">productivity</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">subscription</span><span class="w5 p1">accuracy</span><span class="w5 p2">privacy</span><span class="w4 p3">app</span><span class="w4 p4">export</span><span class="w4 p5">support</span><span class="w3 p6">battery</span><span class="w3 p7">workflow</span><span class="w3 p8">team seats</span><span class="w2 p9">HIPAA</span><span class="w2 p10">language</span><span class="w2 p11">renewal</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向 VOC 继续支持 DTC 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
     </section>
-
+    
     <section id="ceiling">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Market Ceiling</span>
-            <h2>硬件入口已跑通，北美天花板取决于软件订阅和团队场景。</h2>
-          </div>
-          <p class="lead">按“录音笔”看 Plaud 会低估它的北美盘子。真实生意由三层构成：AI 记录硬件拉新、软件订阅提升 LTV、团队/垂直场景提高客单和留存。硬件仍是 P0，但利润质量的上行来自订阅和企业化。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：Plaud Note / NotePin 是主线，其他品线先按验证对象管理。</h2>
         </div>
-        <div class="grid three">
-          <div class="card">
-            <span class="label">P0 · Note / Note Pro / NotePin 硬件</span>
-            <h3>北美可服务盘：USD 180M-350M / 年。</h3>
-            <p>以 AI 记录硬件、专业录音设备和高频知识工作者硬件入口估算。Plaud 北美当前 GMV 估算 USD 65M-110M，份额已经很高，但硬件价格和换代节奏会被手机与软件竞品持续压缩。E1, E4-E6, E12-E16, E19</p>
-            <div class="pill-row"><span class="pill good">主收入线</span><span class="pill warn">硬件溢价需守住</span></div>
-          </div>
-          <div class="card">
-            <span class="label">P0 · Plaud Intelligence / Membership</span>
-            <h3>北美可服务盘：USD 700M-1.4B / 年。</h3>
-            <p>AI meeting assistant 市场 2025 年全球约 USD 3.5B，北美占比约三分之一；AI note-taking 也处在快速增长期。Plaud 北美订阅 GMV 估算 USD 25M-55M，真正上限看续费率和团队席位。E3, E14, E15</p>
-            <div class="pill-row"><span class="pill good">利润质量核心</span><span class="pill bad">续费公开证据不足</span></div>
-          </div>
-          <div class="card">
-            <span class="label">P1 · Team / Enterprise / Vertical Workflow</span>
-            <h3>高 LTV 机会，公开证明还不够厚。</h3>
-            <p>Business 版本、Trust Center 和合规承诺已经具备企业化前提，但公开案例、行业模板、seat expansion 和采购流程仍应补强。短期先把销售、医疗、法律和教育作为高信任试点。E3, E17</p>
-            <div class="pill-row"><span class="pill warn">验证型机会</span><span class="pill neutral">需要内部 ARR</span></div>
-          </div>
-        </div>
+        <p class="section-note">公开版先做方向性拆分，不把品线宽度直接当成第二增长柱。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">当前主线 / 最大证明面 · 已验证，需守质量</div>
+          <h3>Plaud Note / NotePin</h3>
+          <b>中高</b>
+          <p>Plaud Note / NotePin 决定当前北美分数和主要入口。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">第二验证线 · 待独立证明</div>
+          <h3>AI transcription subscription</h3>
+          <b>中</b>
+          <p>AI transcription subscription 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">补充利润或服务线 · 待独立证明</div>
+          <h3>team / workflow use cases</h3>
+          <b>中</b>
+          <p>team / workflow use cases 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E31]</span></span></p>
+        </article>
       </div>
     </section>
-
+    
     <section id="intent">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">User Intent Map</span>
-            <h2>用户意图地图：北美用户下单前，先确认“能不能省时间、是否合规、订阅值不值”。</h2>
-          </div>
-          <p class="lead">Plaud 的购买顾虑不是普通硬件参数。用户在买之前会问：录得准不准、隐私和同意怎么处理、为什么不用手机或 Otter、订阅到底值不值、团队能不能协同。谁能把这五个问题讲清楚，谁就能把硬件首单推进到续费和团队席位。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图：买前最关心能否选对、用稳、出问题有人管。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric good">
-            <span class="label">SERP / 媒体评测</span>
-            <h3>首单信任接住了</h3>
-            <p>用户能看到 Note Pro / NotePin S 的媒体和零售评价，硬件“好不好用”有足够入口。下一步要把评测素材转成工作流价值，而不是停留在开箱。</p>
-            <div class="pill-row"><span class="pill good">首单强</span></div>
-          </div>
-          <div class="card metric warn">
-            <span class="label">YouTube / Creator</span>
-            <h3>场景解释还不够聚焦</h3>
-            <p>创作者能讲清设备形态，但容易停在“很酷的 AI 录音器”。Plaud 需要更多职业场景：销售拜访、医生访谈、律师 intake、课堂和采访。</p>
-            <div class="pill-row"><span class="pill warn">场景需收窄</span></div>
-          </div>
-          <div class="card metric bad">
-            <span class="label">Reddit / 论坛</span>
-            <h3>替代品和订阅疑虑会影响续费</h3>
-            <p>社区讨论会追问硬件必要性、同步速度、取消/订阅和纯软件替代。它不会摧毁首单，但会压低 Pro / Unlimited 的长期接受度。</p>
-            <div class="pill-row"><span class="pill bad">续费风险</span></div>
-          </div>
-          <div class="card metric warn">
-            <span class="label">Amazon / Retail VOC</span>
-            <h3>Note Pro 强，NotePin 系列要继续修摩擦</h3>
-            <p>Amazon 评分证明主线硬件成立；NotePin S 用实体按钮修复早期触控不确定性，但可穿戴形态还要通过评分和退货率继续验证。</p>
-            <div class="pill-row"><span class="pill warn">形态仍需验证</span></div>
-          </div>
-        </div>
-        <div class="table-wrap" style="margin-top:16px">
-          <table>
-            <thead><tr><th>用户担心点</th><th>经营权重</th><th>Plaud 当前表现</th><th>页面 / 内容优先补什么</th></tr></thead>
-            <tbody>
-              <tr><td>录音、转写和总结是否稳定</td><td>高</td><td><span class="tag good">做得好</span><p>硬件评价、App 评分和 Note Pro 升级支撑可靠性；复杂场景的失败边界还要更透明。E4-E6, E11, E19</p></td><td>补 30/60/120 分钟会议、多人圆桌、电话、现场拜访的真实样本。</td></tr>
-              <tr><td>录音是否合法、数据是否安全</td><td>高</td><td><span class="tag good">做得好但散</span><p>合规认证和 Trust Center 有基础，但行业场景解释不够前置。E17</p></td><td>按医疗、法律、销售、教育做 consent / retention / DPA / HIPAA FAQ。</td></tr>
-              <tr><td>订阅是否值得继续付</td><td>高</td><td><span class="tag bad">做得差</span><p>价格体系完整，但价值证明偏功能表；用户容易把 Pro / Unlimited 当成额外成本。E3, E10, E11</p></td><td>把“每周节省多少小时、少掉多少整理成本、团队席位怎么扩张”放到会员页首屏。</td></tr>
-              <tr><td>为什么不用 Otter / Google Recorder / Granola</td><td>中高</td><td><span class="tag bad">没接住</span><p>Plaud 有硬件入口优势，但对比资产还不够系统。E18, E20</p></td><td>对比页按任务划分：线下、电话、跨设备、隐私敏感任务 Plaud 赢；轻会议软件赢。</td></tr>
-              <tr><td>团队是否能管理、协作和采购</td><td>中高</td><td><span class="tag warn">半接住</span><p>Business/Team 和 Trust Center 有入口，公开案例和 seat expansion 证据不足。E3, E17</p></td><td>补 team admin、权限、审计、模板、行业案例和 5-20 seats 试点包。</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="section-note">状态列必须先告诉团队有没有接住，再看页面动作。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>SERP / Google</td><td>续费价值 是否可靠</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>上线 续费价值 解释页、FAQ 和比较页。<span class="evidence-list"><span class="evidence">[E1]</span></span></td></tr><tr><td>Amazon / Marketplace</td><td>评分、价格、退换和竞品替代</td><td class="status-cell"><span class="table-status green">基本接住</span></td><td>守评价结构、coupon 纪律和平台 PDP proof。<span class="evidence-list"><span class="evidence">[E2]</span></span></td></tr><tr><td>Reddit / BBB / Trustpilot</td><td>差评是否会影响购买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>把负面主题转成 support hub、SLA 和售后承诺。<span class="evidence-list"><span class="evidence">[E31]</span></span></td></tr><tr><td>YouTube / TikTok</td><td>演示是否能降低疑虑</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>内容 brief 必须回答 续费价值、准确率、隐私安全。<span class="evidence-list"><span class="evidence">[E91]</span></span></td></tr><tr><td>官网 / DTC</td><td>为什么要在官网买</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>补直购权益、保修、退换、客服和渠道价格解释。<span class="evidence-list"><span class="evidence">[E3]</span></span></td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
-
+    
     <section id="fit">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Message-Market Fit</span>
-            <h2>卖点匹配度 74：硬件价值清楚，订阅价值还要讲得更硬。</h2>
-          </div>
-          <p class="lead">主品线按 Note Pro（AI 录音卡片）和 NotePin S（可穿戴 AI 录音器）判断。北美用户第一关看稳定抓取、合规使用、节省工作时间、接入现有工作流，以及订阅费用是否值得。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：先回答最高权重疑虑，再谈扩品和内容放大。</h2>
         </div>
-        <div class="grid">
-          <div class="match-row">
-            <div><div class="concern-head"><strong>录音与转写可靠性</strong><span class="weight-badge"><b>28%</b>关注</span></div><p>会议、电话、采访和课堂都先看能不能录全、转准、同步稳定。E4-E6, E11</p></div>
-            <div><div class="match-score" style="color:var(--success-text)">84 / 100</div><div class="bar"><div class="fill good" style="width:84%"></div></div></div>
-            <div><strong>做得好：</strong>双模式录音、多语言、设备续航和 App 评分支撑首单转化。下一步要把真实复杂场景的准确率和失败边界讲得更清楚。</div>
-          </div>
-          <div class="match-row">
-            <div><div class="concern-head"><strong>隐私、同意与合规</strong><span class="weight-badge"><b>22%</b>关注</span></div><p>录音类产品天然触发美国州法、公司政策和医疗/法律场景的信任门槛。E3, E17</p></div>
-            <div><div class="match-score" style="color:var(--success-text)">82 / 100</div><div class="bar"><div class="fill good" style="width:82%"></div></div></div>
-            <div><strong>做得好：</strong>Trust Center、SOC 2、HIPAA 等说明给企业采购提供基础。问题是合规内容还没有完全转化成行业场景的购买理由。</div>
-          </div>
-          <div class="match-row">
-            <div><div class="concern-head"><strong>订阅费用与长期价值</strong><span class="weight-badge"><b>20%</b>关注</span></div><p>硬件购买后，用户会继续比较免费额度、Pro/Unlimited 价格、取消体验和替代软件成本。E3, E10, E11</p></div>
-            <div><div class="match-score" style="color:var(--warning-text)">58 / 100</div><div class="bar"><div class="fill warn" style="width:58%"></div></div></div>
-            <div><strong>做得差：</strong>订阅价值没有被足够量化。页面应直接展示每周节省时间、团队协作收益、行业模板和硬件 + 软件的 TCO。</div>
-          </div>
-          <div class="match-row">
-            <div><div class="concern-head"><strong>工作流集成与团队协作</strong><span class="weight-badge"><b>18%</b>关注</span></div><p>高频用户会看 CRM、Notion、Google/Zoom/Teams、导出、权限和团队模板。E3, E11, E18</p></div>
-            <div><div class="match-score" style="color:var(--warning-text)">66 / 100</div><div class="bar"><div class="fill warn" style="width:66%"></div></div></div>
-            <div><strong>及格但有硬伤：</strong>软件产品线在补，但纯软件竞品在会议生态和团队协作里更自然。Plaud 必须把硬件优势接到团队工作流。</div>
-          </div>
-          <div class="match-row">
-            <div><div class="concern-head"><strong>低摩擦佩戴与电池</strong><span class="weight-badge"><b>12%</b>关注</span></div><p>NotePin S 的按钮、可穿戴形态和 Desktop 新功能在修复早期佩戴/触控摩擦。E16</p></div>
-            <div><div class="match-score" style="color:var(--success-text)">78 / 100</div><div class="bar"><div class="fill good" style="width:78%"></div></div></div>
-            <div><strong>做得好：</strong>硬件形态仍是差异化入口，但新形态必须通过评分、退货率和 30/90 天活跃证明使用频率。</div>
-          </div>
-        </div>
-        <p class="footnote">关注占比为公开搜索、评论、评测和社区样本的方向性归纳，用来排序北美用户购买前最在意的点；不是内部后台统计。</p>
+        <p class="section-note">权重为公开数据版方向性判断，用于排序，不代表统计抽样。</p>
       </div>
-    </section>
-
-    <section id="summary">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">One Page Summary</span>
-            <h2>一页看懂：Plaud 的北美机会在订阅和团队化，硬件热度已经成立。</h2>
-          </div>
-          <p class="lead">Plaud 现在最该管理的是“硬件卖出去以后发生什么”。如果订阅续费、团队席位、合规采购和渠道价格纪律没有跟上，硬件爆款会贡献收入，但利润质量和可持续增长会被纯软件竞品、手机系统功能和零售触点稀释。</p>
-        </div>
-        <div class="grid three">
-          <div class="card metric bad">
-            <span class="label">P0 · 订阅与团队化</span>
-            <h3>续费证据要变成经营主线。</h3>
-            <p>Starter、Pro、Unlimited 和 Team 价格体系完整，但公开页面没有把续费率、团队扩张、行业模板和席位价值讲透。E3</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">P1 · 硬件溢价</span>
-            <h3>硬件要从“新奇”转向“必要”。</h3>
-            <p>Note Pro 和 NotePin S 的形态差异清楚，但纯软件与系统级功能正在压缩“为什么还需要一个设备”的价格理由。E14-E18</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">P1 · 渠道纪律</span>
-            <h3>零售铺开要跟上口碑和价格治理。</h3>
-            <p>Amazon 强，官网强；但低样本零售评分和第三方页面会影响高信任产品的专业感。E7-E9</p>
-          </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">32%</div><div class="mini-track"><i style="width:32%;"></i></div></div>
+          <div><strong>续费价值</strong><p>Plaud Note / NotePin 的核心承诺</p></div>
+          <div><span class="verdict red">接住一半</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">24%</div><div class="mini-track"><i style="width:24%;"></i></div></div>
+          <div><strong>准确率</strong><p>Amazon 触点里的证明</p></div>
+          <div><span class="verdict amber">接住一半</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>隐私安全</strong><p>B2B / team 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">14%</div><div class="mini-track"><i style="width:14%;"></i></div></div>
+          <div><strong>团队工作流</strong><p>Creator / PR 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>硬件必要性</strong><p>DTC 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
         </div>
       </div>
     </section>
-
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：Plaud AI 有公开需求信号，下一步先修 续费价值。</h2>
+        </div>
+        <p class="section-note">旧分 72，v3 分 68；本次覆盖旧 GitHub HTML 的核心变化是加入 v3 风险封顶和专项路由。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>10-100 · DTC + Amazon + subscription</p></div><div class="summary-item"><b>主线</b><p>Plaud Note / NotePin 仍是当前北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>68 / 100 · B档，活跃封顶 70。</p></div><div class="summary-item"><b>Top 1 问题</b><p>续费价值 正在限制成交确定性。</p></div><div class="summary-item"><b>路由</b><p>SignalMark + CommerceFlow 并行：一边证明专业工作流，一边校准订阅和团队转化。</p></div><div class="summary-item"><b>预算取舍</b><p>先把 续费价值、准确率 和搜索承接修到可验收，再考虑扩大投放。</p></div>
+      </div>
+    </section>
+    
     <section id="blocks">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Three Business Blocks</span>
-            <h2>三大板块诊断：品牌强，Marketing 及格，电商和订阅承接还有硬伤。</h2>
-          </div>
-          <p class="lead">Plaud 已经进入成熟经营题。品牌板块能撑住高客单硬件，Marketing 能创造需求；接下来要把订阅、团队化和渠道治理变成统一的经营系统。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：路由按经营杠杆判断，不只看最低分。</h2>
         </div>
-        <div class="grid three">
-          <div class="card">
-            <div class="score-badge" style="color:var(--success-text)">82</div>
-            <h3>品牌板块</h3>
-            <p><strong>判断：</strong>品牌资产强，已经具备 AI 记录赛道的头部心智。</p>
-            <ul>
-              <li>做得好的：2M+ 用户、170+ 国家覆盖和收入年化报道，足以证明 Plaud 已经具备全球规模基础。E1, E12, E13</li>
-              <li>做得好的：Trustpilot、App Store、Amazon 评论资产共同支撑首单信任。E4-E6, E10, E11</li>
-              <li>做得不好的：No.1 叙事需要更多北美本地可审计证据，例如北美设备数、订阅 ARR、团队客户和续费率；否则高端企业客户会继续追问边界。E1, E3</li>
-            </ul>
-            <div class="pill-row"><span class="pill good">能打</span><span class="pill warn">权威口径要更硬</span></div>
-          </div>
-          <div class="card">
-            <div class="score-badge" style="color:var(--warning-text)">72</div>
-            <h3>Marketing 板块</h3>
-            <p><strong>判断：</strong>需求教育做得不错，团队和订阅价值讲得还不够锋利。</p>
-            <ul>
-              <li>做得好的：官网把线下、电话和在线会议统一成一个记录工作流，切中了混合办公的真实痛点。E1</li>
-              <li>做得好的：隐私与合规内容已经建起来，适合进入医疗、法律、销售团队采购场景。E17</li>
-              <li>做得不好的：订阅价值还停留在分钟数和功能表，缺少“每周节省时间 / 团队节省成本 / 复盘效率”这种能让企业采购拍板的价值证据。E3</li>
-            </ul>
-            <div class="pill-row"><span class="pill warn">及格但有硬伤</span><span class="pill bad">LTV 叙事不足</span></div>
-          </div>
-          <div class="card">
-            <div class="score-badge" style="color:var(--warning-text)">68</div>
-            <h3>DTC / 电商板块</h3>
-            <p><strong>判断：</strong>DTC 和 Amazon 成立，零售与订阅承接还没有达到头部品牌水平。</p>
-            <ul>
-              <li>做得好的：Amazon 主力 SKU 评分和评论量都很强，硬件首单转化基础扎实。E4-E6</li>
-              <li>做得好的：官网产品、会员和商业版路径完整，具备做用户资产的条件。E1, E3</li>
-              <li>做得不好的：Best Buy、Target 等触点的评价样本、卖家角色和页面体验不一致，会拖累高信任产品的渠道专业度。E7, E9</li>
-            </ul>
-            <div class="pill-row"><span class="pill warn">有基础</span><span class="pill bad">渠道治理不足</span></div>
-          </div>
-        </div>
+        <p class="section-note">三项分数用于判断下一步该由 Atlas 继续总控，还是进入 SignalMark、CommerceFlow 或 TideLens 深诊。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-green">
+          <div class="biz-top"><div><span>SignalMark</span><h3>AI 硬件 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>73</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Plaud AI 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>续费价值、准确率 还需要被页面和内容前置。</p></div></div>
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>66</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>DTC 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 续费价值 解释还不够集中。</p></div></div>
+        </article><article class="biz-card state-green">
+          <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>74</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Creator / PR 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 续费价值、准确率、隐私安全。</p></div></div>
+        </article>
       </div>
     </section>
-
-    <section id="problems">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Top 3 Issues</span>
-            <h2>三大关键问题：把硬件用户变成持续收入。</h2>
-          </div>
-          <p class="lead">Plaud 接下来的最高优先级，是证明硬件用户会持续付费、团队会扩席位、渠道不会稀释专业信任。</p>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：续费价值、准确率、隐私安全。</h2>
         </div>
-        <div class="grid">
-          <div class="card problem">
-            <div class="problem-side">
-              <span class="label">P0 · 30 天内进管理周会</span>
-              <h3>订阅续费和团队席位还没有成为对外可验证的增长证据。</h3>
-              <div class="score-badge">82</div>
-              <p>严重度 / 100</p>
-            </div>
-            <div class="problem-body">
-              <p>硬件卖出去只是第一步。Plaud 的会员体系已经完整，但公开页面仍更像功能/分钟数售卖，没有把续费率、团队扩张和行业 ROI 做成最强购买理由。对投资人和品牌客户来说，这会影响估值质量、预算效率和企业采购信心。E3, E12, E13</p>
-              <div class="impact-path">
-                <div><strong>现象</strong><p>硬件强，订阅价值表达偏功能表。</p></div>
-                <div><strong>业务影响</strong><p>用户把 Pro/Unlimited 当成本，付费续费会承压。</p></div>
-                <div><strong>先修动作</strong><p>把续费、团队 seat、行业模板和节省时间变成主叙事。</p></div>
-              </div>
-              <div class="pill-row"><span class="pill bad">数据看板缺口</span><span class="pill warn">90 天验证</span><span class="pill neutral">Shopify + 订阅后台校准</span></div>
-            </div>
-          </div>
-          <div class="card problem">
-            <div class="problem-side">
-              <span class="label">P1 · 产品与品类</span>
-              <h3>硬件必要性要持续证明，不能只靠第一代爆款心智。</h3>
-              <div class="score-badge">76</div>
-              <p>严重度 / 100</p>
-            </div>
-            <div class="problem-body">
-              <p>AI 记录赛道的直接竞品不只来自硬件。Otter、Granola、Fireflies、Fathom 等软件已占据会议总结；手机和电脑系统也会继续增加录音、转写、总结功能。Note Pro 和 NotePin S 必须用场景、准确率、隐私和离线/电话优势证明“专门设备”的价值。E14-E18</p>
-              <div class="impact-path">
-                <div><strong>现象</strong><p>硬件评分强，但替代方案正在变多。</p></div>
-                <div><strong>业务影响</strong><p>硬件 ASP、复购和订阅转化可能被压缩。</p></div>
-                <div><strong>先修动作</strong><p>用真实场景对比证明硬件的不可替代任务。</p></div>
-              </div>
-              <div class="pill-row"><span class="pill warn">接班压力</span><span class="pill neutral">竞品生命周期校准</span><span class="pill good">硬件仍有差异化</span></div>
-            </div>
-          </div>
-          <div class="card problem">
-            <div class="problem-side">
-              <span class="label">P1 · 渠道治理</span>
-              <h3>零售铺货和第三方触点没有统一成专业采购体验。</h3>
-              <div class="score-badge">71</div>
-              <p>严重度 / 100</p>
-            </div>
-            <div class="problem-body">
-              <p>高信任 AI 录音产品对渠道页面质量更敏感。Amazon 强可以支撑搜索转化，但 Best Buy 低样本评分、Target 第三方 seller 页面和零售 sell-out 不透明，会让用户对价格、售后和正品来源产生额外疑问。E4-E9</p>
-              <div class="impact-path">
-                <div><strong>现象</strong><p>渠道多，但角色和质量不一致。</p></div>
-                <div><strong>业务影响</strong><p>高意图用户在购买前多一次风险判断。</p></div>
-                <div><strong>先修动作</strong><p>统一授权、价格、PDP 证据和售后入口。</p></div>
-              </div>
-              <div class="pill-row"><span class="pill warn">渠道纪律</span><span class="pill bad">零售评分样本风险</span><span class="pill neutral">sell-out 待校准</span></div>
-            </div>
-          </div>
-        </div>
+        <p class="section-note">每个问题都要同时落到证据、影响和 30 / 90 天动作。</p>
       </div>
+      <article class="issue state-red">
+        <h3>问题 1：续费价值 没有被放到购买前第一层。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。它直接影响首单信任、渠道选择和售后成本。</p></div>
+          <div><b>证据</b><p>硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。 <span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E31]</span></span></p></div>
+          <div><b>业务影响</b><p>用户会回到平台、竞品或第三方负面页面寻找答案，品牌失去解释权。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 续费价值 承接页，插入 PDP、FAQ、checkout 和客服宏。<br><strong>90 天：</strong>把评价、退款、客服、复购和渠道转化放入同一张周报，验证修复效果。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：AI transcription subscription / team / workflow use cases 需要独立证据。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。第二线不能只靠主线声量外推。</p></div>
+          <div><b>证据</b><p>Plaud Note / NotePin、AI transcription subscription、team / workflow use cases 的角色需要用公开动销和后台数据拆清。<span class="evidence-list"><span class="evidence">[E31]</span><span class="evidence">[E91]</span></span></p></div>
+          <div><b>业务影响</b><p>预算会被摊薄，团队容易同时推太多页面、SKU 和内容主题。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 SKU role map：Hero / Validation / Add-on / Retention / Proof。<br><strong>90 天：</strong>按 SKU role 看 GMV、毛利、评价、退货、复购和渠道冲突，关掉低质量长尾。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：搜索、VOC 和内容没有形成同一个承接闭环。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。高意图用户会在搜索和社群里看到分散答案。</p></div>
+          <div><b>证据</b><p>搜索词、评价和 VOC 需要统一到承接页与内容 brief。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>投放和内容会增加注意力，但没有稳定降低购买犹豫。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重排搜索入口：行业词、品牌 review、竞品比较、售后词。<br><strong>90 天：</strong>把 creator brief、SEO 页面、FAQ、PDP 和 support macro 合并为一套 proof matrix。</p></div>
+        </div>
+      </article>
     </section>
-
     <section id="competitors">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Competitive View</span>
-            <h2>竞品校准：Plaud 的对手是软件工作流，不只是录音硬件。</h2>
-          </div>
-          <p class="lead">Plaud 的硬件差异化很清楚，但北美用户会把它和 AI meeting assistant、手机系统功能、传统录音笔同时比较。硬件溢价必须绑定更低摩擦、更强隐私和更完整的后处理工作流。</p>
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：用户会拿 Otter、Fireflies、Notion AI 来判断安全感和价格合理性。</h2>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>对象</th><th>北美角色</th><th>Plaud 可攻击点</th><th>Plaud 风险</th></tr></thead>
-            <tbody>
-              <tr><td>Plaud Note Pro / NotePin S</td><td>硬件获客 + 订阅承接</td><td>线下、电话、现场和跨设备记录比纯会议软件更完整。</td><td>硬件必要性和订阅续费需要持续证明。E1-E6</td></tr>
-              <tr><td>Otter.ai / Fireflies.ai</td><td>会议软件与团队协作</td><td>Plaud 可用硬件切入线下和电话场景。</td><td>软件竞品在 Zoom/Google/Teams 工作流里更自然。E18</td></tr>
-              <tr><td>Granola / Fathom</td><td>低摩擦 AI meeting notes</td><td>Plaud 的物理录音和跨场景覆盖更强。</td><td>纯软件价格和安装摩擦更低，容易拿走轻度用户。E18</td></tr>
-              <tr><td>手机系统录音与传统录音笔</td><td>低价或内置替代</td><td>Plaud 的转写、总结、模板和专用硬件体验更强。</td><td>如果用户只需要基础录音，硬件溢价会被压缩。</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
+        <p class="section-note">竞品当前重点是比谁更快降低购买风险。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 对比</div>
+          <h3>Otter</h3>
+          <p>最直接抢走高意图比较词，需要用对比页回答价格、服务和适用边界。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Fireflies</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Notion AI</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Humane / AI hardware</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+      </div></section>
+    
     <section id="positioning">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Positioning Upgrade</span>
-            <h2>定位升级：从“AI 录音硬件”升级为“专业记录工作流”。</h2>
-          </div>
-          <p class="lead">Plaud 已经证明用户愿意为专用硬件付费。下一阶段的溢价理由不能只停在录音距离、屏幕和按键，而要变成可复用的工作结果：录音、转写、总结、模板、合规、团队协作和行业知识库。缺少这层，Note Pro 和 NotePin S 仍能带来首单，但会员续费和团队席位很难成为北美利润质量的主支撑。E1, E3, E17-E20</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从“能买到”升级成“为什么现在放心买”。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric good">
-            <span class="label">现在靠什么成交</span>
-            <h3>专用硬件 + 省时间的 AI 总结。</h3>
-            <p>Note Pro 和 NotePin S 的物理形态清楚，能覆盖会议、电话、采访、线下拜访和跨设备记录场景，这是纯软件不容易完全替代的入口。E4-E6, E16, E19</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">下一阶段靠什么增厚</span>
-            <h3>行业工作流和团队席位。</h3>
-            <p>把销售、咨询、医疗、法律、教育等场景的模板、权限、合规和复盘流程讲清楚，会员就不是“更多分钟数”，而是高频工作结果的成本结构。E3, E17, E18</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">必须补的证据</span>
-            <h3>ROI、续费和团队使用案例。</h3>
-            <p>官网与会员页需要更直接回答：用 Plaud 一个月节省多少整理时间、哪些岗位适合、团队怎么管理录音和权限、为什么不用手机或纯软件。E3, E17, E20</p>
-          </div>
-          <div class="card metric bad">
-            <span class="label">不能提前跨过去</span>
-            <h3>企业化不能只靠合规徽章。</h3>
-            <p>SOC 2、HIPAA、GDPR 是入场基础，不等于企业采购已经成立。没有行业案例、席位扩张和数据治理页面，团队版会停留在功能清单。E17, E18</p>
-          </div>
-        </div>
+        <p class="section-note">英文 copy 只给可测试方向，不替代后续品牌文案打磨。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">Now</div>
+          <h3>当前购买理由</h3>
+          <p>Plaud Note / NotePin 已经能解释基础需求。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Next</div>
+          <h3>下一阶段理由</h3>
+          <p>把 续费价值、准确率、隐私安全 讲成确定性，支撑更高质量成交。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>不要先放大的方向</h3>
+          <p>不要在 proof 和售后承接前平均扩大所有渠道预算。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Plaud AI helps North America buyers choose AI note-taking hardware with clearer proof and lower purchase risk.</p>
+        <p><b>Hero subhead:</b> Compare use cases, support, warranty, and fit before you buy.</p>
+        <p><b>Product promise:</b> A clearer path from first interest to confident daily use.</p>
+        <p><b>Sales opener:</b> We found the next growth constraint is not awareness alone; it is purchase certainty around 续费价值.</p>
+        <p><b>CTA:</b> Build the proof and support path before scaling spend.</p>
       </div>
     </section>
-
+    
     <section id="scores">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">11-Dimension Score</span>
-            <h2>11 维评分：继续放大品牌和产品，优先治理订阅、渠道和数据看板。</h2>
-          </div>
-          <p class="lead">这张表用于管理取舍：强项继续放大，低分项进管理周会。Plaud 的短期收入看硬件与 DTC，中期质量看订阅续费、团队席位、渠道毛利和售后成本。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：红灯先修，黄灯进周会，绿灯继续放大。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric warn"><div class="score-badge">68</div><h3>电商板块</h3><p>Amazon 和 DTC 成立，零售触点治理不足。</p></div>
-          <div class="card metric good"><div class="score-badge">82</div><h3>品牌板块</h3><p>声量和信任强，北美硬指标还可更透明。</p></div>
-          <div class="card metric warn"><div class="score-badge">72</div><h3>Marketing</h3><p>需求教育强，订阅 ROI 叙事不足。</p></div>
-          <div class="card metric good"><div class="score-badge">78</div><h3>产品 / 品类</h3><p>硬件形态清楚，软件竞品压缩溢价。</p></div>
-          <div class="card metric warn"><div class="score-badge">70</div><h3>漏斗转化</h3><p>首单强，续费和团队扩张公开证据不足。</p></div>
-          <div class="card metric good"><div class="score-badge">80</div><h3>用户洞察</h3><p>高频知识工作者抓得准。</p></div>
-          <div class="card metric warn"><div class="score-badge">73</div><h3>客服售后</h3><p>Trustpilot 好，但零售差评要闭环。</p></div>
-          <div class="card metric bad"><div class="score-badge">62</div><h3>订阅会员</h3><p>价格体系完整，续费价值证明不够。</p></div>
-          <div class="card metric good"><div class="score-badge">76</div><h3>竞品对比</h3><p>差异化成立，但软件竞品压力大。</p></div>
-          <div class="card metric good"><div class="score-badge">84</div><h3>增长机会</h3><p>团队、垂直行业和合规采购空间大。</p></div>
-          <div class="card metric bad"><div class="score-badge">58</div><h3>风险预警</h3><p>硬件溢价、隐私合规和渠道触点需治理。</p></div>
-        </div>
+        <p class="section-note">分数来自 v3 方向性重算和旧报告公开证据迁移，后台数据会校准权重。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-green">
+          <div class="score-card-top"><b>70</b><span>品类购买契约</span></div>
+          <div class="mini-track"><i style="width:70%;"></i></div>
+          <p>品类购买契约 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>74</b><span>主线产品清晰度</span></div>
+          <div class="mini-track"><i style="width:74%;"></i></div>
+          <p>主线产品清晰度 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>63</b><span>第二品线验证</span></div>
+          <div class="mini-track"><i style="width:63%;"></i></div>
+          <p>第二品线验证 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>68</b><span>渠道角色</span></div>
+          <div class="mini-track"><i style="width:68%;"></i></div>
+          <p>渠道角色 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>66</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:66%;"></i></div>
+          <p>搜索心智 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>60</b><span>VOC / 售后</span></div>
+          <div class="mini-track"><i style="width:60%;"></i></div>
+          <p>续费价值 是当前重点。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>73</b><span>SignalMark</span></div>
+          <div class="mini-track"><i style="width:73%;"></i></div>
+          <p>SignalMark 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>66</b><span>CommerceFlow</span></div>
+          <div class="mini-track"><i style="width:66%;"></i></div>
+          <p>CommerceFlow 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>74</b><span>TideLens</span></div>
+          <div class="mini-track"><i style="width:74%;"></i></div>
+          <p>TideLens 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>64</b><span>预算纪律</span></div>
+          <div class="mini-track"><i style="width:64%;"></i></div>
+          <p>预算纪律 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>65</b><span>组织执行</span></div>
+          <div class="mini-track"><i style="width:65%;"></i></div>
+          <p>组织执行 需要服务于下一步预算取舍。</p>
+        </article>
       </div>
     </section>
-
     <section id="budget">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Budget Trade-off</span>
-            <h2>预算取舍：保留硬件获客，新增资源转向订阅转化和渠道治理。</h2>
-          </div>
-          <p class="lead">Plaud 现在不缺“有人愿意买硬件”的证明，缺的是把硬件用户沉淀成会员、团队席位和可控渠道资产。预算优先级应该从单纯拉首单，转向提高订阅绑定率、降低渠道信任摩擦、证明团队版 ROI。E3-E9, E13, E17-E20</p>
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先把 续费价值 修成可验证，再放大渠道。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric good">
-            <span class="label">转化预算 · 继续保</span>
-            <h3>守住 Note Pro / NotePin S 高意图成交。</h3>
-            <p>Amazon、DTC 搜索承接和 retargeting 继续保留，但落地页必须把“适合谁、替代谁、比手机强在哪、后续订阅为什么值得续费”讲清楚。</p>
-            <div class="pill-row"><span class="pill good">高意图词</span><span class="pill neutral">PDP CVR</span></div>
-          </div>
-          <div class="card metric warn">
-            <span class="label">非转化预算 · 收缩泛曝光</span>
-            <h3>减少泛 AI 曝光，转向可成交场景。</h3>
-            <p>泛效率、泛 AI 录音的曝光预算容易教育市场，却把需求分给 Otter、Granola、手机录音和免费工具；要优先投行业场景与比较页。</p>
-            <div class="pill-row"><span class="pill warn">约束投放</span><span class="pill bad">泛流量降权</span></div>
-          </div>
-          <div class="card metric">
-            <span class="label">内容资产预算 · 加码</span>
-            <h3>补 ROI、合规、比较和行业模板。</h3>
-            <p>建立 Plaud vs 手机 / Otter / Granola / Fireflies、行业模板、录音同意、数据安全和团队管理页面，让搜索心智与销售话术沉淀成资产。</p>
-            <div class="pill-row"><span class="pill neutral">SEO 资产</span><span class="pill neutral">企业采购</span></div>
-          </div>
-          <div class="card metric bad">
-            <span class="label">渠道预算 · 先治理再扩</span>
-            <h3>零售触点没统一前，不急着铺更多入口。</h3>
-            <p>Best Buy、Target、Walmart 等触点先清授权、价格、售后入口、评分样本和 sell-out 口径；渠道质量没统一，新增铺货会放大信任成本。</p>
-            <div class="pill-row"><span class="pill bad">先治渠道</span><span class="pill warn">sell-out 校准</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+        <p class="section-note">公开版只给方向，真实预算需要后台 GMV、毛利、CAC、退货和复购校准。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">Keep</div>
+          <h3>先保留</h3>
+          <p>DTC 和 Plaud Note / NotePin 继续作为主验证面，但必须绑定评价和售后指标。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>先压住</h3>
+          <p>暂缓平均加码长尾 SKU、泛流量和没有 proof 的 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Fix</div>
+          <h3>先补强</h3>
+          <p>把预算优先放到 续费价值、准确率、隐私安全 的页面、内容和客服承接。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">Scale gate</div>
+          <h3>放大条件</h3>
+          <p>当搜索承接、负面 VOC、退款/售后和渠道转化都有改善，再提高投放或渠道拓展。</p>
+        </article>
+      </div></section>
+    
     <section id="roadmap">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">90 / 180 Days</span>
-            <h2>路线图：先证明用户长期价值，再扩大团队和行业场景。</h2>
-          </div>
-          <p class="lead">Plaud 不缺硬件首单，缺的是把用户从首单推进到续费、团队席位和高信任场景的证据链。路线图按利润质量和可启动性排序。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先修承接，再验证第二线。</h2>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>周期</th><th>动作</th><th>Owner</th><th>验收指标</th><th>影响</th></tr></thead>
-            <tbody>
-              <tr><td>0-30 天</td><td>重写会员价值页：按销售、咨询、医疗、法律、教育拆 ROI，不只展示分钟数。</td><td>Marketing + 产品</td><td>会员页 CVR、Pro/Unlimited attach rate、FAQ 点击后转化。</td><td>提高订阅转化和价格接受度。</td></tr>
-              <tr><td>0-30 天</td><td>清理零售触点：授权 seller、价格、售后入口、PDP 证据和低样本差评闭环。</td><td>渠道 + 电商</td><td>异常页面列表关闭率、零售评分样本、渠道价格一致性。</td><td>降低高意向用户的购买风险。</td></tr>
-              <tr><td>31-90 天</td><td>建立硬件必要性内容：真实场景对比手机、Otter、Granola、Fireflies。</td><td>产品营销</td><td>对比页自然流量、广告落地页 CVR、退货原因变化。</td><td>守住硬件 ASP 和主产品心智。</td></tr>
-              <tr><td>31-90 天</td><td>推出 Team 试点包：5-20 seats、行业模板、权限、合规说明和 onboarding。</td><td>Sales + Growth</td><td>Team trial-to-paid、seat expansion、行业客户案例。</td><td>把硬件用户转成高 LTV 组织客户。</td></tr>
-              <tr><td>91-180 天</td><td>搭建北美经营看板：硬件 GMV、订阅 ARR、续费率、渠道毛利、售后成本。</td><td>数据增长运营</td><td>每周经营仪表盘、预算分配规则、品线 P&amp;L。</td><td>让预算从销量驱动转向利润质量驱动。</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="section-note">路线以 owner 和验收指标组织，避免只写方向。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>DTC / Ecommerce｜上线 续费价值 承接页和 PDP FAQ</b><p>验收：FAQ 点击、转化、退款原因。影响：减少临门犹豫</p></div><div class="road-action state-red"><b>Support｜整理退换、保修、故障和客服 SLA</b><p>验收：首次响应、解决周期、负面主题。影响：降低售后不确定性</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-amber"><b>Marketing｜重写 Otter / Fireflies / Notion AI 比较页和 creator brief</b><p>验收：比较词排名、页面转化、内容复用。影响：夺回解释权</p></div><div class="road-action state-amber"><b>Product / Growth｜建立 SKU role map 和渠道看板</b><p>验收：GMV、毛利、评价、退货、复购。影响：减少资源摊薄</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-blue"><b>Leadership｜决定第二线是否进入预算放大</b><p>验收：独立动销、复购、渠道效率。影响：避免主线外推</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas v3 分数</b><p>验收：CAC、ROAS、TACOS、LTV、退款率。影响：把公开诊断变成经营决策</p></div>
+        </article>
       </div>
     </section>
-
+    
     <section id="departments">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Organization Audit</span>
-            <h2>职能部门专业度：红灯先修数据、渠道和订阅商业化。</h2>
-          </div>
-          <p class="lead">这里评价的是公开经营产出，不评价个人能力。Plaud 的强项在品牌和硬件产品，最该进管理周会的是订阅商业化、渠道治理和北美经营数据。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：先修售后和电商承接，再让内容与渠道放大。</h2>
         </div>
-        <div class="dept-group">
-          <div class="dept-head"><strong>红灯部门 · 30 天内进管理周会</strong><span class="tag bad">直接影响利润质量</span></div>
-          <div class="dept-grid">
-            <div class="dept-card badline"><div class="score-badge" style="color:var(--risk-text)">50</div><h3>数据 / 增长运营部</h3><p>做得差：公开层面看不到北美硬件 GMV、订阅 ARR、attach rate、续费率和渠道毛利的统一口径。30 天先建北美利润质量看板。E3, E13</p></div>
-            <div class="dept-card badline"><div class="score-badge" style="color:var(--risk-text)">54</div><h3>渠道 / 零售治理部</h3><p>不达标：Best Buy、Target 等触点质量不一，授权、价格和售后入口需要统一。30 天先清理异常 retail PDP。E7-E9</p></div>
-            <div class="dept-card badline"><div class="score-badge" style="color:var(--risk-text)">56</div><h3>订阅商业化 / 会员部</h3><p>明显拖累：会员页有价格和分钟数，但没有把续费 ROI、团队价值和行业模板讲成购买理由。30 天先重做价值证明。E3</p></div>
-          </div>
-        </div>
-        <div class="dept-group">
-          <div class="dept-head"><strong>黄灯部门 · 带约束优化</strong><span class="tag warn">方向对，证据要加厚</span></div>
-          <div class="dept-grid">
-            <div class="dept-card warnline"><div class="score-badge" style="color:var(--warning-text)">68</div><h3>DTC / 电商部</h3><p>有基础：官网和 Amazon 都能成交；短板是零售触点和订阅承接没有完全打通。E1, E4-E9</p></div>
-            <div class="dept-card warnline"><div class="score-badge" style="color:var(--warning-text)">72</div><h3>Marketing 部</h3><p>及格但有硬伤：需求教育强，企业 ROI、工作流集成和硬件必要性讲得还不够尖锐。E1, E3, E18</p></div>
-            <div class="dept-card warnline"><div class="score-badge" style="color:var(--warning-text)">73</div><h3>客服 / 售后部</h3><p>总体可控：Trustpilot 回复质量不错，但低分零售页面和订阅/取消相关抱怨要进入 VOC 闭环。E10, E11</p></div>
-          </div>
-        </div>
-        <div class="dept-group">
-          <div class="dept-head"><strong>绿灯部门 · 继续放大</strong><span class="tag good">可作为增长支撑</span></div>
-          <div class="dept-grid">
-            <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">84</div><h3>品牌部</h3><p>能打：用户规模、全球覆盖、品牌声誉和媒体关注支撑头部心智；下一步补北美本地可审计硬指标。E1, E10, E12, E13</p></div>
-            <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">82</div><h3>产品 / 硬件设计部</h3><p>强项：Note、Note Pro、NotePin S 形成了清晰硬件矩阵；继续用真实场景证明专用设备价值。E1, E4-E6, E16, E19</p></div>
-            <div class="dept-card goodline"><div class="score-badge" style="color:var(--success-text)">80</div><h3>安全合规 / 信任体系</h3><p>可用：Trust Center、SOC 2、HIPAA 等内容已经具备企业采购基础；需要更多行业案例承接。E17</p></div>
-          </div>
-        </div>
+        <p class="section-note">红灯排在前面，方便管理层先安排 owner。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">56</div>
+          <h3>客服 / 售后</h3>
+          <p><strong>最差点：</strong>续费价值 还没有被 SLA 和公开承诺接住。</p>
+          <span class="tag red">30 天：30 天内上线 support hub、退换/保修说明和客服宏。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">60</div>
+          <h3>电商 / DTC</h3>
+          <p><strong>最差点：</strong>官网没有充分说明为什么直购更稳。</p>
+          <span class="tag red">30 天：30 天内补 PDP、FAQ、comparison 和 checkout 信任点。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">63</div>
+          <h3>Data / Growth</h3>
+          <p><strong>最差点：</strong>公开分数不能替代后台口径。</p>
+          <span class="tag amber">30 天：30 天内补 GMV、毛利、退款、复购和渠道效率表。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">64</div>
+          <h3>Product</h3>
+          <p><strong>最差点：</strong>SKU 角色和第二线验证不够清晰。</p>
+          <span class="tag amber">30 天：30 天内做 Hero / Validation / Add-on / Retention map。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">65</div>
+          <h3>Brand / Signal</h3>
+          <p><strong>最差点：</strong>购买理由存在，但边界和 proof 还不够集中。</p>
+          <span class="tag amber">30 天：30 天内完成 claim / proof / audience matrix。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">66</div>
+          <h3>Marketing</h3>
+          <p><strong>最差点：</strong>内容还没有持续回答 续费价值、准确率、隐私安全。</p>
+          <span class="tag amber">30 天：30 天内更新 creator brief 和搜索内容结构。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">69</div>
+          <h3>Channel</h3>
+          <p><strong>最差点：</strong>渠道能出信号，但价格和评价解释权分散。</p>
+          <span class="tag amber">30 天：30 天内统一平台 PDP、DTC 和零售话术。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">72</div>
+          <h3>Existing Demand Proof</h3>
+          <p><strong>最差点：</strong>公开证据已经能说明存在可转化需求。</p>
+          <span class="tag green">30 天：30 天内把最强正向证据放进首页、PDP、比较页和内容 brief。</span>
+        </article>
       </div>
     </section>
-
-    <section id="risks">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Risks &amp; Data Gaps</span>
-            <h2>风险预警：硬件强不等于长期 LTV 强。</h2>
-          </div>
-          <p class="lead">公开数据足够支持“Plaud 北美已具备规模”的判断，但还不足以给出精确平台 GMV 和订阅 ARR 单点。下一步内部校准会直接影响预算该投硬件、订阅、零售还是团队版。</p>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险和数据缺口：公开版能判断方向，不能替代后台校准。</h2>
         </div>
-        <div class="grid three">
-          <div class="card metric bad"><span class="label">数据缺口</span><h3>订阅 ARR / attach rate / churn 未公开。</h3><p>这是判断利润质量的核心数据，缺失会让北美阶段和估值质量只能保持中等置信度。</p></div>
-          <div class="card metric warn"><span class="label">合规风险</span><h3>录音同意与公司政策需要行业化解释。</h3><p>Trust Center 是基础，医疗、法律和企业销售仍需要场景化 FAQ、DPA、权限和审计材料。E17</p></div>
-          <div class="card metric warn"><span class="label">竞品风险</span><h3>软件型竞品会压缩轻度用户。</h3><p>Plaud 要把硬件定位在高频、线下、电话、跨场景和隐私敏感任务，轻度会议用户可能被纯软件方案拿走。E18</p></div>
-        </div>
-      </div>
-    </section>
-
+        <p class="section-note">上线旧 GitHub HTML 时必须保留数据缺口，避免把方向性估计写成确定财务口径。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-blue">
+          <div class="card-state">Data</div>
+          <h3>后台数据缺口</h3>
+          <p>需要补 Plaud AI 的北美 GMV、渠道占比、毛利、退货、复购、客服和广告数据。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Risk</div>
+          <h3>当前最大风险</h3>
+          <p>硬件爆款成立，但订阅续费、团队席位和垂直工作流还没有成为公开可验证的第二层增长。 是当前 v3 分数封顶的核心原因。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Scope</div>
+          <h3>上线备注</h3>
+          <p>本页是旧报告按 Atlas v3 规则重跑后的公开数据版，证据沿用旧公开来源和 2026-06-25 v3 重算结果。</p>
+        </article>
+      </div></section>
+    
     <section id="evidence">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Evidence Table</span>
-            <h2>证据表</h2>
-          </div>
-          <p class="lead">抓取日期：2026-06-15。公开数据用于方向性经营判断，不替代品牌内部订单、广告后台、订阅后台、零售 sell-out 和 P&amp;L。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：新版 v3 判断沿用旧公开来源，并标记需要后台校准的地方。</h2>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>ID</th><th>来源</th><th>关键事实</th><th>支持判断</th><th>置信度</th></tr></thead>
-            <tbody>
-              <tr><td>E1</td><td><a href="https://www.plaud.ai/" target="_blank">Plaud 官网</a></td><td>官网称 2M+ professionals / 170+ countries；展示 Note、Note Pro、NotePin S、Plaud App、App Store 4.9 / 16K ratings 和 G2 4.6。</td><td>品牌规模、产品线、DTC 资产和 VI。</td><td>高</td></tr>
-              <tr><td>E2</td><td><a href="https://www.plaud.ai/pages/our-story-1" target="_blank">Plaud Our Story</a></td><td>强调 San Francisco、2M users、170+ countries、2-year warranty、30-day return 和 24/7 support。</td><td>品牌阶段、客服与售后基础。</td><td>高</td></tr>
-              <tr><td>E3</td><td><a href="https://www.plaud.ai/pages/membership" target="_blank">Plaud Membership</a></td><td>Starter 300 minutes/month；Pro、Unlimited、Business/Team 价格与功能体系清楚。</td><td>订阅商业化和 LTV 判断。</td><td>高</td></tr>
-              <tr><td>E4</td><td><a href="https://www.amazon.com/PLAUD-Transcribe-Summarize-Empowered-Languages/dp/B0CZWQV8P5" target="_blank">Amazon · Plaud Note</a></td><td>Plaud Note $159；同页推荐黑色款显示 4.5 stars / 3,846 ratings，卖家为 Plaud LLC 并由 Amazon Fulfillment 发货。</td><td>Amazon 动销与硬件首单信任。</td><td>中高</td></tr>
-              <tr><td>E5</td><td><a href="https://www.amazon.com/Plaud-Transcribe-Summarize-Ultra-Slim-InstantView/dp/B0FYQ4Y2ZZ" target="_blank">Amazon · Plaud Note Pro</a></td><td>Note Pro $189；Amazon 页面显示 10K+ bought in past month，相关推荐显示 4.6 stars / 1,503 ratings 与 #1 Best Seller。</td><td>主力新品与硬件矩阵。</td><td>中高</td></tr>
-              <tr><td>E6</td><td><a href="https://www.amazon.com/PLAUD-Notetaker-Transcribe-Summarize-Languages/dp/B0DL9WQ4Z4" target="_blank">Amazon · Plaud NotePin S</a></td><td>NotePin S $179，4.4 stars / 876+ ratings，Amazon's Choice；卖家为 Plaud LLC，Amazon Fulfillment。</td><td>可穿戴形态与渠道信任。</td><td>中高</td></tr>
-              <tr><td>E7</td><td><a href="https://www.bestbuy.com/product/plaud-note-pro-smart-ai-voice-audio-recorder-black/JJGH8KP8TF/sku/6665434" target="_blank">Best Buy</a></td><td>Plaud Note Pro $189.99，上架 Best Buy，评分样本少且约 3.7。</td><td>零售背书与评分样本风险。</td><td>中</td></tr>
-              <tr><td>E8</td><td><a href="https://www.walmart.com/c/brand/plaud" target="_blank">Walmart Brand Page</a></td><td>Walmart 有 Plaud 品牌页，覆盖 Note、NotePin、accessories 等。</td><td>零售触点和渠道扩张。</td><td>中</td></tr>
-              <tr><td>E9</td><td><a href="https://www.target.com/p/plaud-notepin-ai-voice-recorder-wearable-note-taker-64gb-black/-/A-1001752001" target="_blank">Target Marketplace</a></td><td>Target 页面为第三方 seller AJ Mart，NotePin $159.99，低样本评分偏低。</td><td>第三方零售触点治理。</td><td>中</td></tr>
-              <tr><td>E10</td><td><a href="https://www.trustpilot.com/review/plaud.ai" target="_blank">Trustpilot</a></td><td>TrustScore 4.5 / 5，1,944 reviews，86% 五星，负评回复覆盖较高。</td><td>品牌声誉和售后闭环。</td><td>中高</td></tr>
-              <tr><td>E11</td><td><a href="https://apps.apple.com/us/app/plaud-ai-note-taker/id6450364080" target="_blank">Apple App Store</a></td><td>公开评论正向集中在易用和节省记录时间；负向集中在订阅成本、集成、取消和功能边界。</td><td>软件体验与 VOC。</td><td>中</td></tr>
-              <tr><td>E12</td><td><a href="https://eu.36kr.com/en/p/3799129165863937" target="_blank">36Kr / Yingke report</a></td><td>报道称 Plaud 2024 年收入约 USD 56M，2025 年收入几乎翻三倍，利润率接近 20%。</td><td>销售规模趋势与阶段校准。</td><td>中</td></tr>
-              <tr><td>E13</td><td><a href="https://sacra.com/c/plaud/" target="_blank">Sacra · Plaud company profile</a></td><td>估算 Plaud 2025 年 9 月达到约 USD 250M annualized revenue，同比增长约 83%。</td><td>全球收入规模和阶段校准。</td><td>中</td></tr>
-              <tr><td>E14</td><td><a href="https://www.grandviewresearch.com/industry-analysis/ai-meeting-assistant-market-report" target="_blank">Grand View Research</a></td><td>全球 AI meeting assistant market 2025 约 USD 3.5B，北美约占 33%。</td><td>软件订阅天花板。</td><td>中</td></tr>
-              <tr><td>E15</td><td><a href="https://www.precedenceresearch.com/ai-note-taking-market" target="_blank">Precedence Research</a></td><td>AI note-taking market 2025 约 USD 623.5M，2026 约 USD 740.4M，北美为主导地区。</td><td>AI note-taking 品类成长性。</td><td>中</td></tr>
-              <tr><td>E16</td><td><a href="https://www.theverge.com/tech/851393/plaud-notepin-s-desktop-app-ces" target="_blank">The Verge · NotePin S / Desktop</a></td><td>报道 NotePin S 增加 physical button 和 Desktop app，原 NotePin 逐步 phase out。</td><td>硬件换代与使用摩擦修复。</td><td>中</td></tr>
-              <tr><td>E17</td><td><a href="https://www.plaud.ai/pages/trust-center" target="_blank">Plaud Trust Center</a></td><td>页面说明数据不用于模型训练、加密、SOC 2 Type II、HIPAA、GDPR 等合规承诺。</td><td>企业采购与合规信任。</td><td>高</td></tr>
-              <tr><td>E18</td><td><a href="https://otter.ai/pricing" target="_blank">Otter</a> / <a href="https://fireflies.ai/pricing" target="_blank">Fireflies</a> / <a href="https://www.granola.ai/pricing" target="_blank">Granola</a> / <a href="https://fathom.video/pricing" target="_blank">Fathom</a></td><td>软件竞品以订阅和会议工作流切入，价格和集成路径更轻。</td><td>软件竞品压力和硬件必要性校准。</td><td>中</td></tr>
-              <tr><td>E19</td><td><a href="https://www.theverge.com/news/766335/plaud-ai-note-pro-launch-pricing-availability" target="_blank">The Verge · Note Pro</a></td><td>报道 Note Pro 增加两颗麦克风、16.4-foot pickup、1-inch display、自动切换录音模式和 press-to-highlight。</td><td>Note Pro 换代与硬件必要性。</td><td>中</td></tr>
-              <tr><td>E20</td><td><a href="https://www.androidcentral.com/apps-software/ai/i-wore-an-ai-voice-recorder-on-my-wrist-for-a-week-heres-how-it-went" target="_blank">Android Central · NotePin review</a></td><td>评测肯定 NotePin 形态，但指出转写处理等待、云端依赖、订阅成本和手机 Recorder / Gemini 替代压力。</td><td>用户意图、订阅疑虑和替代品风险。</td><td>中</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="section-note">证据来自旧 Atlas 公开诊断与 2026-06-25 v3 重算结果；后续深诊需要重新逐源更新 Xiyou、Amazon、搜索、VOC 和后台数据。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/plaud-ai-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">“Plaud subscription cost / membership”</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；量级中，续费意图高；没接牢 价格页清楚，但价值证明偏功能表；用户真正要看节省时间、团队收益和不用订阅时损失什么。E3, E10, E11</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/plaud-ai-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">“Plaud Note Pro review”</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；量级中，产品验证意图高；接住了 媒体、Amazon 和 YouTube 能支撑首单信任；Note Pro 的屏幕、四麦、自动切换和 highlight button 有辨识度。E5, E19</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E31</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/plaud-ai-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">建立硬件必要性内容：真实场景对比手机、Otter、Granola、Fireflies。</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；产品营销；对比页自然流量、广告落地页 CVR、退货原因变化。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E91</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/plaud-ai-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">搭建北美经营看板：硬件 GMV、订阅 ARR、续费率、渠道毛利、售后成本。</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；数据增长运营；每周经营仪表盘、预算分配规则、品线 P&amp;L。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://www.plaud.ai/pages/membership" target="_blank" rel="noopener">Plaud Membership</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；Starter 300 minutes/month；Pro、Unlimited、Business/Team 价格与功能体系清楚。；订阅商业化和 LTV 判断。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://www.amazon.com/PLAUD-Transcribe-Summarize-Empowered-Languages/dp/B0CZWQV8P5" target="_blank" rel="noopener">Amazon · Plaud Note</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；Plaud Note $159；同页推荐黑色款显示 4.5 stars / 3,846 ratings，卖家为 Plaud LLC 并由 Amazon Fulfillment 发货。；Amazon 动销与硬件首单信任。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://www.amazon.com/Plaud-Transcribe-Summarize-Ultra-Slim-InstantView/dp/B0FYQ4Y2ZZ" target="_blank" rel="noopener">Amazon · Plaud Note Pro</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；Note Pro $189；Amazon 页面显示 10K+ bought in past month，相关推荐显示 4.6 stars / 1,503 ratings 与 #1 Best Seller。；主力新品与硬件矩阵。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.amazon.com/PLAUD-Notetaker-Transcribe-Summarize-Languages/dp/B0DL9WQ4Z4" target="_blank" rel="noopener">Amazon · Plaud NotePin S</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；NotePin S $179，4.4 stars / 876+ ratings，Amazon's Choice；卖家为 Plaud LLC，Amazon Fulfillment。；可穿戴形态与渠道信任。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.bestbuy.com/product/plaud-note-pro-smart-ai-voice-audio-recorder-black/JJGH8KP8TF/sku/6665434" target="_blank" rel="noopener">Best Buy</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；Plaud Note Pro $189.99，上架 Best Buy，评分样本少且约 3.7。；零售背书与评分样本风险。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://www.walmart.com/c/brand/plaud" target="_blank" rel="noopener">Walmart Brand Page</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；Walmart 有 Plaud 品牌页，覆盖 Note、NotePin、accessories 等。；零售触点和渠道扩张。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://www.target.com/p/plaud-notepin-ai-voice-recorder-wearable-note-taker-64gb-black/-/A-1001752001" target="_blank" rel="noopener">Target Marketplace</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；Target 页面为第三方 seller AJ Mart，NotePin $159.99，低样本评分偏低。；第三方零售触点治理。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.trustpilot.com/review/plaud.ai" target="_blank" rel="noopener">Trustpilot</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；TrustScore 4.5 / 5，1,944 reviews，86% 五星，负评回复覆盖较高。；品牌声誉和售后闭环。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://apps.apple.com/us/app/plaud-ai-note-taker/id6450364080" target="_blank" rel="noopener">Apple App Store</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；公开评论正向集中在易用和节省记录时间；负向集中在订阅成本、集成、取消和功能边界。；软件体验与 VOC。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://eu.36kr.com/en/p/3799129165863937" target="_blank" rel="noopener">36Kr / Yingke report</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；报道称 Plaud 2024 年收入约 USD 56M，2025 年收入几乎翻三倍，利润率接近 20%。；销售规模趋势与阶段校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://sacra.com/c/plaud/" target="_blank" rel="noopener">Sacra · Plaud company profile</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；估算 Plaud 2025 年 9 月达到约 USD 250M annualized revenue，同比增长约 83%。；全球收入规模和阶段校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://www.grandviewresearch.com/industry-analysis/ai-meeting-assistant-market-report" target="_blank" rel="noopener">Grand View Research</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；全球 AI meeting assistant market 2025 约 USD 3.5B，北美约占 33%。；软件订阅天花板。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://www.precedenceresearch.com/ai-note-taking-market" target="_blank" rel="noopener">Precedence Research</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；AI note-taking market 2025 约 USD 623.5M，2026 约 USD 740.4M，北美为主导地区。；AI note-taking 品类成长性。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E16</td>
+              <td><a href="https://www.theverge.com/tech/851393/plaud-notepin-s-desktop-app-ces" target="_blank" rel="noopener">The Verge · NotePin S / Desktop</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；报道 NotePin S 增加 physical button 和 Desktop app，原 NotePin 逐步 phase out。；硬件换代与使用摩擦修复。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E17</td>
+              <td><a href="https://www.plaud.ai/pages/trust-center" target="_blank" rel="noopener">Plaud Trust Center</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；页面说明数据不用于模型训练、加密、SOC 2 Type II、HIPAA、GDPR 等合规承诺。；企业采购与合规信任。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E18</td>
+              <td><a href="https://otter.ai/pricing" target="_blank" rel="noopener">Otter / Fireflies / Granola / Fathom</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；软件竞品以订阅和会议工作流切入，价格和集成路径更轻。；软件竞品压力和硬件必要性校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E19</td>
+              <td><a href="https://www.theverge.com/news/766335/plaud-ai-note-pro-launch-pricing-availability" target="_blank" rel="noopener">The Verge · Note Pro</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；报道 Note Pro 增加两颗麦克风、16.4-foot pickup、1-inch display、自动切换录音模式和 press-to-highlight。；Note Pro 换代与硬件必要性。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E20</td>
+              <td><a href="https://www.androidcentral.com/apps-software/ai/i-wore-an-ai-voice-recorder-on-my-wrist-for-a-week-heres-how-it-went" target="_blank" rel="noopener">Android Central · NotePin review</a></td>
+              <td>2026-06-15</td>
+              <td>Public source</td>
+              <td>Public source；评测肯定 NotePin 形态，但指出转写处理等待、云端依赖、订阅成本和手机 Recorder / Gemini 替代压力。；用户意图、订阅疑虑和替代品风险。</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Plaud AI · 2026-06-26 · North America</span>
+    </footer>
   </main>
-
-  <footer>
-    <div class="inner">
-      <strong>远汐 Offing · Atlas 北美业务诊断（免费版）</strong>
-      <p>在抵达之前，先判断潮水。本报告基于 2026-06-15 可复查公开信息、平台页面、媒体报道和第三方市场数据形成方向性经营判断；涉及北美 GMV、平台占比、订阅 ARR、续费率和渠道毛利的部分需以品牌内部后台复核。</p>
-      <small>Generated for Plaud AI · Offing North America Business Diagnosis · 2026-06-15</small>
-    </div>
-  </footer>
 </body>
 </html>

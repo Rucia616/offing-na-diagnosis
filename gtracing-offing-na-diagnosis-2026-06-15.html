@@ -3,190 +3,1312 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GTRacing · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-15</title>
-  <meta name="description" content="GTRacing 北美业务诊断：低价游戏椅和 Amazon/Walmart 货架已经成立，下一步要修品牌命名、长期坐感证据、售后履约和品线取舍。" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='34' font-weight='900' fill='%23e11616'%3EG%3C/text%3E%3C/svg%3E" />
+  <title>GTRacing · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
-    :root{
-      color-scheme:light dark;
-      --bg:#f5f5f7;--top:#fbfbfd;--surface:#fff;--surface2:#f7f8fa;--ink:#101413;--body:#2b3633;--muted:#69746f;--line:#d8dbde;--hair:rgba(16,20,19,.08);
-      --slate:#13211f;--accent:#2d6261;--green:#157a38;--amber:#9a5b00;--red:#d70015;--blue:#1663d8;
-      --teal:#32d6c6;--sky:#9ed1ff;--pink:#f7a4d8;--violet:#9b7cff;--coral:#ff6b4a;--brand:#e11616;
-      --radius:8px;--shadow:0 18px 48px rgba(16,20,19,.08);--max:1180px;
+    :root {
+      color-scheme: light;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
     }
-    @media (prefers-color-scheme:dark){
-      :root{--bg:#0f1212;--top:#141817;--surface:#191e1d;--surface2:#202625;--ink:#f4f7f6;--body:#d8dedc;--muted:#a9b2af;--line:#3a4240;--hair:rgba(255,255,255,.08);--accent:#9ed7d3;--green:#8ee0a8;--amber:#f2c46d;--red:#ff8e99;--blue:#9ed1ff;--shadow:0 18px 48px rgba(0,0,0,.34)}
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
     }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;color:var(--ink);background:radial-gradient(circle at 6% -8%,rgba(50,214,198,.13),transparent 34vw),radial-gradient(circle at 94% 0,rgba(247,164,216,.12),transparent 30vw),linear-gradient(180deg,var(--top),var(--bg) 42%,var(--bg));font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.58;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:inherit;text-decoration:none}h1,h2,h3,h4,p{margin:0;letter-spacing:0}ul{margin:0;padding-left:18px}li{margin:0 0 6px}.inner{width:min(var(--max),calc(100% - 48px));margin:0 auto}
-    nav{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:13px 32px;background:color-mix(in srgb,var(--top) 88%,transparent);border-bottom:1px solid var(--hair);backdrop-filter:blur(18px)}.nav-brand{font-weight:850;line-height:1.08;white-space:nowrap}.nav-brand small{display:block;margin-top:3px;color:var(--accent);font-size:12px;font-weight:800}.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 14px;max-width:900px;color:var(--body);font-size:12.5px;font-weight:760}.nav-links a{white-space:nowrap}.nav-links a:hover{color:var(--accent)}
-    section{padding:76px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent);scroll-margin-top:80px}.tag{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;font-weight:880;text-transform:uppercase;letter-spacing:.04em}.tag:before{content:"";width:18px;height:2px;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--pink),var(--violet))}.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.52fr);gap:28px;align-items:end;margin-bottom:22px}h1{max-width:900px;font-size:clamp(54px,7.3vw,92px);font-weight:900;line-height:.96}h2{max-width:980px;margin-top:10px;font-size:clamp(30px,3.55vw,48px);font-weight:900;line-height:1.08}h3{font-size:19px;line-height:1.24;font-weight:850}h4{font-size:13px;font-weight:850;color:var(--accent);text-transform:uppercase;letter-spacing:.03em}.lead{max-width:900px;color:var(--body);font-size:16px}.muted{color:var(--muted)}
-    .hero{min-height:calc(100svh - 60px);display:grid;align-items:center;padding:58px 0 42px;border-bottom:0}.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.9fr);gap:44px;align-items:center}.brand-logo{width:280px;height:auto;margin-bottom:28px}.kicker{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--accent);font-size:13px;font-weight:880;letter-spacing:.08em;text-transform:uppercase}.kicker:before{content:"";width:22px;height:2px;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--pink),var(--violet))}.hero-sub{max-width:820px;margin-top:24px;color:var(--body);font-size:25px;font-weight:780;line-height:1.42}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chip,.pill{display:inline-flex;align-items:center;gap:6px;min-height:26px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 82%,transparent);color:var(--body);font-size:12px;font-weight:780}.pill.good{color:var(--green);background:rgba(21,122,56,.09);border-color:rgba(21,122,56,.18)}.pill.warn{color:var(--amber);background:rgba(154,91,0,.09);border-color:rgba(154,91,0,.18)}.pill.bad{color:var(--red);background:rgba(215,0,21,.08);border-color:rgba(215,0,21,.18)}.pill.blue{color:var(--blue);background:rgba(22,99,216,.08);border-color:rgba(22,99,216,.16)}
-    .score-card{position:relative;overflow:hidden;padding:26px;border-radius:var(--radius);background:radial-gradient(circle at 88% 5%,rgba(50,214,198,.18),transparent 30%),linear-gradient(145deg,#0d1514,#25302f);color:#fff;box-shadow:var(--shadow)}.score-card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--teal),var(--sky),var(--pink),var(--violet),var(--coral))}.score-label{color:rgba(255,255,255,.82);font-size:12px;font-weight:840}.score-big{margin-top:12px;font-size:88px;line-height:.9;font-weight:900}.star-line{display:flex;align-items:center;gap:12px 14px;flex-wrap:wrap;margin-top:18px}.stars{display:inline-flex;gap:2px;font-size:35px;line-height:1;color:rgba(255,255,255,.28)}.stars .filled{color:#ffc24b}.stars .half{color:transparent;background:linear-gradient(90deg,#ffc24b 20%,rgba(255,255,255,.30) 20%);-webkit-background-clip:text;background-clip:text}.stars .empty{color:rgba(255,255,255,.30)}.star-num{color:#ffc24b;font-size:18px;font-weight:900;white-space:nowrap}.star-verdict{flex-basis:100%;color:rgba(255,255,255,.92);font-size:14px;font-weight:800}.formula{display:grid;gap:7px;margin-top:18px;font-size:13px}.formula div{display:grid;grid-template-columns:1fr auto;gap:12px;padding-top:7px;border-top:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.86)}.formula strong{color:#fff}.subscores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.subscore{min-height:108px;padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);background:rgba(255,255,255,.07)}.subscore b{display:block;font-size:34px;line-height:1;color:#fff}.subscore span{display:block;margin-top:8px;font-size:13px;font-weight:850;color:#fff}.subscore small{display:block;margin-top:7px;color:rgba(255,255,255,.72);font-size:12px;line-height:1.38}
-    .grid{display:grid;gap:16px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.card,.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card{padding:22px}.card p,.card li{color:var(--body);font-size:14px}.card strong{font-weight:850}.kpi{position:relative;overflow:hidden}.kpi:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--tone,var(--line))}.kpi.good{--tone:var(--green)}.kpi.warn{--tone:var(--amber)}.kpi.bad{--tone:var(--red)}.kpi.blue{--tone:var(--blue)}.kpi.prism:before{background:linear-gradient(90deg,var(--teal),var(--pink),var(--violet))}.metric{display:grid;gap:8px}.metric b{font-size:32px;line-height:1}.metric small{color:var(--muted);font-weight:780}.dark{color:#fff;background:linear-gradient(145deg,#101413,#13211f);border-color:rgba(255,255,255,.08)}.dark p,.dark small{color:rgba(255,255,255,.86)}
-    .stage-plate{display:grid;gap:14px}.stage-line{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stage{position:relative;min-height:104px;padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}.stage.active{border-color:var(--accent);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 7%,var(--surface)),var(--surface));box-shadow:0 0 0 4px rgba(45,98,97,.08)}.stage small{display:inline-flex;margin-bottom:8px;padding:3px 8px;border-radius:999px;background:var(--accent);color:#fff;font-size:11px;line-height:1;font-weight:860}.stage b{display:block;font-size:20px;line-height:1.05;white-space:nowrap}.stage span{display:block;margin-top:8px;color:var(--muted);font-size:12px;font-weight:760;line-height:1.36}.stage-action{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;border-left:5px solid var(--accent)}.stage-action p{max-width:760px;margin-top:8px}.stage-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
-    .audience-layout{display:grid;grid-template-columns:minmax(360px,.94fr) minmax(0,1.06fr);gap:18px;align-items:stretch}.audience-map{position:relative;min-height:390px;overflow:hidden;background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid var(--ring);background:var(--fill)}.ring b{display:block;font-size:23px;line-height:1.05}.ring span{display:block;margin-top:7px;color:var(--body);font-size:13.5px;font-weight:840}.boundary{width:90%;height:74%;--ring:#e1c4cb;--fill:rgba(255,240,241,.42)}.adjacent{width:70%;height:52%;--ring:#c9dceb;--fill:rgba(238,245,255,.72)}.boundary>div,.adjacent>div{display:none}.core{width:46%;height:34%;--ring:#95dcc7;--fill:rgba(234,246,238,.94)}.pin{position:absolute;display:inline-flex;align-items:center;max-width:180px;min-height:28px;padding:4px 9px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--body);font-size:12px;font-weight:850;box-shadow:0 8px 20px rgba(16,20,19,.06);z-index:2}.pin.one{left:50%;top:66%;transform:translate(-50%,0)}.pin.two{left:9%;top:26%}.pin.three{right:7%;bottom:16%}.audience-notes{display:grid;gap:12px}.note{border-left:5px solid var(--tone)}
-    .channel-stack{display:flex;height:44px;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#e9ecef}.seg{width:var(--w);background:var(--c)}.bar-list{display:grid;gap:12px}.bar-row{display:grid;grid-template-columns:160px 1fr 86px;gap:12px;align-items:center;color:var(--ink);font-size:14px;font-weight:820}.bar-track{height:12px;overflow:hidden;border-radius:999px;background:#e7eaec}.bar-track span{display:block;width:var(--w);height:100%;border-radius:999px;background:var(--tone)}.table-wrap{overflow:auto}table{width:100%;min-width:850px;border-collapse:collapse}th,td{padding:15px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px;line-height:1.55}th{background:var(--surface2);color:var(--ink);font-size:13px;font-weight:860}tr:last-child td{border-bottom:0}.fit-row{display:grid;grid-template-columns:1.1fr 170px 1.15fr;gap:18px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}.fit-row+.fit-row{margin-top:12px}.fit-score b{display:block;color:var(--tone);font-size:30px;line-height:1}.mini-bar{height:10px;margin-top:10px;overflow:hidden;border-radius:999px;background:#e7eaec}.mini-bar span{display:block;width:var(--w);height:100%;border-radius:999px;background:var(--tone)}.weight{display:inline-flex;margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:840}
-    .wordcloud{position:relative;min-height:222px;overflow:hidden}.wordcloud span{position:absolute;left:var(--x);top:var(--y);font-size:var(--s);font-weight:900;color:var(--c);transform:translate(-50%,-50%) rotate(var(--r));white-space:nowrap}.issue{display:grid;grid-template-columns:230px 1fr;overflow:hidden;padding:0}.issue-side{padding:24px;background:linear-gradient(145deg,#101413,#13211f);color:#fff}.issue-side b{display:block;margin:12px 0;font-size:54px;line-height:1}.issue-main{padding:22px}.impact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.impact div{padding:14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface2)}.impact strong{display:block;margin-bottom:6px;color:var(--ink)}.cards-numbered .card{position:relative;overflow:hidden}.cards-numbered .card:after{content:attr(data-n);position:absolute;right:18px;top:8px;color:rgba(16,20,19,.06);font-size:64px;font-weight:900;line-height:1}.copy-box{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:var(--radius);padding:18px}.copy-box strong{display:block;margin-bottom:8px;color:var(--ink);font-size:17px}.score-list{display:grid;gap:10px}.score-row{display:grid;grid-template-columns:190px 1fr 46px;gap:12px;align-items:center;color:var(--ink);font-weight:850}.score-row .bar-track{height:10px}.dept-group{border-top:5px solid var(--tone)}.dept-head{display:flex;justify-content:space-between;gap:16px;margin-bottom:16px}.dept-head h3{color:var(--tone)}.dept-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.dept-card{border-top:4px solid var(--tone)}.dept-card .num{color:var(--tone);font-size:36px;font-weight:900;line-height:1}.evidence a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}footer{padding:32px 0;color:var(--muted);font-size:13px}footer .inner{display:flex;justify-content:space-between;gap:20px}
-    @media(max-width:980px){nav{position:static;padding:12px 18px}.nav-links{display:none}.inner{width:min(100% - 28px,var(--max))}section{padding:54px 0}.section-head,.hero-grid,.audience-layout,.two,.three,.four,.issue{grid-template-columns:1fr}.hero{min-height:auto;padding:34px 0 28px}.brand-logo{width:190px;margin-bottom:18px}h1{font-size:clamp(36px,10vw,44px);line-height:.98}h2{font-size:clamp(24px,6.4vw,30px);line-height:1.14}.hero-sub{font-size:17px;line-height:1.48}.score-card{padding:15px}.score-big{font-size:60px}.stars{font-size:27px}.star-num{font-size:16px}.formula{display:none}.subscores{gap:7px}.subscore{min-height:auto;padding:9px}.subscore b{font-size:24px}.subscore span{font-size:12px}.subscore small{display:none}.stage-line{grid-template-columns:repeat(2,minmax(0,1fr))}.stage{min-height:92px;padding:13px}.stage b{font-size:18px}.stage-action{grid-template-columns:1fr}.stage-badges{justify-content:flex-start}.impact,.dept-cards{grid-template-columns:1fr}.bar-row,.score-row,.fit-row{grid-template-columns:1fr}.audience-map{min-height:305px}.ring b{font-size:17px}.pin{max-width:140px;min-height:24px;padding:3px 7px;font-size:10px;line-height:1.2}.pin.two{left:6%;top:23%}.pin.three{right:5%;bottom:10%}.wordcloud{min-height:230px}footer .inner{display:grid}}
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
   </style>
 </head>
 <body>
-<nav>
-  <div class="nav-brand">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
-  <div class="nav-links"><a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#market">品线</a><a href="#fit">卖点</a><a href="#summary">总结</a><a href="#issues">问题</a><a href="#competitors">竞品</a><a href="#position">路线</a><a href="#departments">部门</a><a href="#evidence">证据</a></div>
-</nav>
-
-<section class="hero" id="top">
-  <div class="inner hero-grid">
-    <div>
-      <img class="brand-logo" src="assets/brand-logos/gtracing-logo-darktext.png" alt="GTRacing logo" />
-      <div class="kicker">North America Diagnosis</div>
-      <h1>GTRacing 北美业务诊断</h1>
-      <p class="hero-sub">GTRacing 已经把 $99-$159 游戏椅卖进 Amazon 和 Walmart 主货架；下一阶段先把 GTRacing / GTPlayer 命名、长期坐感证据、售后履约和品线取舍讲清，再决定桌子、床架、宠物和赛车模拟器是否继续扩张。</p>
-      <div class="chips"><span class="chip">品类：游戏椅 / Gaming Furniture</span><span class="chip">阶段：10-100 中期</span><span class="chip">类型：Amazon + Walmart 货架驱动</span><span class="chip">数据日期：2026-06-15</span></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
     </div>
-    <aside class="score-card" aria-label="北美业务情况总分">
-      <div class="score-label">北美业务情况总分</div>
-      <div class="score-big">62</div>
-      <div class="star-line">
-        <div class="stars" aria-label="3.1 / 5 星"><span class="filled">★</span><span class="filled">★</span><span class="filled">★</span><span class="half">★</span><span class="empty">★</span></div>
-        <div class="star-num">3.1 / 5 星</div>
-        <div class="star-verdict">动销成立，但品牌命名、耐用证明和售后信任会限制高客单转化。</div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="GTRacing logo">
+          <img src="assets/brand-logos/gtracing-logo-darktext.png" alt="GTRacing logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">GTRacing 的 v3 总分为 56。当前不是只看规模和声量，优先判断 耐用信任、坐感支撑 和渠道承接能否支撑下一阶段预算效率。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-amber">
+            <b>56/100</b>
+            <span>Atlas v3 总分，旧分 62。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>Cap 69</b>
+            <span>当前活跃分数封顶来自 耐用信任。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>P1</b>
+            <span>风险优先级：低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。。 <span class="evidence-list"><span class="evidence">[E3]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">本页按 Atlas v3 规则覆盖旧 GitHub HTML：加入品类购买契约、风险路径、假增长信号、分数封顶、三专项评分和路由建议。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        <div class="tag-row"><span class="tag amber">v3 56 分</span><span class="tag amber">C档</span><span class="tag blue">公开数据置信度 中等</span></div>
       </div>
-      <div class="formula"><div><span>业务健康度 66 × 45%</span><strong>29.7</strong></div><div><span>业务机会分 76 × 35%</span><strong>26.6</strong></div><div><span>(100 - 问题致命度 71) × 20%</span><strong>5.8</strong></div></div>
-      <div class="subscores">
-        <div class="subscore"><b>66</b><span>业务健康度</span><small>Amazon/Walmart/DTC 动销成立，但口碑和品线执行参差。</small></div>
-        <div class="subscore"><b>76</b><span>业务机会分</span><small>低价游戏椅、桌面配套和家用游戏空间仍有需求。</small></div>
-        <div class="subscore"><b>71</b><span>问题致命度</span><small>低价货架、耐用争议和命名分裂会压利润质量。</small></div>
+      <aside class="score-panel" aria-label="GTRacing Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">56<span>/100</span></div>
+          <span class="tier green">C档</span>
+        </div>
+        <div class="stars" aria-label="2.8 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">2.8 / 5 · C档 · 先修 耐用信任，再谈放大</div>
+        <div class="score-meta">
+          <div><b>10-100</b><span>阶段判断</span></div>
+          <div><b>Amazon + Walmart value brand</b><span>经营类型</span></div>
+          <div><b>中等</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:59%;"></i></div>
+            <b>59</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:66%;"></i></div>
+            <b>66</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:60%;"></i></div>
+            <b>60</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-amber">
+          <i>P0</i>
+          <b>耐用信任</b>
+          <span>先把购买前信任和售后解释做成页面与客服承诺。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>坐感支撑</b>
+          <span>把品类边界、竞品比较和渠道角色讲清楚。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索承接</b>
+          <span>行业词、review 词、比较词和售后词需要按需求量级重排。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>第二品线</b>
+          <span>用独立证据验证，不用主线声量外推。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>SignalMark 修品牌一致性和可靠感，CommerceFlow 收缩 SKU 与页面选择逻辑。</span>
+        </article>
       </div>
-    </aside>
-  </div>
-</section>
-
-<section id="stage"><div class="inner">
-  <div class="section-head"><div><div class="tag">Stage Judgment</div><h2>阶段判断：10-100 中期，主力椅已经有规模，下一关是长期信任。</h2></div><p class="lead">GTRacing 北美已经跨过单品验证，Amazon、Walmart、Trustpilot 和官网都能证明交易底盘。它还没有进入品类领导，因为用户一旦进入长时间办公、人体工学和高预算比较，就会转向 Secretlab、Herman Miller、Steelcase 或更强的办公椅品牌。</p></div>
-  <div class="stage-plate">
-    <div class="stage-line">
-      <div class="stage"><b>0-1</b><span>产品需求验证</span></div>
-      <div class="stage"><b>1-10</b><span>单品规模化</span></div>
-      <div class="stage active"><small>当前阶段</small><b>10-100 中期</b><span>主力 SKU 放大，补长期信任</span></div>
-      <div class="stage"><b>100+</b><span>品类领导与溢价权</span></div>
-    </div>
-    <div class="card stage-action">
-      <div>
-        <h3>当前最该做什么</h3>
-        <p>把 $99-$159 主力椅的长期坐感、体型匹配、配件售后和真实使用边界做成购买前证据。桌子、床架、宠物和赛车模拟器先按附加购买率和毛利验收，不要让扩张稀释主盘。</p>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
       </div>
-      <div class="stage-badges">
-        <span class="pill good">主盘：游戏椅 / 脚托椅</span>
-        <span class="pill warn">短板：长期坐感证据</span>
-        <span class="pill bad">风险：品线过散</span>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>GTRacing</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>SignalMark 修品牌一致性和可靠感，CommerceFlow 收缩 SKU 与页面选择逻辑。</p>
+          <span class="route-chip">最低分警报：TideLens 52</span>
+          <span class="route-chip">分数封顶：69 · 耐用信任 封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">54<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>游戏家具 购买理由已经出现，但 proof 和语言边界还要补。</h3>
+              <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">53<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
+              <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">52<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
+              <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>耐用信任 没有被放到购买前第一层。</li><li>office / footrest chair / desk and room setup 需要独立证据。</li><li>搜索、VOC 和内容没有形成同一个承接闭环。</li>
+          </ol>
+        </article>
       </div>
-    </div>
-  </div>
-</div></section>
-
-<section id="audience"><div class="inner">
-  <div class="section-head"><div><div class="tag">Brand Gene</div><h2>品牌基因：靠第一套游戏房预算成立，边界在高强度办公和高端电竞。</h2></div><p class="lead">GTRacing 的核心人群是第一次搭游戏房、宿舍、居家办公角落的人。价格、脚托、RGB、颜色和“看起来像游戏椅”的外观足够直接；高端外扩要先补体型匹配和长期坐感证据。</p></div>
-  <div class="audience-layout">
-    <div class="audience-map"><div class="ring boundary"><div><b>暂时边界</b><span>全日办公 / 高端电竞 / 设计审美用户</span></div></div><div class="ring adjacent"><div><b>相邻人群</b><span>远程办公、Big & Tall、家庭游戏房</span></div></div><div class="ring core"><div><b>核心盘</b><span>预算友好型游戏椅用户</span></div></div><span class="pin one">$99-$159 主力椅</span><span class="pin two">RGB / 脚托 / 颜色</span><span class="pin three">Secretlab / 办公椅对照</span></div>
-    <div class="audience-notes"><div class="card note" style="--tone:var(--green)"><h4>Core</h4><h3>先守住：预算友好型游戏椅用户。</h3><p style="margin-top:8px">他们在意价格、外观、脚托、基础舒适和快速送达。GTRacing 已能接住这群人，下一步要减少“便宜但不耐用”的疑虑。</p></div><div class="card note" style="--tone:var(--amber)"><h4>Adjacent</h4><h3>可以外扩：远程办公、Big & Tall 和家庭游戏房。</h3><p style="margin-top:8px">这些人愿意为尺寸、坐垫、腰托和桌椅配套多花一点钱，但必须看到体型选择、坐姿边界和售后路径。</p></div><div class="card note" style="--tone:var(--red)"><h4>Boundary</h4><h3>暂时别硬攻：高强度办公和高端电竞用户。</h3><p style="margin-top:8px">这群用户会拿 Secretlab、Herman Miller、Steelcase 或真实人体工学椅比较。没有长期测试和材料证据，转化会被压低。</p></div></div>
-  </div>
-</div></section>
-
-<section id="channel"><div class="inner">
-  <div class="section-head"><div><div class="tag">Channel Type</div><h2>经营类型：Amazon/Walmart 驱动，官网应承担选型和信任解释。</h2></div><p class="lead">游戏椅品类天然适合平台比价和即时购买。GTRacing 的官网不能只做折扣货架，更该把型号差异、体型适配、售后配件和组合购买讲清楚。</p></div>
-  <div class="grid two"><div class="card"><h3>北美渠道销售额占比估算</h3><p style="margin-top:8px">基于 Amazon 公开订单信号、Walmart 商品触点、官网矩阵和评论资产方向性判断；西柚/后台未接入，需用 Seller Central 与 Shopify 校准。</p><div class="channel-stack" style="margin-top:18px"><span class="seg" style="--w:48%;--c:#111"></span><span class="seg" style="--w:24%;--c:var(--teal)"></span><span class="seg" style="--w:22%;--c:var(--violet)"></span><span class="seg" style="--w:6%;--c:#cbd0d6"></span></div><div class="bar-list" style="margin-top:16px"><div class="bar-row"><span>Amazon</span><div class="bar-track"><span style="--w:48%;--tone:#111"></span></div><span>40-55%</span></div><div class="bar-row"><span>Walmart / 其他平台</span><div class="bar-track"><span style="--w:24%;--tone:var(--teal)"></span></div><span>20-30%</span></div><div class="bar-row"><span>DTC 官网</span><div class="bar-track"><span style="--w:22%;--tone:var(--violet)"></span></div><span>20-30%</span></div><div class="bar-row"><span>Bulk / 联盟 / 其他</span><div class="bar-track"><span style="--w:6%;--tone:#aeb4bb"></span></div><span>3-8%</span></div></div></div><div class="grid two"><div class="card kpi good"><h3>规模底线</h3><p style="margin-top:8px">Amazon GTPLAYER 公开显示品牌 4.3 星、50K+ customer ratings、过去 3 个月 50K+ orders；Trustpilot 也有 17K+ reviews。</p><span class="pill good" style="margin-top:14px">交易底盘成立</span></div><div class="card kpi warn"><h3>GMV 粗估</h3><p style="margin-top:8px">北美年 GMV 方向性估算 USD 45M-90M，约 RMB 3.2-6.5 亿；置信度中低，需西柚和后台校准。</p><span class="pill warn" style="margin-top:14px">需补 sell-out</span></div><div class="card kpi blue"><h3>DTC 角色</h3><p style="margin-top:8px">官网优先做型号解释、体型选择、桌椅组合、配件和保修，减少无序平铺 SKU。</p><span class="pill blue" style="margin-top:14px">解释承接</span></div><div class="card kpi bad"><h3>最大风险</h3><p style="margin-top:8px">如果 Amazon/Walmart 继续主导价格记忆，GTRacing 会被锁进低价椅货架。</p><span class="pill bad" style="margin-top:14px">价格心智固化</span></div></div></div>
-</div></section>
-
-<section id="search"><div class="inner">
-  <div class="section-head"><div><div class="tag">Search Mindshare</div><h2>搜索心智：按入口大小看，行业词最大，竞品对比词最该补。</h2></div><p class="lead">排序按“搜索量级 × 购买意图 × 当前承接缺口”。GTRacing / GTPlayer 品牌词能被 Amazon 和官网接住；行业词、替代比较词和售后词仍被 Amazon 榜单、Reddit、YouTube 和竞品评测分流。</p></div>
-  <div class="grid four"><div class="card kpi warn"><h4>P0 · 行业词</h4><h3>量级最大，半接住。</h3><p style="margin-top:8px">gaming chair、gaming chair with footrest、office gaming chair、big and tall gaming chair 会先进 Amazon、Walmart 和榜单。GTRacing 有露出，但自然内容承接不足。</p><span class="pill warn">需内容资产</span></div><div class="card kpi bad"><h4>P0 · 竞品 / 替代比较词</h4><h3>最影响升级购买，没接牢。</h3><p style="margin-top:8px">GTRacing vs Secretlab、GTPlayer review、gaming chair vs office chair 这类入口更接近购买决策。现在主要由 Reddit、TechRadar 和第三方视频解释。</p><span class="pill bad">应补对比页</span></div><div class="card kpi good"><h4>P1 · 品牌 / 产品词</h4><h3>接住了，但命名分裂。</h3><p style="margin-top:8px">GTRacing、GTPlayer、GT800A、LR002、GT905 都能导向官网或 Amazon；问题是 GTRacing / GTPlayer 的关系没有被统一解释。</p><span class="pill good">需要收拢</span></div><div class="card kpi warn"><h4>P2 · 售后 / 配件词</h4><h3>量级较小，影响信任。</h3><p style="margin-top:8px">warranty、replacement parts、assembly、missing parts、return policy 搜索量较小，但会在用户下单前后影响 DTC 信任。</p><span class="pill warn">信任入口</span></div></div>
-  <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>搜索入口</th><th>用户真实意图</th><th>现在承接情况</th><th>经营动作</th></tr></thead><tbody><tr><td>gaming chair / footrest gaming chair</td><td>找便宜、好看、能快速送达的椅子</td><td><strong>半接住：</strong>Amazon/Walmart 有货架，官网内容不够像选型入口。</td><td>做按身高、体重、坐姿和预算的 chair finder。</td></tr><tr><td>GTRacing vs Secretlab / gaming chair vs office chair</td><td>判断要不要加钱买更贵品牌或办公椅</td><td><strong>没接牢：</strong>第三方评测和 Reddit 在解释风险。</td><td>上线对比页，清楚讲价格、材料、坐感边界和售后。</td></tr><tr><td>GTRacing / GTPlayer chair review</td><td>确认耐用、腰托、坐垫和售后是否可靠</td><td><strong>接住一半：</strong>评论量足，但命名关系和长期测试不清。</td><td>把 90 天 / 12 个月使用证据和故障处理前置。</td></tr><tr><td>GTRacing replacement parts / warranty</td><td>担心坏了之后没人管</td><td><strong>偏后置：</strong>政策存在，但没有变成购买理由。</td><td>做 parts hub、保修案例和客服 SLA。</td></tr></tbody></table></div>
-</div></section>
-
-<section id="voc"><div class="inner">
-  <div class="section-head"><div><div class="tag">VOC & Reputation</div><h2>声誉总分 61：平台评价能卖货，耐用和售后会拦住升级。</h2></div><p class="lead">GTRacing 的公开口碑总体可用，Amazon 与 Trustpilot 仍能支撑低价首购。长期坐感、材料耐用、腰托支撑、配送/配件和售后响应会影响利润，并把高强度用户推向更贵品牌。</p></div>
-  <div class="grid four"><div class="card kpi good"><h4>Trustpilot</h4><h3>3.9 / 5，17K+ reviews。</h3><p style="margin-top:8px">评论量很大，近期摘要显示质量、舒适、发货和包装是正向来源；负面集中在耐用、颜色差异、配送和组装。</p></div><div class="card kpi good"><h4>Amazon</h4><h3>GTPLAYER 品牌 4.3 星，50K+ ratings。</h3><p style="margin-top:8px">主货架能支撑交易，但低价椅用户对材料、扶手、脚托和腰托会更敏感。</p></div><div class="card kpi warn"><h4>Reddit / YouTube</h4><h3>预算可买，重度使用会犹豫。</h3><p style="margin-top:8px">用户会拿 Secretlab、办公椅和二手高端椅比较。正向是便宜好用，负向是坐久、背部支撑和耐用。</p></div><div class="card kpi bad"><h4>BBB / 售后触点</h4><h3>保修体验有可见投诉。</h3><p style="margin-top:8px">个案不能代表整体，但高客单用户会搜索这些内容。售后承诺必须更清楚。</p></div></div>
-  <div class="grid two" style="margin-top:16px"><div class="card wordcloud"><h3>集中好评主题 <span class="pill good">促进首购</span></h3><span style="--x:18%;--y:42%;--s:30px;--r:-3deg;--c:var(--green)">价格低</span><span style="--x:44%;--y:36%;--s:25px;--r:2deg;--c:var(--green)">容易安装</span><span style="--x:73%;--y:44%;--s:29px;--r:-2deg;--c:var(--amber)">脚托</span><span style="--x:30%;--y:66%;--s:22px;--r:2deg;--c:var(--accent)">颜色选择</span><span style="--x:60%;--y:67%;--s:21px;--r:-4deg;--c:var(--green)">到货快</span><span style="--x:83%;--y:68%;--s:18px;--r:3deg;--c:var(--body)">RGB</span></div><div class="card wordcloud"><h3>集中抱怨主题 <span class="pill bad">影响升级</span></h3><span style="--x:23%;--y:43%;--s:32px;--r:-4deg;--c:var(--red)">耐用性</span><span style="--x:52%;--y:38%;--s:27px;--r:2deg;--c:var(--red)">腰托</span><span style="--x:78%;--y:45%;--s:24px;--r:-2deg;--c:var(--amber)">坐垫塌</span><span style="--x:32%;--y:68%;--s:21px;--r:3deg;--c:var(--body)">扶手松</span><span style="--x:60%;--y:68%;--s:22px;--r:-3deg;--c:var(--red)">售后</span><span style="--x:82%;--y:70%;--s:18px;--r:4deg;--c:var(--amber)">发货延迟</span></div></div>
-</div></section>
-
-<section id="market"><div class="inner">
-  <div class="section-head"><div><div class="tag">Market Ceiling</div><h2>分品线天花板：游戏椅是现金盘，桌子和模拟器要按附加购买率决定预算。</h2></div><p class="lead">宏观市场只用于校准，不替代品牌判断。全球 gaming chair 市场约 USD 1.65B-1.80B 量级；GTRacing 的北美机会集中在预算椅和游戏空间配套，不在盲目扩成全屋家具。</p></div>
-  <div class="table-wrap"><table><thead><tr><th>品线</th><th>市场空间 / 角色</th><th>当前证据</th><th>经营判断</th></tr></thead><tbody><tr><td>游戏椅 / 脚托椅</td><td>主现金盘，贡献估计 65-75%</td><td>官网 15 个 gaming chair 商品；Amazon 与 Walmart 有大量低价 SKU。</td><td><strong>继续放大：</strong>但要用体型适配、长期坐感和售后证据提高利润质量。</td></tr><tr><td>电竞桌 / 站立桌 / 配件</td><td>配套盘，贡献估计 12-18%</td><td>官网有 gaming desk、standing desk、monitor arm、mousepad；Walmart 有 $49.99 gaming desk best seller 信号。</td><td><strong>按附加购买率加码：</strong>适合和椅子做 bundle，不能单独占太多预算。</td></tr><tr><td>赛车模拟器 / recliner</td><td>小众高客单盘，贡献估计 6-10%</td><td>官网有 sim racing cockpits、recliners & floor rockers。</td><td><strong>先做证明：</strong>需要内容、参数和安装场景，不适合只靠折扣。</td></tr><tr><td>宠物、床架、娱乐柜</td><td>实验盘，贡献估计 5-10%</td><td>官网已出现 cat trees、cat wheels、RGB bed frames、TV stands 等。</td><td><strong>设退出门槛：</strong>和游戏椅心智关联弱，必须用毛利、attach rate 和售后成本判断。</td></tr></tbody></table></div>
-</div></section>
-
-<section id="intent"><div class="inner">
-  <div class="section-head"><div><div class="tag">User Intent Map</div><h2>用户意图地图：低价能吸引点击，坐久和耐用决定下单。</h2></div><p class="lead">SERP、Amazon VOC、Reddit 和评测内容共同指向五类购买顾虑。GTRacing 当前最该把这些问题提前讲清楚。</p></div>
-  <div class="grid three"><div class="card kpi bad"><h3>坐久会不会腰背难受</h3><p style="margin-top:8px">这是高强度用户第一顾虑。页面要讲适合谁、不适合谁、坐垫/腰托边界。</p><span class="pill bad">高权重</span></div><div class="card kpi bad"><h3>半年后材料会不会坏</h3><p style="margin-top:8px">PU、扶手、脚托和气杆是风险点。需要 90/180 天使用证据。</p><span class="pill bad">高权重</span></div><div class="card kpi warn"><h3>尺寸和体型能不能适配</h3><p style="margin-top:8px">Big & Tall、身高、桌面高度和坐姿必须前置，减少退货和差评。</p><span class="pill warn">中高权重</span></div><div class="card kpi warn"><h3>组装和缺件怎么办</h3><p style="margin-top:8px">说明书、视频、配件补发和客服响应要在 PDP 看得到。</p><span class="pill warn">中权重</span></div><div class="card kpi good"><h3>便宜是否值得买</h3><p style="margin-top:8px">价格优势清楚，$99-$159 能打；关键是别让便宜变成低质暗示。</p><span class="pill good">已接住</span></div><div class="card kpi blue"><h3>是否需要直接买 Secretlab / 办公椅</h3><p style="margin-top:8px">这类用户要看对比页。GTRacing 应承认差异，再讲预算内适用场景。</p><span class="pill blue">需对比页</span></div></div>
-</div></section>
-
-<section id="fit"><div class="inner">
-  <div class="section-head"><div><div class="tag">Message-Market Fit</div><h2>卖点匹配度 63：价格和外观击中需求，长期坐感和耐用证明偏弱。</h2></div><p class="lead">主品线按游戏椅判断。权重为公开 VOC 与购买入口的方向性估算，需用站内搜索、客服问题和退货原因校准。</p></div>
-  <div class="fit-row" style="--tone:var(--red);--w:58%"><div><h3>长时间舒适 / 腰背支撑 <span class="weight">关注权重 30%</span></h3><p>北美用户会把 gaming chair 和 office chair 放在同一张比较表里，坐久是否累直接影响升级购买。</p></div><div class="fit-score"><b>58 / 100</b><div class="mini-bar"><span></span></div></div><p><strong>做得差：</strong>页面讲功能多，长期坐感、体型适配和“不适合谁”讲得不够硬。</p></div>
-  <div class="fit-row" style="--tone:var(--red);--w:55%"><div><h3>耐用 / 材料寿命 <span class="weight">关注权重 24%</span></h3><p>PU、坐垫、扶手、脚托和气杆是预算椅常见疑虑。</p></div><div class="fit-score"><b>55 / 100</b><div class="mini-bar"><span></span></div></div><p><strong>做得差：</strong>缺 90/180 天使用证据、材料边界和配件成本说明。</p></div>
-  <div class="fit-row" style="--tone:var(--green);--w:84%"><div><h3>价格 / 外观 / 功能感 <span class="weight">关注权重 20%</span></h3><p>$99-$159、脚托、RGB、颜色和大椅背能直接刺激首购。</p></div><div class="fit-score"><b>84 / 100</b><div class="mini-bar"><span></span></div></div><p><strong>做得好：</strong>性价比卖点非常清楚，是 GTRacing 北美主盘成立的根本。</p></div>
-  <div class="fit-row" style="--tone:var(--amber);--w:67%"><div><h3>尺寸 / 组装 / 配送 <span class="weight">关注权重 14%</span></h3><p>身高体重、包装破损、缺件和组装难度会影响评价。</p></div><div class="fit-score"><b>67 / 100</b><div class="mini-bar"><span></span></div></div><p><strong>部分接住：</strong>评论量和说明存在，但还没被整合成购买前安心感。</p></div>
-  <div class="fit-row" style="--tone:var(--red);--w:52%"><div><h3>保修 / 配件 / 售后响应 <span class="weight">关注权重 12%</span></h3><p>高客单用户会在下单前搜索 warranty、replacement parts 和 BBB。</p></div><div class="fit-score"><b>52 / 100</b><div class="mini-bar"><span></span></div></div><p><strong>做得差：</strong>政策存在，但没有转成前台信任；个案投诉会被放大。</p></div>
-</div></section>
-
-<section id="summary"><div class="inner">
-  <div class="section-head"><div><div class="tag">One Page Summary</div><h2>一页看懂：GTRacing 先把低价椅子的信任补齐，再谈全品类扩张。</h2></div><p class="lead">GTRacing 北美最清楚的机会是把预算型游戏椅继续卖好，同时减少“便宜但不耐用”的扣分。桌子、模拟器、床架和宠物品线只能按真实附加购买率和毛利决定预算。</p></div>
-  <div class="grid two"><div class="card dark"><h3>经营判断</h3><p style="margin-top:10px">GTRacing 已有流量入口，购买前信任还要补强：用户要知道哪款适合自己的身高体重、能坐多久、坏了找谁、配件怎么补。只继续扩 SKU，会让官网更像折扣仓库。</p><div class="chips"><span class="pill good">主盘：预算游戏椅</span><span class="pill warn">先修：耐用和售后证据</span><span class="pill bad">慎投：弱关联家具</span></div></div><div class="grid"><div class="card"><h3>1. 命名先收拢。</h3><p>GTRacing、GTPlayer、GTPLAYER、GTRACING 并存，会削弱搜索、评论资产和复购记忆。</p></div><div class="card"><h3>2. 坐感证据先补硬。</h3><p>低价能带来首购，长期舒适和耐用才能带来高客单与复购。</p></div><div class="card"><h3>3. 扩品类先设门槛。</h3><p>桌子、模拟器、床架和宠物需要用附加购买率、毛利和售后成本证明预算优先级。</p></div></div></div>
-</div></section>
-
-<section id="blocks"><div class="inner">
-  <div class="section-head"><div><div class="tag">Business Blocks</div><h2>三大板块诊断：电商能卖，品牌和 Marketing 没把信任接牢。</h2></div><p class="lead">分数按对增长质量、利润质量和资源效率的影响判断。</p></div>
-  <div class="grid three"><div class="card kpi warn"><div class="metric"><b>58</b><small>品牌板块</small></div><h3 style="margin-top:14px">低价记忆很强，品牌记忆被命名和品线稀释。</h3><p style="margin-top:8px">做得好的是性价比和游戏房氛围明确；做得差的是 GTRacing/GTPlayer 关系、桌椅宠物床架扩张和长期信任没有统一解释。</p><div class="chips"><span class="pill warn">有认知</span><span class="pill bad">命名分裂</span></div></div><div class="card kpi warn"><div class="metric"><b>61</b><small>Marketing 板块</small></div><h3 style="margin-top:14px">声量能支撑首购，比较和耐用内容薄。</h3><p style="margin-top:8px">做得好的是评论量、折扣和功能卖点清楚；做得差的是 Secretlab/办公椅对比、长期坐感证明和售后内容没有前置。</p><div class="chips"><span class="pill warn">会带货</span><span class="pill bad">证据弱</span></div></div><div class="card kpi good"><div class="metric"><b>74</b><small>电商板块</small></div><h3 style="margin-top:14px">Amazon/Walmart/DTC 都有货架，但分工不够清楚。</h3><p style="margin-top:8px">做得好的是主力 SKU 价格和平台触点强；做得差的是官网像 SKU 展示，选型、售后、bundle 和复购没有被做成交易资产。</p><div class="chips"><span class="pill good">货架强</span><span class="pill warn">官网需重排</span></div></div></div>
-</div></section>
-
-<section id="issues"><div class="inner">
-  <div class="section-head"><div><div class="tag">Top 3 Issues</div><h2>Top 3 关键问题：命名分裂、坐感证据弱、品线扩张失焦。</h2></div><p class="lead">每个问题都落到证据、业务影响和 30/90 天动作，避免变成泛泛改页面。</p></div>
-  <div class="grid"><div class="card issue"><div class="issue-side"><span>问题 1 · 严重度</span><b>82</b><p>品牌命名和评论资产分散。</p></div><div class="issue-main"><h3>GTRacing / GTPlayer 并存，用户会怀疑两套名称的品牌关系。</h3><div class="impact"><div><strong>证据</strong><p>美国官网集合页标题出现 GTPlayer US/GTRacing US，Amazon 上 GTPLAYER 与 GTRACING 并行，官方日本品牌页也说明 GTPLAYER 是子品牌。</p></div><div><strong>影响</strong><p>搜索权重、评论资产、复购记忆和售后责任会被拆散；广告预算也更难归因。</p></div><div><strong>先修</strong><p>30 天内统一品牌架构页、官网 header/footer、Amazon Brand Store 和 PDP 品牌解释。</p></div></div><p style="margin-top:14px">90 天验收：品牌词搜索、DTC 跳出、客服询问、Amazon Store 访问和复购识别。</p></div></div><div class="card issue"><div class="issue-side"><span>问题 2 · 严重度</span><b>78</b><p>长期坐感和耐用证明不足。</p></div><div class="issue-main"><h3>低价椅能成交首单，但坐久和耐用会决定评价、退货和升级购买。</h3><div class="impact"><div><strong>证据</strong><p>Trustpilot、Reddit 和 TechRadar 都出现材料、腰托、扶手、脚托和坐垫边界讨论。</p></div><div><strong>影响</strong><p>高强度办公用户会转向办公椅或 Secretlab，主力 SKU 毛利会被折扣和退货吃掉。</p></div><div><strong>先修</strong><p>补 90/180 天使用测试、体型适配表、材料说明、故障边界和 replacement parts 页面。</p></div></div><p style="margin-top:14px">90 天验收：退货原因、1-star 主题、客服问题、PDP 加购率和配件购买率。</p></div></div><div class="card issue"><div class="issue-side"><span>问题 3 · 严重度</span><b>74</b><p>扩品线削弱主盘。</p></div><div class="issue-main"><h3>桌子、床架、宠物和模拟器同时出现，官网会显得像泛家具折扣店。</h3><div class="impact"><div><strong>证据</strong><p>美国官网覆盖 gaming desks、TV stands、RGB bed frames、cat trees、cat wheels、sim racing cockpits 等多个方向。</p></div><div><strong>影响</strong><p>预算被稀释，用户很难理解 GTRacing 到底最擅长什么；弱关联品线还会增加售后复杂度。</p></div><div><strong>先修</strong><p>按 Core / Attach / Experiment 重排品线，桌子和配件看 attach rate，宠物/床架设退出线。</p></div></div><p style="margin-top:14px">90 天验收：品线 GMV、毛利、售后成本、bundle attach rate 和自然搜索贡献。</p></div></div></div>
-</div></section>
-
-<section id="competitors"><div class="inner">
-  <div class="section-head"><div><div class="tag">Competitor Calibration</div><h2>竞品承接结构：GTRacing 应避开高端硬拼，抢预算内确定性。</h2></div><p class="lead">竞品比较要看谁能解释坐感、材料、售后、体型适配和长期使用风险。</p></div>
-  <div class="grid three"><div class="card kpi bad"><h3>Secretlab</h3><p style="margin-top:8px">抢走高端游戏椅心智，优势在品牌、材料故事、电竞感和更强溢价。GTRacing 正面拼高端会消耗预算。</p><span class="pill bad">高端壁垒</span></div><div class="card kpi warn"><h3>Herman Miller / Steelcase</h3><p style="margin-top:8px">抢走长时间办公和背部支撑用户。它们卖人体工学和耐用信任，GTRacing 卖游戏外观和低门槛价格。</p><span class="pill warn">办公替代</span></div><div class="card kpi good"><h3>Dowinx / AutoFull / Amazon 低价椅</h3><p style="margin-top:8px">抢低价 Amazon 货架。GTRacing 有评论量、官网和品牌资产，机会是把低价风险解释得更清楚。</p><span class="pill good">可拉开</span></div></div>
-  <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>参照对象</th><th>竞品如何降低购买风险</th><th>GTRacing 相对优势</th><th>GTRacing 要补的资产</th></tr></thead><tbody><tr><td>Secretlab</td><td>材料叙事、电竞背书、对比内容、产品代际清楚。</td><td>价格更低，入门用户决策成本低。</td><td>预算内真实坐感、体型适配和售后边界。</td></tr><tr><td>人体工学办公椅品牌</td><td>长时间办公、腰背支撑、保修和耐用证据。</td><td>游戏房外观、脚托、RGB 和低门槛价格。</td><td>“适合谁 / 不适合谁”的页面，避免过度承诺。</td></tr><tr><td>低价 Amazon 椅</td><td>coupon、快速配送、低价和大量评论。</td><td>GTRacing 有官网、Trustpilot、Walmart 和更强品牌记忆。</td><td>品牌架构统一、配件中心、保修案例和评价治理。</td></tr></tbody></table></div>
-</div></section>
-
-<section id="position"><div class="inner">
-  <div class="section-head"><div><div class="tag">Positioning Upgrade</div><h2>定位升级路径：从“便宜游戏椅”升级为“第一套游戏空间的可靠选择”。</h2></div><p class="lead">下一阶段要把预算型用户最担心的事情讲具体：尺寸怎么选、能坐多久、坏了怎么办、桌椅怎么配。</p></div>
-  <div class="grid four cards-numbered"><div class="card" data-n="01"><h3>当前成交理由</h3><p>低价格、脚托、颜色、RGB、平台评论和快速送达。</p></div><div class="card" data-n="02"><h3>下一阶段理由</h3><p>按身高体重、坐姿和使用时长选对椅子，知道售后和配件怎么处理。</p></div><div class="card" data-n="03"><h3>溢价理由</h3><p>桌椅套装、Big & Tall、材料升级和保修服务支撑更高客单。</p></div><div class="card" data-n="04"><h3>品牌该收束</h3><p>少讲全屋家具，多讲第一套游戏空间怎么买不踩坑。</p></div></div>
-  <div class="grid three" style="margin-top:16px"><div class="copy-box"><strong>English positioning</strong><p>Affordable gaming chairs for a first serious setup.</p></div><div class="copy-box"><strong>Homepage subhead</strong><p>Choose by body size, play style and work hours, with clear comfort guidance and support before you buy.</p></div><div class="copy-box"><strong>Purchase promise</strong><p>Feature-rich gaming seating with the price first-time buyers want and the clarity they need to choose well.</p></div></div>
-</div></section>
-
-<section id="scores"><div class="inner">
-  <div class="section-head"><div><div class="tag">11-Dimension Score</div><h2>11 维评分：强项是平台货架和价格，低分项从命名、售后和品线纪律开始。</h2></div><p class="lead">排序按“对增长质量的影响 × 当前拖累 × 90 天可启动性”。低分项进入管理周会，不要平均摊给所有部门。</p></div>
-  <div class="grid two"><div class="card"><div class="score-list"><div class="score-row"><span>价格 / 功能价值</span><div class="bar-track"><span style="--w:84%;--tone:var(--green)"></span></div><span>84</span></div><div class="score-row"><span>Amazon 货架</span><div class="bar-track"><span style="--w:78%;--tone:var(--green)"></span></div><span>78</span></div><div class="score-row"><span>Walmart / 平台触点</span><div class="bar-track"><span style="--w:72%;--tone:var(--green)"></span></div><span>72</span></div><div class="score-row"><span>DTC 商品宽度</span><div class="bar-track"><span style="--w:70%;--tone:var(--amber)"></span></div><span>70</span></div><div class="score-row"><span>Trustpilot / 评论量</span><div class="bar-track"><span style="--w:68%;--tone:var(--amber)"></span></div><span>68</span></div><div class="score-row"><span>Marketing 内容</span><div class="bar-track"><span style="--w:61%;--tone:var(--amber)"></span></div><span>61</span></div></div></div><div class="card"><div class="score-list"><div class="score-row"><span>数据 / 增长看板</span><div class="bar-track"><span style="--w:54%;--tone:var(--red)"></span></div><span>54</span></div><div class="score-row"><span>人体工学可信度</span><div class="bar-track"><span style="--w:52%;--tone:var(--red)"></span></div><span>52</span></div><div class="score-row"><span>耐用证明</span><div class="bar-track"><span style="--w:50%;--tone:var(--red)"></span></div><span>50</span></div><div class="score-row"><span>品线纪律</span><div class="bar-track"><span style="--w:49%;--tone:var(--red)"></span></div><span>49</span></div><div class="score-row"><span>售后 / 保修执行</span><div class="bar-track"><span style="--w:48%;--tone:var(--red)"></span></div><span>48</span></div><div class="score-row"><span>品牌架构</span><div class="bar-track"><span style="--w:46%;--tone:var(--red)"></span></div><span>46</span></div></div></div></div>
-</div></section>
-
-<section id="budget"><div class="inner">
-  <div class="section-head"><div><div class="tag">Budget Trade-Off</div><h2>预算取舍：主力椅保价格纪律，内容预算先投坐感、材料和售后。</h2></div><p class="lead">GTRacing 最该投能减少退货、提升客单和守住评价的资产，弱关联 SKU 放到后面验收。</p></div>
-  <div class="grid four"><div class="card kpi good"><h3>转化预算</h3><p style="margin-top:8px">继续守 GT800A、GT905、LR002 等主力椅，但广告看毛利、退货率和 1-star 主题，不只看销量。</p><span class="pill good">主盘保利润</span></div><div class="card kpi warn"><h3>非转化预算</h3><p style="margin-top:8px">投对比页、chair finder、体型适配表、材料说明和长期使用测试。</p><span class="pill warn">降低购买风险</span></div><div class="card kpi blue"><h3>内容资产</h3><p style="margin-top:8px">围绕“坐多久、适合谁、坏了怎么办、怎么组装、配件怎么补”做页面和短视频。</p><span class="pill blue">提升转化质量</span></div><div class="card kpi bad"><h3>扩品预算</h3><p style="margin-top:8px">桌子、模拟器、宠物、床架必须设 30/90 天毛利、附加购买率和售后成本门槛。</p><span class="pill bad">不能无条件铺</span></div></div>
-</div></section>
-
-<section id="roadmap"><div class="inner">
-  <div class="section-head"><div><div class="tag">Roadmap</div><h2>90 / 180 天路径：先统一品牌，再补证据，最后筛掉弱关联品线。</h2></div><p class="lead">动作必须有 Owner 和验收指标，否则会变成继续改页面、继续打折。</p></div>
-  <div class="grid three"><div class="card"><h4>0-30 Days</h4><h3 style="margin-top:8px">统一命名和购买安全感</h3><ul style="margin-top:10px"><li>Owner：品牌 + 电商。把 GTRacing / GTPlayer 关系写进官网、Amazon Store、PDP 和 FAQ。</li><li>Owner：客服。把 warranty、parts、return、missing parts 前置到主力 PDP。</li><li>验收：品牌词跳出率、客服问题、FAQ 点击、退货原因。</li></ul></div><div class="card"><h4>31-90 Days</h4><h3 style="margin-top:8px">补体型和长期坐感证据</h3><ul style="margin-top:10px"><li>Owner：品类 + Marketing。上线 chair finder、身高体重表和 90 天使用测试。</li><li>Owner：内容。做 Secretlab / office chair / low-cost Amazon chair 对比页。</li><li>验收：主力 SKU 加购率、评价增速、1-star 主题、退货率。</li></ul></div><div class="card"><h4>91-180 Days</h4><h3 style="margin-top:8px">重排品线和组合购买</h3><ul style="margin-top:10px"><li>Owner：增长 + 财务。桌子、模拟器、宠物、床架按毛利和 attach rate 决定预算。</li><li>Owner：CRM。建立保修注册、配件购买和桌椅套装复购路径。</li><li>验收：bundle 客单、配件购买、非 Amazon 用户资产、售后成本。</li></ul></div></div>
-</div></section>
-
-<section id="departments"><div class="inner">
-  <div class="section-head"><div><div class="tag">Function Readiness</div><h2>职能部门红黄绿灯：红灯先整，重点是品牌架构、售后和品类纪律。</h2></div><p class="lead">每个部门只说最差的点，方便管理层决定下一步从哪里开始治理。</p></div>
-  <div class="grid"><div class="card dept-group" style="--tone:var(--red)"><div class="dept-head"><div><h4>Red Light</h4><h3>红灯部门 · 优先治理</h3><p class="muted">直接影响预算效率、评价和高客单转化。</p></div><span class="pill bad">4 个部门</span></div><div class="dept-cards"><div class="card dept-card" style="--tone:var(--red)"><div class="num">42</div><h3>品牌架构部</h3><p>最差点：GTRacing / GTPlayer 关系没有被前台讲清。</p><span class="pill bad">P0</span></div><div class="card dept-card" style="--tone:var(--red)"><div class="num">48</div><h3>客服 / 售后部</h3><p>最差点：保修、缺件和配件没有转成购买前信任。</p><span class="pill bad">售后前置</span></div><div class="card dept-card" style="--tone:var(--red)"><div class="num">49</div><h3>产品 / 品类部</h3><p>最差点：桌子、床架、宠物和模拟器扩张缺少取舍门槛。</p><span class="pill bad">品线过散</span></div><div class="card dept-card" style="--tone:var(--red)"><div class="num">54</div><h3>数据 / 增长运营部</h3><p>最差点：渠道 GMV、退货、评价和品线毛利没有统一看板。</p><span class="pill bad">看板缺口</span></div></div></div><div class="card dept-group" style="--tone:var(--amber)"><div class="dept-head"><div><h4>Yellow Light</h4><h3>黄灯部门 · 带约束优化</h3><p class="muted">基础存在，但不能继续靠折扣惯性推进。</p></div><span class="pill warn">3 个部门</span></div><div class="dept-cards"><div class="card dept-card" style="--tone:var(--amber)"><div class="num">61</div><h3>Marketing 部</h3><p>最差点：竞品对比、长期坐感和材料证据没有被做成内容资产。</p><span class="pill warn">证据弱</span></div><div class="card dept-card" style="--tone:var(--amber)"><div class="num">67</div><h3>DTC / 电商部</h3><p>最差点：官网像商品陈列，选型和售后解释不够强。</p><span class="pill warn">角色不清</span></div><div class="card dept-card" style="--tone:var(--amber)"><div class="num">69</div><h3>渠道 / 供应链部</h3><p>最差点：Amazon、Walmart、DTC 的价格和货架分工需要更清楚。</p><span class="pill warn">需纪律</span></div></div></div><div class="card dept-group" style="--tone:var(--green)"><div class="dept-head"><div><h4>Green Light</h4><h3>绿灯部门 · 继续放大</h3><p class="muted">能提供交易底盘，但也要配合红灯项修质量。</p></div><span class="pill good">2 个部门</span></div><div class="dept-cards"><div class="card dept-card" style="--tone:var(--green)"><div class="num">76</div><h3>Marketplace 电商组</h3><p>最强点：Amazon/Walmart 货架与评论资产能继续支撑主力椅销量。</p><span class="pill good">能打</span></div><div class="card dept-card" style="--tone:var(--green)"><div class="num">80</div><h3>Offer / 价格部</h3><p>最强点：低价功能组合清楚，适合第一套游戏空间用户。</p><span class="pill good">底盘强</span></div></div></div></div>
-</div></section>
-
-<section id="risk"><div class="inner">
-  <div class="section-head"><div><div class="tag">Risk & Data Gap</div><h2>风险预警与数据缺口：公开数据能判断方向，预算决策必须接后台。</h2></div><p class="lead">本报告使用官网、Amazon、Walmart、Trustpilot、BBB、Reddit、媒体评测和市场研究信号。西柚当前无法通过 Chrome DevTools 直连，Amazon ASIN sell-out 和渠道 GMV 需要后台或西柚补数。</p></div>
-  <div class="grid three"><div class="card kpi bad"><h3>低价货架锁死</h3><p>如果用户只记得折扣和 $99 椅，品牌很难进入高客单和复购。</p></div><div class="card kpi warn"><h3>品线失焦</h3><p>床架、宠物、娱乐柜和模拟器都需要独立验收，不要让它们吞掉主力椅预算。</p></div><div class="card kpi blue"><h3>内部必校准</h3><p>按 ASIN / SKU 查看 GMV、毛利、退货、1-star 主题、客服问题和渠道占比。</p></div></div>
-</div></section>
-
-<section id="evidence"><div class="inner evidence">
-  <div class="section-head"><div><div class="tag">Evidence Table</div><h2>证据表：所有强判断对应公开证据 ID。</h2></div><p class="lead">数据日期为 2026-06-15。涉及销售额和渠道占比的判断为公开证据下的方向性估算，需用内部后台校准。</p></div>
-  <div class="table-wrap"><table><thead><tr><th>ID</th><th>证据</th><th>用于判断</th></tr></thead><tbody><tr><td>E1</td><td><a href="https://gtracing.com/" target="_blank" rel="noopener">GTRacing 美国官网</a>：导航覆盖 gaming chairs、gaming desks、sim racing cockpits、TV stands、RGB bed frames、pet products 等。</td><td>官网品线很宽，主力游戏椅之外扩张明显。</td></tr><tr><td>E2</td><td><a href="https://gtracing.com/collections/gaming-chairs-1" target="_blank" rel="noopener">官方 Gaming Chairs 集合页</a>：标题出现 GTPlayer US/GTRacing US；集合页约 15 个产品，GT800A、GT905、GTF59、LR002 等有价格和评论。</td><td>主力椅矩阵成立，命名和品牌关系需要收拢。</td></tr><tr><td>E3</td><td><a href="https://gtracing.com/pages/gtracing-warranty" target="_blank" rel="noopener">GTRacing Warranty</a>、<a href="https://gtracing.com/pages/return-policy-1" target="_blank" rel="noopener">Return Policy</a>、<a href="https://gtracing.com/pages/faqs" target="_blank" rel="noopener">FAQ</a>：1-year warranty、30-day return、missing parts 等政策。</td><td>售后政策存在，但需要前置到购买路径。</td></tr><tr><td>E4</td><td><a href="https://www.amazon.com/GTRACING-Computer-Ergonomic-Backrest-Adjustable/dp/B09XB54FMB" target="_blank" rel="noopener">Amazon GTRACING chair</a>：4.5 星、6,862 ratings、new from $129.98、100+ viewed in past week。</td><td>Amazon 主力椅交易与评论资产成立。</td></tr><tr><td>E5</td><td><a href="https://www.amazon.com/GTRACING-Footrest-Ergonomic-Computer-Adjustment/dp/B0DW3QBFJL" target="_blank" rel="noopener">Amazon GTPLAYER Brand Insights</a>：4.3 star from 50K+ customer ratings、50K+ orders past 3 months。</td><td>GTPLAYER/GTRacing 体系在 Amazon 有品牌级规模信号。</td></tr><tr><td>E6</td><td><a href="https://www.amazon.com/GTRACING-Gaming-Ergonomic-Support-Cushion/dp/B0DXQ8CNG9" target="_blank" rel="noopener">Amazon Big & Tall GTPLAYER listing</a>：4.5 星、34,103 ratings、$289.99。</td><td>Big & Tall / 高客单方向有交易信号，但需要更多信任解释。</td></tr><tr><td>E7</td><td><a href="https://www.walmart.com/brand/gtracing/10005394" target="_blank" rel="noopener">Walmart GTRACING Brand Page</a>：游戏椅、GTPLAYER、RGB desk、standing desk 等商品与低价触点。</td><td>Walmart 是重要货架和价格记忆来源。</td></tr><tr><td>E8</td><td><a href="https://www.trustpilot.com/review/gtracing.com" target="_blank" rel="noopener">Trustpilot GTRACING</a>：TrustScore 3.9、17,484 reviews；正向集中在质量/舒适/配送，负向集中在耐用、配送、组装和客服。</td><td>声誉能支撑首购，但耐用和售后会影响升级转化。</td></tr><tr><td>E9</td><td><a href="https://www.bbb.org/us/md/linthicum-heights/profile/online-retailer/gtracing-0011-90359054/complaints" target="_blank" rel="noopener">BBB GTRACING complaints</a>：可见保修与配送相关投诉。</td><td>保修承诺需要更清楚，避免被高客单用户搜索放大。</td></tr><tr><td>E10</td><td><a href="https://www.reddit.com/r/gamingchairs/comments/j7mwn2/gtracing_acem1_chair_review_indepth/" target="_blank" rel="noopener">Reddit Ace-M1 review</a> 与其他 r/gamingchairs 讨论：常拿 Secretlab / 办公椅比较。</td><td>预算档认可，但高强度坐感和耐用仍被质疑。</td></tr><tr><td>E11</td><td><a href="https://www.techradar.com/gaming/gaming-accessories/gtplayer-lr002-review" target="_blank" rel="noopener">TechRadar GTPlayer LR002 review</a>：2026 评测称性价比强，但低级材料、可调节性、扶手和脚托存在边界。</td><td>媒体评测支持“预算可买，长期/高端需证明”的判断。</td></tr><tr><td>E12</td><td><a href="https://www.mordorintelligence.com/industry-reports/gaming-chair-market" target="_blank" rel="noopener">Mordor Gaming Chair Market</a>、<a href="https://www.fortunebusinessinsights.com/gaming-chair-market-111916" target="_blank" rel="noopener">Fortune Business Insights</a>、<a href="https://www.imarcgroup.com/gaming-chair-market" target="_blank" rel="noopener">IMARC</a>：全球 gaming chair 2025/2026 年约 USD 1.6B-1.9B。</td><td>市场天花板校准，不替代品牌自身问题。</td></tr><tr><td>E13</td><td>Chrome DevTools 当前无法连接用户已登录的西柚窗口，未能读取西柚 ASIN sell-out。</td><td>渠道销售额与 GMV 为方向性估算，需补数。</td></tr></tbody></table></div>
-</div></section>
-
-<footer><div class="inner"><span>© 2026 远汐 Offing · Atlas 北美业务诊断（免费版）</span><span>Prepared for GTRacing · 2026-06-15</span></div></footer>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。</h2>
+        </div>
+        <p class="section-note">Atlas v3 先看品类购买契约，再判断 GTRacing 当前分数为什么被封顶。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>游戏家具 买的是确定性，不只是单个卖点。</h3>
+          <p><strong>用户买的确定性：</strong>椅子买的是长时间坐感、耐用、人体工学可信和品牌一致性。</p>
+          <p><strong>当前匹配：</strong>GTRacing 已有公开需求信号；当前扣分集中在 低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article>
+        <article class="score-cap state-amber">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">69<span>/100</span></div>
+          <h3>耐用信任 封顶</h3>
+          <p>低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。 会限制下一阶段预算效率。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-amber">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是高估 Amazon，低估 耐用信任。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>多渠道交易底盘和低价动销会掩盖长期坐感、耐用和品牌关系问题。</dd></div>
+            <div><dt>低估</dt><dd>耐用信任、坐感支撑、低价心智 对首单、复购和渠道信任的影响。</dd></div>
+            <div><dt>安慰指标</dt><dd>总销量、评分均值、内容声量或渠道铺货。</dd></div>
+            <div><dt>先别做</dt><dd>先不要把预算平均加到所有渠道；先补 耐用信任、坐感支撑 和可复盘的承接页。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 69</b></div>
+            <h3>耐用信任</h3>
+            <p>低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+            <span class="tag amber">SignalMark 修品牌一致性和可靠感，CommerceFlow 收缩 SKU 与页面选择逻辑。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 72</b></div>
+            <h3>公开增长信号被高估</h3>
+            <p>多渠道交易底盘和低价动销会掩盖长期坐感、耐用和品牌关系问题。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E4]</span></span></p>
+            <span class="tag amber">SignalMark 与 CommerceFlow 共同校准</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 74</b></div>
+            <h3>渠道承接没有完全闭合</h3>
+            <p>Amazon、Walmart / marketplace、DTC 同时存在时，用户会在搜索、评价、售后和价格之间反复比较。缺少统一承接会降低利润质量。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E5]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是 Amazon 信号和单点声量。</h3>
+            <p>v3 把公开动销、PR、平台评价和社媒声量拆开看，避免把注意力直接当作经营质量。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>渠道</span>
+            <h3>Amazon</h3>
+            <p>Amazon 能证明现有需求，但如果 耐用信任 没有补强，预算放大后会把问题一起放大。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+          </article><article class="signal-card state-amber">
+            <span>声量</span>
+            <h3>公开评价和内容声量</h3>
+            <p>评价、媒体和创作者内容可以降低陌生感；它们还需要回答 耐用信任、坐感支撑、低价心智，才会改变成交质量。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+          </article><article class="signal-card state-amber">
+            <span>品线</span>
+            <h3>产品线宽度</h3>
+            <p>value gaming chair、office / footrest chair、desk and room setup 不能只靠宽度证明第二阶段成立，必须用 SKU 角色、复购和渠道效率拆清。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>GTRacing 当前总分被 耐用信任 和渠道承接封顶。</h3>
+            <p>旧体系分数为 62，v3 重新压到 56，核心原因是 低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。。</p>
+          </div>
+          <article class="cap-reason state-amber">
+            <b>69</b>
+            <div><h3>耐用信任</h3><p>耐用信任 是当前最先影响成交确定性的因素。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>72</b>
+            <div><h3>渠道承接</h3><p>Amazon、Walmart / marketplace、DTC 需要统一价格、评价、FAQ、售后和 proof。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>74</b>
+            <div><h3>第二阶段证据</h3><p>office / footrest chair、desk and room setup 需要独立证明，不适合被主线声量直接外推。<span class="evidence-list"><span class="evidence">[E3]</span></span></p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：GTRacing 进入 10-100，下一步先修 耐用信任。</h2>
+        </div>
+        <p class="section-note">这个阶段的重点是把公开需求信号变成可复盘的成交、评价、售后和复购质量。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-amber"><span>0-1</span><b>需求验证</b><p>游戏家具 的基础需求已经通过公开渠道和旧报告证据出现。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>value gaming chair 是当前最清楚的北美入口，需要继续验证人群和渠道效率。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div><div class="stage-step state-amber"><span>10-100</span><b>质量管理</b><p>多渠道和多品线开始并行时，耐用信任 与 坐感支撑 会决定预算效率。</p></div><div class="stage-step state-neutral"><span>100+</span><b>防守与护城河</b><p>只有当品类权威、服务确定性、复购和渠道权都成立，才适合进入 80+ 评分区。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">v3 总分</div>
+          <h3>56 / 100</h3>
+          <p>旧分 62，v3 分数 56；分数变化来自品类契约和风险封顶。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">阶段动作</div>
+          <h3>先修 耐用信任</h3>
+          <p>用 30 天补 proof / FAQ / support / channel page，再用 90 天看评价、转化和复购变化。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>人群判断：核心盘已经清楚，外扩前先守住适用边界。</h2>
+        </div>
+        <p class="section-note">人群层级按购买确定性排序，越往外越需要 proof、FAQ、比较页和售后承诺。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>低价游戏椅和居家办公椅用户</b><small>核心盘</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>学生、公寓、电竞房和礼品用户</b><small>相邻人群</small></div>
+            </div><div class="audience-band layer-3 state-red">
+              <span class="audience-index">L3</span>
+              <div><b>愿意为人体工学和耐用性付高价的专业用户</b><small>外扩边界</small></div>
+            </div><div class="audience-band layer-4 state-blue">
+              <span class="audience-index">L4</span>
+              <div><b>高证明成本 / 高售后敏感用户</b><small>暂缓边界</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘</b><span>最容易被 value gaming chair 说服，是当前成交和评价的主盘。</span></div><div class="legend-item state-amber"><b>相邻人群</b><span>有明确需求，但会比较竞品、渠道和价格，需要承接页降低犹豫。</span></div><div class="legend-item state-red"><b>外扩边界</b><span>需要更强证据、售后和适用边界，不适合直接用主盘话术外推。</span></div><div class="legend-item state-blue"><b>暂缓边界</b><span>公开版先标成后台校准对象，等内部退货、复购、客服和渠道数据确认。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘先转化</h3>
+          <p>先把 低价游戏椅和居家办公椅用户 的下单疑虑变成 PDP、FAQ、比较页和售后承诺。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻人群先筛选</h3>
+          <p>学生、公寓、电竞房和礼品用户 可以扩，但要用独立 landing page 区分动机、价格和 proof。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>外扩人群先设边界</h3>
+          <p>愿意为人体工学和耐用性付高价的专业用户 不适合被泛化承诺，需要禁忌、适用条件、维修/退换和客服路径。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：Amazon + Walmart value brand 已成立，问题在成交解释权没有完全回到品牌手里。</h2>
+        </div>
+        <p class="section-note">占比是公开数据方向性估计，不代表后台财务口径；用于判断优先修哪一条承接链。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Amazon + Walmart value brand</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="green" style="width:48%;"></i></div>
+            <span>48%</span>
+            <small>Amazon 当前承担 主成交 / 主证明。</small>
+          </div><div class="share-row">
+            <b>Walmart / marketplace</b>
+            <div class="share-track"><i class="amber" style="width:24%;"></i></div>
+            <span>24%</span>
+            <small>Walmart / marketplace 当前承担 次级成交 / 信任补充。</small>
+          </div><div class="share-row">
+            <b>DTC</b>
+            <div class="share-track"><i class="blue" style="width:16%;"></i></div>
+            <span>16%</span>
+            <small>DTC 当前承担 补充触达。</small>
+          </div><div class="share-row">
+            <b>Social / affiliates</b>
+            <div class="share-track"><i class="blue" style="width:12%;"></i></div>
+            <span>12%</span>
+            <small>Social / affiliates 当前承担 补充触达。</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>主渠道继续守</h3>
+          <p>Amazon 仍是 GTRacing 的首要证明面，先守评价、价格、FAQ 和售后。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网补交易安全感</h3>
+          <p>DTC 或官网必须解释为什么直购更稳，而不是只放品牌故事和产品列表。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>渠道预算要绑定质量</h3>
+          <p>预算不能只看流量和订单，必须同时看退款、评价、客服和复购。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：最大入口要先判断是否吃掉，比较词和售后词不能放任竞品接走。</h2>
+        </div>
+        <p class="section-note">本版按需求量级和购买意图排序；精确搜索量需要 SEO / Google Trends 后台补数。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高 · 量级高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>gaming chairs / value gaming chair</h3>
+          <p>行业词是最大入口，GTRacing 有公开信号，但还要用类目页和比较页守住高意图流量。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级中高 · 量级中高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>GTRacing reviews / problems / warranty / return</h3>
+          <p>临门搜索会直接影响下单，尤其是 耐用信任、坐感支撑、低价心智。官网需要主动承接，而不是让 Trustpilot、Reddit、Amazon 或竞品页面先回答。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>GTRacing vs GTPlayer / Homall / Secretlab</h3>
+          <p>比较词最接近下单选择，需要把安全、价格、服务、适用边界和长期成本做成固定对比页。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Amazon / Walmart / marketplace purchase intent</h3>
+          <p>渠道词能承接现有订单，但也会把价格和售后解释权留在平台侧。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级低中 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>office / footrest chair / desk and room setup</h3>
+          <p>第二品线搜索更适合做验证和筛选，不适合直接用主线声量证明可放大。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC 判断：好评能支撑首单，抱怨会进入临门搜索和售后成本。</h2>
+        </div>
+        <p class="section-note">公开版先按主题聚类，不伪造精确百分比；后续深诊需要补评论样本和工单数据。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>集中好评主题</h3>
+          <p>low price、footrest、easy assemble、gaming setup、value 说明 GTRacing 有可转化的正向购买理由。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>集中抱怨主题</h3>
+          <p>durability、cushion、squeak、wobble、support 会影响首单信任、复购和客服成本。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>经营影响</h3>
+          <p>VOC 不能只被客服处理，要进入 PDP、FAQ、比较页、售后 SLA 和内容 brief。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">low price</span><span class="w5 p1">footrest</span><span class="w5 p2">easy assemble</span><span class="w4 p3">gaming setup</span><span class="w4 p4">value</span><span class="w4 p5">fast delivery</span><span class="w3 p6">student</span><span class="w3 p7">home office</span><span class="w3 p8">comfort</span><span class="w2 p9">color options</span><span class="w2 p10">gift</span><span class="w2 p11">Amazon</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">durability</span><span class="w5 p1">cushion</span><span class="w5 p2">squeak</span><span class="w4 p3">wobble</span><span class="w4 p4">support</span><span class="w4 p5">returns</span><span class="w3 p6">fake leather</span><span class="w3 p7">parts</span><span class="w3 p8">height</span><span class="w2 p9">smell</span><span class="w2 p10">brand trust</span><span class="w2 p11">warranty</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向 VOC 继续支持 Amazon 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：value gaming chair 是主线，其他品线先按验证对象管理。</h2>
+        </div>
+        <p class="section-note">公开版先做方向性拆分，不把品线宽度直接当成第二增长柱。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">当前主线 / 最大证明面 · 已验证，需守质量</div>
+          <h3>value gaming chair</h3>
+          <b>中高</b>
+          <p>value gaming chair 决定当前北美分数和主要入口。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">第二验证线 · 待独立证明</div>
+          <h3>office / footrest chair</h3>
+          <b>中</b>
+          <p>office / footrest chair 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">补充利润或服务线 · 待独立证明</div>
+          <h3>desk and room setup</h3>
+          <b>中</b>
+          <p>desk and room setup 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图：买前最关心能否选对、用稳、出问题有人管。</h2>
+        </div>
+        <p class="section-note">状态列必须先告诉团队有没有接住，再看页面动作。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>SERP / Google</td><td>耐用信任 是否可靠</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线 耐用信任 解释页、FAQ 和比较页。<span class="evidence-list"><span class="evidence">[E1]</span></span></td></tr><tr><td>Amazon / Marketplace</td><td>评分、价格、退换和竞品替代</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>守评价结构、coupon 纪律和平台 PDP proof。<span class="evidence-list"><span class="evidence">[E2]</span></span></td></tr><tr><td>Reddit / BBB / Trustpilot</td><td>差评是否会影响购买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>把负面主题转成 support hub、SLA 和售后承诺。<span class="evidence-list"><span class="evidence">[E3]</span></span></td></tr><tr><td>YouTube / TikTok</td><td>演示是否能降低疑虑</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>内容 brief 必须回答 耐用信任、坐感支撑、低价心智。<span class="evidence-list"><span class="evidence">[E4]</span></span></td></tr><tr><td>官网 / DTC</td><td>为什么要在官网买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>补直购权益、保修、退换、客服和渠道价格解释。<span class="evidence-list"><span class="evidence">[E5]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：先回答最高权重疑虑，再谈扩品和内容放大。</h2>
+        </div>
+        <p class="section-note">权重为公开数据版方向性判断，用于排序，不代表统计抽样。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">32%</div><div class="mini-track"><i style="width:32%;"></i></div></div>
+          <div><strong>耐用信任</strong><p>value gaming chair 的核心承诺</p></div>
+          <div><span class="verdict red">接住一半</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">24%</div><div class="mini-track"><i style="width:24%;"></i></div></div>
+          <div><strong>坐感支撑</strong><p>Walmart / marketplace 触点里的证明</p></div>
+          <div><span class="verdict amber">接住一半</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>低价心智</strong><p>DTC 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">14%</div><div class="mini-track"><i style="width:14%;"></i></div></div>
+          <div><strong>售后配件</strong><p>Social / affiliates 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>升级理由</strong><p>Amazon 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：GTRacing 有公开需求信号，下一步先修 耐用信任。</h2>
+        </div>
+        <p class="section-note">旧分 62，v3 分 56；本次覆盖旧 GitHub HTML 的核心变化是加入 v3 风险封顶和专项路由。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>10-100 · Amazon + Walmart value brand</p></div><div class="summary-item"><b>主线</b><p>value gaming chair 仍是当前北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>56 / 100 · C档，活跃封顶 69。</p></div><div class="summary-item"><b>Top 1 问题</b><p>耐用信任 正在限制成交确定性。</p></div><div class="summary-item"><b>路由</b><p>SignalMark 修品牌一致性和可靠感，CommerceFlow 收缩 SKU 与页面选择逻辑。</p></div><div class="summary-item"><b>预算取舍</b><p>先把 耐用信任、坐感支撑 和搜索承接修到可验收，再考虑扩大投放。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：路由按经营杠杆判断，不只看最低分。</h2>
+        </div>
+        <p class="section-note">三项分数用于判断下一步该由 Atlas 继续总控，还是进入 SignalMark、CommerceFlow 或 TideLens 深诊。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3>游戏家具 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>54</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>GTRacing 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>耐用信任、坐感支撑 还需要被页面和内容前置。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>53</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Amazon 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 耐用信任 解释还不够集中。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>52</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Social / affiliates 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 耐用信任、坐感支撑、低价心智。</p></div></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：耐用信任、坐感支撑、低价心智。</h2>
+        </div>
+        <p class="section-note">每个问题都要同时落到证据、影响和 30 / 90 天动作。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：耐用信任 没有被放到购买前第一层。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。它直接影响首单信任、渠道选择和售后成本。</p></div>
+          <div><b>证据</b><p>低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。 <span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p></div>
+          <div><b>业务影响</b><p>用户会回到平台、竞品或第三方负面页面寻找答案，品牌失去解释权。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 耐用信任 承接页，插入 PDP、FAQ、checkout 和客服宏。<br><strong>90 天：</strong>把评价、退款、客服、复购和渠道转化放入同一张周报，验证修复效果。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：office / footrest chair / desk and room setup 需要独立证据。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。第二线不能只靠主线声量外推。</p></div>
+          <div><b>证据</b><p>value gaming chair、office / footrest chair、desk and room setup 的角色需要用公开动销和后台数据拆清。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>预算会被摊薄，团队容易同时推太多页面、SKU 和内容主题。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 SKU role map：Hero / Validation / Add-on / Retention / Proof。<br><strong>90 天：</strong>按 SKU role 看 GMV、毛利、评价、退货、复购和渠道冲突，关掉低质量长尾。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：搜索、VOC 和内容没有形成同一个承接闭环。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。高意图用户会在搜索和社群里看到分散答案。</p></div>
+          <div><b>证据</b><p>搜索词、评价和 VOC 需要统一到承接页与内容 brief。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>投放和内容会增加注意力，但没有稳定降低购买犹豫。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重排搜索入口：行业词、品牌 review、竞品比较、售后词。<br><strong>90 天：</strong>把 creator brief、SEO 页面、FAQ、PDP 和 support macro 合并为一套 proof matrix。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：用户会拿 GTPlayer、Homall、Secretlab 来判断安全感和价格合理性。</h2>
+        </div>
+        <p class="section-note">竞品当前重点是比谁更快降低购买风险。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 对比</div>
+          <h3>GTPlayer</h3>
+          <p>最直接抢走高意图比较词，需要用对比页回答价格、服务和适用边界。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Homall</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Secretlab</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>AutoFull</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从“能买到”升级成“为什么现在放心买”。</h2>
+        </div>
+        <p class="section-note">英文 copy 只给可测试方向，不替代后续品牌文案打磨。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">Now</div>
+          <h3>当前购买理由</h3>
+          <p>value gaming chair 已经能解释基础需求。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Next</div>
+          <h3>下一阶段理由</h3>
+          <p>把 耐用信任、坐感支撑、低价心智 讲成确定性，支撑更高质量成交。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>不要先放大的方向</h3>
+          <p>不要在 proof 和售后承接前平均扩大所有渠道预算。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> GTRacing helps North America buyers choose gaming chairs with clearer proof and lower purchase risk.</p>
+        <p><b>Hero subhead:</b> Compare use cases, support, warranty, and fit before you buy.</p>
+        <p><b>Product promise:</b> A clearer path from first interest to confident daily use.</p>
+        <p><b>Sales opener:</b> We found the next growth constraint is not awareness alone; it is purchase certainty around 耐用信任.</p>
+        <p><b>CTA:</b> Build the proof and support path before scaling spend.</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：红灯先修，黄灯进周会，绿灯继续放大。</h2>
+        </div>
+        <p class="section-note">分数来自 v3 方向性重算和旧报告公开证据迁移，后台数据会校准权重。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>品类购买契约</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>品类购买契约 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>62</b><span>主线产品清晰度</span></div>
+          <div class="mini-track"><i style="width:62%;"></i></div>
+          <p>主线产品清晰度 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>51</b><span>第二品线验证</span></div>
+          <div class="mini-track"><i style="width:51%;"></i></div>
+          <p>第二品线验证 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>56</b><span>渠道角色</span></div>
+          <div class="mini-track"><i style="width:56%;"></i></div>
+          <p>渠道角色 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>54</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:54%;"></i></div>
+          <p>搜索心智 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>VOC / 售后</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>耐用信任 是当前重点。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>54</b><span>SignalMark</span></div>
+          <div class="mini-track"><i style="width:54%;"></i></div>
+          <p>SignalMark 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>53</b><span>CommerceFlow</span></div>
+          <div class="mini-track"><i style="width:53%;"></i></div>
+          <p>CommerceFlow 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>52</b><span>TideLens</span></div>
+          <div class="mini-track"><i style="width:52%;"></i></div>
+          <p>TideLens 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>52</b><span>预算纪律</span></div>
+          <div class="mini-track"><i style="width:52%;"></i></div>
+          <p>预算纪律 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>53</b><span>组织执行</span></div>
+          <div class="mini-track"><i style="width:53%;"></i></div>
+          <p>组织执行 需要服务于下一步预算取舍。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先把 耐用信任 修成可验证，再放大渠道。</h2>
+        </div>
+        <p class="section-note">公开版只给方向，真实预算需要后台 GMV、毛利、CAC、退货和复购校准。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">Keep</div>
+          <h3>先保留</h3>
+          <p>Amazon 和 value gaming chair 继续作为主验证面，但必须绑定评价和售后指标。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>先压住</h3>
+          <p>暂缓平均加码长尾 SKU、泛流量和没有 proof 的 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Fix</div>
+          <h3>先补强</h3>
+          <p>把预算优先放到 耐用信任、坐感支撑、低价心智 的页面、内容和客服承接。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">Scale gate</div>
+          <h3>放大条件</h3>
+          <p>当搜索承接、负面 VOC、退款/售后和渠道转化都有改善，再提高投放或渠道拓展。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先修承接，再验证第二线。</h2>
+        </div>
+        <p class="section-note">路线以 owner 和验收指标组织，避免只写方向。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>DTC / Ecommerce｜上线 耐用信任 承接页和 PDP FAQ</b><p>验收：FAQ 点击、转化、退款原因。影响：减少临门犹豫</p></div><div class="road-action state-red"><b>Support｜整理退换、保修、故障和客服 SLA</b><p>验收：首次响应、解决周期、负面主题。影响：降低售后不确定性</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-amber"><b>Marketing｜重写 GTPlayer / Homall / Secretlab 比较页和 creator brief</b><p>验收：比较词排名、页面转化、内容复用。影响：夺回解释权</p></div><div class="road-action state-amber"><b>Product / Growth｜建立 SKU role map 和渠道看板</b><p>验收：GMV、毛利、评价、退货、复购。影响：减少资源摊薄</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-blue"><b>Leadership｜决定第二线是否进入预算放大</b><p>验收：独立动销、复购、渠道效率。影响：避免主线外推</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas v3 分数</b><p>验收：CAC、ROAS、TACOS、LTV、退款率。影响：把公开诊断变成经营决策</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：先修售后和电商承接，再让内容与渠道放大。</h2>
+        </div>
+        <p class="section-note">红灯排在前面，方便管理层先安排 owner。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">44</div>
+          <h3>客服 / 售后</h3>
+          <p><strong>最差点：</strong>耐用信任 还没有被 SLA 和公开承诺接住。</p>
+          <span class="tag red">30 天：30 天内上线 support hub、退换/保修说明和客服宏。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">48</div>
+          <h3>电商 / DTC</h3>
+          <p><strong>最差点：</strong>官网没有充分说明为什么直购更稳。</p>
+          <span class="tag red">30 天：30 天内补 PDP、FAQ、comparison 和 checkout 信任点。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">51</div>
+          <h3>Data / Growth</h3>
+          <p><strong>最差点：</strong>公开分数不能替代后台口径。</p>
+          <span class="tag amber">30 天：30 天内补 GMV、毛利、退款、复购和渠道效率表。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">52</div>
+          <h3>Product</h3>
+          <p><strong>最差点：</strong>SKU 角色和第二线验证不够清晰。</p>
+          <span class="tag amber">30 天：30 天内做 Hero / Validation / Add-on / Retention map。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">53</div>
+          <h3>Brand / Signal</h3>
+          <p><strong>最差点：</strong>购买理由存在，但边界和 proof 还不够集中。</p>
+          <span class="tag amber">30 天：30 天内完成 claim / proof / audience matrix。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">54</div>
+          <h3>Marketing</h3>
+          <p><strong>最差点：</strong>内容还没有持续回答 耐用信任、坐感支撑、低价心智。</p>
+          <span class="tag amber">30 天：30 天内更新 creator brief 和搜索内容结构。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">57</div>
+          <h3>Channel</h3>
+          <p><strong>最差点：</strong>渠道能出信号，但价格和评价解释权分散。</p>
+          <span class="tag amber">30 天：30 天内统一平台 PDP、DTC 和零售话术。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">72</div>
+          <h3>Existing Demand Proof</h3>
+          <p><strong>最差点：</strong>公开证据已经能说明存在可转化需求。</p>
+          <span class="tag green">30 天：30 天内把最强正向证据放进首页、PDP、比较页和内容 brief。</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险和数据缺口：公开版能判断方向，不能替代后台校准。</h2>
+        </div>
+        <p class="section-note">上线旧 GitHub HTML 时必须保留数据缺口，避免把方向性估计写成确定财务口径。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-blue">
+          <div class="card-state">Data</div>
+          <h3>后台数据缺口</h3>
+          <p>需要补 GTRacing 的北美 GMV、渠道占比、毛利、退货、复购、客服和广告数据。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Risk</div>
+          <h3>当前最大风险</h3>
+          <p>低价椅能成交首单，但 GTRacing / GTPlayer 并存、耐用信任和多品线扩张会把品牌锁在低价心智。 是当前 v3 分数封顶的核心原因。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Scope</div>
+          <h3>上线备注</h3>
+          <p>本页是旧报告按 Atlas v3 规则重跑后的公开数据版，证据沿用旧公开来源和 2026-06-25 v3 重算结果。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：新版 v3 判断沿用旧公开来源，并标记需要后台校准的地方。</h2>
+        </div>
+        <p class="section-note">证据来自旧 Atlas 公开诊断与 2026-06-25 v3 重算结果；后续深诊需要重新逐源更新 Xiyou、Amazon、搜索、VOC 和后台数据。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/gtracing-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">GTRacing existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>GTRacing · 2026-06-26 · North America</span>
+    </footer>
+  </main>
 </body>
 </html>

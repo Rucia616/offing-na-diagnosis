@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Medicube · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-25</title>
+  <title>Medicube · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
   <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
@@ -89,24 +89,33 @@
     .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
     .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
     .tag.neutral { color:var(--muted); background:var(--surface-2); }
-    .score-panel { position:relative; overflow:hidden; min-height:514px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:28px 28px 24px; }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
     .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
     .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
     .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .score-number { font-size:96px; line-height:.92; font-weight:780; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
     .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
     .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
-    .stars { margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:24px; line-height:1; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
     .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
-    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:20px; }
-    .score-meta div { min-height:72px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.06); }
-    .score-meta b { display:block; color:var(--inverse-text); font-size:16px; line-height:1.2; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
     .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
-    .subscore-list { margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:10px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
     .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
     .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
     .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
-    .score-formula { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:12px; }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
     @media (max-width: 1100px) and (min-width: 901px) {
       .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
       .score-panel { min-height:470px; padding:22px; }
@@ -413,7 +422,7 @@
             <b>66</b>
           </div>
         </div>
-        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-25。</p>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
       </aside>
       <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
         
@@ -518,7 +527,7 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Score-Cap &amp; Risk</div>
-          <h2>声量继续扩大，但直购信任、设备边界和 SKU 复杂度拖住利润质量。</h2>
+          <h2>主要风险路径：声量继续扩大，但直购信任、设备边界和 SKU 复杂度拖住利润质量。</h2>
         </div>
         <p class="section-note">Medicube 的危险不在于缺流量，而在于把 TikTok / celebrity / Ulta 铺货等强信号直接当作下一阶段稳定质量。</p>
       </div>
@@ -1321,155 +1330,155 @@
               <td>E1</td>
               <td><a href="https://medicube.us/products/age-r-booster-pro" target="_blank" rel="noopener">Medicube Booster Pro official PDP</a></td>
               <td>2026-06-25 checked</td>
-              <td>Official PDP</td>
-              <td>Booster Pro 定位 6-in-1 Glass Glow Facial Device，价格 $230 / compare-at $480，含 absorption、pores、plumper-looking skin、AGE-R app、使用频次和成分搭配注意事项。</td>
+              <td>Public source</td>
+              <td>Public source；Official PDP；Booster Pro 定位 6-in-1 Glass Glow Facial Device，价格 $230 / compare-at $480，含 absorption、pores、plumper-looking skin、AGE-R app、使用频次和成分搭配注意事项。</td>
               <td>High</td>
             </tr><tr>
               <td>E2</td>
               <td><a href="https://medicube.us/products.json?limit=250" target="_blank" rel="noopener">Medicube Shopify products.json</a></td>
               <td>2026-06-25 checked</td>
-              <td>Official product feed</td>
-              <td>产品集合显示 Booster Pro、Mini、PDRN、Collagen、Zero Pore、subscription、gift/freegift 和 bundle SKU，支持 SKU 复杂度判断。</td>
+              <td>Public source</td>
+              <td>Public source；Official product feed；产品集合显示 Booster Pro、Mini、PDRN、Collagen、Zero Pore、subscription、gift/freegift 和 bundle SKU，支持 SKU 复杂度判断。</td>
               <td>High</td>
             </tr><tr>
               <td>E3</td>
               <td><a href="https://www.ulta.com/search?search=medicube" target="_blank" rel="noopener">Ulta search: Medicube</a></td>
               <td>2026-06-25 checked</td>
-              <td>Retail search / rating snapshot</td>
-              <td>Ulta 显示 Medicube 52 products；Zero Pore Pad 4.0 / 168、PDRN Gel Mask 3.5 / 81、Booster Pro 3.8 / 32 等，支持零售评分分化判断。</td>
+              <td>Public source</td>
+              <td>Public source；Retail search / rating snapshot；Ulta 显示 Medicube 52 products；Zero Pore Pad 4.0 / 168、PDRN Gel Mask 3.5 / 81、Booster Pro 3.8 / 32 等，支持零售评分分化判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E4</td>
               <td><a href="https://www.trustpilot.com/review/medicube.us" target="_blank" rel="noopener">Trustpilot medicube.us</a></td>
               <td>2026-06-25 checked</td>
-              <td>Reputation / VOC</td>
-              <td>Trustpilot 显示 1.9 / 5、Poor、91 reviews；负面集中在 shipping、customer service、refund、device issue 和 direct order。</td>
+              <td>Public source</td>
+              <td>Public source；Reputation / VOC；Trustpilot 显示 1.9 / 5、Poor、91 reviews；负面集中在 shipping、customer service、refund、device issue 和 direct order。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E5</td>
               <td><a href="https://medicube.us/cdn/shop/files/25ME_global.svg?v=1745386759&amp;width=600" target="_blank" rel="noopener">Medicube official logo asset</a></td>
               <td>2026-06-25 checked</td>
-              <td>Official brand asset</td>
-              <td>用于报告顶部品牌 logo，不参与评分。</td>
+              <td>Public source</td>
+              <td>Public source；Official brand asset；用于报告顶部品牌 logo，不参与评分。</td>
               <td>High</td>
             </tr><tr>
               <td>E6</td>
               <td><a href="https://www.thecut.com/article/how-to-use-medicube-booster-pro-device.html" target="_blank" rel="noopener">The Cut: How to use Medicube Booster Pro</a></td>
               <td>Published 2025; checked 2026-06-25</td>
-              <td>Media usage guide</td>
-              <td>讨论 Booster Pro 使用方式、modes、skincare pairing、viral safety claim 和 dermatologist framing，支持设备边界判断。</td>
+              <td>Public source</td>
+              <td>Public source；Media usage guide；讨论 Booster Pro 使用方式、modes、skincare pairing、viral safety claim 和 dermatologist framing，支持设备边界判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E7</td>
               <td><a href="https://www.reddit.com/r/SkincareAddictionLux/comments/1gtn7wl/review_big_red_flag_on_medicube_us_questionable/" target="_blank" rel="noopener">Reddit SkincareAddictionLux thread</a></td>
               <td>2026-06-25 checked</td>
-              <td>Community VOC</td>
-              <td>可见关于 device cracked、refund、customer service 和 BBB report 的负面讨论；作为方向性 VOC，需要与后台工单校准。</td>
+              <td>Public source</td>
+              <td>Public source；Community VOC；可见关于 device cracked、refund、customer service 和 BBB report 的负面讨论；作为方向性 VOC，需要与后台工单校准。</td>
               <td>Low</td>
             </tr><tr>
               <td>E8</td>
               <td><a href="https://www.koreabiomed.com/news/articleView.html?idxno=31569" target="_blank" rel="noopener">KoreaBioMed: APR Q1 2026 results</a></td>
               <td>Published 2026-05</td>
-              <td>Business news / earnings</td>
-              <td>APR Q1 2026 revenue KRW 593.4B、operating profit KRW 152.3B；美国销售 KRW 248.5B，同比增长 250.8%，占 APR 收入 41.9%。</td>
+              <td>Public source</td>
+              <td>Public source；Business news / earnings；APR Q1 2026 revenue KRW 593.4B、operating profit KRW 152.3B；美国销售 KRW 248.5B，同比增长 250.8%，占 APR 收入 41.9%。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E9</td>
               <td><a href="https://www.prnewswire.com/news-releases/apr-records-annual-revenue-of-krw-1-53-trillion-usd-1-05-billion-with-24-operating-margin-in-2025--302678380.html" target="_blank" rel="noopener">PRNewswire: APR 2025 annual results</a></td>
               <td>Published 2026-02-25</td>
-              <td>Company release</td>
-              <td>APR 2025 年营收 KRW 1.53T、operating margin 24%；overseas revenue 与 cosmetics segment 强增长，支持集团资源和增长阶段判断。</td>
+              <td>Public source</td>
+              <td>Public source；Company release；APR 2025 年营收 KRW 1.53T、operating margin 24%；overseas revenue 与 cosmetics segment 强增长，支持集团资源和增长阶段判断。</td>
               <td>High</td>
             </tr><tr>
               <td>E10</td>
               <td><a href="https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout" target="_blank" rel="noopener">Vogue: How K-Beauty Brand Medicube Pulled Off Its Global Breakout</a></td>
               <td>Published 2026-02; checked 2026-06-25</td>
-              <td>Media deep dive</td>
-              <td>披露 Medicube TikTok Shop 2025 约 USD 102.9M、1M units、101 SKUs、34,000 creator affiliates、Amazon Prime Day $22M 和 Ulta 1,400+ 门店。</td>
+              <td>Public source</td>
+              <td>Public source；Media deep dive；披露 Medicube TikTok Shop 2025 约 USD 102.9M、1M units、101 SKUs、34,000 creator affiliates、Amazon Prime Day $22M 和 Ulta 1,400+ 门店。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E11</td>
               <td><a href="https://www.beautyindependent.com/beauty-generated-nearly-1-billion-sales-tiktok-shop-q1/" target="_blank" rel="noopener">BeautyIndependent: TikTok Shop Beauty Sales Q1</a></td>
               <td>Published 2026-05; checked 2026-06-25</td>
-              <td>Social commerce market report</td>
-              <td>报道 TikTok Shop Q1 U.S. beauty sales 约 USD 928.5M，Medicube 在 beauty sales 中居前，支持 social commerce 机会判断。</td>
+              <td>Public source</td>
+              <td>Public source；Social commerce market report；报道 TikTok Shop Q1 U.S. beauty sales 约 USD 928.5M，Medicube 在 beauty sales 中居前，支持 social commerce 机会判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E12</td>
               <td><a href="https://novadata.io/resources/news/tiktok-shop-health-beauty-no4-retailer-april-2026" target="_blank" rel="noopener">NovaData: TikTok Shop Health &amp; Beauty April 2026</a></td>
               <td>Published 2026; checked 2026-06-25</td>
-              <td>Social commerce market report</td>
-              <td>说明 TikTok Shop U.S. health/beauty 规模增长、skincare 领先，以及 creator commission、sample seeding、platform fees 等成本风险。</td>
+              <td>Public source</td>
+              <td>Public source；Social commerce market report；说明 TikTok Shop U.S. health/beauty 规模增长、skincare 领先，以及 creator commission、sample seeding、platform fees 等成本风险。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E13</td>
               <td><a href="https://time.com/collection/time100-most-influential-companies/2026/apr/" target="_blank" rel="noopener">TIME100 Most Influential Companies 2026: APR</a></td>
               <td>Published 2026-05; checked 2026-06-25</td>
-              <td>Award profile / business signal</td>
-              <td>TIME 提到 Medicube 成为 2025 Prime Day Amazon beauty top-selling brand，并扩展到 U.S. Ulta 1,400+ stores，同时提到 haircare launch。</td>
+              <td>Public source</td>
+              <td>Public source；Award profile / business signal；TIME 提到 Medicube 成为 2025 Prime Day Amazon beauty top-selling brand，并扩展到 U.S. Ulta 1,400+ stores，同时提到 haircare launch。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E14</td>
               <td><a href="https://www.whowhatwear.com/beauty/skin/medicube-booster-pro-review" target="_blank" rel="noopener">Who What Wear: Medicube Booster Pro review</a></td>
               <td>Published 2026-04; checked 2026-06-25</td>
-              <td>Media review</td>
-              <td>79-day review 支持 Booster Pro 在 tone、clarity、sculpting、ease-of-use 等体验上的正面内容，支持正向 VOC。</td>
+              <td>Public source</td>
+              <td>Public source；Media review；79-day review 支持 Booster Pro 在 tone、clarity、sculpting、ease-of-use 等体验上的正面内容，支持正向 VOC。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E15</td>
               <td><a href="https://www.marketscreener.com/news/apr-co-ltd-expands-global-footprint-in-the-u-s-and-uk-with-launch-of-medicube-age-r-booster-pro-ce7f5cd9dd88f321" target="_blank" rel="noopener">MarketScreener / PRNewswire: Booster Pro X2 U.S. and UK launch</a></td>
               <td>Published 2026-06-11</td>
-              <td>Company release syndication</td>
-              <td>Booster Pro X2 于 2026-06-11 先上 U.S. TikTok Shop，随后 Amazon U.S. / UK，并计划未来线下零售扩张。</td>
+              <td>Public source</td>
+              <td>Public source；Company release syndication；Booster Pro X2 于 2026-06-11 先上 U.S. TikTok Shop，随后 Amazon U.S. / UK，并计划未来线下零售扩张。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E16</td>
               <td><a href="https://www.vogue.com/article/medicube-booster-pro-x2" target="_blank" rel="noopener">Vogue: Medicube Booster Pro X2 review</a></td>
               <td>Published 2026-06; checked 2026-06-25</td>
-              <td>Media review</td>
-              <td>X2 review 提到双倍输出、dual-head、larger head、7 modes 和 6M+ AGE-R devices sold，支持设备升级与 proof 需求判断。</td>
+              <td>Public source</td>
+              <td>Public source；Media review；X2 review 提到双倍输出、dual-head、larger head、7 modes 和 6M+ AGE-R devices sold，支持设备升级与 proof 需求判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E17</td>
               <td><a href="https://www.reddit.com/r/SkincareAddictionLux/comments/1clygt7/medicube_booster_pro/" target="_blank" rel="noopener">Reddit: Medicube Booster Pro user thread</a></td>
               <td>2026-06-25 checked</td>
-              <td>Community VOC</td>
-              <td>可见用户对 device 效果、hydration、dullness、pores 和 formula pairing 的正面/注意事项讨论，补充社群 VOC。</td>
+              <td>Public source</td>
+              <td>Public source；Community VOC；可见用户对 device 效果、hydration、dullness、pores 和 formula pairing 的正面/注意事项讨论，补充社群 VOC。</td>
               <td>Low</td>
             </tr><tr>
               <td>E18</td>
               <td><a href="https://novadata.io/resources/news/tiktok-shop-health-beauty-no4-retailer-april-2026" target="_blank" rel="noopener">NovaData TikTok Shop cost-risk note</a></td>
               <td>2026-06-25 checked</td>
-              <td>Market analysis</td>
-              <td>同源用于 creator commission、sample seeding、platform fees 对贡献质量的影响判断。</td>
+              <td>Public source</td>
+              <td>Public source；Market analysis；同源用于 creator commission、sample seeding、platform fees 对贡献质量的影响判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E19</td>
               <td><a href="https://www.mynuface.com/" target="_blank" rel="noopener">NuFACE official</a></td>
               <td>2026-06-25 checked</td>
-              <td>Competitor official site</td>
-              <td>用于 beauty tech / microcurrent 权威竞品压力方向判断。</td>
+              <td>Public source</td>
+              <td>Public source；Competitor official site；用于 beauty tech / microcurrent 权威竞品压力方向判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E20</td>
               <td><a href="https://www.solawave.co/" target="_blank" rel="noopener">Solawave official</a></td>
               <td>2026-06-25 checked</td>
-              <td>Competitor official site</td>
-              <td>用于低门槛 device / wand 形态竞品压力方向判断。</td>
+              <td>Public source</td>
+              <td>Public source；Competitor official site；用于低门槛 device / wand 形态竞品压力方向判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E21</td>
               <td><a href="https://millenniummagazine.com/whats-happening/k-beauty-brand-medicube-will-host-coachella-beauty-pop-up/" target="_blank" rel="noopener">Millennium Magazine: Medicube Coachella pop-up</a></td>
               <td>Published 2026; checked 2026-06-25</td>
-              <td>Event / PR coverage</td>
-              <td>Medicube 与 Goldenvoice 进行 Coachella beauty pop-up，支持 PR / event activation 判断。</td>
+              <td>Public source</td>
+              <td>Public source；Event / PR coverage；Medicube 与 Goldenvoice 进行 Coachella beauty pop-up，支持 PR / event activation 判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E22</td>
               <td><a href="https://enmobile.prnasia.com/releases/apac/apr-exceeds-6-million-units-in-global-sales-of-medicube-age-r-beauty-devices-strengthening-leadership-in-home-beauty-tech-520632.shtml" target="_blank" rel="noopener">PRNewswire Asia: AGE-R 6M units</a></td>
               <td>Published 2026-02; checked 2026-06-25</td>
-              <td>Company release</td>
-              <td>AGE-R beauty devices 全球累计销量超过 6M units，支持设备线阶段判断。</td>
+              <td>Public source</td>
+              <td>Public source；Company release；AGE-R beauty devices 全球累计销量超过 6M units，支持设备线阶段判断。</td>
               <td>Medium</td>
             </tr>
           </tbody>
@@ -1478,7 +1487,7 @@
     </section>
     <footer class="footer">
       <span>远汐 Offing Atlas｜北美业务诊断</span>
-      <span>Medicube · 2026-06-25 · North America</span>
+      <span>Medicube · 2026-06-26 · North America</span>
     </footer>
   </main>
 </body>

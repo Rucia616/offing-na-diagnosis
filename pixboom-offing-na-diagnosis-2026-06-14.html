@@ -1,1062 +1,1383 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pixboom · 远汐 Offing 免费北美业务诊断 · 2026-06-14</title>
-  <meta name="description" content="Pixboom 北美业务诊断：高端高速电影机 Spark 已证明需求，下一阶段关键在交付、售后、工作流证明与专业渠道。">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101413'/%3E%3Cpath d='M14 37c10-18 26-18 36 0' fill='none' stroke='%23FF4800' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='30' r='6' fill='%23F8FAF9'/%3E%3C/svg%3E">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pixboom · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
       color-scheme: light;
-      --bg: #F5F5F7;
-      --top: #FBFBFD;
-      --surface: #FFFFFF;
-      --surface-2: #F7F8FA;
-      --text: #101413;
-      --body: #293331;
-      --muted: #66716E;
-      --line: #D7D9DC;
-      --link: #2D6261;
-      --accent-text: #2D6261;
-      --accent-fill: #EAF1F0;
-      --success-text: #157A38;
-      --success-bg: #EAF6EE;
-      --warning-text: #9A5B00;
-      --warning-bg: #FFF3DF;
-      --risk-text: #D70015;
-      --risk-bg: #FFF0F1;
-      --inverse-bg: #13211F;
-      --inverse-text: #F8FAF9;
-      --inverse-muted: rgba(248,250,249,.82);
-      --brand: #111111;
-      --brand-accent: #FF4800;
-      --brand-soft: #FFF1EB;
-      --shadow: 0 12px 34px rgba(16,20,19,.07);
-      --radius: 8px;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        color-scheme: dark;
-        --bg: #0F1212;
-        --top: #141817;
-        --surface: #191E1D;
-        --surface-2: #202625;
-        --text: #F4F7F6;
-        --body: #D8DEDC;
-        --muted: #A9B2AF;
-        --line: #3A4240;
-        --link: #8CC7C3;
-        --accent-text: #9ED7D3;
-        --accent-fill: #1C3433;
-        --success-text: #8EE0A8;
-        --success-bg: #173424;
-        --warning-text: #F2C46D;
-        --warning-bg: #3A2A12;
-        --risk-text: #FF8E99;
-        --risk-bg: #3B171D;
-        --inverse-bg: #E9EFED;
-        --inverse-text: #101413;
-        --inverse-muted: #40504C;
-        --brand-soft: #2A1B16;
-        --shadow: 0 12px 34px rgba(0,0,0,.35);
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
       }
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background-color: var(--bg);
-      background-image: linear-gradient(180deg, var(--top), var(--bg) 560px);
-      color: var(--body);
-      line-height: 1.65;
-      font-size: 15px;
-      letter-spacing: 0;
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
     }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: saturate(180%) blur(18px);
-      background: color-mix(in srgb, var(--surface) 86%, transparent);
-      border-bottom: 1px solid var(--line);
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
     }
-    .nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 10px 24px;
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .nav-mark {
-      color: var(--text);
-      font-weight: 800;
-      margin-right: 8px;
-    }
-    .nav-inner a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
-    }
-    .hero {
-      max-width: 1180px;
-      margin: 0 auto;
-      min-height: 92vh;
-      padding: 62px 24px 36px;
-      display: grid;
-      align-content: center;
-      gap: 30px;
-    }
-    .logo {
-      color: var(--brand);
-      width: 178px;
-      max-width: 52vw;
-      display: block;
-      margin-bottom: 24px;
-    }
-    .logo svg { width: 100%; height: auto; display: block; }
-    .eyebrow {
-      color: var(--accent-text);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3 { color: var(--text); margin: 0; line-height: 1.12; letter-spacing: 0; }
-    h1 {
-      font-size: clamp(56px, 10vw, 116px);
-      font-weight: 850;
-      margin: 0 0 18px;
-    }
-    .hero h1 span { display: block; }
-    .hero-lead {
-      max-width: 980px;
-      color: var(--body);
-      font-size: clamp(18px, 2.2vw, 26px);
-      line-height: 1.45;
-      font-weight: 650;
-      margin: 0;
-    }
-    .score-wrap {
-      display: grid;
-      grid-template-columns: minmax(280px, .86fr) 1.2fr;
-      gap: 16px;
-      align-items: stretch;
-    }
-    .total-card {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 220px;
-    }
-    .total-card small, .total-card p, .total-card .label { color: var(--inverse-muted); }
-    .total-number {
-      color: var(--inverse-text);
-      font-size: 68px;
-      line-height: .94;
-      font-weight: 850;
-      margin-top: 14px;
-    }
-    .stars {
-      font-size: 30px;
-      letter-spacing: 2px;
-      color: #F5C451;
-      margin: 8px 0 0;
-      white-space: nowrap;
-    }
-    .subscores {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .subscore {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-      min-height: 220px;
-    }
-    .subscore strong {
-      display: block;
-      font-size: 34px;
-      color: var(--text);
-      line-height: 1;
-      margin: 12px 0 10px;
-    }
-    .subscore .bar, .metric .bar {
-      height: 8px;
-      background: color-mix(in srgb, var(--line) 60%, transparent);
-      border-radius: 99px;
-      overflow: hidden;
-      margin: 10px 0 12px;
-    }
-    .fill { height: 100%; border-radius: inherit; background: var(--accent-text); }
-    .fill.good { background: var(--success-text); }
-    .fill.warn { background: var(--warning-text); }
-    .fill.bad { background: var(--risk-text); }
-    section { padding: 54px 24px; }
-    .inner { max-width: 1180px; margin: 0 auto; }
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(220px, .72fr) 1.28fr;
-      gap: 28px;
-      align-items: end;
-      margin-bottom: 20px;
-    }
-    .section-head h2 {
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 820;
-    }
-    .lead {
-      margin: 0;
-      color: var(--body);
-      font-size: 17px;
-      line-height: 1.68;
-    }
-    .grid { display: grid; gap: 14px; }
-    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-    }
-    .card h3 { font-size: 21px; margin-bottom: 10px; }
-    .card p, .card li { margin: 0; color: var(--body); }
-    .card ul { padding-left: 18px; margin: 10px 0 0; }
-    .label {
-      display: inline-block;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.3;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .tag, .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 12px;
-      line-height: 1.2;
-      font-weight: 800;
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-    .tag.good, .pill.good { color: var(--success-text); background: var(--success-bg); border-color: color-mix(in srgb, var(--success-text) 24%, transparent); }
-    .tag.warn, .pill.warn { color: var(--warning-text); background: var(--warning-bg); border-color: color-mix(in srgb, var(--warning-text) 24%, transparent); }
-    .tag.bad, .pill.bad { color: var(--risk-text); background: var(--risk-bg); border-color: color-mix(in srgb, var(--risk-text) 24%, transparent); }
-    .tag.neutral, .pill.neutral { color: var(--accent-text); background: var(--accent-fill); border-color: color-mix(in srgb, var(--accent-text) 20%, transparent); }
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .stage-card {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-    .stage-card h2, .stage-card h3, .stage-card strong { color: var(--inverse-text); }
-    .stage-card p, .stage-card small, .stage-card .label { color: var(--inverse-muted); }
-    .stage-path {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .stage-step {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: var(--radius);
-      padding: 14px;
-      min-height: 118px;
-    }
-    .stage-step.active {
-      background: #FFFFFF;
-      color: #101413;
-      box-shadow: 0 0 0 2px rgba(255,255,255,.6) inset;
-    }
-    .stage-step.active p, .stage-step.active small { color: #40504C; }
-    .stage-step strong { display: block; font-size: 22px; margin-bottom: 6px; }
-    .chart-card { padding: 20px; }
-    .stacked {
-      height: 34px;
-      border-radius: 999px;
-      overflow: hidden;
-      display: flex;
-      background: var(--surface-2);
-      border: 1px solid var(--line);
-      margin: 14px 0 14px;
-    }
-    .seg { height: 100%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; min-width: 38px; }
-    .seg.a { background: #2D6261; }
-    .seg.b { background: #101413; }
-    .seg.c { background: #A99556; color: #111; }
-    .seg.d { background: #A76560; }
-    .legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-    .legend-item {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 10px;
-      background: var(--surface);
-    }
-    .legend-item b { display: block; color: var(--text); font-size: 14px; }
-    .legend-item span { color: var(--muted); font-size: 12px; }
-    .score-badge {
-      font-size: 40px;
-      line-height: 1;
-      font-weight: 850;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .metric {
-      border-left: 4px solid var(--line);
-      padding-left: 14px;
-    }
-    .metric.good { border-color: var(--success-text); }
-    .metric.warn { border-color: var(--warning-text); }
-    .metric.bad { border-color: var(--risk-text); }
-    .match-row {
-      display: grid;
-      grid-template-columns: 1.1fr .78fr .62fr 1.08fr;
-      gap: 12px;
-      align-items: center;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 14px;
-      box-shadow: var(--shadow);
-      margin-bottom: 10px;
-    }
-    .match-row strong { color: var(--text); }
-    .problem {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 0;
-      overflow: hidden;
-      padding: 0;
-    }
-    .problem-side {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      padding: 22px;
-    }
-    .problem-side h3, .problem-side strong { color: var(--inverse-text); }
-    .problem-side p, .problem-side .label { color: var(--inverse-muted); }
-    .problem-body { padding: 22px; }
-    .impact-path {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .impact-path div {
-      background: var(--surface-2);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 10px;
-      font-size: 13px;
-      color: var(--body);
-    }
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 780px;
-      font-size: 14px;
-    }
-    th, td {
-      padding: 13px 14px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-      text-align: left;
-    }
-    th {
-      background: var(--surface-2);
-      color: var(--text);
-      font-size: 12px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    td { color: var(--body); }
-    tr:last-child td { border-bottom: 0; }
-    .department-group {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      margin-bottom: 14px;
-    }
-    .department-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-      background: var(--surface-2);
-    }
-    .department-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      padding: 14px;
-    }
-    .dept-card {
-      border: 1px solid var(--line);
-      border-top: 4px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
-      background: var(--surface);
-    }
-    .dept-card.bad { border-top-color: var(--risk-text); }
-    .dept-card.warn { border-top-color: var(--warning-text); }
-    .dept-card.good { border-top-color: var(--success-text); }
-    footer {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      padding: 38px 24px;
-      margin-top: 44px;
-    }
-    footer p, footer small, footer li { color: var(--inverse-muted); }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
     @media (max-width: 900px) {
-      .hero { min-height: auto; padding-top: 44px; }
-      .score-wrap, .section-head, .problem { grid-template-columns: 1fr; }
-      .subscores, .three, .four, .two, .department-grid { grid-template-columns: 1fr; }
-      .stage-path { grid-template-columns: 1fr 1fr; }
-      .legend { grid-template-columns: 1fr 1fr; }
-      .match-row { grid-template-columns: 1fr; }
-      .impact-path { grid-template-columns: 1fr; }
-      h1 { font-size: 58px; }
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
     }
-    @media (max-width: 560px) {
-      body { font-size: 14px; }
-      section { padding: 42px 16px; }
-      .hero { padding-left: 16px; padding-right: 16px; }
-      h1 { font-size: 48px; }
-      .stage-path, .legend { grid-template-columns: 1fr; }
-      .total-number { font-size: 56px; }
-    }
-    @media print {
-      nav { display: none; }
-      body { background: #fff; }
-      section, .hero { break-inside: avoid; min-height: auto; }
-      .card, .department-group, .table-wrap { box-shadow: none; }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-mark">远汐 Offing</div>
-      <a href="#stage">阶段</a>
-      <a href="#type">类型</a>
-      <a href="#voc">VOC</a>
-      <a href="#ceiling">天花板</a>
-      <a href="#match">卖点匹配</a>
-      <a href="#summary">一页看懂</a>
-      <a href="#blocks">三大板块</a>
-      <a href="#problems">关键问题</a>
-      <a href="#competitors">竞品</a>
-      <a href="#scores">评分</a>
-      <a href="#roadmap">路线图</a>
-      <a href="#org">组织</a>
-      <a href="#evidence">证据</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
     </div>
-  </nav>
-
+  </header>
   <main>
-    <header class="hero">
-      <div>
-        <div class="logo" aria-label="Pixboom 官方 logo">
-          <svg viewBox="0 0 139 20" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
-            <path d="M20.5187 19.7299H24.5543V0.285941H20.5187V19.7299ZM46.1636 0.285941H41.2964L36.7019 6.78087L32.121 0.285941H27.2674L34.3705 9.76282L26.9947 19.7299H31.8619L36.7291 12.7584L41.5964 19.7299H46.4636L39.0878 9.76282L46.1636 0.285941ZM15.5424 0.993983C14.6698 0.517416 13.6609 0.258709 12.6112 0.258709C11.5614 0.258709 0 0.258709 0 0.258709V8.87776H3.99467V4.07124H12.6112C13.2247 4.07124 13.6746 4.23464 13.9473 4.54781C14.2199 4.84737 14.3699 5.215 14.3699 5.66434C14.3699 6.05921 14.2199 6.44046 13.9473 6.78087C13.6746 7.10766 13.211 7.37998 12.6112 7.57061L5.00356 9.81728C3.50386 10.2394 2.30409 11.0291 1.39064 12.2001C0.477178 13.3439 0.0136337 14.6919 0 16.2305V19.7299H3.99467V16.2305C3.99467 15.5633 4.17191 14.9642 4.55365 14.4468C4.93539 13.9158 5.46711 13.5754 6.10789 13.3575L14.4517 10.8521C15.5969 10.4845 16.5377 9.84451 17.2602 8.90499C17.9828 7.95186 18.3509 6.87618 18.3509 5.69157C18.3509 4.69759 18.1055 3.7853 17.6011 2.96833C17.1103 2.12413 16.4286 1.48417 15.5424 0.993983ZM130.42 0.285941L125.703 13.6707C125.525 14.0792 125.375 14.5693 125.28 15.114C125.171 14.5557 125.034 14.0655 124.857 13.6707L120.126 0.285941H114.209V19.7299H118.245V5.40563C118.409 6.07283 118.654 6.8081 118.968 7.65231L123.33 19.7435H127.243L131.606 7.65231C131.851 6.91703 132.11 6.16814 132.329 5.40563V19.7299H136.364V0.285941H130.42ZM63.6829 9.7492C64.2964 9.35433 64.8145 8.80968 65.2372 8.12887C65.6734 7.44806 65.878 6.74002 65.878 6.01836C65.878 4.98353 65.5916 4.04401 65.0327 3.17257C64.4873 2.27391 63.7375 1.57948 62.7967 1.06206C61.856 0.544648 60.7926 0.272324 59.6201 0.272324H48.7404V19.7571H60.0973C61.297 19.7571 62.3741 19.4984 63.3148 18.9674C64.2692 18.4227 65.019 17.7011 65.5644 16.816C66.0961 15.9037 66.3551 14.9097 66.3551 13.8204C66.3551 13.0171 66.0825 12.2137 65.4962 11.3968C64.9372 10.5934 64.3237 10.0488 63.6829 9.7492ZM52.7896 4.11209H59.6474C60.2745 4.11209 60.7926 4.31634 61.2016 4.71121C61.597 5.09246 61.8151 5.50095 61.8151 5.97751C61.8151 6.60386 61.6106 7.12127 61.2016 7.52976C60.8199 7.93824 60.2881 8.12887 59.6474 8.12887L52.7896 8.11526V4.11209ZM61.6242 15.2365C61.188 15.6722 60.6017 15.8765 59.9337 15.8765H52.776V11.7372H59.9337C60.629 11.7372 61.2016 11.9414 61.6242 12.3363C62.0742 12.7175 62.3059 13.1941 62.3196 13.7524C62.3196 14.3242 62.1014 14.8144 61.6242 15.2365ZM106.561 1.30716C104.993 0.435719 103.262 0 101.407 0C99.5259 0 97.7944 0.435719 96.2265 1.30716C94.6587 2.16498 93.418 3.33597 92.4909 4.86098C91.5774 6.37238 91.1003 8.08802 91.1003 10.0079C91.1003 11.9006 91.5774 13.6162 92.4909 15.1548C93.4044 16.6662 94.6723 17.8645 96.2265 18.7359C97.8217 19.5937 99.5395 20.0022 101.407 20.0022C103.262 20.0022 104.979 19.5801 106.561 18.7359C108.129 17.8781 109.397 16.6662 110.31 15.1548C111.224 13.6162 111.701 11.8869 111.701 10.0079C111.701 8.10164 111.224 6.386 110.31 4.86098C109.383 3.33597 108.142 2.16498 106.561 1.30716ZM106.847 13.1669C106.302 14.0792 105.566 14.8144 104.598 15.3591C103.657 15.8765 102.593 16.1488 101.407 16.1488C100.221 16.1488 99.1441 15.8901 98.1898 15.3591C97.2218 14.828 96.4992 14.0928 95.9538 13.1669C95.4221 12.2273 95.1631 11.1653 95.1631 9.98067C95.1631 8.79606 95.4221 7.734 95.9538 6.79448C96.4856 5.85497 97.2491 5.11969 98.1898 4.60228C99.1441 4.08486 100.221 3.81254 101.407 3.81254C102.593 3.81254 103.657 4.07124 104.598 4.60228C105.566 5.10607 106.329 5.84135 106.847 6.79448C107.379 7.734 107.638 8.79606 107.638 9.98067C107.638 11.1653 107.393 12.2273 106.847 13.1669ZM83.7517 1.30716C82.1838 0.435719 80.4524 0 78.5982 0C76.7167 0 74.9853 0.435719 73.4174 1.30716C71.8495 2.16498 70.6088 3.33597 69.6817 4.86098C68.7547 6.386 68.2911 8.08802 68.2911 10.0079C68.2911 11.9006 68.7683 13.6162 69.6817 15.1548C70.6225 16.6662 71.8631 17.8645 73.4174 18.7359C75.0125 19.5937 76.7304 20.0022 78.5982 20.0022C80.4524 20.0022 82.1702 19.5801 83.7517 18.7359C85.3196 17.8781 86.5875 16.6662 87.501 15.1548C88.4144 13.6162 88.8916 11.8869 88.8916 10.0079C88.8916 8.10164 88.4144 6.386 87.501 4.86098C86.5739 3.33597 85.3332 2.16498 83.7517 1.30716ZM84.0517 13.1669C83.5063 14.0792 82.7701 14.8144 81.8021 15.3591C80.8614 15.8765 79.7979 16.1488 78.6118 16.1488C77.4257 16.1488 76.3486 15.8901 75.3943 15.3591C74.4263 14.828 73.7037 14.0928 73.1583 13.1669C72.6266 12.2273 72.3676 11.1653 72.3676 9.98067C72.3676 8.79606 72.6266 7.734 73.1583 6.79448C73.7037 5.85497 74.4535 5.11969 75.3943 4.60228C76.3486 4.08486 77.4257 3.81254 78.6118 3.81254C79.7979 3.81254 80.8614 4.07124 81.8021 4.60228C82.7701 5.10607 83.5336 5.84135 84.0517 6.79448C84.5834 7.734 84.8424 8.79606 84.8424 9.98067C84.8424 11.1653 84.5834 12.2273 84.0517 13.1669Z" fill="currentColor"/>
-          </svg>
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Pixboom logo">
+          <img src="assets/brand-logos/pixboom-logo-wordmark.svg" alt="Pixboom logo" />
         </div>
-        <div class="eyebrow">North America Business Diagnosis</div>
-        <h1><span>北美业务诊断</span></h1>
-        <p class="hero-lead">Pixboom 已经证明专业创作者愿意为 Spark（4K 1000fps 高速电影机）付费。下一阶段要从参数声量转向交付兑现、售后维修、真实生产案例和北美专业渠道，把早期预售热度沉淀成可复购、可转介绍的专业器材生意。</p>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">Pixboom 的 v3 总分为 52。当前不是只看规模和声量，优先判断 交付确定性、维修网络 和渠道承接能否支撑下一阶段预算效率。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-red">
+            <b>52/100</b>
+            <span>Atlas v3 总分，旧分 61。 <span class="evidence-list"><span class="evidence">[E31]</span></span></span>
+          </div>
+          <div class="hero-metric state-red">
+            <b>Cap 58</b>
+            <span>当前活跃分数封顶来自 交付确定性。 <span class="evidence-list"><span class="evidence">[E91]</span></span></span>
+          </div>
+          <div class="hero-metric state-red">
+            <b>P0</b>
+            <span>风险优先级：Kickstarter 和创作者试用证明需求，交付、维修、渠道和生产版证据还没有追上参数声量。。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">本页按 Atlas v3 规则覆盖旧 GitHub HTML：加入品类购买契约、风险路径、假增长信号、分数封顶、三专项评分和路由建议。<span class="evidence-list"><span class="evidence">[E31]</span><span class="evidence">[E91]</span><span class="evidence">[E1]</span></span></p>
+        <div class="tag-row"><span class="tag red">v3 52 分</span><span class="tag red">D档</span><span class="tag blue">公开数据置信度 中等</span></div>
       </div>
-      <div class="score-wrap">
-        <div class="total-card">
+      <aside class="score-panel" aria-label="Pixboom Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">52<span>/100</span></div>
+          <span class="tier green">D档</span>
+        </div>
+        <div class="stars" aria-label="2.6 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">2.6 / 5 · D档 · 先修 交付确定性，再谈放大</div>
+        <div class="score-meta">
+          <div><b>1-10</b><span>阶段判断</span></div>
+          <div><b>Crowdfunding / preorder professional hardware</b><span>经营类型</span></div>
+          <div><b>中等</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:55%;"></i></div>
+            <b>55</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:62%;"></i></div>
+            <b>62</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:64%;"></i></div>
+            <b>64</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>交付确定性</b>
+          <span>先把购买前信任和售后解释做成页面与客服承诺。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>维修网络</b>
+          <span>把品类边界、竞品比较和渠道角色讲清楚。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索承接</b>
+          <span>行业词、review 词、比较词和售后词需要按需求量级重排。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>第二品线</b>
+          <span>用独立证据验证，不用主线声量外推。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>CommerceFlow 优先修交付、维修、预售承诺和专业渠道；TideLens 暂缓放大。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>Pixboom</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>CommerceFlow 优先修交付、维修、预售承诺和专业渠道；TideLens 暂缓放大。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 44</span>
+          <span class="route-chip">分数封顶：58 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">53<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>影像设备 购买理由已经出现，但 proof 和语言边界还要补。</h3>
+              <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">44<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
+              <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">54<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
+              <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
           <div>
-            <span class="label">北美业务情况总分</span>
-            <div class="total-number">61</div>
-            <div class="stars" aria-label="3.1 out of 5 stars">★★★☆☆</div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
           </div>
-          <p>61 / 100 = 3.1 / 5。业务健康度 57 × 45% = 25.7；业务机会分 84 × 35% = 29.4；安全余量（100 - 问题致命度 68）× 20% = 6.4。数据抓取日期：2026-06-14。</p>
+          <ol>
+            <li>交付确定性 没有被放到购买前第一层。</li><li>Pro Card / mount adapters / demo / rental / repair network 需要独立证据。</li><li>搜索、VOC 和内容没有形成同一个承接闭环。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：参数声量领先，交付和服务信任追不上。</h2>
         </div>
-        <div class="subscores">
-          <div class="subscore">
-            <span class="label">业务健康度</span>
-            <strong>57</strong>
-            <div class="bar"><div class="fill warn" style="width:57%"></div></div>
-            <p>需求和产品力成立，但出货、售后、渠道和生产稳定性还没达到专业器材品牌应有的确定性。</p>
+        <p class="section-note">众筹硬件的 v3 关键是验证需求能否安全穿过交付、售后和专业采用门槛。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-red">
+          <div class="module-label">品类购买契约</div>
+          <h3>高客单专业拍摄设备买的是交付确定性、维修服务、工作流和 production-ready proof。</h3>
+          <p><strong>用户买的确定性：</strong>专业买家关心参数，但真正下单前会确认设备能否准时交付、能否进入拍摄工作流、坏了谁修、固件和软件会不会跟上。</p>
+          <p><strong>当前匹配：</strong>Pixboom 已证明需求和话题存在，但高客单专业设备的购买契约要求它从众筹热度进入交付、维修和生产版稳定性证明。</p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E4]</span><span class="evidence">[E7]</span><span class="evidence">[E14]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">58<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>交付、维修和生产版 proof 没有完全追上高客单专业设备的购买契约，分数需要从兴趣层拉回交付层。</p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的误读</h3>
+          <dl>
+            <div><dt>高估</dt><dd>众筹热度、媒体报道、参数领先、创作者试用。</dd></div>
+            <div><dt>低估</dt><dd>剩余订单等待、维修承诺可信度、固件节奏、专业采购安全感。</dd></div>
+            <div><dt>安慰指标</dt><dd>backer 数、媒体声量、预售金额、样片传播。</dd></div>
+            <div><dt>先别做</dt><dd>在交付、维修和 production-ready proof 可见前，暂缓继续放大 KOL 与预售规模。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 58</b></div>
+            <h3>众筹热度掩盖交付等待情绪</h3>
+            <p>已发货数量和剩余排期会影响后续买家的风险判断。只要交付节奏还需要解释，高客单买家会把预售不确定性计入成交成本。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+            <span class="tag red">CommerceFlow 优先；TideLens 暂缓放大。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 62</b></div>
+            <h3>生产版证明追不上参数声量</h3>
+            <p>beta hands-on 可以制造专业兴趣，但 production-ready 需要稳定样片、真实片场、固件节奏、后期流程和长期使用反馈共同验证。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E14]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先；TideLens 暂缓放大。</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 58</b></div>
+            <h3>高客单服务路径不够像专业器材品牌</h3>
+            <p>专业设备的售后不只是保修文字。当地维修、响应时效、备件、替换机、返修成本和跨境处理都要成为购买前可见信息。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+            <span class="tag red">CommerceFlow 优先；TideLens 暂缓放大。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 64</b></div>
+            <h3>专业渠道缺 demo、rental 和系统集成 proof</h3>
+            <p>高客单拍摄设备需要被专业团队试用和纳入采购流程。若只靠创作者内容和众筹页面，采购安全感会停在兴趣层。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E7]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先；TideLens 暂缓放大。</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>容易让管理层舒服的假增长信号</h3>
+            <p>这些信号都可能真实存在，但不能替代成交、复购、售后和利润质量。</p>
           </div>
-          <div class="subscore">
-            <span class="label">业务机会分</span>
-            <strong>84</strong>
-            <div class="bar"><div class="fill good" style="width:84%"></div></div>
-            <p>北美高端创作者、商业片、运动科学和 rental house 都有明确需求，价格带也有切入空间。</p>
+          <article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>Kickstarter 与媒体关注</h3>
+            <p>关注证明需求存在，但无法替代交付确定性和专业采用证明。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>参数和画面效果强</h3>
+            <p>参数能带来兴趣，采购还会看稳定性、维修和工作流接入。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>创作者试用内容</h3>
+            <p>试用内容如果没有生产版、长期使用和售后反馈，会停留在前期种草。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>当前分数上限：58</h3>
+            <p>交付、维修和生产版 proof 没有完全追上高客单专业设备的购买契约，分数需要从兴趣层拉回交付层。</p>
           </div>
-          <div class="subscore">
-            <span class="label">问题致命度</span>
-            <strong>68</strong>
-            <div class="bar"><div class="fill bad" style="width:68%"></div></div>
-            <p>越高越危险。当前高风险集中在交付延迟、服务承诺、软件成熟度和高客单信任。</p>
-          </div>
+          <article class="cap-reason state-red">
+            <b>58</b>
+            <div><h3>封顶原因 1</h3><p>剩余交付和专业售后路径仍需公开解释。</p></div>
+          </article><article class="cap-reason state-red">
+            <b>62</b>
+            <div><h3>封顶原因 2</h3><p>production-ready 证据少于参数和媒体声量。</p></div>
+          </article><article class="cap-reason state-red">
+            <b>64</b>
+            <div><h3>封顶原因 3</h3><p>demo、rental、repair 和渠道 proof 不足。</p></div>
+          </article>
         </div>
       </div>
-    </header>
-
+    </section>
+    
     <section id="stage">
-      <div class="inner">
-        <div class="stage-card">
-          <span class="label">Stage Judgment</span>
-          <h2>当前阶段：1-10 后期，单品需求成立，正在进入交付系统化。</h2>
-          <p class="lead">Pixboom 已经跨过 0-1 产品验证：Kickstarter、专业媒体、创作者试用和官网预售都证明 Spark 有真实需求。它距离 10-100 经营系统化还有一段距离：截至 2026-06-12，公开社区更新显示约 90-100 台已发货，下一批计划 120-150 台，剩余订单与网站预售仍需在 8-9 月交付兑现。阶段管理重点应从“让人相信参数”切到“让客户相信交付、维修、工作流和长期可用”。</p>
-          <div class="stage-path">
-            <div class="stage-step"><strong>0-1</strong><p>产品与品类验证</p></div>
-            <div class="stage-step active"><strong>1-10 后期</strong><p>单品规模化与交付验证</p></div>
-            <div class="stage-step"><strong>10-100</strong><p>渠道、服务、复购系统化</p></div>
-            <div class="stage-step"><strong>100+</strong><p>高速影像品类领导</p></div>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：Pixboom 进入 1-10，下一步先修 交付确定性。</h2>
+        </div>
+        <p class="section-note">这个阶段的重点是把公开需求信号变成可复盘的成交、评价、售后和复购质量。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>影像设备 的基础需求已经通过公开渠道和旧报告证据出现。<span class="evidence-list"><span class="evidence">[E31]</span></span></p></div><div class="stage-step state-amber"><span>1-10</span><b>单点放大</b><p>Pixboom Spark 是当前最清楚的北美入口，需要继续验证人群和渠道效率。<span class="evidence-list"><span class="evidence">[E91]</span></span></p></div><div class="stage-step state-neutral"><span>10-100</span><b>质量管理</b><p>多渠道和多品线开始并行时，交付确定性 与 维修网络 会决定预算效率。</p></div><div class="stage-step state-neutral"><span>100+</span><b>防守与护城河</b><p>只有当品类权威、服务确定性、复购和渠道权都成立，才适合进入 80+ 评分区。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">v3 总分</div>
+          <h3>52 / 100</h3>
+          <p>旧分 61，v3 分数 52；分数变化来自品类契约和风险封顶。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">阶段动作</div>
+          <h3>先修 交付确定性</h3>
+          <p>用 30 天补 proof / FAQ / support / channel page，再用 90 天看评价、转化和复购变化。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>人群判断：核心盘已经清楚，外扩前先守住适用边界。</h2>
+        </div>
+        <p class="section-note">人群层级按购买确定性排序，越往外越需要 proof、FAQ、比较页和售后承诺。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>高速摄影、商业拍摄和 VFX 专业用户</b><small>核心盘</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>租赁公司、教育科研、体育科学和创作者团队</b><small>相邻人群</small></div>
+            </div><div class="audience-band layer-3 state-red">
+              <span class="audience-index">L3</span>
+              <div><b>要求本地维修、稳定交付和生产版工作流的采购方</b><small>外扩边界</small></div>
+            </div><div class="audience-band layer-4 state-blue">
+              <span class="audience-index">L4</span>
+              <div><b>高证明成本 / 高售后敏感用户</b><small>暂缓边界</small></div>
+            </div>
           </div>
         </div>
-        <div class="grid three" style="margin-top:14px">
-          <div class="card metric good">
-            <span class="label">已通过</span>
-            <h3>高客单需求验证</h3>
-            <p>官方披露 Kickstarter 30 天募资 $3.5M、400+ backers；BackerKit 可见 454 backers 与 HK$27.3M 口径。E5, E6</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">待治理</span>
-            <h3>生产与交付节奏</h3>
-            <p>6 月社区更新显示出货在推进，但用户评论仍集中追问批次、延迟和排队顺序。E4</p>
-          </div>
-          <div class="card metric bad">
-            <span class="label">尚未成熟</span>
-            <h3>专业渠道和售后确定性</h3>
-            <p>$13,999 设备不能只靠热度成交，北美需要 demo、维修、租赁、经销和真实生产案例共同降低购买风险。E2, E4, E12</p>
-          </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘</b><span>最容易被 Pixboom Spark 说服，是当前成交和评价的主盘。</span></div><div class="legend-item state-amber"><b>相邻人群</b><span>有明确需求，但会比较竞品、渠道和价格，需要承接页降低犹豫。</span></div><div class="legend-item state-red"><b>外扩边界</b><span>需要更强证据、售后和适用边界，不适合直接用主盘话术外推。</span></div><div class="legend-item state-blue"><b>暂缓边界</b><span>公开版先标成后台校准对象，等内部退货、复购、客服和渠道数据确认。</span></div>
         </div>
-        <div class="grid two" style="margin-top:14px">
-          <div class="card">
-            <span class="label">公开销售规模校准</span>
-            <h3>全球可核实订单底线约 USD 3.5M，约 RMB 25.1M。</h3>
-            <p>官方创始人信披露 Kickstarter $3.5M、400+ backers；按 2026-06-14 1 USD≈7.18 RMB 换算。网站预售、经销与租赁订单未披露，不计入底线。E5</p>
-          </div>
-          <div class="card">
-            <span class="label">北美年销售额估算</span>
-            <h3>USD 1.6M-4.5M，约 RMB 11.5M-32.3M。</h3>
-            <p>公开数据未披露地区拆分。按北美创作者/贸易展/社区可见度、加拿大优先批次、美国 Cine Gear/NAB 触点和高客单价格区间做方向性估算；需要内部订单地区、网站预售和经销 sell-out 复核。E1-E6</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘先转化</h3>
+          <p>先把 高速摄影、商业拍摄和 VFX 专业用户 的下单疑虑变成 PDP、FAQ、比较页和售后承诺。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻人群先筛选</h3>
+          <p>租赁公司、教育科研、体育科学和创作者团队 可以扩，但要用独立 landing page 区分动机、价格和 proof。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>外扩人群先设边界</h3>
+          <p>要求本地维修、稳定交付和生产版工作流的采购方 不适合被泛化承诺，需要禁忌、适用条件、维修/退换和客服路径。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：Crowdfunding / preorder professional hardware 已成立，问题在成交解释权没有完全回到品牌手里。</h2>
+        </div>
+        <p class="section-note">占比是公开数据方向性估计，不代表后台财务口径；用于判断优先修哪一条承接链。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Crowdfunding / preorder professional hardware</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>DTC preorder</b>
+            <div class="share-track"><i class="green" style="width:46%;"></i></div>
+            <span>46%</span>
+            <small>DTC preorder 当前承担 主成交 / 主证明。</small>
+          </div><div class="share-row">
+            <b>Community / crowdfunding</b>
+            <div class="share-track"><i class="amber" style="width:24%;"></i></div>
+            <span>24%</span>
+            <small>Community / crowdfunding 当前承担 次级成交 / 信任补充。</small>
+          </div><div class="share-row">
+            <b>Dealer / rental</b>
+            <div class="share-track"><i class="blue" style="width:18%;"></i></div>
+            <span>18%</span>
+            <small>Dealer / rental 当前承担 补充触达。</small>
+          </div><div class="share-row">
+            <b>Creator proof</b>
+            <div class="share-track"><i class="blue" style="width:12%;"></i></div>
+            <span>12%</span>
+            <small>Creator proof 当前承担 补充触达。</small>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="gene">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Audience &amp; Brand Gene</span>
-            <h2>Pixboom 靠专业创作者和高速度影像用户成立，不能按普通相机品牌打法外扩。</h2>
-          </div>
-          <p class="lead">Spark 的购买人群不是泛泛的内容创作者，而是愿意为高速影像、RAW 工作流、专业 I/O 和特殊镜头场景付费的人：DP、commercial tabletop、VFX、运动科学、wildlife、rental house 和小型制作公司。大众 creator 只是未来边界，短期不能把他们当主成交人群。</p>
-        </div>
-        <div class="grid three">
-          <div class="card">
-            <span class="label">核心盘</span>
-            <h3>专业高速度影像用户</h3>
-            <p>CineD 把适用场景指向商业产品、水/玻璃、运动科学、VFX 元素和 wildlife；官网强调 4K 1000fps、RAW、12G-SDI、V-mount 和 E/EF/PL。E2, E8</p>
-          </div>
-          <div class="card">
-            <span class="label">相邻人群</span>
-            <h3>owner-operator 和小型 production house</h3>
-            <p>$13,999 让过去只能租 Phantom 的团队有购买理由，但他们会先看出货、维修、样片、软件和 resale/rental 价值。E3, E8</p>
-          </div>
-          <div class="card">
-            <span class="label">不宜过早主打</span>
-            <h3>普通 creator 和泛摄影用户</h3>
-            <p>高速拍摄需要灯光、workflow 和专门场景。若 Marketing 只讲“accessible”，会吸引预算不足或使用场景不稳定的人群，拉高咨询和售后成本。E8</p>
-          </div>
-        </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>主渠道继续守</h3>
+          <p>DTC preorder 仍是 Pixboom 的首要证明面，先守评价、价格、FAQ 和售后。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网补交易安全感</h3>
+          <p>DTC 或官网必须解释为什么直购更稳，而不是只放品牌故事和产品列表。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>渠道预算要绑定质量</h3>
+          <p>预算不能只看流量和订单，必须同时看退款、评价、客服和复购。</p>
+        </article>
       </div>
     </section>
-
-    <section id="type">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Business Type &amp; Channel Mix</span>
-            <h2>经营类型：DTC / Kickstarter 社区驱动，专业经销和租赁还在验证。</h2>
-          </div>
-          <p class="lead">Pixboom 当前最大可见订单来自 Kickstarter 与官网预售，用户信任主要由专业媒体、线下展会和社区互动支撑。这个结构适合新品冷启动，但不适合长期承接 $13,999 的专业器材销售；北美下一步要把 DTC 热度转成经销、租赁、维修和创作者案例网络。</p>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：最大入口要先判断是否吃掉，比较词和售后词不能放任竞品接走。</h2>
         </div>
-        <div class="card chart-card">
-          <span class="label">北美渠道销售额占比 · 公开数据方向性估算</span>
-          <div class="stacked" aria-label="Estimated North America channel mix">
-            <div class="seg a" style="width:58%">58%</div>
-            <div class="seg b" style="width:22%">22%</div>
-            <div class="seg c" style="width:12%">12%</div>
-            <div class="seg d" style="width:8%">8%</div>
-          </div>
-          <div class="legend">
-            <div class="legend-item"><b>Kickstarter / BackerKit</b><span>50-65% · 需求验证与交付压力来源</span></div>
-            <div class="legend-item"><b>DTC 官网预售</b><span>15-30% · 利润入口但缺少公开转化证据</span></div>
-            <div class="legend-item"><b>经销 / 租赁</b><span>5-18% · Hot Rod 等触点存在，sell-out 仍待证明</span></div>
-            <div class="legend-item"><b>展会 / Workshop 线索</b><span>5-10% · 信任入口，不等于成交</span></div>
-          </div>
-        </div>
-        <div class="grid three" style="margin-top:14px">
-          <div class="card metric warn">
-            <span class="label">品类天然主渠道</span>
-            <h3>专业经销 + demo + rental + DTC 复合型</h3>
-            <p>这不是 Amazon-first 品类。高客单专业设备需要试用、技术支持、维修和团队采购信任。</p>
-          </div>
-          <div class="card metric bad">
-            <span class="label">平台集中度</span>
-            <h3>预售订单集中，用户关系仍脆弱</h3>
-            <p>Kickstarter 提供需求和现金流，但同一批客户也会集中放大交付延迟、固件和售后风险。E4-E6</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">内部校准数据</span>
-            <h3>先补地区订单、预售转化和渠道 sell-out</h3>
-            <p>下一步最需要 Seller/Shopify 订单地区、付款/退款、官网 CVR、售后工单、经销订单和租赁周转率。</p>
-          </div>
-        </div>
+        <p class="section-note">本版按需求量级和购买意图排序；精确搜索量需要 SEO / Google Trends 后台补数。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高 · 量级高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>high-speed cinema cameras / Pixboom Spark</h3>
+          <p>行业词是最大入口，Pixboom 有公开信号，但还要用类目页和比较页守住高意图流量。<span class="evidence-list"><span class="evidence">[E31]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级中高 · 量级中高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Pixboom reviews / problems / warranty / return</h3>
+          <p>临门搜索会直接影响下单，尤其是 交付确定性、维修网络、生产版证据。官网需要主动承接，而不是让 Trustpilot、Reddit、Amazon 或竞品页面先回答。<span class="evidence-list"><span class="evidence">[E91]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Pixboom vs Freefly Ember / Kron Chronos / Phantom rental</h3>
+          <p>比较词最接近下单选择，需要把安全、价格、服务、适用边界和长期成本做成固定对比页。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>DTC preorder / Community / crowdfunding purchase intent</h3>
+          <p>渠道词能承接现有订单，但也会把价格和售后解释权留在平台侧。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级低中 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Pro Card / mount adapters / demo / rental / repair network</h3>
+          <p>第二品线搜索更适合做验证和筛选，不适合直接用主线声量证明可放大。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article>
       </div>
     </section>
-
+    
     <section id="voc">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Voice of Customer</span>
-            <h2>品牌声誉可控但进入警戒区：大家想要 Spark，也在盯交付和可靠性。</h2>
-          </div>
-          <p class="lead">公开 VOC 的正向主题很强：价格破局、参数稀缺、社区参与和专业媒体试用。但负向主题也集中：Kickstarter 高客单风险、延期、批次不清、软件/固件成熟度、传感器拼接线和维修可得性。声誉不是崩盘，但当前不适合把“已成熟品牌”作为对外叙事。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC 判断：好评能支撑首单，抱怨会进入临门搜索和售后成本。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric warn">
-            <span class="label">声誉总分</span>
-            <div class="score-badge">63</div>
-            <span class="tag warn">警戒但可治理</span>
-          </div>
-          <div class="card">
-            <span class="label">正向购买理由</span>
-            <p>4K 1000fps、连续 RAW、低于传统高速系统的入手成本、CineD/Newsshooter 背书、社区参与感。E6-E9</p>
-          </div>
-          <div class="card">
-            <span class="label">负面集中主题</span>
-            <p>延期、批次不确定、Kickstarter 资金安全感、生产质量、固件功能、维修网络。E4, E7, E8</p>
-          </div>
-          <div class="card">
-            <span class="label">分数影响</span>
-            <p>下调客服售后、风险预警和电商转化分；不下调产品机会分，因为核心需求和产品方向仍成立。</p>
-          </div>
-        </div>
+        <p class="section-note">公开版先按主题聚类，不伪造精确百分比；后续深诊需要补评论样本和工单数据。</p>
       </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>集中好评主题</h3>
+          <p>4K high speed、global shutter、RAW、cinema、rental alternative 说明 Pixboom 有可转化的正向购买理由。<span class="evidence-list"><span class="evidence">[E31]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>集中抱怨主题</h3>
+          <p>delivery delay、firmware、repair、restocking fee、support 会影响首单信任、复购和客服成本。<span class="evidence-list"><span class="evidence">[E91]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>经营影响</h3>
+          <p>VOC 不能只被客服处理，要进入 PDP、FAQ、比较页、售后 SLA 和内容 brief。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">4K high speed</span><span class="w5 p1">global shutter</span><span class="w5 p2">RAW</span><span class="w4 p3">cinema</span><span class="w4 p4">rental alternative</span><span class="w4 p5">BackerKit</span><span class="w3 p6">CineD</span><span class="w3 p7">shipping</span><span class="w3 p8">firmware</span><span class="w2 p9">Pro Card</span><span class="w2 p10">mounts</span><span class="w2 p11">community</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">delivery delay</span><span class="w5 p1">firmware</span><span class="w5 p2">repair</span><span class="w4 p3">restocking fee</span><span class="w4 p4">support</span><span class="w4 p5">production proof</span><span class="w3 p6">availability</span><span class="w3 p7">workflow</span><span class="w3 p8">local service</span><span class="w2 p9">beta issues</span><span class="w2 p10">price</span><span class="w2 p11">trust</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向 VOC 继续支持 DTC preorder 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
     </section>
-
+    
     <section id="ceiling">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Market Ceiling</span>
-            <h2>Spark 主机是收入核心，Pro Card 和软件只能在装机量起来后放大利润。</h2>
-          </div>
-          <p class="lead">直接套用“高速相机大盘”会高估 Pixboom 的短期天花板。它真正能吃的是北美专业创作高速影像的细分盘：商业产品、体育/科学、VFX、wildlife、广告和 rental house。短期优先级应放在 Spark 主机交付和专业渠道，配件与软件先服务装机量和利润质量。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：Pixboom Spark 是主线，其他品线先按验证对象管理。</h2>
         </div>
-        <div class="grid three">
-          <div class="card">
-            <span class="label">P0 · Spark 高速电影机</span>
-            <h3>北美可服务盘：USD 25M-70M / 年（方向性估算）</h3>
-            <p>广义全球高速相机市场 2024 约 USD 704M；电影机市场北美约占全球三分之一。Pixboom 的现实 SAM 是北美影视/创作高速影像细分，不能直接套整个高速相机大盘。当前北美 GMV 估算 USD 1.6M-4.5M。E10, E11</p>
-            <div class="pill-row"><span class="pill good">主收入线</span><span class="pill warn">份额需内部校准</span></div>
-          </div>
-          <div class="card">
-            <span class="label">P1 · Pro Card / Mount / 备件</span>
-            <h3>利润层，尚未形成独立增长柱</h3>
-            <p>官网单独售卖 Pro Card 2.5TB 和 mount adapters；但配件市场依赖 Spark 装机量，现阶段主要承担毛利、备份和专业工作流安全。E2, E13</p>
-            <div class="pill-row"><span class="pill warn">高毛利候选</span><span class="pill bad">装机量约束</span></div>
-          </div>
-          <div class="card">
-            <span class="label">P1 · Pixboom Cine / Firmware</span>
-            <h3>留存和信任层，暂不适合商业化</h3>
-            <p>官网下载中心显示 Pixboom Cine V0.3.4.3、Firmware V1.0.1；软件成熟度会影响复购和口碑，但此阶段不建议把核心工作流功能做成付费墙。E14</p>
-            <div class="pill-row"><span class="pill warn">必须修</span><span class="pill bad">不能过早变现</span></div>
-          </div>
+        <p class="section-note">公开版先做方向性拆分，不把品线宽度直接当成第二增长柱。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">当前主线 / 最大证明面 · 已验证，需守质量</div>
+          <h3>Pixboom Spark</h3>
+          <b>中高</b>
+          <p>Pixboom Spark 决定当前北美分数和主要入口。<span class="evidence-list"><span class="evidence">[E31]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">第二验证线 · 待独立证明</div>
+          <h3>Pro Card / mount adapters</h3>
+          <b>中</b>
+          <p>Pro Card / mount adapters 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E91]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">补充利润或服务线 · 待独立证明</div>
+          <h3>demo / rental / repair network</h3>
+          <b>中</b>
+          <p>demo / rental / repair network 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图：买前最关心能否选对、用稳、出问题有人管。</h2>
+        </div>
+        <p class="section-note">状态列必须先告诉团队有没有接住，再看页面动作。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>SERP / Google</td><td>交付确定性 是否可靠</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线 交付确定性 解释页、FAQ 和比较页。<span class="evidence-list"><span class="evidence">[E31]</span></span></td></tr><tr><td>Amazon / Marketplace</td><td>评分、价格、退换和竞品替代</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>守评价结构、coupon 纪律和平台 PDP proof。<span class="evidence-list"><span class="evidence">[E91]</span></span></td></tr><tr><td>Reddit / BBB / Trustpilot</td><td>差评是否会影响购买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>把负面主题转成 support hub、SLA 和售后承诺。<span class="evidence-list"><span class="evidence">[E1]</span></span></td></tr><tr><td>YouTube / TikTok</td><td>演示是否能降低疑虑</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>内容 brief 必须回答 交付确定性、维修网络、生产版证据。<span class="evidence-list"><span class="evidence">[E2]</span></span></td></tr><tr><td>官网 / DTC</td><td>为什么要在官网买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>补直购权益、保修、退换、客服和渠道价格解释。<span class="evidence-list"><span class="evidence">[E3]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：先回答最高权重疑虑，再谈扩品和内容放大。</h2>
+        </div>
+        <p class="section-note">权重为公开数据版方向性判断，用于排序，不代表统计抽样。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">32%</div><div class="mini-track"><i style="width:32%;"></i></div></div>
+          <div><strong>交付确定性</strong><p>Pixboom Spark 的核心承诺</p></div>
+          <div><span class="verdict red">接住一半</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">24%</div><div class="mini-track"><i style="width:24%;"></i></div></div>
+          <div><strong>维修网络</strong><p>Community / crowdfunding 触点里的证明</p></div>
+          <div><span class="verdict amber">接住一半</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>生产版证据</strong><p>Dealer / rental 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">14%</div><div class="mini-track"><i style="width:14%;"></i></div></div>
+          <div><strong>价格理由</strong><p>Creator proof 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>工作流可靠</strong><p>DTC preorder 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
         </div>
       </div>
     </section>
-
-    <section id="match">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Message-Market Fit</span>
-            <h2>Spark 的参数卖点击中需求，但高客单买家最先看的仍是可靠性和服务。</h2>
-          </div>
-          <p class="lead">匹配度 68 / 100，属于“勉强及格但有硬伤”。Pixboom 把 4K 1000fps、BSI、Global Shutter、continuous RAW 讲得足够清楚；北美专业买家真正的第一关是设备能不能按时交付、稳定拍摄、顺畅后期、坏了有人修。</p>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：Pixboom 有公开需求信号，下一步先修 交付确定性。</h2>
         </div>
-        <div class="match-row">
-          <div><strong>可靠交付、维修和售后</strong><br><span class="label">公开样本方向性权重 30%</span></div>
-          <div>2-year warranty、local repair、24hr support response</div>
-          <div><div class="score-badge" style="font-size:30px;color:var(--warning-text)">58</div><span class="tag warn">不够硬</span></div>
-          <div>承诺存在，但社区仍在追问出货批次和延迟；$13,999 设备需要可验证的北美维修路径。E2, E4</div>
-        </div>
-        <div class="match-row">
-          <div><strong>真实 4K 高帧率画质</strong><br><span class="label">公开样本方向性权重 25%</span></div>
-          <div>4K 1000fps、Super 35 BSI、global shutter、13 stops claim</div>
-          <div><div class="score-badge" style="font-size:30px;color:var(--success-text)">78</div><span class="tag good">做得好</span></div>
-          <div>专业媒体试用支持核心产品方向；生产版仍需要正式 lab test 和更多真实项目样片。E7, E8</div>
-        </div>
-        <div class="match-row">
-          <div><strong>工作流和后期效率</strong><br><span class="label">公开样本方向性权重 20%</span></div>
-          <div>Pixboom Pro Card、Pixboom Cine、CinemaDNG export、4K HDMI firmware</div>
-          <div><div class="score-badge" style="font-size:30px;color:var(--warning-text)">64</div><span class="tag warn">部分接住</span></div>
-          <div>连续 RAW 是强卖点，但触发、pre-roll、calibration、软件版本仍是购买前疑虑。E7, E14</div>
-        </div>
-        <div class="match-row">
-          <div><strong>TCO 对比 rental / Freefly / Phantom</strong><br><span class="label">公开样本方向性权重 15%</span></div>
-          <div>$13,999 套装、低于 Freefly Ember S5K 与传统高速方案</div>
-          <div><div class="score-badge" style="font-size:30px;color:var(--success-text)">82</div><span class="tag good">价格理由强</span></div>
-          <div>价格切口成立；但 Pro Card、维修、灯光、配件和 resale 需要被纳入完整拥有成本。E2, E9, E12</div>
-        </div>
-        <div class="match-row">
-          <div><strong>专业生态和可得性</strong><br><span class="label">公开样本方向性权重 10%</span></div>
-          <div>展会、workshop、Hot Rod Cameras 触点、社区</div>
-          <div><div class="score-badge" style="font-size:30px;color:var(--risk-text)">49</div><span class="tag bad">不达标</span></div>
-          <div>有触点但没有形成北美 demo / rental / repair / reseller 的确定网络，专业采购会继续观望。E1, E12</div>
-        </div>
+        <p class="section-note">旧分 61，v3 分 52；本次覆盖旧 GitHub HTML 的核心变化是加入 v3 风险封顶和专项路由。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>1-10 · Crowdfunding / preorder professional hardware</p></div><div class="summary-item"><b>主线</b><p>Pixboom Spark 仍是当前北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>52 / 100 · D档，活跃封顶 58。</p></div><div class="summary-item"><b>Top 1 问题</b><p>交付确定性 正在限制成交确定性。</p></div><div class="summary-item"><b>路由</b><p>CommerceFlow 优先修交付、维修、预售承诺和专业渠道；TideLens 暂缓放大。</p></div><div class="summary-item"><b>预算取舍</b><p>先把 交付确定性、维修网络 和搜索承接修到可验收，再考虑扩大投放。</p></div>
       </div>
     </section>
-
-    <section id="summary">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">One Page Summary</span>
-            <h2>一页看懂：Pixboom 的北美卡点是交付信任；需求已经被预售和专业媒体验证。</h2>
-          </div>
-          <p class="lead">Spark 已经拿到高客单预售、专业媒体和创作者关注，说明产品切口是成立的。现在决定北美能不能继续放量的，是 Pixboom 能否在 90 天内把出货节奏、维修承诺、固件路线和真实生产案例讲成一套可信的专业器材经营系统。</p>
-        </div>
-        <div class="grid three">
-          <div class="card metric bad">
-            <span class="label">P0 · 交付与售后</span>
-            <h3>出货兑现决定下一轮信任成本。</h3>
-            <p>社区对延迟和批次仍有明确不满。Pixboom 需要把“我们在努力”变成“每周可复查的交付、维修和问题关闭数据”。E4</p>
-          </div>
-          <div class="card metric warn">
-            <span class="label">P1 · 生产版证明</span>
-            <h3>参数声量已经够，生产版案例不够。</h3>
-            <p>CineD 认可基础能力，也指出 beta 版触发、校准和动态范围问题。下一步要靠生产版长测、真实片场和 workflow 教程降风险。E7, E8</p>
-          </div>
-          <div class="card metric bad">
-            <span class="label">P1 · 北美渠道</span>
-            <h3>DTC 和众筹不能单独承接专业采购。</h3>
-            <p>专业设备需要经销、租赁、demo、维修和融资。只靠官网预售，会让高意向客户停在咨询和观望。E12</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    
     <section id="blocks">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Three Business Blocks</span>
-            <h2>三大板块诊断：产品和声量跑在前面，电商与售后承接拖后腿。</h2>
-          </div>
-          <p class="lead">Pixboom 的热度已经够高，短板在高客单交易链路还不够像专业器材品牌。品牌叙事和 Marketing 能吸引人，电商、服务和渠道必须把“敢不敢下单”这一步补上。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：路由按经营杠杆判断，不只看最低分。</h2>
         </div>
-        <div class="grid three">
-          <div class="card">
-            <div class="score-badge" style="color:var(--warning-text)">68</div>
-            <h3>品牌板块</h3>
-            <p><strong>判断：</strong>专业媒体和众筹背书成立，但新品牌信任仍需要交付记录来兑现。</p>
-            <ul>
-              <li>做得好的：$3.5M 众筹、400+ backers、CineD/Newsshooter 和 iF 设计奖构成早期权威背书。E5-E9</li>
-              <li>做得好的：官网视觉和产品语言清晰，能让专业用户快速理解 4K 1000fps 和 RAW 工作流。E1, E2</li>
-              <li>做得不好的：品牌信用还被“延期、批次、维修可得性”压住；这会直接拉高高客单下单阻力。E4</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="score-badge" style="color:var(--warning-text)">72</div>
-            <h3>Marketing 板块</h3>
-            <p><strong>判断：</strong>PR 和创作者试用有效，但内容还没完全服务成交决策。</p>
-            <ul>
-              <li>做得好的：CineD hands-on、Newsshooter、Philip Bloom 等触点能触达核心专业用户。E7-E9</li>
-              <li>做得好的：NAB、Cine Gear、IBC 和 Atlas Lens workshop 让 Spark 有线下可信度。E1, E3, E4</li>
-              <li>做得不好的：大量内容仍在证明“参数很强”，缺少 production-ready、售后、维修、workflow 风险关闭内容。E7, E14</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="score-badge" style="color:var(--risk-text)">54</div>
-            <h3>DTC / 电商板块</h3>
-            <p><strong>判断：</strong>当前不达标。页面能卖参数，但还没有把 $13,999 的购买风险讲清楚。</p>
-            <ul>
-              <li>做得好的：官网直接展示价格、套装、保修、运费和下单路径，基础 DTC 能成交。E2</li>
-              <li>做得不好的：14 天退货、25%-35% restocking fee 和非质量问题不可退，会加重高客单犹豫。E2</li>
-              <li>做得不好的：经销/租赁触点少，Amazon/B&amp;H/Adorama 等主流专业购买路径没有公开 sell-out 证明。E12</li>
-            </ul>
-          </div>
-        </div>
+        <p class="section-note">三项分数用于判断下一步该由 Atlas 继续总控，还是进入 SignalMark、CommerceFlow 或 TideLens 深诊。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3>影像设备 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>53</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Pixboom 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>交付确定性、维修网络 还需要被页面和内容前置。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>44</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>DTC preorder 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 交付确定性 解释还不够集中。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>54</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>DTC preorder 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 交付确定性、维修网络、生产版证据。</p></div></div>
+        </article>
       </div>
     </section>
-
-    <section id="problems">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Top 3 Issues</span>
-            <h2>三大关键问题：先把专业买家的风险感降下来。</h2>
-          </div>
-          <p class="lead">Pixboom 接下来要把北美客户最在意的三件事讲透：能按期拿到、拿到后能稳定拍、坏了有人修。</p>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：交付确定性、维修网络、生产版证据。</h2>
         </div>
-        <div class="grid">
-          <div class="card problem">
-            <div class="problem-side">
-              <span class="label">P0 · 30 天内进周会</span>
-              <h3>出货和售后信任没有形成可复查系统。</h3>
-              <div class="score-badge" style="color:#fff">86</div>
-              <span class="tag bad">严重度高</span>
-            </div>
-            <div class="problem-body">
-              <p>6 月更新显示出货在推进，但社区评论仍集中追问延期、批次和已发货数量。对 $13,999 专业设备来说，公开透明的交付看板和北美售后路径不是客服细节，而是成交条件。E4</p>
-              <div class="impact-path">
-                <div><strong>现象</strong><br>客户关注从参数转向交付。</div>
-                <div><strong>影响</strong><br>预售转化、转介绍和经销信心被压低。</div>
-                <div><strong>动作</strong><br>建立批次、维修、已知问题和关闭率看板。</div>
-              </div>
-              <div class="pill-row"><span class="pill bad">Owner: Ops / Support</span><span class="pill neutral">验收: 每周出货与 issue update</span></div>
-            </div>
-          </div>
-          <div class="card problem">
-            <div class="problem-side">
-              <span class="label">P1 · 60 天内补证据</span>
-              <h3>生产版证明还没有追上参数声量。</h3>
-              <div class="score-badge" style="color:#fff">78</div>
-              <span class="tag warn">高优先级</span>
-            </div>
-            <div class="problem-body">
-              <p>CineD 对 Spark 的基础能力评价正向，但也明确记录 beta 阶段的动态范围、horizontal line、IR-cut、trigger、calibration 和 pre-roll 等待完善点。生产版必须用真实拍摄和长测把这些疑虑关闭。E7, E8</p>
-              <div class="impact-path">
-                <div><strong>现象</strong><br>参数可信，production-ready 证据不足。</div>
-                <div><strong>影响</strong><br>专业客户会等测评、等租赁、等别人先踩坑。</div>
-                <div><strong>动作</strong><br>20 个真实 production case + firmware issue log。</div>
-              </div>
-              <div class="pill-row"><span class="pill warn">Owner: Product / Marketing</span><span class="pill neutral">验收: 生产版案例库上线</span></div>
-            </div>
-          </div>
-          <div class="card problem">
-            <div class="problem-side">
-              <span class="label">P1 · 90 天内建渠道</span>
-              <h3>北美专业渠道没有承接高客单成交。</h3>
-              <div class="score-badge" style="color:#fff">74</div>
-              <span class="tag warn">高优先级</span>
-            </div>
-            <div class="problem-body">
-              <p>专业电影机不是纯官网成交。Pixboom 需要在 LA、NY、Toronto/Vancouver 等节点建立 demo、租赁、经销、维修和 creator referral；否则热度会停在内容观看和咨询，而不是进入采购。E1, E12</p>
-              <div class="impact-path">
-                <div><strong>现象</strong><br>贸易展触点强，经销 sell-out 弱。</div>
-                <div><strong>影响</strong><br>高意向客户缺少试用和售后安全感。</div>
-                <div><strong>动作</strong><br>签 3-5 个 demo / rental / repair 节点。</div>
-              </div>
-              <div class="pill-row"><span class="pill warn">Owner: Channel</span><span class="pill neutral">验收: 可预约 demo 和租赁周转数据</span></div>
-            </div>
-          </div>
-        </div>
+        <p class="section-note">每个问题都要同时落到证据、影响和 30 / 90 天动作。</p>
       </div>
+      <article class="issue state-red">
+        <h3>问题 1：交付确定性 没有被放到购买前第一层。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。它直接影响首单信任、渠道选择和售后成本。</p></div>
+          <div><b>证据</b><p>Kickstarter 和创作者试用证明需求，交付、维修、渠道和生产版证据还没有追上参数声量。 <span class="evidence-list"><span class="evidence">[E31]</span><span class="evidence">[E91]</span><span class="evidence">[E1]</span></span></p></div>
+          <div><b>业务影响</b><p>用户会回到平台、竞品或第三方负面页面寻找答案，品牌失去解释权。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 交付确定性 承接页，插入 PDP、FAQ、checkout 和客服宏。<br><strong>90 天：</strong>把评价、退款、客服、复购和渠道转化放入同一张周报，验证修复效果。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：Pro Card / mount adapters / demo / rental / repair network 需要独立证据。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。第二线不能只靠主线声量外推。</p></div>
+          <div><b>证据</b><p>Pixboom Spark、Pro Card / mount adapters、demo / rental / repair network 的角色需要用公开动销和后台数据拆清。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></p></div>
+          <div><b>业务影响</b><p>预算会被摊薄，团队容易同时推太多页面、SKU 和内容主题。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 SKU role map：Hero / Validation / Add-on / Retention / Proof。<br><strong>90 天：</strong>按 SKU role 看 GMV、毛利、评价、退货、复购和渠道冲突，关掉低质量长尾。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：搜索、VOC 和内容没有形成同一个承接闭环。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。高意图用户会在搜索和社群里看到分散答案。</p></div>
+          <div><b>证据</b><p>搜索词、评价和 VOC 需要统一到承接页与内容 brief。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>投放和内容会增加注意力，但没有稳定降低购买犹豫。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重排搜索入口：行业词、品牌 review、竞品比较、售后词。<br><strong>90 天：</strong>把 creator brief、SEO 页面、FAQ、PDP 和 support macro 合并为一套 proof matrix。</p></div>
+        </div>
+      </article>
     </section>
-
     <section id="competitors">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Competitive Calibration</span>
-            <h2>竞品对比显示 Pixboom 的价格切口成立，但可靠性门槛更高。</h2>
-          </div>
-          <p class="lead">Pixboom 在“性能 / 价格”上有真实锋利度。问题是高速电影机属于低容错专业设备：Freefly、Kron、Phantom 的客户不仅买参数，也买可用性、服务、生态和历史信任。</p>
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：用户会拿 Freefly Ember、Kron Chronos、Phantom rental 来判断安全感和价格合理性。</h2>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>品牌 / 产品</th><th>公开价格与能力</th><th>对 Pixboom 的启示</th></tr></thead>
-            <tbody>
-              <tr><td>Pixboom Spark</td><td>$13,999，套装含 Spark、2.5TB Pro Card、E/EF/PL adapter；4K 1000fps / 2K 1800fps 级别，continuous RAW。E2</td><td>价格理由强，但必须用交付、维修和 production-ready 案例守住高客单信任。</td></tr>
-              <tr><td>Freefly Ember S5K</td><td>官方主张 5K 600fps、4K 800fps；CineD 曾披露 brain retail $17,995。E9</td><td>Freefly 是最直接的“可购买高速创作机”标杆，Pixboom 要证明的不只是更高帧率，还包括同级可用性。</td></tr>
-              <tr><td>Kron Chronos 4K12</td><td>官网/零售显示 4K 1006fps、短时记录；价格约 $17,995。E12</td><td>Chronos 更偏科研/技术型，Pixboom 若要吃影视创作者，需要把 cinema workflow 和可靠性讲得更完整。</td></tr>
-              <tr><td>Phantom / 高端 rental</td><td>Pixboom 官方内容把 4K 1000fps 与 Phantom rental 场景对比，提到 $1,500-$2,000/day 级别租赁经济性。E3</td><td>Pixboom 的拥有成本叙事成立，但也意味着客户会用专业 rental 的服务标准要求它。</td></tr>
-            </tbody>
-          </table>
+        <p class="section-note">竞品当前重点是比谁更快降低购买风险。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 对比</div>
+          <h3>Freefly Ember</h3>
+          <p>最直接抢走高意图比较词，需要用对比页回答价格、服务和适用边界。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Kron Chronos</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Phantom rental</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Hot Rod Cameras</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从“能买到”升级成“为什么现在放心买”。</h2>
         </div>
+        <p class="section-note">英文 copy 只给可测试方向，不替代后续品牌文案打磨。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">Now</div>
+          <h3>当前购买理由</h3>
+          <p>Pixboom Spark 已经能解释基础需求。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Next</div>
+          <h3>下一阶段理由</h3>
+          <p>把 交付确定性、维修网络、生产版证据 讲成确定性，支撑更高质量成交。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>不要先放大的方向</h3>
+          <p>不要在 proof 和售后承接前平均扩大所有渠道预算。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Pixboom helps North America buyers choose high-speed cinema cameras with clearer proof and lower purchase risk.</p>
+        <p><b>Hero subhead:</b> Compare use cases, support, warranty, and fit before you buy.</p>
+        <p><b>Product promise:</b> A clearer path from first interest to confident daily use.</p>
+        <p><b>Sales opener:</b> We found the next growth constraint is not awareness alone; it is purchase certainty around 交付确定性.</p>
+        <p><b>CTA:</b> Build the proof and support path before scaling spend.</p>
       </div>
     </section>
-
+    
     <section id="scores">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">11-Dimension Score</span>
-            <h2>11 维评分：产品机会高，服务和渠道是低分项。</h2>
-          </div>
-          <p class="lead">CEO 应该把这张表用于资源取舍：产品能力和专业声量继续放大；客服售后、渠道供应和数据看板进入 30 天治理；会员复购和软件商业化暂时不承担收入目标。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：红灯先修，黄灯进周会，绿灯继续放大。</h2>
         </div>
-        <div class="grid four">
-          <div class="card metric bad"><span class="label">客服与售后</span><div class="score-badge">49</div><div class="bar"><div class="fill bad" style="width:49%"></div></div><p>延迟、维修和 issue close 需要公开化。</p></div>
-          <div class="card metric bad"><span class="label">订阅与会员</span><div class="score-badge">46</div><div class="bar"><div class="fill bad" style="width:46%"></div></div><p>不宜过早商业化，先做用户资产沉淀。</p></div>
-          <div class="card metric bad"><span class="label">电商板块</span><div class="score-badge">52</div><div class="bar"><div class="fill bad" style="width:52%"></div></div><p>DTC 可下单，但渠道和退换承接弱。</p></div>
-          <div class="card metric bad"><span class="label">风险预警</span><div class="score-badge">42</div><div class="bar"><div class="fill bad" style="width:42%"></div></div><p>交付、固件、口碑和服务风险集中。</p></div>
-          <div class="card metric warn"><span class="label">转化漏斗</span><div class="score-badge">58</div><div class="bar"><div class="fill warn" style="width:58%"></div></div><p>高意向咨询需要 demo 和渠道闭环。</p></div>
-          <div class="card metric warn"><span class="label">品牌板块</span><div class="score-badge">68</div><div class="bar"><div class="fill warn" style="width:68%"></div></div><p>背书成立，交付记录仍弱。</p></div>
-          <div class="card metric warn"><span class="label">Marketing</span><div class="score-badge">72</div><div class="bar"><div class="fill warn" style="width:72%"></div></div><p>PR 好，成交证据还要补。</p></div>
-          <div class="card metric good"><span class="label">用户洞察</span><div class="score-badge">75</div><div class="bar"><div class="fill good" style="width:75%"></div></div><p>核心用户理解较清楚。</p></div>
-          <div class="card metric good"><span class="label">产品与品类</span><div class="score-badge">76</div><div class="bar"><div class="fill good" style="width:76%"></div></div><p>产品切口强，生产版证明需补。</p></div>
-          <div class="card metric good"><span class="label">竞品对比</span><div class="score-badge">78</div><div class="bar"><div class="fill good" style="width:78%"></div></div><p>价格/性能切口清楚。</p></div>
-          <div class="card metric good"><span class="label">增长机会</span><div class="score-badge">84</div><div class="bar"><div class="fill good" style="width:84%"></div></div><p>需求强，关键看系统承接。</p></div>
-        </div>
+        <p class="section-note">分数来自 v3 方向性重算和旧报告公开证据迁移，后台数据会校准权重。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>54</b><span>品类购买契约</span></div>
+          <div class="mini-track"><i style="width:54%;"></i></div>
+          <p>品类购买契约 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>主线产品清晰度</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>主线产品清晰度 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>47</b><span>第二品线验证</span></div>
+          <div class="mini-track"><i style="width:47%;"></i></div>
+          <p>第二品线验证 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>52</b><span>渠道角色</span></div>
+          <div class="mini-track"><i style="width:52%;"></i></div>
+          <p>渠道角色 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>50</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:50%;"></i></div>
+          <p>搜索心智 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>44</b><span>VOC / 售后</span></div>
+          <div class="mini-track"><i style="width:44%;"></i></div>
+          <p>交付确定性 是当前重点。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>53</b><span>SignalMark</span></div>
+          <div class="mini-track"><i style="width:53%;"></i></div>
+          <p>SignalMark 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>44</b><span>CommerceFlow</span></div>
+          <div class="mini-track"><i style="width:44%;"></i></div>
+          <p>CommerceFlow 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>54</b><span>TideLens</span></div>
+          <div class="mini-track"><i style="width:54%;"></i></div>
+          <p>TideLens 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>预算纪律</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>预算纪律 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>49</b><span>组织执行</span></div>
+          <div class="mini-track"><i style="width:49%;"></i></div>
+          <p>组织执行 需要服务于下一步预算取舍。</p>
+        </article>
       </div>
     </section>
-
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先把 交付确定性 修成可验证，再放大渠道。</h2>
+        </div>
+        <p class="section-note">公开版只给方向，真实预算需要后台 GMV、毛利、CAC、退货和复购校准。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">Keep</div>
+          <h3>先保留</h3>
+          <p>DTC preorder 和 Pixboom Spark 继续作为主验证面，但必须绑定评价和售后指标。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>先压住</h3>
+          <p>暂缓平均加码长尾 SKU、泛流量和没有 proof 的 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Fix</div>
+          <h3>先补强</h3>
+          <p>把预算优先放到 交付确定性、维修网络、生产版证据 的页面、内容和客服承接。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">Scale gate</div>
+          <h3>放大条件</h3>
+          <p>当搜索承接、负面 VOC、退款/售后和渠道转化都有改善，再提高投放或渠道拓展。</p>
+        </article>
+      </div></section>
+    
     <section id="roadmap">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">90 / 180 Day Roadmap</span>
-            <h2>路线图：先把信任成本降下来，再放大北美渠道。</h2>
-          </div>
-          <p class="lead">Pixboom 的短期动作不应平均铺开。前 30 天先让已付款客户看到确定性；90 天内让潜在客户看到 production-ready 证据；180 天内让北美专业渠道承担稳定销售。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先修承接，再验证第二线。</h2>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>周期</th><th>优先动作</th><th>Owner</th><th>验收指标</th></tr></thead>
-            <tbody>
-              <tr><td>0-30 天</td><td>上线公开交付/维修/固件看板：已发货、下一批数量、已知问题、已关闭问题、维修路径和预计回复 SLA。</td><td>Ops / Support</td><td>每周更新；已知 P0 issue 有状态；社区延迟投诉减少。</td></tr>
-              <tr><td>0-30 天</td><td>重写官网高客单风险页：14-day return、restocking fee、local repair、Pro Card 成本、firmware roadmap 全部解释清楚。</td><td>DTC / Legal / Support</td><td>FAQ 点击率、咨询转化、退款/犹豫主题下降。</td></tr>
-              <tr><td>31-90 天</td><td>制作 20 个 production-ready 案例：commercial tabletop、sports science、wildlife、VFX、rental workflow 各 3-5 个。</td><td>Marketing / Product</td><td>每个案例包含原始素材、灯光条件、后期路径、设备设置和问题处理。</td></tr>
-              <tr><td>31-90 天</td><td>签 3-5 个北美 demo / rental / repair 节点，优先 LA、NY、Toronto、Vancouver。</td><td>Channel</td><td>可预约 demo 页面上线；至少 2 个 rental 周转案例。</td></tr>
-              <tr><td>91-180 天</td><td>建立 installed base 增长层：Pro Card、mount、保养、培训、样片征集和 referral，不急于软件付费。</td><td>Growth / Community</td><td>老客配件 attach rate、referral 订单、NPS/VOC 回收。</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="section-note">路线以 owner 和验收指标组织，避免只写方向。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>DTC / Ecommerce｜上线 交付确定性 承接页和 PDP FAQ</b><p>验收：FAQ 点击、转化、退款原因。影响：减少临门犹豫</p></div><div class="road-action state-red"><b>Support｜整理退换、保修、故障和客服 SLA</b><p>验收：首次响应、解决周期、负面主题。影响：降低售后不确定性</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-amber"><b>Marketing｜重写 Freefly Ember / Kron Chronos / Phantom rental 比较页和 creator brief</b><p>验收：比较词排名、页面转化、内容复用。影响：夺回解释权</p></div><div class="road-action state-amber"><b>Product / Growth｜建立 SKU role map 和渠道看板</b><p>验收：GMV、毛利、评价、退货、复购。影响：减少资源摊薄</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-blue"><b>Leadership｜决定第二线是否进入预算放大</b><p>验收：独立动销、复购、渠道效率。影响：避免主线外推</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas v3 分数</b><p>验收：CAC、ROAS、TACOS、LTV、退款率。影响：把公开诊断变成经营决策</p></div>
+        </article>
       </div>
     </section>
-
-    <section id="org">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Function Audit</span>
-            <h2>职能部门专业度：红灯先修交付、售后和渠道。</h2>
-          </div>
-          <p class="lead">这不是评价个人能力，而是看公开经营产出。Pixboom 最该进入经营周会的是客服/售后、渠道/供应链和数据/增长运营；它们直接决定高客单客户是否继续信任下一批产品。</p>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：先修售后和电商承接，再让内容与渠道放大。</h2>
         </div>
-        <div class="department-group">
-          <div class="department-head"><h3>红灯部门</h3><span class="tag bad">30 天内进周会</span></div>
-          <div class="department-grid">
-            <div class="dept-card bad"><div class="score-badge">43</div><h3>客服 / 售后部</h3><p>政策写了，但公开客户焦虑仍集中在延迟、批次、技术问题和维修路径。30 天内补 issue closure 与维修 SLA。</p></div>
-            <div class="dept-card bad"><div class="score-badge">48</div><h3>渠道 / 供应链部</h3><p>出货推进慢于客户预期，专业经销和租赁 sell-out 证据不足。30 天内明确北美 demo、repair、rental 节点。</p></div>
-            <div class="dept-card bad"><div class="score-badge">50</div><h3>数据 / 增长运营部</h3><p>北美订单占比、渠道贡献、预售转化、退款原因和售后主题没有对外形成可信仪表盘。30 天内先建内部看板。</p></div>
-          </div>
-        </div>
-        <div class="department-group">
-          <div class="department-head"><h3>黄灯部门</h3><span class="tag warn">带约束优化</span></div>
-          <div class="department-grid">
-            <div class="dept-card warn"><div class="score-badge">56</div><h3>DTC / 电商部</h3><p>官网可以成交，但退换政策、交付日期、维修解释和 TCO 页面仍拖累 $13,999 转化。</p></div>
-            <div class="dept-card warn"><div class="score-badge">66</div><h3>品牌部</h3><p>品牌愿景和技术叙事成立；下一步要用交付记录、维修网络和真实项目承接权威。</p></div>
-            <div class="dept-card warn"><div class="score-badge">72</div><h3>Marketing 部</h3><p>媒体和 KOL 有效；需要减少纯参数内容，增加生产版案例和高客单风险关闭内容。</p></div>
-          </div>
-        </div>
-        <div class="department-group">
-          <div class="department-head"><h3>绿灯部门</h3><span class="tag good">继续放大，但不优先整顿</span></div>
-          <div class="department-grid">
-            <div class="dept-card good"><div class="score-badge">78</div><h3>产品 / 工程部</h3><p>核心产品方向清楚，专业媒体验证正向；下一步要把 beta 问题在生产版中关闭并公开说明。</p></div>
-            <div class="dept-card good"><div class="score-badge">76</div><h3>设计 / Web 部</h3><p>官网视觉和产品图完成度高，能承接专业感；需要把风险解释和购买决策信息层级前置。</p></div>
-          </div>
-        </div>
+        <p class="section-note">红灯排在前面，方便管理层先安排 owner。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">40</div>
+          <h3>客服 / 售后</h3>
+          <p><strong>最差点：</strong>交付确定性 还没有被 SLA 和公开承诺接住。</p>
+          <span class="tag red">30 天：30 天内上线 support hub、退换/保修说明和客服宏。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">44</div>
+          <h3>电商 / DTC</h3>
+          <p><strong>最差点：</strong>官网没有充分说明为什么直购更稳。</p>
+          <span class="tag red">30 天：30 天内补 PDP、FAQ、comparison 和 checkout 信任点。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">53</div>
+          <h3>Channel</h3>
+          <p><strong>最差点：</strong>渠道能出信号，但价格和评价解释权分散。</p>
+          <span class="tag red">30 天：30 天内统一平台 PDP、DTC 和零售话术。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">47</div>
+          <h3>Data / Growth</h3>
+          <p><strong>最差点：</strong>公开分数不能替代后台口径。</p>
+          <span class="tag amber">30 天：30 天内补 GMV、毛利、退款、复购和渠道效率表。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">48</div>
+          <h3>Product</h3>
+          <p><strong>最差点：</strong>SKU 角色和第二线验证不够清晰。</p>
+          <span class="tag amber">30 天：30 天内做 Hero / Validation / Add-on / Retention map。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">49</div>
+          <h3>Brand / Signal</h3>
+          <p><strong>最差点：</strong>购买理由存在，但边界和 proof 还不够集中。</p>
+          <span class="tag amber">30 天：30 天内完成 claim / proof / audience matrix。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">50</div>
+          <h3>Marketing</h3>
+          <p><strong>最差点：</strong>内容还没有持续回答 交付确定性、维修网络、生产版证据。</p>
+          <span class="tag amber">30 天：30 天内更新 creator brief 和搜索内容结构。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">72</div>
+          <h3>Existing Demand Proof</h3>
+          <p><strong>最差点：</strong>公开证据已经能说明存在可转化需求。</p>
+          <span class="tag green">30 天：30 天内把最强正向证据放进首页、PDP、比较页和内容 brief。</span>
+        </article>
       </div>
     </section>
-
-    <section id="risks">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Risks &amp; Data Gaps</span>
-            <h2>风险预警：最危险的不是热度下降，是第一批客户体验没有被系统化管理。</h2>
-          </div>
-          <p class="lead">Pixboom 的机会很大，但现阶段每一个交付延迟、固件问题、维修不清和退款争议都会被放大。只要首批客户体验没有形成可引用的正循环，下一轮官网预售和渠道采购都会变贵。</p>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险和数据缺口：公开版能判断方向，不能替代后台校准。</h2>
         </div>
-        <div class="grid three">
-          <div class="card metric bad"><span class="label">P0 风险</span><h3>出货节奏和客户等待情绪</h3><p>已发货数量、下一批数量、剩余排队和网站预售交付需要变成可复查事实。E4</p></div>
-          <div class="card metric warn"><span class="label">P1 风险</span><h3>固件与 workflow 成熟度</h3><p>Pixboom Cine、HDMI firmware、trigger、pre-roll、calibration 仍会影响专业可用性。E7, E14</p></div>
-          <div class="card metric warn"><span class="label">数据缺口</span><h3>地区订单和渠道 sell-out</h3><p>公开数据不足以给北美 GMV 单点，需要内部订单地区、官网 CVR、退款、售后工单和经销 sell-out 校准。</p></div>
-        </div>
-      </div>
-    </section>
-
+        <p class="section-note">上线旧 GitHub HTML 时必须保留数据缺口，避免把方向性估计写成确定财务口径。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-blue">
+          <div class="card-state">Data</div>
+          <h3>后台数据缺口</h3>
+          <p>需要补 Pixboom 的北美 GMV、渠道占比、毛利、退货、复购、客服和广告数据。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Risk</div>
+          <h3>当前最大风险</h3>
+          <p>Kickstarter 和创作者试用证明需求，交付、维修、渠道和生产版证据还没有追上参数声量。 是当前 v3 分数封顶的核心原因。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Scope</div>
+          <h3>上线备注</h3>
+          <p>本页是旧报告按 Atlas v3 规则重跑后的公开数据版，证据沿用旧公开来源和 2026-06-25 v3 重算结果。</p>
+        </article>
+      </div></section>
+    
     <section id="evidence">
-      <div class="inner">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Evidence Table</span>
-            <h2>证据表</h2>
-          </div>
-          <p class="lead">以下证据为公开来源，抓取日期为 2026-06-14。市场规模与北美 GMV 为方向性估算，不等同于 Pixboom 财务口径。</p>
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：新版 v3 判断沿用旧公开来源，并标记需要后台校准的地方。</h2>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>ID</th><th>来源</th><th>关键事实</th><th>支持判断</th><th>置信度</th></tr></thead>
-            <tbody>
-              <tr><td>E1</td><td><a href="https://www.pixboom.com/" target="_blank">Pixboom 官网首页</a></td><td>官网首屏写 Starting at $13,999；展示 Cine Gear 2026、NAB 2026、IBC 2025 等触点。</td><td>价格带、贸易展触点、品牌 VI。</td><td>高</td></tr>
-              <tr><td>E2</td><td><a href="https://www.pixboom.com/product/pixboom-spark/" target="_blank">Pixboom Spark 产品页</a></td><td>产品页展示 $13,999、2-year warranty、local repair centers、24hr support response；退货政策含 14-day return、25%-35% restocking fee。</td><td>DTC 转化、保修、退换风险、主品线参数。</td><td>高</td></tr>
-              <tr><td>E3</td><td><a href="https://www.pixboom.com/pixboom-spark-is-now-shipping-what-to-expect/" target="_blank">Pixboom Spark Is Now Shipping</a></td><td>2026-05-29 官方文章称 Spark 已在 2026-05 出货，$13,999，available now，并解释 4K 1000fps 与 Phantom rental 经济性。</td><td>当前出货状态、价格理由、TCO 叙事。</td><td>高</td></tr>
-              <tr><td>E4</td><td><a href="https://community.pixboom.com/t/spark-backer-update-june-2026-shipping-firmware-ibc/767" target="_blank">Pixboom Community June 2026 Update</a></td><td>2026-06-12 更新：计划 6 月 22 日开始发 120-150 台；剩余订单含官网预售预计 8-9 月；评论中管理员确认约 90-100 台已发货，并承认延迟反馈有效。</td><td>交付阶段、VOC、售后与运营风险。</td><td>高</td></tr>
-              <tr><td>E5</td><td><a href="https://www.pixboom.com/a-heartfelt-thank-you-to-the-pixboom-community/" target="_blank">Founder letter</a></td><td>2025-10-24 官方信披露 Kickstarter 30 天募资 $3.5M、400+ backers。</td><td>需求验证、销售底线。</td><td>高</td></tr>
-              <tr><td>E6</td><td><a href="https://www.backerkit.com/projects/635323867/pixboom-spark-worlds-first-consumer-bsi-high-speed-camera" target="_blank">BackerKit / BackerTracker</a></td><td>页面显示 454 backers、HK$27,318,397、目标 HK$100,000、活动周期 2025-09-17 至 2025-10-18。</td><td>众筹规模、backer 数量。</td><td>中高</td></tr>
-              <tr><td>E7</td><td><a href="https://www.cined.com/pixboom-spark-review-first-hands-on-with-beta-version-of-the-high-speed-cinema-camera/" target="_blank">CineD hands-on review</a></td><td>2025-10-23 CineD 认可 global-shutter high-speed 基础能力，同时记录 beta 阶段 10-11 stops、horizontal line、IR contamination、trigger / pre-roll / calibration 待完善。</td><td>产品力、生产版证明、VOC 风险。</td><td>高</td></tr>
-              <tr><td>E8</td><td><a href="https://www.cined.com/pixboom-spark-high-speed-camera-launches-4-6k-global-shutter-up-to-2182-fps-and-unlimited-raw/" target="_blank">CineD launch article</a></td><td>2025-09-10 披露 Super 35 global shutter、670fps 4.6K open gate、2,182fps 2K、$7,999 early-bird、$12,999 planned retail、Q1 2026 交付计划。</td><td>竞品与生命周期、参数定位。</td><td>高</td></tr>
-              <tr><td>E9</td><td><a href="https://www.cined.com/freefly-ember-s5k-high-speed-camera-now-shipping-in-depth-look-with-sample-footage/" target="_blank">CineD Freefly Ember S5K</a></td><td>Freefly Ember S5K camera brain retail $17,995；Freefly 官网显示 5K 600fps、4K 800fps。</td><td>直接竞品价格与性能校准。</td><td>高</td></tr>
-              <tr><td>E10</td><td><a href="https://www.grandviewresearch.com/industry-analysis/high-speed-camera-market-report" target="_blank">Grand View Research</a></td><td>全球 high-speed camera market 2024 约 USD 704.2M，2030 预计 USD 1,439.1M，CAGR 12.6%。</td><td>广义市场天花板。</td><td>中</td></tr>
-              <tr><td>E11</td><td><a href="https://www.fortunebusinessinsights.com/industry-reports/cinema-camera-market-100387" target="_blank">Fortune Business Insights</a></td><td>全球 cinema camera market 2025 USD 337.32M，North America 2025 占 33.40%。</td><td>创作/电影机天花板辅助校准。</td><td>中</td></tr>
-              <tr><td>E12</td><td><a href="https://hotrodcameras.com/products/pixboom-spark-camera-pl-mount-silver" target="_blank">Hot Rod Cameras listing</a> / <a href="https://www.krontech.ca/product-category/cameras/" target="_blank">Kron Technologies</a></td><td>Hot Rod Cameras 有 Spark PL mount listing，标 $13,399、contact for current availability；Kron 4K12 约 $17,995。</td><td>北美经销触点、竞品价格。</td><td>中</td></tr>
-              <tr><td>E13</td><td><a href="https://www.pixboom.com/product-category/accessories/" target="_blank">Pixboom Accessories</a></td><td>Accessories 页面显示 Pro Card 2.5TB、E/EF/PL adapters 等 4 个 SKU；区域价格以 JPY 展示。</td><td>配件/利润层与复购线索。</td><td>中高</td></tr>
-              <tr><td>E14</td><td><a href="https://www.pixboom.com/downloads/" target="_blank">Pixboom Downloads</a></td><td>Pixboom Cine V0.3.4.3 发布于 2026-05-08；Spark Firmware V1.0.1 发布于 2026-06-09，包含 4K HDMI output 和 menu UI 优化。</td><td>软件/固件成熟度与工作流风险。</td><td>高</td></tr>
-              <tr><td>E15</td><td><a href="https://www.instagram.com/pixboomtech/" target="_blank">Pixboom Instagram</a> / <a href="https://www.youtube.com/@pixboomtech" target="_blank">YouTube</a></td><td>公开搜索显示 Instagram 约 15K followers，YouTube 约 1.15K subscribers；近 2026-06 有用户发收到/测试 Spark 的内容。</td><td>社媒声量和早期用户内容。</td><td>中</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="section-note">证据来自旧 Atlas 公开诊断与 2026-06-25 v3 重算结果；后续深诊需要重新逐源更新 Xiyou、Amazon、搜索、VOC 和后台数据。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E31</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/pixboom-offing-na-diagnosis-2026-06-14.html" target="_blank" rel="noopener">制作 20 个 production-ready 案例：commercial tabletop、sports science、wildlife、VFX、rental workflow 各 3-5 个。</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；Marketing / Product；每个案例包含原始素材、灯光条件、后期路径、设备设置和问题处理。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E91</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/pixboom-offing-na-diagnosis-2026-06-14.html" target="_blank" rel="noopener">建立 installed base 增长层：Pro Card、mount、保养、培训、样片征集和 referral，不急于软件付费。</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；Growth / Community；老客配件 attach rate、referral 订单、NPS/VOC 回收。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E1</td>
+              <td><a href="https://www.pixboom.com/" target="_blank" rel="noopener">Pixboom 官网首页</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；官网首屏写 Starting at $13,999；展示 Cine Gear 2026、NAB 2026、IBC 2025 等触点。；价格带、贸易展触点、品牌 VI。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://www.pixboom.com/product/pixboom-spark/" target="_blank" rel="noopener">Pixboom Spark 产品页</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；产品页展示 $13,999、2-year warranty、local repair centers、24hr support response；退货政策含 14-day return、25%-35% restocking fee。；DTC 转化、保修、退换风险、主品线参数。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://www.pixboom.com/pixboom-spark-is-now-shipping-what-to-expect/" target="_blank" rel="noopener">Pixboom Spark Is Now Shipping</a></td>
+              <td>2026-05-29 官方文章称 Spark 已在 2026-05 出货，$13,999，available now，并解释 4K 1000fps 与 Phantom rental 经济性。</td>
+              <td>Public source</td>
+              <td>Public source；当前出货状态、价格理由、TCO 叙事。；高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://community.pixboom.com/t/spark-backer-update-june-2026-shipping-firmware-ibc/767" target="_blank" rel="noopener">Pixboom Community June 2026 Update</a></td>
+              <td>2026-06-12 更新：计划 6 月 22 日开始发 120-150 台；剩余订单含官网预售预计 8-9 月；评论中管理员确认约 90-100 台已发货，并承认延迟反馈有效。</td>
+              <td>Public source</td>
+              <td>Public source；交付阶段、VOC、售后与运营风险。；高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://www.pixboom.com/a-heartfelt-thank-you-to-the-pixboom-community/" target="_blank" rel="noopener">Founder letter</a></td>
+              <td>2025-10-24 官方信披露 Kickstarter 30 天募资 $3.5M、400+ backers。</td>
+              <td>Public source</td>
+              <td>Public source；需求验证、销售底线。；高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.backerkit.com/projects/635323867/pixboom-spark-worlds-first-consumer-bsi-high-speed-camera" target="_blank" rel="noopener">BackerKit / BackerTracker</a></td>
+              <td>页面显示 454 backers、HK$27,318,397、目标 HK$100,000、活动周期 2025-09-17 至 2025-10-18。</td>
+              <td>Public source</td>
+              <td>Public source；众筹规模、backer 数量。；中高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.cined.com/pixboom-spark-review-first-hands-on-with-beta-version-of-the-high-speed-cinema-camera/" target="_blank" rel="noopener">CineD hands-on review</a></td>
+              <td>2025-10-23 CineD 认可 global-shutter high-speed 基础能力，同时记录 beta 阶段 10-11 stops、horizontal line、IR contamination、trigger / pre-roll / calibration 待完善。</td>
+              <td>Public source</td>
+              <td>Public source；产品力、生产版证明、VOC 风险。；高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://www.cined.com/pixboom-spark-high-speed-camera-launches-4-6k-global-shutter-up-to-2182-fps-and-unlimited-raw/" target="_blank" rel="noopener">CineD launch article</a></td>
+              <td>2025-09-10 披露 Super 35 global shutter、670fps 4.6K open gate、2,182fps 2K、$7,999 early-bird、$12,999 planned retail、Q1 2026 交付计划。</td>
+              <td>Public source</td>
+              <td>Public source；竞品与生命周期、参数定位。；高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://www.cined.com/freefly-ember-s5k-high-speed-camera-now-shipping-in-depth-look-with-sample-footage/" target="_blank" rel="noopener">CineD Freefly Ember S5K</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；Freefly Ember S5K camera brain retail $17,995；Freefly 官网显示 5K 600fps、4K 800fps。；直接竞品价格与性能校准。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.grandviewresearch.com/industry-analysis/high-speed-camera-market-report" target="_blank" rel="noopener">Grand View Research</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；全球 high-speed camera market 2024 约 USD 704.2M，2030 预计 USD 1,439.1M，CAGR 12.6%。；广义市场天花板。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://www.fortunebusinessinsights.com/industry-reports/cinema-camera-market-100387" target="_blank" rel="noopener">Fortune Business Insights</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；全球 cinema camera market 2025 USD 337.32M，North America 2025 占 33.40%。；创作/电影机天花板辅助校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://hotrodcameras.com/products/pixboom-spark-camera-pl-mount-silver" target="_blank" rel="noopener">Hot Rod Cameras listing / Kron Technologies</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；Hot Rod Cameras 有 Spark PL mount listing，标 $13,399、contact for current availability；Kron 4K12 约 $17,995。；北美经销触点、竞品价格。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://www.pixboom.com/product-category/accessories/" target="_blank" rel="noopener">Pixboom Accessories</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；Accessories 页面显示 Pro Card 2.5TB、E/EF/PL adapters 等 4 个 SKU；区域价格以 JPY 展示。；配件/利润层与复购线索。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://www.pixboom.com/downloads/" target="_blank" rel="noopener">Pixboom Downloads</a></td>
+              <td>Pixboom Cine V0.3.4.3 发布于 2026-05-08；Spark Firmware V1.0.1 发布于 2026-06-09，包含 4K HDMI output 和 menu UI 优化。</td>
+              <td>Public source</td>
+              <td>Public source；软件/固件成熟度与工作流风险。；高</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://www.instagram.com/pixboomtech/" target="_blank" rel="noopener">Pixboom Instagram / YouTube</a></td>
+              <td>2026-06-14</td>
+              <td>Public source</td>
+              <td>Public source；公开搜索显示 Instagram 约 15K followers，YouTube 约 1.15K subscribers；近 2026-06 有用户发收到/测试 Spark 的内容。；社媒声量和早期用户内容。</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Pixboom · 2026-06-26 · North America</span>
+    </footer>
   </main>
-
-  <footer>
-    <div class="inner">
-      <h3>远汐 Offing 免费北美业务诊断</h3>
-      <p>本报告基于 2026-06-14 可复查公开数据、专业媒体、品牌官网、社区 VOC 与方向性市场估算。未接入 Pixboom 内部订单、广告后台、Shopify、售后工单、退款、渠道 sell-out 和财务数据，因此销售额与渠道占比均为经营判断用途，不作为财务结论。</p>
-    </div>
-  </footer>
 </body>
 </html>

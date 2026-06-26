@@ -3,1258 +3,1318 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yvette · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-15</title>
-  <meta name="description" content="Yvette 北美业务诊断：阶段、渠道、搜索心智、VOC、品线天花板、卖点匹配、关键问题、部门红黄绿灯。" />
+  <title>Yvette · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
   <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #f6f7f9;
-      --paper: #ffffff;
-      --paper-soft: #fbfbfc;
-      --ink: #101417;
-      --muted: #47515b;
-      --soft: #69737d;
-      --line: #d8dde3;
-      --line-strong: #b9c1ca;
-      --deep: #101b1b;
-      --deep-2: #172525;
-      --white: #ffffff;
-      --green: #087a3a;
-      --green-soft: #e8f6ee;
-      --amber: #9a5b00;
-      --amber-soft: #fff2dc;
-      --red: #d10a22;
-      --red-soft: #fff0f2;
-      --blue: #1267d8;
-      --blue-soft: #eaf2ff;
-      --pink: #c80445;
-      --pink-soft: #fff0f6;
-      --violet: #6f3fd1;
-      --cyan: #18b7b7;
-      --shadow: 0 18px 48px rgba(16, 20, 23, 0.08);
-      --radius: 8px;
-      --max: 1240px;
-      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      color-scheme: light;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #111315;
-        --paper: #181b1e;
-        --paper-soft: #1e2226;
-        --ink: #f6f7f8;
-        --muted: #c9d0d8;
-        --soft: #a8b1ba;
-        --line: #343a40;
-        --line-strong: #4b535c;
-        --deep: #071111;
-        --deep-2: #0d1c1c;
-        --green-soft: rgba(8,122,58,.18);
-        --amber-soft: rgba(154,91,0,.20);
-        --red-soft: rgba(209,10,34,.18);
-        --blue-soft: rgba(18,103,216,.18);
-        --pink-soft: rgba(200,4,69,.18);
-        --shadow: none;
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
       }
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: var(--font);
-      background:
-        radial-gradient(circle at 8% 4%, rgba(236, 6, 80, .08), transparent 28rem),
-        radial-gradient(circle at 92% 2%, rgba(24, 183, 183, .07), transparent 26rem),
-        var(--bg);
-      color: var(--ink);
-      line-height: 1.62;
-      letter-spacing: 0;
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
     }
-    a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
-    p { margin: 0; }
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
     }
-    .topbar-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 16px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
     }
-    .brand-lockup { line-height: 1.08; font-weight: 800; color: var(--ink); }
-    .brand-lockup small { display: block; margin-top: 4px; color: #245d5a; font-size: 12px; font-weight: 750; }
-    @media (prefers-color-scheme: dark) { .brand-lockup small { color: #7fe1da; } }
-    .nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; color: var(--muted); font-size: 13px; font-weight: 700; }
-    .nav a { border: 0; }
-    main { max-width: var(--max); margin: 0 auto; padding: 0 28px 72px; }
-    section { padding: 68px 0 0; scroll-margin-top: 88px; }
-    .hero {
-      min-height: calc(100svh - 64px);
-      display: grid;
-      align-items: center;
-      padding-top: clamp(32px, 5vh, 60px);
-      padding-bottom: clamp(28px, 5vh, 54px);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 450px);
-      gap: clamp(36px, 6vw, 74px);
-      align-items: center;
-    }
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0;
-    }
-    .logo-tile {
-      width: min(210px, 48vw);
-      height: auto;
-      overflow: visible;
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
-      background: transparent;
-    }
-    .logo-tile img { width: 100%; height: auto; object-fit: contain; display: block; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #245d5a;
-      font-size: 12px;
-      font-weight: 850;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    @media (prefers-color-scheme: dark) { .eyebrow { color: #80e4df; } }
-    .eyebrow::before {
-      content: "";
-      width: 18px;
-      height: 2px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
-    }
-    h1, h2, h3 { margin: 0; line-height: 1.04; letter-spacing: 0; }
-    h1 {
-      margin-top: 26px;
-      font-size: clamp(54px, 6.2vw, 88px);
-      font-weight: 900;
-      max-width: 760px;
-    }
-    .lead {
-      margin-top: 24px;
-      max-width: 760px;
-      font-size: clamp(20px, 2vw, 27px);
-      line-height: 1.38;
-      font-weight: 800;
-      color: var(--ink);
-    }
-    .sublead {
-      margin-top: 16px;
-      max-width: 720px;
-      font-size: 15px;
-      color: var(--muted);
-    }
-    .hero-score {
-      background:
-        linear-gradient(135deg, rgba(24, 183, 183, .18), transparent 30%),
-        linear-gradient(125deg, var(--deep), var(--deep-2));
-      color: #fff;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,.16);
-      min-height: 0;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 26px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-score::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 6px;
-      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
-    }
-    .score-label { font-size: 13px; font-weight: 800; color: rgba(255,255,255,.9); }
-    .score-head {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 24px;
-      align-items: end;
-      margin-top: 14px;
-    }
-    .big-score { font-size: clamp(76px, 9vw, 112px); font-weight: 900; line-height: .86; }
-    .stars {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 6px;
-      white-space: nowrap;
-    }
-    .stars span {
-      display: inline-block;
-      font-size: 32px;
-      line-height: 1;
-      color: rgba(255,255,255,.24);
-    }
-    .stars .full { color: #ffc857; }
-    .stars .half {
-      color: transparent;
-      background: linear-gradient(90deg, #ffc857 55%, rgba(255,255,255,.24) 55%);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-    .score-caption {
-      color: rgba(255,255,255,.88);
-      font-weight: 850;
-      font-size: 15px;
-    }
-    .score-formula {
-      color: rgba(255,255,255,.88);
-      font-size: 15px;
-      font-weight: 650;
-    }
-    .score-pills {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .score-pill {
-      min-height: 78px;
-      display: grid;
-      gap: 4px;
-      align-content: center;
-      padding: 12px;
-      border-radius: 8px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      color: rgba(255,255,255,.82);
-      font-size: 12px;
-      font-weight: 780;
-    }
-    .score-pill b { color: #fff; font-size: 20px; line-height: 1.05; }
-    .score-grid { display: grid; gap: 12px; }
-    .score-row {
-      display: grid;
-      grid-template-columns: 92px 1fr 52px;
-      gap: 14px;
-      align-items: center;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 750;
-    }
-    .track { height: 8px; border-radius: 999px; background: rgba(255,255,255,.16); overflow: hidden; }
-    .bar { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--cyan), var(--pink)); }
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, .96fr) minmax(300px, .86fr);
-      gap: 34px;
-      align-items: end;
-      margin-bottom: 24px;
-    }
-    h2 {
-      font-size: clamp(28px, 3vw, 42px);
-      font-weight: 900;
-      max-width: 780px;
-      line-height: 1.08;
-    }
-    .section-note { color: var(--muted); font-size: 16px; max-width: 640px; }
-    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      min-width: 0;
-    }
-    .card.no-shadow { box-shadow: none; }
-    .card h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; line-height: 1.18; }
-    .card p, .card li { color: var(--muted); font-size: 15px; }
-    .card strong { color: var(--ink); }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      min-height: 28px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--paper-soft);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-    .tag.green { color: var(--green); background: var(--green-soft); border-color: color-mix(in srgb, var(--green) 30%, var(--line)); }
-    .tag.amber { color: var(--amber); background: var(--amber-soft); border-color: color-mix(in srgb, var(--amber) 34%, var(--line)); }
-    .tag.red { color: var(--red); background: var(--red-soft); border-color: color-mix(in srgb, var(--red) 30%, var(--line)); }
-    .tag.blue { color: var(--blue); background: var(--blue-soft); border-color: color-mix(in srgb, var(--blue) 25%, var(--line)); }
-    .dark-panel {
-      background: linear-gradient(135deg, var(--deep), var(--deep-2));
-      color: #fff;
-      border-radius: 10px;
-      padding: 30px;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-    }
-    .dark-panel h2 { max-width: 1040px; }
-    .dark-panel p, .dark-panel .muted { color: rgba(255,255,255,.82); }
-    .stage-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
-    .stage-card {
-      border-radius: 8px;
-      padding: 18px;
-      min-height: 118px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.10);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .stage-card.active {
-      background: #fff;
-      color: var(--ink);
-      box-shadow: 0 0 0 2px rgba(255,255,255,.22), 0 16px 42px rgba(255,255,255,.16);
-    }
-    .stage-card b { font-size: 24px; }
-    .stage-card span { font-size: 13px; font-weight: 750; color: currentColor; opacity: .78; }
-    .audience-rings {
-      display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .rings {
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 50% 50%, var(--paper) 0 22%, transparent 22.5%),
-        radial-gradient(circle at 50% 50%, rgba(8,122,58,.22) 0 38%, transparent 38.5%),
-        radial-gradient(circle at 50% 50%, rgba(154,91,0,.20) 0 62%, transparent 62.5%),
-        radial-gradient(circle at 50% 50%, rgba(209,10,34,.13) 0 100%);
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .rings::after {
-      content: "核心盘";
-      width: 120px;
-      height: 120px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      color: var(--green);
-      font-weight: 900;
-      box-shadow: var(--shadow);
-    }
-    .ring-legend { display: grid; gap: 12px; }
-    .legend-item { border-left: 4px solid var(--line); padding: 8px 0 8px 14px; }
-    .legend-item.green { border-color: var(--green); }
-    .legend-item.amber { border-color: var(--amber); }
-    .legend-item.red { border-color: var(--red); }
-    .legend-item b { display: block; font-size: 18px; margin-bottom: 2px; }
-    .legend-item span { color: var(--muted); font-size: 14px; }
-    .share-card { display: grid; gap: 14px; }
-    .share-row { display: grid; grid-template-columns: 120px 1fr 58px; gap: 14px; align-items: center; font-size: 14px; font-weight: 800; }
-    .share-track { height: 18px; background: #eceff2; border-radius: 999px; overflow: hidden; border: 1px solid var(--line); }
-    @media (prefers-color-scheme: dark) { .share-track { background: #282d32; } }
-    .share-fill { height: 100%; border-radius: inherit; }
-    .share-fill.amazon { background: #0e7a3c; }
-    .share-fill.dtc { background: #1267d8; }
-    .share-fill.aff { background: #9a5b00; }
-    .share-fill.other { background: #6f3fd1; }
-    .mind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .mind-card {
-      border-top: 4px solid var(--line);
-      background: var(--paper);
-      border-radius: var(--radius);
-      border-left: 1px solid var(--line);
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 22px;
-      min-height: 252px;
-      box-shadow: var(--shadow);
-    }
-    .mind-card.red { border-top-color: var(--red); background: color-mix(in srgb, var(--paper) 90%, var(--red-soft)); }
-    .mind-card.amber { border-top-color: var(--amber); background: color-mix(in srgb, var(--paper) 90%, var(--amber-soft)); }
-    .mind-card.green { border-top-color: var(--green); background: color-mix(in srgb, var(--paper) 92%, var(--green-soft)); }
-    .mind-card h3 { font-size: 20px; margin: 6px 0 12px; }
-    .priority { color: #245d5a; font-size: 12px; font-weight: 900; letter-spacing: .02em; }
-    @media (prefers-color-scheme: dark) { .priority { color: #88e8e3; } }
-    .status { font-size: 28px; font-weight: 900; line-height: 1.1; margin: 8px 0 12px; }
-    .status.red { color: var(--red); }
-    .status.amber { color: var(--amber); }
-    .status.green { color: var(--green); }
-    .intent-table, .evidence-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    .intent-table th, .intent-table td, .evidence-table th, .evidence-table td {
-      padding: 16px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--line);
-      font-size: 14px;
-    }
-    .intent-table th, .evidence-table th {
-      color: var(--ink);
-      background: var(--paper-soft);
-      font-weight: 900;
-    }
-    .intent-table tr:last-child td, .evidence-table tr:last-child td { border-bottom: 0; }
-    .verdict {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-    .verdict.good { color: var(--green); background: var(--green-soft); }
-    .verdict.mid { color: var(--amber); background: var(--amber-soft); }
-    .verdict.bad { color: var(--red); background: var(--red-soft); }
-    .wordcloud-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-    .wordcloud {
-      min-height: 230px;
-      padding: 22px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    .wordcloud h3 { font-size: 20px; margin-bottom: 18px; }
-    .cloud {
-      position: relative;
-      min-height: 122px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 16px;
-      align-content: center;
-    }
-    .cloud span {
-      display: inline-block;
-      font-weight: 900;
-      line-height: 1;
-      transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0));
-      color: var(--ink);
-    }
-    .cloud .s1 { font-size: 30px; }
-    .cloud .s2 { font-size: 24px; }
-    .cloud .s3 { font-size: 20px; }
-    .cloud .s4 { font-size: 16px; }
-    .cloud.good span:nth-child(odd) { color: var(--green); }
-    .cloud.good span:nth-child(3n) { color: #245d5a; }
-    .cloud.bad span:nth-child(odd) { color: var(--red); }
-    .cloud.bad span:nth-child(3n) { color: var(--amber); }
-    .matrix { display: grid; gap: 12px; }
-    .fit-row {
-      display: grid;
-      grid-template-columns: 1.15fr .7fr 1.25fr;
-      gap: 18px;
-      align-items: center;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-    .weight {
-      display: inline-flex;
-      margin-left: 8px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-    .score-mini { font-size: 28px; font-weight: 900; }
-    .score-mini.green { color: var(--green); }
-    .score-mini.amber { color: var(--amber); }
-    .score-mini.red { color: var(--red); }
-    .mini-track { margin-top: 8px; height: 8px; border-radius: 999px; background: #eceff2; overflow: hidden; }
-    @media (prefers-color-scheme: dark) { .mini-track { background: #2b3035; } }
-    .mini-fill { height: 100%; border-radius: inherit; }
-    .mini-fill.green { background: var(--green); }
-    .mini-fill.amber { background: var(--amber); }
-    .mini-fill.red { background: var(--red); }
-    .onepage {
-      display: grid;
-      grid-template-columns: 1fr .92fr;
-      gap: 16px;
-    }
-    .summary-list { display: grid; gap: 12px; }
-    .summary-item {
-      display: grid;
-      grid-template-columns: 50px 1fr;
-      gap: 14px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: var(--shadow);
-    }
-    .num {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--red-soft);
-      color: var(--red);
-      font-weight: 900;
-    }
-    .biz-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      overflow: hidden;
-    }
-    .biz-top {
-      display: grid;
-      grid-template-columns: 86px 1fr;
-      gap: 16px;
-      padding: 22px;
-      border-bottom: 1px solid var(--line);
-    }
-    .biz-top > div:first-child { grid-column: 2; grid-row: 1; }
-    .biz-score {
-      grid-column: 1;
-      grid-row: 1;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      min-height: 92px;
-      background: var(--paper-soft);
-      text-align: center;
-    }
-    .biz-score b { display: block; font-size: 32px; line-height: 1; }
-    .biz-body { display: grid; grid-template-columns: 1fr 1fr; }
-    .biz-col { padding: 18px 22px 22px; min-width: 0; }
-    .biz-col:first-child { border-right: 1px solid var(--line); }
-    .biz-col h4 { margin: 0 0 10px; font-size: 14px; color: var(--green); }
-    .biz-col.bad h4 { color: var(--red); }
-    ul.clean { margin: 0; padding-left: 18px; }
-    ul.clean li { margin: 0 0 10px; }
-    .issue {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      margin-bottom: 16px;
-    }
-    .issue-sev {
-      background: var(--deep);
-      color: #fff;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 26px;
-    }
-    .issue-sev b { font-size: 52px; line-height: 1; }
-    .issue-main { padding: 22px; }
-    .issue-main h3 { font-size: 23px; margin-bottom: 14px; }
-    .issue-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
-    .issue-box { background: var(--paper-soft); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
-    .issue-box b { display: block; margin-bottom: 6px; color: var(--ink); }
-    .issue-box p { color: var(--muted); font-size: 14px; }
-    .comp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .comp-card {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 16px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-    .comp-name {
-      font-weight: 900;
-      font-size: 18px;
-      line-height: 1.14;
-    }
-    .path {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      position: relative;
-    }
-    .path-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      min-height: 184px;
-    }
-    .path-card b { display: block; font-size: 24px; line-height: 1.15; margin: 10px 0; }
-    .scoreboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .dept-card, .score-card {
-      position: relative;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-top: 4px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-      min-height: 184px;
-    }
-    .dept-card.red, .score-card.red { border-top-color: var(--red); }
-    .dept-card.amber, .score-card.amber { border-top-color: var(--amber); }
-    .dept-card.green, .score-card.green { border-top-color: var(--green); }
-    .dept-card .s, .score-card .s { font-size: 36px; font-weight: 900; line-height: 1; }
-    .dept-card.red .s, .score-card.red .s { color: var(--red); }
-    .dept-card.amber .s, .score-card.amber .s { color: var(--amber); }
-    .dept-card.green .s, .score-card.green .s { color: var(--green); }
-    .dept-card h3, .score-card h3 { margin: 8px 0 8px; font-size: 18px; }
-    .light-section {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: var(--shadow);
-      margin-bottom: 18px;
-    }
-    .light-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 14px; }
-    .light-head h3 { font-size: 24px; }
-    .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .road-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-    .road-card h3 { font-size: 24px; margin-bottom: 10px; }
-    .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .footnote {
-      margin-top: 28px;
-      padding: 18px 0 0;
-      border-top: 1px solid var(--line);
-      color: var(--soft);
-      font-size: 13px;
-    }
-    @media (max-width: 980px) {
-      .hero-grid, .section-head, .audience-rings, .onepage { grid-template-columns: 1fr; }
-      .hero-copy, .hero-score { min-height: auto; }
-      .grid-4, .mind-grid, .scoreboard, .dept-grid { grid-template-columns: repeat(2, 1fr); }
-      .grid-3, .roadmap, .issue-boxes, .path { grid-template-columns: 1fr; }
-      .comp-grid, .risk-grid, .wordcloud-wrap { grid-template-columns: 1fr; }
-      .issue { grid-template-columns: 1fr; }
-      .issue-sev { min-height: 160px; }
-      .stage-cards { grid-template-columns: repeat(2, 1fr); }
-      .fit-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .topbar-inner { padding: 12px 18px; }
-      .nav { display: none; }
-      main { padding: 0 16px 52px; }
-      section { padding-top: 54px; }
-      .hero { min-height: auto; padding-top: 28px; }
-      h1 { font-size: 44px; }
-      h2 { font-size: 28px; }
-      .logo-tile { width: min(164px, 52vw); height: auto; border-radius: 0; }
-      .hero-score { padding: 24px; }
-      .score-head, .score-pills, .grid-4, .grid-3, .grid-2, .mind-grid, .scoreboard, .dept-grid, .stage-cards { grid-template-columns: 1fr; }
-      .score-head { gap: 14px; }
-      .stars span { font-size: 30px; }
-      .biz-top, .biz-body, .comp-card, .summary-item { grid-template-columns: 1fr; }
-      .biz-top > div:first-child, .biz-score { grid-column: auto; grid-row: auto; }
-      .biz-col:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
-      .intent-table, .evidence-table { display: block; overflow-x: auto; }
-      .share-row { grid-template-columns: 92px 1fr 42px; }
-      .rings { max-width: 300px; margin: 0 auto; }
-    }
-    @media print {
-      .topbar { position: static; }
-      body { background: #fff; }
-      .card, .hero-score, .dark-panel, .biz-card, .issue, .mind-card, .wordcloud, .dept-card, .score-card, .road-card { box-shadow: none; break-inside: avoid; }
-      section { break-inside: avoid; }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
   </style>
 </head>
 <body>
-
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
       <nav class="nav" aria-label="报告导航">
-        <a href="#stage">阶段</a>
-        <a href="#mind">搜索</a>
-        <a href="#voc">声誉</a>
-        <a href="#issues">问题</a>
-        <a href="#departments">部门</a>
-        <a href="#evidence">证据</a>
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
       </nav>
     </div>
   </header>
-
   <main>
+    
     <section class="hero" id="top">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div>
-            <div class="logo-tile" aria-label="Yvette logo">
-              <img src="assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" />
-            </div>
-            <div class="eyebrow" style="margin-top:28px;">North America Diagnosis</div>
-            <h1>Yvette 北美业务诊断</h1>
-            <p class="lead">Yvette 北美现在最该修的不是 SKU 宽度，而是高支撑运动内衣的下单确定性：用户能快速选对尺码，买错能顺畅换码，官网能把首单用户留住。</p>
-            <p class="sublead">主线已成立；先修尺码、退换和履约信任，再用数据决定 leggings / sets 是否值得继续加码。</p>
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Yvette logo">
+          <img src="assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">Yvette 的 v3 总分为 58。当前不是只看规模和声量，优先判断 买对尺码、换码信任 和渠道承接能否支撑下一阶段预算效率。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-amber">
+            <b>58/100</b>
+            <span>Atlas v3 总分，旧分 67。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>Cap 70</b>
+            <span>当前活跃分数封顶来自 买对尺码。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>P1</b>
+            <span>风险优先级：用户相信 Yvette 能撑住，但不够相信自己能买对尺码；官网若只做 SKU 和折扣，会被 Amazon 抢走经营价值。。 <span class="evidence-list"><span class="evidence">[E3]</span></span></span>
           </div>
         </div>
-        <aside class="hero-score" aria-label="北美业务总分">
-          <div>
-            <div class="score-label">北美业务情况总分</div>
-            <div class="score-head">
-              <div class="big-score">67</div>
-              <div>
-                <div class="stars" aria-label="3.35 out of 5 stars"><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span><span>★</span></div>
-                <div class="score-caption">3.35 / 5 · 公开数据</div>
-              </div>
-            </div>
+        <p class="sublead">本页按 Atlas v3 规则覆盖旧 GitHub HTML：加入品类购买契约、风险路径、假增长信号、分数封顶、三专项评分和路由建议。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        <div class="tag-row"><span class="tag amber">v3 58 分</span><span class="tag amber">C档</span><span class="tag blue">公开数据置信度 中等</span></div>
+      </div>
+      <aside class="score-panel" aria-label="Yvette Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">58<span>/100</span></div>
+          <span class="tier green">C档</span>
+        </div>
+        <div class="stars" aria-label="2.9 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">2.9 / 5 · C档 · 先修 买对尺码，再谈放大</div>
+        <div class="score-meta">
+          <div><b>1-10</b><span>阶段判断</span></div>
+          <div><b>DTC fit-led apparel</b><span>经营类型</span></div>
+          <div><b>中等</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:61%;"></i></div>
+            <b>61</b>
           </div>
-          <div class="score-pills">
-            <div class="score-pill"><b>10-100 初期</b><span>阶段判断</span></div>
-            <div class="score-pill"><b>DTC + Amazon</b><span>经营类型</span></div>
-            <div class="score-pill"><b>中</b><span>公开数据置信度</span></div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:68%;"></i></div>
+            <b>68</b>
           </div>
-          <div class="score-grid">
-            <div class="score-row"><span>业务健康度</span><div class="track"><div class="bar" style="width:69%;"></div></div><span>69</span></div>
-            <div class="score-row"><span>业务机会分</span><div class="track"><div class="bar" style="width:76%;"></div></div><span>76</span></div>
-            <div class="score-row"><span>问题致命度</span><div class="track"><div class="bar" style="width:55%;"></div></div><span>55</span></div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:58%;"></i></div>
+            <b>58</b>
           </div>
-          <p class="score-formula">67 / 100 = 3.35 / 5。数据抓取日期：2026-06-15。</p>
-        </aside>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-amber">
+          <i>P0</i>
+          <b>买对尺码</b>
+          <span>先把购买前信任和售后解释做成页面与客服承诺。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>换码信任</b>
+          <span>把品类边界、竞品比较和渠道角色讲清楚。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索承接</b>
+          <span>行业词、review 词、比较词和售后词需要按需求量级重排。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>第二品线</b>
+          <span>用独立证据验证，不用主线声量外推。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>CommerceFlow 优先修选码、退换和官网首单路径，SignalMark 补高支撑证据。</span>
+        </article>
       </div>
     </section>
-
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>Yvette</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>CommerceFlow 优先修选码、退换和官网首单路径，SignalMark 补高支撑证据。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 49</span>
+          <span class="route-chip">分数封顶：70 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-amber">
+            <div class="specialist-score">58<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>运动健康 购买理由已经出现，但 proof 和语言边界还要补。</h3>
+              <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">49<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
+              <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">57<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
+              <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>买对尺码 没有被放到购买前第一层。</li><li>plus-size / cup-size fit / leggings / activewear add-ons 需要独立证据。</li><li>搜索、VOC 和内容没有形成同一个承接闭环。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：用户相信它能撑住，却不相信自己能买对。</h2>
+        </div>
+        <p class="section-note">服装类的 v3 封顶不只看品牌声量，核心看 fit confidence 能否把官网首单接住。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>高支撑运动内衣买的是选码确定性、支撑可信、舒适和换码安全感。</h3>
+          <p><strong>用户买的确定性：</strong>北美用户在高支撑内衣上真正购买的是“我能买对，并且穿着能撑住”。尺码、支撑、退换和舒适反馈会直接决定官网首单能否发生。</p>
+          <p><strong>当前匹配：</strong>Yvette 已经有高支撑心智和 Amazon 成交基础，但 DTC 如果停留在 SKU 与折扣，用户会回到 Amazon 寻找安全感。</p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="score-cap state-amber">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">70<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>Yvette 没有被硬性压到 60 以下，v3 的扣分来自 fit confidence、退换承诺和官网首单路径尚未闭合。</p>
+        </article>
+        <article class="decision-blindspot state-amber">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的误读</h3>
+          <dl>
+            <div><dt>高估</dt><dd>SKU 宽度、折扣效率、平台订单基础。</dd></div>
+            <div><dt>低估</dt><dd>选码焦虑、换码安全感、真实体型 proof、官网首单解释成本。</dd></div>
+            <div><dt>安慰指标</dt><dd>用户数、平台评论量、折扣转化率。</dd></div>
+            <div><dt>先别做</dt><dd>暂缓把新增品线当主要增长抓手，先把高支撑主线的选码和退换路径打穿。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P1</span><b>封顶 70</b></div>
+            <h3>尺码信任不足吃掉官网首单</h3>
+            <p>高支撑内衣的购买焦虑集中在尺码和穿着结果。若选码工具、真实体型反馈、换码承诺和客服路径不够强，DTC 会把高意图用户推回平台比较。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E8]</span></span></p>
+            <span class="tag red">CommerceFlow 优先；SignalMark 补高支撑证据。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 68</b></div>
+            <h3>官网沦为折扣货架</h3>
+            <p>官网若主要呈现 SKU、折扣和促销，无法承担 fit education 和高支撑证明。用户会把官网当浏览页，把成交交给更熟悉的平台。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先；SignalMark 补高支撑证据。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 70</b></div>
+            <h3>退换与履约负评侵蚀支撑力心智</h3>
+            <p>支撑力是产品承诺，退换体验是信任承诺。负评若集中在换码、退款或物流，会让用户把产品风险和服务风险叠加计算。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先；SignalMark 补高支撑证据。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 69</b></div>
+            <h3>第二品线过早分散主线预算</h3>
+            <p>leggings、tops 等品线可以扩充客单，但在高支撑主线的选码和换码路径稳定前，横向扩展会稀释品牌最有价值的购买理由。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+            <span class="tag amber">CommerceFlow 优先；SignalMark 补高支撑证据。</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>容易让管理层舒服的假增长信号</h3>
+            <p>这些信号都可能真实存在，但不能替代成交、复购、售后和利润质量。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>用户数和 Amazon 成交基础</h3>
+            <p>平台成交证明有需求，但无法证明官网已经解决选码和退换焦虑。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>SKU 宽度和促销活动</h3>
+            <p>宽货架会带来选择感，也可能加重尺码选择负担。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>高支撑卖点反复出现</h3>
+            <p>卖点重复不等于体型覆盖证明，仍需要真人、尺码和换码数据支撑。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>当前分数上限：70</h3>
+            <p>Yvette 没有被硬性压到 60 以下，v3 的扣分来自 fit confidence、退换承诺和官网首单路径尚未闭合。</p>
+          </div>
+          <article class="cap-reason state-amber">
+            <b>70</b>
+            <div><h3>封顶原因 1</h3><p>尺码信任和退换安全感没有形成强官网证据。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>68</b>
+            <div><h3>封顶原因 2</h3><p>官网以折扣和 SKU 为主时，品牌关系会回流平台。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>69</b>
+            <div><h3>封顶原因 3</h3><p>第二品线在主线 fit path 稳定前加速扩展。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
     <section id="stage">
-      <div class="dark-panel">
-        <div class="eyebrow">Stage Judgment</div>
-        <h2 style="margin-top:14px;">当前阶段：10-100 初期。主 SKU 已成立，下一关是把选码、换码、发货和二单留存做成可追踪指标。</h2>
-        <p style="margin-top:18px;">Yvette 不能按“新品验证期”看：官方披露 2.79M 客户，Amazon 主力运动内衣有数千条评价，官网产品线覆盖运动内衣、leggings、短裤、上衣和外套。它也不能按“品类领导”看：北美公开证据仍显示销售和心智高度依赖运动内衣，负评又集中在购买风险最敏感的尺码与退换。</p>
-        <div class="stage-cards">
-          <div class="stage-card"><b>0-1</b><span>品类需求验证</span></div>
-          <div class="stage-card"><b>1-10</b><span>单品规模化</span></div>
-          <div class="stage-card active"><b>10-100 初期</b><span>选码、换码与二单留存</span></div>
-          <div class="stage-card"><b>100+</b><span>高支撑运动内衣品类领导</span></div>
-        </div>
-      </div>
-      <div class="grid-3" style="margin-top:16px;">
-        <div class="card"><h3>阶段最该做的事</h3><p>先把高支撑运动内衣的购买风险降下来：尺码判断、退换路径、发货时效、Amazon/DTC 价格角色和复购触点必须统一。</p><div class="tag-row"><span class="tag green">主线先稳</span><span class="tag amber">体验补课</span></div></div>
-        <div class="card"><h3>不能继续做的事</h3><p>不能把 leggings、短裤、上衣和外套的“SKU 宽度”当成第二增长曲线。没有 attach rate、复购和独立搜索心智前，它们只是加购品。</p><div class="tag-row"><span class="tag red">第二曲线未证明</span></div></div>
-        <div class="card"><h3>销售额预估</h3><p>公开数据不足以给单点数。按 Amazon 动销、DTC 产品深度、评价量和品类价格带粗估，Yvette 北美零售 GMV 年化约 USD 12M-28M；其中运动内衣贡献最大。</p><div class="tag-row"><span class="tag amber">置信度：中低</span><span class="tag blue">需后台校准</span></div></div>
-      </div>
-    </section>
-
-    <section id="gene">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Brand Gene</div>
-          <h2>品牌基因：靠“高支撑运动内衣”成立，外扩边界不能脱离选码信心。</h2>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：Yvette 进入 1-10，下一步先修 买对尺码。</h2>
         </div>
-        <p class="section-note">Yvette 最该放大的不是泛运动服审美，而是让大胸、大码、高冲击运动人群相信“这个 bra 能撑住、穿得住、换得对”。这决定了它的内容、产品、客服和退换页面都必须围绕尺码信任设计。</p>
+        <p class="section-note">这个阶段的重点是把公开需求信号变成可复盘的成交、评价、售后和复购质量。</p>
       </div>
-      <div class="audience-rings">
-        <div class="rings" aria-label="核心人群同心圆"></div>
-        <div class="ring-legend">
-          <div class="legend-item green"><b>核心盘：高支撑 / 大胸 / 高冲击运动人群</b><span>跑步、HIIT、训练、网球等场景；用户首先关心不晃、肩颈不勒、尺码不踩雷。E1, E5, E6, E7</span></div>
-          <div class="legend-item amber"><b>相邻人群：日常舒适、前拉链、术后/行动不便、plus size</b><span>这部分能提高客单和复购，但需要更强的 fit finder、尺码视频和换码服务。E5, E8</span></div>
-          <div class="legend-item red"><b>外扩边界：泛 activewear 和时尚套装</b><span>leggings、短裤和上衣可以做搭配，但如果没有复购和独立心智，容易稀释品牌最能赢的运动内衣心智。E1, E3</span></div>
-        </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>运动健康 的基础需求已经通过公开渠道和旧报告证据出现。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div><div class="stage-step state-amber"><span>1-10</span><b>单点放大</b><p>high-support sports bra 是当前最清楚的北美入口，需要继续验证人群和渠道效率。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div><div class="stage-step state-neutral"><span>10-100</span><b>质量管理</b><p>多渠道和多品线开始并行时，买对尺码 与 换码信任 会决定预算效率。</p></div><div class="stage-step state-neutral"><span>100+</span><b>防守与护城河</b><p>只有当品类权威、服务确定性、复购和渠道权都成立，才适合进入 80+ 评分区。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">v3 总分</div>
+          <h3>58 / 100</h3>
+          <p>旧分 67，v3 分数 58；分数变化来自品类契约和风险封顶。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">阶段动作</div>
+          <h3>先修 买对尺码</h3>
+          <p>用 30 天补 proof / FAQ / support / channel page，再用 90 天看评价、转化和复购变化。</p>
+        </article>
       </div>
     </section>
-
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>人群判断：核心盘已经清楚，外扩前先守住适用边界。</h2>
+        </div>
+        <p class="section-note">人群层级按购买确定性排序，越往外越需要 proof、FAQ、比较页和售后承诺。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>大胸支撑、跑步训练和运动内衣用户</b><small>核心盘</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>术后恢复、日常舒适、尺码焦虑和中高强度运动用户</b><small>相邻人群</small></div>
+            </div><div class="audience-band layer-3 state-red">
+              <span class="audience-index">L3</span>
+              <div><b>对退换、尺码准确和高强度支撑极敏感的用户</b><small>外扩边界</small></div>
+            </div><div class="audience-band layer-4 state-blue">
+              <span class="audience-index">L4</span>
+              <div><b>高证明成本 / 高售后敏感用户</b><small>暂缓边界</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘</b><span>最容易被 high-support sports bra 说服，是当前成交和评价的主盘。</span></div><div class="legend-item state-amber"><b>相邻人群</b><span>有明确需求，但会比较竞品、渠道和价格，需要承接页降低犹豫。</span></div><div class="legend-item state-red"><b>外扩边界</b><span>需要更强证据、售后和适用边界，不适合直接用主盘话术外推。</span></div><div class="legend-item state-blue"><b>暂缓边界</b><span>公开版先标成后台校准对象，等内部退货、复购、客服和渠道数据确认。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘先转化</h3>
+          <p>先把 大胸支撑、跑步训练和运动内衣用户 的下单疑虑变成 PDP、FAQ、比较页和售后承诺。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻人群先筛选</h3>
+          <p>术后恢复、日常舒适、尺码焦虑和中高强度运动用户 可以扩，但要用独立 landing page 区分动机、价格和 proof。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>外扩人群先设边界</h3>
+          <p>对退换、尺码准确和高强度支撑极敏感的用户 不适合被泛化承诺，需要禁忌、适用条件、维修/退换和客服路径。</p>
+        </article>
+      </div>
+    </section>
+    
     <section id="channel">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Business Type & Channel</div>
-          <h2>经营类型：DTC + Amazon 双轮。Amazon 负责即时下单，官网必须负责选码、换码和复购。</h2>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：DTC fit-led apparel 已成立，问题在成交解释权没有完全回到品牌手里。</h2>
         </div>
-        <p class="section-note">运动内衣是强比较、强评价、强退换风险的品类。Amazon 适合吃“high impact sports bra”即时需求；官网如果只是折扣货架，就会和 Amazon 内耗。官网必须承担更高阶的尺码、会员、内容和换码服务。</p>
+        <p class="section-note">占比是公开数据方向性估计，不代表后台财务口径；用于判断优先修哪一条承接链。</p>
       </div>
-      <div class="grid-2">
-        <div class="card share-card">
-          <h3>北美平台销售额占比估算</h3>
-          <div class="share-row"><span>Amazon</span><div class="share-track"><div class="share-fill amazon" style="width:46%;"></div></div><span>46%</span></div>
-          <div class="share-row"><span>DTC 官网</span><div class="share-track"><div class="share-fill dtc" style="width:42%;"></div></div><span>42%</span></div>
-          <div class="share-row"><span>Affiliate / Social</span><div class="share-track"><div class="share-fill aff" style="width:7%;"></div></div><span>7%</span></div>
-          <div class="share-row"><span>其他渠道</span><div class="share-track"><div class="share-fill other" style="width:5%;"></div></div><span>5%</span></div>
-          <p style="color:var(--muted);font-size:13px;">估算依据：Amazon 主力 PDP 评价与动销、Shopify 官网深度、Trustpilot 评论量、联盟营销脚本和公开产品矩阵。未接入 Seller Central / Shopify 后台，置信度为中低。E1-E6, E12</p>
+      <div class="dark-panel">
+        <h3>DTC fit-led apparel</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>DTC</b>
+            <div class="share-track"><i class="green" style="width:44%;"></i></div>
+            <span>44%</span>
+            <small>DTC 当前承担 主成交 / 主证明。</small>
+          </div><div class="share-row">
+            <b>Amazon / marketplace</b>
+            <div class="share-track"><i class="amber" style="width:22%;"></i></div>
+            <span>22%</span>
+            <small>Amazon / marketplace 当前承担 次级成交 / 信任补充。</small>
+          </div><div class="share-row">
+            <b>Social / creators</b>
+            <div class="share-track"><i class="blue" style="width:18%;"></i></div>
+            <span>18%</span>
+            <small>Social / creators 当前承担 补充触达。</small>
+          </div><div class="share-row">
+            <b>SEO / fit content</b>
+            <div class="share-track"><i class="blue" style="width:16%;"></i></div>
+            <span>16%</span>
+            <small>SEO / fit content 当前承担 补充触达。</small>
+          </div>
         </div>
-        <div class="grid-2">
-          <div class="card"><h3>Amazon 的角色</h3><p>吃高意图搜索、评价比较和即时下单。主力 zip-front / high support PDP 已证明动销，但价格、coupon 和竞品比较会直接影响转化。</p><div class="tag-row"><span class="tag green">应继续守</span></div></div>
-          <div class="card"><h3>DTC 的角色</h3><p>不应只是折扣站。官网要让用户选对码、买错能换、买完愿意回来买第二件，否则会被 Amazon 价格体系牵着走。</p><div class="tag-row"><span class="tag amber">需要升级</span></div></div>
-        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>主渠道继续守</h3>
+          <p>DTC 仍是 Yvette 的首要证明面，先守评价、价格、FAQ 和售后。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网补交易安全感</h3>
+          <p>DTC 或官网必须解释为什么直购更稳，而不是只放品牌故事和产品列表。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>渠道预算要绑定质量</h3>
+          <p>预算不能只看流量和订单，必须同时看退款、评价、客服和复购。</p>
+        </article>
       </div>
     </section>
-
-    <section id="mind">
+    
+    <section id="search">
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Search Mindshare</div>
-          <h2>搜索心智：先按入口价值排序，Yvette 接住了高支撑词，但尺码与竞品比较词还没接牢。</h2>
+          <h2>搜索心智：最大入口要先判断是否吃掉，比较词和售后词不能放任竞品接走。</h2>
         </div>
-        <p class="section-note">搜索入口不能平均看。对 Yvette 最值钱的是“high impact / large bust / front zip sports bra”这类购买词，其次是品牌 + review / sizing，再其次才是泛 activewear。缺口不在有没有内容，而在内容是否能让用户相信“我能买对尺码，买错也能换对”。</p>
+        <p class="section-note">本版按需求量级和购买意图排序；精确搜索量需要 SEO / Google Trends 后台补数。</p>
       </div>
       <div class="mind-grid">
-        <div class="mind-card amber">
-          <div class="priority">P0 · 行业购买词</div>
-          <div class="status amber">半接住</div>
-          <h3>high impact sports bra / large bust / front zip</h3>
-          <p>Yvette 在 Amazon 和官网都有产品入口，但 SERP 仍会被 SHEFIT、Brooks、Athleta、SYROKAN 和内容媒体分流。这里的内容必须主打尺码、支撑和退换确定性。</p>
-          <div class="tag-row"><span class="tag amber">量级高</span><span class="tag amber">转化入口</span></div>
-        </div>
-        <div class="mind-card red">
-          <div class="priority">P0 · 品牌 + 风险词</div>
-          <div class="status red">没接牢</div>
-          <h3>Yvette sizing / return / review</h3>
-          <p>Trustpilot 与 Reddit 的负面集中在尺码、物流、退换和客服。品牌词用户已经靠近购买，但如果这些风险没有被官网讲清楚，会在下单前或买错后流失。</p>
-          <div class="tag-row"><span class="tag red">最伤转化</span><span class="tag red">先修</span></div>
-        </div>
-        <div class="mind-card green">
-          <div class="priority">P1 · 功能场景词</div>
-          <div class="status green">接得不错</div>
-          <h3>zip front / no bounce / padded high support</h3>
-          <p>前拉链、高支撑、bounce control、透气和大码覆盖是 Yvette 能被理解的卖点。问题是官网需要把这些卖点和真实身型/运动强度一一对应。</p>
-          <div class="tag-row"><span class="tag green">可继续放大</span></div>
-        </div>
-        <div class="mind-card amber">
-          <div class="priority">P2 · 泛 activewear 词</div>
-          <div class="status amber">不该优先</div>
-          <h3>leggings / matching set / workout clothes</h3>
-          <p>官网 SKU 很宽，但这些词的竞争更大、品牌心智更弱。除非能证明套装加购和复购，否则不应抢占运动内衣主线资源。</p>
-          <div class="tag-row"><span class="tag amber">先看数据</span></div>
-        </div>
+        <article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高 · 量级高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>fit-led activewear / high-support sports bra</h3>
+          <p>行业词是最大入口，Yvette 有公开信号，但还要用类目页和比较页守住高意图流量。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级中高 · 量级中高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Yvette reviews / problems / warranty / return</h3>
+          <p>临门搜索会直接影响下单，尤其是 买对尺码、换码信任、支撑级别。官网需要主动承接，而不是让 Trustpilot、Reddit、Amazon 或竞品页面先回答。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Yvette vs Shefit / Knix / Panache</h3>
+          <p>比较词最接近下单选择，需要把安全、价格、服务、适用边界和长期成本做成固定对比页。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>DTC / Amazon / marketplace purchase intent</h3>
+          <p>渠道词能承接现有订单，但也会把价格和售后解释权留在平台侧。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级低中 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>plus-size / cup-size fit / leggings / activewear add-ons</h3>
+          <p>第二品线搜索更适合做验证和筛选，不适合直接用主线声量证明可放大。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article>
       </div>
-      <table class="intent-table" style="margin-top:16px;">
-        <thead><tr><th>搜索入口</th><th>用户真实意图</th><th>现在做得怎么样</th><th>经营动作</th></tr></thead>
-        <tbody>
-          <tr><td>“best high impact sports bra for large bust”</td><td>找能撑住、适合大胸的可信候选</td><td><span class="verdict mid">半接住</span> Amazon 有评价和动销，官网也有高支撑产品，但对比页和身型证据还不够系统。</td><td>建立 SHEFIT / Brooks / Athleta / SYROKAN 对比页，按 cup / band / impact level 解释适配。</td></tr>
-          <tr><td>“Yvette sports bra sizing / return”</td><td>确认会不会买错，买错能不能换</td><td><span class="verdict bad">没接牢</span> 负评直接指向尺码、退换和物流，这些问题应在官网下单前讲清楚。</td><td>把 size finder、换码 SLA、退货费用、仓库发货路径放到 PDP 首屏附近。</td></tr>
-          <tr><td>“front zip sports bra”</td><td>找穿脱方便、强支撑、不勒肩的 bra</td><td><span class="verdict good">接得住</span> Yvette 的前拉链和高支撑 SKU 与这个入口匹配。</td><td>用视频展示穿脱、支撑、肩带压力和洗后形变，不只写参数。</td></tr>
-          <tr><td>“affordable high impact sports bra”</td><td>在 SHEFIT 高价和低价 Amazon 之间找平衡</td><td><span class="verdict mid">半接住</span> 价格带有优势，但如果尺码和退换风险高，便宜会被理解成试错成本。</td><td>把“买错成本”降下来，比单纯 coupon 更重要。</td></tr>
-        </tbody>
-      </table>
     </section>
-
+    
     <section id="voc">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">VOC & Reputation</div>
-          <h2>声誉总分 63：支撑和舒适被认可，尺码、退换和物流正在拖低信任。</h2>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC 判断：好评能支撑首单，抱怨会进入临门搜索和售后成本。</h2>
         </div>
-        <p class="section-note">Trustpilot 4.2 / 5 看起来不差，但 1 星占比 35% 是经营信号，不是“客服小问题”。对运动内衣这种高退换风险品类，负评会直接影响下单、毛利和复购。</p>
+        <p class="section-note">公开版先按主题聚类，不伪造精确百分比；后续深诊需要补评论样本和工单数据。</p>
       </div>
       <div class="grid-4">
-        <div class="card"><h3>Trustpilot</h3><p><strong>4.2 / 5，990 reviews。</strong><br>过去 12 个月 455 条评论；公司回复负评较快，但 1 星占比高，说明体验波动没有被彻底解决。E4</p><div class="tag-row"><span class="tag amber">中等健康</span></div></div>
-        <div class="card"><h3>Amazon</h3><p><strong>主力 PDP 4.2-4.3 星，数千评价。</strong><br>高支撑、前拉链和大码覆盖可被市场接受，但 Amazon 也会放大尺码和价格比较。E5, E6</p><div class="tag-row"><span class="tag green">动销成立</span></div></div>
-        <div class="card"><h3>Reddit</h3><p><strong>真实讨论偏两极。</strong><br>正面夸支撑和耐穿；负面集中在尺码不准、肩带紧、扣具麻烦和非可拆卸胸垫。E7, E8</p><div class="tag-row"><span class="tag amber">信任需补</span></div></div>
-        <div class="card"><h3>品牌回复</h3><p><strong>回复速度好，但前置预防不足。</strong><br>负评回复不能替代买前说明。应把高频问题前置到 PDP、FAQ、邮件和广告落地页。E4</p><div class="tag-row"><span class="tag red">前置不足</span></div></div>
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>集中好评主题</h3>
+          <p>support、large bust、comfortable、running、coverage 说明 Yvette 有可转化的正向购买理由。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>集中抱怨主题</h3>
+          <p>sizing、returns、fit quiz、band tight、cup shape 会影响首单信任、复购和客服成本。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>经营影响</h3>
+          <p>VOC 不能只被客服处理，要进入 PDP、FAQ、比较页、售后 SLA 和内容 brief。</p>
+        </article>
       </div>
       <div class="wordcloud-wrap">
-        <div class="wordcloud">
-          <h3>集中好评主题 <span class="tag green">可继续放大</span></h3>
-          <div class="cloud good">
-            <span class="s1" style="--x:4px;--y:2px;">高支撑</span>
-            <span class="s2" style="--x:-2px;--y:18px;">舒适</span>
-            <span class="s1" style="--x:8px;--y:-10px;">大胸友好</span>
-            <span class="s3" style="--x:-6px;--y:8px;">前拉链</span>
-            <span class="s2" style="--x:10px;--y:16px;">耐洗</span>
-            <span class="s4" style="--x:-4px;--y:-4px;">sewn-in pads</span>
-            <span class="s3" style="--x:5px;--y:10px;">跑步/训练</span>
-            <span class="s4" style="--x:-8px;--y:20px;">颜色多</span>
-          </div>
-          <p style="margin-top:18px;color:var(--muted);font-size:14px;">这些词是 Yvette 最该继续放大的购买理由。不要把预算摊给泛服饰审美，先把高支撑运动内衣的证据做厚。</p>
-        </div>
-        <div class="wordcloud">
-          <h3>集中抱怨主题 <span class="tag red">影响转化</span></h3>
-          <div class="cloud bad">
-            <span class="s1" style="--x:0;--y:0;">尺码不准</span>
-            <span class="s2" style="--x:8px;--y:18px;">退换麻烦</span>
-            <span class="s1" style="--x:-4px;--y:-10px;">物流追踪</span>
-            <span class="s3" style="--x:12px;--y:8px;">客服</span>
-            <span class="s2" style="--x:-6px;--y:20px;">肩带紧</span>
-            <span class="s4" style="--x:4px;--y:-6px;">band runs small</span>
-            <span class="s3" style="--x:-8px;--y:14px;">扣具麻烦</span>
-            <span class="s4" style="--x:10px;--y:4px;">不可拆胸垫</span>
-          </div>
-          <p style="margin-top:18px;color:var(--muted);font-size:14px;">这些不是口碑噪音，而是 Yvette 的经营漏点：它们会降低 DTC 下单信心，也会推高退货和客服成本。</p>
-        </div>
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">support</span><span class="w5 p1">large bust</span><span class="w5 p2">comfortable</span><span class="w4 p3">running</span><span class="w4 p4">coverage</span><span class="w4 p5">bounce control</span><span class="w3 p6">wide straps</span><span class="w3 p7">soft</span><span class="w3 p8">plus size</span><span class="w2 p9">confidence</span><span class="w2 p10">workout</span><span class="w2 p11">value</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">sizing</span><span class="w5 p1">returns</span><span class="w5 p2">fit quiz</span><span class="w4 p3">band tight</span><span class="w4 p4">cup shape</span><span class="w4 p5">shipping</span><span class="w3 p6">exchange</span><span class="w3 p7">chafing</span><span class="w3 p8">stock</span><span class="w2 p9">style</span><span class="w2 p10">support level</span><span class="w2 p11">refund</span></div>
+        </article>
       </div>
+      <p class="section-note wide-note">正向 VOC 继续支持 DTC 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
     </section>
-
+    
     <section id="ceiling">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Market Ceiling by Line</div>
-          <h2>分品线天花板：运动内衣是主战场，leggings 和套装目前只能算加购，不是第二增长柱。</h2>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：high-support sports bra 是主线，其他品线先按验证对象管理。</h2>
         </div>
-        <p class="section-note">全球运动内衣市场 2024 年约 USD 8.08B，北美占比约 24.79%，即北美 sports bra 市场约 USD 2.0B。Yvette 的机会足够大，但不是靠“产品线越宽越好”，而是靠在高支撑细分里提升份额和复购。</p>
+        <p class="section-note">公开版先做方向性拆分，不把品线宽度直接当成第二增长柱。</p>
       </div>
-      <div class="grid-4">
-        <div class="card"><h3>Sports Bras</h3><p><strong>TAM/SAM：北美约 USD 2.0B。</strong><br>Yvette 当前最有资格打的是高支撑、大胸、前拉链和 plus size 子市场；公开动销和评价均集中在这里。</p><div class="tag-row"><span class="tag green">P0 主线</span><span class="tag green">市占仍低</span></div></div>
-        <div class="card"><h3>Leggings / Shorts / Sets</h3><p><strong>市场大，但品牌胜率未证实。</strong><br>官网 SKU 不少，价格带也完整；但公开证据不足以说明它们能独立带来高质量增量。</p><div class="tag-row"><span class="tag amber">P1 加购</span><span class="tag amber">需 attach rate</span></div></div>
-        <div class="card"><h3>Plus Size / Special Fit</h3><p><strong>是利润和心智机会。</strong><br>官方尺码覆盖到 5XL+，运动内衣 cup/band 范围宽。这个机会能否成立，取决于尺码系统和换码体验。</p><div class="tag-row"><span class="tag green">P0 提溢价</span></div></div>
-        <div class="card"><h3>Jackets / Tops / Accessories</h3><p><strong>暂不适合当增长主线。</strong><br>这些产品适合做季节性和客单补充；在 sports bra 的选码、换码和复购指标跑顺前，不应抢主线预算。</p><div class="tag-row"><span class="tag red">P2 控制投入</span></div></div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">当前主线 / 最大证明面 · 已验证，需守质量</div>
+          <h3>high-support sports bra</h3>
+          <b>中高</b>
+          <p>high-support sports bra 决定当前北美分数和主要入口。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">第二验证线 · 待独立证明</div>
+          <h3>plus-size / cup-size fit</h3>
+          <b>中</b>
+          <p>plus-size / cup-size fit 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">补充利润或服务线 · 待独立证明</div>
+          <h3>leggings / activewear add-ons</h3>
+          <b>中</b>
+          <p>leggings / activewear add-ons 需要独立动销、评价增长、复购或渠道 sell-out 证据，不能被主线外推。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article>
       </div>
     </section>
-
+    
     <section id="intent">
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">User Intent Map</div>
-          <h2>用户意图地图：买前最在意“撑不撑”和“会不会买错”，不是单纯颜色和折扣。</h2>
+          <h2>用户意图：买前最关心能否选对、用稳、出问题有人管。</h2>
         </div>
-        <p class="section-note">以下为公开 VOC、Amazon/PDP 关键词、Reddit 讨论和竞品页面打法合并后的方向性权重，用于排序经营优先级；精确比例需用站内搜索、退货原因和客服工单校准。</p>
+        <p class="section-note">状态列必须先告诉团队有没有接住，再看页面动作。</p>
       </div>
-      <div class="matrix">
-        <div class="fit-row">
-          <div><strong>支撑 / 防晃 / high impact</strong><span class="weight">关注权重 32%</span><p>跑步、训练、大胸用户首先确认“能不能撑住”。Yvette 的主力卖点与这一点强相关。E5-E7</p></div>
-          <div><div class="score-mini green">82 / 100</div><div class="mini-track"><div class="mini-fill green" style="width:82%;"></div></div></div>
-          <div><strong>做得好：</strong>高支撑、front zip、bounce control 和 large bust 叙事成立。<br><strong>要补：</strong>按运动强度和 cup/band 给真实身型证据。</div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>SERP / Google</td><td>买对尺码 是否可靠</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线 买对尺码 解释页、FAQ 和比较页。<span class="evidence-list"><span class="evidence">[E1]</span></span></td></tr><tr><td>Amazon / Marketplace</td><td>评分、价格、退换和竞品替代</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>守评价结构、coupon 纪律和平台 PDP proof。<span class="evidence-list"><span class="evidence">[E2]</span></span></td></tr><tr><td>Reddit / BBB / Trustpilot</td><td>差评是否会影响购买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>把负面主题转成 support hub、SLA 和售后承诺。<span class="evidence-list"><span class="evidence">[E3]</span></span></td></tr><tr><td>YouTube / TikTok</td><td>演示是否能降低疑虑</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>内容 brief 必须回答 买对尺码、换码信任、支撑级别。<span class="evidence-list"><span class="evidence">[E4]</span></span></td></tr><tr><td>官网 / DTC</td><td>为什么要在官网买</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>补直购权益、保修、退换、客服和渠道价格解释。<span class="evidence-list"><span class="evidence">[E5]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：先回答最高权重疑虑，再谈扩品和内容放大。</h2>
         </div>
-        <div class="fit-row">
-          <div><strong>尺码准确 / 换码确定性</strong><span class="weight">关注权重 26%</span><p>买错尺码是运动内衣最大风险之一；公开负评和 Reddit 都在反复提。E4, E8</p></div>
-          <div><div class="score-mini red">52 / 100</div><div class="mini-track"><div class="mini-fill red" style="width:52%;"></div></div></div>
-          <div><strong>做得差：</strong>用户仍要自己承担试错。<br><strong>要补：</strong>fit finder、尺码视频、换码 SLA 和尺码退货原因看板。</div>
-        </div>
-        <div class="fit-row">
-          <div><strong>穿着舒适 / 肩颈压力 / 长时间使用</strong><span class="weight">关注权重 17%</span><p>好评夸舒适，差评提肩带紧、扣具麻烦和长时间佩戴不舒服。E4, E8</p></div>
-          <div><div class="score-mini amber">68 / 100</div><div class="mini-track"><div class="mini-fill amber" style="width:68%;"></div></div></div>
-          <div><strong>半接住：</strong>舒适卖点有基础。<br><strong>要补：</strong>用场景区分“运动 1 小时”和“全天穿着”，避免承诺过宽。</div>
-        </div>
-        <div class="fit-row">
-          <div><strong>价格 / 促销 / 退货风险</strong><span class="weight">关注权重 15%</span><p>用户会在 SHEFIT 高价和 Amazon 低价替代之间比较；退货不顺会放大价格敏感。E4, E10</p></div>
-          <div><div class="score-mini amber">61 / 100</div><div class="mini-track"><div class="mini-fill amber" style="width:61%;"></div></div></div>
-          <div><strong>半接住：</strong>价格带有竞争力。<br><strong>要补：</strong>减少纯折扣依赖，把“买错成本”解释清楚。</div>
-        </div>
-        <div class="fit-row">
-          <div><strong>耐穿 / 洗后表现 / 材料安全</strong><span class="weight">关注权重 10%</span><p>好评提耐穿和洗后表现；官方有 OEKO-TEX 等材料证明。E5-E7</p></div>
-          <div><div class="score-mini green">76 / 100</div><div class="mini-track"><div class="mini-fill green" style="width:76%;"></div></div></div>
-          <div><strong>做得好：</strong>材料和耐用口碑可用。<br><strong>要补：</strong>把材料证据转成更直观的对比和长期使用内容。</div>
+        <p class="section-note">权重为公开数据版方向性判断，用于排序，不代表统计抽样。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">32%</div><div class="mini-track"><i style="width:32%;"></i></div></div>
+          <div><strong>买对尺码</strong><p>high-support sports bra 的核心承诺</p></div>
+          <div><span class="verdict red">接住一半</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">24%</div><div class="mini-track"><i style="width:24%;"></i></div></div>
+          <div><strong>换码信任</strong><p>Amazon / marketplace 触点里的证明</p></div>
+          <div><span class="verdict amber">接住一半</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>支撑级别</strong><p>Social / creators 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">14%</div><div class="mini-track"><i style="width:14%;"></i></div></div>
+          <div><strong>舒适边界</strong><p>SEO / fit content 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
+        </div><div class="fit-row state-blue">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>复购路径</strong><p>DTC 触点里的证明</p></div>
+          <div><span class="verdict blue">验证中</span></div>
         </div>
       </div>
     </section>
-
+    
     <section id="onepage">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">One Page Summary</div>
-          <h2>一页看懂：Yvette 要先修“买对与换对”，再谈泛运动服增长。</h2>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：Yvette 有公开需求信号，下一步先修 买对尺码。</h2>
         </div>
-        <p class="section-note">Yvette 北美已经有主线，但增长质量被尺码与履约体验拖住。下一阶段不是继续把 SKU 铺宽，而是让用户买前敢下单、买错能换对、买完还能回来买第二件。</p>
+        <p class="section-note">旧分 67，v3 分 58；本次覆盖旧 GitHub HTML 的核心变化是加入 v3 风险封顶和专项路由。</p>
       </div>
       <div class="onepage">
-        <div class="dark-panel">
-          <h3 style="font-size:30px;margin-bottom:12px;">经营判断</h3>
-          <p>Yvette 的北美机会仍在高支撑运动内衣。它不是没有产品，而是最能成交的产品线还没有把买前选码、买后换码和二单留存讲清楚：用户愿意为支撑和大码适配买单，但如果尺码、退换、物流和客服不稳定，DTC 的利润质量会被体验成本吃掉，Amazon 也会变成只靠价格和评价竞争的货架。</p>
-          <div class="tag-row"><span class="tag green">主线：sports bra</span><span class="tag red">先修：尺码/退换</span><span class="tag amber">慎投：泛 activewear</span></div>
-        </div>
-        <div class="summary-list">
-          <div class="summary-item"><div class="num">1</div><div><strong>先修购买风险。</strong><br><span style="color:var(--muted);">PDP、FAQ、广告落地页和售后流程必须先解决“我适合哪个尺码、买错怎么换”。</span></div></div>
-          <div class="summary-item"><div class="num">2</div><div><strong>DTC 要和 Amazon 分工。</strong><br><span style="color:var(--muted);">Amazon 吃高意图；官网负责选码信心、会员、套装加购和复购。</span></div></div>
-          <div class="summary-item"><div class="num">3</div><div><strong>第二增长曲线不能靠 SKU 数证明。</strong><br><span style="color:var(--muted);">leggings / shorts / tops 先看 attach rate、复购和毛利，不达标就不加大预算。</span></div></div>
-        </div>
+        <div class="summary-item"><b>阶段</b><p>1-10 · DTC fit-led apparel</p></div><div class="summary-item"><b>主线</b><p>high-support sports bra 仍是当前北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>58 / 100 · C档，活跃封顶 70。</p></div><div class="summary-item"><b>Top 1 问题</b><p>买对尺码 正在限制成交确定性。</p></div><div class="summary-item"><b>路由</b><p>CommerceFlow 优先修选码、退换和官网首单路径，SignalMark 补高支撑证据。</p></div><div class="summary-item"><b>预算取舍</b><p>先把 买对尺码、换码信任 和搜索承接修到可验收，再考虑扩大投放。</p></div>
       </div>
     </section>
-
+    
     <section id="blocks">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Business Blocks</div>
-          <h2>三大板块诊断：品牌有细分证据，Marketing 和电商还没把“买对尺码”讲透。</h2>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：路由按经营杠杆判断，不只看最低分。</h2>
         </div>
-        <p class="section-note">三块评分不是平均主义。Yvette 的品牌和产品证据能支撑北美继续做，但真正拖慢质量的是营销内容没有把尺码风险讲透，电商和客服没有把换码体验变成明确承诺。</p>
+        <p class="section-note">三项分数用于判断下一步该由 Atlas 继续总控，还是进入 SignalMark、CommerceFlow 或 TideLens 深诊。</p>
       </div>
-      <div class="grid-3">
-        <div class="biz-card">
-          <div class="biz-top">
-            <div><h3>品牌板块：高支撑运动内衣心智成立，但证据要更集中。</h3><p>27 年历史、2.79M 客户和高支撑产品深度能支撑专业感；问题是这些证据还没有集中服务“大胸/高冲击/买对尺码”的单一心智。</p></div>
-            <div class="biz-score"><div><b style="color:var(--green);">70</b><span>可用</span></div></div>
-          </div>
-          <div class="biz-body">
-            <div class="biz-col"><h4>做得好的</h4><ul class="clean"><li>高支撑、front zip、large bust 和 plus size 是清晰购买理由。</li><li>官方尺寸覆盖和材料证明能支撑专业定位。</li></ul></div>
-            <div class="biz-col bad"><h4>做得不好的</h4><ul class="clean"><li>品牌故事没有把“买对尺码”变成核心信任。</li><li>泛 activewear 容易稀释 sports bra 心智。</li></ul></div>
-          </div>
-        </div>
-        <div class="biz-card">
-          <div class="biz-top">
-            <div><h3>Marketing：声量和素材不是问题，问题是内容没有消除购买风险。</h3><p>广告和页面可以讲支撑、舒适、bounce control，但用户真正犹豫的是尺码、退换、物流和竞品比较。</p></div>
-            <div class="biz-score"><div><b style="color:var(--amber);">62</b><span>警戒</span></div></div>
-          </div>
-          <div class="biz-body">
-            <div class="biz-col"><h4>做得好的</h4><ul class="clean"><li>卖点与高冲击运动需求匹配。</li><li>评价、官方素材和社媒可支持内容扩张。</li></ul></div>
-            <div class="biz-col bad"><h4>做得不好的</h4><ul class="clean"><li>对比 SHEFIT / Brooks / SYROKAN 的购买理由不足。</li><li>风险词内容没有前置，负评会接管品牌解释权。</li></ul></div>
-          </div>
-        </div>
-        <div class="biz-card">
-          <div class="biz-top">
-            <div><h3>电商板块：Amazon 动销成立，DTC 需要从折扣货架升级为 fit service。</h3><p>Shopify 官网、Amazon PDP、奖励和联盟链路都有；但退换和物流体验没有稳定前，DTC 很难承担更高质量的复购。</p></div>
-            <div class="biz-score"><div><b style="color:var(--amber);">68</b><span>待治理</span></div></div>
-          </div>
-          <div class="biz-body">
-            <div class="biz-col"><h4>做得好的</h4><ul class="clean"><li>Amazon 主力 SKU 评价和动销可见。</li><li>官网产品线、折扣、reward 和 help 页面完整。</li></ul></div>
-            <div class="biz-col bad"><h4>做得不好的</h4><ul class="clean"><li>退换、物流和尺码争议会直接拖低 DTC 信任。</li><li>Amazon/DTC 价格角色需要更清晰。</li></ul></div>
-          </div>
-        </div>
+      <div class="business-grid">
+        <article class="biz-card state-amber">
+          <div class="biz-top"><div><span>SignalMark</span><h3>运动健康 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>58</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Yvette 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>买对尺码、换码信任 还需要被页面和内容前置。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>49</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>DTC 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 买对尺码 解释还不够集中。</p></div></div>
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>57</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Social / creators 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 买对尺码、换码信任、支撑级别。</p></div></div>
+        </article>
       </div>
     </section>
-
+    
     <section id="issues">
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Top 3 Issues</div>
-          <h2>Top 3 关键问题：先解决尺码和履约，再决定第二品线投入。</h2>
+          <h2>Top 3 关键问题：买对尺码、换码信任、支撑级别。</h2>
         </div>
-        <p class="section-note">这三件事影响增长质量、利润质量和资源效率，不是页面小修，而是必须进入经营周会的核心问题。</p>
+        <p class="section-note">每个问题都要同时落到证据、影响和 30 / 90 天动作。</p>
       </div>
-      <article class="issue">
-        <div class="issue-sev"><span>P0 · 严重度</span><b>86</b><p>尺码/退换会直接影响转化、退货和口碑。</p></div>
-        <div class="issue-main">
-          <h3>问题 1：用户相信 Yvette 能撑住，但不够相信自己能买对尺码。</h3>
-          <div class="issue-boxes">
-            <div class="issue-box"><b>证据</b><p>Trustpilot 1 星占比 35%；Reddit 和评论集中提 sizing、return、band runs small、tracking。E4, E8</p></div>
-            <div class="issue-box"><b>影响</b><p>高支撑运动内衣本来就高试错，一旦买错成本不清楚，DTC 转化和复购都会被压低。</p></div>
-            <div class="issue-box"><b>先修</b><p>建立尺码/换码看板；PDP 首屏加入 fit finder、真实身型视频、换码 SLA 和退货费用说明。</p></div>
-          </div>
-          <p>验收指标：尺码相关咨询下降、换码成功率上升、退货原因结构变清晰、品牌 + sizing / return 词的落地页转化提升。</p>
+      <article class="issue state-red">
+        <h3>问题 1：买对尺码 没有被放到购买前第一层。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。它直接影响首单信任、渠道选择和售后成本。</p></div>
+          <div><b>证据</b><p>用户相信 Yvette 能撑住，但不够相信自己能买对尺码；官网若只做 SKU 和折扣，会被 Amazon 抢走经营价值。 <span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p></div>
+          <div><b>业务影响</b><p>用户会回到平台、竞品或第三方负面页面寻找答案，品牌失去解释权。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 买对尺码 承接页，插入 PDP、FAQ、checkout 和客服宏。<br><strong>90 天：</strong>把评价、退款、客服、复购和渠道转化放入同一张周报，验证修复效果。</p></div>
         </div>
-      </article>
-      <article class="issue">
-        <div class="issue-sev"><span>P0 · 严重度</span><b>78</b><p>DTC 价值没有和 Amazon 拉开，会削弱会员和利润质量。</p></div>
-        <div class="issue-main">
-          <h3>问题 2：官网如果只是更多 SKU 和折扣，无法承担比 Amazon 更高的经营价值。</h3>
-          <div class="issue-boxes">
-            <div class="issue-box"><b>证据</b><p>官网有 reward、促销和完整产品矩阵；Amazon 主力 SKU 同样能吃高意图购买。E1, E5, E6, E12</p></div>
-            <div class="issue-box"><b>影响</b><p>用户会在 Amazon 解决购买，官网只能靠折扣挽回，会员、套装加购和二单留存都会偏弱。</p></div>
-            <div class="issue-box"><b>先修</b><p>DTC 明确卖“买对服务”：尺码推荐、快速换码、组合搭配、会员补货和运动场景内容。</p></div>
-          </div>
-          <p>验收指标：DTC 新客转化、换码后留存、二单率、运动内衣带动 leggings/shorts attach rate。</p>
+      </article><article class="issue state-amber">
+        <h3>问题 2：plus-size / cup-size fit / leggings / activewear add-ons 需要独立证据。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。第二线不能只靠主线声量外推。</p></div>
+          <div><b>证据</b><p>high-support sports bra、plus-size / cup-size fit、leggings / activewear add-ons 的角色需要用公开动销和后台数据拆清。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>预算会被摊薄，团队容易同时推太多页面、SKU 和内容主题。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 SKU role map：Hero / Validation / Add-on / Retention / Proof。<br><strong>90 天：</strong>按 SKU role 看 GMV、毛利、评价、退货、复购和渠道冲突，关掉低质量长尾。</p></div>
         </div>
-      </article>
-      <article class="issue">
-        <div class="issue-sev"><span>P1 · 严重度</span><b>72</b><p>SKU 宽度不等于第二增长曲线。</p></div>
-        <div class="issue-main">
-          <h3>问题 3：leggings、短裤、上衣和外套还没有公开证明能接住第二增长。</h3>
-          <div class="issue-boxes">
-            <div class="issue-box"><b>证据</b><p>官方 collection 显示 SKU 宽，但主力公开动销和评价更集中在运动内衣。E1, E3, E5, E6</p></div>
-            <div class="issue-box"><b>影响</b><p>如果预算被泛服饰稀释，Yvette 最强的高支撑心智会被削弱，且难以提高复购质量。</p></div>
-            <div class="issue-box"><b>先修</b><p>给第二品线设置 30/90 天门槛：订单、毛利、attach rate、复购、退货率，不达标就收缩投放。</p></div>
-          </div>
-          <p>验收指标：每条品线按 GMV、毛利、退货率、复购和主线带动率单独复盘，不用“产品线完整”替代经营结果。</p>
+      </article><article class="issue state-amber">
+        <h3>问题 3：搜索、VOC 和内容没有形成同一个承接闭环。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。高意图用户会在搜索和社群里看到分散答案。</p></div>
+          <div><b>证据</b><p>搜索词、评价和 VOC 需要统一到承接页与内容 brief。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>投放和内容会增加注意力，但没有稳定降低购买犹豫。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重排搜索入口：行业词、品牌 review、竞品比较、售后词。<br><strong>90 天：</strong>把 creator brief、SEO 页面、FAQ、PDP 和 support macro 合并为一套 proof matrix。</p></div>
         </div>
       </article>
     </section>
-
     <section id="competitors">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Competitor Calibration</div>
-          <h2>竞品对比：Yvette 不能只比价格和支撑，要把“买错风险”讲得比竞品更清楚。</h2>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：用户会拿 Shefit、Knix、Panache 来判断安全感和价格合理性。</h2>
         </div>
-        <p class="section-note">高支撑运动内衣的竞品对比不是参数表，而是三个问题：我会不会买错？穿着会不会晃？买错能不能顺利换？谁回答得更清楚，谁更容易拿到高质量订单。</p>
-      </div>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-name">SHEFIT</div><p>高价但强调整体包裹、可调节和高冲击支撑。Yvette 若只靠更低价格，会被理解成“便宜替代”；应强调同等支撑下的尺码服务和舒适度。</p></div>
-        <div class="comp-card"><div class="comp-name">Brooks / Athleta</div><p>强在运动品牌信任、fit guide、零售心智和试穿想象。Yvette 需要用真实 cup/band、运动强度和退换承诺降低新客风险。</p></div>
-        <div class="comp-card"><div class="comp-name">SYROKAN / Amazon 低价品牌</div><p>价格更低，直接抢 affordable high impact 入口。Yvette 要证明“不是只贵一点”，而是支撑、耐用和换码确定性更好。</p></div>
-        <div class="comp-card"><div class="comp-name">Wacoal / Glamorise / Enell</div><p>更偏内衣专业与大胸人群信任。Yvette 若要拿 plus size 和 large bust，必须把专业 fit 讲到这类品牌的颗粒度。</p></div>
-      </div>
-    </section>
-
+        <p class="section-note">竞品当前重点是比谁更快降低购买风险。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 对比</div>
+          <h3>Shefit</h3>
+          <p>最直接抢走高意图比较词，需要用对比页回答价格、服务和适用边界。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Knix</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Panache</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 压力</div>
+          <h3>Lululemon</h3>
+          <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
+        </article>
+      </div></section>
+    
     <section id="positioning">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Positioning Upgrade</div>
-          <h2>定位调整：从“高支撑运动内衣”转向“买得准、换得顺的高支撑运动内衣”。</h2>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从“能买到”升级成“为什么现在放心买”。</h2>
         </div>
-        <p class="section-note">定位不要变虚。Yvette 现在成交靠支撑、舒适、价格带和大码覆盖；下一阶段要靠尺码确定性、换码服务、长期耐用和场景化复购提升经营质量。</p>
+        <p class="section-note">英文 copy 只给可测试方向，不替代后续品牌文案打磨。</p>
       </div>
-      <div class="path">
-        <div class="path-card"><span class="tag blue">当前成交理由</span><b>高支撑 + front zip + 大码覆盖</b><p>这是主线卖点，继续保留。</p></div>
-        <div class="path-card"><span class="tag red">当前阻力</span><b>尺码和退换风险太高</b><p>这是最先修的经营短板。</p></div>
-        <div class="path-card"><span class="tag green">下一阶段理由</span><b>选码信心 + 快速换码 + 真实身型证据</b><p>让 DTC 不再只是折扣货架。</p></div>
-        <div class="path-card"><span class="tag amber">复购理由</span><b>按运动强度和身型做系列化补货</b><p>leggings/sets 只能在这里自然带动购买。</p></div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">Now</div>
+          <h3>当前购买理由</h3>
+          <p>high-support sports bra 已经能解释基础需求。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Next</div>
+          <h3>下一阶段理由</h3>
+          <p>把 买对尺码、换码信任、支撑级别 讲成确定性，支撑更高质量成交。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>不要先放大的方向</h3>
+          <p>不要在 proof 和售后承接前平均扩大所有渠道预算。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Yvette helps North America buyers choose fit-led activewear with clearer proof and lower purchase risk.</p>
+        <p><b>Hero subhead:</b> Compare use cases, support, warranty, and fit before you buy.</p>
+        <p><b>Product promise:</b> A clearer path from first interest to confident daily use.</p>
+        <p><b>Sales opener:</b> We found the next growth constraint is not awareness alone; it is purchase certainty around 买对尺码.</p>
+        <p><b>CTA:</b> Build the proof and support path before scaling spend.</p>
       </div>
     </section>
-
+    
     <section id="scores">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">11-Dimension Scoreboard</div>
-          <h2>11 维评分：先追红灯，不要把组织问题平均化。</h2>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：红灯先修，黄灯进周会，绿灯继续放大。</h2>
         </div>
-        <p class="section-note">排序按“对增长质量影响 × 当前拖累 × 90 天可启动性”判断。最先进入管理周会的是履约售后、数据增长、尺码体验和第二品线纪律。</p>
+        <p class="section-note">分数来自 v3 方向性重算和旧报告公开证据迁移，后台数据会校准权重。</p>
       </div>
       <div class="scoreboard">
-        <div class="score-card red"><div class="s">45</div><h3>客服 / 履约</h3><p>退换、物流追踪和客服体验是当前最伤信任的环节。</p><div class="tag-row"><span class="tag red">先整顿</span></div></div>
-        <div class="score-card red"><div class="s">48</div><h3>数据 / 增长运营</h3><p>需要统一 GMV、渠道、尺码退货、换码成功率和品线毛利看板。</p><div class="tag-row"><span class="tag red">看板缺口</span></div></div>
-        <div class="score-card red"><div class="s">52</div><h3>尺码 / 产品体验</h3><p>产品本身有支撑力，但尺码判断和换码体验没有跟上。</p><div class="tag-row"><span class="tag red">体验拖后腿</span></div></div>
-        <div class="score-card amber"><div class="s">58</div><h3>品类策略</h3><p>sports bra 主线清楚，泛 activewear 第二曲线证据不足。</p><div class="tag-row"><span class="tag amber">预算需门槛</span></div></div>
-        <div class="score-card amber"><div class="s">60</div><h3>会员 / 复购</h3><p>reward 有入口，但复购动作还没有围绕尺码和运动场景设计清楚。</p></div>
-        <div class="score-card amber"><div class="s">62</div><h3>Marketing</h3><p>会讲支撑，但没有足够前置解决购买风险和竞品比较。</p></div>
-        <div class="score-card amber"><div class="s">66</div><h3>DTC 官网</h3><p>产品和工具齐全，但还不够像 fit service。</p></div>
-        <div class="score-card amber"><div class="s">68</div><h3>设计 / 内容</h3><p>视觉完整，但内容层级应优先服务尺码、运动强度和真实身型。</p></div>
-        <div class="score-card green"><div class="s">70</div><h3>品牌证据</h3><p>历史、客户规模和专业产品线可用，但需要更集中。</p></div>
-        <div class="score-card green"><div class="s">76</div><h3>运动内衣产品</h3><p>高支撑、前拉链、大码和材料证据是 Yvette 的核心竞争力。</p></div>
-        <div class="score-card green"><div class="s">78</div><h3>Amazon 运营</h3><p>主力 PDP 有评价和动销基础，应继续守住高意图入口。</p></div>
+        <article class="score-card state-amber">
+          <div class="score-card-top"><b>60</b><span>品类购买契约</span></div>
+          <div class="mini-track"><i style="width:60%;"></i></div>
+          <p>品类购买契约 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>64</b><span>主线产品清晰度</span></div>
+          <div class="mini-track"><i style="width:64%;"></i></div>
+          <p>主线产品清晰度 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>53</b><span>第二品线验证</span></div>
+          <div class="mini-track"><i style="width:53%;"></i></div>
+          <p>第二品线验证 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>渠道角色</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>渠道角色 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>56</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:56%;"></i></div>
+          <p>搜索心智 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>50</b><span>VOC / 售后</span></div>
+          <div class="mini-track"><i style="width:50%;"></i></div>
+          <p>买对尺码 是当前重点。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>SignalMark</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>SignalMark 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>49</b><span>CommerceFlow</span></div>
+          <div class="mini-track"><i style="width:49%;"></i></div>
+          <p>CommerceFlow 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>57</b><span>TideLens</span></div>
+          <div class="mini-track"><i style="width:57%;"></i></div>
+          <p>TideLens 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>54</b><span>预算纪律</span></div>
+          <div class="mini-track"><i style="width:54%;"></i></div>
+          <p>预算纪律 需要服务于下一步预算取舍。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>55</b><span>组织执行</span></div>
+          <div class="mini-track"><i style="width:55%;"></i></div>
+          <p>组织执行 需要服务于下一步预算取舍。</p>
+        </article>
       </div>
     </section>
-
     <section id="budget">
       <div class="section-head">
         <div>
           <div class="eyebrow">Budget Trade-Off</div>
-          <h2>预算取舍：主线预算继续投，但先把尺码和退换成本纳入投放门槛。</h2>
+          <h2>预算取舍：先把 买对尺码 修成可验证，再放大渠道。</h2>
         </div>
-        <p class="section-note">Yvette 不是不能投放。问题是投放不能只看订单，必须同时看尺码退货、换码成功、客服成本和二单。否则越放大，体验成本也越放大。</p>
-      </div>
-      <div class="grid-4">
-        <div class="card" style="border-top:4px solid var(--green);"><h3>转化预算</h3><p>继续守 sports bra 的 Amazon Search、retargeting 和品牌词；预算绑定退货率和毛利，不只看 ROAS。</p><div class="tag-row"><span class="tag green">继续投</span></div></div>
-        <div class="card" style="border-top:4px solid var(--red);"><h3>体验预算</h3><p>优先投 fit finder、换码 SLA、客服模板、物流追踪和 size guide 视频。这不是成本项，是转化基础设施。</p><div class="tag-row"><span class="tag red">先修</span></div></div>
-        <div class="card" style="border-top:4px solid var(--amber);"><h3>内容预算</h3><p>少做泛穿搭，多做 cup/band、运动强度、竞品对比、洗后表现和退换说明。</p><div class="tag-row"><span class="tag amber">改方向</span></div></div>
-        <div class="card" style="border-top:4px solid var(--amber);"><h3>第二品线</h3><p>leggings/sets 先给 30/90 天小预算验证 attach rate 和复购；不达标不扩大。</p><div class="tag-row"><span class="tag amber">设门槛</span></div></div>
-      </div>
-    </section>
-
+        <p class="section-note">公开版只给方向，真实预算需要后台 GMV、毛利、CAC、退货和复购校准。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">Keep</div>
+          <h3>先保留</h3>
+          <p>DTC 和 high-support sports bra 继续作为主验证面，但必须绑定评价和售后指标。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">Hold</div>
+          <h3>先压住</h3>
+          <p>暂缓平均加码长尾 SKU、泛流量和没有 proof 的 creator brief。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Fix</div>
+          <h3>先补强</h3>
+          <p>把预算优先放到 买对尺码、换码信任、支撑级别 的页面、内容和客服承接。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">Scale gate</div>
+          <h3>放大条件</h3>
+          <p>当搜索承接、负面 VOC、退款/售后和渠道转化都有改善，再提高投放或渠道拓展。</p>
+        </article>
+      </div></section>
+    
     <section id="roadmap">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Roadmap</div>
-          <h2>90 / 180 天路线图：先让用户买对，再让官网把首单变成二单。</h2>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先修承接，再验证第二线。</h2>
         </div>
-        <p class="section-note">路线图必须让管理层能判断、团队能执行。每一阶段都围绕一个问题：如何提高增长质量、利润质量和资源效率。</p>
+        <p class="section-note">路线以 owner 和验收指标组织，避免只写方向。</p>
       </div>
       <div class="roadmap">
-        <div class="road-card"><h3>0-30 天：止损和看清楚</h3><ul class="clean"><li>Owner：电商 + 客服 + 数据。</li><li>建立尺码退货、换码、物流投诉、客服响应和渠道毛利看板。</li><li>重写主力 sports bra PDP 首屏：适合谁、不适合谁、怎么选码、买错怎么换。</li><li>验收：尺码咨询和退货原因可被结构化追踪。</li></ul></div>
-        <div class="road-card"><h3>31-90 天：把 DTC 做成 fit service</h3><ul class="clean"><li>Owner：Marketing + 设计 + DTC。</li><li>上线 fit finder、真实身型视频、竞品对比页和换码承诺。</li><li>Amazon/DTC 价格和内容分工重排，避免互相内耗。</li><li>验收：DTC 转化率、换码成功率、二单率和 sports bra attach rate 提升。</li></ul></div>
-        <div class="road-card"><h3>91-180 天：验证第二增长柱</h3><ul class="clean"><li>Owner：品类 + 增长 + 供应链。</li><li>给 leggings/shorts/sets 单独设 GMV、毛利、退货率、复购和主线带动门槛。</li><li>若达标，围绕高支撑运动内衣用户做系列化补货；若不达标，收缩到加购品。</li><li>验收：第二品线贡献可被独立证明。</li></ul></div>
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>DTC / Ecommerce｜上线 买对尺码 承接页和 PDP FAQ</b><p>验收：FAQ 点击、转化、退款原因。影响：减少临门犹豫</p></div><div class="road-action state-red"><b>Support｜整理退换、保修、故障和客服 SLA</b><p>验收：首次响应、解决周期、负面主题。影响：降低售后不确定性</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-amber"><b>Marketing｜重写 Shefit / Knix / Panache 比较页和 creator brief</b><p>验收：比较词排名、页面转化、内容复用。影响：夺回解释权</p></div><div class="road-action state-amber"><b>Product / Growth｜建立 SKU role map 和渠道看板</b><p>验收：GMV、毛利、评价、退货、复购。影响：减少资源摊薄</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-blue"><b>Leadership｜决定第二线是否进入预算放大</b><p>验收：独立动销、复购、渠道效率。影响：避免主线外推</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas v3 分数</b><p>验收：CAC、ROAS、TACOS、LTV、退款率。影响：把公开诊断变成经营决策</p></div>
+        </article>
       </div>
     </section>
-
+    
     <section id="departments">
+      
       <div class="section-head">
         <div>
-          <div class="eyebrow">Functional Department Lights</div>
-          <h2>职能部门专业度红黄绿灯：红灯先看，直接追最差的点。</h2>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：先修售后和电商承接，再让内容与渠道放大。</h2>
         </div>
-        <p class="section-note">这不是为了给部门贴标签，而是明确接下来从哪里开始追责和修正。每个部门只写最该被追问的经营短板。</p>
+        <p class="section-note">红灯排在前面，方便管理层先安排 owner。</p>
       </div>
-      <div class="light-section" style="border-top:4px solid var(--red);">
-        <div class="light-head"><div><span class="eyebrow">Red Light</span><h3>红灯部门 · 先整顿</h3><p style="color:var(--muted);">这些部门直接影响用户信任、退货成本和预算效率。</p></div><span class="tag red">4 个部门</span></div>
-        <div class="dept-grid">
-          <div class="dept-card red"><div class="s">45</div><h3>客服 / 履约部</h3><p><strong>最差点：</strong>退换、物流追踪和客服解释没有被前置成购买承诺，负评会持续影响新客信任。</p><div class="tag-row"><span class="tag red">不达标</span></div></div>
-          <div class="dept-card red"><div class="s">48</div><h3>数据 / 增长运营部</h3><p><strong>最差点：</strong>没有把 GMV、渠道、尺码退货、换码成功率和二单率统一成经营看板。</p><div class="tag-row"><span class="tag red">看板缺口</span></div></div>
-          <div class="dept-card red"><div class="s">52</div><h3>产品 / 尺码体验部</h3><p><strong>最差点：</strong>尺码系统没有降低试错，用户仍要自己判断 band、cup、肩带和运动强度。</p><div class="tag-row"><span class="tag red">体验拖后腿</span></div></div>
-          <div class="dept-card red"><div class="s">55</div><h3>品类 / 商品部</h3><p><strong>最差点：</strong>第二品线没有公开跑出明确经营结果，不能用 SKU 宽度证明增长质量。</p><div class="tag-row"><span class="tag red">第二曲线未证实</span></div></div>
-        </div>
-      </div>
-      <div class="light-section" style="border-top:4px solid var(--amber);">
-        <div class="light-head"><div><span class="eyebrow">Yellow Light</span><h3>黄灯部门 · 带约束优化</h3><p style="color:var(--muted);">基础存在，但继续放大前必须补齐经营约束。</p></div><span class="tag amber">4 个部门</span></div>
-        <div class="dept-grid">
-          <div class="dept-card amber"><div class="s">62</div><h3>Marketing 部</h3><p><strong>最差点：</strong>内容还在讲卖点，没把尺码、退换和竞品比较做成购买前的风险消除。</p></div>
-          <div class="dept-card amber"><div class="s">66</div><h3>DTC / 电商部</h3><p><strong>最差点：</strong>官网更像折扣货架，还没有变成高支撑运动内衣的 fit service。</p></div>
-          <div class="dept-card amber"><div class="s">68</div><h3>设计 / 内容部</h3><p><strong>最差点：</strong>视觉完整，但信息层级没有优先回答“我适合哪个尺码”。</p></div>
-          <div class="dept-card amber"><div class="s">60</div><h3>会员 / CRM 部</h3><p><strong>最差点：</strong>reward 有入口，但没有围绕运动强度、尺码和复购周期形成二单路径。</p></div>
-        </div>
-      </div>
-      <div class="light-section" style="border-top:4px solid var(--green);">
-        <div class="light-head"><div><span class="eyebrow">Green Light</span><h3>绿灯部门 · 继续放大</h3><p style="color:var(--muted);">这些能力是 Yvette 北美继续增长的基础。</p></div><span class="tag green">3 个部门</span></div>
-        <div class="dept-grid">
-          <div class="dept-card green"><div class="s">78</div><h3>Amazon 运营部</h3><p><strong>最强点：</strong>主力高支撑 PDP 已经有评价和动销，能继续吃高意图需求。</p></div>
-          <div class="dept-card green"><div class="s">76</div><h3>运动内衣产品部</h3><p><strong>最强点：</strong>高支撑、前拉链、大码覆盖和材料证明是可继续放大的竞争力。</p></div>
-          <div class="dept-card green"><div class="s">70</div><h3>品牌部</h3><p><strong>最强点：</strong>历史、客户规模和细分专业证据成立；下一步是把表达收窄到“买对尺码”。</p></div>
-        </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">46</div>
+          <h3>客服 / 售后</h3>
+          <p><strong>最差点：</strong>买对尺码 还没有被 SLA 和公开承诺接住。</p>
+          <span class="tag red">30 天：30 天内上线 support hub、退换/保修说明和客服宏。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">50</div>
+          <h3>电商 / DTC</h3>
+          <p><strong>最差点：</strong>官网没有充分说明为什么直购更稳。</p>
+          <span class="tag red">30 天：30 天内补 PDP、FAQ、comparison 和 checkout 信任点。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">53</div>
+          <h3>Data / Growth</h3>
+          <p><strong>最差点：</strong>公开分数不能替代后台口径。</p>
+          <span class="tag amber">30 天：30 天内补 GMV、毛利、退款、复购和渠道效率表。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">54</div>
+          <h3>Product</h3>
+          <p><strong>最差点：</strong>SKU 角色和第二线验证不够清晰。</p>
+          <span class="tag amber">30 天：30 天内做 Hero / Validation / Add-on / Retention map。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">55</div>
+          <h3>Brand / Signal</h3>
+          <p><strong>最差点：</strong>购买理由存在，但边界和 proof 还不够集中。</p>
+          <span class="tag amber">30 天：30 天内完成 claim / proof / audience matrix。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">56</div>
+          <h3>Marketing</h3>
+          <p><strong>最差点：</strong>内容还没有持续回答 买对尺码、换码信任、支撑级别。</p>
+          <span class="tag amber">30 天：30 天内更新 creator brief 和搜索内容结构。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">59</div>
+          <h3>Channel</h3>
+          <p><strong>最差点：</strong>渠道能出信号，但价格和评价解释权分散。</p>
+          <span class="tag amber">30 天：30 天内统一平台 PDP、DTC 和零售话术。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">72</div>
+          <h3>Existing Demand Proof</h3>
+          <p><strong>最差点：</strong>公开证据已经能说明存在可转化需求。</p>
+          <span class="tag green">30 天：30 天内把最强正向证据放进首页、PDP、比较页和内容 brief。</span>
+        </article>
       </div>
     </section>
-
     <section id="risk">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Risks & Data Gaps</div>
-          <h2>风险预警与数据缺口：公开数据能判断方向，但必须用后台校准优先级。</h2>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险和数据缺口：公开版能判断方向，不能替代后台校准。</h2>
         </div>
-        <p class="section-note">本报告只使用公开信息。以下数据如果内部有，会显著提高判断置信度，并直接影响预算分配。</p>
-      </div>
-      <div class="risk-grid">
-        <div class="card"><h3>需要内部校准的数据</h3><ul class="clean"><li>北美 GMV：Amazon / DTC / affiliate / other 分渠道。</li><li>按 SKU 和尺码的退货率、换码成功率、退款原因。</li><li>sports bra 带动 leggings/shorts/sets 的 attach rate 和二单。</li><li>客服工单主题、响应时效、物流仓库路径和时效差异。</li></ul></div>
-        <div class="card"><h3>如果不修的风险</h3><ul class="clean"><li>高支撑主线被退换和尺码负评持续消耗。</li><li>DTC 沦为折扣货架，无法承担会员和复购。</li><li>泛 activewear 继续分散预算，但不能形成第二增长。</li><li>Amazon 价格和低价竞品把 Yvette 拉入更低质量竞争。</li></ul></div>
-      </div>
-    </section>
-
+        <p class="section-note">上线旧 GitHub HTML 时必须保留数据缺口，避免把方向性估计写成确定财务口径。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-blue">
+          <div class="card-state">Data</div>
+          <h3>后台数据缺口</h3>
+          <p>需要补 Yvette 的北美 GMV、渠道占比、毛利、退货、复购、客服和广告数据。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Risk</div>
+          <h3>当前最大风险</h3>
+          <p>用户相信 Yvette 能撑住，但不够相信自己能买对尺码；官网若只做 SKU 和折扣，会被 Amazon 抢走经营价值。 是当前 v3 分数封顶的核心原因。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">Scope</div>
+          <h3>上线备注</h3>
+          <p>本页是旧报告按 Atlas v3 规则重跑后的公开数据版，证据沿用旧公开来源和 2026-06-25 v3 重算结果。</p>
+        </article>
+      </div></section>
+    
     <section id="evidence">
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Evidence Table</div>
-          <h2>证据表：强判断全部回到公开证据 ID。</h2>
+          <h2>证据表：新版 v3 判断沿用旧公开来源，并标记需要后台校准的地方。</h2>
         </div>
-        <p class="section-note">证据不是为了堆资料，而是为了让每个经营判断可追溯。所有市场规模、VOC、渠道和品线判断均需在后续用内部后台复核。</p>
+        <p class="section-note">证据来自旧 Atlas 公开诊断与 2026-06-25 v3 重算结果；后续深诊需要重新逐源更新 Xiyou、Amazon、搜索、VOC 和后台数据。</p>
       </div>
-      <table class="evidence-table">
-        <thead><tr><th>ID</th><th>证据</th><th>用于判断</th></tr></thead>
-        <tbody>
-          <tr><td>E1</td><td><a href="https://www.yvettesports.com/" target="_blank" rel="noreferrer">Yvette 官方美国站</a>：品类、活动、运动场景、feature 导航、产品价格与 help 入口。</td><td>官网产品矩阵、DTC 角色、主推卖点、促销和内容入口。</td></tr>
-          <tr><td>E2</td><td><a href="https://www.yvettesports.com/pages/about-us" target="_blank" rel="noreferrer">Yvette About / Size Guide</a>：公司、USD/美国地区、Shopify、尺码覆盖和官方社媒。</td><td>品牌阶段、尺码系统、plus size / 大码机会。</td></tr>
-          <tr><td>E3</td><td>官方 Shopify collection JSON（2026-06-15 抓取）：sports bras 约 250 个公开商品，leggings 约 99 个，shorts/skirts 约 92 个；sports bra 价格多在 USD 20-50。</td><td>品线宽度、sports bra 主线、第二品线尚需经营指标验证。</td></tr>
-          <tr><td>E4</td><td><a href="https://www.trustpilot.com/review/yvettesports.com" target="_blank" rel="noreferrer">Trustpilot</a>：4.2 / 5，990 reviews；近 12 个月 455 条；1 星占比 35%；负面集中 order、delivery、tracking、sizing、return。</td><td>VOC、声誉评分、Top 3 问题、客服/履约红灯。</td></tr>
-          <tr><td>E5</td><td><a href="https://www.amazon.com/Yvette-Sports-Bra-Front-Closure/dp/B08PCWN1LZ" target="_blank" rel="noreferrer">Amazon Zip Front Sports Bra PDP</a>：4.2 星、2,767 ratings、USD 34.99、high impact / zip-front / moisture-wicking / OEKO-TEX 等卖点。</td><td>Amazon 动销、主品线卖点、价格带、材料证据。</td></tr>
-          <tr><td>E6</td><td><a href="https://www.amazon.com/Yvette-Sports-Impact-Adjustable-Support/dp/B0CT7NGJRM" target="_blank" rel="noreferrer">Amazon Adjustable High Support PDP</a>：4.3 星、4,100 ratings、100+ bought in past month、up to 80% bounce reduction。</td><td>高支撑运动内衣主线成立、消费者关注点匹配。</td></tr>
-          <tr><td>E7</td><td><a href="https://www.reddit.com/r/yoga/comments/1pv7ecc/anyone_tried_yvette_highimpact_sports_bras_is_the/" target="_blank" rel="noreferrer">Reddit 正面讨论</a>：用户提到高冲击运动内衣耐穿、舒适、支持跑步和瑜伽。</td><td>VOC 正面词云、支撑和耐用口碑。</td></tr>
-          <tr><td>E8</td><td><a href="https://www.reddit.com/r/FashionistaVibes/comments/1i0ihk9/not_what_i_expected_yvette_sports_bra_sizing_and/" target="_blank" rel="noreferrer">Reddit 尺码/体验讨论</a>：尺码偏小、肩带紧、扣具、非可拆胸垫和价格替代等问题。</td><td>尺码/退换风险、产品体验红灯、内容优先级。</td></tr>
-          <tr><td>E9</td><td><a href="https://www.grandviewresearch.com/industry-analysis/sports-bra-market-report" target="_blank" rel="noreferrer">Grand View Research Sports Bra Market</a>：全球 sports bra 市场 2024 年约 USD 8.08B；北美 2023 年占比约 24.79%。</td><td>北美市场天花板、品线 TAM/SAM 校准。</td></tr>
-          <tr><td>E10</td><td><a href="https://www.reddit.com/r/ABraThatFits/comments/s7zgye/affordable_high_impact_sports_bra/" target="_blank" rel="noreferrer">Reddit 高冲击运动内衣竞品讨论</a>：用户比较 SYROKAN、SHEFIT、Brooks、Enell 等价格与支撑。</td><td>竞品压力、价格带与购买风险。</td></tr>
-          <tr><td>E11</td><td>Amazon 搜索结果显示 Yvette front closure / high impact sports bra 有 3K-4K+ bought in past month 的公开动销信号（2026-06-15 检索）。</td><td>Amazon 主力 SKU 动销、渠道占比估算。</td></tr>
-          <tr><td>E12</td><td>官网页面脚本显示 Shopify、rewards、affiliate、Awin / ShareASale / GoAffPro 等工具链（2026-06-15 抓取）。</td><td>DTC 经营类型、联盟渠道、会员复购潜力。</td></tr>
-        </tbody>
-      </table>
-      <div class="footnote">本报告为公开数据诊断，不替代品牌内部经营后台。建议下一步用 Amazon Seller Central、Shopify、GA4/Search Console、客服系统和退货后台校准分数与预算优先级。</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://rucia616.github.io/offing-na-diagnosis/yvette-offing-na-diagnosis-2026-06-15.html" target="_blank" rel="noopener">Yvette existing Atlas report</a></td>
+              <td>2026-06-25</td>
+              <td>Public source</td>
+              <td>Existing Atlas public-data report；旧版公开诊断中的来源摘要，用于 v3 规则迁移后的方向判断；后续深诊需重新逐源校准。</td>
+              <td>Medium</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Yvette · 2026-06-26 · North America</span>
+    </footer>
   </main>
 </body>
 </html>
