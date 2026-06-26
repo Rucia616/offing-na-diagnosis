@@ -1,0 +1,1386 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProtYouth · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="ProtYouth logo">
+          <img src="assets/brand-logos/protyouth-logo-wordmark.png" alt="ProtYouth logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">当前总分为 57。ProtYouth 已经把重组人源化胶原、Allure/技术背书和高客单护肤梯度讲出来，但 $369-$899 主 serum 与 $1,297 bundle 需要更厚的第三方评价、效果边界和售后信任。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <b>18 SKU</b>
+            <span>products.json 显示的公开产品数。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>$89-$1,297</b>
+            <span>All-In Serum 到高价 bundle 的公开价格带。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-red">
+            <b>7-25 reviews</b>
+            <span>主 SKU 产品页 Loox 公开评论量区间。 <span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E5]</span><span class="evidence">[E12]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">Atlas v3 判断：下一步先把技术叙事翻译成消费者可验证 proof，明确 15 分钟即时感、28 天护理周期、敏感肌边界和 14 天退换之间的关系。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E7]</span><span class="evidence">[E10]</span></span></p>
+        <div class="tag-row"><span class="tag amber">v3 57 分</span><span class="tag amber">C档</span><span class="tag blue">公开数据置信度 中等</span></div>
+      </div>
+      <aside class="score-panel" aria-label="ProtYouth Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">57<span>/100</span></div>
+          <span class="tier green">C档</span>
+        </div>
+        <div class="stars" aria-label="2.9 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">2.9 / 5 · C档 · 先把技术 proof 变成购买信任</div>
+        <div class="score-meta">
+          <div><b>1-10</b><span>阶段判断</span></div>
+          <div><b>Premium biotech skincare DTC</b><span>经营类型</span></div>
+          <div><b>中等</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:56%;"></i></div>
+            <b>56</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:70%;"></i></div>
+            <b>70</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:66%;"></i></div>
+            <b>66</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-amber">
+          <i>P0</i>
+          <b>科学信任</b>
+          <span>把重组胶原、备案/专利、Allure 和 FDA facility 串成可查 proof。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>高价首单</b>
+          <span>$369-$899 serum 要先回答为什么值、多久看、谁适合。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P1</i>
+          <b>评价与售后</b>
+          <span>5.0 星不够，评论数量、退换窗口和敏感边界要前置。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>社媒种草</b>
+          <span>Instagram / TikTok / YouTube 已有入口，需要把内容沉淀为可复用 proof。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>SignalMark 先修技术搜索，CommerceFlow 同步修 PDP 和售后信任。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>ProtYouth</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-26</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由建议</h3>
+          <p>SignalMark 先做技术搜索与竞品比较，CommerceFlow 同步修 PDP 和政策信任，TideLens 补 creator 使用周期 proof。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 52</span>
+          <span class="route-chip">分数封顶：64 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-amber">
+            <div class="specialist-score">60<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>技术心智有起点，行业词没吃透</h3>
+              <p>品牌的 science story 有辨识度，但 anti-aging / collagen serum 大词仍被成熟品牌和零售平台掌控。</p>
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">52<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>高价 PDP 信任不足</h3>
+              <p>$89 入口可用，$369-$899 hero SKU 要补结果窗口、敏感边界、试用路径和退换信任。</p>
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">55<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>内容适合种草，但还没变成 proof</h3>
+              <p>官方社媒入口存在，产品也适合 glow / routine 内容，但需要 creator 使用周期和可信结果素材。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>科学 claim 没有充分转译成消费者 proof</li><li>高价主 SKU 的评论密度不足</li><li>退换承诺与结果周期不匹配</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：科学叙事跑得很快，消费者证据跟得偏慢。</h2>
+        </div>
+        <p class="section-note">高技术护肤最容易出现的扣分，不在技术是否能讲，而在买家能否用公开证据自行验证。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>高价胶原护肤买的是科学可信、可见结果、皮肤安全边界和长期护理成本。</h3>
+          <p><strong>用户买的确定性：</strong>北美用户在 premium anti-aging skincare 上会同时问四件事：这个技术是否可信，是否看得到结果，敏感/肤质边界是否清楚，以及高价长期用是否值得。</p>
+          <p><strong>当前匹配：</strong>ProtYouth 的技术叙事和价格梯度已经成立，但主 SKU 评论量、第三方 review、退换窗口和临床/功效边界还不足以支撑大额冷启动购买。</p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E7]</span><span class="evidence">[E9]</span><span class="evidence">[E12]</span></span></p>
+        </article>
+        <article class="score-cap state-amber">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">64<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>技术叙事强，但消费级第三方 proof、评论密度和售后承诺还没有跟上价格高度。</p>
+        </article>
+        <article class="decision-blindspot state-amber">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的误读</h3>
+          <dl>
+            <div><dt>高估</dt><dd>Allure、FDA facility、重组胶原专业词、5.0 星评分和 bundle 客单。</dd></div>
+            <div><dt>低估</dt><dd>评论数量、敏感肌边界、14 天退换压力、独立 review 和医生/实验室解释。</dd></div>
+            <div><dt>安慰指标</dt><dd>平均星级、SKU 客单、社媒内容好看程度。</dd></div>
+            <div><dt>先别做</dt><dd>暂缓把 $899 hero serum 作为冷启动唯一入口，先用 $89 All-In 和旅行装建立 first proof。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 64</b></div>
+            <h3>技术背书高于消费级 proof</h3>
+            <p>官网反复强调 recombinant humanized collagen、164.88° triple-helix、Allure 和 FDA facility，但消费者还需要更直观的使用周期、结果样张、适用边界和第三方评价。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E7]</span><span class="evidence">[E9]</span><span class="evidence">[E12]</span></span></p>
+            <span class="tag red">SignalMark 优先，把 science claims 拆成可检索、可引用、可比较的 proof 页面。</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 62</b></div>
+            <h3>高价梯度先于信任梯度</h3>
+            <p>$369-$899 主 serum 和 $1,297 bundle 会把用户推入高考虑决策；旅行装和 $89 All-In Serum 可以降低风险，但页面需要把首单路径讲得更清楚。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+            <span class="tag red">CommerceFlow 优先，先让 trial ladder、routine ladder 和 hero SKU 关系变清楚。</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P1</span><b>封顶 60</b></div>
+            <h3>退换窗口短于结果判断周期</h3>
+            <p>FAQ 写出 14 天退货，Cream 页面强调 28 天可见变化。对高价抗老护肤，政策窗口和结果周期不匹配会增加下单犹豫。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E10]</span><span class="evidence">[E16]</span></span></p>
+            <span class="tag red">CommerceFlow 与客服一起重写 return / satisfaction / routine guidance。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 61</b></div>
+            <h3>Amazon、Reddit、Trustpilot 等外部校验缺口</h3>
+            <p>公开搜索未看到稳定的 Amazon 主货架、Trustpilot 或 Reddit 评价沉淀。品牌可先走 DTC，但高价护肤需要独立 review 和社区 proof 抬高信任上限。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E13]</span><span class="evidence">[E14]</span></span></p>
+            <span class="tag amber">TideLens 补 creator proof，SignalMark 补 review / comparison 搜索承接。</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>容易被高估的增长信号</h3>
+            <p>这些信号能帮助第一印象，但无法替代高价护肤的独立验证。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>Allure / FDA facility / 技术 banner</h3>
+            <p>媒体和设施信号能提高权威感，但消费者仍会找实际使用结果和安全边界。</p>
+          </article><article class="signal-card state-red">
+            <span>假信号</span>
+            <h3>5.0 星评分</h3>
+            <p>星级好看，但主 SKU 评论数量只有个位数到 25 条，支撑不了高客单大预算。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>高价 bundle</h3>
+            <p>$1,297 bundle 会显得专业和高端，也会放大用户对证据、退换和客服的要求。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>社媒内容入口</h3>
+            <p>Instagram / TikTok / YouTube 有入口，不等于 creator proof 已经能稳定推动成交。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>当前分数上限：64</h3>
+            <p>ProtYouth 的机会分高于健康分，封顶来自高价护肤的信任密度不足。</p>
+          </div>
+          <article class="cap-reason state-amber">
+            <b>64</b>
+            <div><h3>信任封顶</h3><p>Allure 和技术页有帮助，独立 review、医生/实验室解释和用户结果仍薄。</p></div>
+          </article><article class="cap-reason state-red">
+            <b>62</b>
+            <div><h3>价格封顶</h3><p>$369-$899 hero serum 对证据厚度要求高于当前公开评论基数。</p></div>
+          </article><article class="cap-reason state-red">
+            <b>60</b>
+            <div><h3>售后封顶</h3><p>14 天退货与 28 天结果叙事之间需要更清楚的购买保障。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>61</b>
+            <div><h3>搜索封顶</h3><p>品牌词和技术词有承接，行业词、review 词和竞品比较词还没有吃透。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：进入 1-10，但还处在高信任教育期。</h2>
+        </div>
+        <p class="section-note">技术资产已经能讲，下一阶段要把它变成买家能自己验证的成交资产。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>技术验证</b><p>官网技术页、about、Allure 内容和公开产品矩阵已经让品牌故事成立。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></p></div><div class="stage-step state-amber"><span>1-10</span><b>DTC 放大</b><p>18 SKU、旅行装和 quiz 可支撑早期 DTC 测试，但评价密度和售后信任要先补。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E15]</span></span></p></div><div class="stage-step state-red"><span>10-100</span><b>规模放大</b><p>在第三方 review、搜索入口和 claim boundary 稳定前，大预算会放大高价犹豫。</p></div><div class="stage-step state-neutral"><span>100+</span><b>成熟经营</b><p>距离成熟 premium skincare 的临床资料、渠道背书、社群评价和复购模型还有距离。</p></div>
+      </div>
+      
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心人群：愿意为科学抗老付费，但会反复验证证据的女性用户。</h2>
+        </div>
+        <p class="section-note">人群分层按抗老焦虑、成分理解力、客单承受力和风险敏感度判断。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>抗老</b><small>核心盘：熟龄抗老与高客单护肤用户</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>成分</b><small>相邻盘：成分党 / biotech skincare 用户</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>即时</b><small>外扩盘：即时 glow / event-ready 用户</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>低价</b><small>暂缓盘：低价保湿与随手买用户</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：熟龄抗老与高客单护肤用户</b><span>她们愿意为 firmness、fine lines 和轮廓感付费，但需要可信结果和使用周期。</span></div><div class="legend-item state-amber"><b>相邻盘：成分党 / biotech skincare 用户</b><span>会读 collagen type、recombinant、patent 和 ingredient list，也会查第三方来源。</span></div><div class="legend-item state-amber"><b>外扩盘：即时 glow / event-ready 用户</b><span>$89 All-In Serum 适合做低风险首单和 creator demo，但要避免过度承诺。</span></div><div class="legend-item state-red"><b>暂缓盘：低价保湿与随手买用户</b><span>对 $369+ serum 接受度低，投放前需要更明确的 trial ladder。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘</h3>
+          <p>用科学 proof、真实周期和肌肤边界支撑高客单。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻盘</h3>
+          <p>用技术解释和竞品比较提高搜索信任。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>外扩盘</h3>
+          <p>$89 和旅行装适合教育入口，不宜直接推高价 hero SKU。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：DTC 是主阵地，PR 和 creator 负责补信任，Amazon 不能当作已验证主线。</h2>
+        </div>
+        <p class="section-note">当前不宜按 Amazon 成熟品牌打分；公开可查的强信号主要来自官网、媒体和官方社媒。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Shopify DTC + PR / creator proof</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>DTC 官网</b>
+            <div class="share-track"><i class="green" style="width:64%;"></i></div>
+            <span>64%</span>
+            <small>产品矩阵、技术页、quiz、FAQ 和政策页齐全。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E15]</span></span></small>
+          </div><div class="share-row">
+            <b>PR / 搜索</b>
+            <div class="share-track"><i class="amber" style="width:16%;"></i></div>
+            <span>16%</span>
+            <small>Allure 内容和技术词有承接，但 review / comparison 词仍弱。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E14]</span></span></small>
+          </div><div class="share-row">
+            <b>Creator / Social</b>
+            <div class="share-track"><i class="amber" style="width:14%;"></i></div>
+            <span>14%</span>
+            <small>官方 Instagram、TikTok、YouTube 有入口，需要沉淀为 proof。<span class="evidence-list"><span class="evidence">[E13]</span></span></small>
+          </div><div class="share-row">
+            <b>Marketplace</b>
+            <div class="share-track"><i class="red" style="width:6%;"></i></div>
+            <span>6%</span>
+            <small>公开搜索未确认稳定 Amazon 主货架。<span class="evidence-list"><span class="evidence">[E14]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>官网角色</h3>
+          <p>负责把高价胶原护肤讲清楚，不能只做品牌情绪和产品货架。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>PR 角色</h3>
+          <p>Allure 和技术来源要落到 PDP、FAQ 和搜索页，不要停在 banner。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>社媒角色</h3>
+          <p>需要 creator before/after、敏感反馈和 routine 证据，而不是只做氛围内容。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：品牌和技术词半吃掉，行业词、review 词和比较词没吃掉。</h2>
+        </div>
+        <p class="section-note">搜索卡按需求量和购买决策价值排序，必须说明吃掉程度。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高 · 行业入口词</span><b class="search-capture red">没吃掉</b></div>
+          <h3>anti aging serum / wrinkle serum / firming serum</h3>
+          <p>这些词会被 SkinCeuticals、SkinMedica、Alastin、retinol / peptide 内容和零售平台分流。ProtYouth 需要独立入口页。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E14]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中高 · 技术品类词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>collagen serum / recombinant collagen skincare</h3>
+          <p>官网技术页能接住一部分，但需要把 science proof 变成普通买家能读懂的结果路径。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 品牌评测词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>ProtYouth reviews / ProtYouth collagen serum review</h3>
+          <p>产品页有 Loox 星级和评论数，但第三方 review、Trustpilot、Reddit 沉淀不足。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E12]</span><span class="evidence">[E14]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中 · 竞品比较词</span><b class="search-capture red">没吃掉</b></div>
+          <h3>ProtYouth vs SkinMedica / Alastin / Augustinus Bader</h3>
+          <p>高价护肤用户会横向比较临床感、成分、价格和结果窗口，当前缺正式 comparison hub。</p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级中 · 风险词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>ProtYouth refund / sensitive skin / ingredients</h3>
+          <p>FAQ、政策页和两成分 serum 有基础，但 14 天退换、刺激边界和结果周期仍需前置。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E10]</span><span class="evidence">[E16]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级中 · 即时效果词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>15 minute glow serum / instant awakening serum</h3>
+          <p>$89 All-In Serum 可以做低门槛入口，但要把即时效果和长期抗老分清楚。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC：好评围绕科技感和即时状态，顾虑集中在价格、证据和皮肤边界。</h2>
+        </div>
+        <p class="section-note">词云采用密集版，不把用户语言拆成稀疏空白。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">支持首单</div>
+          <h3>集中好评主题</h3>
+          <p>重组胶原、human-identical、15-minute glow、hydration、firming、lifting、Allure 和极简成分。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">影响信任</div>
+          <h3>集中抱怨主题</h3>
+          <p>价格高、评论少、临床 proof、敏感刺激、退换短、Amazon 缺位、医生解释不足。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">recombinant collagen</span><span class="w5 p1">human-identical</span><span class="w4 p2">triple helix</span><span class="w4 p3">Allure</span><span class="w4 p4">FDA facility</span><span class="w4 p5">15-minute glow</span><span class="w4 p6">firming</span><span class="w4 p7">lifting</span><span class="w3 p8">hydration</span><span class="w3 p9">fine lines</span><span class="w3 p10">minimalist</span><span class="w3 p11">water + collagen</span><span class="w3 p12">travel size</span><span class="w3 p13">Type III</span><span class="w3 p0">Type XVII</span><span class="w2 p1">cream routine</span><span class="w2 p2">glow</span><span class="w2 p3">science</span><span class="w2 p4">patent</span><span class="w2 p5">quiz</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">price</span><span class="w5 p1">$899 serum</span><span class="w5 p2">$1,297 bundle</span><span class="w5 p3">low review count</span><span class="w4 p4">clinical proof</span><span class="w4 p5">sensitive skin</span><span class="w4 p6">irritation</span><span class="w4 p7">14-day return</span><span class="w4 p8">result window</span><span class="w3 p9">Amazon missing</span><span class="w3 p10">dermatologist trust</span><span class="w3 p11">before/after</span><span class="w3 p12">claim boundary</span><span class="w3 p13">ingredient clarity</span><span class="w3 p0">routine cost</span><span class="w2 p1">refund</span><span class="w2 p2">shipping threshold</span><span class="w2 p3">third-party review</span><span class="w2 p4">skin tone</span><span class="w2 p5">creator proof</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向语言可以支撑 $89 All-In 和旅行装首单；负向语言会直接压住 $369-$899 serum 与高价 bundle 的冷启动转化。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：All-In 是入口，T8/T16 是中层，Dual 和 bundle 必须等 proof 变厚。</h2>
+        </div>
+        <p class="section-note">高价护肤不能只靠价格阶梯，要靠信任阶梯。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">低风险入口 · 可放大测试</div>
+          <h3>All-In Instant Awakening Serum</h3>
+          <b>中高</b>
+          <p>$89、25 条公开评论和 15-minute glow 叙事，适合 creator demo 与首单。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">中高客单主线 · 需 proof</div>
+          <h3>T8 / T16 Recombinant Collagen Serum</h3>
+          <b>中</b>
+          <p>$369-$449，需要把 Type III、T16 和适用问题讲成购买指南。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">高端 hero SKU · 高信任门槛</div>
+          <h3>Dual Recombinant Humanized Collagen Serum</h3>
+          <b>待释放</b>
+          <p>$899 且公开评论 7 条，必须先补 review、结果和 routine proof。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">复购与 routine · 需教育</div>
+          <h3>Triple Collagen Cream / Bundles</h3>
+          <b>中</b>
+          <p>$398 cream 和 $576-$1,297 bundle 适合提高客单，但要讲清搭配逻辑。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p>
+        </article><article class="line-card state-green">
+          <div class="line-meta">试用降险 · 可先跑</div>
+          <h3>Travel sizes / Starter Kit</h3>
+          <b>中</b>
+          <p>$49-$159 travel sizes 能降低首单心理门槛，应成为高价 SKU 的前置入口。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：把科学、价格、结果和退换放到同一条购买路径。</h2>
+        </div>
+        <p class="section-note">状态列用色块，不分行，直接显示当前是否接住。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Google / AI Search</td><td>重组胶原对 wrinkles、firming 和 lifting 是否真的有差异</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>新增 recombinant collagen hub、证据出处、适用边界和竞品解释。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></td></tr><tr><td>Technology Page</td><td>科学是否真实、是否适合日常护肤</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>把专业术语转成 3 层 proof：技术来源、皮肤结果、使用边界。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span></span></td></tr><tr><td>PDP / $899 Serum</td><td>为什么值这个价、多久看结果、先买哪一支</td><td class="status-cell"><span class="table-status amber">按住一半</span></td><td>上线 routine selector、trial-to-hero path、review snapshot 和结果窗口。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></td></tr><tr><td>Reviews / Social</td><td>会不会刺激、效果是否稳定、真实用户怎么说</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>收集 UGC、creator 使用周期、差评 FAQ 和 before/after 素材。<span class="evidence-list"><span class="evidence">[E12]</span><span class="evidence">[E13]</span></span></td></tr><tr><td>Policy / FAQ</td><td>不适合怎么办，退货是否麻烦</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>重写 14 天退货、结果周期和高价客服承诺，前置到 PDP。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E16]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点适配：科学词要落到可验证结果和购买边界。</h2>
+        </div>
+        <p class="section-note">权重越高，越接近下单前必须被回答的问题。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-amber">
+          <div><div class="fit-weight">26%</div><div class="mini-track"><i style="width:26%;"></i></div></div>
+          <div><strong>技术可信</strong><p>recombinant humanized collagen / triple helix</p></div>
+          <div><span class="verdict amber">有基础，需转译</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">22%</div><div class="mini-track"><i style="width:22%;"></i></div></div>
+          <div><strong>结果可见</strong><p>15 minutes / 28 days / firming</p></div>
+          <div><span class="verdict red">需 proof</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>高价合理性</strong><p>$369-$899 serum / $1,297 bundle</p></div>
+          <div><span class="verdict red">证据不足</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">16%</div><div class="mini-track"><i style="width:16%;"></i></div></div>
+          <div><strong>安全边界</strong><p>water + collagen / minimalist</p></div>
+          <div><span class="verdict amber">需 FAQ</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">10%</div><div class="mini-track"><i style="width:10%;"></i></div></div>
+          <div><strong>首单风险</strong><p>travel size / All-In $89</p></div>
+          <div><span class="verdict green">可放大</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">8%</div><div class="mini-track"><i style="width:8%;"></i></div></div>
+          <div><strong>第三方信任</strong><p>Allure / social</p></div>
+          <div><span class="verdict amber">需沉淀</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页结论：技术资产很强，成交资产还不够厚。</h2>
+        </div>
+        <p class="section-note">免费版只做公开数据判断，不替代后台成交和利润校准。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>当前判断</b><p>57 分，C档。机会来自 recombinant collagen 的差异化，扣分来自高价护肤的 proof 密度。</p></div><div class="summary-item"><b>最该先做</b><p>把 science proof、PDP、review、return 和 routine selector 统一到购买路径。</p></div><div class="summary-item"><b>不要先做</b><p>不要把 $899 hero serum 直接当冷启动主入口。</p></div><div class="summary-item"><b>路由建议</b><p>SignalMark 先做技术搜索与竞品比较，CommerceFlow 同步修 PDP 和政策信任，TideLens 补 creator 使用周期 proof。</p></div><div class="summary-item"><b>30 天验收</b><p>上线 5 个资产：science hub、price ladder、routine selector、review proof、return / sensitive skin FAQ。</p></div><div class="summary-item"><b>需要补数</b><p>订单结构、复购、退款、客服、广告词、creator 转化和第三方评价需要后续采集。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>三专项路由：先看哪个问题最能改变下一阶段结果。</h2>
+        </div>
+        <p class="section-note">SignalMark 看搜索和认知，CommerceFlow 看成交路径，TideLens 看内容与创作者信任。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-amber">
+          <div class="biz-top"><div><span>SignalMark</span><h3>技术心智有起点，行业词没吃透</h3><p>品牌的 science story 有辨识度，但 anti-aging / collagen serum 大词仍被成熟品牌和零售平台掌控。</p></div><b>60</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>有 Allure、技术页和明确 collagen 差异点。</p></div><div><strong>做得差</strong><p>review / comparison / Amazon 搜索 proof 偏薄。</p></div></div>
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>高价 PDP 信任不足</h3><p>$89 入口可用，$369-$899 hero SKU 要补结果窗口、敏感边界、试用路径和退换信任。</p></div><b>52</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>SKU 梯度和 travel sizes 已具备。</p></div><div><strong>做得差</strong><p>公开评论数量和政策承诺不足以支撑大额冷启动。</p></div></div>
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>TideLens</span><h3>内容适合种草，但还没变成 proof</h3><p>官方社媒入口存在，产品也适合 glow / routine 内容，但需要 creator 使用周期和可信结果素材。</p></div><b>55</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>All-In Serum 很适合短视频 demo。</p></div><div><strong>做得差</strong><p>UGC 证据、差评处理和长期使用证明还薄。</p></div></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>四个最优先问题</h2>
+        </div>
+        <p class="section-note">先解决会改变成交判断的问题。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：科学 claim 没有充分转译成消费者 proof</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P0</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></p></div>
+          <div><b>业务影响</b><p>用户看见专业词，但无法快速判断可信程度、适用边界和结果窗口。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 science proof hub，按技术来源、产品对应、结果窗口和边界拆解。<br><strong>90 天：</strong>补 dermatologist / lab explainer、对比页和可引用素材库。</p></div>
+        </div>
+      </article><article class="issue state-red">
+        <h3>问题 2：高价主 SKU 的评论密度不足</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P0</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E12]</span></span></p></div>
+          <div><b>业务影响</b><p>$899 serum 只有个位数公开评论，会压住高客单转化和复购信任。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>在 PDP 前置 review snapshot、routine selector 和 travel-size path。<br><strong>90 天：</strong>建立 review generation、UGC 使用周期和客服 FAQ 闭环。</p></div>
+        </div>
+      </article><article class="issue state-red">
+        <h3>问题 3：退换承诺与结果周期不匹配</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P1</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E10]</span><span class="evidence">[E14]</span><span class="evidence">[E16]</span></span></p></div>
+          <div><b>业务影响</b><p>14 天退货面对 28 天护理叙事，会让用户担心试错成本，同时把外部 review 和比较词缺口放大。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重写 return、satisfaction、sensitive skin、routine FAQ，并上线 collagen serum comparison hub。<br><strong>90 天：</strong>把退款原因、客服响应、creator review 和试用装策略纳入月度复盘。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：真正对手是临床感、奢华感和低价成分党的三组替代。</h2>
+        </div>
+        <p class="section-note">ProtYouth 需要同时解释技术差异、价格理由和使用周期。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>SkinMedica / Alastin / SkinCeuticals</h3>
+          <p>临床感和专业渠道更强，ProtYouth 要用 recombinant collagen 和结果边界建立差异。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Augustinus Bader / La Mer</h3>
+          <p>奢华科学叙事更成熟，ProtYouth 需要避免只停留在高端语言。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Medicube / K-beauty science brands</h3>
+          <p>社媒 proof 和套装教育强，ProtYouth 可以学习 routine 内容和 creator path。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>The Ordinary / peptide / collagen alternatives</h3>
+          <p>价格低、解释简单，会压缩入门用户的付费意愿。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位建议：把 recombinant collagen 从科技卖点变成高证据护肤 routine。</h2>
+        </div>
+        <p class="section-note">英文 copy 保持克制，避免把功效讲成医疗承诺。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Proof-led biotech skincare</h3>
+          <p>技术页、PDP 和 review 页面都围绕 proof，而不是只堆专业名词。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Trial-to-hero ladder</h3>
+          <p>$89 All-In 与旅行装先降低风险，再引导 T8/T16/Dual。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Routine confidence</h3>
+          <p>用 quiz、routine selector、敏感边界和退换 FAQ 提高下单安全感。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Human-identical collagen skincare for high-proof anti-aging routines.</p>
+        <p><b>Hero subhead:</b> Start with visible glow, then build a collagen routine matched to firmness, texture, and sensitivity concerns.</p>
+        <p><b>Product promise:</b> Know which collagen format to use, what result window to expect, and how to care for your skin safely.</p>
+        <p><b>Sales opener:</b> ProtYouth turns recombinant humanized collagen into a premium skincare routine that needs proof strong enough for a high-consideration buyer.</p>
+        <p><b>CTA:</b> Find your collagen routine</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：封顶项优先于平均分。</h2>
+        </div>
+        <p class="section-note">低分项会限制总分上行，高分项只说明已有抓手，不自动抵消信任缺口。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-amber">
+          <div class="score-card-top"><b>64</b><span>品类契约清晰度</span></div>
+          <div class="mini-track"><i style="width:64%;"></i></div>
+          <p>高价胶原护肤契约清楚，但 proof 厚度不足。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>主入口承接</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>官网入口完整，购买路径仍需更具体。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>50</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:50%;"></i></div>
+          <p>行业词、review 词和比较词没吃透。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>49</b><span>第三方信任</span></div>
+          <div class="mini-track"><i style="width:49%;"></i></div>
+          <p>第三方 review 与评论数量偏薄。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>56</b><span>渠道质量</span></div>
+          <div class="mini-track"><i style="width:56%;"></i></div>
+          <p>DTC 可跑，外部渠道验证不足。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>60</b><span>产品线秩序</span></div>
+          <div class="mini-track"><i style="width:60%;"></i></div>
+          <p>SKU 梯度完整，信任梯度需要重排。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>52</b><span>VOC 健康度</span></div>
+          <div class="mini-track"><i style="width:52%;"></i></div>
+          <p>好评主题强，顾虑集中在高价和证据。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>46</b><span>售后承诺</span></div>
+          <div class="mini-track"><i style="width:46%;"></i></div>
+          <p>14 天退货和结果周期需要重新解释。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>63</b><span>复购 / 耗材潜力</span></div>
+          <div class="mini-track"><i style="width:63%;"></i></div>
+          <p>routine 和 travel size 有复购潜力。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>57</b><span>内容解释力</span></div>
+          <div class="mini-track"><i style="width:57%;"></i></div>
+          <p>社媒入口有基础，creator proof 不够厚。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>51</b><span>预算放大确定性</span></div>
+          <div class="mini-track"><i style="width:51%;"></i></div>
+          <p>大预算前要补 proof 和 PDP 信任。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算建议：先投证据资产，再投高客单流量。</h2>
+        </div>
+        <p class="section-note">高价护肤最贵的是信任成本，不是素材数量。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Science / SEO proof</h3>
+          <p>优先做 recombinant collagen hub、comparison 和 review 页。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>PDP / routine path</h3>
+          <p>重写 T8/T16/Dual、All-In、travel size 和 bundle 的关系。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Creator proof</h3>
+          <p>用 14/28/60 天使用周期内容，沉淀真实反馈和边界。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>Paid social 放大</h3>
+          <p>可小额测试 $89 / travel size，不宜先大推 $899 hero SKU。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先让技术可信，再让高价可买。</h2>
+        </div>
+        <p class="section-note">路线围绕 science proof、成交路径和用户证据。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-90 天</h3>
+          <div class="road-action state-green"><b>SignalMark｜建立 recombinant collagen hub 与竞品比较页</b><p>验收：6 个核心搜索意图有独立承接页。影响：提高技术词与 review 词解释权</p></div><div class="road-action state-green"><b>CommerceFlow｜重做 PDP、routine selector 和 trial-to-hero path</b><p>验收：$89 / travel / T8 / T16 / Dual 关系清楚。影响：降低高价首单犹豫</p></div><div class="road-action state-amber"><b>Support / Compliance｜重写 return、sensitive skin、claim boundary FAQ</b><p>验收：PDP 可直接跳转到 5 个风险答案。影响：降低政策和刺激顾虑</p></div>
+        </article><article class="road-card">
+          <h3>90-180 天</h3>
+          <div class="road-action state-amber"><b>TideLens｜建立 creator 使用周期 proof</b><p>验收：20 组 14/28/60 天内容可复用。影响：把社媒种草变成成交证据</p></div><div class="road-action state-amber"><b>SignalMark｜补 review / comparison / AI Search schema</b><p>验收：品牌 review 词出现官方 proof 页。影响：抬高外部搜索信任</p></div><div class="road-action state-blue"><b>Atlas｜用订单、退款、复购和客服数据校准分数</b><p>验收：完成一次付费深挖版校准。影响：判断能否进入 10-100 放大</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：最先动的是 Claims、PDP、Reviews 和客服。</h2>
+        </div>
+        <p class="section-note">按当前最差点排序。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">42</div>
+          <h3>Claims / Compliance</h3>
+          <p><strong>最差点：</strong>功效、医学感和技术背书需要边界管理。</p>
+          <span class="tag red">30 天：建立 claim matrix 和 proof source。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">44</div>
+          <h3>Reviews / UGC</h3>
+          <p><strong>最差点：</strong>主 SKU 评论数不足，第三方评价薄。</p>
+          <span class="tag red">30 天：上线 review snapshot 和 UGC 采集。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">46</div>
+          <h3>Customer Support</h3>
+          <p><strong>最差点：</strong>14 天退换与高价结果周期冲突。</p>
+          <span class="tag red">30 天：重写 policy FAQ 和客服承诺。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">47</div>
+          <h3>SEO / Search</h3>
+          <p><strong>最差点：</strong>行业词、review 词和比较词没吃掉。</p>
+          <span class="tag red">30 天：上线 science + comparison hub。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">50</div>
+          <h3>Ecommerce</h3>
+          <p><strong>最差点：</strong>高价 SKU 关系和首单路径不够清楚。</p>
+          <span class="tag amber">30 天：重做 routine selector。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">54</div>
+          <h3>Creator Content</h3>
+          <p><strong>最差点：</strong>社媒入口有，证明链还薄。</p>
+          <span class="tag amber">30 天：做 14/28 天内容模板。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">64</div>
+          <h3>Brand Science</h3>
+          <p><strong>最差点：</strong>专业性强，但需要消费者语言转译。</p>
+          <span class="tag amber">30 天：写 proof-led 科学页。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">68</div>
+          <h3>Product / R&amp;D</h3>
+          <p><strong>最差点：</strong>技术和产品梯度已有基础。</p>
+          <span class="tag green">30 天：配合输出边界和 routine 逻辑。</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>数据缺口与风险</h2>
+        </div>
+        <p class="section-note">公开数据可判断方向，但仍需后续校准。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>销量和复购缺口</h3>
+          <p>未接入 Shopify 后台、广告后台、复购和退款数据，分数保守处理。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>外部评价缺口</h3>
+          <p>公开搜索未看到稳定 Amazon / Trustpilot / Reddit 沉淀，需要持续验证。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>功效与合规风险</h3>
+          <p>重组胶原、lifting、wrinkle、28 天等表述要绑定来源和边界，避免承诺过重。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>社媒 proof 归因</h3>
+          <p>官方社媒和 creator 痕迹可见，但需要内容授权、素材质量和成交数据校准。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表</h2>
+        </div>
+        <p class="section-note">只使用公开可查资料；电商后台、广告后台和客服数据未接入。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://protyouth.com/" target="_blank" rel="noopener">ProtYouth homepage</a></td>
+              <td>2026-06-26</td>
+              <td>Official site</td>
+              <td>品牌定位、技术 banner、官方社媒入口和 DTC 主站判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://protyouth.com/products.json?limit=250" target="_blank" rel="noopener">ProtYouth products JSON</a></td>
+              <td>2026-06-26</td>
+              <td>Structured product data</td>
+              <td>18 SKU、价格带、travel size、bundle 和产品线判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://protyouth.com/products/protyouth-dual-recombinant-humanized-collagen-serum" target="_blank" rel="noopener">Dual Recombinant Humanized Collagen Serum product page</a></td>
+              <td>2026-06-26</td>
+              <td>Official product page</td>
+              <td>$899 hero SKU、Loox 4.9 / 7 和高价 proof 判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://protyouth.com/products/protyouth-t16-recombiant-humanzied-collagen-serum" target="_blank" rel="noopener">T8 / T16 Recombinant Humanized Collagen Serum product pages</a></td>
+              <td>2026-06-26</td>
+              <td>Official product page</td>
+              <td>$369-$449 中层 serum、collagen type 和评论基数判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://protyouth.com/products/protyouth-collagen-all-in-instant-awakening-serum" target="_blank" rel="noopener">All-In Instant Awakening Serum product page</a></td>
+              <td>2026-06-26</td>
+              <td>Official product page</td>
+              <td>$89 首单入口、15-minute glow 和 Loox 5.0 / 25 判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://protyouth.com/products/protyouth-triple-collagen-multi-effect-cream" target="_blank" rel="noopener">Triple Collagen Multi-Effect Cream product page</a></td>
+              <td>2026-06-26</td>
+              <td>Official product page</td>
+              <td>$398 cream、28 天叙事、routine 与 bundle 判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://protyouth.com/pages/our-technology" target="_blank" rel="noopener">ProtYouth Our Collagen / Technology page</a></td>
+              <td>2026-06-26</td>
+              <td>Official science page</td>
+              <td>recombinant humanized collagen、164.88° triple-helix、备案/指南相关主张判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://protyouth.com/pages/about-us" target="_blank" rel="noopener">ProtYouth About page</a></td>
+              <td>2026-06-26</td>
+              <td>Official brand page</td>
+              <td>品牌使命、US patent recognition、medical-grade biocompatibility 等高信任语言判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://www.allure.com/contributor-content/story/the-singularity-is-here-how-protyouth-approaches-anti-aging-with-collagen" target="_blank" rel="noopener">Allure contributor article on ProtYouth</a></td>
+              <td>2026-06-26</td>
+              <td>Media / contributor content</td>
+              <td>Allure 外部媒体信号与可引用 PR proof 判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://protyouth.com/pages/faqs" target="_blank" rel="noopener">ProtYouth FAQs</a></td>
+              <td>2026-06-26</td>
+              <td>Official FAQ</td>
+              <td>14 天退货、退款处理和订单服务判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://protyouth.com/policies/shipping-policy" target="_blank" rel="noopener">ProtYouth shipping policy</a></td>
+              <td>2026-06-26</td>
+              <td>Official policy</td>
+              <td>美国配送、$400+ free shipping 和 $7 shipping fee 判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://protyouth.com/products/protyouth-collagen-all-in-instant-awakening-serum" target="_blank" rel="noopener">Loox / product review signals on ProtYouth PDPs</a></td>
+              <td>2026-06-26</td>
+              <td>Review app signal</td>
+              <td>主 SKU 4.9-5.0 星、7-25 条公开评论与信任密度判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://www.instagram.com/protyouth/" target="_blank" rel="noopener">ProtYouth official social links</a></td>
+              <td>2026-06-26</td>
+              <td>Official social</td>
+              <td>Instagram / TikTok / YouTube 入口与 creator proof 路由判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://www.google.com/search?q=ProtYouth+reviews+Amazon+Reddit+Trustpilot" target="_blank" rel="noopener">Search result check for Amazon / Reddit / Trustpilot proof</a></td>
+              <td>2026-06-26</td>
+              <td>Search result</td>
+              <td>外部评价、Amazon 主货架和社区 proof 缺口判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://protyouth.com/pages/quiz-protyouth-skin" target="_blank" rel="noopener">ProtYouth Skin Analysis Quiz and Events pages</a></td>
+              <td>2026-06-26</td>
+              <td>Official engagement page</td>
+              <td>quiz、events、offline/education assets 和 DTC 转化入口判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E16</td>
+              <td><a href="https://protyouth.com/policies/refund-policy" target="_blank" rel="noopener">ProtYouth refund policy</a></td>
+              <td>2026-06-26</td>
+              <td>Official policy</td>
+              <td>退换承诺、退款路径和高价购买风险判断</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>ProtYouth · 2026-06-26 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>
