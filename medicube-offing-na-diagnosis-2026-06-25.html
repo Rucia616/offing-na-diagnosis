@@ -43,9 +43,9 @@
     .product-lockup small { margin-top:5px; color:var(--accent); font-size:12px; font-weight:780; }
     .nav { display:flex; gap:13px; overflow-x:auto; padding:16px 0; scrollbar-width:none; }
     .nav a { color:var(--muted); font-size:12px; font-weight:760; white-space:nowrap; }
-    main { width:min(1184px,calc(100% - 56px)); margin:0 auto; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
     section { scroll-margin-top:88px; margin:96px 0; }
-    .hero { min-height:min(820px,calc(100vh - 62px)); display:grid; grid-template-columns:minmax(0,1fr) minmax(340px,400px); gap:clamp(36px,5vw,72px); align-items:center; margin:0; padding:42px 0; }
+    .hero { min-height:min(900px,calc(100vh - 62px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:42px 54px; align-items:center; margin:0; padding:42px 0; }
     .hero-copy { max-width:660px; }
     .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:30px; }
     .client-logo img { display:block; max-width:280px; max-height:76px; object-fit:contain; }
@@ -53,8 +53,27 @@
     .eyebrow::before { content:""; width:18px; height:2px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
     h1,h2,h3,p { margin:0; }
     h1 { max-width:660px; color:var(--text); font-size:clamp(56px,6.1vw,88px); line-height:1.04; font-weight:900; }
-    .lead { max-width:660px; margin-top:22px; color:var(--body); font-size:clamp(22px,2vw,26px); line-height:1.38; font-weight:780; }
-    .sublead { max-width:650px; margin-top:14px; color:var(--muted); font-size:15px; line-height:1.62; }
+    .lead { max-width:700px; margin-top:22px; color:var(--body); font-size:clamp(19px,1.7vw,23px); line-height:1.48; font-weight:780; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-width:720px; margin-top:22px; padding-top:16px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:clamp(22px,2.1vw,30px); line-height:1; font-weight:900; }
+    .hero-metric span { display:block; margin-top:8px; color:var(--muted); font-size:12.5px; line-height:1.42; font-weight:720; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:color-mix(in srgb,var(--surface) 66%,transparent); backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:92px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:950; letter-spacing:.06em; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:900; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:680; }
+    .chain-item.state-red { box-shadow:inset 0 3px 0 var(--risk); background:color-mix(in srgb,var(--risk-bg) 46%,transparent); }
+    .chain-item.state-amber { box-shadow:inset 0 3px 0 var(--warning); background:color-mix(in srgb,var(--warning-bg) 46%,transparent); }
+    .chain-item.state-green { box-shadow:inset 0 3px 0 var(--success); background:color-mix(in srgb,var(--success-bg) 46%,transparent); }
+    .chain-item.state-blue { box-shadow:inset 0 3px 0 var(--blue); background:color-mix(in srgb,var(--blue-bg) 50%,transparent); }
     .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
     .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
     .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
@@ -263,7 +282,7 @@
     .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
     .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
     @media (max-width: 900px) {
-      .topbar-inner,main { width:calc(100% - 32px); }
+      .topbar-inner,main { width:calc(100vw - 36px); }
       .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
       .nav { display:none; }
       .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
@@ -300,6 +319,10 @@
       .client-logo img { max-width:230px; max-height:56px; }
       .eyebrow { margin-bottom:14px; }
       .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
       .tag-row { margin-top:16px; gap:6px; }
       .tag { font-size:11px; padding:5px 8px; }
       .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
@@ -336,10 +359,25 @@
           <img src="assets/brand-logos/medicube-logo-official.svg" alt="Medicube logo" />
         </div>
         <div class="eyebrow">North America Diagnosis</div>
-        <h1>北美业务诊断</h1>
-        <p class="lead">Medicube 北美已经进入强增长期：TikTok Shop、Amazon、Ulta 和 DTC 同时拉动，但下一阶段的瓶颈集中在直购信任、设备使用边界、客服承接和 SKU 复杂度。</p>
-        <p class="sublead">APR 2026 Q1 披露美国销售 KRW 248.5B、同比增长 250.8%；Vogue 披露 Medicube TikTok Shop 2025 约 USD 102.9M、34,000 creator affiliates、Ulta 1,400+ 门店。公开端同时出现 Trustpilot 1.9 / 5、Ulta 多个 3.x 评分和设备/客服负面，说明增长强度高，但承接质量需要立刻补课。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E9]</span><span class="evidence">[E10]</span><span class="evidence">[E12]</span><span class="evidence">[E13]</span></span></p>
-        <div class="tag-row"><span class="tag green">北美强增长已成立</span><span class="tag green">红人和平台飞轮很强</span><span class="tag red">直购信任形成封顶</span></div>
+        <h1>强增长被信任和设备边界封顶</h1>
+        <p class="lead">Medicube 北美已经跨过爆款验证。TikTok Shop、Amazon 和 Ulta 证明需求很强；官网直购、设备使用边界、客服承接和 SKU role map 决定下一阶段增长质量。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <b>KRW 248.5B</b>
+            <span>APR Q1 2026 美国销售，同比增长 250.8%。 <span class="evidence-list"><span class="evidence">[E8]</span></span></span>
+          </div>
+          <div class="hero-metric state-green">
+            <b>USD 102.9M</b>
+            <span>Vogue 披露 2025 TikTok Shop 规模，34,000 creator affiliates。 <span class="evidence-list"><span class="evidence">[E10]</span></span></span>
+          </div>
+          <div class="hero-metric state-red">
+            <b>1.9 / 5</b>
+            <span>Trustpilot 直购口碑把 DTC 信任拉成 P0 风险。 <span class="evidence-list"><span class="evidence">[E4]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">APR 和媒体数据说明北美速度很快；Trustpilot 与 Ulta 评分分化说明官网和零售承接还要补强。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E8]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
+        
       </div>
       <aside class="score-panel" aria-label="Medicube Atlas score">
         <div class="score-kicker">北美业务情况总分</div>
@@ -374,6 +412,29 @@
         </div>
         <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-25。</p>
       </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>直购信任</b>
+          <span>先修订单、退款、warranty 和设备故障处理。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P1</i>
+          <b>设备边界</b>
+          <span>把强 claim、敏感肌、强活性成分和使用等级同屏讲清。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P2</i>
+          <b>SKU 角色</b>
+          <span>用 Hero / Routine / Bundle / Subscription 拆清资源分配。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>CommerceFlow</b>
+          <span>优先进入官网承接、售后 SLA 和渠道利润校准。</span>
+        </article>
+      </div>
     </section>
     
     <section id="free-diagnosis">
