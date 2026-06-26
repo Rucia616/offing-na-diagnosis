@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNIROX · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="UNIROX logo">
+          <img src="assets/brand-logos/unirox-logo-wordmark.svg" alt="UNIROX logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">当前总分为 52。Q1 已经有官网产品、价格带和评论信号，但专业工具买家还缺 Amazon、YouTube、工具社区、耗材和售后证明。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <b>590</b>
+            <span>Q1 产品页展示 reviews。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>$139-$249</b>
+            <span>Q1 Starter 到 Ultimate Maker Kit 价格带。 <span class="evidence-list"><span class="evidence">[E3]</span></span></span>
+          </div>
+          <div class="hero-metric state-amber">
+            <b>Cap 58</b>
+            <span>封顶来自专业工具信任尚未出站。 <span class="evidence-list"><span class="evidence">[E4]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">本次按 Atlas v3 判断：官网动销可作为起点，下一步先把 ultrasonic cutter 的行业入口、替换刀片、耐用性和安全承诺补成可验证路径。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        <div class="tag-row"><span class="tag amber">v3 52 分</span><span class="tag amber">D档</span><span class="tag blue">公开数据置信度 中等偏低</span></div>
+      </div>
+      <aside class="score-panel" aria-label="UNIROX Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">52<span>/100</span></div>
+          <span class="tier green">D档</span>
+        </div>
+        <div class="stars" aria-label="2.6 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">2.6 / 5 · D档 · 先补第三方工具信任</div>
+        <div class="score-meta">
+          <div><b>0-1 → 1-10</b><span>阶段判断</span></div>
+          <div><b>DTC maker tool</b><span>经营类型</span></div>
+          <div><b>中等偏低</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:50%;"></i></div>
+            <b>50</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:64%;"></i></div>
+            <b>64</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:62%;"></i></div>
+            <b>62</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-amber">
+          <i>P0</i>
+          <b>行业入口</b>
+          <span>先吃 ultrasonic cutter / precision cutter 的高意图词。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P1</i>
+          <b>工具信任</b>
+          <span>用 YouTube、maker 社区和切割材料 proof 补足。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>耗材经济</b>
+          <span>替换刀片、适用材料和寿命要单独成页。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P2</i>
+          <b>售后承诺</b>
+          <span>安全、保修、退货和学习曲线需要提前解释。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>SignalMark 先修行业搜索，CommerceFlow 接耗材和售后页。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>https://uniroxtool.com/</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>品牌名 + 网址</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等偏低 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-26</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由建议</h3>
+          <p>Atlas 总控建议 SignalMark 先修行业词和比较词，CommerceFlow 同步修产品页与售后入口。</p>
+          <span class="route-chip">最低分警报：TideLens 46</span>
+          <span class="route-chip">分数封顶：58 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-amber">
+            <div class="specialist-score">50<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>行业词和比较词不足</h3>
+              <p>品牌词有起点，但 ultrasonic cutter 的行业心智还没有被吃透。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">48<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>购买前解释不够</h3>
+              <p>套装价格明确，材料、耗材、安全和保修仍会拖慢下单。</p>
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">46<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>内容信任需要起量</h3>
+              <p>新工具需要可视化 demo 和 maker 场景，不适合只靠静态产品页。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>行业词入口不稳</li><li>耗材经济没有前置</li><li>新品扩展节奏偏早</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：把 DTC 评论误当作行业信任。</h2>
+        </div>
+        <p class="section-note">Q1 有官网动销，但专业工具用户会把平台、视频评测、社区案例和售后放在同一组里比较。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>专业切割工具买的是材料适配、精准度、安全和长期耗材确定性。</h3>
+          <p><strong>用户买的确定性：</strong>maker 和 DIY 用户会先问：能切我的材料吗，切口是否稳定，刀片多久换，学习成本和安全风险是否可控。</p>
+          <p><strong>当前匹配：</strong>Q1 的产品定义和评论信号已经让入口成立，但第三方测评和耗材解释还不足以支撑专业工具的高信任购买。</p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article>
+        <article class="score-cap state-amber">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">58<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>DTC 评论已出现，但 Amazon / YouTube / maker 社区的出站证明还薄。</p>
+        </article>
+        <article class="decision-blindspot state-amber">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的误读</h3>
+          <dl>
+            <div><dt>高估</dt><dd>官网评论、套装数量、产品上新速度。</dd></div>
+            <div><dt>低估</dt><dd>第三方工具测评、材料边界、刀片耗材、长期安全信任。</dd></div>
+            <div><dt>安慰指标</dt><dd>产品页 reviews 和站内价格带。</dd></div>
+            <div><dt>先别做</dt><dd>暂缓把新品货架宽度当作第一增长抓手。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 58</b></div>
+            <h3>行业搜索没接住，高意图用户被旧工具吃走</h3>
+            <p>ultrasonic cutter、hot knife、precision cutter、craft cutter 的需求会进入 Amazon、YouTube 和工具评测站。UNIROX 若只靠官网产品页，入口不够稳。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span></span></p>
+            <span class="tag red">SignalMark 优先梳理搜索入口和竞品对比页。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 57</b></div>
+            <h3>耗材和材料边界讲晚，导致购买犹豫</h3>
+            <p>Q1 有多套装和刀片相关产品，但用户需要在下单前看到材料清单、刀片寿命、替换成本和不适用边界。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E6]</span></span></p>
+            <span class="tag amber">CommerceFlow 补耗材页、FAQ 和比较表。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 56</b></div>
+            <h3>新品类横向扩展稀释 Q1 的主线 proof</h3>
+            <p>官网已有 honing guide、wall detector 和多功能工具，扩品可以提高货架宽度，也会分散 Q1 建立类目信任的预算。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+            <span class="tag amber">Atlas 总控先把 Q1 做成主入口，再评估相邻工具。</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>容易被高估的增长信号</h3>
+            <p>这些信号说明产品有启动点，但还不能替代专业工具买家的外部验证。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>官网 reviews 数字</h3>
+            <p>590 reviews 可以帮助首屏信任，但工具买家仍会找第三方测试和长期使用反馈。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>套装价格带完整</h3>
+            <p>$139-$249 有阶梯，但高客单工具仍需要材料、刀片和安全解释支持。</p>
+          </article><article class="signal-card state-red">
+            <span>假信号</span>
+            <h3>多工具货架</h3>
+            <p>新品扩展会显得品牌更丰富，也可能让 Q1 的主线证据不够集中。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>当前分数上限：58</h3>
+            <p>UNIROX 的机会在品类新鲜感，封顶来自行业搜索和第三方信任不足。</p>
+          </div>
+          <article class="cap-reason state-amber">
+            <b>58</b>
+            <div><h3>搜索封顶</h3><p>高意图行业词没有形成稳定入口矩阵。</p></div>
+          </article><article class="cap-reason state-red">
+            <b>55</b>
+            <div><h3>信任封顶</h3><p>专业工具缺少独立测评、对比页和长期 durability proof。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>56</b>
+            <div><h3>品线封顶</h3><p>相邻新品扩展早于 Q1 证据资产沉淀。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：从 0-1 走向 1-10，但主入口还没稳。</h2>
+        </div>
+        <p class="section-note">这是产品已经能讲清楚、但品类解释权和外部信任仍需补课的阶段。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>Q1 已有清晰产品页、价格带和 reviews 信号。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></p></div><div class="stage-step state-amber"><span>1-10</span><b>单点放大</b><p>ultrasonic cutter 需要从单品页变成品类入口和材料场景入口。<span class="evidence-list"><span class="evidence">[E4]</span></span></p></div><div class="stage-step state-red"><span>10-100</span><b>规模放大</b><p>在 Amazon、YouTube 和工具社区 proof 之前，不宜用大预算硬推。</p></div><div class="stage-step state-neutral"><span>100+</span><b>成熟经营</b><p>离成熟工具品牌的维修、耗材、渠道和专业背书还有距离。</p></div>
+      </div>
+      
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心人群：maker、模型制作、DIY 细节切割用户。</h2>
+        </div>
+        <p class="section-note">人群分层按材料难度、精度要求和工具经验来判断。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>精度</b><small>核心盘：模型 / 手作 / DIY 精细切割</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>效率</b><small>相邻盘：设计师 / 打样 / 小工作室</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>教育</b><small>外扩盘：普通家用维修用户</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>边界</b><small>暂缓盘：重度工业切割</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：模型 / 手作 / DIY 精细切割</b><span>他们买的是切口稳定、手感和材料适配，愿意为更省力的工具付费。</span></div><div class="legend-item state-amber"><b>相邻盘：设计师 / 打样 / 小工作室</b><span>需要证明连续使用、刀片寿命和可重复结果。</span></div><div class="legend-item state-amber"><b>外扩盘：普通家用维修用户</b><span>会被新工具吸引，但需要更低学习成本和安全解释。</span></div><div class="legend-item state-red"><b>暂缓盘：重度工业切割</b><span>若没有工业级认证和售后，不建议抢这类预期。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘</h3>
+          <p>围绕材料、切口、手感和替换刀片做 proof。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻盘</h3>
+          <p>补连续使用案例、工作台 demo 和对比视频。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>暂缓盘</h3>
+          <p>工业场景不要过早承诺，避免售后和安全风险。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：当前是 DTC 先行，外部信任需要跟上。</h2>
+        </div>
+        <p class="section-note">官网能讲新工具，但专业工具买家更依赖第三方场景。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Shopify DTC + content proof needed</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>DTC 官网</b>
+            <div class="share-track"><i class="green" style="width:58%;"></i></div>
+            <span>58%</span>
+            <small>产品页完整，有套装和评论信号。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>第三方搜索</b>
+            <div class="share-track"><i class="amber" style="width:18%;"></i></div>
+            <span>18%</span>
+            <small>行业词和 review 词还需要系统承接。<span class="evidence-list"><span class="evidence">[E4]</span></span></small>
+          </div><div class="share-row">
+            <b>工具社区/视频</b>
+            <div class="share-track"><i class="red" style="width:14%;"></i></div>
+            <span>14%</span>
+            <small>公开可验证 proof 不足。</small>
+          </div><div class="share-row">
+            <b>平台货架</b>
+            <div class="share-track"><i class="red" style="width:10%;"></i></div>
+            <span>10%</span>
+            <small>未看到足够强的 Amazon 主入口。</small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>官网角色</h3>
+          <p>适合做教育和套装成交，但要补对比、材料和 FAQ。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>内容角色</h3>
+          <p>YouTube 和 maker 案例会决定专业信任上限。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>平台角色</h3>
+          <p>若缺 Amazon 评价，会让高意图用户无法交叉验证。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：品牌词有起点，最大缺口在行业词和比较词。</h2>
+        </div>
+        <p class="section-note">搜索卡按需求量和购买决策价值排序，必须说明吃掉程度。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高 · 行业入口词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>ultrasonic cutter / precision cutter</h3>
+          <p>官网产品页能承接 UNIROX Q1，但行业词仍会被 hot knife、craft cutter 和 Amazon 结果分流。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中高 · 品牌评测词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>UNIROX / UNIROX Q1 review</h3>
+          <p>产品页 reviews 有帮助，但独立 review、视频和长期使用案例不足。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中 · 比较词</span><b class="search-capture red">没吃掉</b></div>
+          <h3>ultrasonic cutter vs hot knife / laser / Cricut</h3>
+          <p>比较页缺位，会让用户自己去找替代方案并被成熟工具带走。</p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级中 · 耗材词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>replacement blades / ceramic blade / tungsten carbide blade</h3>
+          <p>官网已有刀片相关产品，但需要把寿命、材料和替换成本讲成购买前信任。<span class="evidence-list"><span class="evidence">[E6]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P2 · 量级中 · 售后词</span><b class="search-capture red">没吃掉</b></div>
+          <h3>UNIROX warranty / return / safety</h3>
+          <p>专业工具下单前会查安全和保修，当前需要更强的独立入口。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC：好评围绕精准省力，顾虑集中在耐用、耗材和安全。</h2>
+        </div>
+        <p class="section-note">词云采用密集版，不把用户语言拆成稀疏空白。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">支持首单</div>
+          <h3>集中好评主题</h3>
+          <p>精准、轻松、适合 maker、细节切割和套装完整度。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">影响信任</div>
+          <h3>集中抱怨主题</h3>
+          <p>耐用、刀片成本、安全、材料限制、售后和学习曲线。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">精准</span><span class="w5 p1">省力</span><span class="w4 p2">590 reviews</span><span class="w4 p3">Maker Kit</span><span class="w4 p4">细节切割</span><span class="w3 p5">陶瓷刀片</span><span class="w3 p6">钨钢刀片</span><span class="w3 p7">DIY</span><span class="w3 p8">模型制作</span><span class="w2 p9">泡棉</span><span class="w2 p10">皮革</span><span class="w2 p11">手感</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">耐用</span><span class="w5 p1">刀片成本</span><span class="w4 p2">安全</span><span class="w4 p3">保修</span><span class="w4 p4">材料限制</span><span class="w3 p5">第三方评测</span><span class="w3 p6">Amazon proof</span><span class="w3 p7">发热</span><span class="w2 p8">学习曲线</span><span class="w2 p9">替换供应</span><span class="w2 p10">运输</span><span class="w2 p11">售后</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向语言能支持新奇工具的尝鲜，负向语言会直接影响 $139-$249 的下单安全感。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：Q1 是主线，耗材和相邻工具只能跟随主线证明。</h2>
+        </div>
+        <p class="section-note">不要让多工具货架提前稀释 Q1 的 category proof。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">主入口 · 启动期</div>
+          <h3>Q1 Ultrasonic Cutter</h3>
+          <b>中</b>
+          <p>最适合作为行业词、评测词和材料场景入口。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">复购/信任 · 待教育</div>
+          <h3>Replacement blades</h3>
+          <b>中</b>
+          <p>刀片寿命和材料边界讲清楚后，能降低首单犹豫。<span class="evidence-list"><span class="evidence">[E6]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">相邻扩展 · 早期</div>
+          <h3>Honing guide / detector / multi-tool</h3>
+          <b>待验证</b>
+          <p>先验证是否共享同一 maker 人群，避免货架散开。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">暂缓 · 未验证</div>
+          <h3>Industrial cutting</h3>
+          <b>未知</b>
+          <p>缺少工业级 proof 和服务承诺前不建议承诺重度场景。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：把购买前问题按入口承接。</h2>
+        </div>
+        <p class="section-note">状态列用色块，不分行，直接显示当前是否接住。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Google / YouTube</td><td>它和 hot knife、laser、craft knife 有什么差别</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>新增 comparison hub、材料 demo、3 分钟短视频和 FAQ。<span class="evidence-list"><span class="evidence">[E4]</span></span></td></tr><tr><td>产品页</td><td>我该买 Starter、Maker、Pro 还是 Ultimate</td><td class="status-cell"><span class="table-status green">基本接住</span></td><td>保留套装表，补适用人群和材料难度说明。<span class="evidence-list"><span class="evidence">[E3]</span></span></td></tr><tr><td>耗材页</td><td>刀片多久换、能切哪些材料、替换是否方便</td><td class="status-cell"><span class="table-status amber">按住一半</span></td><td>把 ceramic / tungsten blade 做成购买前信任页。<span class="evidence-list"><span class="evidence">[E6]</span></span></td></tr><tr><td>售后页</td><td>坏了怎么办，是否安全，退货和保修怎么走</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>建立 warranty / returns / safety 独立入口。</td></tr><tr><td>新品页</td><td>这些新工具和 Q1 是否同一套工作台逻辑</td><td class="status-cell"><span class="table-status amber">验证中</span></td><td>相邻工具先做 bundle 逻辑，不要独立分散投放。<span class="evidence-list"><span class="evidence">[E5]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点适配：先解释材料和边界，再谈精准省力。</h2>
+        </div>
+        <p class="section-note">权重越高，越接近下单前必须被回答的问题。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-amber">
+          <div><div class="fit-weight">28%</div><div class="mini-track"><i style="width:28%;"></i></div></div>
+          <div><strong>材料适配</strong><p>ultrasonic precision cutting</p></div>
+          <div><span class="verdict amber">需补材料表</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">22%</div><div class="mini-track"><i style="width:22%;"></i></div></div>
+          <div><strong>刀片寿命</strong><p>ceramic / tungsten blades</p></div>
+          <div><span class="verdict amber">需补成本</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">20%</div><div class="mini-track"><i style="width:20%;"></i></div></div>
+          <div><strong>安全和学习曲线</strong><p>effortless cutting</p></div>
+          <div><span class="verdict red">需补 FAQ</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">17%</div><div class="mini-track"><i style="width:17%;"></i></div></div>
+          <div><strong>第三方证明</strong><p>590 reviews</p></div>
+          <div><span class="verdict amber">站内成立</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">13%</div><div class="mini-track"><i style="width:13%;"></i></div></div>
+          <div><strong>套装选择</strong><p>$139-$249 kits</p></div>
+          <div><span class="verdict green">基本清楚</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页结论：Q1 有产品感，缺专业工具的外部证明。</h2>
+        </div>
+        <p class="section-note">免费版只做公开数据判断，不替代后台成交和利润校准。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>当前判断</b><p>52 分，D档。产品机会存在，主要扣在搜索入口和工具信任。</p></div><div class="summary-item"><b>最该先做</b><p>用 Q1 做 ultrasonic cutter 主入口，补材料、刀片、对比和安全页面。</p></div><div class="summary-item"><b>不要先做</b><p>不要把新品类横向扩展当第一优先级。</p></div><div class="summary-item"><b>路由建议</b><p>Atlas 总控建议 SignalMark 先修行业词和比较词，CommerceFlow 同步修产品页与售后入口。</p></div><div class="summary-item"><b>30 天验收</b><p>至少上线 4 个页面：材料 demo、对比页、刀片耗材页、warranty / safety 页。</p></div><div class="summary-item"><b>需要补数</b><p>Amazon、YouTube、Reddit / maker 社区和退货售后数据需要后续采集。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>三专项路由：先看哪个问题最能改变下一阶段结果。</h2>
+        </div>
+        <p class="section-note">SignalMark 看搜索和认知，CommerceFlow 看成交路径，TideLens 看内容与创作者信任。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-amber">
+          <div class="biz-top"><div><span>SignalMark</span><h3>行业词和比较词不足</h3><p>品牌词有起点，但 ultrasonic cutter 的行业心智还没有被吃透。</p></div><b>50</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>产品定义清楚。</p></div><div><strong>做得差</strong><p>第三方搜索 proof 薄。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>购买前解释不够</h3><p>套装价格明确，材料、耗材、安全和保修仍会拖慢下单。</p></div><b>48</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>SKU 阶梯清楚。</p></div><div><strong>做得差</strong><p>售后和耗材页不足。</p></div></div>
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3>内容信任需要起量</h3><p>新工具需要可视化 demo 和 maker 场景，不适合只靠静态产品页。</p></div><b>46</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>产品适合视频演示。</p></div><div><strong>做得差</strong><p>独立评测信号不足。</p></div></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>三个最优先问题</h2>
+        </div>
+        <p class="section-note">先解决会改变成交判断的问题。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：行业词入口不稳</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P0</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>高意图用户会去成熟平台和替代工具页面完成比较。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 ultrasonic cutter hub 和 3 个对比页。<br><strong>90 天：</strong>补 YouTube / maker 社区 proof 和 SEO 内容簇。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：耗材经济没有前置</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P1</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>用户无法估算长期成本，$199+ 套装转化会被压低。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线刀片寿命、材料边界和替换成本表。<br><strong>90 天：</strong>做耗材订阅或 bundle 测试。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：新品扩展节奏偏早</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P1</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E5]</span></span></p></div>
+          <div><b>业务影响</b><p>预算和内容资源分散，Q1 难以形成品类权威。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>把新品纳入同一 maker tool 架构。<br><strong>90 天：</strong>按 Q1 用户复购和相邻需求决定扩展。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：真正对手是替代工具集合。</h2>
+        </div>
+        <p class="section-note">比较对象包括 hot knife、laser、Cricut、hobby knife 和其他 ultrasonic cutter。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Hot knife cutters</h3>
+          <p>价格和认知更熟，需要证明 UNIROX 的切口、材料和安全优势。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Laser / Cricut</h3>
+          <p>自动化和创作心智强，UNIROX 应抢小批量、即时、手持场景。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>Hobby knives</h3>
+          <p>低价成熟替代，需要用省力、精准和安全证明升级价值。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>HOZO / Wondercutter</h3>
+          <p>同类新品会抢评测词，需提前布局 comparison。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位建议：把新奇工具变成可信工作台工具。</h2>
+        </div>
+        <p class="section-note">英文 copy 保持克制，不夸工业级能力。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Maker-first</h3>
+          <p>围绕模型、手作、打样和材料 demo 建立入口。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Material confidence</h3>
+          <p>把能切、不能切、刀片选择做成主导航。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Safer precision</h3>
+          <p>强调精准省力，同时补安全和学习曲线。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Precision cutting for makers who work across materials.</p>
+        <p><b>Hero subhead:</b> UNIROX Q1 helps you make cleaner detail cuts with a kit matched to your material and project level.</p>
+        <p><b>Product promise:</b> Know what it cuts, which blade to use, and how to keep every cut repeatable.</p>
+        <p><b>Sales opener:</b> Most cutting tools force makers to trade control for speed. UNIROX Q1 is built for controlled detail work.</p>
+        <p><b>CTA:</b> Choose your Q1 kit</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：封顶项优先于平均分。</h2>
+        </div>
+        <p class="section-note">低分项会限制总分上行，高分项只说明已有抓手，不自动抵消信任缺口。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>品类契约清晰度</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>工具购买契约清楚，但材料和耗材解释仍薄。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>52</b><span>主入口承接</span></div>
+          <div class="mini-track"><i style="width:52%;"></i></div>
+          <p>官网主入口可用，外部入口不足。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>49</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:49%;"></i></div>
+          <p>行业词和比较词未形成矩阵。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>45</b><span>第三方信任</span></div>
+          <div class="mini-track"><i style="width:45%;"></i></div>
+          <p>第三方评测和社区 proof 薄。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>50</b><span>渠道质量</span></div>
+          <div class="mini-track"><i style="width:50%;"></i></div>
+          <p>DTC 起步，平台信任不足。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>50</b><span>产品线秩序</span></div>
+          <div class="mini-track"><i style="width:50%;"></i></div>
+          <p>相邻新品早于主线沉淀。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>54</b><span>VOC 健康度</span></div>
+          <div class="mini-track"><i style="width:54%;"></i></div>
+          <p>好评主题明确，顾虑会影响高客单。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>44</b><span>售后承诺</span></div>
+          <div class="mini-track"><i style="width:44%;"></i></div>
+          <p>保修、安全和退货入口要补。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>56</b><span>复购 / 耗材潜力</span></div>
+          <div class="mini-track"><i style="width:56%;"></i></div>
+          <p>刀片复购潜力存在。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>内容解释力</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>视频 demo 和 maker 案例不足。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>46</b><span>预算放大确定性</span></div>
+          <div class="mini-track"><i style="width:46%;"></i></div>
+          <p>大预算前需补搜索和信任。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算建议：先投证据资产，再投大流量。</h2>
+        </div>
+        <p class="section-note">新品工具最贵的是解释成本。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>SEO / comparison</h3>
+          <p>优先做行业词、对比词和材料页。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Creator demo</h3>
+          <p>找 maker、model builder、DIY creator 做材料测试。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Paid social</h3>
+          <p>可小额测试，不宜承接全预算。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>新品扩展</h3>
+          <p>等 Q1 proof 成型后再加码。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先把 Q1 做成类目入口。</h2>
+        </div>
+        <p class="section-note">路线围绕证据资产、成交页和内容 proof。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-90 天</h3>
+          <div class="road-action state-green"><b>SignalMark｜建立 ultrasonic cutter hub 与比较页</b><p>验收：5 个核心词有独立承接页。影响：提高自然搜索和品牌词解释权</p></div><div class="road-action state-green"><b>CommerceFlow｜补材料、刀片、保修和安全 FAQ</b><p>验收：产品页跳转到 4 个信任页。影响：降低 $199+ 套装犹豫</p></div><div class="road-action state-amber"><b>TideLens｜制作 8 条材料 demo 视频</b><p>验收：覆盖泡棉、皮革、模型材料等场景。影响：把新工具变成可视化证据</p></div>
+        </article><article class="road-card">
+          <h3>90-180 天</h3>
+          <div class="road-action state-amber"><b>CommerceFlow｜测试刀片 bundle 和复购提醒</b><p>验收：耗材复购入口上线。影响：验证长期价值</p></div><div class="road-action state-amber"><b>SignalMark｜补 Amazon / YouTube / Reddit proof</b><p>验收：外部 proof 页面可引用。影响：抬高信任上限</p></div><div class="road-action state-blue"><b>Atlas｜评估相邻工具是否共用同一人群</b><p>验收：按 Q1 用户路径决定扩展。影响：避免货架过早分散</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：最先动的是搜索、内容和产品页。</h2>
+        </div>
+        <p class="section-note">按当前最差点排序。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">42</div>
+          <h3>SEO / Search</h3>
+          <p><strong>最差点：</strong>行业词和比较词入口薄。</p>
+          <span class="tag red">30 天：上线 hub + comparison。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">44</div>
+          <h3>Content</h3>
+          <p><strong>最差点：</strong>材料 demo 和第三方测评不足。</p>
+          <span class="tag red">30 天：拍 8 条材料测试。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">46</div>
+          <h3>Customer Support</h3>
+          <p><strong>最差点：</strong>保修、安全和退货说明不够前置。</p>
+          <span class="tag red">30 天：建 warranty / safety 页面。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">51</div>
+          <h3>Product Marketing</h3>
+          <p><strong>最差点：</strong>材料边界和刀片成本没有讲透。</p>
+          <span class="tag amber">30 天：重写 Q1 购买指南。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">52</div>
+          <h3>Ecommerce</h3>
+          <p><strong>最差点：</strong>套装选择有，但缺使用场景对照。</p>
+          <span class="tag amber">30 天：补 kit selector。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">54</div>
+          <h3>Brand</h3>
+          <p><strong>最差点：</strong>专业工具可信度不足。</p>
+          <span class="tag amber">30 天：建立 maker-first 叙事。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">58</div>
+          <h3>Product</h3>
+          <p><strong>最差点：</strong>新品线与 Q1 关系不清。</p>
+          <span class="tag amber">30 天：梳理工具架构。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">60</div>
+          <h3>Ops</h3>
+          <p><strong>最差点：</strong>已有 Shopify 和 SKU 基础。</p>
+          <span class="tag green">30 天：保持产品数据一致。</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>数据缺口与风险</h2>
+        </div>
+        <p class="section-note">公开数据可判断方向，但仍需后续校准。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>Amazon / platform proof 缺口</h3>
+          <p>未获得足够平台动销数据，分数保守处理。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>评论真实性与售后质量</h3>
+          <p>站内 reviews 需要结合退款、保修和投诉数据校准。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>品线扩展判断</h3>
+          <p>相邻新品是否同一用户群，需要后续订单和复购数据。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表</h2>
+        </div>
+        <p class="section-note">只使用公开可查资料；电商后台和广告后台未接入。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://uniroxtool.com/" target="_blank" rel="noopener">UNIROX homepage</a></td>
+              <td>2026-06-26</td>
+              <td>Official site</td>
+              <td>品牌定位、Shopify DTC 与 maker / DIY 入口</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://uniroxtool.com/products/unirox-q1-ultrasonic-cutter" target="_blank" rel="noopener">UNIROX Q1 product page</a></td>
+              <td>2026-06-26</td>
+              <td>Official product page</td>
+              <td>Q1 产品页、reviews 与主入口判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://uniroxtool.com/products/unirox-q1-ultrasonic-cutter.js" target="_blank" rel="noopener">UNIROX Q1 product JSON</a></td>
+              <td>2026-06-26</td>
+              <td>Structured product data</td>
+              <td>$139-$249 价格带和套装 SKU</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://www.google.com/search?q=UNIROX+Q1+ultrasonic+cutter+review" target="_blank" rel="noopener">UNIROX search result check</a></td>
+              <td>2026-06-26</td>
+              <td>Search result</td>
+              <td>品牌 review 与行业词承接判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://uniroxtool.com/products.json" target="_blank" rel="noopener">UNIROX products JSON</a></td>
+              <td>2026-06-26</td>
+              <td>Structured product data</td>
+              <td>H1 honing guide、wall detector 等相邻品线判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://uniroxtool.com/collections/all" target="_blank" rel="noopener">UNIROX blade product collection</a></td>
+              <td>2026-06-26</td>
+              <td>Official product list</td>
+              <td>刀片、耗材和工具货架判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://uniroxtool.com/products/unirox-q1-ultrasonic-cutter" target="_blank" rel="noopener">Judge.me app signals on product page</a></td>
+              <td>2026-06-26</td>
+              <td>Review app signal</td>
+              <td>站内 reviews 置信度和边界判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://uniroxtool.com/" target="_blank" rel="noopener">UNIROX official merchant metadata</a></td>
+              <td>2026-06-26</td>
+              <td>Site metadata</td>
+              <td>Shopify merchant、USD 价格与 DTC 路径</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>UNIROX · 2026-06-26 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>

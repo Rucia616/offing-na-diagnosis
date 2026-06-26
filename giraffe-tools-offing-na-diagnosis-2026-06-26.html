@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giraffe Tools · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
+    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
+    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
+    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
+    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
+    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:96px 0; }
+    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:760px; padding-top:0; }
+    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
+    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
+    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
+    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
+    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
+    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
+    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
+    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
+    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
+    .chain-item:last-child { border-right:0; }
+    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
+    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
+    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
+    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .score-number { font-size:84px; line-height:.92; font-weight:780; }
+    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
+    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
+    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
+    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
+    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
+    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
+    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
+    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { margin-top:10px; padding-top:12px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:470px; padding:22px; }
+      .score-number { font-size:64px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:24px; }
+      .star-score { margin-top:7px; font-size:13.5px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
+    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
+    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-number { font-size:52px; }
+      .score-number span { font-size:22px; }
+      .stars { margin-top:10px; font-size:22px; }
+      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
+      .score-meta { display:none; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { position:static; line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { max-width:230px; max-height:56px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Giraffe Tools logo">
+          <img src="assets/brand-logos/giraffe-tools-logo-wordmark.svg" alt="Giraffe Tools logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1>北美业务诊断</h1>
+        <p class="lead">当前总分为 63。Giraffe Tools 已有 Amazon 和 DTC 的强需求基础，但 hose reel / pressure washer 的购买契约会被耐用、漏水、保修和客服体验封顶。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <b>4.9 / 632</b>
+            <span>官网 hose reel PDP structured rating。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+          </div>
+          <div class="hero-metric state-green">
+            <b>4.1 / 5,945</b>
+            <span>Amazon hose reel 评价信号。 <span class="evidence-list"><span class="evidence">[E6]</span></span></span>
+          </div>
+          <div class="hero-metric state-red">
+            <b>BBB 206</b>
+            <span>BBB 近三年投诉片段，售后封顶。 <span class="evidence-list"><span class="evidence">[E7]</span></span></span>
+          </div>
+        </div>
+        <p class="sublead">Atlas v3 判断：这是有生意基础的品牌，下一步要把售后、保修、配件和可靠性证据补到能支撑更高预算。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p>
+        <div class="tag-row"><span class="tag amber">v3 63 分</span><span class="tag amber">C档</span><span class="tag blue">公开数据置信度 中等</span></div>
+      </div>
+      <aside class="score-panel" aria-label="Giraffe Tools Atlas score">
+        <div class="score-kicker">北美业务情况总分</div>
+        <div class="score-row">
+          <div class="score-number">63<span>/100</span></div>
+          <span class="tier green">C档</span>
+        </div>
+        <div class="stars" aria-label="3.1 out of 5 stars">★★★☆☆</div>
+        <div class="star-score">3.1 / 5 · C档 · 销量成立，售后信任封顶</div>
+        <div class="score-meta">
+          <div><b>10-100</b><span>阶段判断</span></div>
+          <div><b>DTC + Amazon outdoor tools</b><span>经营类型</span></div>
+          <div><b>中等</b><span>公开数据置信度</span></div>
+        </div>
+        <div class="subscore-list">
+          
+          <div class="subscore">
+            <span>业务健康度</span>
+            <div class="track"><i style="width:62%;"></i></div>
+            <b>62</b>
+          </div>
+          <div class="subscore">
+            <span>业务机会分</span>
+            <div class="track"><i style="width:74%;"></i></div>
+            <b>74</b>
+          </div>
+          <div class="subscore">
+            <span>问题致命度</span>
+            <div class="track"><i style="width:68%;"></i></div>
+            <b>68</b>
+          </div>
+        </div>
+        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>售后信任</b>
+          <span>保修、配件、客服和投诉处理是主封顶。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>耐用 proof</b>
+          <span>hose reel 要证明回卷、漏水、支架和长期使用。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>平台质量</b>
+          <span>Amazon 动销强，但 4.1 评分需要解释和修复。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>品线扩展</b>
+          <span>pressure washer 和 vacuum 要共享 time saver 逻辑。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>CommerceFlow 先修 warranty / parts / support，SignalMark 补可靠性证据。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>https://giraffetools.com/</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>品牌名 + 网址</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-06-26</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由建议</h3>
+          <p>Atlas 总控建议 CommerceFlow 优先修售后和配件链路，SignalMark 补可靠性和比较 proof。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 58</span>
+          <span class="route-chip">分数封顶：64 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-green">
+            <div class="specialist-score">66<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>主需求和品牌词成立</h3>
+              <p>行业入口、品牌词和平台声量有基础。</p>
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">58<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>成交强但服务页不足</h3>
+              <p>DTC 和 Amazon 都能成交，support / parts / warranty 需要前置。</p>
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">58<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>内容要从演示转向可靠性</h3>
+              <p>安装和 demo 内容有机会，但要补长期故障和处理方案。</p>
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>售后投诉影响信任</li><li>可靠性 proof 不够集中</li><li>多品线售后口碑互相传导</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：动销很强，但售后债会压住品牌上限。</h2>
+        </div>
+        <p class="section-note">户外工具的差评会高度集中在坏、漏、装不上、找不到配件和客服慢。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>户外工具买的是省时间、安装可靠、长期不漏和出问题有人管。</h3>
+          <p><strong>用户买的确定性：</strong>retractable hose reel 的用户买的不只是整洁院子，也买自动回卷、支架承重、软管耐用、替换配件和保修响应。</p>
+          <p><strong>当前匹配：</strong>Giraffe Tools 已经吃到主需求，但 BBB / Amazon 评分和售后主题说明，服务信任正在限制更高分。</p>
+          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">64<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>BBB 投诉和户外工具售后主题会压住品牌信任。</p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的误读</h3>
+          <dl>
+            <div><dt>高估</dt><dd>Amazon bought、官网 rating、产品上新数量。</dd></div>
+            <div><dt>低估</dt><dd>BBB 投诉、配件可得性、保修执行、安装失败和漏水/回卷差评。</dd></div>
+            <div><dt>安慰指标</dt><dd>评价量、站内 4.9、短期促销销量。</dd></div>
+            <div><dt>先别做</dt><dd>不要只用更多 SKU 和促销去覆盖售后问题。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 64</b></div>
+            <h3>售后投诉抵消平台动销</h3>
+            <p>Amazon 评价量和 DTC reviews 说明需求强，但 BBB 投诉会影响高意图用户对 warranty 和 support 的判断。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E7]</span></span></p>
+            <span class="tag red">CommerceFlow 优先修 support、parts 和 warranty。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 66</b></div>
+            <h3>可靠性 proof 赶不上产品承诺</h3>
+            <p>90ft、180 swivel、metal bracket、auto-rewind 是强卖点，也会放大漏水、回卷失败、支架松动等顾虑。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+            <span class="tag amber">SignalMark 补 durability proof 和安装内容。</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 65</b></div>
+            <h3>多品线共享同一个售后口碑</h3>
+            <p>hose reel、pressure washer、vacuum cleaner 都在同一品牌下，售后口碑会跨品线传导。</p>
+            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E5]</span></span></p>
+            <span class="tag amber">Atlas 总控按 support 体系而非单 SKU 优化。</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>容易被高估的增长信号</h3>
+            <p>这些信号说明需求强，但不能抵消售后和可靠性风险。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>Amazon 评价量和 bought 信号</h3>
+            <p>平台动销说明需求成立，但 4.1 评分和投诉主题会继续压制品牌溢价。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>官网 4.9 / 632</h3>
+            <p>DTC 好评能帮助首屏，但工具类用户会交叉查看 Amazon、BBB 和维修配件。</p>
+          </article><article class="signal-card state-amber">
+            <span>假信号</span>
+            <h3>多品类 time saver</h3>
+            <p>统一口号清楚，但压力清洗机和 hose reel 的售后复杂度不一样。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>当前分数上限：64</h3>
+            <p>Giraffe Tools 的需求已经成立，售后信任和可靠性 proof 限制上行。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>64</b>
+            <div><h3>售后封顶</h3><p>保修、投诉、配件和客服体验需要前置修复。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>66</b>
+            <div><h3>可靠性封顶</h3><p>回卷、漏水、支架、软管寿命需要更强 proof。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>65</b>
+            <div><h3>品线封顶</h3><p>多个品线共享同一售后声誉，不能只看单品动销。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：10-100，增长卡点从需求转向服务信任。</h2>
+        </div>
+        <p class="section-note">这类品牌已经有销售基础，v3 会更重视风险项。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>hose reel 和 pressure washer 的公开需求已经成立。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span></span></p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>主品类有产品页、reviews 和平台信号。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p></div><div class="stage-step state-amber"><span>10-100</span><b>规模治理</b><p>当前关键是修 support、parts、warranty 和 durability proof。</p></div><div class="stage-step state-amber"><span>100+</span><b>成熟经营</b><p>售后口碑修好前，不宜按成熟工具品牌估值。</p></div>
+      </div>
+      
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心人群：有院子、重视整洁、省时间但怕坏的家庭用户。</h2>
+        </div>
+        <p class="section-note">越接近工具类，售后和配件越是人群信任的一部分。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>整洁</b><small>核心盘：家用庭院和车库用户</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>频次</b><small>相邻盘：高频洗车 / 维护用户</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>可靠</b><small>外扩盘：小型商业和物业维护</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>重载</b><small>暂缓盘：重度专业承包商</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：家用庭院和车库用户</b><span>买的是收纳、省时间、自动回卷和安装省心。</span></div><div class="legend-item state-amber"><b>相邻盘：高频洗车 / 维护用户</b><span>需要更强软管、喷嘴、支架和耐用 proof。</span></div><div class="legend-item state-amber"><b>外扩盘：小型商业和物业维护</b><span>会更看配件、保修、备件和客服响应。</span></div><div class="legend-item state-red"><b>暂缓盘：重度专业承包商</b><span>如果没有专业服务承诺，不建议优先抢。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘</h3>
+          <p>围绕整洁、回卷、安装和家庭使用做主沟通。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>相邻盘</h3>
+          <p>用 durability proof 争取更高频用户。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>暂缓盘</h3>
+          <p>重度专业用户会放大售后风险。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>渠道判断：Amazon 提供量，DTC 必须承担服务解释。</h2>
+        </div>
+        <p class="section-note">工具品牌不能把官网只做成促销页。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Amazon + Shopify DTC + service trust</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="green" style="width:45%;"></i></div>
+            <span>45%</span>
+            <small>hose reel 公开评价量和动销信号强。<span class="evidence-list"><span class="evidence">[E6]</span></span></small>
+          </div><div class="share-row">
+            <b>DTC 官网</b>
+            <div class="share-track"><i class="green" style="width:35%;"></i></div>
+            <span>35%</span>
+            <small>官网产品页和 portfolio 完整。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>Support / BBB</b>
+            <div class="share-track"><i class="red" style="width:12%;"></i></div>
+            <span>12%</span>
+            <small>投诉和售后信号影响信任。<span class="evidence-list"><span class="evidence">[E7]</span></span></small>
+          </div><div class="share-row">
+            <b>Content / YouTube</b>
+            <div class="share-track"><i class="amber" style="width:8%;"></i></div>
+            <span>8%</span>
+            <small>产品媒体有视频入口，但可靠性内容要补。<span class="evidence-list"><span class="evidence">[E4]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Amazon 角色</h3>
+          <p>承担发现和成交，但评分压力会反向影响品牌。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>DTC 角色</h3>
+          <p>必须承担 warranty、parts、support 和 installation 说明。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>内容角色</h3>
+          <p>安装、耐用、故障处理和配件替换是关键内容。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：主需求能吃到，售后词会反向扣分。</h2>
+        </div>
+        <p class="section-note">搜索卡按需求和决策影响排序。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高 · 行业入口词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>retractable garden hose reel</h3>
+          <p>Giraffe Tools 在 Amazon 和官网都有强承接，但 Eley、Gorilla、Flexzilla、Hoselink 等仍会分流。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p>
+        </article><article class="mind-card state-green">
+          <div class="priority"><span>P1 · 量级中高 · 品牌词</span><b class="search-capture green">吃掉了</b></div>
+          <h3>Giraffe Tools / Giraffe hose reel</h3>
+          <p>品牌词和主产品有清晰承接，官网与 Amazon 都能进入。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中高 · 信任词</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Giraffe Tools reviews / warranty / BBB complaints</h3>
+          <p>BBB 投诉和售后词会成为购买前扣分项，需要主动解释和修复。<span class="evidence-list"><span class="evidence">[E7]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中 · 比较词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Giraffe vs Eley / Gorilla / Flexzilla</h3>
+          <p>比较词需要把价格、支架、回卷、保修和配件讲清楚。</p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级中 · 相邻品类词</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>pressure washer / retractable pressure washer</h3>
+          <p>Grandfalls / pressure washer 方向有品线基础，但售后信任会跨品类传导。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>VOC：好评是省时间和整洁，抱怨是售后、漏水和耐用。</h2>
+        </div>
+        <p class="section-note">词云保留足够密度，直接服务后续页面改版。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">支持放大</div>
+          <h3>集中好评主题</h3>
+          <p>retractable、auto-rewind、90ft、metal bracket、整洁和省时间。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">限制信任</div>
+          <h3>集中抱怨主题</h3>
+          <p>warranty、support、漏水、回卷失败、支架、配件和退款。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">retractable</span><span class="w5 p1">auto-rewind</span><span class="w4 p2">time saver</span><span class="w4 p3">90ft</span><span class="w4 p4">180 swivel</span><span class="w3 p5">metal bracket</span><span class="w3 p6">整洁院子</span><span class="w3 p7">安装</span><span class="w3 p8">hose reel</span><span class="w2 p9">喷嘴</span><span class="w2 p10">YouTube demo</span><span class="w2 p11">4.9 DTC</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">warranty</span><span class="w5 p1">BBB complaints</span><span class="w4 p2">support</span><span class="w4 p3">漏水</span><span class="w4 p4">回卷失败</span><span class="w3 p5">支架</span><span class="w3 p6">配件</span><span class="w3 p7">软管 kink</span><span class="w2 p8">安装失败</span><span class="w2 p9">退款</span><span class="w2 p10">4.1 Amazon</span><span class="w2 p11">耐用</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向主题已经能支持成交，负向主题会在高意图搜索和售后页把总分压住。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>品线天花板：hose reel 是主盘，pressure washer 和 vacuum 受售后口碑牵引。</h2>
+        </div>
+        <p class="section-note">time saver 是好伞，但服务体系要跟上。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">主入口 · 放大期</div>
+          <h3>Retractable hose reel</h3>
+          <b>高</b>
+          <p>需求、评价和产品页都成立，是当前最强主盘。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">第二主线 · 治理期</div>
+          <h3>Pressure washer / Grandfalls</h3>
+          <b>中高</b>
+          <p>客单和复杂度更高，售后会更敏感。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">相邻扩展 · 早期</div>
+          <h3>Retractable vacuum</h3>
+          <b>待验证</b>
+          <p>延续 retractable 逻辑，但需单独验证场景和服务成本。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">暂缓 · 试验</div>
+          <h3>Smart / cooling strip</h3>
+          <b>未知</b>
+          <p>离核心户外工具心智较远，不应优先抢资源。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：售后词要前置消化。</h2>
+        </div>
+        <p class="section-note">状态列显示当前吃掉程度或风险。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Amazon / Best Seller</td><td>这款 hose reel 是否可靠、值不值得买</td><td class="status-cell"><span class="table-status green">基本接住</span></td><td>继续维护评价、coupon 纪律和竞品防守。<span class="evidence-list"><span class="evidence">[E6]</span></span></td></tr><tr><td>Google / Media Review</td><td>回卷是否顺、是否漏水、长期是否耐用</td><td class="status-cell"><span class="table-status amber">按住一半</span></td><td>把 12 周期、季节使用和故障处理放在同一页。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></td></tr><tr><td>Comparison Search</td><td>Giraffe、Eley、Gorilla、Flexzilla 哪个更适合我</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>上线对比页，比较支架、保修、配件、价格和安装。</td></tr><tr><td>BBB / Support</td><td>投诉多不多、保修是否管用、客服是否慢</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>建立 warranty / parts / troubleshooting 页面，并公开处理路径。<span class="evidence-list"><span class="evidence">[E7]</span></span></td></tr><tr><td>Product Line</td><td>pressure washer 和 hose reel 是否同一套服务能力</td><td class="status-cell"><span class="table-status amber">验证中</span></td><td>按品线建立 support hub，不把所有问题塞进单页。<span class="evidence-list"><span class="evidence">[E5]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点适配：省时间成立，可靠性需要补证据。</h2>
+        </div>
+        <p class="section-note">工具类用户会把耐用和售后一并算进价值。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-amber">
+          <div><div class="fit-weight">30%</div><div class="mini-track"><i style="width:30%;"></i></div></div>
+          <div><strong>自动回卷可靠</strong><p>auto-rewind / hose locker</p></div>
+          <div><span class="verdict amber">需补长期 proof</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">24%</div><div class="mini-track"><i style="width:24%;"></i></div></div>
+          <div><strong>安装和支架</strong><p>300 lb metal bracket / 180 swivel</p></div>
+          <div><span class="verdict green">有卖点</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">20%</div><div class="mini-track"><i style="width:20%;"></i></div></div>
+          <div><strong>漏水和配件</strong><p>included hose / nozzle / fasteners</p></div>
+          <div><span class="verdict amber">需补 parts</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">16%</div><div class="mini-track"><i style="width:16%;"></i></div></div>
+          <div><strong>售后保修</strong><p>warranty / support</p></div>
+          <div><span class="verdict red">先修复</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">10%</div><div class="mini-track"><i style="width:10%;"></i></div></div>
+          <div><strong>相邻品线</strong><p>pressure washer / vacuum</p></div>
+          <div><span class="verdict amber">需校准</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页结论：有量，但售后债正在压分。</h2>
+        </div>
+        <p class="section-note">这是治理型诊断，冷启动验证已完成。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>当前判断</b><p>63 分，C档。需求和成交基础成立，主要扣在 warranty、support、parts 和可靠性 proof。</p></div><div class="summary-item"><b>最该先做</b><p>建立 support hub：保修、配件、故障排查、安装、投诉处理口径。</p></div><div class="summary-item"><b>不要先做</b><p>不要只靠更多 SKU、折扣和广告去覆盖售后问题。</p></div><div class="summary-item"><b>路由建议</b><p>Atlas 总控建议 CommerceFlow 优先修售后和配件链路，SignalMark 补可靠性和比较 proof。</p></div><div class="summary-item"><b>30 天验收</b><p>搜索 Giraffe warranty / parts / troubleshooting 时，用户能直接看到可执行答案。</p></div><div class="summary-item"><b>需要补数</b><p>退款率、投诉原因、配件发货时效、客服 SLA 和品线毛利。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>三专项路由：先看哪个问题最能改变下一阶段结果。</h2>
+        </div>
+        <p class="section-note">SignalMark 看搜索和认知，CommerceFlow 看成交路径，TideLens 看内容与创作者信任。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-green">
+          <div class="biz-top"><div><span>SignalMark</span><h3>主需求和品牌词成立</h3><p>行业入口、品牌词和平台声量有基础。</p></div><b>66</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>hose reel 心智清楚。</p></div><div><strong>做得差</strong><p>售后词会反向扣分。</p></div></div>
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交强但服务页不足</h3><p>DTC 和 Amazon 都能成交，support / parts / warranty 需要前置。</p></div><b>58</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>产品页和评价强。</p></div><div><strong>做得差</strong><p>售后解释不足。</p></div></div>
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>TideLens</span><h3>内容要从演示转向可靠性</h3><p>安装和 demo 内容有机会，但要补长期故障和处理方案。</p></div><b>58</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>产品视觉化强。</p></div><div><strong>做得差</strong><p>耐用内容不够。</p></div></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>三个最优先问题</h2>
+        </div>
+        <p class="section-note">先修会直接抬高品牌信任上限。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：售后投诉影响信任</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P0</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E7]</span></span></p></div>
+          <div><b>业务影响</b><p>高意图用户会在下单前搜索 BBB / warranty / complaints。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 support hub 和公开处理路径。<br><strong>90 天：</strong>按问题类型沉淀 FAQ、配件和客服 SLA。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：可靠性 proof 不够集中</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P1</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>4.1 Amazon 评分会让用户担心漏水、回卷和支架。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>补安装、季节使用和故障排查内容。<br><strong>90 天：</strong>建立耐用测试和用户案例页面。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：多品线售后口碑互相传导</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>P1</p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E5]</span></span></p></div>
+          <div><b>业务影响</b><p>pressure washer 的服务问题会影响 hose reel 信任，反向也一样。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>按品线拆 support 入口。<br><strong>90 天：</strong>建立统一 parts 和 warranty 数据看板。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：成熟工具品牌抢可靠性，平台品牌抢价格。</h2>
+        </div>
+        <p class="section-note">Giraffe 要把省时间和可靠性同时讲出来。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>ELEY</h3>
+          <p>耐用和 premium hose reel 心智强，是可靠性 benchmark。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Gorilla / Flexzilla</h3>
+          <p>工具渠道常见，用户熟悉度和评价量强。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Hoselink / Suncast</h3>
+          <p>retractable 和收纳场景直接竞争。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Amazon private / low price</h3>
+          <p>低价替代会抢预算敏感用户。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位建议：从 time saver 升级为 reliable time saver。</h2>
+        </div>
+        <p class="section-note">不要只讲方便，也要让用户相信坏了有人管。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Reliable retractable</h3>
+          <p>把自动回卷、支架、软管和配件证明集中。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Support-forward</h3>
+          <p>把 warranty、parts、troubleshooting 放进主导航。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Outdoor system</h3>
+          <p>hose reel、pressure washer、vacuum 共用 time saver，但售后入口分品类。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Retractable tools built to save time and stay serviceable.</p>
+        <p><b>Hero subhead:</b> Giraffe Tools helps homeowners keep outdoor work cleaner, faster, and easier to support over time.</p>
+        <p><b>Product promise:</b> Install it with confidence, use it through the season, and know where to get parts or help when you need it.</p>
+        <p><b>Sales opener:</b> The best hose reel is not only the one that rewinds. It is the one users trust after month six.</p>
+        <p><b>CTA:</b> Find the right reel</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：封顶项优先于平均分。</h2>
+        </div>
+        <p class="section-note">低分项会限制总分上行，高分项只说明已有抓手，不自动抵消信任缺口。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-green">
+          <div class="score-card-top"><b>72</b><span>品类契约清晰度</span></div>
+          <div class="mini-track"><i style="width:72%;"></i></div>
+          <p>省时间和可靠性契约很清楚。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>68</b><span>主入口承接</span></div>
+          <div class="mini-track"><i style="width:68%;"></i></div>
+          <p>主产品入口成立。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>64</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:64%;"></i></div>
+          <p>行业词强，售后词扣分。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>56</b><span>第三方信任</span></div>
+          <div class="mini-track"><i style="width:56%;"></i></div>
+          <p>评价量强但投诉压力明显。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>66</b><span>渠道质量</span></div>
+          <div class="mini-track"><i style="width:66%;"></i></div>
+          <p>Amazon + DTC 分工明确。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>61</b><span>产品线秩序</span></div>
+          <div class="mini-track"><i style="width:61%;"></i></div>
+          <p>多品线需要服务架构。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>VOC 健康度</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>好评和抱怨都很集中。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>售后承诺</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>售后是主封顶。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>复购 / 耗材潜力</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>配件和相邻工具有潜力。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>60</b><span>内容解释力</span></div>
+          <div class="mini-track"><i style="width:60%;"></i></div>
+          <p>安装 demo 可用，耐用 proof 要补。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>60</b><span>预算放大确定性</span></div>
+          <div class="mini-track"><i style="width:60%;"></i></div>
+          <p>可放大，但要先治理售后风险。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算建议：售后页和可靠性 proof 与广告同优先级。</h2>
+        </div>
+        <p class="section-note">有量的品牌，修信任比单纯扩量更重要。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Support hub</h3>
+          <p>最高优先级，承接 warranty / parts / troubleshooting。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Durability content</h3>
+          <p>安装、季节使用、故障处理和长期测试。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Comparison SEO</h3>
+          <p>对比 ELEY、Gorilla、Flexzilla 和 Hoselink。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>SKU expansion</h3>
+          <p>等服务体系稳定后再加码。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：把售后风险变成可见承诺。</h2>
+        </div>
+        <p class="section-note">先让高意图用户搜到答案。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-90 天</h3>
+          <div class="road-action state-green"><b>CommerceFlow｜上线 warranty / parts / troubleshooting hub</b><p>验收：售后词均有独立承接页。影响：降低搜索信任扣分</p></div><div class="road-action state-amber"><b>SignalMark｜做可靠性和竞品比较内容</b><p>验收：覆盖 4 个核心竞品和 6 个故障场景。影响：提高品牌解释权</p></div><div class="road-action state-amber"><b>TideLens｜制作安装、回卷、漏水处理视频</b><p>验收：12 条短视频 + 3 条长内容。影响：减少使用焦虑</p></div>
+        </article><article class="road-card">
+          <h3>90-180 天</h3>
+          <div class="road-action state-amber"><b>CommerceFlow｜把投诉原因转为产品和客服看板</b><p>验收：按漏水、回卷、支架、配件分类。影响：持续降低售后压力</p></div><div class="road-action state-blue"><b>Atlas｜按品线建立服务能力评分</b><p>验收：hose reel / pressure washer / vacuum 分开看。影响：避免口碑互相拖累</p></div><div class="road-action state-green"><b>SignalMark｜把 reliable time saver 固化为类目资产</b><p>验收：官网、Amazon、内容和 support 口径一致。影响：抬高分数上限</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>部门红黄绿：售后和 support 先修。</h2>
+        </div>
+        <p class="section-note">按当前最差点排序。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">42</div>
+          <h3>Customer Support</h3>
+          <p><strong>最差点：</strong>BBB / 投诉信号压住信任。</p>
+          <span class="tag red">30 天：上线 support hub。</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">45</div>
+          <h3>Warranty / Parts</h3>
+          <p><strong>最差点：</strong>保修和配件路径不够前置。</p>
+          <span class="tag red">30 天：建立 parts 入口。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">54</div>
+          <h3>Product Quality</h3>
+          <p><strong>最差点：</strong>漏水、回卷、支架 proof 不集中。</p>
+          <span class="tag amber">30 天：补 durability 页面。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">58</div>
+          <h3>SEO</h3>
+          <p><strong>最差点：</strong>售后词会扣分。</p>
+          <span class="tag amber">30 天：承接 warranty / BBB 词。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">60</div>
+          <h3>Content</h3>
+          <p><strong>最差点：</strong>演示多，故障处理少。</p>
+          <span class="tag amber">30 天：拍故障排查内容。</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">64</div>
+          <h3>Amazon Ops</h3>
+          <p><strong>最差点：</strong>评分不如评价量强。</p>
+          <span class="tag amber">30 天：按差评主题修 listing。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">66</div>
+          <h3>DTC Ecommerce</h3>
+          <p><strong>最差点：</strong>产品页基础强。</p>
+          <span class="tag green">30 天：加入 support 入口。</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">68</div>
+          <h3>Brand</h3>
+          <p><strong>最差点：</strong>time saver 心智清楚。</p>
+          <span class="tag green">30 天：升级 reliable time saver。</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>数据缺口与风险</h2>
+        </div>
+        <p class="section-note">公开数据足以提示售后风险，仍需后台验证严重程度。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>BBB snippet 需复核</h3>
+          <p>投诉数量和关闭状态需要定期复查，不能只看单日结果。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Amazon 评分结构未知</h3>
+          <p>4.1 需要拆分到漏水、回卷、支架、配件等原因。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>售后成本未知</h3>
+          <p>真实 warranty 成本、配件发货和客服 SLA 会影响利润质量。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表</h2>
+        </div>
+        <p class="section-note">只使用公开可查资料；后台订单、退货和客服数据未接入。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://giraffetools.com/" target="_blank" rel="noopener">Giraffe Tools homepage</a></td>
+              <td>2026-06-26</td>
+              <td>Official site</td>
+              <td>品牌定位、Shopify DTC、time saver tools 入口</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://giraffetools.com/products/retractable-garden-hose-reel-5-8in-90ft-b" target="_blank" rel="noopener">Retractable Garden Hose Reel PDP</a></td>
+              <td>2026-06-26</td>
+              <td>Official product page</td>
+              <td>4.9 rating、632 reviews、主产品卖点</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://giraffetools.com/products/retractable-garden-hose-reel-5-8in-90ft-b.js" target="_blank" rel="noopener">Hose reel product JSON</a></td>
+              <td>2026-06-26</td>
+              <td>Structured product data</td>
+              <td>$157.49-$174.99 价格、auto-rewind、nozzle、SKU</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://giraffetools.com/products/retractable-garden-hose-reel-5-8in-90ft-b" target="_blank" rel="noopener">Giraffe Tools product media</a></td>
+              <td>2026-06-26</td>
+              <td>Official media</td>
+              <td>YouTube demo、安装和卖点素材</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://giraffetools.com/products.json" target="_blank" rel="noopener">Giraffe Tools products JSON</a></td>
+              <td>2026-06-26</td>
+              <td>Structured product data</td>
+              <td>hose reel、pressure washer、vacuum、smart strip 品线判断</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.amazon.com/Giraffe-Tools-Retractable-Garden-Bracket/dp/B086M6BZRS" target="_blank" rel="noopener">Amazon Giraffe hose reel listing</a></td>
+              <td>2026-06-26</td>
+              <td>Marketplace listing</td>
+              <td>Amazon 评分、评价量和动销信号</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.bbb.org/us/ca/irvine/profile/power-washer/giraffe-tools-1126-1000139713" target="_blank" rel="noopener">BBB Giraffe Tools profile</a></td>
+              <td>2026-06-26</td>
+              <td>Third-party complaint profile</td>
+              <td>售后投诉和信任封顶判断</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://giraffetools.com/" target="_blank" rel="noopener">Giraffe Tools official metadata</a></td>
+              <td>2026-06-26</td>
+              <td>Site metadata</td>
+              <td>US Shopify、USD 和 merchant 信息</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Giraffe Tools · 2026-06-26 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>
