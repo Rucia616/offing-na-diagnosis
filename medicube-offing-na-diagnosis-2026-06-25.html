@@ -8,8 +8,8 @@
   <style>
     :root {
       color-scheme: light;
-      --bg:#f5f5f7; --top:#fbfbfd; --surface:#fff; --surface-2:#f7f8fa;
-      --text:#101413; --body:#293331; --muted:#66716e; --line:#d7d9dc;
+      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
       --accent:#2d6261; --accent-fill:#eaf1f0;
       --success:#157a38; --success-bg:#eaf6ee;
       --warning:#9a5b00; --warning-bg:#fff3df;
@@ -17,25 +17,25 @@
       --blue:#2b67a0; --blue-bg:#eaf3ff;
       --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
       --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
-      --radius:8px; --shadow:0 12px 34px rgba(16,20,19,.07); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        color-scheme: dark;
-        --bg:#0f1212; --top:#141817; --surface:#191e1d; --surface-2:#202625;
-        --text:#f4f7f6; --body:#d8dedc; --muted:#a9b2af; --line:#3a4240;
-        --accent:#9ed7d3; --accent-fill:#1c3433;
-        --success:#8ee0a8; --success-bg:#173424;
-        --warning:#f2c46d; --warning-bg:#3a2a12;
-        --risk:#ff8e99; --risk-bg:#3b171d;
-        --blue:#9ed1ff; --blue-bg:#16283a;
-        --inverse-bg:#10201d; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
-        --shadow:0 12px 34px rgba(0,0,0,.36); --result-shadow:0 26px 72px rgba(0,0,0,.42);
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
       }
     }
     * { box-sizing:border-box; letter-spacing:0; }
     html { scroll-behavior:smooth; }
-    body { margin:0; background:linear-gradient(180deg,rgba(255,255,255,.72),transparent 620px),var(--bg); color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
     a { color:var(--accent); text-decoration:none; }
     .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
     .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
@@ -46,8 +46,8 @@
     main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
     section { scroll-margin-top:88px; margin:96px 0; }
     .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
-    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.2),rgba(158,209,255,.28) 48%,rgba(247,164,216,.3)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
-    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.2),rgba(50,214,198,.16)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
+    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
     .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
     .hero-copy { max-width:760px; padding-top:0; }
     .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
@@ -67,16 +67,21 @@
     .hero-metric.state-red b { color:var(--risk); }
     .hero-metric.state-amber b { color:var(--warning); }
     .hero-metric.state-green b { color:var(--success); }
-    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:color-mix(in srgb,var(--surface) 66%,transparent); backdrop-filter:blur(10px); }
+    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
     .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
     .chain-item:last-child { border-right:0; }
     .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
     .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
     .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
-    .chain-item.state-red { box-shadow:inset 0 3px 0 var(--risk); background:color-mix(in srgb,var(--risk-bg) 46%,transparent); }
-    .chain-item.state-amber { box-shadow:inset 0 3px 0 var(--warning); background:color-mix(in srgb,var(--warning-bg) 46%,transparent); }
-    .chain-item.state-green { box-shadow:inset 0 3px 0 var(--success); background:color-mix(in srgb,var(--success-bg) 46%,transparent); }
-    .chain-item.state-blue { box-shadow:inset 0 3px 0 var(--blue); background:color-mix(in srgb,var(--blue-bg) 50%,transparent); }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
+    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
+    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
+    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
+    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
     .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
     .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
     .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
@@ -121,57 +126,57 @@
     h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
     .section-note { color:var(--muted); font-size:15px; align-self:center; }
     .wide-note { margin-top:18px; }
-    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.free-gate,.free-specialist-map,.death-grid,.death-path-list,.false-signal-list,.cap-list { min-width:0; }
-    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.free-gate,.free-specialist-map,.death-grid,.death-path-list,.false-signal-list,.cap-list { display:grid; gap:12px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
     .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
-    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.free-intake,.free-route,.free-specialist,.free-top3,.death-contract,.cap-card,.blindspot-card,.death-path-card,.false-signal,.cap-mini { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
-    .state-green { border-top:4px solid var(--success); }
-    .state-amber { border-top:4px solid var(--warning); }
-    .state-red { border-top:4px solid var(--risk); }
-    .state-blue { border-top:4px solid var(--blue); }
-    .free-gate { grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); align-items:stretch; }
-    .free-intake { border-top:4px solid var(--accent); }
-    .free-route { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
-    .free-route::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
-    .free-route h3,.free-route p { color:var(--inverse-text); }
-    .free-route p { margin-top:10px; color:var(--inverse-muted); }
-    .free-label,.free-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; }
-    .free-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
-    .free-facts div { border-top:1px solid var(--line); padding-top:10px; }
-    .free-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
-    .free-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
-    .route-chip { display:inline-flex; margin-top:16px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
-    .free-specialist-map { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .free-specialist { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; }
-    .free-specialist.state-green { border-left:4px solid var(--success); border-top-width:1px; }
-    .free-specialist.state-amber { border-left:4px solid var(--warning); border-top-width:1px; }
-    .free-specialist.state-red { border-left:4px solid var(--risk); border-top-width:1px; }
-    .free-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
-    .free-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
-    .free-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
-    .free-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
-    .free-top3 li { color:var(--body); font-weight:780; }
-    .death-grid { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
-    .death-contract,.cap-card,.blindspot-card { grid-column:span 4; }
-    .death-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .false-signal-list { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .cap-list { grid-column:8 / -1; align-content:start; }
-    .death-label { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; margin-bottom:10px; }
-    .death-contract p,.cap-card p,.blindspot-card p,.death-path-card p,.false-signal p,.cap-mini p,.death-subhead p { margin-top:10px; color:var(--body); font-size:14.5px; }
-    .death-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
     .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
     .cap-number span { color:var(--muted); font-size:18px; }
-    .blindspot-card dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
-    .blindspot-card dt { color:var(--muted); font-size:12px; font-weight:900; }
-    .blindspot-card dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
-    .death-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
-    .death-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
-    .false-signal-list .death-subhead { grid-column:1/-1; }
-    .cap-list .death-subhead { margin-bottom:0; }
-    .false-signal > span { color:var(--muted); font-size:12px; font-weight:900; }
-    .cap-mini { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
-    .cap-mini b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
     .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
     .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
     .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
@@ -180,7 +185,7 @@
     .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
     .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
     h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
-    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.free-specialist p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
     .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
     .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
     .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
@@ -294,7 +299,7 @@
       .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
       h2 { font-size:clamp(24px,7vw,30px); }
       section { margin:64px 0; }
-      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.free-gate,.free-specialist-map,.free-top3,.death-grid,.death-path-list,.false-signal-list,.cap-list { grid-template-columns:1fr; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
       .score-panel { min-height:auto; padding:20px 18px; }
       .score-number { font-size:52px; }
       .score-number span { font-size:22px; }
@@ -325,18 +330,18 @@
       .tag { font-size:11px; padding:5px 8px; }
       .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
       .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
-      .free-facts { grid-template-columns:1fr; }
-      .free-specialist { grid-template-columns:72px 1fr; }
-      .free-score { font-size:34px; }
-      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.free-intake,.free-route,.free-specialist,.free-top3,.death-contract,.cap-card,.blindspot-card,.death-path-card,.false-signal,.cap-mini { padding:16px; }
-      .death-contract,.cap-card,.blindspot-card,.death-path-list,.false-signal-list,.cap-list { grid-column:auto; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
       .cap-number { font-size:48px; }
-      .blindspot-card dl { grid-template-columns:1fr; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
       .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
       .footer { display:grid; }
     }
     @media (prefers-color-scheme: dark) {
-      .client-logo { padding:6px 10px; border:1px solid var(--line); background:#fff; box-shadow:none; }
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
   </style>
 </head>
@@ -449,56 +454,56 @@
       
       <div class="section-head">
         <div>
-          <div class="eyebrow">Atlas Free Diagnosis</div>
-          <h2>免费诊断入口：品牌名先进入 Atlas，总分后再分流专项。</h2>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
         <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
       </div>
-      <div class="free-gate">
-        <article class="free-intake">
-          <div class="free-label">客户输入</div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
           <h3>Medicube</h3>
-          <dl class="free-facts">
+          <dl class="route-facts">
             <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
             <div><dt>市场</dt><dd>North America</dd></div>
             <div><dt>数据口径</dt><dd>中高 · 公开数据版</dd></div>
             <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
           </dl>
         </article>
-        <article class="free-route">
-          <div class="free-label">路由建议</div>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
           <h3>专项分</h3>
           <p>SignalMark 80，CommerceFlow 58，TideLens 84。最强的是红人和品牌势能，最弱的是官网承接和售后信任。</p>
           <span class="route-chip">最低分警报：CommerceFlow 58</span>
           <span class="route-chip">分数封顶：67 · 直购信任债封顶</span>
         </article>
-        <div class="free-specialist-map" aria-label="Atlas 三个专项分数">
-          <article class="free-specialist state-green">
-            <div class="free-score">80<span>/100</span></div>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-green">
+            <div class="specialist-score">80<span>/100</span></div>
             <div>
-              <div class="free-name">SignalMark</div>
+              <div class="specialist-name">SignalMark</div>
               <h3>品牌势能、K-beauty 权威和产品 proof 很强。</h3>
               <p>APR 高增长、TIME100、Vogue 深度报道、celebrity 传播、Ulta 门店和官方功效数字都能支撑高认知。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E8]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span><span class="evidence">[E14]</span></span></p>
             </div>
-          </article><article class="free-specialist state-red">
-            <div class="free-score">58<span>/100</span></div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">58<span>/100</span></div>
             <div>
-              <div class="free-name">CommerceFlow</div>
+              <div class="specialist-name">CommerceFlow</div>
               <h3>官网承接、售后信任和 SKU 选择路径明显拖后腿。</h3>
               <p>DTC products、bundle 和 subscription 完整，但 Trustpilot 1.9 / 5、客服/退款/设备负面、Ulta 3.x 评分和 SKU 复杂度会拉低直购确定性。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p>
             </div>
-          </article><article class="free-specialist state-green">
-            <div class="free-score">84<span>/100</span></div>
+          </article><article class="specialist-card state-green">
+            <div class="specialist-score">84<span>/100</span></div>
             <div>
-              <div class="free-name">TideLens</div>
+              <div class="specialist-name">TideLens</div>
               <h3>红人和社交商业飞轮已经非常强。</h3>
               <p>Vogue 披露 TikTok Shop 2025 约 USD 102.9M、1M units、101 SKUs、34,000 creator affiliates；Coachella 和媒体内容进一步扩大声量。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E21]</span></span></p>
             </div>
           </article>
         </div>
-        <article class="free-top3">
+        <article class="route-top3">
           <div>
-            <div class="free-label">Top 3</div>
+            <div class="module-label">Top 3</div>
             <h3>免费版先给可行动的三件事</h3>
           </div>
           <ol>
@@ -512,27 +517,27 @@
       
       <div class="section-head">
         <div>
-          <div class="eyebrow">Death-Path Radar</div>
-          <h2>最可能死法：声量继续扩大，但直购信任、设备边界和 SKU 复杂度拖住利润质量。</h2>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>声量继续扩大，但直购信任、设备边界和 SKU 复杂度拖住利润质量。</h2>
         </div>
         <p class="section-note">Medicube 的危险不在于缺流量，而在于把 TikTok / celebrity / Ulta 铺货等强信号直接当作下一阶段稳定质量。</p>
       </div>
-      <div class="death-grid">
-        <article class="death-contract state-amber">
-          <div class="death-label">品类购买契约</div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
           <h3>家用美容科技买的是可见结果、使用安全、适用边界和出问题后的可追责。</h3>
           <p><strong>用户买的确定性：</strong>北美用户购买 Medicube 时，表面上买 glass skin、pore care、absorption 和 collagen glow；真实决策还包含能否安心使用、敏感肌如何降级、设备坏了怎么办、直购订单是否稳定、退换能否顺畅。</p>
           <p><strong>当前匹配：</strong>Medicube 的增长证明很强，官方临床数字、明星/红人内容、TikTok Shop 和 Ulta 都能拉高兴趣；但 Trustpilot 1.9 / 5、设备安全讨论、物流客服差评和 Ulta 3.x 评分，会在下单前把部分需求推回 Amazon 或零售渠道。</p>
-          <p class="death-evidence">官网 Booster Pro 页面、产品集合、Ulta 搜索页、Trustpilot、APR 财报、Vogue 深度报道和 TIME100 共同指向这个购买契约。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E8]</span><span class="evidence">[E9]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
+          <p class="risk-evidence">官网 Booster Pro 页面、产品集合、Ulta 搜索页、Trustpilot、APR 财报、Vogue 深度报道和 TIME100 共同指向这个购买契约。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E8]</span><span class="evidence">[E9]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
         </article>
-        <article class="cap-card state-red">
-          <div class="death-label">分数封顶原因</div>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
           <div class="cap-number">67<span>/100</span></div>
           <h3>直购信任债封顶</h3>
           <p>Trustpilot 1.9 / 5 与设备/客服/退款负面会进入下单前搜索，官网承接质量先被封在 67 分附近。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E7]</span></span></p>
         </article>
-        <article class="blindspot-card state-red">
-          <div class="death-label">管理层决策盲区</div>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
           <h3>最危险的误读是把强声量当作承接质量已经稳定。</h3>
           <dl>
             <div><dt>高估</dt><dd>TikTok GMV、明星曝光、Ulta 门店数、APR 高增长和官方临床数字。</dd></div>
@@ -541,73 +546,73 @@
             <div><dt>先别做</dt><dd>先别把下一轮预算只投向更多 SKU、更多 celebrity 内容和更大折扣；先补 DTC 信任、设备使用安全感、售后 SLA 和渠道利润看板。</dd></div>
           </dl>
         </article>
-        <div class="death-path-list">
-          <article class="death-path-card state-red">
-            <div class="death-card-top"><span>P0</span><b>封顶 67</b></div>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 67</b></div>
             <h3>直购信任债压住 DTC 成交和复购</h3>
             <p>Trustpilot 公开评分为 1.9 / 5，负面集中在直购物流、客服、退款、设备故障和售后响应。对高客单设备和功效护肤来说，这类临门搜索会降低官网承接质量。</p>
-            <p class="death-evidence">Trustpilot 公开页显示 1.9 / 5、91 reviews；负面评论涉及 direct order、shipping、customer service、refund、device died 等主题。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+            <p class="risk-evidence">Trustpilot 公开页显示 1.9 / 5、91 reviews；负面评论涉及 direct order、shipping、customer service、refund、device died 等主题。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
             <span class="tag red">CommerceFlow 优先修 DTC 信任、售后和买后路径</span>
-          </article><article class="death-path-card state-red">
-            <div class="death-card-top"><span>P0</span><b>封顶 68</b></div>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 68</b></div>
             <h3>设备强 claim 与使用边界没有同等前置</h3>
             <p>Booster Pro 用 +763.3% absorption、pore appearance、plumper-looking skin 等强数字放大购买期待；同时 FAQ 又提醒使用频次、眼周等级、retinol / vitamin 刺激、LED 亮度等边界。边界讲晚，会转成敏感肌焦虑、设备安全讨论和退换压力。</p>
-            <p class="death-evidence">官方 PDP 披露 6-in-1 device、AGE-R app、强结果数字和使用/刺激注意事项；媒体与 Reddit 也出现设备安全与体验讨论。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E17]</span></span></p>
+            <p class="risk-evidence">官方 PDP 披露 6-in-1 device、AGE-R app、强结果数字和使用/刺激注意事项；媒体与 Reddit 也出现设备安全与体验讨论。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E17]</span></span></p>
             <span class="tag red">SignalMark 补 proof matrix，CommerceFlow 补使用和售后承接</span>
-          </article><article class="death-path-card state-amber">
-            <div class="death-card-top"><span>P1</span><b>封顶 70</b></div>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 70</b></div>
             <h3>SKU 和渠道扩张让用户选择成本上升</h3>
             <p>Ulta 可见 52 个 Medicube 产品，DTC products.json 呈现大量 PDRN、Collagen、Zero Pore、subscription、gift/freegift 和 bundle SKU。SKU 丰富会提高 AOV 和复购机会，也会让用户更难判断先买哪一个、在哪个渠道买最稳。</p>
-            <p class="death-evidence">Ulta 搜索页显示 52 products；Shopify 产品集合显示设备、PDRN、collagen、Zero Pore、subscription 和大量 gift/bundle 机制。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+            <p class="risk-evidence">Ulta 搜索页显示 52 products；Shopify 产品集合显示设备、PDRN、collagen、Zero Pore、subscription 和大量 gift/bundle 机制。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
             <span class="tag amber">CommerceFlow 先做 SKU role map 和 channel P&amp;L</span>
-          </article><article class="death-path-card state-amber">
-            <div class="death-card-top"><span>P1</span><b>封顶 72</b></div>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 72</b></div>
             <h3>creator 飞轮放大了兴趣，也放大了履约和毛利波动</h3>
             <p>Vogue 披露 34,000 creator affiliates、TikTok Shop 2025 约 USD 102.9M；BeautyIndependent 也显示 Q1 beauty TikTok Shop 强势。creator commerce 能快速放大爆款，但佣金、样品、折扣、bundle 和平台费用会改变真实贡献。</p>
-            <p class="death-evidence">Vogue、BeautyIndependent 和 NovaData 都指向 TikTok Shop beauty 增长与 creator commerce 的强度，同时 NovaData 提醒平台费用、达人佣金和样品成本会影响毛利。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E18]</span></span></p>
+            <p class="risk-evidence">Vogue、BeautyIndependent 和 NovaData 都指向 TikTok Shop beauty 增长与 creator commerce 的强度，同时 NovaData 提醒平台费用、达人佣金和样品成本会影响毛利。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E18]</span></span></p>
             <span class="tag amber">TideLens 加深时必须和渠道利润看板绑定</span>
           </article>
         </div>
-        <div class="false-signal-list">
-          <div class="death-subhead">
-            <div class="death-label">假增长信号</div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
             <h3>最容易被高估的是 TikTok GMV、明星曝光、Ulta 门店数和官方临床数字。</h3>
             <p>这些信号都是真优势，但它们不能替代 DTC 信任、设备边界、售后承接和单 SKU 利润质量。</p>
           </div>
-          <article class="false-signal state-amber">
+          <article class="signal-card state-amber">
             <span>声量</span>
             <h3>TikTok Shop 和 creator affiliates</h3>
             <p>USD 102.9M 和 34,000 creator affiliates 能证明内容飞轮很强，但还要看佣金、样品、退货、bundle 折扣和老客沉淀。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E18]</span></span></p>
-          </article><article class="false-signal state-amber">
+          </article><article class="signal-card state-amber">
             <span>零售</span>
             <h3>Ulta 1,400+ 门店和 52 个产品</h3>
             <p>零售铺货提升信任和触达，但 Ulta 页面可见多个 3.x 评分，说明上架宽度还没有完全转成满意度优势。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E13]</span></span></p>
-          </article><article class="false-signal state-amber">
+          </article><article class="signal-card state-amber">
             <span>财务</span>
             <h3>APR 高增长和美国销售</h3>
             <p>APR Q1 2026 美国销售同比增长 250.8%，说明北美是集团增长核心；但集团速度不能自动覆盖 DTC 服务体验和设备品控口碑。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E9]</span></span></p>
-          </article><article class="false-signal state-red">
+          </article><article class="signal-card state-red">
             <span>proof</span>
             <h3>强功效数字和 celebrity proof</h3>
             <p>功效数字和 Kylie / Hailey / Lisa 等内容让用户愿意尝试，但高期待也会要求更清楚的敏感肌、强活性成分和使用等级说明。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E10]</span><span class="evidence">[E14]</span><span class="evidence">[E16]</span></span></p>
           </article>
         </div>
-        <div class="cap-list">
-          <div class="death-subhead">
-            <div class="death-label">封顶器</div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
             <h3>Medicube 当前被直购信任与设备边界封顶。</h3>
             <p>机会分很高，专项分也会分化；总分无法随声量继续上抬，原因是 DTC 信任和使用边界直接影响高客单设备成交。</p>
           </div>
-          <article class="cap-mini state-red">
+          <article class="cap-reason state-red">
             <b>67</b>
             <div><h3>直购信任债</h3><p>直购物流、客服、退款、设备故障和售后响应负面，会把部分高意图用户推向 Amazon / Ulta，而非官网沉淀。<span class="evidence-list"><span class="evidence">[E4]</span></span></p></div>
-          </article><article class="cap-mini state-red">
+          </article><article class="cap-reason state-red">
             <b>68</b>
             <div><h3>设备使用边界</h3><p>强功效数字需要和敏感肌、retinol / vitamin、眼周等级、频次、LED 亮度和 side-effect triage 同等前置。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span><span class="evidence">[E17]</span></span></p></div>
-          </article><article class="cap-mini state-amber">
+          </article><article class="cap-reason state-amber">
             <b>70</b>
             <div><h3>SKU / 渠道复杂度</h3><p>Ulta 52 个产品、DTC 多 subscription / gift / bundle 和 TikTok 多 SKU 会提高选择成本，需要 SKU role map。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p></div>
-          </article><article class="cap-mini state-amber">
+          </article><article class="cap-reason state-amber">
             <b>72</b>
             <div><h3>creator commerce 贡献质量</h3><p>TikTok Shop 和 creator affiliates 很强，但需扣除佣金、样品、折扣、平台费用和售后成本后再判断加码。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E18]</span></span></p></div>
           </article>
