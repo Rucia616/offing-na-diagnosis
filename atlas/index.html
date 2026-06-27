@@ -296,7 +296,7 @@
       box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent);
     }
     .filter {
-      width: 150px;
+      width: 168px;
       color: var(--body);
       font-weight: 760;
     }
@@ -932,6 +932,22 @@
     const emptyState = document.getElementById("emptyState");
     const reportGrid = document.getElementById("reportGrid");
     const activeFilterSummary = document.getElementById("activeFilterSummary");
+    const filterControls = [
+      { key: "stage", control: stageFilter, dataset: "stage" },
+      { key: "category", control: categoryFilter, dataset: "category" },
+      { key: "type", control: typeFilter, dataset: "type" },
+      { key: "status", control: statusFilter, dataset: "status" }
+    ];
+
+    function cleanOptionLabel(label) {
+      return label.trim().replace(/（\d+）$/, "");
+    }
+
+    filterControls.forEach(({ control }) => {
+      Array.from(control?.options || []).forEach((option) => {
+        option.dataset.label = cleanOptionLabel(option.textContent);
+      });
+    });
 
     cards.forEach((card, index) => {
       card.dataset.order = String(index);
@@ -967,7 +983,36 @@
     }
 
     function filterLabel(select) {
-      return select?.selectedOptions?.[0]?.textContent?.trim() || "";
+      const option = select?.selectedOptions?.[0];
+      return option?.dataset.label || cleanOptionLabel(option?.textContent || "");
+    }
+
+    function cardMatchesSearch(card, q) {
+      const text = `${card.dataset.name || ""} ${card.innerText}`.toLowerCase();
+      return !q || text.includes(q);
+    }
+
+    function cardMatchesFilters(card, ignoredKey = "") {
+      return filterControls.every(({ key, control, dataset }) => {
+        if (key === ignoredKey) return true;
+        return !control.value || card.dataset[dataset] === control.value;
+      });
+    }
+
+    function syncFilterOptionCounts() {
+      const q = input.value.trim().toLowerCase();
+      filterControls.forEach(({ key, control, dataset }) => {
+        Array.from(control.options).forEach((option) => {
+          const baseLabel = option.dataset.label || cleanOptionLabel(option.textContent);
+          const value = option.value;
+          const count = cards.filter((card) => {
+            if (!cardMatchesSearch(card, q)) return false;
+            if (!cardMatchesFilters(card, key)) return false;
+            return !value || card.dataset[dataset] === value;
+          }).length;
+          option.textContent = `${baseLabel}（${count}）`;
+        });
+      });
     }
 
     function syncActiveFilterSummary(visible) {
@@ -1012,9 +1057,8 @@
       const visibleCards = [];
 
       cards.forEach(card => {
-        const text = `${card.dataset.name || ""} ${card.innerText}`.toLowerCase();
         const matched =
-          (!q || text.includes(q)) &&
+          cardMatchesSearch(card, q) &&
           (!stage || card.dataset.stage === stage) &&
           (!category || card.dataset.category === category) &&
           (!type || card.dataset.type === type) &&
@@ -1033,6 +1077,7 @@
           : `共 ${cards.length} 份报告`;
       }
       syncReportSummary(visibleCards);
+      syncFilterOptionCounts();
       syncActiveFilterSummary(visible);
       emptyState?.classList.toggle("show", visible === 0);
     }
