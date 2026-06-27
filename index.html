@@ -3,42 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>远汐 Offing｜免费北美业务诊断</title>
+  <title>Offing Atlas｜远汐·航图 北美业务诊断（免费版）</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/offing-atlas-favicon.svg">
   <style>
     :root {
-      color-scheme: light;
-      --paper: #f8faf6;
-      --surface: #fffffb;
-      --ink: #0d1716;
-      --body: #30413f;
-      --muted: #6f7d78;
-      --line: #d8e2dc;
-      --sea: #2d6261;
-      --sea-dark: #244f4d;
-      --sea-soft: #e6f0ec;
-      --clay: #a76560;
-      --gold: #a99556;
-      --slate: #13211f;
-      --cream: #fbfcf8;
+      color-scheme: light dark;
+      --bg: #f5f5f7;
+      --top: #fbfbfd;
+      --surface: #ffffff;
+      --surface-2: #f7f8fa;
+      --text: #101413;
+      --body: #293331;
+      --muted: #66716e;
+      --line: #d7d9dc;
+      --accent: #2d6261;
+      --accent-fill: #eaf1f0;
+      --inverse-bg: #13211f;
+      --inverse-text: #f8faf9;
+      --success: #157a38;
+      --warn: #9a5b00;
+      --risk: #d70015;
+      --prism-teal: #32d6c6;
+      --prism-sky: #9ed1ff;
+      --prism-pink: #f7a4d8;
+      --prism-lilac: #9b7cff;
       --radius: 8px;
-      --shadow: 0 22px 70px rgba(13, 23, 22, 0.08);
-      --shadow-soft: 0 10px 34px rgba(13, 23, 22, 0.05);
+      --shadow: 0 18px 48px rgba(16, 20, 19, .08);
+      --max: 1180px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1212;
+        --top: #141817;
+        --surface: #191e1d;
+        --surface-2: #202625;
+        --text: #f4f7f6;
+        --body: #d8dedc;
+        --muted: #a9b2af;
+        --line: #3a4240;
+        --accent: #9ed7d3;
+        --accent-fill: #1c3433;
+        --inverse-bg: #e9efed;
+        --inverse-text: #101413;
+        --shadow: 0 18px 48px rgba(0, 0, 0, .34);
+      }
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--paper); }
+    html { scroll-behavior: smooth; background: var(--bg); }
 
     body {
       min-height: 100vh;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      color: var(--ink);
+      font-family: var(--font);
+      color: var(--text);
       background:
-        linear-gradient(180deg, rgba(230, 240, 236, 0.4) 0%, rgba(248, 250, 246, 0.96) 30%, rgba(250, 250, 245, 0.98) 100%),
-        linear-gradient(90deg, rgba(45, 98, 97, 0.018) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(45, 98, 97, 0.016) 1px, transparent 1px),
-        var(--paper);
-      background-size: auto, 64px 64px, 64px 64px;
+        linear-gradient(120deg, rgba(50,214,198,.08), transparent 32rem),
+        linear-gradient(240deg, rgba(247,164,216,.08), transparent 30rem),
+        var(--bg);
       letter-spacing: 0;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -50,89 +74,84 @@
     button { cursor: pointer; }
     a { color: inherit; text-decoration: none; }
 
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
     .shell {
-      width: min(1120px, calc(100% - 40px));
+      width: min(var(--max), calc(100% - 48px));
       margin: 0 auto;
-      padding: 28px 0 64px;
+      padding: 0 0 72px;
     }
 
     .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      padding-bottom: 22px;
+      min-height: 70px;
       border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--top) 88%, transparent);
+      backdrop-filter: blur(18px);
     }
 
-    .brand {
+    .lockup {
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.08;
+    }
+
+    .lockup span {
+      display: block;
+      margin-top: 4px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius);
-      color: var(--sea-dark);
-      background: var(--sea-soft);
-      border: 1px solid rgba(45, 98, 97, 0.2);
-      font-weight: 860;
-      line-height: 1;
-    }
-
-    .brand-copy {
-      display: grid;
-      gap: 2px;
-      min-width: 0;
-      line-height: 1.18;
-    }
-
-    .brand-copy strong {
-      color: var(--ink);
-      font-size: 16px;
-      font-weight: 780;
-    }
-
-    .brand-copy span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 650;
+      justify-content: flex-end;
+      gap: 8px;
     }
 
     .sample-link {
       display: inline-flex;
       align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
-      border: 1px solid transparent;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      color: var(--sea-dark);
+      color: var(--body);
+      background: var(--surface);
       font-size: 13px;
-      font-weight: 760;
+      font-weight: 820;
       transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
     }
 
     .sample-link:hover {
-      border-color: rgba(45, 98, 97, 0.22);
-      background: rgba(255, 255, 255, 0.66);
+      border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+      color: var(--text);
       transform: translateY(-1px);
     }
 
     .hero {
-      min-height: calc(100dvh - 88px);
+      min-height: min(720px, calc(100svh - 70px));
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 420px);
-      gap: clamp(36px, 7vw, 76px);
+      grid-template-columns: minmax(0, 1fr) minmax(370px, 440px);
+      gap: clamp(30px, 6vw, 76px);
       align-items: center;
-      padding: clamp(52px, 8vh, 88px) 0 56px;
+      padding: 48px 0 42px;
     }
 
-    .intro {
+    .hero-copy {
       display: grid;
       align-content: center;
       min-width: 0;
@@ -142,74 +161,114 @@
       display: inline-flex;
       align-items: center;
       width: fit-content;
-      gap: 10px;
-      margin-bottom: 20px;
-      color: var(--sea);
-      font-size: 13px;
-      font-weight: 780;
+      gap: 8px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
     }
 
     .eyebrow::before {
       content: "";
-      width: 36px;
-      height: 1px;
-      background: var(--sea);
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-lilac), var(--prism-pink));
     }
-
-    h1,
-    h2,
-    h3,
-    p { margin: 0; }
 
     h1 {
-      max-width: 700px;
-      color: var(--ink);
-      font-size: clamp(50px, 6.4vw, 82px);
-      line-height: 1.02;
-      font-weight: 860;
-      letter-spacing: 0;
+      max-width: 780px;
+      color: var(--text);
+      font-size: clamp(54px, 6vw, 82px);
+      line-height: .98;
+      font-weight: 950;
     }
 
-    .headline-line { display: block; }
+    .headline-line {
+      display: block;
+      white-space: nowrap;
+    }
 
     .lead {
-      max-width: 590px;
-      margin-top: 22px;
+      max-width: 680px;
+      margin-top: 24px;
       color: var(--body);
-      font-size: clamp(16px, 1.55vw, 18px);
-      line-height: 1.72;
-      font-weight: 520;
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.36;
+      font-weight: 820;
     }
 
-    .principles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .sublead {
+      max-width: 680px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
       margin-top: 28px;
+      max-width: 720px;
     }
 
-    .principles span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
+    .metric {
+      min-height: 86px;
+      padding: 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      color: var(--body);
-      background: rgba(255, 255, 251, 0.64);
-      font-size: 13px;
-      font-weight: 730;
-      box-shadow: var(--shadow-soft);
+      background: color-mix(in srgb, var(--surface) 86%, transparent);
+      box-shadow: 0 10px 26px rgba(16, 20, 19, .045);
+    }
+
+    .metric b {
+      display: block;
+      color: var(--text);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 760;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--surface-2);
+      font-size: 12px;
+      font-weight: 820;
+    }
+
+    .pill.green {
+      color: var(--success);
+      background: color-mix(in srgb, #eaf6ee 70%, var(--surface));
+      border-color: color-mix(in srgb, var(--success) 28%, var(--line));
     }
 
     .intake-card {
       position: relative;
       display: grid;
-      gap: 18px;
-      padding: 24px;
-      border: 1px solid rgba(216, 226, 220, 0.9);
+      gap: 16px;
+      padding: 22px;
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 251, 0.92);
+      background: var(--surface);
       box-shadow: var(--shadow);
     }
 
@@ -219,61 +278,60 @@
       inset: 0 0 auto;
       height: 3px;
       border-radius: var(--radius) var(--radius) 0 0;
-      background: linear-gradient(90deg, var(--sea), var(--gold), var(--clay));
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-sky), var(--prism-lilac), var(--prism-pink));
     }
 
     .form-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      padding-top: 2px;
+      display: grid;
+      gap: 7px;
+      padding-top: 4px;
     }
 
-    .form-head strong {
-      color: var(--ink);
-      font-size: 15px;
-      font-weight: 800;
+    .form-head h2 {
+      color: var(--text);
+      font-size: 24px;
+      line-height: 1.1;
+      font-weight: 920;
     }
 
-    .form-head span {
+    .form-head p {
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
+      font-size: 13.5px;
+      line-height: 1.48;
+      font-weight: 650;
     }
 
     .field {
       display: grid;
-      gap: 10px;
+      gap: 8px;
     }
 
     .field label {
       color: var(--body);
       font-size: 13px;
-      font-weight: 760;
+      font-weight: 820;
     }
 
     .brand-input {
       width: 100%;
-      min-height: 66px;
-      padding: 0 18px;
+      min-height: 54px;
+      padding: 0 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      color: var(--ink);
-      background: var(--cream);
+      color: var(--text);
+      background: var(--surface-2);
       outline: none;
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 820;
       transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
     }
 
-    .brand-input::placeholder { color: rgba(48, 65, 63, 0.38); }
+    .brand-input::placeholder { color: color-mix(in srgb, var(--muted) 58%, transparent); }
 
     .brand-input:focus {
-      border-color: rgba(45, 98, 97, 0.76);
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(45, 98, 97, 0.14);
+      border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+      background: var(--surface);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent);
     }
 
     .primary-action,
@@ -288,20 +346,19 @@
       min-height: 54px;
       width: 100%;
       border: 0;
-      color: #fff;
-      background: var(--slate);
+      color: var(--inverse-text);
+      background: var(--inverse-bg);
       font-size: 16px;
     }
 
     .primary-action:disabled {
       cursor: wait;
-      color: rgba(255, 255, 255, 0.7);
-      background: rgba(19, 33, 31, 0.72);
+      opacity: .72;
       transform: none;
     }
 
     .primary-action:hover {
-      background: var(--sea-dark);
+      background: color-mix(in srgb, var(--inverse-bg) 86%, var(--accent));
       transform: translateY(-1px);
     }
 
@@ -310,7 +367,7 @@
     .form-note {
       color: var(--muted);
       font-size: 12px;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     .quick-picks {
@@ -324,32 +381,38 @@
       padding: 0 11px;
       border: 1px solid var(--line);
       color: var(--body);
-      background: #fff;
+      background: var(--surface);
       font-size: 12px;
     }
 
     .pick-button:hover {
-      color: var(--sea-dark);
-      border-color: rgba(45, 98, 97, 0.38);
-      background: var(--sea-soft);
+      color: var(--accent);
+      border-color: color-mix(in srgb, var(--accent) 36%, var(--line));
+      background: var(--accent-fill);
     }
 
     .submit-result {
       display: none;
       gap: 14px;
       padding: 14px;
-      border: 1px solid rgba(45, 98, 97, 0.22);
+      border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--line));
       border-radius: var(--radius);
       color: var(--body);
-      background: var(--sea-soft);
+      background: var(--accent-fill);
       font-size: 13px;
       line-height: 1.45;
     }
 
     .submit-result.show { display: grid; }
-    .submit-result.loading { border-color: rgba(169, 149, 86, 0.36); background: rgba(241, 236, 216, 0.72); }
-    .submit-result.done { border-color: rgba(45, 98, 97, 0.34); background: var(--sea-soft); }
-    .submit-result.fallback { border-color: rgba(169, 149, 86, 0.34); background: rgba(241, 236, 216, 0.72); }
+    .submit-result.loading,
+    .submit-result.fallback {
+      border-color: color-mix(in srgb, var(--warn) 28%, var(--line));
+      background: color-mix(in srgb, #fff3df 74%, var(--surface));
+    }
+    .submit-result.done {
+      border-color: color-mix(in srgb, var(--success) 28%, var(--line));
+      background: color-mix(in srgb, #eaf6ee 72%, var(--surface));
+    }
 
     .status-line {
       display: grid;
@@ -363,29 +426,29 @@
       height: 8px;
       margin-top: 7px;
       border-radius: 999px;
-      background: var(--sea);
-      box-shadow: 0 0 0 5px rgba(45, 98, 97, 0.12);
+      background: var(--accent);
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 14%, transparent);
     }
 
     .submit-result.loading .status-dot {
-      background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(169, 149, 86, 0.14);
+      background: var(--warn);
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--warn) 14%, transparent);
     }
 
     .submit-result.fallback .status-dot {
-      background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(169, 149, 86, 0.14);
+      background: var(--warn);
+      box-shadow: 0 0 0 5px color-mix(in srgb, var(--warn) 14%, transparent);
     }
 
     .submit-result strong {
       display: block;
-      color: var(--sea-dark);
+      color: var(--text);
       font-size: 15px;
       line-height: 1.3;
       font-weight: 800;
     }
 
-    .submit-result.fallback strong { color: #715f28; }
+    .submit-result.fallback strong { color: var(--warn); }
 
     .progress-track {
       height: 6px;
@@ -399,12 +462,12 @@
       width: var(--progress, 0%);
       height: 100%;
       border-radius: inherit;
-      background: linear-gradient(90deg, var(--sea), var(--gold));
+      background: linear-gradient(90deg, var(--prism-teal), var(--prism-lilac));
       transition: width 420ms ease;
     }
 
     .submit-result.fallback .progress-track span {
-      background: linear-gradient(90deg, var(--sea), var(--gold));
+      background: linear-gradient(90deg, var(--prism-teal), var(--warn));
     }
 
     .job-steps {
@@ -416,10 +479,10 @@
     .job-step {
       min-height: 54px;
       padding: 9px;
-      border: 1px solid rgba(45, 98, 97, 0.12);
+      border: 1px solid color-mix(in srgb, var(--accent) 12%, var(--line));
       border-radius: var(--radius);
       color: var(--muted);
-      background: rgba(255, 255, 255, 0.58);
+      background: color-mix(in srgb, var(--surface) 72%, transparent);
       font-size: 11px;
       line-height: 1.35;
       font-weight: 720;
@@ -437,12 +500,12 @@
     .job-step.done,
     .job-step.active {
       color: var(--body);
-      border-color: rgba(45, 98, 97, 0.28);
-      background: rgba(255, 255, 255, 0.8);
+      border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+      background: var(--surface);
     }
 
     .job-step.active b,
-    .job-step.done b { color: var(--sea); }
+    .job-step.done b { color: var(--accent); }
 
     .result-actions {
       display: grid;
@@ -454,10 +517,10 @@
       display: grid;
       place-items: center;
       min-height: 42px;
-      border: 1px solid rgba(45, 98, 97, 0.26);
+      border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line));
       border-radius: var(--radius);
-      color: var(--sea-dark);
-      background: rgba(255, 255, 255, 0.7);
+      color: var(--accent);
+      background: var(--surface);
       font-size: 13px;
       font-weight: 790;
       transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
@@ -467,17 +530,17 @@
       display: grid;
       place-items: center;
       min-height: 42px;
-      border: 1px solid rgba(45, 98, 97, 0.34);
+      border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line));
       border-radius: var(--radius);
-      color: #fff;
-      background: var(--sea-dark);
+      color: var(--inverse-text);
+      background: var(--inverse-bg);
       font-size: 13px;
       font-weight: 790;
       transition: transform 160ms ease, background 160ms ease;
     }
 
     .report-action:hover {
-      background: var(--sea);
+      background: color-mix(in srgb, var(--inverse-bg) 86%, var(--accent));
       transform: translateY(-1px);
     }
 
@@ -485,68 +548,57 @@
 
     .secondary-action:hover,
     .secondary-link:hover {
-      border-color: rgba(45, 98, 97, 0.48);
-      background: #fff;
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+      background: var(--surface);
       transform: translateY(-1px);
     }
 
     .deliverables {
+      padding-top: 56px;
+    }
+
+    .section-head {
       display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--line);
-      box-shadow: var(--shadow-soft);
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .5fr);
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 18px;
     }
 
-    .deliverable-head,
-    .deliverable {
-      background: rgba(255, 255, 251, 0.88);
-    }
-
-    .deliverable-head {
-      display: grid;
-      align-content: space-between;
-      min-height: 270px;
-      padding: 26px;
-    }
-
-    .deliverable-head h2 {
-      max-width: 330px;
-      color: var(--ink);
+    .section-head h2 {
+      max-width: 740px;
+      color: var(--text);
       font-size: clamp(30px, 3vw, 42px);
       line-height: 1.08;
-      font-weight: 840;
+      font-weight: 930;
     }
 
-    .deliverable-head p {
-      max-width: 340px;
-      margin-top: 16px;
+    .section-head p {
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.62;
-    }
-
-    .deliverable-tag {
-      width: fit-content;
-      color: var(--sea);
-      font-size: 12px;
-      font-weight: 800;
+      line-height: 1.6;
     }
 
     .deliverable-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--line);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
     }
 
     .deliverable {
-      min-height: 134px;
-      padding: 22px;
+      min-height: 178px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(16, 20, 19, .045);
     }
+
+    .deliverable:nth-child(1) { border-top-color: var(--success); }
+    .deliverable:nth-child(2) { border-top-color: var(--accent); }
+    .deliverable:nth-child(3) { border-top-color: var(--warn); }
+    .deliverable:nth-child(4) { border-top-color: var(--risk); }
 
     .deliverable b {
       display: block;
@@ -559,10 +611,10 @@
     .deliverable strong {
       display: block;
       margin-top: 10px;
-      color: var(--ink);
+      color: var(--text);
       font-size: 20px;
       line-height: 1.2;
-      font-weight: 830;
+      font-weight: 900;
     }
 
     .deliverable span {
@@ -571,15 +623,6 @@
       color: var(--muted);
       font-size: 13px;
       line-height: 1.48;
-    }
-
-    .report-link {
-      display: inline-flex;
-      width: fit-content;
-      margin-top: 14px;
-      color: var(--sea);
-      font-size: 13px;
-      font-weight: 780;
     }
 
     .hidden-prompt {
@@ -614,42 +657,39 @@
     }
 
     @media (max-width: 940px) {
-      .hero,
-      .deliverables { grid-template-columns: 1fr; }
-
-      .hero {
-        min-height: auto;
-        padding-top: 48px;
-      }
-
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 42px; }
+      .hero-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .section-head { grid-template-columns: 1fr; }
+      .deliverable-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .intake-card { align-self: start; }
-      .deliverable-head { min-height: auto; gap: 26px; }
     }
 
     @media (max-width: 620px) {
       .shell {
-        width: min(100% - 28px, 1120px);
-        padding-top: 18px;
+        width: min(100% - 32px, var(--max));
         padding-bottom: 36px;
       }
 
       .topbar {
-        align-items: flex-start;
-        padding-bottom: 18px;
+        min-height: 62px;
       }
 
-      .sample-link { display: none; }
-      .hero { gap: 30px; padding: 42px 0 38px; }
-      .eyebrow { margin-bottom: 16px; }
-      h1 { font-size: 44px; }
-      .lead { font-size: 15px; line-height: 1.68; }
-      .principles { margin-top: 22px; }
-      .principles span { min-height: 32px; padding: 0 10px; font-size: 12px; }
+      .nav-actions .sample-link:first-child { display: none; }
+      .sample-link { min-height: 32px; padding: 0 10px; font-size: 12px; }
+      .hero { gap: 28px; padding: 32px 0 34px; }
+      .eyebrow { margin-bottom: 14px; }
+      h1 { font-size: 42px; line-height: 1; }
+      .lead { margin-top: 18px; font-size: 18px; line-height: 1.36; }
+      .sublead { font-size: 13.5px; line-height: 1.5; }
+      .hero-metrics { grid-template-columns: 1fr; gap: 8px; margin-top: 22px; }
+      .metric { min-height: 70px; padding: 12px; }
+      .metric b { font-size: 22px; }
       .intake-card { padding: 18px; }
-      .brand-input { min-height: 60px; font-size: 20px; }
+      .form-head h2 { font-size: 22px; }
+      .brand-input { min-height: 52px; font-size: 17px; }
       .job-steps { grid-template-columns: 1fr 1fr; }
       .deliverable-grid { grid-template-columns: 1fr; }
-      .deliverable-head,
+      .section-head h2 { font-size: 26px; line-height: 1.12; }
       .deliverable { padding: 18px; }
       .deliverable { min-height: auto; }
     }
@@ -658,53 +698,49 @@
 <body>
   <main class="shell">
     <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark">O</span>
-        <span class="brand-copy">
-          <strong>远汐 Offing</strong>
-          <span>在抵达之前，先判断潮水</span>
-        </span>
-      </div>
-      <a class="sample-link" href="./ulike-offing-na-diagnosis-2026-06-12.html">查看 Ulike 诊断样稿</a>
+      <a class="lockup" href="./index.html">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></a>
+      <nav class="nav-actions" aria-label="页面链接">
+        <a class="sample-link" href="./atlas/">报告库</a>
+        <a class="sample-link" href="./ulike-offing-na-diagnosis-2026-06-22.html">Ulike 样稿</a>
+      </nav>
     </header>
 
-    <section class="hero" aria-label="远汐 Offing 免费北美业务诊断提交">
-      <div class="intro">
-        <div class="eyebrow">远汐 Offing 免费北美业务诊断</div>
+    <section class="hero" aria-label="Offing Atlas 北美业务诊断提交">
+      <div class="hero-copy">
+        <div class="eyebrow">Offing Atlas Intake</div>
         <h1>
           <span class="headline-line">输入品牌名</span>
-          <span class="headline-line">和接收邮箱</span>
-          <span class="headline-line">即可申请</span>
-          <span class="headline-line">北美业务诊断</span>
+          <span class="headline-line">申请北美业务诊断</span>
         </h1>
-        <p class="lead">先用公开数据看清品牌阶段、市场位置、渠道优先级和最该修的三件事。再决定预算该不该花，先花在哪。</p>
-        <div class="principles" aria-label="远汐判断原则">
-          <span>不代运营</span>
-          <span>不卖执行套餐</span>
-          <span>先判断，再配置资源</span>
+        <p class="lead">留下品牌名和邮箱，先用公开数据判断品牌在北美的阶段、增长瓶颈、渠道风险和下一步预算优先级。</p>
+        <p class="sublead">适合在投钱前看清楚：该放大什么，该停掉什么，第一笔预算先放在哪里。</p>
+        <div class="hero-metrics" aria-label="诊断输出重点">
+          <div class="metric"><b>阶段</b><span>0-1 / 1-10 / 10-100 / 100+，先判断当前盘子。</span></div>
+          <div class="metric"><b>分数</b><span>总分、星级、健康度、机会分和问题致命度。</span></div>
+          <div class="metric"><b>路径</b><span>Top 3 问题、90 天优先级和预算动作。</span></div>
         </div>
       </div>
 
       <form id="diagnosisForm" class="intake-card">
         <div class="form-head">
-          <strong>免费诊断入口</strong>
-          <span>品牌名 + 邮箱</span>
+          <h2>免费诊断入口</h2>
+          <p>只需要品牌名和报告接收邮箱。正式报告会以可打开的 HTML 链接返回。</p>
         </div>
         <div class="field">
           <label for="brandInput">品牌名</label>
-          <input id="brandInput" class="brand-input" name="brand" autocomplete="organization" placeholder="例如：Ulike" required>
+          <input id="brandInput" class="brand-input" name="brand" autocomplete="organization" placeholder="例如：Ulike / Plaud / TideWe" required>
         </div>
         <div class="field">
           <label for="reportEmailInput">报告接收邮箱</label>
           <input id="reportEmailInput" class="brand-input" name="email" type="email" autocomplete="email" placeholder="例如：name@brand.com" required>
         </div>
         <button id="submitButton" class="primary-action" type="submit">申请免费诊断</button>
-        <p class="form-note">提交后远汐会收到品牌名和报告接收邮箱。正式报告会以可打开的 HTML 链接返回。</p>
+        <p class="form-note">提交后远汐会收到品牌名和报告接收邮箱；如果自动提交服务不可用，页面会给出邮件兜底。</p>
         <div class="quick-picks" aria-label="示例品牌">
           <button class="pick-button" type="button" data-brand="Ulike">Ulike</button>
-          <button class="pick-button" type="button" data-brand="Anker">Anker</button>
-          <button class="pick-button" type="button" data-brand="Owala">Owala</button>
-          <button class="pick-button" type="button" data-brand="Stanley">Stanley</button>
+          <button class="pick-button" type="button" data-brand="Plaud AI">Plaud AI</button>
+          <button class="pick-button" type="button" data-brand="Insta360">Insta360</button>
+          <button class="pick-button" type="button" data-brand="Giraffe Tools">Giraffe Tools</button>
         </div>
         <div id="submitResult" class="submit-result" aria-live="polite">
           <div class="status-line">
@@ -731,13 +767,12 @@
     </section>
 
     <section class="deliverables" aria-label="这份免费诊断会看什么">
-      <div class="deliverable-head">
+      <div class="section-head">
         <div>
-          <div class="deliverable-tag">提交后你会拿到什么</div>
-          <h2>不是一份泛泛的市场分析，而是一张北美进入判断单。</h2>
-          <p>远汐先看公开证据，再给阶段、分数、问题和路径。正式报告会以独立 HTML 交付，能打开、能复盘，也能作为下一轮合作的起点。</p>
+          <div class="eyebrow">What You Get</div>
+          <h2>收到一张可复盘的北美进入判断单。</h2>
         </div>
-        <a class="report-link" href="./ulike-offing-na-diagnosis-2026-06-12.html">看 Ulike 样稿</a>
+        <p>远汐先看公开证据，再给阶段、分数、问题和路径。报告可以打开、分享、复盘，也能作为下一轮合作的起点。</p>
       </div>
       <div class="deliverable-grid">
         <article class="deliverable">
@@ -752,13 +787,13 @@
         </article>
         <article class="deliverable">
           <b>03</b>
-          <strong>三大板块诊断</strong>
-          <span>品牌、Marketing、电商分别打分，讲清好在哪里、差在哪里。</span>
+          <strong>关键问题排序</strong>
+          <span>找出最影响增长质量、利润质量和资源效率的 Top 3。</span>
         </article>
         <article class="deliverable">
           <b>04</b>
           <strong>90 天进入路径</strong>
-          <span>给出优先级、动作、证据链接和 Go / No-Go 判断依据。</span>
+          <span>给出优先级、动作、证据链接和预算判断依据。</span>
         </article>
       </div>
     </section>
@@ -785,7 +820,7 @@
     const jobSteps = Array.from(document.querySelectorAll("[data-step]"));
     const CONTACT_EMAIL = "403275627@qq.com";
     const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
-    const SAMPLE_REPORT_URL = "./ulike-offing-na-diagnosis-2026-06-12.html";
+    const SAMPLE_REPORT_URL = "./ulike-offing-na-diagnosis-2026-06-22.html";
 
     function cleanBrand(value) {
       return value.trim().replace(/\s+/g, " ");
@@ -819,7 +854,7 @@
 
     function buildShortCopy({ requestCode, brand, reportEmail }) {
       return [
-        "远汐 Offing 北美业务诊断申请",
+        "Offing Atlas｜远汐·航图 北美业务诊断申请",
         `申请编号：${requestCode}`,
         `品牌名：${brand}`,
         `报告接收邮箱：${reportEmail}`
@@ -828,17 +863,17 @@
 
     function buildPrompt(brand, reportEmail, requestCode) {
       return [
-        `远汐 Offing 免费北美业务诊断申请`,
+        `Offing Atlas｜远汐·航图 免费北美业务诊断申请`,
         `申请编号：${requestCode}`,
         `品牌名：${brand}`,
         `报告接收邮箱：${reportEmail}`,
         `提交时间：${new Date().toLocaleString("zh-CN", { hour12: false })}`,
         `来源页面：${window.location.href}`,
         "",
-        `请使用 rucia-na-business-diagnosis skill，给「${brand}」做北美业务诊断。`,
+        `请使用 rucia-atlas-business-diagnosis skill，给「${brand}」做北美业务诊断。`,
         "",
-        "这是远汐 Offing 给品牌方提供的免费北美业务诊断入口。报告要体现 Offing 的判断逻辑：先判断市场、品牌位置、GTM 和资源配置，再决定预算怎么花。",
-        "语气要克制、专业、有判断力。不要写成普通 AI 报告，不要像低价服务商，不要承诺销售结果。",
+        "这是 Offing Atlas｜远汐·航图 给品牌方提供的免费北美业务诊断入口。报告要体现 Offing Atlas 的判断逻辑：先判断市场、品牌位置、GTM 和资源配置，再决定预算怎么花。",
+        "语气要克制、专业、有判断力。避免写成普通 AI 报告、低价服务商页面或销售结果承诺。",
         "默认交付一份可直接打开、分享、复盘的独立 HTML 诊断报告。报告必须体现被诊断品牌 VI，并包含：",
         "1. 首屏：必须使用品牌真实 logo；标题视觉文案为「北美业务诊断」，语义标题和页面 title 保留「品牌名 北美业务诊断」；展示一句话结论、五颗星总分、业务健康度、业务机会分、问题致命度。",
         "2. 品牌阶段判断：先判断它处在 0-1、1-10、10-100，还是 100+ 阶段，再判断当前动作是否符合阶段标准。",
@@ -846,7 +881,7 @@
         "4. 三大业务板块：品牌、Marketing、电商，先打分，再写做得好的和做得不好的。",
         "5. Top 3 关键问题：用可视化诊断卡呈现，包含证据微图表、影响路径和具体动作。",
         "6. 竞品横向对比、11 维度评分、增长机会、90/180 天路线图、风险预警与证据表。",
-        "7. 结尾必须回到 Offing 的判断框架：第一市场、第一人群、第一句话、第一渠道、第一笔预算。",
+        "7. 结尾必须回到 Offing Atlas 的判断框架：第一市场、第一人群、第一句话、第一渠道、第一笔预算。",
         "",
         "请实时联网确认最新公开信息；如果数据不足，标注数据缺口，不要硬编。"
       ].join("\n");
@@ -894,7 +929,7 @@
 
     function buildEmailBody({ brand, reportEmail, requestCode }) {
       return [
-        "远汐 Offing 免费北美业务诊断申请",
+        "Offing Atlas｜远汐·航图 免费北美业务诊断申请",
         "",
         `申请编号：${requestCode}`,
         `品牌名：${brand}`,
