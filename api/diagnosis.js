@@ -411,9 +411,9 @@ function buildMockReportHtml(brand) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${safeBrand} 北美业务诊断</title>
   <style>
-    :root { --paper:#f8faf6; --surface:#fffffb; --ink:#0d1716; --body:#30413f; --muted:#6f7d78; --line:#d8e2dc; --sea:#2d6261; --slate:#13211f; --gold:#a99556; --red:#d70015; }
+    :root { color-scheme:light; --paper:#fff; --surface:#fff; --ink:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --sea:#2d6261; --slate:#13211f; --gold:#a99556; --red:#d70015; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:var(--paper); }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:#fff; }
     main { width:min(1080px, calc(100% - 36px)); margin:0 auto; padding:32px 0 70px; }
     .hero { min-height:82vh; display:grid; align-content:center; border-bottom:1px solid var(--line); }
     .logo { width:92px; min-height:42px; display:grid; place-items:center; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--sea); font-weight:800; }
