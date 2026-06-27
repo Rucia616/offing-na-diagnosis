@@ -382,7 +382,7 @@
       position: relative;
       overflow: hidden;
       padding: 18px;
-      min-height: 236px;
+      min-height: 276px;
       display: grid;
       grid-template-rows: auto 1fr;
       gap: 15px;
@@ -410,24 +410,24 @@
     .report-card > div:first-child {
       grid-row: 2;
       display: grid;
-      grid-template-columns: 138px minmax(0, 1fr);
-      grid-template-rows: auto auto;
-      column-gap: 17px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 72px auto auto;
+      row-gap: 10px;
       align-content: start;
       align-items: start;
     }
     .report-card h3 {
-      grid-column: 2;
-      grid-row: 1;
-      margin-top: 5px;
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: 4px;
       font-size: 26px;
       line-height: 1.08;
       font-weight: 950;
     }
     .report-card p {
-      grid-column: 1 / 3;
-      grid-row: 2;
-      margin-top: 12px;
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 0;
       color: var(--muted);
       font-size: 14.5px;
       line-height: 1.45;
@@ -435,64 +435,43 @@
     .report-logo {
       grid-column: 1;
       grid-row: 1;
-      width: 138px;
-      height: 74px;
+      width: 100%;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--surface-2);
     }
     .report-logo img {
-      max-width: 118px;
+      max-width: min(72%, 260px);
       max-height: 48px;
       object-fit: contain;
       display: block;
     }
     .report-logo.logo-wide img {
-      max-width: 132px;
+      max-width: min(80%, 280px);
       max-height: 50px;
     }
     .report-logo.logo-official-wide img {
-      max-width: 134px;
-      max-height: 56px;
+      max-width: min(86%, 300px);
+      max-height: 54px;
     }
     .report-logo.logo-small-source img {
-      max-width: 128px;
-      max-height: 56px;
-      transform: scale(1.18);
-    }
-    .report-card.logo-panorama-card > div:first-child {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-    }
-    .report-card.logo-panorama-card .report-logo {
-      grid-column: 1;
-      grid-row: 1;
-      width: 100%;
-      height: 72px;
-      justify-content: flex-start;
-      padding: 0 14px;
+      max-width: min(82%, 286px);
+      max-height: 54px;
+      transform: scale(1.08);
     }
     .report-card.logo-panorama-card .report-logo img {
-      max-width: 300px;
-      max-height: 50px;
+      max-width: min(86%, 300px);
+      max-height: 54px;
     }
     .report-card.logo-panorama-card .report-logo.logo-small-source img {
-      max-width: 270px;
-      max-height: 44px;
-      transform: scale(1.28);
-      transform-origin: left center;
-    }
-    .report-card.logo-panorama-card h3 {
-      grid-column: 1;
-      grid-row: 2;
-      margin-top: 12px;
-    }
-    .report-card.logo-panorama-card p {
-      grid-column: 1;
-      grid-row: 3;
+      max-width: min(86%, 300px);
+      max-height: 54px;
+      transform: scale(1.08);
     }
     @media (prefers-color-scheme: dark) {
       .report-logo {
@@ -520,7 +499,9 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      align-content: flex-start;
       gap: 8px;
+      min-height: 78px;
     }
     .report-meta .pill.score {
       order: 1;
@@ -609,25 +590,26 @@
       .score-distribution { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .toolbar, .filter-bar { display: grid; grid-template-columns: 1fr; }
       .filter, .search { width: 100%; }
-      .report-card { min-height: 210px; padding: 14px; gap: 12px; }
+      .report-card { min-height: 244px; padding: 14px; gap: 12px; }
       .report-card > div:first-child {
-        grid-template-columns: 112px minmax(0, 1fr);
-        column-gap: 12px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 58px auto auto;
+        row-gap: 8px;
       }
-      .report-logo { width: 112px; height: 60px; }
-      .report-logo img { max-width: 98px; max-height: 40px; }
+      .report-logo { width: 100%; height: 58px; padding: 0 12px; }
+      .report-logo img { max-width: min(76%, 190px); max-height: 38px; }
       .report-logo.logo-wide img,
-      .report-logo.logo-official-wide img { max-width: 108px; max-height: 42px; }
-      .report-logo.logo-small-source img { max-width: 106px; max-height: 44px; transform: scale(1.08); }
-      .report-card.logo-panorama-card .report-logo { width: 100%; height: 58px; padding: 0 12px; }
-      .report-card.logo-panorama-card .report-logo img { max-width: 210px; max-height: 36px; }
-      .report-card.logo-panorama-card .report-logo.logo-small-source img { max-width: 218px; max-height: 38px; transform: scale(1.12); }
+      .report-logo.logo-official-wide img,
+      .report-card.logo-panorama-card .report-logo img { max-width: min(84%, 218px); max-height: 40px; }
+      .report-logo.logo-small-source img,
+      .report-card.logo-panorama-card .report-logo.logo-small-source img { max-width: min(84%, 218px); max-height: 40px; transform: scale(1.04); }
       .report-wordmark { font-size: 17px; }
       .report-card h3 { margin-top: 2px; font-size: 20px; }
-      .report-card p { grid-column: 1 / 3; margin-top: 8px; font-size: 13px; line-height: 1.38; }
+      .report-card p { grid-column: 1; grid-row: 3; margin-top: 0; font-size: 13px; line-height: 1.38; }
       .score-band { min-height: 64px; padding: 10px; }
       .score-band b { font-size: 21px; }
       .report-meta { gap: 6px; }
+      .report-meta { min-height: 70px; }
       .pill { min-height: 24px; padding: 3px 8px; font-size: 11.5px; }
       .report-meta .pill.score { min-height: 34px; min-width: 70px; padding: 4px 10px; font-size: 16px; }
       .report-meta .stage-pill { min-height: 32px; min-width: 58px; padding: 4px 9px; font-size: 13px; }
@@ -770,7 +752,7 @@
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 64 分，C 档">64 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">智能穿戴</span></div>
         </a>
         <a class="report-card" data-name="piscifun fishing reels baitcaster spinning reel carbon x viper chaos" data-stage="10-100" data-category="fishing" data-type="amazon" data-status="latest" data-score="63" data-tier="C" href="../piscifun-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo logo-small-source"><img src="../assets/brand-logos/piscifun-logo-transparent.png" alt="Piscifun logo" /></div><h3>Piscifun</h3><p>价值型渔轮、Amazon 主货架、专业信任、维修配件和品线秩序。</p></div>
+          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/piscifun-logo.svg" alt="Piscifun logo" /></div><h3>Piscifun</h3><p>价值型渔轮、Amazon 主货架、专业信任、维修配件和品线秩序。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 63 分，C 档">63 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">户外渔具</span></div>
         </a>
         <a class="report-card logo-panorama-card" data-name="giraffe tools retractable garden hose reel pressure washer outdoor tools warranty bbb amazon" data-stage="10-100" data-category="outdoor" data-type="dualchannel" data-status="latest" data-score="63" data-tier="C" href="../giraffe-tools-offing-na-diagnosis-2026-06-26.html">
