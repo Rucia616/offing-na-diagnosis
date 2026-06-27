@@ -30,7 +30,7 @@
       --success: #157a38;
       --shadow: 0 18px 48px rgba(16, 20, 19, .08);
       --radius: 8px;
-      --max: 1180px;
+      --max: 1290px;
       --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
     }
     @media (prefers-color-scheme: dark) {
@@ -90,12 +90,12 @@
     .nav a:hover { color: var(--text); }
     main { max-width: var(--max); margin: 0 auto; padding: 0 24px 72px; }
     .hero {
-      min-height: min(720px, calc(100svh - 58px));
+      min-height: auto;
       display: grid;
-      grid-template-columns: minmax(0, .98fr) minmax(360px, .72fr);
-      gap: clamp(28px, 6vw, 74px);
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 430px);
+      gap: clamp(28px, 5vw, 64px);
       align-items: center;
-      padding: 44px 0 38px;
+      padding: 48px 0 38px;
     }
     .eyebrow {
       display: inline-flex;
@@ -117,12 +117,12 @@
     h1, h2, h3, p { margin: 0; }
     h1 {
       margin-top: 24px;
-      max-width: 760px;
-      font-size: clamp(58px, 7vw, 102px);
+      max-width: 720px;
+      font-size: clamp(52px, 5.9vw, 82px);
       line-height: .98;
-      font-weight: 900;
+      font-weight: 950;
     }
-    h1 .title-line { display: block; }
+    h1 .title-line { display: block; white-space: nowrap; }
     .lead {
       max-width: 720px;
       margin-top: 24px;
@@ -158,10 +158,10 @@
       color: var(--inverse-text);
     }
     .console {
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(135deg, #101b1b, #13211f);
-      color: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
@@ -177,14 +177,14 @@
       min-height: 92px;
       padding: 14px;
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.07);
+      border: 1px solid var(--line);
+      background: var(--surface-2);
     }
     .metric b { display: block; font-size: 28px; line-height: 1; margin-bottom: 8px; }
     .metric b.compact { font-size: 22px; white-space: nowrap; }
-    .metric span { color: rgba(255,255,255,.76); font-size: 12px; font-weight: 750; }
-    .console-note { color: rgba(255,255,255,.82); font-size: 14px; }
-    section { padding-top: 64px; scroll-margin-top: 82px; }
+    .metric span { color: var(--muted); font-size: 12px; font-weight: 750; }
+    .console-note { color: var(--muted); font-size: 14px; }
+    section { padding-top: 58px; scroll-margin-top: 82px; }
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -267,26 +267,36 @@
       .pill.score-e { background: #3a171c; }
     }
     .toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+      gap: 12px;
       margin-bottom: 14px;
-      flex-wrap: wrap;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      box-shadow: 0 10px 26px rgba(16, 20, 19, .045);
     }
     .search, .filter {
       width: min(420px, 100%);
-      min-height: 42px;
+      min-height: 48px;
       padding: 0 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--surface);
       color: var(--text);
       font: inherit;
-      font-size: 14px;
+      font-size: 14.5px;
+      outline: none;
+    }
+    .search { width: 100%; font-size: 17px; font-weight: 800; }
+    .search::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+    .search:focus, .filter:focus {
+      border-color: color-mix(in srgb, var(--accent) 70%, var(--line));
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent);
     }
     .filter {
-      width: 160px;
+      width: 150px;
       color: var(--body);
       font-weight: 760;
     }
@@ -297,7 +307,7 @@
       gap: 10px;
     }
     .reset-filter {
-      min-height: 42px;
+      min-height: 48px;
       padding: 0 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -367,15 +377,15 @@
       min-height: 26px;
       font-size: 11.5px;
     }
-    .report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .report-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
     .report-card {
       position: relative;
       overflow: hidden;
-      padding: 16px;
-      min-height: 176px;
+      padding: 18px;
+      min-height: 236px;
       display: grid;
-      grid-template-rows: 1fr auto;
-      gap: 16px;
+      grid-template-rows: auto 1fr;
+      gap: 15px;
       transition: transform .16s ease, border-color .16s ease;
     }
     .report-card[hidden],
@@ -398,10 +408,11 @@
     .report-card[data-tier="E"]::before { background: var(--risk); }
     .report-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 34%, var(--line)); }
     .report-card > div:first-child {
+      grid-row: 2;
       display: grid;
-      grid-template-columns: 132px minmax(0, 1fr);
+      grid-template-columns: 138px minmax(0, 1fr);
       grid-template-rows: auto auto;
-      column-gap: 16px;
+      column-gap: 17px;
       align-content: start;
       align-items: start;
     }
@@ -409,22 +420,23 @@
       grid-column: 2;
       grid-row: 1;
       margin-top: 5px;
-      font-size: 22px;
+      font-size: 26px;
       line-height: 1.08;
+      font-weight: 950;
     }
     .report-card p {
       grid-column: 1 / 3;
       grid-row: 2;
-      margin-top: 10px;
+      margin-top: 12px;
       color: var(--muted);
-      font-size: 13.5px;
+      font-size: 14.5px;
       line-height: 1.45;
     }
     .report-logo {
       grid-column: 1;
       grid-row: 1;
-      width: 132px;
-      height: 66px;
+      width: 138px;
+      height: 74px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -433,23 +445,23 @@
       background: var(--surface-2);
     }
     .report-logo img {
-      max-width: 112px;
-      max-height: 44px;
+      max-width: 118px;
+      max-height: 48px;
       object-fit: contain;
       display: block;
     }
     .report-logo.logo-wide img {
-      max-width: 126px;
-      max-height: 46px;
+      max-width: 132px;
+      max-height: 50px;
     }
     .report-logo.logo-official-wide img {
-      max-width: 128px;
-      max-height: 52px;
+      max-width: 134px;
+      max-height: 56px;
     }
     .report-logo.logo-small-source img {
-      max-width: 122px;
-      max-height: 52px;
-      transform: scale(1.16);
+      max-width: 128px;
+      max-height: 56px;
+      transform: scale(1.18);
     }
     .report-card.logo-panorama-card > div:first-child {
       grid-template-columns: 1fr;
@@ -459,13 +471,13 @@
       grid-column: 1;
       grid-row: 1;
       width: 100%;
-      height: 62px;
+      height: 72px;
       justify-content: flex-start;
       padding: 0 14px;
     }
     .report-card.logo-panorama-card .report-logo img {
-      max-width: 260px;
-      max-height: 42px;
+      max-width: 300px;
+      max-height: 50px;
     }
     .report-card.logo-panorama-card .report-logo.logo-small-source img {
       max-width: 270px;
@@ -476,14 +488,19 @@
     .report-card.logo-panorama-card h3 {
       grid-column: 1;
       grid-row: 2;
-      margin-top: 10px;
+      margin-top: 12px;
     }
     .report-card.logo-panorama-card p {
       grid-column: 1;
       grid-row: 3;
     }
     @media (prefers-color-scheme: dark) {
-      .report-logo.logo-invert img { filter: invert(1); }
+      .report-logo {
+        background: #f7f8fa;
+        border-color: #d7d9dc;
+      }
+      .report-logo.logo-invert img { filter: none; }
+      .report-wordmark { color: #101413; }
     }
     .report-wordmark {
       color: var(--text);
@@ -499,18 +516,31 @@
       .score-band.score-e { background: #32171c; }
     }
     .report-meta {
+      grid-row: 1;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
     }
     .report-meta .pill.score {
-      min-height: 34px;
-      padding: 5px 12px;
-      font-size: 15px;
+      order: 1;
+      min-height: 42px;
+      padding: 6px 14px;
+      font-size: 20px;
       line-height: 1;
       box-shadow: 0 8px 18px rgba(16, 20, 19, .05);
     }
+    .report-meta .stage-pill {
+      order: 2;
+      min-height: 38px;
+      padding: 5px 12px;
+      font-size: 15px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .report-meta .pill.warn { order: 3; }
+    .report-meta .date-pill { order: 4; }
+    .report-meta .pill:not(.score):not(.stage-pill):not(.date-pill):not(.warn) { order: 5; }
     .empty-state {
       display: none;
       padding: 22px;
@@ -556,6 +586,7 @@
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .quick-grid, .report-grid, .file-grid { grid-template-columns: repeat(2, 1fr); }
+      .toolbar { grid-template-columns: 1fr; }
       .score-distribution { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .library-grid, .section-head { display: grid; grid-template-columns: 1fr; }
     }
@@ -576,18 +607,18 @@
       .metric { min-height: 78px; padding: 12px; }
       .metric b { font-size: 24px; }
       .score-distribution { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .toolbar, .filter-bar { display: grid; }
+      .toolbar, .filter-bar { display: grid; grid-template-columns: 1fr; }
       .filter, .search { width: 100%; }
-      .report-card { min-height: 148px; padding: 14px; gap: 12px; }
+      .report-card { min-height: 210px; padding: 14px; gap: 12px; }
       .report-card > div:first-child {
-        grid-template-columns: 104px minmax(0, 1fr);
+        grid-template-columns: 112px minmax(0, 1fr);
         column-gap: 12px;
       }
-      .report-logo { width: 104px; height: 54px; }
-      .report-logo img { max-width: 90px; max-height: 34px; }
+      .report-logo { width: 112px; height: 60px; }
+      .report-logo img { max-width: 98px; max-height: 40px; }
       .report-logo.logo-wide img,
-      .report-logo.logo-official-wide img { max-width: 100px; max-height: 38px; }
-      .report-logo.logo-small-source img { max-width: 96px; max-height: 40px; transform: scale(1.04); }
+      .report-logo.logo-official-wide img { max-width: 108px; max-height: 42px; }
+      .report-logo.logo-small-source img { max-width: 106px; max-height: 44px; transform: scale(1.08); }
       .report-card.logo-panorama-card .report-logo { width: 100%; height: 58px; padding: 0 12px; }
       .report-card.logo-panorama-card .report-logo img { max-width: 210px; max-height: 36px; }
       .report-card.logo-panorama-card .report-logo.logo-small-source img { max-width: 218px; max-height: 38px; transform: scale(1.12); }
@@ -598,8 +629,8 @@
       .score-band b { font-size: 21px; }
       .report-meta { gap: 6px; }
       .pill { min-height: 24px; padding: 3px 8px; font-size: 11.5px; }
-      .report-meta .pill.score,
-      .pill.stage-pill { min-height: 28px; min-width: 52px; padding: 4px 9px; font-size: 12.5px; }
+      .report-meta .pill.score { min-height: 34px; min-width: 70px; padding: 4px 10px; font-size: 16px; }
+      .report-meta .stage-pill { min-height: 32px; min-width: 58px; padding: 4px 9px; font-size: 13px; }
       .quick-card, .library-card, .file-card { min-height: auto; padding: 17px; }
       .quick-card h3, .library-card h3 { font-size: 21px; }
       .quick-card p, .library-card p, .file-card p { font-size: 13.5px; }
@@ -610,10 +641,11 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="lockup" href="../index.html">远汐 Offing<span>Atlas 项目入口</span></a>
+      <a class="lockup" href="../index.html">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></a>
       <nav class="nav" aria-label="页面导航">
         <a href="#reports">报告库</a>
         <a href="#research">调研资料</a>
+        <a href="../index.html">提交入口</a>
         <a href="#structure">文件结构</a>
       </nav>
     </div>
@@ -622,10 +654,10 @@
   <main>
     <section class="hero" id="top">
       <div>
-        <div class="eyebrow">Offing Atlas Workspace</div>
-        <h1><span class="title-line">Offing Atlas</span><span class="title-line">远汐·航图</span></h1>
-        <p class="lead">这里统一存放 Atlas 的北美业务诊断报告、公开调研资料、项目规范和线上链接，后续每个品牌诊断都从这里归档。</p>
-        <p class="sublead">报告链接继续保留原路径，避免已发出去的 URL 失效；这个页面负责集中导航、更新记录和资料库入口。</p>
+        <div class="eyebrow">Offing Atlas Library</div>
+        <h1><span class="title-line">北美业务诊断</span><span class="title-line">报告库</span></h1>
+        <p class="lead">先看分数、阶段和类目，再进入单个品牌报告。这里集中管理所有已经跑过 Atlas 规则的北美业务诊断。</p>
+        <p class="sublead">外发报告保留原 URL；报告库负责筛选、排序、更新记录和资料入口。</p>
         <div class="hero-actions">
           <a class="btn primary" href="#reports">进入报告库</a>
           <a class="btn" href="./research/">进入调研资料库</a>
@@ -634,7 +666,7 @@
       </div>
       <aside class="console" aria-label="Atlas 当前项目概览">
         <div class="console-body">
-          <div class="eyebrow" style="color:#8ee7df;">Project Map</div>
+          <div class="eyebrow">Project Map</div>
           <div class="metric-grid">
             <div class="metric"><b id="archivedReportMetric">20</b><span>已归档品牌诊断</span></div>
             <div class="metric"><b>1</b><span>调研资料库入口</span></div>
@@ -646,46 +678,13 @@
       </aside>
     </section>
 
-    <section id="quick">
-      <div class="quick-grid">
-        <a class="quick-card prism" href="#reports">
-          <div>
-            <h3>品牌报告库</h3>
-            <p>集中进入 20 个已按 Atlas v3 规则重跑的北美业务诊断报告。</p>
-          </div>
-          <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
-        </a>
-        <a class="quick-card blue" href="./research/">
-          <div>
-            <h3>调研资料库</h3>
-            <p>存放公开资料、方法论、截图证据、竞品笔记和后续品牌研究文件。</p>
-          </div>
-          <div class="tools"><span class="pill warn">公开资料</span><span class="pill">Research</span></div>
-        </a>
-        <a class="quick-card pink" href="../index.html">
-          <div>
-            <h3>诊断提交入口</h3>
-            <p>客户输入品牌名后提交 Atlas 免费诊断申请。</p>
-          </div>
-          <div class="tools"><span class="pill">Lead</span><span class="pill">Form</span></div>
-        </a>
-        <a class="quick-card green" href="#structure">
-          <div>
-            <h3>文件结构</h3>
-            <p>定义报告、调研、证据和项目规范以后应该放在哪里。</p>
-          </div>
-          <div class="tools"><span class="pill">Index</span><span class="pill">Rules</span></div>
-        </a>
-      </div>
-    </section>
-
     <section id="reports">
       <div class="section-head">
         <div>
           <div class="eyebrow">Report Library</div>
-          <h2>报告库：所有已生成的 Atlas 北美业务诊断，都从这里进入。</h2>
+          <h2>先按分数和阶段判断优先级，再打开具体报告。</h2>
         </div>
-        <p class="section-note">这里展示当前可外发版本。Plaud AI 保留已发出的 06-14 链接；其他品牌按最新版文件进入。</p>
+        <p class="section-note">这里展示当前可外发版本。筛选后数量、档位分布和当前条件会一起重算。</p>
       </div>
       <div class="toolbar">
         <input class="search" id="reportSearch" type="search" placeholder="搜索品牌，例如 Ulike / Plaud / TideWe" aria-label="搜索报告" />
@@ -832,6 +831,39 @@
         </a>
       </div>
       <div class="empty-state" id="emptyState">没有找到匹配的报告。可以清空筛选条件重新查看。</div>
+    </section>
+
+    <section id="quick">
+      <div class="quick-grid">
+        <a class="quick-card prism" href="#reports">
+          <div>
+            <h3>品牌报告库</h3>
+            <p>集中进入 20 个已按 Atlas v3 规则重跑的北美业务诊断报告。</p>
+          </div>
+          <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
+        </a>
+        <a class="quick-card blue" href="./research/">
+          <div>
+            <h3>调研资料库</h3>
+            <p>存放公开资料、方法论、截图证据、竞品笔记和后续品牌研究文件。</p>
+          </div>
+          <div class="tools"><span class="pill warn">公开资料</span><span class="pill">Research</span></div>
+        </a>
+        <a class="quick-card pink" href="../index.html">
+          <div>
+            <h3>诊断提交入口</h3>
+            <p>客户输入品牌名和邮箱后提交 Atlas 免费诊断申请。</p>
+          </div>
+          <div class="tools"><span class="pill">Lead</span><span class="pill">Form</span></div>
+        </a>
+        <a class="quick-card green" href="#structure">
+          <div>
+            <h3>文件结构</h3>
+            <p>定义报告、调研、证据和项目规范以后应该放在哪里。</p>
+          </div>
+          <div class="tools"><span class="pill">Index</span><span class="pill">Rules</span></div>
+        </a>
+      </div>
     </section>
 
     <section id="research">
