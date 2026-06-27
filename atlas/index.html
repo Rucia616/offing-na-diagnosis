@@ -240,6 +240,23 @@
     .pill.score-c { color: var(--warn); background: color-mix(in srgb, #fff3df 68%, var(--surface)); border-color: color-mix(in srgb, var(--warn) 30%, var(--line)); }
     .pill.score-d { color: #c2410c; background: color-mix(in srgb, #fff1e8 72%, var(--surface)); border-color: color-mix(in srgb, #c2410c 30%, var(--line)); }
     .pill.score-e { color: var(--risk); background: color-mix(in srgb, #fff0f1 72%, var(--surface)); border-color: color-mix(in srgb, var(--risk) 30%, var(--line)); }
+    .pill.date-pill {
+      color: var(--muted);
+      background: var(--surface-2);
+      border-color: var(--line);
+      font-weight: 760;
+    }
+    .pill.stage-pill {
+      min-height: 34px;
+      min-width: 58px;
+      padding: 5px 12px;
+      justify-content: center;
+      color: var(--text);
+      background: color-mix(in srgb, var(--accent-fill) 48%, var(--surface));
+      border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+      font-size: 14px;
+      font-weight: 950;
+    }
     @media (prefers-color-scheme: dark) {
       .pill.green { background: #173424; }
       .pill.warn { background: #3a2a12; }
@@ -331,6 +348,25 @@
     .score-band.score-c { border-top-color: var(--warn); background: color-mix(in srgb, #fff3df 38%, var(--surface)); }
     .score-band.score-d { border-top-color: #c2410c; background: color-mix(in srgb, #fff1e8 46%, var(--surface)); }
     .score-band.score-e { border-top-color: var(--risk); background: color-mix(in srgb, #fff0f1 52%, var(--surface)); }
+    .active-filter-summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      margin: 0 0 14px;
+      color: var(--body);
+      font-size: 13px;
+      font-weight: 820;
+    }
+    .active-filter-summary strong {
+      color: var(--text);
+      font-weight: 950;
+    }
+    .active-filter-summary .pill {
+      min-height: 26px;
+      font-size: 11.5px;
+    }
     .report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .report-card {
       position: relative;
@@ -341,6 +377,10 @@
       grid-template-rows: 1fr auto;
       gap: 16px;
       transition: transform .16s ease, border-color .16s ease;
+    }
+    .report-card[hidden],
+    .report-card.is-hidden {
+      display: none !important;
     }
     .report-card::before {
       content: "";
@@ -359,7 +399,7 @@
     .report-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 34%, var(--line)); }
     .report-card > div:first-child {
       display: grid;
-      grid-template-columns: 116px minmax(0, 1fr);
+      grid-template-columns: 132px minmax(0, 1fr);
       grid-template-rows: auto auto;
       column-gap: 16px;
       align-content: start;
@@ -383,8 +423,8 @@
     .report-logo {
       grid-column: 1;
       grid-row: 1;
-      width: 116px;
-      height: 58px;
+      width: 132px;
+      height: 66px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -393,14 +433,54 @@
       background: var(--surface-2);
     }
     .report-logo img {
-      max-width: 92px;
-      max-height: 34px;
+      max-width: 112px;
+      max-height: 44px;
       object-fit: contain;
       display: block;
     }
     .report-logo.logo-wide img {
-      max-width: 110px;
-      max-height: 34px;
+      max-width: 126px;
+      max-height: 46px;
+    }
+    .report-logo.logo-official-wide img {
+      max-width: 128px;
+      max-height: 52px;
+    }
+    .report-logo.logo-small-source img {
+      max-width: 122px;
+      max-height: 52px;
+      transform: scale(1.16);
+    }
+    .report-card.logo-panorama-card > div:first-child {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+    .report-card.logo-panorama-card .report-logo {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+      height: 62px;
+      justify-content: flex-start;
+      padding: 0 14px;
+    }
+    .report-card.logo-panorama-card .report-logo img {
+      max-width: 260px;
+      max-height: 42px;
+    }
+    .report-card.logo-panorama-card .report-logo.logo-small-source img {
+      max-width: 270px;
+      max-height: 44px;
+      transform: scale(1.28);
+      transform-origin: left center;
+    }
+    .report-card.logo-panorama-card h3 {
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: 10px;
+    }
+    .report-card.logo-panorama-card p {
+      grid-column: 1;
+      grid-row: 3;
     }
     @media (prefers-color-scheme: dark) {
       .report-logo.logo-invert img { filter: invert(1); }
@@ -418,7 +498,19 @@
       .score-band.score-d { background: #311c12; }
       .score-band.score-e { background: #32171c; }
     }
-    .report-meta { display: flex; flex-wrap: wrap; gap: 7px; }
+    .report-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+    }
+    .report-meta .pill.score {
+      min-height: 34px;
+      padding: 5px 12px;
+      font-size: 15px;
+      line-height: 1;
+      box-shadow: 0 8px 18px rgba(16, 20, 19, .05);
+    }
     .empty-state {
       display: none;
       padding: 22px;
@@ -488,12 +580,17 @@
       .filter, .search { width: 100%; }
       .report-card { min-height: 148px; padding: 14px; gap: 12px; }
       .report-card > div:first-child {
-        grid-template-columns: 88px minmax(0, 1fr);
+        grid-template-columns: 104px minmax(0, 1fr);
         column-gap: 12px;
       }
-      .report-logo { width: 88px; height: 48px; }
-      .report-logo img { max-width: 72px; max-height: 28px; }
-      .report-logo.logo-wide img { max-width: 84px; max-height: 26px; }
+      .report-logo { width: 104px; height: 54px; }
+      .report-logo img { max-width: 90px; max-height: 34px; }
+      .report-logo.logo-wide img,
+      .report-logo.logo-official-wide img { max-width: 100px; max-height: 38px; }
+      .report-logo.logo-small-source img { max-width: 96px; max-height: 40px; transform: scale(1.04); }
+      .report-card.logo-panorama-card .report-logo { width: 100%; height: 58px; padding: 0 12px; }
+      .report-card.logo-panorama-card .report-logo img { max-width: 210px; max-height: 36px; }
+      .report-card.logo-panorama-card .report-logo.logo-small-source img { max-width: 218px; max-height: 38px; transform: scale(1.12); }
       .report-wordmark { font-size: 17px; }
       .report-card h3 { margin-top: 2px; font-size: 20px; }
       .report-card p { grid-column: 1 / 3; margin-top: 8px; font-size: 13px; line-height: 1.38; }
@@ -501,6 +598,8 @@
       .score-band b { font-size: 21px; }
       .report-meta { gap: 6px; }
       .pill { min-height: 24px; padding: 3px 8px; font-size: 11.5px; }
+      .report-meta .pill.score,
+      .pill.stage-pill { min-height: 28px; min-width: 52px; padding: 4px 9px; font-size: 12.5px; }
       .quick-card, .library-card, .file-card { min-height: auto; padding: 17px; }
       .quick-card h3, .library-card h3 { font-size: 21px; }
       .quick-card p, .library-card p, .file-card p { font-size: 13.5px; }
@@ -539,7 +638,7 @@
           <div class="metric-grid">
             <div class="metric"><b id="archivedReportMetric">20</b><span>已归档品牌诊断</span></div>
             <div class="metric"><b>1</b><span>调研资料库入口</span></div>
-            <div class="metric"><b class="compact">2026-06-26</b><span>最近更新日期</span></div>
+            <div class="metric"><b class="compact">2026-06-27</b><span>最近更新日期</span></div>
             <div class="metric"><b>GitHub Pages</b><span>公开交付链接</span></div>
           </div>
           <p class="console-note">当前入口只收纳可公开展示或可发给客户的文件。内部草稿、未确认数据、客户敏感信息不放进公开 Pages。</p>
@@ -642,6 +741,7 @@
           <span class="pill" id="reportCount">共 20 份报告</span>
         </div>
       </div>
+      <div class="active-filter-summary" id="activeFilterSummary" aria-live="polite">显示全部报告。</div>
       <div class="score-distribution" aria-label="报告总分档位分布">
         <div class="score-band score-a" data-score-band="A"><b>1</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
         <div class="score-band score-b" data-score-band="B"><b>3</b><span>B档 65-69</span><small>主线成立，但短板会吃利润。</small></div>
@@ -667,15 +767,15 @@
           <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 67 分，B 档">67 · B档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">美容科技</span></div>
         </a>
         <a class="report-card" data-name="ringconn smart ring health wearable no subscription app amazon" data-stage="1-10" data-category="hardware" data-type="dualchannel" data-status="latest" data-score="64" data-tier="C" href="../ringconn-offing-na-diagnosis-2026-06-25.html">
-          <div><div class="report-logo "><img src="../assets/brand-logos/ringconn-logo-official.png" alt="RingConn logo" /></div><h3>RingConn</h3><p>智能戒指、无订阅定位、Gen 3 声量、app 评分和售后信任。</p></div>
+          <div><div class="report-logo logo-small-source"><img src="../assets/brand-logos/ringconn-logo-official.png" alt="RingConn logo" /></div><h3>RingConn</h3><p>智能戒指、无订阅定位、Gen 3 声量、app 评分和售后信任。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 64 分，C 档">64 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">智能穿戴</span></div>
         </a>
         <a class="report-card" data-name="piscifun fishing reels baitcaster spinning reel carbon x viper chaos" data-stage="10-100" data-category="fishing" data-type="amazon" data-status="latest" data-score="63" data-tier="C" href="../piscifun-offing-na-diagnosis-2026-06-15.html">
-          <div><div class="report-logo "><img src="../assets/brand-logos/piscifun-logo-transparent.png" alt="Piscifun logo" /></div><h3>Piscifun</h3><p>价值型渔轮、Amazon 主货架、专业信任、维修配件和品线秩序。</p></div>
+          <div><div class="report-logo logo-small-source"><img src="../assets/brand-logos/piscifun-logo-transparent.png" alt="Piscifun logo" /></div><h3>Piscifun</h3><p>价值型渔轮、Amazon 主货架、专业信任、维修配件和品线秩序。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 63 分，C 档">63 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">户外渔具</span></div>
         </a>
-        <a class="report-card" data-name="giraffe tools retractable garden hose reel pressure washer outdoor tools warranty bbb amazon" data-stage="10-100" data-category="outdoor" data-type="dualchannel" data-status="latest" data-score="63" data-tier="C" href="../giraffe-tools-offing-na-diagnosis-2026-06-26.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/giraffe-tools-logo-wordmark.svg" alt="Giraffe Tools logo" /></div><h3>Giraffe Tools</h3><p>retractable hose reel、pressure washer、Amazon 动销、售后投诉和保修信任。</p></div>
+        <a class="report-card logo-panorama-card" data-name="giraffe tools retractable garden hose reel pressure washer outdoor tools warranty bbb amazon" data-stage="10-100" data-category="outdoor" data-type="dualchannel" data-status="latest" data-score="63" data-tier="C" href="../giraffe-tools-offing-na-diagnosis-2026-06-26.html">
+          <div><div class="report-logo logo-official-wide logo-small-source"><img src="../assets/brand-logos/giraffe-tools-logo-official.png" alt="Giraffe Tools logo" /></div><h3>Giraffe Tools</h3><p>retractable hose reel、pressure washer、Amazon 动销、售后投诉和保修信任。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 63 分，C 档">63 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">庭院工具</span></div>
         </a>
         <a class="report-card" data-name="cosori air fryer kitchen appliance recall amazon vesync" data-stage="100+" data-category="kitchen" data-type="amazon" data-status="latest" data-score="62" data-tier="C" href="../cosori-offing-na-diagnosis-2026-06-13.html">
@@ -690,8 +790,8 @@
           <div><div class="report-logo "><img src="../assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" /></div><h3>Yvette</h3><p>高支撑运动内衣、尺码信任、换码体验和 DTC 复购路径。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 58 分，C 档">58 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">运动健康</span></div>
         </a>
-        <a class="report-card" data-name="protyouth recombinant humanized collagen skincare anti aging serum cream biotech collagen allure dtc" data-stage="1-10" data-category="beauty" data-type="dtc" data-status="latest" data-score="57" data-tier="C" href="../protyouth-offing-na-diagnosis-2026-06-26.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/protyouth-logo-wordmark.png" alt="ProtYouth logo" /></div><h3>ProtYouth</h3><p>重组人源化胶原护肤、高价 serum / cream、技术 proof、低 review 基数和售后信任。</p></div>
+        <a class="report-card logo-panorama-card" data-name="protyouth recombinant humanized collagen skincare anti aging serum cream biotech collagen allure dtc" data-stage="1-10" data-category="beauty" data-type="dtc" data-status="latest" data-score="57" data-tier="C" href="../protyouth-offing-na-diagnosis-2026-06-26.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/protyouth-logo-wordmark.png" alt="ProtYouth logo" /></div><h3>ProtYouth</h3><p>重组人源化胶原护肤、高价 serum / cream、技术 proof、低 review 基数和售后信任。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 57 分，C 档">57 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">美容个护</span></div>
         </a>
         <a class="report-card" data-name="zima nas zimaspace homelab zimaos private cloud" data-stage="10-100" data-category="hardware" data-type="community" data-status="latest" data-score="56" data-tier="C" href="../zima-offing-na-diagnosis-2026-06-13.html">
@@ -702,8 +802,8 @@
           <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/gtracing-logo-darktext.png" alt="GTRacing logo" /></div><h3>GTRacing</h3><p>低价游戏椅、耐用信任、品牌一致性、Amazon / Walmart 货架。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 56 分，C 档">56 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">游戏家具</span></div>
         </a>
-        <a class="report-card" data-name="cabevibe cabbase c3 ergonomic office chair lumbar footrest mesh amazon return warranty" data-stage="1-10" data-category="furniture" data-type="dualchannel" data-status="latest" data-score="56" data-tier="C" href="../cabevibe-offing-na-diagnosis-2026-06-26.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/cabevibe-logo-wordmark.svg" alt="CabeVibe logo" /></div><h3>CabeVibe</h3><p>CabBase C3 人体工学椅、体型适配、退换保修、Amazon 信任和竞品比较。</p></div>
+        <a class="report-card logo-panorama-card" data-name="cabevibe cabbase c3 ergonomic office chair lumbar footrest mesh amazon return warranty" data-stage="1-10" data-category="furniture" data-type="dualchannel" data-status="latest" data-score="56" data-tier="C" href="../cabevibe-offing-na-diagnosis-2026-06-26.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/cabevibe-logo-official-dark.png" alt="CabeVibe logo" /></div><h3>CabeVibe</h3><p>CabBase C3 人体工学椅、体型适配、退换保修、Amazon 信任和竞品比较。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 56 分，C 档">56 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">办公家具</span></div>
         </a>
         <a class="report-card" data-name="petpivot autoscooper automatic litter box self cleaning cat tiktok shop amazon" data-stage="10-100" data-category="pet" data-type="socialmarketplace" data-status="latest" data-score="54" data-tier="D" href="../petpivot-offing-na-diagnosis-2026-06-15.html">
@@ -718,8 +818,8 @@
           <div><div class="report-logo "><img src="../assets/brand-logos/pixboom-logo-wordmark.svg" alt="Pixboom logo" /></div><h3>Pixboom</h3><p>高速电影机、众筹预售、交付确定性、维修网络和生产版证据。</p></div>
           <div class="report-meta"><span class="pill score score-d" aria-label="北美业务总分 52 分，D 档">52 · D档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">影像设备</span></div>
         </a>
-        <a class="report-card" data-name="unirox q1 ultrasonic cutter precision cutting maker tool blades diy craft" data-stage="1-10" data-category="tools" data-type="dtc" data-status="latest" data-score="52" data-tier="D" href="../unirox-offing-na-diagnosis-2026-06-26.html">
-          <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/unirox-logo-wordmark.svg" alt="UNIROX logo" /></div><h3>UNIROX</h3><p>Q1 ultrasonic cutter、maker / DIY 工具、材料边界、替换刀片和第三方 proof。</p></div>
+        <a class="report-card logo-panorama-card" data-name="unirox q1 ultrasonic cutter precision cutting maker tool blades diy craft" data-stage="1-10" data-category="tools" data-type="dtc" data-status="latest" data-score="52" data-tier="D" href="../unirox-offing-na-diagnosis-2026-06-26.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/unirox-logo-official.svg" alt="UNIROX logo" /></div><h3>UNIROX</h3><p>Q1 ultrasonic cutter、maker / DIY 工具、材料边界、替换刀片和第三方 proof。</p></div>
           <div class="report-meta"><span class="pill score score-d" aria-label="北美业务总分 52 分，D 档">52 · D档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">精密工具</span></div>
         </a>
         <a class="report-card" data-name="usmile electric toothbrush water flosser oral care amazon replacement heads" data-stage="1-10" data-category="oralcare" data-type="amazon" data-status="latest" data-score="45" data-tier="E" href="../usmile-offing-na-diagnosis-2026-06-13.html">
@@ -781,7 +881,7 @@
 
     <div class="footer">
       <span>Offing Atlas｜远汐·航图 · Project Hub</span>
-      <span>Last updated: 2026-06-26</span>
+      <span>Last updated: 2026-06-27</span>
     </div>
   </main>
 
@@ -799,9 +899,13 @@
     const resetFilters = document.getElementById("resetFilters");
     const emptyState = document.getElementById("emptyState");
     const reportGrid = document.getElementById("reportGrid");
+    const activeFilterSummary = document.getElementById("activeFilterSummary");
 
     cards.forEach((card, index) => {
       card.dataset.order = String(index);
+      const pills = Array.from(card.querySelectorAll(".report-meta .pill"));
+      pills.find(pill => pill.textContent.trim() === card.dataset.stage)?.classList.add("stage-pill");
+      pills.find(pill => /^\d{4}-\d{2}-\d{2}/.test(pill.textContent.trim()))?.classList.add("date-pill");
     });
 
     function sortReportCards() {
@@ -814,10 +918,10 @@
       sorted.forEach(card => reportGrid?.appendChild(card));
     }
 
-    function syncReportSummary() {
+    function syncReportSummary(scope = cards) {
       if (archivedReportMetric) archivedReportMetric.textContent = String(cards.length);
 
-      const tierCounts = cards.reduce((counts, card) => {
+      const tierCounts = scope.reduce((counts, card) => {
         const tier = (card.dataset.tier || "").toUpperCase();
         if (tier) counts[tier] = (counts[tier] || 0) + 1;
         return counts;
@@ -828,6 +932,30 @@
         const tier = band.dataset.scoreBand;
         if (value && tier) value.textContent = String(tierCounts[tier] || 0);
       });
+    }
+
+    function filterLabel(select) {
+      return select?.selectedOptions?.[0]?.textContent?.trim() || "";
+    }
+
+    function syncActiveFilterSummary(visible) {
+      if (!activeFilterSummary) return;
+      const chips = [];
+      if (input.value.trim()) chips.push(`搜索：${input.value.trim()}`);
+      if (stageFilter.value) chips.push(`阶段：${filterLabel(stageFilter)}`);
+      if (categoryFilter.value) chips.push(`类目：${filterLabel(categoryFilter)}`);
+      if (typeFilter.value) chips.push(`类型：${filterLabel(typeFilter)}`);
+      if (statusFilter.value) chips.push(`状态：${filterLabel(statusFilter)}`);
+      if (sortFilter.value !== "default") chips.push(`排序：${filterLabel(sortFilter)}`);
+
+      if (!chips.length) {
+        activeFilterSummary.textContent = "显示全部报告。";
+        return;
+      }
+
+      activeFilterSummary.innerHTML = `<strong>当前筛选：</strong>${chips
+        .map(label => `<span class="pill">${label}</span>`)
+        .join("")}<span class="pill score">显示 ${visible} / ${cards.length}</span>`;
     }
 
     function hasActiveFilters() {
@@ -849,6 +977,7 @@
       const type = typeFilter.value;
       const status = statusFilter.value;
       let visible = 0;
+      const visibleCards = [];
 
       cards.forEach(card => {
         const text = `${card.dataset.name || ""} ${card.innerText}`.toLowerCase();
@@ -859,7 +988,11 @@
           (!type || card.dataset.type === type) &&
           (!status || card.dataset.status === status);
         card.hidden = !matched;
-        if (matched) visible += 1;
+        card.classList.toggle("is-hidden", !matched);
+        if (matched) {
+          visible += 1;
+          visibleCards.push(card);
+        }
       });
 
       if (reportCount) {
@@ -867,6 +1000,8 @@
           ? `显示 ${visible} / ${cards.length} 份报告`
           : `共 ${cards.length} 份报告`;
       }
+      syncReportSummary(visibleCards);
+      syncActiveFilterSummary(visible);
       emptyState?.classList.toggle("show", visible === 0);
     }
 
