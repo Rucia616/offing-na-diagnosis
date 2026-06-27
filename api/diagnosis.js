@@ -82,7 +82,7 @@ module.exports = async function handler(req, res) {
 
     sendJson(res, 200, {
       ok: true,
-      mode: process.env.OPENAI_API_KEY ? 'temporary' : 'mock',
+      mode: process.env.OPENAI_API_KEY ? 'temporary' : 'local_preview',
       brand,
       reportTitle: report.title || `${brand} 北美业务诊断`,
       conclusion: report.conclusion || '',
@@ -411,9 +411,9 @@ function buildMockReportHtml(brand) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${safeBrand} 北美业务诊断</title>
   <style>
-    :root { color-scheme:light; --paper:#fff; --surface:#fff; --ink:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --sea:#2d6261; --slate:#13211f; --gold:#a99556; --red:#d70015; }
+    :root { --paper:#f8faf6; --surface:#fffffb; --ink:#0d1716; --body:#30413f; --muted:#6f7d78; --line:#d8e2dc; --sea:#2d6261; --slate:#13211f; --gold:#a99556; --red:#d70015; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:#fff; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:var(--paper); }
     main { width:min(1080px, calc(100% - 36px)); margin:0 auto; padding:32px 0 70px; }
     .hero { min-height:82vh; display:grid; align-content:center; border-bottom:1px solid var(--line); }
     .logo { width:92px; min-height:42px; display:grid; place-items:center; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--sea); font-weight:800; }
@@ -439,7 +439,7 @@ function buildMockReportHtml(brand) {
     <section class="hero">
       <div class="logo">${safeBrand}</div>
       <h1>北美业务诊断</h1>
-      <p class="lead">这是后端联调用演示报告，用来验证「提交品牌名 -> 生成 HTML -> 返回报告」链路。真实上线后，这里会替换为联网证据、品牌 VI、销售规模和阶段判断。</p>
+      <p class="lead">这是后端联调用预览报告，用来验证「提交品牌名 -> 生成 HTML -> 返回报告」链路。正式诊断需补齐联网证据、品牌 VI、销售规模和阶段判断。</p>
       <div class="score">
         <div class="card big"><strong>北美业务情况总分</strong><div class="stars">★★★☆☆</div><div>3.4 / 5</div></div>
         <div class="card"><strong>业务健康度</strong><div class="bar"><span></span></div><p class="muted">68 / 100</p></div>
@@ -451,21 +451,21 @@ function buildMockReportHtml(brand) {
       <h2>品牌阶段判断</h2>
       <div class="grid">
         <div class="card"><strong>当前阶段</strong><p>待真实诊断：需联网核验销售规模、渠道结构、主力 SKU 和口碑。</p></div>
-        <div class="card"><strong>销售规模校准</strong><p>演示环境不生成真实估算；上线后输出 USD / RMB 区间和证据 ID。</p></div>
+        <div class="card"><strong>销售规模校准</strong><p>预览环境不生成真实估算；正式诊断输出 USD / RMB 区间和证据 ID。</p></div>
         <div class="card"><strong>下一步</strong><p>配置 OPENAI_API_KEY 与 GitHub 发布密钥后，即可生成可分享报告链接。</p></div>
       </div>
     </section>
     <section>
       <h2>三大板块诊断</h2>
       <div class="grid">
-        <div class="card"><strong>品牌板块</strong><p>演示占位。真实报告会写做得好的 3 条、做得不好的 3 条和证据 ID。</p></div>
-        <div class="card"><strong>Marketing 板块</strong><p>演示占位。真实报告会采样搜索、社媒、内容和广告公开信号。</p></div>
-        <div class="card"><strong>电商板块</strong><p>演示占位。真实报告会比较官网、Amazon、零售渠道和竞品价格。</p></div>
+        <div class="card"><strong>品牌板块</strong><p>正式诊断会写做得好的 3 条、做得不好的 3 条和证据 ID。</p></div>
+        <div class="card"><strong>Marketing 板块</strong><p>正式诊断会采样搜索、社媒、内容和广告公开信号。</p></div>
+        <div class="card"><strong>电商板块</strong><p>正式诊断会比较官网、Amazon、零售渠道和竞品价格。</p></div>
       </div>
     </section>
     <section>
       <h2>数据状态</h2>
-      <p class="muted">生成日期：${today}。当前为 mock 模式，不可作为商业判断。</p>
+      <p class="muted">生成日期：${today}。当前为本地预览模式，仅用于联调确认。</p>
     </section>
   </main>
 </body>

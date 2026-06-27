@@ -5,25 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Offing Atlas｜远汐·航图 项目入口</title>
   <meta name="description" content="Offing Atlas｜远汐·航图项目入口：北美业务诊断报告库、调研资料库、线上链接与交付文件管理。" />
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
   <link rel="icon" type="image/svg+xml" href="../assets/offing-atlas-favicon.svg" />
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #f5f5f7;
-      --top: #fbfbfd;
+      color-scheme: light;
+      --bg: #ffffff;
+      --top: #ffffff;
       --surface: #ffffff;
       --surface-2: #f7f8fa;
       --text: #101413;
       --body: #293331;
       --muted: #66716e;
-      --line: #d7d9dc;
+      --line: #dfe3e6;
       --accent: #2d6261;
       --accent-fill: #eaf1f0;
       --inverse-bg: #13211f;
       --inverse-text: #f8faf9;
       --prism-teal: #32d6c6;
       --prism-sky: #9ed1ff;
-      --prism-pink: #f7a4d8;
+      --prism-pink: #eb4aa6;
       --prism-lilac: #9b7cff;
       --risk: #d70015;
       --warn: #9a5b00;
@@ -35,19 +37,7 @@
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1212;
-        --top: #141817;
-        --surface: #191e1d;
-        --surface-2: #202625;
-        --text: #f4f7f6;
-        --body: #d8dedc;
-        --muted: #a9b2af;
-        --line: #3a4240;
-        --accent: #9ed7d3;
-        --accent-fill: #1c3433;
-        --inverse-bg: #e9efed;
-        --inverse-text: #101413;
-        --shadow: 0 18px 48px rgba(0, 0, 0, .34);
+        color-scheme: light;
       }
     }
     * { box-sizing: border-box; }
@@ -258,13 +248,13 @@
       font-weight: 950;
     }
     @media (prefers-color-scheme: dark) {
-      .pill.green { background: #173424; }
-      .pill.warn { background: #3a2a12; }
-      .pill.score-a { background: #173424; }
-      .pill.score-b { background: #1c3433; }
-      .pill.score-c { background: #3a2a12; }
-      .pill.score-d { background: #3b2116; }
-      .pill.score-e { background: #3a171c; }
+      .pill.green { background: #eaf6ee; }
+      .pill.warn { background: #fff3df; }
+      .pill.score-a { background: color-mix(in srgb, #eaf6ee 66%, var(--surface)); }
+      .pill.score-b { background: color-mix(in srgb, var(--accent-fill) 72%, var(--surface)); }
+      .pill.score-c { background: color-mix(in srgb, #fff3df 68%, var(--surface)); }
+      .pill.score-d { background: color-mix(in srgb, #fff1e8 72%, var(--surface)); }
+      .pill.score-e { background: color-mix(in srgb, #fff0f1 72%, var(--surface)); }
     }
     .toolbar {
       display: grid;
@@ -488,11 +478,11 @@
       font-weight: 950;
     }
     @media (prefers-color-scheme: dark) {
-      .score-band.score-a { background: #142a1e; }
-      .score-band.score-b { background: #152c2b; }
-      .score-band.score-c { background: #2e2413; }
-      .score-band.score-d { background: #311c12; }
-      .score-band.score-e { background: #32171c; }
+      .score-band.score-a { background: color-mix(in srgb, #eaf6ee 36%, var(--surface)); }
+      .score-band.score-b { background: color-mix(in srgb, var(--accent-fill) 48%, var(--surface)); }
+      .score-band.score-c { background: color-mix(in srgb, #fff3df 38%, var(--surface)); }
+      .score-band.score-d { background: color-mix(in srgb, #fff1e8 46%, var(--surface)); }
+      .score-band.score-e { background: color-mix(in srgb, #fff0f1 52%, var(--surface)); }
     }
     .report-meta {
       grid-row: 1;
@@ -620,7 +610,7 @@
     }
   </style>
 </head>
-<body>
+<body data-offing-visual-baseline="canonical" data-offing-product="atlas-library" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
   <header class="topbar">
     <div class="topbar-inner">
       <a class="lockup" href="../index.html">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></a>

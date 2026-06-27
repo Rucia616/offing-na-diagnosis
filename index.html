@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offing Atlas｜远汐·航图 北美业务诊断（免费版）</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md">
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
   <link rel="icon" type="image/svg+xml" href="./assets/offing-atlas-favicon.svg">
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #fff;
-      --top: #fff;
+      color-scheme: light;
+      --bg: #ffffff;
+      --top: #ffffff;
       --surface: #ffffff;
-      --surface-2: #fff;
+      --surface-2: #f7f8fa;
       --text: #101413;
       --body: #293331;
       --muted: #66716e;
-      --line: #d7d9dc;
+      --line: #dfe3e6;
       --accent: #2d6261;
       --accent-fill: #eaf1f0;
       --inverse-bg: #13211f;
@@ -25,7 +27,7 @@
       --risk: #d70015;
       --prism-teal: #32d6c6;
       --prism-sky: #9ed1ff;
-      --prism-pink: #f7a4d8;
+      --prism-pink: #eb4aa6;
       --prism-lilac: #9b7cff;
       --radius: 8px;
       --shadow: 0 18px 48px rgba(16, 20, 19, .08);
@@ -35,24 +37,12 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1212;
-        --top: #141817;
-        --surface: #191e1d;
-        --surface-2: #202625;
-        --text: #f4f7f6;
-        --body: #d8dedc;
-        --muted: #a9b2af;
-        --line: #3a4240;
-        --accent: #9ed7d3;
-        --accent-fill: #1c3433;
-        --inverse-bg: #e9efed;
-        --inverse-text: #101413;
-        --shadow: 0 18px 48px rgba(0, 0, 0, .34);
+        color-scheme: light;
       }
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background:#fff; }
+    html { scroll-behavior: smooth; background: var(--bg); }
 
     body {
       min-height: 100vh;
@@ -693,17 +683,9 @@
       .deliverable { padding: 18px; }
       .deliverable { min-height: auto; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
-<body>
+<body data-offing-visual-baseline="canonical" data-offing-product="atlas-intake" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
   <main class="shell">
     <header class="topbar">
       <a class="lockup" href="./index.html">远汐 Offing<span>Atlas 北美业务诊断（免费版）</span></a>
@@ -878,20 +860,13 @@
         `提交时间：${new Date().toLocaleString("zh-CN", { hour12: false })}`,
         `来源页面：${window.location.href}`,
         "",
-        `请使用 rucia-atlas-business-diagnosis skill，给「${brand}」做北美业务诊断。`,
+        `请为「${brand}」整理一份 Offing Atlas 北美业务诊断。`,
+        "诊断范围：品牌阶段、销售规模校准、品牌 / Marketing / 电商三大板块、Top 3 关键问题、90 天优先级。",
+        "证据要求：只使用可追溯公开信息；信息不足时标注数据缺口。",
+        "交付形式：可直接打开、分享和复盘的独立 HTML 诊断报告。",
+        "首屏规则：有品牌 logo 时，大标题只写「北美业务诊断」。",
         "",
-        "这是 Offing Atlas｜远汐·航图 给品牌方提供的免费北美业务诊断入口。报告要体现 Offing Atlas 的判断逻辑：先判断市场、品牌位置、GTM 和资源配置，再决定预算怎么花。",
-        "语气要克制、专业、有判断力。避免写成普通 AI 报告、低价服务商页面或销售结果承诺。",
-        "默认交付一份可直接打开、分享、复盘的独立 HTML 诊断报告。报告必须体现被诊断品牌 VI，并包含：",
-        "1. 首屏：必须使用品牌真实 logo；标题视觉文案为「北美业务诊断」，语义标题和页面 title 保留「品牌名 北美业务诊断」；展示一句话结论、五颗星总分、业务健康度、业务机会分、问题致命度。",
-        "2. 品牌阶段判断：先判断它处在 0-1、1-10、10-100，还是 100+ 阶段，再判断当前动作是否符合阶段标准。",
-        "3. 销售规模校准：最新公开 units sold 作为底线，美元与人民币双币种，北美年销售额给区间和置信度。",
-        "4. 三大业务板块：品牌、Marketing、电商，先打分，再写做得好的和做得不好的。",
-        "5. Top 3 关键问题：用可视化诊断卡呈现，包含证据微图表、影响路径和具体动作。",
-        "6. 竞品横向对比、11 维度评分、增长机会、90/180 天路线图、风险预警与证据表。",
-        "7. 结尾必须回到 Offing Atlas 的判断框架：第一市场、第一人群、第一句话、第一渠道、第一笔预算。",
-        "",
-        "请实时联网确认最新公开信息；如果数据不足，标注数据缺口，不要硬编。"
+        "请确认最新公开信息后再生成报告。"
       ].join("\n");
     }
 

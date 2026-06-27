@@ -4,19 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RingConn · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
   <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
   <style>
+    /*
+      Offing canonical renderer baseline:
+      /Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md
+      Product family sample:
+      /Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html
+      Atlas sample:
+      /Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html
+    */
     :root {
       color-scheme: light;
-      --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
-      --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
-      --accent:#2d6261; --accent-fill:#eaf1f0;
+      --offing-ink:#101413; --offing-body:#293331; --offing-muted:#66716e; --offing-line:#dfe3e7;
+      --offing-soft:#f6f8fa; --offing-paper:#fff8ee; --offing-surface:#fff;
+      --offing-pink:#eb4aa6; --offing-violet:#6d4cff; --offing-cyan:#20c7d9; --offing-lime:#78d64b;
+      --offing-blue:#2457ff; --offing-sky:#42a5ff; --offing-green:#18b77a; --offing-teal:#00b8a9;
+      --offing-orange:#ff8a2a; --offing-coral:#ff5a3d; --offing-amber:#b77900; --offing-slate:#475569;
+      --atlas-bg:#fff; --atlas-surface:#fff; --atlas-surface-soft:#f7f8fa;
+      --atlas-ink:#101413; --atlas-body:#293331; --atlas-muted:#66716e; --atlas-line:#e0e3e5;
+      --atlas-main:#2d6261; --atlas-teal:#32d6c6; --atlas-sky:#9ed1ff; --atlas-pink:#eb4aa6;
+      --atlas-lilac:#9b7cff; --atlas-coral:#ff6b4a; --atlas-green:#70e5a8; --atlas-inverse:#111817; --atlas-inverse-2:#162321;
+      --display-font:"Avenir Next Condensed","Helvetica Neue Condensed","Arial Narrow","Roboto Condensed","Oswald",sans-serif;
+      --text-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      --bg:var(--atlas-bg); --top:#fff; --surface:var(--atlas-surface); --surface-2:var(--atlas-surface-soft);
+      --text:var(--atlas-ink); --body:var(--atlas-body); --muted:var(--atlas-muted); --line:var(--atlas-line);
+      --accent:var(--atlas-main); --accent-fill:#eaf1f0;
       --success:#157a38; --success-bg:#eaf6ee;
       --warning:#9a5b00; --warning-bg:#fff3df;
       --risk:#d70015; --risk-bg:#fff0f1;
       --blue:#2b67a0; --blue-bg:#eaf3ff;
       --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
-      --prism-a:#32d6c6; --prism-b:#9ed1ff; --prism-c:#f7a4d8;
+      --prism-a:var(--atlas-teal); --prism-b:var(--atlas-sky); --prism-c:var(--atlas-pink); --prism-d:var(--atlas-lilac); --prism-e:var(--atlas-coral);
       --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
     }
     @media (prefers-color-scheme: dark) {
@@ -35,49 +57,48 @@
     }
     * { box-sizing:border-box; letter-spacing:0; }
     html { scroll-behavior:smooth; }
-    body { margin:0; background:#fff; color:var(--body); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif; font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    body { margin:0; background:#fff; color:var(--body); font-family:var(--text-font); font-size:15.5px; line-height:1.66; overflow-x:hidden; }
     a { color:var(--accent); text-decoration:none; }
-    .topbar { position:relative; z-index:20; background:transparent; border-bottom:0; }
-    .topbar-inner { width:min(1290px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0 2px 18px; border-bottom:1px solid color-mix(in srgb,var(--line) 76%,transparent); }
-    .product-lockup { display:grid; color:var(--text); font-weight:720; line-height:1.05; white-space:nowrap; }
-    .product-lockup small { margin-top:5px; color:var(--muted); font-size:12px; font-weight:660; }
-    .nav { display:flex; gap:8px; overflow-x:auto; padding:14px 0 0; scrollbar-width:none; }
-    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); background:rgba(255,255,255,.66); border:1px solid color-mix(in srgb,var(--line) 76%,transparent); border-radius:999px; padding:0 12px; font-size:12px; line-height:1; font-weight:690; white-space:nowrap; }
-    main { width:min(1290px,calc(100vw - 68px)); margin:0 auto; }
-    section { scroll-margin-top:88px; margin:96px 0; }
-    .hero { position:relative; min-height:min(900px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:34px 54px; align-items:start; margin:0; padding:52px 0 52px; overflow:hidden; }
-    .hero::before { content:""; position:absolute; z-index:0; inset:52px -12vw auto auto; width:58vw; height:280px; background:linear-gradient(105deg,rgba(50,214,198,.14),rgba(158,209,255,.18) 48%,rgba(247,164,216,.18)); clip-path:polygon(8% 0,100% 0,92% 100%,0 82%); }
-    .hero::after { content:""; position:absolute; z-index:0; inset:auto auto 104px -7vw; width:44vw; height:170px; background:linear-gradient(100deg,rgba(247,164,216,.12),rgba(50,214,198,.1)); clip-path:polygon(0 18%,100% 0,88% 100%,12% 74%); }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner { width:min(1432px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0; }
+    .product-lockup { display:grid; color:var(--text); font-size:13px; font-weight:850; line-height:1.08; white-space:nowrap; }
+    .product-lockup small { margin-top:4px; color:var(--accent); font-size:12px; font-weight:800; }
+    .nav { display:flex; gap:18px; overflow-x:auto; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); font-size:12px; line-height:1; font-weight:780; white-space:nowrap; }
+    main { width:min(1432px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:78px 0; }
+    .hero { position:relative; min-height:min(650px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; grid-template-rows:auto auto; gap:22px 54px; align-items:center; margin:0; padding:34px 0 30px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero-outline { position:absolute; z-index:0; right:60px; top:36px; color:transparent; -webkit-text-stroke:1.25px color-mix(in srgb,var(--prism-c) 48%,transparent); font-family:var(--display-font); font-size:clamp(72px,8vw,116px); line-height:.82; font-weight:900; pointer-events:none; }
     .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
-    .hero-copy { max-width:760px; padding-top:0; }
-    .client-logo { width:max-content; max-width:min(300px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:38px; }
-    .client-logo img { display:block; max-width:280px; max-height:70px; object-fit:contain; }
-    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:860; text-transform:uppercase; margin-bottom:20px; }
-    .eyebrow::before { content:""; width:138px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-c),var(--prism-a),var(--prism-b)); }
+    .hero-copy { max-width:800px; padding-top:0; align-self:end; }
+    .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
+    .client-logo img { display:block; max-width:238px; max-height:64px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
+    .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
     h1,h2,h3,p { margin:0; }
-    h1 { max-width:760px; color:var(--text); font-size:clamp(58px,6vw,82px); line-height:.98; font-weight:760; }
-    .lead { max-width:700px; margin-top:24px; color:var(--body); font-size:19px; line-height:1.58; font-weight:660; }
-    .sublead { max-width:680px; margin-top:14px; color:var(--muted); font-size:14.5px; line-height:1.58; }
-    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; max-width:740px; margin-top:30px; padding-top:18px; border-top:1px solid color-mix(in srgb,var(--line) 82%,transparent); }
-    .hero-metric { min-width:0; padding-top:2px; overflow-wrap:anywhere; }
-    .hero-metric b { display:block; color:var(--text); font-size:30px; line-height:1; font-weight:760; }
-    .hero-metric span { display:block; max-width:190px; margin-top:8px; color:var(--muted); font-size:13px; line-height:1.42; font-weight:640; }
+    h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
+    .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; max-width:720px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:76px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:13px 14px; overflow-wrap:anywhere; }
+    .metric-label { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { flex:0 0 auto; width:9px; height:9px; background:var(--prism-a); }
+    .hero-metric.state-red .metric-label i { background:var(--risk); }
+    .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
+    .hero-metric.state-green .metric-label i { background:var(--success); }
+    .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
+    .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
     .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
     .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
     .hero-metric.state-red b { color:var(--risk); }
     .hero-metric.state-amber b { color:var(--warning); }
     .hero-metric.state-green b { color:var(--success); }
-    .diagnosis-chain { grid-column:1/-1; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); margin-top:0; border-top:1px solid color-mix(in srgb,var(--line) 88%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent); background:#fff; backdrop-filter:blur(10px); }
-    .chain-item { min-width:0; min-height:96px; padding:16px 18px; border-right:1px solid color-mix(in srgb,var(--line) 74%,transparent); overflow-wrap:anywhere; }
-    .chain-item:last-child { border-right:0; }
-    .chain-item i { display:block; margin-bottom:10px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:820; text-transform:uppercase; }
-    .chain-item b { display:block; color:var(--text); font-size:15px; line-height:1.25; font-weight:780; }
-    .chain-item span { display:block; margin-top:7px; color:var(--muted); font-size:12px; line-height:1.42; font-weight:620; }
-    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:0; background:#fff; }
-    .chain-item.state-red { box-shadow:inset 0 4px 0 var(--risk); }
-    .chain-item.state-amber { box-shadow:inset 0 4px 0 var(--warning); }
-    .chain-item.state-green { box-shadow:inset 0 4px 0 var(--success); }
-    .chain-item.state-blue { box-shadow:inset 0 4px 0 var(--blue); }
+    .diagnosis-chain { grid-column:1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; max-width:720px; align-self:start; margin-top:0; background:transparent; }
+    .chain-item { min-width:0; min-height:62px; padding:10px 12px; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:rgba(255,255,255,.92); overflow-wrap:anywhere; }
+    .chain-item i { display:block; margin-bottom:6px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:880; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:13px; line-height:1.25; font-weight:860; }
+    .chain-item span { display:none; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:1px solid rgba(16,20,19,.14); box-shadow:none; }
     .chain-item.state-red i { color:var(--risk); }
     .chain-item.state-amber i { color:var(--warning); }
     .chain-item.state-green i { color:var(--success); }
@@ -89,40 +110,45 @@
     .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
     .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
     .tag.neutral { color:var(--muted); background:var(--surface-2); }
-    .score-panel { position:relative; overflow:hidden; min-height:476px; color:var(--inverse-text); background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0)),var(--inverse-bg); border:1px solid color-mix(in srgb,var(--inverse-bg) 70%,white); border-radius:var(--radius); box-shadow:0 28px 70px rgba(16,20,19,.22); padding:24px 24px 20px; }
-    .score-panel::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
-    .score-kicker { color:var(--inverse-muted); font-size:12px; line-height:1; font-weight:820; text-transform:uppercase; margin-bottom:12px; }
-    .score-row { display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .score-number { font-size:84px; line-height:.92; font-weight:780; }
-    .score-number span { font-size:24px; color:var(--inverse-muted); font-weight:520; }
-    .tier { display:inline-grid; place-items:center; min-width:44px; min-height:44px; border-radius:999px; padding:0 12px; border:1px solid rgba(255,255,255,.25); color:#a8ffc5; font-size:15px; font-weight:900; }
-    .stars { margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,.13); color:var(--prism-c); font-size:23px; line-height:1; }
-    .star-score { margin-top:8px; color:var(--inverse-text); font-size:14px; line-height:1.35; font-weight:850; }
-    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:15px; }
-    .score-meta div { min-height:62px; border:1px solid rgba(255,255,255,.16); border-radius:var(--radius); padding:8px; background:rgba(255,255,255,.06); }
-    .score-meta b { display:block; color:var(--inverse-text); font-size:14.5px; line-height:1.16; overflow-wrap:anywhere; word-break:break-word; }
-    .score-meta span { display:block; margin-top:4px; color:var(--inverse-muted); font-size:12px; }
-    .subscore-list { margin-top:14px; padding-top:13px; border-top:1px solid rgba(255,255,255,.13); display:grid; gap:8px; }
-    .subscore { display:grid; grid-template-columns:92px 1fr 28px; align-items:center; gap:10px; color:var(--inverse-text); font-size:13px; font-weight:800; }
-    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); }
-    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--prism-a),var(--prism-b)); }
-    .score-formula { margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,.16); color:var(--inverse-muted); font-size:11.5px; line-height:1.35; }
+    .score-panel { position:relative; align-self:center; overflow:hidden; min-height:0; color:var(--inverse-text); background:linear-gradient(180deg,#13211f,#101716); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:0 30px 70px rgba(16,20,19,.22); padding:0; }
+    .score-strip { height:5px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c),var(--prism-d)); }
+    .score-inner { padding:24px 24px 22px; }
+    .score-top { display:flex; justify-content:space-between; gap:20px; align-items:start; margin-bottom:18px; }
+    .score-label { color:rgba(248,250,249,.68); font-size:12px; font-weight:850; text-transform:uppercase; font-family:var(--display-font); }
+    .score-number { font-size:86px; line-height:.86; font-weight:900; }
+    .score-rating { display:grid; justify-items:end; gap:6px; }
+    .tier { display:inline-grid; place-items:center; min-height:24px; border-radius:999px; padding:0 9px; border:1px solid rgba(255,255,255,.22); color:#a8ffc5; font-size:12px; line-height:1; font-weight:900; }
+    .stars { color:var(--prism-c); font-size:22px; line-height:1; white-space:nowrap; }
+    .star-score { color:rgba(248,250,249,.88); font-size:13px; line-height:1.35; font-weight:780; }
+    .score-verdict { margin:0; color:rgba(248,250,249,.88); line-height:1.45; font-size:14px; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 20px; }
+    .score-meta div { min-height:70px; border:1px solid rgba(255,255,255,.13); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.05); }
+    .score-meta span { display:block; color:rgba(248,250,249,.6); font-size:11px; margin-bottom:8px; font-weight:760; }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:15px; line-height:1.25; overflow-wrap:anywhere; word-break:break-word; }
+    .subscore-list { display:grid; gap:12px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 34px; align-items:center; gap:10px; color:rgba(248,250,249,.78); font-size:12px; font-weight:780; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.13); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:var(--prism-a); }
+    .track i.bar-2 { background:var(--prism-c); }
+    .track i.bar-3 { background:var(--prism-e); }
+    .score-formula { display:none; }
     @media (max-width: 1300px) and (min-width: 901px) {
-      .score-panel { min-height:0; padding:20px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
       .score-number { font-size:72px; }
-      .stars { margin-top:10px; padding-top:12px; }
+      .stars { font-size:21px; }
       .score-meta { margin-top:12px; }
       .score-meta div { min-height:58px; }
-      .subscore-list { margin-top:12px; padding-top:12px; gap:7px; }
+      .subscore-list { margin-top:12px; gap:7px; }
       .score-formula { display:none; }
     }
     @media (max-width: 1100px) and (min-width: 901px) {
       .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
-      .score-panel { min-height:470px; padding:22px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
       .score-number { font-size:64px; }
-      .score-number span { font-size:22px; }
-      .stars { margin-top:10px; font-size:24px; }
-      .star-score { margin-top:7px; font-size:13.5px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:13px; }
       .score-meta { margin-top:14px; gap:7px; }
       .score-meta div { padding:8px; }
       .score-meta b { font-size:14px; }
@@ -308,19 +334,25 @@
       .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
       .nav { display:none; }
       .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      .hero-outline { right:0; top:18px; font-size:48px; opacity:.42; }
       h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
       .lead { margin-top:18px; font-size:17px; line-height:1.36; }
       .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
       h2 { font-size:clamp(24px,7vw,30px); }
       section { margin:64px 0; }
       .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
-      .score-panel { min-height:auto; padding:20px 18px; }
+      .score-panel { min-height:auto; padding:0; }
+      .score-inner { padding:18px; }
+      .score-top { margin-bottom:14px; }
       .score-number { font-size:52px; }
-      .score-number span { font-size:22px; }
-      .stars { margin-top:10px; font-size:22px; }
-      .star-score { margin-top:6px; font-size:13.5px; line-height:1.25; }
-      .score-meta { display:none; }
-      .subscore-list { margin-top:14px; gap:8px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:12.5px; line-height:1.25; }
+      .score-verdict { font-size:13px; }
+      .score-meta { display:grid; gap:6px; margin:12px 0; }
+      .score-meta div { min-height:54px; padding:8px; }
+      .score-meta b { font-size:13px; }
+      .score-meta span { margin-bottom:5px; font-size:10.5px; }
+      .subscore-list { margin-top:12px; gap:7px; }
       .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
       .track,.mini-track { height:7px; }
       .score-formula { display:none; }
@@ -362,7 +394,7 @@
     }
   </style>
 </head>
-<body>
+<body data-offing-visual-baseline="canonical" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
   <header class="topbar">
     <div class="topbar-inner">
       <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
@@ -372,68 +404,77 @@
     </div>
   </header>
   <main>
-    
+
     <section class="hero" id="top">
+      <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
       <div class="hero-copy">
         <div class="client-logo" aria-label="RingConn logo">
           <img src="assets/brand-logos/ringconn-logo-official.png" alt="RingConn logo" />
         </div>
         <div class="eyebrow">North America Diagnosis</div>
-        <h1>北美业务诊断</h1>
+        <h1>北美业务<br>诊断</h1>
         <p class="lead">RingConn 的无订阅、长续航和 Gen 3 健康提醒已经形成清楚的购买理由，下一阶段先修 app 可信度、售后响应和 DTC 购买安全感，才能把新品声量转成稳定订单。</p>
         <div class="metric-strip" aria-label="首屏关键证据数字">
-          
+
           <div class="hero-metric state-amber">
-            <b>64/100</b>
-            <span>Atlas v3 总分，旧分 66。 <span class="evidence-list"><span class="evidence">[E3]</span></span></span>
+            <span class="metric-label"><i></i>Atlas v3 总分，旧分 66。 <span class="evidence-list"><span class="evidence">[E3]</span></span></span>
+            <b class="">64/100</b>
           </div>
           <div class="hero-metric state-amber">
-            <b>Cap 68</b>
-            <span>分数封顶来自 app 可信度。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
+            <span class="metric-label"><i></i>分数封顶来自 app 可信度。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
+            <b class="">Cap 68</b>
           </div>
           <div class="hero-metric state-red">
-            <b>P0</b>
-            <span>风险优先级：Gen 3 声量继续上升，但 app 与售后信任把 DTC 转化压在中段。。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+            <span class="metric-label"><i></i>风险优先级：Gen 3 声量继续上升，但 app 与售后信任把 DTC 转化压在中段。。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
+            <b class="">P0</b>
           </div>
         </div>
         <p class="sublead">公开数据看到三条线：Gen 3 抢 vascular insights 与 vibration alerts，Gen 2 守 sleep apnea 和长续航，Gen 2 Air 做 $199 入门；主要扣分集中在 Google Play / App Store 口碑、BBB 投诉和退换保修解释。</p>
         <div class="tag-row"><span class="tag green">无订阅心智强</span><span class="tag amber">Gen 3 新品声量可用</span><span class="tag red">App 与售后信任先修</span></div>
       </div>
       <aside class="score-panel" aria-label="RingConn Atlas score">
-        <div class="score-kicker">北美业务情况总分</div>
-        <div class="score-row">
-          <div class="score-number">64<span>/100</span></div>
-          <span class="tier green">C档</span>
-        </div>
-        <div class="stars" aria-label="3.2 out of 5 stars">★★★☆☆</div>
-        <div class="star-score">3.2 / 5 · C档 · Gen 3 声量继续上升，但 app 与售后信任把 DTC 转化压在中段。</div>
-        <div class="score-meta">
-          <div><b>1-10 → 10-100</b><span>阶段判断</span></div>
-          <div><b>DTC + Amazon health hardware</b><span>经营类型</span></div>
-          <div><b>中等</b><span>公开数据置信度</span></div>
-        </div>
-        <div class="subscore-list">
-          
-          <div class="subscore">
-            <span>业务健康度</span>
-            <div class="track"><i style="width:66%;"></i></div>
-            <b>66</b>
+        <div class="score-strip"></div>
+        <div class="score-inner">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Total diagnosis score</div>
+              <div class="score-number">64</div>
+            </div>
+            <div class="score-rating">
+              <span class="tier green">C档</span>
+              <div class="stars" aria-label="3.2 out of 5 stars">★ ★ ★ ☆ ☆</div>
+              <div class="star-score">3.2 / 5 星 · 公开数据</div>
+            </div>
           </div>
-          <div class="subscore">
-            <span>业务机会分</span>
-            <div class="track"><i style="width:78%;"></i></div>
-            <b>78</b>
+          <p class="score-verdict">C档 · Gen 3 声量继续上升，但 app 与售后信任把 DTC 转化压在中段。</p>
+          <div class="score-meta">
+            <div><span>阶段判断</span><b>1-10 → 10-100</b></div>
+            <div><span>经营类型</span><b>DTC + Amazon health hardware</b></div>
+            <div><span>置信度</span><b>中等</b></div>
           </div>
-          <div class="subscore">
-            <span>问题致命度</span>
-            <div class="track"><i style="width:61%;"></i></div>
-            <b>61</b>
+          <div class="subscore-list">
+
+            <div class="subscore">
+              <span>业务健康度</span>
+              <div class="track"><i class="bar-1" style="width:66%;"></i></div>
+              <b>66</b>
+            </div>
+            <div class="subscore">
+              <span>业务机会分</span>
+              <div class="track"><i class="bar-2" style="width:78%;"></i></div>
+              <b>78</b>
+            </div>
+            <div class="subscore">
+              <span>问题致命度</span>
+              <div class="track"><i class="bar-3" style="width:61%;"></i></div>
+              <b>61</b>
+            </div>
           </div>
+          <p class="score-formula">数据采集日期：2026-06-26。</p>
         </div>
-        <p class="score-formula">Atlas v3 已把品类购买契约、假增长信号和分数封顶纳入判断。数据采集日期：2026-06-26。</p>
       </aside>
       <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
-        
+
         <article class="chain-item state-amber">
           <i>P0</i>
           <b>app 可信度</b>
@@ -454,16 +495,11 @@
           <b>第二品线</b>
           <span>用独立证据验证，不用主线声量外推。</span>
         </article>
-        <article class="chain-item state-blue">
-          <i>NEXT</i>
-          <b>路由</b>
-          <span>CommerceFlow 优先修官网承接和售后信任，SignalMark 同步清理健康证明。</span>
-        </article>
       </div>
     </section>
-    
+
     <section id="free-diagnosis">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Atlas Routing</div>
@@ -496,8 +532,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>品牌理由清楚，但健康证明和 app 信任还要同频。</h3>
               <p>无订阅、长续航、sleep apnea、vascular trends、vibration alerts 都能形成差异，但健康相邻品牌必须把边界和可信度讲得更严谨。</p>
-              
-              
+
+
             </div>
           </article><article class="specialist-card state-red">
             <div class="specialist-score">60<span>/100</span></div>
@@ -505,8 +541,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>官网能解释新品，但交易安全感还没有完全接住。</h3>
               <p>Amazon 提供 free returns 和官方店信任；官网需要把 return、warranty、Care+、sizing、shipping、support SLA 做成更短路径。</p>
-              
-              
+
+
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">63<span>/100</span></div>
@@ -514,8 +550,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>PR 和 creator 可用，但内容要优先处理 objections。</h3>
               <p>LOTR campaign 和 Gen 3 媒体报道有声量，但内容工厂要围绕 app、accuracy、comparison、support 和 sizing 做复用。</p>
-              
-              
+
+
             </div>
           </article>
         </div>
@@ -530,9 +566,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="death-path">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Score-Cap &amp; Risk</div>
@@ -576,19 +612,19 @@
             <h3>售后、保修和退货信任债</h3>
             <p>高客单健康硬件会被退货、尺寸、replacement 和客服响应影响首单。BBB F rating 与 14-day return 规则会把谨慎用户推向 Amazon 或竞品。</p>
             <p class="risk-evidence">退货政策、Care+ 与 BBB 投诉信号形成同一条 DTC 信任链。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E8]</span><span class="evidence">[E10]</span></span></p>
-            
+
           </article><article class="risk-path-card state-amber">
             <div class="risk-card-top"><span>P0</span><b>封顶 68</b></div>
             <h3>健康相邻卖点没有转成可信证明</h3>
             <p>vascular trends、sleep apnea 和 vibration alerts 能制造兴趣，也会提高证明成本。页面必须清楚说明能看到什么、不能替代什么。</p>
             <p class="risk-evidence">Gen 3 官方页与媒体报道提供卖点，但健康边界仍要在 PDP、FAQ、creator brief 和 app onboarding 中前置。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E14]</span></span></p>
-            
+
           </article><article class="risk-path-card state-amber">
             <div class="risk-card-top"><span>P1</span><b>封顶 72</b></div>
             <h3>PR / creator 声量没有降低购买犹豫</h3>
             <p>LOTR campaign 和 Gen 3 报道能带来注意力，但如果内容没有回答 app、accuracy、support、sizing 和 comparison，声量会停在兴趣层。</p>
             <p class="risk-evidence">活动页和媒体报道证明话题存在，临门疑虑仍来自 app、售后和比较搜索。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E16]</span></span></p>
-            
+
           </article>
         </div>
         <div class="signal-ledger">
@@ -615,7 +651,7 @@
           <div class="ledger-head">
             <div class="module-label">分数封顶项</div>
             <h3>RingConn 当前总分被 v3 风险封顶。</h3>
-            <p>机会分可以高，但 app、健康证明和售后信任没有同步修复时，新品声量不能继续抬高总分。</p>
+            <p>机会分可以高，但 app、健康证明和售后信任没有同步修复时，总分不应被新品声量抬高。</p>
           </div>
           <article class="cap-reason state-amber">
             <b>68</b>
@@ -630,10 +666,10 @@
         </div>
       </div>
     </section>
-    
-    
+
+
     <section id="stage">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Stage Judgment</div>
@@ -645,7 +681,7 @@
         <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>睡眠、恢复、压力、活动监测已经是成熟需求，RingConn 不需要再证明 smart ring 需求存在。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E13]</span></span></p></div><div class="stage-step state-green"><span>1-10</span><b>当前基础</b><p>Gen 2 以 sleep apnea、无订阅、长续航建立差异，Amazon 和媒体榜单都有可见信号。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E6]</span><span class="evidence">[E13]</span></span></p></div><div class="stage-step state-amber"><span>10-100</span><b>下一关</b><p>Gen 3 推 vascular health insights 与 vibration alerts，但健康场景的信任要求更高，app、客服和声明边界必须同步升级。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E14]</span></span></p></div><div class="stage-step state-neutral"><span>100+</span><b>品类领导防守</b><p>Oura 继续占 premium health ring 心智，Samsung 占 Galaxy ecosystem 信任，RingConn 还需要把无订阅优势转成可被搜索和比较验证的理由。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p></div>
       </div>
       <div class="grid-3">
-        
+
         <article class="card state-green">
           <div class="card-state">主线动作</div>
           <h3>阶段最该做的事</h3>
@@ -663,9 +699,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="audience">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Audience Layers</div>
@@ -697,7 +733,7 @@
         </div>
       </div>
       <div class="grid-3">
-        
+
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>核心盘要继续放大</h3>
@@ -715,9 +751,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="channel">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Business Type &amp; Channel</div>
@@ -752,7 +788,7 @@
         </div>
       </div>
       <div class="grid-4">
-        
+
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>Amazon 的角色</h3>
@@ -775,9 +811,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="search">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Search Mindshare</div>
@@ -809,9 +845,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="voc">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">VOC &amp; Reputation</div>
@@ -820,7 +856,7 @@
         <p class="section-note">RingConn 的正面声音集中在 no subscription、battery、comfort、sleep tracking；负面声音集中在 app、sync、accuracy、customer service 和 warranty。</p>
       </div>
       <div class="grid-4">
-        
+
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>Amazon</h3>
@@ -854,9 +890,9 @@
       </div>
       <p class="section-note wide-note">正向 VOC 足以支持首单，尤其是反订阅和长续航；负向 VOC 会影响官网成交和长期留存，应被转成 app release notes、support SLA、warranty flow、comparison FAQ 和数据准确性解释。</p>
     </section>
-    
+
     <section id="ceiling">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Product-Line Ceiling</div>
@@ -888,9 +924,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="intent">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">User Intent Map</div>
@@ -907,9 +943,9 @@
         </table>
       </div>
     </section>
-    
+
     <section id="fit">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Message-Market Fit</div>
@@ -945,9 +981,9 @@
         </div>
       </div>
     </section>
-    
+
     <section id="onepage">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">One-Page Summary</div>
@@ -959,9 +995,9 @@
         <div class="summary-item"><b>阶段</b><p>1-10 已成立，正在进入 10-100。品牌有产品线和外部信号，但 DTC 信任还没有完全跟上。</p></div><div class="summary-item"><b>增长主线</b><p>Gen 2 保持 no subscription + sleep apnea + battery 的现金线，Gen 3 用 vascular insights 和 vibration alerts 做升级线。</p></div><div class="summary-item"><b>Top 3 问题</b><p>App 口碑拖累长期价值；售后 / BBB 拉低 DTC 信任；Gen 3 健康功能的证明和边界要补。</p></div><div class="summary-item"><b>预算方向</b><p>加：app trust page、support / warranty page、comparison hub、Gen 3 proof content。控：只靠联名礼品和折扣拉新。</p></div><div class="summary-item"><b>第一修复</b><p>30 天内重做 Gen 3 PDP 后三屏：health boundary、app support、warranty return、comparison proof。</p></div><div class="summary-item"><b>数据缺口</b><p>需要 Shopify、Amazon、Xiyou、app cohort、退货原因、replacement cost、support SLA 和 Gen 3 cohort 数据校准。</p></div><div class="summary-item"><b>路由建议</b><p>CommerceFlow 优先修官网承接和售后信任，SignalMark 同步清理健康证明。</p></div>
       </div>
     </section>
-    
+
     <section id="blocks">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Specialist Scorecard</div>
@@ -973,21 +1009,21 @@
         <article class="biz-card state-amber">
           <div class="biz-top"><div><span>SignalMark</span><h3>品牌理由清楚，但健康证明和 app 信任还要同频。</h3><p>无订阅、长续航、sleep apnea、vascular trends、vibration alerts 都能形成差异，但健康相邻品牌必须把边界和可信度讲得更严谨。</p></div><b>70</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>RingConn 已经有清楚产品线、媒体报道、无订阅价值和长续航心智。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E13]</span><span class="evidence">[E14]</span></span></p></div><div><strong>做得差</strong><p>App 评分和 BBB 风险会反向伤害健康硬件品牌信任。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p></div></div>
-          
+
         </article><article class="biz-card state-red">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>官网能解释新品，但交易安全感还没有完全接住。</h3><p>Amazon 提供 free returns 和官方店信任；官网需要把 return、warranty、Care+、sizing、shipping、support SLA 做成更短路径。</p></div><b>60</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>DTC 有 Gen 3 首发、sizing kit、Care+、活动页和完整产品线。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E8]</span><span class="evidence">[E16]</span></span></p></div><div><strong>做得差</strong><p>14-day return、BBB F rating、app 评分和客服疑虑会把高意图用户推向 Amazon 或竞品。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p></div></div>
-          
+
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>TideLens</span><h3>PR 和 creator 可用，但内容要优先处理 objections。</h3><p>LOTR campaign 和 Gen 3 媒体报道有声量，但内容工厂要围绕 app、accuracy、comparison、support 和 sizing 做复用。</p></div><b>63</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Gen 3 vibration alerts 有新鲜话题，LOTR campaign 有事件营销钩子。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E16]</span></span></p></div><div><strong>做得差</strong><p>如果内容只放大新品亮点，不处理 app / warranty / comparison，流量会在临门搜索环节流失。</p></div></div>
-          
+
         </article>
       </div>
     </section>
-    
+
     <section id="issues">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Top 3 Issues</div>
@@ -1029,7 +1065,7 @@
         </div>
         <p class="section-note">RingConn 的防守要按购买理由拆：订阅、续航、app、健康准确性、生态和售后。</p>
       </div><div class="grid-4">
-        
+
         <article class="card state-red">
           <div class="card-state">信任压力</div>
           <h3>Oura 抢高信任健康戒指心智</h3>
@@ -1051,9 +1087,9 @@
           <p>低价戒指会用便宜和功能列表吸引试错用户。RingConn 要把 app、accuracy、support 和长期使用解释清楚，避免被简单价格锚定。</p>
         </article>
       </div></section>
-    
+
     <section id="positioning">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Positioning Path</div>
@@ -1062,7 +1098,7 @@
         <p class="section-note">RingConn 不能只讲 no subscription。下一阶段要把轻量佩戴、健康趋势、app 可信度和售后确定性连成一条购买理由。</p>
       </div>
       <div class="grid-3">
-        
+
         <article class="card state-amber">
           <div class="card-state">现在能卖</div>
           <h3>当前理由</h3>
@@ -1088,9 +1124,9 @@
         <p><b>CTA:</b> Find your RingConn fit</p>
       </div>
     </section>
-    
+
     <section id="scores">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">11-Dimension Score</div>
@@ -1154,7 +1190,7 @@
         </div>
         <p class="section-note">RingConn 现在有卖点，关键是把卖点变成可下单、可留存、可复购的信任路径。</p>
       </div><div class="grid-4">
-        
+
         <article class="card state-green">
           <div class="card-state">立即加</div>
           <h3>加预算：App Trust Page</h3>
@@ -1181,9 +1217,9 @@
           <p>等 app trust、support hub、comparison hub 和 Gen 3 proof matrix 上线后，再扩大 broad paid spend。</p>
         </article>
       </div></section>
-    
+
     <section id="roadmap">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">90 / 180 Day Roadmap</div>
@@ -1201,9 +1237,9 @@
         </article>
       </div>
     </section>
-    
+
     <section id="departments">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Department RYG</div>
@@ -1268,7 +1304,7 @@
         </div>
         <p class="section-note">公开证据足以看出 DTC 信任和 app 口碑问题，但利润、库存和广告效率必须用后台校准。</p>
       </div><div class="grid-3">
-        
+
         <article class="card state-amber">
           <div class="card-state">需校准</div>
           <h3>公开数据限制</h3>
@@ -1290,9 +1326,9 @@
           <p>进入付费版前，应补 Shopify、Amazon、Xiyou、App analytics、support tickets、return reasons、creator spend 和 paid media 数据。</p>
         </article>
       </div></section>
-    
+
     <section id="evidence">
-      
+
       <div class="section-head">
         <div>
           <div class="eyebrow">Evidence Table</div>
@@ -1316,126 +1352,126 @@
               <td><a href="https://ringconn.com/" target="_blank" rel="noopener">RingConn official homepage</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official site；产品线、品牌主张、Gen 3 / Gen 2 / Gen 2 Air 结构。</td>
+              <td>Public source；Public source；Official site；产品线、品牌主张、Gen 3 / Gen 2 / Gen 2 Air 结构。</td>
               <td>High</td>
             </tr><tr>
               <td>E2</td>
               <td><a href="https://ringconn.com/products/ringconn-gen-3" target="_blank" rel="noopener">RingConn Gen 3 product page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official product page；Gen 3 价格、功能、shipping、sizing、battery 和 vascular health boundary。</td>
+              <td>Public source；Public source；Official product page；Gen 3 价格、功能、shipping、sizing、battery 和 vascular health boundary。</td>
               <td>High</td>
             </tr><tr>
               <td>E4</td>
               <td><a href="https://ringconn.com/pages/ringconn-gen-2" target="_blank" rel="noopener">RingConn Gen 2 campaign page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official product page；sleep apnea accuracy、SpO2 / HR sensing、Gen 2 vs Gen 2 Air。</td>
+              <td>Public source；Public source；Official product page；sleep apnea accuracy、SpO2 / HR sensing、Gen 2 vs Gen 2 Air。</td>
               <td>High</td>
             </tr><tr>
               <td>E5</td>
               <td><a href="https://ringconn.com/products/ringconn-gen-2-air" target="_blank" rel="noopener">RingConn Gen 2 Air product page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official product page；$199 入门线、review count、库存状态。</td>
+              <td>Public source；Public source；Official product page；$199 入门线、review count、库存状态。</td>
               <td>High</td>
             </tr><tr>
               <td>E6</td>
               <td><a href="https://www.amazon.com/RingConn-Monitoring-Subscription-Battery-Compatible/dp/B0DG2QKMFX" target="_blank" rel="noopener">Amazon RingConn Gen 2 official store page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Marketplace page；official store、free returns、HSA/FSA、warranty、product bullets、Amazon 成交安全感。</td>
+              <td>Public source；Public source；Marketplace page；official store、free returns、HSA/FSA、warranty、product bullets、Amazon 成交安全感。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E7</td>
               <td><a href="https://ringconn.com/pages/return-refund-policy" target="_blank" rel="noopener">RingConn return and refund policy</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official policy；14 calendar days、valid reason、退货流程风险。</td>
+              <td>Public source；Public source；Official policy；14 calendar days、valid reason、退货流程风险。</td>
               <td>High</td>
             </tr><tr>
               <td>E8</td>
               <td><a href="https://ringconn.com/pages/ringconn-care-plus" target="_blank" rel="noopener">RingConn Care+</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official policy；1-year / 2-year Care+、replacement、damage、theft、activation。</td>
+              <td>Public source；Public source；Official policy；1-year / 2-year Care+、replacement、damage、theft、activation。</td>
               <td>High</td>
             </tr><tr>
               <td>E9</td>
               <td><a href="https://www.trustpilot.com/review/ringconn.com" target="_blank" rel="noopener">Trustpilot RingConn review page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Review platform；产品体验、客服和 app 评价分化。</td>
+              <td>Public source；Public source；Review platform；产品体验、客服和 app 评价分化。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E10</td>
               <td><a href="https://www.bbb.org/us/de/wilmington/profile/online-retailer/ringconn-0251-92032301" target="_blank" rel="noopener">BBB RingConn business profile</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Review / complaint platform；not accredited、F rating、投诉未回应信号。</td>
+              <td>Public source；Public source；Review / complaint platform；not accredited、F rating、投诉未回应信号。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E11</td>
               <td><a href="https://apps.apple.com/us/app/ringconn/id6444470583" target="_blank" rel="noopener">Apple App Store RingConn app</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；App store；3.7 rating、725 ratings、version history、iOS 用户反馈。</td>
+              <td>Public source；Public source；App store；3.7 rating、725 ratings、version history、iOS 用户反馈。</td>
               <td>High</td>
             </tr><tr>
               <td>E12</td>
               <td><a href="https://play.google.com/store/apps/details?hl=en_US&amp;id=com.gdjztech.ringconn" target="_blank" rel="noopener">Google Play RingConn app</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；App store；2.6 rating、1.46K reviews、100K+ downloads、recent Android feedback。</td>
+              <td>Public source；Public source；App store；2.6 rating、1.46K reviews、100K+ downloads、recent Android feedback。</td>
               <td>High</td>
             </tr><tr>
               <td>E13</td>
               <td><a href="https://www.wareable.com/fashion/best-smart-rings-1340" target="_blank" rel="noopener">Wareable best smart rings 2026</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Media review；RingConn Gen 2 外部榜单、best smart ring 证据。</td>
+              <td>Public source；Public source；Media review；RingConn Gen 2 外部榜单、best smart ring 证据。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E14</td>
               <td><a href="https://www.techradar.com/health-fitness/gen-3-is-not-trying-to-become-a-noisy-mini-smartwatch-the-ringconn-gen-3-smart-ring-boasts-a-feature-that-even-the-oura-ring-4-and-the-samsung-galaxy-ring-dont-have-vibration-alerts" target="_blank" rel="noopener">TechRadar RingConn Gen 3 feature coverage</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Media coverage；Gen 3 vibration alerts、非 smartwatch 干扰定位。</td>
+              <td>Public source；Public source；Media coverage；Gen 3 vibration alerts、非 smartwatch 干扰定位。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E15</td>
               <td><a href="https://www.theverge.com/gadgets/953655/ringconn-lord-of-the-rings" target="_blank" rel="noopener">The Verge RingConn LOTR campaign coverage</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Media coverage；LOTR 25th anniversary campaign、Gen 3 launch attention。</td>
+              <td>Public source；Public source；Media coverage；LOTR 25th anniversary campaign、Gen 3 launch attention。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E16</td>
               <td><a href="https://ringconn.com/pages/ringconn-anniversary-campaign" target="_blank" rel="noopener">RingConn anniversary campaign page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Official campaign page；first 3,500 Gen 3 orders、collectible set、digital movies、campaign rules。</td>
+              <td>Public source；Public source；Official campaign page；first 3,500 Gen 3 orders、collectible set、digital movies、campaign rules。</td>
               <td>High</td>
             </tr><tr>
               <td>E17</td>
               <td><a href="https://support.ouraring.com/hc/en-us/articles/33045011508115-Oura-Ring-4" target="_blank" rel="noopener">Oura Ring 4 official support page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Competitor official page；Oura Ring 4 Smart Sensing、materials、battery、membership features。</td>
+              <td>Public source；Public source；Competitor official page；Oura Ring 4 Smart Sensing、materials、battery、membership features。</td>
               <td>High</td>
             </tr><tr>
               <td>E18</td>
               <td><a href="https://www.samsung.com/us/rings/galaxy-ring/" target="_blank" rel="noopener">Samsung Galaxy Ring official page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Competitor official page；Galaxy Ring battery and ecosystem positioning。</td>
+              <td>Public source；Public source；Competitor official page；Galaxy Ring battery and ecosystem positioning。</td>
               <td>High</td>
             </tr><tr>
               <td>E19</td>
               <td><a href="https://www.amazon.com/SAMSUNG-Tracking-Wellness-Resistant-Battery/dp/B0D1YGD7QZ" target="_blank" rel="noopener">Amazon Samsung Galaxy Ring page</a></td>
               <td>2026-06-25</td>
               <td>Public source</td>
-              <td>Public source；Marketplace competitor page；Galaxy Ring marketplace rating、review count、no subscription positioning。</td>
+              <td>Public source；Public source；Marketplace competitor page；Galaxy Ring marketplace rating、review count、no subscription positioning。</td>
               <td>Medium</td>
             </tr>
           </tbody>
