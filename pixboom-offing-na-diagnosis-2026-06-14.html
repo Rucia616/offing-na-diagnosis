@@ -240,12 +240,17 @@
     .mind-card { grid-column:span 2; }
     .mind-card:nth-child(n+4) { grid-column:span 3; }
     .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
-    .cloud { min-height:245px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); position:relative; overflow:hidden; }
-    .cloud span { position:absolute; font-weight:900; line-height:1; white-space:nowrap; }
+    .cloud { min-height:260px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); display:flex; flex-wrap:wrap; align-content:center; justify-content:center; align-items:center; gap:12px 16px; padding:24px; overflow:hidden; }
+    .cloud span { position:relative; display:inline-flex; max-width:100%; font-weight:900; line-height:1.04; white-space:nowrap; }
     .positive span { color:var(--success); }
     .negative span { color:var(--risk); }
-    .w1 { font-size:14px; } .w2 { font-size:17px; } .w3 { font-size:21px; } .w4 { font-size:27px; } .w5 { font-size:34px; }
-    .p0 { left:14%; top:23%; } .p1 { left:55%; top:19%; } .p2 { left:32%; top:45%; } .p3 { right:8%; top:47%; } .p4 { left:14%; top:67%; } .p5 { left:54%; top:70%; } .p6 { left:7%; top:83%; } .p7 { left:40%; top:83%; } .p8 { right:8%; top:79%; } .p9 { left:8%; top:50%; } .p10 { left:43%; top:59%; } .p11 { right:12%; top:33%; } .p12 { left:28%; top:13%; } .p13 { right:7%; top:64%; }
+    .w1 { font-size:13px; } .w2 { font-size:16px; } .w3 { font-size:20px; } .w4 { font-size:25px; } .w5 { font-size:30px; }
+    .w5.long { font-size:26px; } .w5.extra-long { font-size:22px; }
+    .w4.long { font-size:22px; } .w4.extra-long { font-size:19px; }
+    .w3.long { font-size:18px; } .w3.extra-long { font-size:16px; }
+    .w2.long,.w2.extra-long { font-size:15px; }
+    .w1.long,.w1.extra-long { font-size:13px; }
+    .p0 { margin-top:6px; } .p1 { margin-bottom:18px; } .p2 { margin-top:22px; } .p3 { margin-bottom:6px; } .p4 { margin-left:8px; } .p5 { margin-right:12px; } .p6 { margin-top:14px; } .p7 { margin-bottom:12px; } .p8 { margin-left:14px; } .p9 { margin-top:28px; } .p10 { margin-bottom:20px; } .p11 { margin-right:20px; } .p12 { margin-top:10px; } .p13 { margin-bottom:8px; }
     .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
     .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
     table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
@@ -320,9 +325,12 @@
       .track,.mini-track { height:7px; }
       .score-formula { display:none; }
       .stage-track { grid-template-columns:1fr 1fr; }
-      .cloud { min-height:auto; display:flex; flex-wrap:wrap; align-content:flex-start; align-items:center; gap:10px 12px; padding:16px; overflow:hidden; }
-      .cloud span { position:static; line-height:1.05; }
+      .cloud { min-height:auto; align-content:flex-start; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { line-height:1.05; }
       .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .cloud .w5.long { font-size:24px; } .cloud .w5.extra-long { font-size:20px; }
+      .cloud .w4.long { font-size:21px; } .cloud .w4.extra-long { font-size:18px; }
+      .cloud .w3.long { font-size:17px; } .cloud .w3.extra-long { font-size:15px; }
       .audience-map { min-height:auto; padding:14px; }
       .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
       .audience-band b { font-size:16px; }
@@ -815,11 +823,11 @@
       <div class="wordcloud-wrap">
         <article class="wordcloud">
           <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
-          <div class="cloud positive"><span class="w5 p0">4K high speed</span><span class="w5 p1">global shutter</span><span class="w5 p2">RAW</span><span class="w4 p3">cinema</span><span class="w4 p4">rental alternative</span><span class="w4 p5">BackerKit</span><span class="w3 p6">CineD</span><span class="w3 p7">shipping</span><span class="w3 p8">firmware</span><span class="w2 p9">Pro Card</span><span class="w2 p10">mounts</span><span class="w2 p11">community</span></div>
+          <div class="cloud positive"><span class="w5 p0">4K high speed</span><span class="w5 p1">global shutter</span><span class="w5 p2">RAW</span><span class="w4 p3">cinema</span><span class="w4 p4 long">rental alternative</span><span class="w4 p5">BackerKit</span><span class="w3 p6">CineD</span><span class="w3 p7">shipping</span><span class="w3 p8">firmware</span><span class="w2 p9">Pro Card</span><span class="w2 p10">mounts</span><span class="w2 p11">community</span></div>
         </article>
         <article class="wordcloud">
           <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
-          <div class="cloud negative"><span class="w5 p0">delivery delay</span><span class="w5 p1">firmware</span><span class="w5 p2">repair</span><span class="w4 p3">restocking fee</span><span class="w4 p4">support</span><span class="w4 p5">production proof</span><span class="w3 p6">availability</span><span class="w3 p7">workflow</span><span class="w3 p8">local service</span><span class="w2 p9">beta issues</span><span class="w2 p10">price</span><span class="w2 p11">trust</span></div>
+          <div class="cloud negative"><span class="w5 p0">delivery delay</span><span class="w5 p1">firmware</span><span class="w5 p2">repair</span><span class="w4 p3">restocking fee</span><span class="w4 p4">support</span><span class="w4 p5 long">production proof</span><span class="w3 p6">availability</span><span class="w3 p7">workflow</span><span class="w3 p8">local service</span><span class="w2 p9">beta issues</span><span class="w2 p10">price</span><span class="w2 p11">trust</span></div>
         </article>
       </div>
       <p class="section-note wide-note">正向 VOC 继续支持 DTC preorder 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
