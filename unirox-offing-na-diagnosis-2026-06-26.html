@@ -360,14 +360,6 @@
     @media (prefers-color-scheme: dark) {
       .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -477,7 +469,7 @@
           <div class="eyebrow">Atlas Routing</div>
           <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
-        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
       </div>
       <div class="routing-system" data-strict-module="atlas-routing">
         <article class="route-intake">
@@ -504,6 +496,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>行业词和比较词不足</h3>
               <p>品牌词有起点，但 ultrasonic cutter 的行业心智还没有被吃透。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-red">
             <div class="specialist-score">48<span>/100</span></div>
@@ -511,6 +505,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>购买前解释不够</h3>
               <p>套装价格明确，材料、耗材、安全和保修仍会拖慢下单。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-red">
             <div class="specialist-score">46<span>/100</span></div>
@@ -518,6 +514,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>内容信任需要起量</h3>
               <p>新工具需要可视化 demo 和 maker 场景，不适合只靠静态产品页。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -626,6 +624,7 @@
         </div>
       </div>
     </section>
+    
     
     <section id="stage">
       
@@ -932,12 +931,15 @@
         <article class="biz-card state-amber">
           <div class="biz-top"><div><span>SignalMark</span><h3>行业词和比较词不足</h3><p>品牌词有起点，但 ultrasonic cutter 的行业心智还没有被吃透。</p></div><b>50</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>产品定义清楚。</p></div><div><strong>做得差</strong><p>第三方搜索 proof 薄。</p></div></div>
+          
         </article><article class="biz-card state-red">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>购买前解释不够</h3><p>套装价格明确，材料、耗材、安全和保修仍会拖慢下单。</p></div><b>48</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>SKU 阶梯清楚。</p></div><div><strong>做得差</strong><p>售后和耗材页不足。</p></div></div>
+          
         </article><article class="biz-card state-red">
           <div class="biz-top"><div><span>TideLens</span><h3>内容信任需要起量</h3><p>新工具需要可视化 demo 和 maker 场景，不适合只靠静态产品页。</p></div><b>46</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>产品适合视频演示。</p></div><div><strong>做得差</strong><p>独立评测信号不足。</p></div></div>
+          
         </article>
       </div>
     </section>

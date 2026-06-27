@@ -360,14 +360,6 @@
     @media (prefers-color-scheme: dark) {
       .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -477,7 +469,7 @@
           <div class="eyebrow">Atlas Routing</div>
           <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
-        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
       </div>
       <div class="routing-system" data-strict-module="atlas-routing">
         <article class="route-intake">
@@ -504,6 +496,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>品牌理由清楚，但健康证明和 app 信任还要同频。</h3>
               <p>无订阅、长续航、sleep apnea、vascular trends、vibration alerts 都能形成差异，但健康相邻品牌必须把边界和可信度讲得更严谨。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-red">
             <div class="specialist-score">60<span>/100</span></div>
@@ -511,6 +505,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>官网能解释新品，但交易安全感还没有完全接住。</h3>
               <p>Amazon 提供 free returns 和官方店信任；官网需要把 return、warranty、Care+、sizing、shipping、support SLA 做成更短路径。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">63<span>/100</span></div>
@@ -518,6 +514,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>PR 和 creator 可用，但内容要优先处理 objections。</h3>
               <p>LOTR campaign 和 Gen 3 媒体报道有声量，但内容工厂要围绕 app、accuracy、comparison、support 和 sizing 做复用。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -617,7 +615,7 @@
           <div class="ledger-head">
             <div class="module-label">分数封顶项</div>
             <h3>RingConn 当前总分被 v3 风险封顶。</h3>
-            <p>机会分可以高，但 app、健康证明和售后信任没有同步修复时，总分不应被新品声量抬高。</p>
+            <p>机会分可以高，但 app、健康证明和售后信任没有同步修复时，新品声量不能继续抬高总分。</p>
           </div>
           <article class="cap-reason state-amber">
             <b>68</b>
@@ -632,6 +630,7 @@
         </div>
       </div>
     </section>
+    
     
     <section id="stage">
       
@@ -974,12 +973,15 @@
         <article class="biz-card state-amber">
           <div class="biz-top"><div><span>SignalMark</span><h3>品牌理由清楚，但健康证明和 app 信任还要同频。</h3><p>无订阅、长续航、sleep apnea、vascular trends、vibration alerts 都能形成差异，但健康相邻品牌必须把边界和可信度讲得更严谨。</p></div><b>70</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>RingConn 已经有清楚产品线、媒体报道、无订阅价值和长续航心智。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E13]</span><span class="evidence">[E14]</span></span></p></div><div><strong>做得差</strong><p>App 评分和 BBB 风险会反向伤害健康硬件品牌信任。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p></div></div>
+          
         </article><article class="biz-card state-red">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>官网能解释新品，但交易安全感还没有完全接住。</h3><p>Amazon 提供 free returns 和官方店信任；官网需要把 return、warranty、Care+、sizing、shipping、support SLA 做成更短路径。</p></div><b>60</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>DTC 有 Gen 3 首发、sizing kit、Care+、活动页和完整产品线。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E8]</span><span class="evidence">[E16]</span></span></p></div><div><strong>做得差</strong><p>14-day return、BBB F rating、app 评分和客服疑虑会把高意图用户推向 Amazon 或竞品。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>TideLens</span><h3>PR 和 creator 可用，但内容要优先处理 objections。</h3><p>LOTR campaign 和 Gen 3 媒体报道有声量，但内容工厂要围绕 app、accuracy、comparison、support 和 sizing 做复用。</p></div><b>63</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Gen 3 vibration alerts 有新鲜话题，LOTR campaign 有事件营销钩子。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E16]</span></span></p></div><div><strong>做得差</strong><p>如果内容只放大新品亮点，不处理 app / warranty / comparison，流量会在临门搜索环节流失。</p></div></div>
+          
         </article>
       </div>
     </section>

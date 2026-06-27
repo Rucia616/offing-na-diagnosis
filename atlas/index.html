@@ -9,10 +9,10 @@
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #fff;
-      --top: #fff;
+      --bg: #f5f5f7;
+      --top: #fbfbfd;
       --surface: #ffffff;
-      --surface-2: #fff;
+      --surface-2: #f7f8fa;
       --text: #101413;
       --body: #293331;
       --muted: #66716e;
@@ -475,7 +475,7 @@
     }
     @media (prefers-color-scheme: dark) {
       .report-logo {
-        background: #fff;
+        background: #f7f8fa;
         border-color: #d7d9dc;
       }
       .report-logo.logo-invert img { filter: none; }
@@ -618,14 +618,6 @@
       .quick-card p, .library-card p, .file-card p { font-size: 13.5px; }
       .library-item { grid-template-columns: 1fr; gap: 6px; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -718,7 +710,6 @@
           <select class="filter" id="statusFilter" aria-label="按报告状态筛选">
             <option value="">全部状态</option>
             <option value="latest">最新版</option>
-            <option value="legacy">旧链接覆盖</option>
             <option value="archive">归档版</option>
           </select>
           <select class="filter" id="sortFilter" aria-label="排序方式">
@@ -747,9 +738,9 @@
           <div><div class="report-logo "><img src="../assets/brand-logos/ulike-logo-official.svg" alt="Ulike logo" /></div><h3>Ulike</h3><p>Air 10 主线、ReGlow / JMOON 第二线、售后信任和搜索承接。</p></div>
           <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 69 分，B 档">69 · B档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">美容个护</span></div>
         </a>
-        <a class="report-card" data-name="plaud ai note recorder ai hardware subscription team workflow" data-stage="10-100" data-category="hardware" data-type="subscription" data-status="legacy" data-score="68" data-tier="B" href="../plaud-ai-offing-na-diagnosis-2026-06-14.html">
+        <a class="report-card" data-name="plaud ai note recorder ai hardware subscription team workflow" data-stage="10-100" data-category="hardware" data-type="subscription" data-status="latest" data-score="68" data-tier="B" href="../plaud-ai-offing-na-diagnosis-2026-06-15.html">
           <div><div class="report-logo "><img src="../assets/plaud-logo.png" alt="Plaud AI logo" /></div><h3>Plaud AI</h3><p>AI 录音硬件、订阅续费、团队席位、垂直工作流和隐私信任。</p></div>
-          <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 68 分，B 档">68 · B档</span><span class="pill green">2026-06-26 v3</span><span class="pill warn">旧链接覆盖</span><span class="pill">10-100</span><span class="pill">AI硬件</span></div>
+          <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 68 分，B 档">68 · B档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">AI硬件</span></div>
         </a>
         <a class="report-card" data-name="medicube k beauty booster pro tiktok shop ulta amazon beauty tech" data-stage="10-100" data-category="beauty" data-type="socialmarketplace" data-status="latest" data-score="67" data-tier="B" href="../medicube-offing-na-diagnosis-2026-06-25.html">
           <div><div class="report-logo "><img src="../assets/brand-logos/medicube-logo-official.svg" alt="Medicube logo" /></div><h3>Medicube</h3><p>K-beauty 强增长、TikTok Shop、Ulta、设备边界和直购信任。</p></div>

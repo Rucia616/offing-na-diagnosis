@@ -360,14 +360,6 @@
     @media (prefers-color-scheme: dark) {
       .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -477,7 +469,7 @@
           <div class="eyebrow">Atlas Routing</div>
           <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
-        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
       </div>
       <div class="routing-system" data-strict-module="atlas-routing">
         <article class="route-intake">
@@ -504,6 +496,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>技术心智有起点，行业词没吃透</h3>
               <p>品牌的 science story 有辨识度，但 anti-aging / collagen serum 大词仍被成熟品牌和零售平台掌控。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">52<span>/100</span></div>
@@ -511,6 +505,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>高价 PDP 信任不足</h3>
               <p>$89 入口可用，$369-$899 hero SKU 要补结果窗口、敏感边界、试用路径和退换信任。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">55<span>/100</span></div>
@@ -518,6 +514,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>内容适合种草，但还没变成 proof</h3>
               <p>官方社媒入口存在，产品也适合 glow / routine 内容，但需要 creator 使用周期和可信结果素材。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -639,6 +637,7 @@
         </div>
       </div>
     </section>
+    
     
     <section id="stage">
       
@@ -958,12 +957,15 @@
         <article class="biz-card state-amber">
           <div class="biz-top"><div><span>SignalMark</span><h3>技术心智有起点，行业词没吃透</h3><p>品牌的 science story 有辨识度，但 anti-aging / collagen serum 大词仍被成熟品牌和零售平台掌控。</p></div><b>60</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>有 Allure、技术页和明确 collagen 差异点。</p></div><div><strong>做得差</strong><p>review / comparison / Amazon 搜索 proof 偏薄。</p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>高价 PDP 信任不足</h3><p>$89 入口可用，$369-$899 hero SKU 要补结果窗口、敏感边界、试用路径和退换信任。</p></div><b>52</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>SKU 梯度和 travel sizes 已具备。</p></div><div><strong>做得差</strong><p>公开评论数量和政策承诺不足以支撑大额冷启动。</p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>TideLens</span><h3>内容适合种草，但还没变成 proof</h3><p>官方社媒入口存在，产品也适合 glow / routine 内容，但需要 creator 使用周期和可信结果素材。</p></div><b>55</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>All-In Serum 很适合短视频 demo。</p></div><div><strong>做得差</strong><p>UGC 证据、差评处理和长期使用证明还薄。</p></div></div>
+          
         </article>
       </div>
     </section>

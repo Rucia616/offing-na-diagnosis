@@ -360,14 +360,6 @@
     @media (prefers-color-scheme: dark) {
       .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -477,7 +469,7 @@
           <div class="eyebrow">Atlas Routing</div>
           <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
-        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
       </div>
       <div class="routing-system" data-strict-module="atlas-routing">
         <article class="route-intake">
@@ -504,6 +496,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>全球规模和专业背书能支撑高客单。</h3>
               <p>8M units、49 countries、100+ experts、1000+ patents 和专家背书让 Ulike 有专业基础。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">64<span>/100</span></div>
@@ -511,6 +505,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>Amazon 能成交，官网要把用户留到注册和复购。</h3>
               <p>Amazon 多 ASIN 动销更强；DTC 有政策、quiz、HSA/FSA 和产品矩阵，但售后和买后路径仍要硬化。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">66<span>/100</span></div>
@@ -518,6 +514,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>媒体和内容能服务 Air 10，但比较词和边界证明还要补。</h3>
               <p>媒体评测和 Amazon 内容能证明有效与舒适，但 Braun / Nood / Philips 比较和不适配人群说明不够前置。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -617,7 +615,7 @@
           <div class="ledger-head">
             <div class="module-label">分数封顶项</div>
             <h3>Ulike 当前总分被 v3 风险封顶。</h3>
-            <p>Air 10 机会分高，但只要新品验证和售后承接没有清楚门槛，总分不应被 Amazon 动销继续上抬。</p>
+            <p>Air 10 机会分高，但新品验证和售后门槛还没有讲清时，Amazon 动销不能继续抬高总分。</p>
           </div>
           <article class="cap-reason state-red">
             <b>69</b>
@@ -632,6 +630,7 @@
         </div>
       </div>
     </section>
+    
     
     <section id="stage">
       
@@ -974,12 +973,15 @@
         <article class="biz-card state-green">
           <div class="biz-top"><div><span>SignalMark</span><h3>全球规模和专业背书能支撑高客单。</h3><p>8M units、49 countries、100+ experts、1000+ patents 和专家背书让 Ulike 有专业基础。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p></div><b>76</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>品牌规模、技术背书、PCOS / AAD 等内容能支持信任。</p></div><div><strong>做得差</strong><p>官网仍能看到 7M 和 8M 两套口径并存，会削弱专业精确感。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>Amazon 能成交，官网要把用户留到注册和复购。</h3><p>Amazon 多 ASIN 动销更强；DTC 有政策、quiz、HSA/FSA 和产品矩阵，但售后和买后路径仍要硬化。</p></div><b>64</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Air 10 主 ASIN、Deluxe、Air 4、ReGlow 都有可见交易信号。</p></div><div><strong>做得差</strong><p>DTC 若只做折扣和解释页，高意图用户会继续把安全感交给 Amazon、Best Buy 和外部评论。</p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>TideLens</span><h3>媒体和内容能服务 Air 10，但比较词和边界证明还要补。</h3><p>媒体评测和 Amazon 内容能证明有效与舒适，但 Braun / Nood / Philips 比较和不适配人群说明不够前置。</p></div><b>66</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Air 10 的冰感、速度、结果和媒体长测都容易转成内容。</p></div><div><strong>做得差</strong><p>内容若先放大 2 周 96% 结果，再晚讲限制条件，会提高不适配用户失望。</p></div></div>
+          
         </article>
       </div>
     </section>

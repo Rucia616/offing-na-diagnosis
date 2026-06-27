@@ -360,14 +360,6 @@
     @media (prefers-color-scheme: dark) {
       .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -477,7 +469,7 @@
           <div class="eyebrow">Atlas Routing</div>
           <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
-        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
       </div>
       <div class="routing-system" data-strict-module="atlas-routing">
         <article class="route-intake">
@@ -504,6 +496,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>口腔护理 购买理由已经出现，但 proof 和语言边界还要补。</h3>
               <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-red">
             <div class="specialist-score">35<span>/100</span></div>
@@ -511,6 +505,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
               <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-red">
             <div class="specialist-score">39<span>/100</span></div>
@@ -518,6 +514,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
               <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -626,6 +624,7 @@
         </div>
       </div>
     </section>
+    
     
     <section id="stage">
       
@@ -944,12 +943,15 @@
         <article class="biz-card state-red">
           <div class="biz-top"><div><span>SignalMark</span><h3>口腔护理 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>40</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Usmile 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>牙医信任、替换耗材 还需要被页面和内容前置。</p></div></div>
+          
         </article><article class="biz-card state-red">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>35</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Amazon 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 牙医信任 解释还不够集中。</p></div></div>
+          
         </article><article class="biz-card state-red">
           <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>39</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>Social / PR 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 牙医信任、替换耗材、北美动销。</p></div></div>
+          
         </article>
       </div>
     </section>

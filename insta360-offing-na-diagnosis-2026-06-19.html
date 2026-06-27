@@ -360,14 +360,6 @@
     @media (prefers-color-scheme: dark) {
       .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
     }
-    /* Atlas global white base */
-    :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-    html, body { background:#fff !important; }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; --bg:#fff; --paper:#fff; --top:#fff; --surface:#fff; --surface-2:#fff; --surface2:#fff; --ink:#101413; --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5; --hair:rgba(16,20,19,.08); --hairline:rgba(16,20,19,.08); --accent:#2d6261; --accent-fill:#eaf1f0; --sea:#2d6261; --slate:#13211f; --inverse:#13211f; --inverse-bg:#13211f; --inverse-text:#f8faf9; }
-      html, body { background:#fff !important; color:var(--body) !important; }
-    }
-
   </style>
 </head>
 <body>
@@ -477,7 +469,7 @@
           <div class="eyebrow">Atlas Routing</div>
           <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
         </div>
-        <p class="section-note">这一屏把客户输入、公开数据口径、三个专项分数、Top 3 和路由建议放在同一个判断面。</p>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
       </div>
       <div class="routing-system" data-strict-module="atlas-routing">
         <article class="route-intake">
@@ -504,6 +496,8 @@
               <div class="specialist-name">SignalMark</div>
               <h3>360 相机心智强，但新类目要避免稀释。</h3>
               <p>全景相机份额和 X5 货架表现能支撑品牌权威；Luna 和未来线需要独立叙事。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">66<span>/100</span></div>
@@ -511,6 +505,8 @@
               <div class="specialist-name">CommerceFlow</div>
               <h3>渠道健康，但官网应承担更高阶的信任和复购。</h3>
               <p>Amazon / Best Buy 能成交，官网要靠套装、教程、保修和配件复购证明价值。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">68<span>/100</span></div>
@@ -518,6 +514,8 @@
               <div class="specialist-name">TideLens</div>
               <h3>创作者素材天然强，但比较词和售后疑问还没形成证明链。</h3>
               <p>内容能讲 8K、低光、可换镜片，但还需要把 creator 内容改成购买证明、比较说明和售后信任。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -632,6 +630,7 @@
         </div>
       </div>
     </section>
+    
     
     <section id="stage">
       
@@ -970,12 +969,15 @@
         <article class="biz-card state-green">
           <div class="biz-top"><div><span>SignalMark</span><h3>360 相机心智强，但新类目要避免稀释。</h3><p>全景相机份额和 X5 货架表现能支撑品牌权威；Luna 和未来线需要独立叙事。</p></div><b>82</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>X5 产品线、全球规模和零售信任都能支撑高客单。</p></div><div><strong>做得差</strong><p>新类目容易把品牌从 360 创作自由拉成宽泛硬件目录。</p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>CommerceFlow</span><h3>渠道健康，但官网应承担更高阶的信任和复购。</h3><p>Amazon / Best Buy 能成交，官网要靠套装、教程、保修和配件复购证明价值。</p></div><b>66</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>多渠道交易基础健康，零售和 marketplace 都有信任信号。</p></div><div><strong>做得差</strong><p>DTC 购买风险解释不够前置，容易被零售和 Amazon 分走高意图订单。</p></div></div>
+          
         </article><article class="biz-card state-amber">
           <div class="biz-top"><div><span>TideLens</span><h3>创作者素材天然强，但比较词和售后疑问还没形成证明链。</h3><p>内容能讲 8K、低光、可换镜片，但还需要把 creator 内容改成购买证明、比较说明和售后信任。</p></div><b>68</b></div>
           <div class="biz-body"><div><strong>做得好</strong><p>场景卖点清楚，创作者素材天然有传播性。</p></div><div><strong>做得差</strong><p>比较页、售后 FAQ 和选择器不够强，creator 内容容易只讲画面爽感。</p></div></div>
+          
         </article>
       </div>
     </section>
