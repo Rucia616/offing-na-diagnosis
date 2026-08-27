@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>COSORI · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-06-26</title>
+  <title>COSORI · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-08-27</title>
   <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
   <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
   <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
@@ -72,23 +72,26 @@
     .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
     .hero-copy { max-width:800px; padding-top:0; align-self:end; }
     .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
-    .client-logo img { display:block; max-width:238px; max-height:64px; object-fit:contain; }
+    .client-logo img { display:block; width:auto; height:48px; max-width:238px; object-fit:contain; }
     .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
     .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
     h1,h2,h3,p { margin:0; }
     h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .nowrap-title { white-space:nowrap; }
     .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
     .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
-    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; max-width:720px; margin-top:22px; }
-    .hero-metric { min-width:0; min-height:76px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:13px 14px; overflow-wrap:anywhere; }
-    .metric-label { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
-    .metric-label i { flex:0 0 auto; width:9px; height:9px; background:var(--prism-a); }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(190px,1fr)); gap:12px; max-width:760px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:88px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:14px 15px; overflow-wrap:anywhere; }
+    .metric-label { display:grid; grid-template-columns:9px minmax(0,1fr); align-items:start; column-gap:8px; row-gap:4px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { width:9px; height:9px; margin-top:3px; background:var(--prism-a); }
+    .metric-label-copy { min-width:0; }
+    .metric-evidence { grid-column:2; min-width:0; display:block; }
     .hero-metric.state-red .metric-label i { background:var(--risk); }
     .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
     .hero-metric.state-green .metric-label i { background:var(--success); }
     .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
     .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
-    .hero-metric .evidence-list { display:inline-flex; width:auto; max-width:100%; flex-wrap:nowrap; overflow-x:auto; margin:8px 0 0; padding-bottom:1px; }
+    .hero-metric .evidence-list { display:flex; width:auto; max-width:100%; flex-wrap:wrap; gap:4px; overflow:visible; margin:0; padding:0; }
     .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
     .hero-metric.state-red b { color:var(--risk); }
     .hero-metric.state-amber b { color:var(--warning); }
@@ -368,7 +371,7 @@
       .audience-band b { font-size:16px; }
       .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
       .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
-      .client-logo img { max-width:230px; max-height:56px; }
+      .client-logo img { width:auto; height:42px; max-width:230px; }
       .eyebrow { margin-bottom:14px; }
       .hero-copy .sublead, .hero-copy .tag-row { display:none; }
       .metric-strip { display:none; }
@@ -394,7 +397,7 @@
     }
   </style>
 </head>
-<body data-offing-visual-baseline="canonical" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
+<body data-offing-visual-baseline="canonical" data-offing-visual-scope="full-report" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
   <header class="topbar">
     <div class="topbar-inner">
       <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
@@ -404,7 +407,7 @@
     </div>
   </header>
   <main>
-
+    
     <section class="hero" id="top">
       <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
       <div class="hero-copy">
@@ -412,25 +415,25 @@
           <img src="assets/brand-logos/cosori-logo-official.svg" alt="COSORI logo" />
         </div>
         <div class="eyebrow">North America Diagnosis</div>
-        <h1>北美业务<br>诊断</h1>
-        <p class="lead">COSORI 的 v3 总分为 62。当前不是只看规模和声量，优先判断 安全信任、主线外增长 和渠道承接能否支撑下一阶段预算效率。</p>
+        <h1><span class="nowrap-title">北美业务诊断</span></h1>
+        <p class="lead">COSORI 仍是北美空气炸锅强品牌，Iconic 已把不锈钢、PFAS-free 和 5 年保修推到前台；下一步要证明高端化真正修复安全信任，也能带出主线之外的利润。</p>
         <div class="metric-strip" aria-label="首屏关键证据数字">
-
-          <div class="hero-metric state-amber">
-            <span class="metric-label"><i></i>Atlas v3 总分，旧分 72.4。 <span class="evidence-list"><span class="evidence">[E1]</span></span></span>
-            <b class="">62/100</b>
+          
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">VeSync 2024 年报披露的 COSORI 品牌收入。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E3]</span></span></span></span>
+            <b class="">$165.0M</b>
           </div>
           <div class="hero-metric state-amber">
-            <span class="metric-label"><i></i>当前活跃分数封顶来自 安全信任。 <span class="evidence-list"><span class="evidence">[E2]</span></span></span>
-            <b class="">Cap 63</b>
+            <span class="metric-label"><i></i><span class="metric-label-copy">Iconic 6.5-Quart Smart Air Fryer 当前定价。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E9]</span></span></span></span>
+            <b class="">$249</b>
           </div>
           <div class="hero-metric state-red">
-            <span class="metric-label"><i></i>风险优先级：空气炸锅仍承担北美规模，历史安全事件尾巴和第二增长点不足让厨房生态成熟度被高估。。 <span class="evidence-list"><span class="evidence">[E3]</span></span></span>
-            <b class="">P0</b>
+            <span class="metric-label"><i></i><span class="metric-label-copy">CPSC 2023 年召回涉及的美国市场产品数量。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E6]</span></span></span></span>
+            <b class="">2.0M</b>
           </div>
         </div>
-        <p class="sublead">本页按 Atlas v3 规则覆盖旧 GitHub HTML：加入品类购买契约、风险路径、假增长信号、分数封顶、三专项评分和路由建议。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
-        <div class="tag-row"><span class="tag amber">v3 62 分</span><span class="tag amber">C档</span><span class="tag blue">公开数据置信度 中高</span></div>
+        <p class="sublead">VeSync 2024 年报披露 COSORI 品牌收入约 1.65 亿美元；2026 年 Iconic 以 249 美元切入高端空气炸锅。增长质量仍取决于召回尾部、官网售后和第二品线能否被独立证明。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E6]</span><span class="evidence">[E9]</span><span class="evidence">[E19]</span></span></p>
+        <div class="tag-row"><span class="tag green">空气炸锅主盘成立</span><span class="tag red">召回尾部仍在影响信任</span><span class="tag amber">Iconic 高端化验证中</span></div>
       </div>
       <aside class="score-panel" aria-label="COSORI Atlas score">
         <div class="score-strip"></div>
@@ -438,68 +441,68 @@
           <div class="score-top">
             <div>
               <div class="score-label">Total diagnosis score</div>
-              <div class="score-number">62</div>
+              <div class="score-number">65</div>
             </div>
             <div class="score-rating">
-              <span class="tier green">C档</span>
-              <div class="stars" aria-label="3.1 out of 5 stars">★ ★ ★ ☆ ☆</div>
-              <div class="star-score">3.1 / 5 星 · 公开数据</div>
+              <span class="tier green">B档</span>
+              <div class="stars" aria-label="3.3 out of 5 stars">★ ★ ★ ☆ ☆</div>
+              <div class="star-score">3.3 / 5 星 · 公开数据</div>
             </div>
           </div>
-          <p class="score-verdict">C档 · 先修 安全信任，再谈放大</p>
+          <p class="score-verdict">B档 · 主线强，高端化与安全信任决定能否回到 70+</p>
           <div class="score-meta">
             <div><span>阶段判断</span><b>100+</b></div>
-            <div><span>经营类型</span><b>Amazon-driven appliance portfolio</b></div>
+            <div><span>经营类型</span><b>Amazon + retail + DTC appliance portfolio</b></div>
             <div><span>置信度</span><b>中高</b></div>
           </div>
           <div class="subscore-list">
-
+            
             <div class="subscore">
               <span>业务健康度</span>
-              <div class="track"><i class="bar-1" style="width:65%;"></i></div>
-              <b>65</b>
+              <div class="track"><i class="bar-1" style="width:74%;"></i></div>
+              <b>74</b>
             </div>
             <div class="subscore">
               <span>业务机会分</span>
-              <div class="track"><i class="bar-2" style="width:72%;"></i></div>
-              <b>72</b>
+              <div class="track"><i class="bar-2" style="width:78%;"></i></div>
+              <b>78</b>
             </div>
             <div class="subscore">
               <span>问题致命度</span>
-              <div class="track"><i class="bar-3" style="width:54%;"></i></div>
-              <b>54</b>
+              <div class="track"><i class="bar-3" style="width:76%;"></i></div>
+              <b>76</b>
             </div>
           </div>
-          <p class="score-formula">数据采集日期：2026-06-26。</p>
+          <p class="score-formula">数据采集日期：2026-08-27。</p>
         </div>
       </aside>
       <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
-
-        <article class="chain-item state-amber">
+        
+        <article class="chain-item state-red">
           <i>P0</i>
           <b>安全信任</b>
-          <span>先把购买前信任和售后解释做成页面与客服承诺。</span>
+          <span>把召回整改、产品测试和 5 年保修压缩成持续可见的购买证明。</span>
         </article>
         <article class="chain-item state-amber">
           <i>P1</i>
-          <b>主线外增长</b>
-          <span>把品类边界、竞品比较和渠道角色讲清楚。</span>
+          <b>高端化</b>
+          <span>证明 Iconic 的 249 美元价格来自材料、耐用和服务，而非发布声量。</span>
         </article>
         <article class="chain-item state-amber">
           <i>P1</i>
-          <b>搜索承接</b>
-          <span>行业词、review 词、比较词和售后词需要按需求量级重排。</span>
+          <b>第二品线</b>
+          <span>电热水壶、烘干机和多功能锅需要独立利润与渠道证据。</span>
         </article>
         <article class="chain-item state-blue">
           <i>P2</i>
-          <b>第二品线</b>
-          <span>用独立证据验证，不用主线声量外推。</span>
+          <b>渠道利润</b>
+          <span>Amazon、零售和 DTC 需要不同 SKU、价格与服务岗位。</span>
         </article>
       </div>
     </section>
-
+    
     <section id="free-diagnosis">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Atlas Routing</div>
@@ -515,43 +518,43 @@
             <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
             <div><dt>市场</dt><dd>North America</dd></div>
             <div><dt>数据口径</dt><dd>中高 · 公开数据版</dd></div>
-            <div><dt>产品锁定</dt><dd>2026-06-25</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-08-27</dd></div>
           </dl>
         </article>
         <article class="route-decision">
           <div class="module-label">路由建议</div>
           <h3>路由</h3>
-          <p>Atlas 总控，CommerceFlow 看渠道和第二增长点，SignalMark 补安全信任资产。</p>
-          <span class="route-chip">最低分警报：CommerceFlow 56</span>
-          <span class="route-chip">分数封顶：63 · v3 主封顶</span>
+          <p>Atlas 总控；SignalMark 与 CommerceFlow 并行。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 60</span>
+          <span class="route-chip">分数封顶：65 · 安全信任尾部</span>
         </article>
         <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
-          <article class="specialist-card state-amber">
-            <div class="specialist-score">68<span>/100</span></div>
+          <article class="specialist-card state-green">
+            <div class="specialist-score">72<span>/100</span></div>
             <div>
               <div class="specialist-name">SignalMark</div>
-              <h3>厨房小家电 购买理由已经出现，但 proof 和语言边界还要补。</h3>
-              <p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p>
-
-
-            </div>
-          </article><article class="specialist-card state-amber">
-            <div class="specialist-score">56<span>/100</span></div>
-            <div>
-              <div class="specialist-name">CommerceFlow</div>
-              <h3>成交链路短板集中在渠道、售后和选择路径。</h3>
-              <p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p>
-
-
+              <h3>空气炸锅和 Iconic 信号清楚，安全证明仍需持续化。</h3>
+              <p>SignalMark 重点把材料、测试、召回整改、保修和比较理由做成可引用资产。</p>
+              
+              
             </div>
           </article><article class="specialist-card state-amber">
             <div class="specialist-score">60<span>/100</span></div>
             <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>多渠道成立，贡献利润与官网售后仍缺公开证明。</h3>
+              <p>CommerceFlow 重点看 Amazon、零售和 DTC 的 SKU、价格、退货、保修与客户关系。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">66<span>/100</span></div>
+            <div>
               <div class="specialist-name">TideLens</div>
-              <h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3>
-              <p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p>
-
-
+              <h3>评测和用户内容能证明体验，需绑定高端化与安全问题。</h3>
+              <p>TideLens 重点看 creator proof 是否回答材料、清洁、噪音、耐用和价格合理性。</p>
+              
+              
             </div>
           </article>
         </div>
@@ -561,142 +564,142 @@
             <h3>当前最先处理的三件事</h3>
           </div>
           <ol>
-            <li>安全信任 没有被放到购买前第一层。</li><li>kettles / dehydrators / oven / coffee / multi-cooker 需要独立证据。</li><li>搜索、VOC 和内容没有形成同一个承接闭环。</li>
+            <li>召回整改与当前安全证明没有形成一条持续信任链。</li><li>Iconic 的 249 美元高端化还缺长期贡献利润证据。</li><li>厨房矩阵宽度没有证明每条线都产生增量利润。</li>
           </ol>
         </article>
       </div>
     </section>
-
+    
     <section id="death-path">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Score-Cap &amp; Risk</div>
-          <h2>主要风险路径：把空气炸锅规模当成厨房生态成熟。</h2>
+          <h2>最容易的死法：把 Iconic 的高端化发布当成安全信任已经修复，再继续扩厨房 SKU。</h2>
         </div>
-        <p class="section-note">v3 对 COSORI 的处理重点是保留规模事实，同时识别规模背后的封顶器。</p>
+        <p class="section-note">COSORI 已经开始修复材料、耐用与保修信号，经营风险集中在证明是否真的进入购买决策，以及主线外扩张是否产生增量利润。</p>
       </div>
       <div class="risk-system" data-strict-module="atlas-risk">
         <article class="contract-card state-amber">
           <div class="module-label">品类购买契约</div>
-          <h3>厨房电器买的是安全、稳定、可替代主线和售后响应。</h3>
-          <p><strong>用户买的确定性：</strong>北美用户对厨房电器的底层要求包含日常高频使用、清洁省事、出问题时可追责、以及新品类能给出清楚替代理由。</p>
-          <p><strong>当前匹配：</strong>COSORI 的空气炸锅规模仍强，但 kettle、dehydrator、oven、coffee 等线还没有公开证明能接替主线。历史召回是旧事件，却仍会影响高频电器的信任解释。</p>
-          <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E6]</span><span class="evidence">[E16]</span></span></p>
+          <h3>厨房电器买的是每天高频使用时的安全、稳定、易清洁和出问题有人管。</h3>
+          <p><strong>用户买的确定性：</strong>北美家庭购买空气炸锅时同时判断烹饪结果、材料安全、热管理、清洁难度、耐用性、保修和召回补偿。高端产品还要证明材料与服务值得长期溢价。</p>
+          <p><strong>当前匹配：</strong>TurboBlaze 承接主流价格带，Iconic 用不锈钢、PFAS-free 陶瓷涂层和 5 年保修补高端信任；2023 年召回及当前售后 VOC 仍让安全与服务成为第一购买门槛。</p>
+          <p class="risk-evidence">COSORI 官网、Iconic 产品和保修页、CPSC 召回、VeSync 年报与当前 VOC 共同支撑这个购买契约。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E6]</span><span class="evidence">[E8]</span><span class="evidence">[E9]</span><span class="evidence">[E19]</span></span></p>
         </article>
-        <article class="score-cap state-amber">
+        <article class="score-cap state-red">
           <div class="module-label">分数封顶原因</div>
-          <div class="cap-number">63<span>/100</span></div>
-          <h3>v3 主封顶</h3>
-          <p>历史安全尾巴、平台依赖和第二增长点证据不足叠加，COSORI 不适合维持 70+ 的强势扩张分。</p>
+          <div class="cap-number">65<span>/100</span></div>
+          <h3>安全信任尾部</h3>
+          <p>2023 年召回规模大，官方处置仍在线，当前售后 VOC 继续出现 replacement、warranty 与 durability 主题。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E8]</span><span class="evidence">[E17]</span><span class="evidence">[E19]</span></span></p>
         </article>
-        <article class="decision-blindspot state-amber">
+        <article class="decision-blindspot state-red">
           <div class="module-label">管理层决策盲区</div>
-          <h3>管理层最危险的误读</h3>
+          <h3>管理层最危险的是把主线规模和新品发布当成安全信任与厨房生态已经同时成立。</h3>
           <dl>
-            <div><dt>高估</dt><dd>空气炸锅规模、Amazon 动销、厨房矩阵宽度。</dd></div>
-            <div><dt>低估</dt><dd>召回尾部信任解释、第二线独立证据、DTC 售后与安全证明。</dd></div>
-            <div><dt>安慰指标</dt><dd>类目排名、月销量、平台评价数。</dd></div>
-            <div><dt>先别做</dt><dd>在第二线证据和安全信任资产补齐前，暂缓把叙事重心推向完整厨房生态。</dd></div>
+            <div><dt>高估</dt><dd>空气炸锅排名、Amazon 评价量、Iconic 媒体声量和 SKU 数量。</dd></div>
+            <div><dt>低估</dt><dd>召回后的安全证明、直购服务体验、高端产品保修成本和第二品线贡献利润。</dd></div>
+            <div><dt>安慰指标</dt><dd>类目排名、月销量、媒体奖项和新品数量。</dd></div>
+            <div><dt>先别做</dt><dd>先不要平均扩大整个厨房矩阵；先证明 Iconic 高端化和召回后信任修复。</dd></div>
           </dl>
         </article>
         <div class="risk-path-list">
-          <article class="risk-path-card state-amber">
-            <div class="risk-card-top"><span>P1</span><b>封顶 69</b></div>
-            <h3>空气炸锅规模被过度外推</h3>
-            <p>空气炸锅支持了北美心智和平台规模，但其他厨房线还没有形成同等强度的独立购买理由。若继续按“厨房生态”配置资源，预算会优先补宽度，主线之外的效率难以兑现。</p>
-            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p>
-            <span class="tag amber">Atlas 总控；CommerceFlow 优先，SignalMark 并行补安全信任。</span>
-          </article><article class="risk-path-card state-red">
-            <div class="risk-card-top"><span>P0</span><b>封顶 63</b></div>
-            <h3>历史安全事件尾巴没有完全转成信任资产</h3>
-            <p>召回是历史事件，但厨房电器的购买契约包含安全和售后确定性。若官网和内容没有主动把整改、检测、售后响应讲清楚，旧风险会继续压住高客单和新品类承接。</p>
-            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E16]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
-            <span class="tag red">Atlas 总控；CommerceFlow 优先，SignalMark 并行补安全信任。</span>
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 65</b></div>
+            <h3>召回整改没有形成长期安全资产</h3>
+            <p>CPSC 记录约 200 万台美国市场产品召回、205 起起火或过热等报告；官方召回和查询入口仍在线。</p>
+            <p class="risk-evidence">历史事件已经过去，但搜索、售后和 replacement VOC 仍会把风险带回当前购买决策。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E8]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+            <span class="tag red">SignalMark 固化安全证明，CommerceFlow 修售后承接</span>
           </article><article class="risk-path-card state-amber">
-            <div class="risk-card-top"><span>P1</span><b>封顶 72</b></div>
-            <h3>平台掌握成交解释权</h3>
-            <p>Amazon 的评价和促销能支撑短期成交，也会让品牌关系、价格解释和售后叙事留在平台侧。DTC 若只承接信息展示，利润质量和用户关系会被压薄。</p>
-            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E5]</span></span></p>
-            <span class="tag amber">Atlas 总控；CommerceFlow 优先，SignalMark 并行补安全信任。</span>
+            <div class="risk-card-top"><span>P1</span><b>封顶 68</b></div>
+            <h3>Iconic 高价被误读成高端化已经成立</h3>
+            <p>Iconic 以 249 美元、金属结构、PFAS-free 和 5 年保修建立新信号，但早期口碑与渠道 sell-out 仍不足以证明它已成为第二增长柱。</p>
+            <p class="risk-evidence">官方产品、保修和 2026 年评测支持产品力，长期销量、退货与保修成本仍需后台校准。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E15]</span><span class="evidence">[E20]</span></span></p>
+            <span class="tag amber">Atlas 保留总控，CommerceFlow 验证贡献利润</span>
           </article><article class="risk-path-card state-amber">
             <div class="risk-card-top"><span>P1</span><b>封顶 69</b></div>
-            <h3>第二增长点缺少可替代证据</h3>
-            <p>产品线宽度本身无法证明第二曲线成立。新线需要独立类目排名、复购理由、场景内容和售后证明，否则只能贡献货架丰富度，难以支撑估值叙事。</p>
-            <p class="risk-evidence"><span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p>
-            <span class="tag amber">Atlas 总控；CommerceFlow 优先，SignalMark 并行补安全信任。</span>
+            <h3>空气炸锅规模被外推成厨房生态</h3>
+            <p>电热水壶、烘干机、压力锅和咖啡产品扩大了货架宽度，仍需分别证明增量收入、渠道角色和复购关系。</p>
+            <p class="risk-evidence">VeSync 年报与当前 US Store 证明品线存在，公开数据没有证明每条线都达到空气炸锅强度。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E13]</span></span></p>
+            <span class="tag amber">CommerceFlow 做 SKU 与渠道角色图</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 70</b></div>
+            <h3>平台规模掩盖官网售后摩擦</h3>
+            <p>Amazon 和零售提供成交安全感，官网低基数 VOC 仍集中在订单、保修、耐用和客服响应。</p>
+            <p class="risk-evidence">Trustpilot 样本量不大，不能代表整体比例，但足以暴露直购承接主题。<span class="evidence-list"><span class="evidence">[E19]</span></span></p>
+            <span class="tag amber">CommerceFlow 修订单、保修与客服 SLA</span>
           </article>
         </div>
         <div class="signal-ledger">
           <div class="ledger-head">
             <div class="module-label">假增长信号</div>
-            <h3>容易让管理层舒服的假增长信号</h3>
-            <p>这些信号都可能真实存在，但不能替代成交、复购、售后和利润质量。</p>
+            <h3>最容易被高估的是空气炸锅声量、Iconic 发布热度和 SKU 宽度。</h3>
+            <p>这些信号能证明需求和组合能力，不能单独证明安全信任、贡献利润和第二曲线成立。</p>
           </div>
           <article class="signal-card state-amber">
-            <span>假信号</span>
-            <h3>空气炸锅仍强</h3>
-            <p>主线强势会掩盖第二线尚未接棒，导致新品预算过早放大。</p>
+            <span>主线放大</span>
+            <h3>空气炸锅排名与评价规模</h3>
+            <p>主线强势会掩盖新线尚未贡献同等利润和用户关系。</p>
           </article><article class="signal-card state-amber">
-            <span>假信号</span>
-            <h3>Amazon 动销与评价规模</h3>
-            <p>平台证明能带来成交确定性，也会掩盖 DTC 关系和售后信任缺口。</p>
-          </article><article class="signal-card state-amber">
-            <span>假信号</span>
-            <h3>厨房电器矩阵完整</h3>
-            <p>SKU 宽度容易被解释为生态，实际仍需要逐条产品线证明替代理由。</p>
+            <span>高端化验证</span>
+            <h3>Iconic 高端媒体声量</h3>
+            <p>设计奖、评测和高价能建立信号，长期 sell-out、退货与保修成本才决定高端化质量。</p>
+          </article><article class="signal-card state-red">
+            <span>组合误读</span>
+            <h3>厨房产品矩阵完整</h3>
+            <p>SKU 数量和货架覆盖不能代替每条产品线的增量收入与购买理由。</p>
           </article>
         </div>
         <div class="cap-ledger">
           <div class="ledger-head">
             <div class="module-label">分数封顶项</div>
-            <h3>当前分数上限：63</h3>
-            <p>历史安全尾巴、平台依赖和第二增长点证据不足叠加，COSORI 不适合维持 70+ 的强势扩张分。</p>
+            <h3>COSORI 当前总分被召回尾部与高端化验证封顶在 65。</h3>
+            <p>空气炸锅主盘、品牌收入和零售覆盖托住基本盘；安全证明、Iconic 长期表现和第二品线利润决定能否回到 70+。</p>
           </div>
           <article class="cap-reason state-red">
-            <b>63</b>
-            <div><h3>封顶原因 1</h3><p>安全与售后信任解释仍是高频电器的 P0 封顶器。</p></div>
+            <b>65</b>
+            <div><h3>安全信任尾部</h3><p>召回整改、测试标准和当前产品安全证明还没有形成一套持续可见的信任链。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>68</b>
+            <div><h3>Iconic 高端化</h3><p>249 美元、5 年保修和材料升级成立，长期销量与售后成本仍待验证。</p></div>
           </article><article class="cap-reason state-amber">
             <b>69</b>
-            <div><h3>封顶原因 2</h3><p>第二增长点未证明可替代空气炸锅主线。</p></div>
-          </article><article class="cap-reason state-amber">
-            <b>72</b>
-            <div><h3>封顶原因 3</h3><p>平台依赖压住品牌关系和价格解释权。</p></div>
+            <div><h3>第二品线利润</h3><p>品线宽度成立，各线的增量收入、贡献利润与复购关系仍缺公开证明。</p></div>
           </article>
         </div>
       </div>
     </section>
-
-
+    
+    
     <section id="stage">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Stage Judgment</div>
-          <h2>阶段判断：COSORI 进入 100+，下一步先修 安全信任。</h2>
+          <h2>阶段判断：COSORI 已进入 100+，下一步守安全权威、产品溢价与组合利润。</h2>
         </div>
-        <p class="section-note">这个阶段的重点是把公开需求信号变成可复盘的成交、评价、售后和复购质量。</p>
+        <p class="section-note">这一阶段的增长质量来自主线防守、高端化验证、渠道利润和召回后信任资产。</p>
       </div>
       <div class="stage-track" aria-label="阶段判断">
-        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>厨房小家电 的基础需求已经通过公开渠道和旧报告证据出现。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>air fryers 是当前最清楚的北美入口，需要继续验证人群和渠道效率。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div><div class="stage-step state-neutral"><span>10-100</span><b>质量管理</b><p>多渠道和多品线开始并行时，安全信任 与 主线外增长 会决定预算效率。</p></div><div class="stage-step state-amber"><span>100+</span><b>防守与护城河</b><p>只有当品类权威、服务确定性、复购和渠道权都成立，才适合进入 80+ 评分区。</p></div>
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>空气炸锅与家庭厨房需求已被官网、Amazon 和零售验证。</p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>TurboBlaze 等主力型号已经建立性能、易清洁和价格理由。</p></div><div class="stage-step state-green"><span>10-100</span><b>渠道扩张</b><p>Amazon、Target、Best Buy 与 DTC 已形成多渠道触点。</p></div><div class="stage-step state-amber"><span>100+</span><b>护城河管理</b><p>Iconic 高端化、安全证明和第二品线利润决定下一阶段。</p></div>
       </div>
       <div class="grid-3">
-
+        
         <article class="card state-amber">
-          <div class="card-state">v3 总分</div>
-          <h3>62 / 100</h3>
-          <p>旧分 72.4，v3 分数 62；分数变化来自品类契约和风险封顶。</p>
+          <div class="card-state">总分</div>
+          <h3>65 / 100</h3>
+          <p>B档；主盘成立，安全与高端化仍限制 70+。</p>
         </article>
-        <article class="card state-amber">
+        <article class="card state-red">
           <div class="card-state">阶段动作</div>
-          <h3>先修 安全信任</h3>
-          <p>用 30 天补 proof / FAQ / support / channel page，再用 90 天看评价、转化和复购变化。</p>
+          <h3>先固化信任再扩组合</h3>
+          <p>30 天统一召回、安全、保修和比较证明；90 天验证 Iconic 与第二品线贡献。</p>
         </article>
       </div>
     </section>
-
+    
     <section id="audience">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Audience Layers</div>
@@ -728,7 +731,7 @@
         </div>
       </div>
       <div class="grid-3">
-
+        
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>核心盘先转化</h3>
@@ -746,9 +749,9 @@
         </article>
       </div>
     </section>
-
+    
     <section id="channel">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Business Type &amp; Channel</div>
@@ -783,7 +786,7 @@
         </div>
       </div>
       <div class="grid-4">
-
+        
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>主渠道继续守</h3>
@@ -801,83 +804,83 @@
         </article>
       </div>
     </section>
-
+    
     <section id="search">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Search Mindshare</div>
-          <h2>搜索心智：最大入口要先判断是否吃掉，比较词和售后词不能放任竞品接走。</h2>
+          <h2>搜索心智：空气炸锅主盘吃掉了，安全词、高端比较词和第二品线只吃到一半。</h2>
         </div>
-        <p class="section-note">先守住最大需求入口，再处理更靠近购买决策的缺口；精确搜索量需要 SEO / Google Trends 后台补数。</p>
+        <p class="section-note">需求排序综合品类覆盖、零售货架、SERP 密度与购买意图；精确搜索量需 SEO 与 Google Trends 后台校准。</p>
       </div>
       <div class="mind-grid">
-        <article class="mind-card state-amber">
-          <div class="priority"><span>P0 · 量级高 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
-          <h3>kitchen appliances / air fryers</h3>
-          <p>行业词是最大入口，COSORI 有公开信号，但还要用类目页和比较页守住高意图流量。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        <article class="mind-card state-green">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>air fryer / 6 qt air fryer / dual basket air fryer</h3>
+          <p>COSORI 以 TurboBlaze、Dual Basket、Pro LE 和 Iconic 覆盖主流容量、价格与智能场景。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E5]</span></span></p>
+        </article><article class="mind-card state-green">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>COSORI air fryer / TurboBlaze / Iconic</h3>
+          <p>品牌词和主力产品词由官网、VeSync Store、Amazon 与零售页共同承接。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E9]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>COSORI vs Ninja / Instant / Dreo / Typhur</h3>
+          <p>高意图用户比较价格、材料、容量、噪音、清洁和保修；官网需要固定比较页。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E15]</span><span class="evidence">[E20]</span></span></p>
         </article><article class="mind-card state-red">
-          <div class="priority"><span>P0 · 量级中高 · 量级中高</span><b class="search-capture red">没吃掉</b></div>
-          <h3>COSORI reviews / problems / warranty / return</h3>
-          <p>临门搜索会直接影响下单，尤其是 安全信任、主线外增长、型号选择。官网需要主动承接，而不是让 Trustpilot、Reddit、Amazon 或竞品页面先回答。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">半吃掉</b></div>
+          <h3>COSORI recall / safe / warranty / replacement</h3>
+          <p>官方召回和保修入口存在，安全整改、当前测试与客服 SLA 仍需被压缩成一页证据链。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E8]</span><span class="evidence">[E19]</span></span></p>
         </article><article class="mind-card state-amber">
-          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
-          <h3>COSORI vs Ninja / Instant / Breville</h3>
-          <p>比较词最接近下单选择，需要把安全、价格、服务、适用边界和长期成本做成固定对比页。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
-        </article><article class="mind-card state-amber">
-          <div class="priority"><span>P1 · 量级中 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
-          <h3>Amazon / Retail purchase intent</h3>
-          <p>渠道词能承接现有订单，但也会把价格和售后解释权留在平台侧。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
-        </article><article class="mind-card state-amber">
-          <div class="priority"><span>P2 · 量级低中 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
-          <h3>kettles / dehydrators / oven / coffee / multi-cooker</h3>
-          <p>第二品线搜索更适合做验证和筛选，不适合直接用主线声量证明可放大。<span class="evidence-list"><span class="evidence">[E5]</span></span></p>
+          <div class="priority"><span>P2 · 量级低中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>stainless steel / PFAS-free premium air fryer</h3>
+          <p>Iconic 已进入新材料和高端价格带，仍需更多独立评测、长期口碑和零售 sell-out。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E20]</span></span></p>
         </article>
       </div>
     </section>
-
+    
     <section id="voc">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">VOC &amp; Reputation</div>
-          <h2>VOC 判断：好评能支撑首单，抱怨会进入临门搜索和售后成本。</h2>
+          <h2>声誉总分 65：产品体验能支撑首单，召回、保修和直购服务继续影响信任。</h2>
         </div>
-        <p class="section-note">公开版先按主题聚类，不伪造精确百分比；后续深诊需要补评论样本和工单数据。</p>
+        <p class="section-note">公开 VOC 用于识别主题，不外推总体投诉比例；后台应接入 Amazon、零售、客服工单与召回处理数据。</p>
       </div>
       <div class="grid-4">
-
+        
         <article class="card state-green">
           <div class="card-state">已成立</div>
           <h3>集中好评主题</h3>
-          <p>easy clean、air fryer、value、quiet、ceramic coating 说明 COSORI 有可转化的正向购买理由。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+          <p>快速、酥脆、易清洁、安静、材料升级和外观设计支撑主线与 Iconic 溢价。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E15]</span><span class="evidence">[E20]</span></span></p>
         </article>
-        <article class="card state-amber">
-          <div class="card-state">需补强</div>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
           <h3>集中抱怨主题</h3>
-          <p>recall、replacement、support、safety concern、warranty 会影响首单信任、复购和客服成本。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+          <p>召回替换、保修凭证、订单配送、耐用和客服响应会进入临门搜索。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span><span class="evidence">[E19]</span></span></p>
         </article>
         <article class="card state-amber">
           <div class="card-state">需补强</div>
           <h3>经营影响</h3>
-          <p>VOC 不能只被客服处理，要进入 PDP、FAQ、比较页、售后 SLA 和内容 brief。</p>
+          <p>正向体验要进入 PDP 与比较页；负面主题要进入召回中心、保修说明、客服 SLA 和产品改进周报。</p>
         </article>
       </div>
       <div class="wordcloud-wrap">
         <article class="wordcloud">
           <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
-          <div class="cloud positive"><span class="w5 p0">easy clean</span><span class="w5 p1">air fryer</span><span class="w5 p2">value</span><span class="w4 p3">quiet</span><span class="w4 p4">ceramic coating</span><span class="w4 p5">family meals</span><span class="w3 p6">fast cooking</span><span class="w3 p7">Amazon reviews</span><span class="w3 p8">PFAS-free</span><span class="w2 p9">compact</span><span class="w2 p10">recipe</span><span class="w2 p11">gift</span></div>
+          <div class="cloud positive"><span class="w5 p0">crispy results</span><span class="w5 p1">easy clean</span><span class="w5 p2">quiet</span><span class="w4 p3">fast cooking</span><span class="w4 p4">stainless steel</span><span class="w4 p5">PFAS-free</span><span class="w4 p6">ceramic coating</span><span class="w3 p7">large basket</span><span class="w3 p8">even cooking</span><span class="w3 p9">premium design</span><span class="w3 p10">5-year warranty</span><span class="w2 p11">app control</span></div>
         </article>
         <article class="wordcloud">
           <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
-          <div class="cloud negative"><span class="w5 p0">recall</span><span class="w5 p1">replacement</span><span class="w5 p2">support</span><span class="w4 p3">safety concern</span><span class="w4 p4">warranty</span><span class="w4 p5">second line</span><span class="w3 p6">overlap</span><span class="w3 p7">price</span><span class="w3 p8">noise</span><span class="w2 p9">durability</span><span class="w2 p10">return</span><span class="w2 p11">model confusion</span></div>
+          <div class="cloud negative"><span class="w5 p0">recall</span><span class="w5 p1 long">replacement delay</span><span class="w4 p2">warranty proof</span><span class="w4 p3">missing order</span><span class="w4 p4 long">support response</span><span class="w4 p5">durability</span><span class="w3 p6">model confusion</span><span class="w3 p7">price premium</span><span class="w3 p8">basket wear</span><span class="w2 p9">Wi-Fi setup</span><span class="w2 p10">return friction</span><span class="w2 p11">heat concern</span></div>
         </article>
       </div>
-      <p class="section-note wide-note">正向 VOC 继续支持 Amazon 成交；负向 VOC 必须转成购买前解释和买后服务承诺。</p>
+      <p class="section-note wide-note"></p>
     </section>
-
+    
     <section id="ceiling">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Product-Line Ceiling</div>
@@ -904,9 +907,9 @@
         </article>
       </div>
     </section>
-
+    
     <section id="intent">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">User Intent Map</div>
@@ -923,9 +926,9 @@
         </table>
       </div>
     </section>
-
+    
     <section id="fit">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Message-Market Fit</div>
@@ -957,79 +960,79 @@
         </div>
       </div>
     </section>
-
+    
     <section id="onepage">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">One-Page Summary</div>
-          <h2>一页看懂：COSORI 有公开需求信号，下一步先修 安全信任。</h2>
+          <h2>一页看懂：COSORI 主盘成立，下一步验证安全修复与高端化利润。</h2>
         </div>
-        <p class="section-note">旧分 72.4，v3 分 62；本次覆盖旧 GitHub HTML 的核心变化是加入 v3 风险封顶和专项路由。</p>
+        <p class="section-note">公开数据支持 65 分 B档；后台渠道、毛利、退货、保修和复购数据会继续校准。</p>
       </div>
       <div class="onepage">
-        <div class="summary-item"><b>阶段</b><p>100+ · Amazon-driven appliance portfolio</p></div><div class="summary-item"><b>主线</b><p>air fryers 仍是当前北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>62 / 100 · C档，活跃封顶 63。</p></div><div class="summary-item"><b>Top 1 问题</b><p>安全信任 正在限制成交确定性。</p></div><div class="summary-item"><b>路由</b><p>Atlas 总控，CommerceFlow 看渠道和第二增长点，SignalMark 补安全信任资产。</p></div><div class="summary-item"><b>预算取舍</b><p>先把 安全信任、主线外增长 和搜索承接修到可验收，再考虑扩大投放。</p></div>
+        <div class="summary-item"><b>阶段</b><p>100+ · Amazon + retail + DTC appliance portfolio</p></div><div class="summary-item"><b>主线</b><p>TurboBlaze 等空气炸锅仍是北美最大证明面。</p></div><div class="summary-item"><b>总分</b><p>65 / 100 · B档，安全信任封顶 65。</p></div><div class="summary-item"><b>最容易的死法</b><p>把 Iconic 高端化发布当成信任已经修复，再继续扩厨房 SKU。</p></div><div class="summary-item"><b>路由</b><p>Atlas 总控；SignalMark 与 CommerceFlow 并行。</p></div><div class="summary-item"><b>预算取舍</b><p>先验证 Iconic、召回后信任和第二品线利润，再扩大组合预算。</p></div>
       </div>
     </section>
-
+    
     <section id="blocks">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Specialist Scorecard</div>
-          <h2>专项分数：路由按经营杠杆判断，不只看最低分。</h2>
+          <h2>专项分数：SignalMark 修安全与高端信号，CommerceFlow 验证渠道与组合利润。</h2>
         </div>
-        <p class="section-note">三项分数用于判断下一步该由 Atlas 继续总控，还是进入 SignalMark、CommerceFlow 或 TideLens 深诊。</p>
+        <p class="section-note">Atlas 保留总控；两项专项并行处理后，再决定是否扩大 Iconic 和第二品线预算。</p>
       </div>
       <div class="business-grid">
-        <article class="biz-card state-amber">
-          <div class="biz-top"><div><span>SignalMark</span><h3>厨房小家电 购买理由已经出现，但 proof 和语言边界还要补。</h3><p>SignalMark 重点看品类入口、购买理由、可信 proof 和搜索/AI 可引用资产。</p></div><b>68</b></div>
-          <div class="biz-body"><div><strong>做得好</strong><p>COSORI 有可识别的品类入口和正向 VOC。</p></div><div><strong>做得差</strong><p>安全信任、主线外增长 还需要被页面和内容前置。</p></div></div>
-
+        <article class="biz-card state-green">
+          <div class="biz-top"><div><span>SignalMark</span><h3>空气炸锅和 Iconic 信号清楚，安全证明仍需持续化。</h3><p>SignalMark 重点把材料、测试、召回整改、保修和比较理由做成可引用资产。</p></div><b>72</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>TurboBlaze 与 Iconic 已形成主流和高端两层购买信号。</p></div><div><strong>做得差</strong><p>历史召回与当前售后主题仍会削弱安全权威。</p></div></div>
+          
         </article><article class="biz-card state-amber">
-          <div class="biz-top"><div><span>CommerceFlow</span><h3>成交链路短板集中在渠道、售后和选择路径。</h3><p>CommerceFlow 重点看 PDP、FAQ、价格、退换、warranty、渠道角色和复购。</p></div><b>56</b></div>
-          <div class="biz-body"><div><strong>做得好</strong><p>Amazon 已经能提供成交或验证。</p></div><div><strong>做得差</strong><p>官网和平台之间的 安全信任 解释还不够集中。</p></div></div>
-
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>多渠道成立，贡献利润与官网售后仍缺公开证明。</h3><p>CommerceFlow 重点看 Amazon、零售和 DTC 的 SKU、价格、退货、保修与客户关系。</p></div><b>60</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Amazon 与主流零售提供成熟成交入口。</p></div><div><strong>做得差</strong><p>第二品线、Iconic 和 DTC 的贡献利润需要后台校准。</p></div></div>
+          
         </article><article class="biz-card state-amber">
-          <div class="biz-top"><div><span>TideLens</span><h3>创作者和社媒内容要回答疑虑，不能只放大兴趣。</h3><p>TideLens 重点看 creator proof 是否降低购买犹豫，并沉淀成可复用素材。</p></div><b>60</b></div>
-          <div class="biz-body"><div><strong>做得好</strong><p>内容触点 可以补充信任。</p></div><div><strong>做得差</strong><p>内容 brief 需要直接回答 安全信任、主线外增长、型号选择。</p></div></div>
-
+          <div class="biz-top"><div><span>TideLens</span><h3>评测和用户内容能证明体验，需绑定高端化与安全问题。</h3><p>TideLens 重点看 creator proof 是否回答材料、清洁、噪音、耐用和价格合理性。</p></div><b>66</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>2026 年 Iconic 已获得评测与设计类内容。</p></div><div><strong>做得差</strong><p>发布声量不能替代长期使用、售后与零售 sell-out。</p></div></div>
+          
         </article>
       </div>
     </section>
-
+    
     <section id="issues">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Top 3 Issues</div>
-          <h2>Top 3 关键问题：安全信任、主线外增长、型号选择。</h2>
+          <h2>Top 3 关键问题：安全信任、高端化验证、第二品线利润。</h2>
         </div>
-        <p class="section-note">每个问题都要同时落到证据、影响和 30 / 90 天动作。</p>
+        <p class="section-note">三个问题分别对应信任封顶、价格溢价和组合扩张质量。</p>
       </div>
       <article class="issue state-red">
-        <h3>问题 1：安全信任 没有被放到购买前第一层。</h3>
+        <h3>问题 1：召回整改与当前安全证明没有形成一条持续信任链。</h3>
         <div class="issue-grid">
-          <div><b>严重度</b><p>高。它直接影响首单信任、渠道选择和售后成本。</p></div>
-          <div><b>证据</b><p>空气炸锅仍承担北美规模，历史安全事件尾巴和第二增长点不足让厨房生态成熟度被高估。 <span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p></div>
-          <div><b>业务影响</b><p>用户会回到平台、竞品或第三方负面页面寻找答案，品牌失去解释权。</p></div>
-          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线 安全信任 承接页，插入 PDP、FAQ、checkout 和客服宏。<br><strong>90 天：</strong>把评价、退款、客服、复购和渠道转化放入同一张周报，验证修复效果。</p></div>
+          <div><b>严重度</b><p>高。历史事件会跨型号影响首单、渠道审查和客服成本。</p></div>
+          <div><b>证据</b><p>CPSC、官方召回页和当前售后 VOC 共同支持这条判断。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E8]</span><span class="evidence">[E17]</span><span class="evidence">[E19]</span></span></p></div>
+          <div><b>业务影响</b><p>用户会在官网之外寻找安全、替换和保修答案。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线统一安全与召回证明中心，明确当前型号、测试、补偿和 SLA。<br><strong>90 天：</strong>发布供应链整改与新产品安全证据包，并追踪搜索与客服主题变化。</p></div>
         </div>
       </article><article class="issue state-amber">
-        <h3>问题 2：kettles / dehydrators / oven / coffee / multi-cooker 需要独立证据。</h3>
+        <h3>问题 2：Iconic 的 249 美元高端化还缺长期贡献利润证据。</h3>
         <div class="issue-grid">
-          <div><b>严重度</b><p>中高。第二线不能只靠主线声量外推。</p></div>
-          <div><b>证据</b><p>air fryers、kettles / dehydrators、oven / coffee / multi-cooker 的角色需要用公开动销和后台数据拆清。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p></div>
-          <div><b>业务影响</b><p>预算会被摊薄，团队容易同时推太多页面、SKU 和内容主题。</p></div>
-          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 SKU role map：Hero / Validation / Add-on / Retention / Proof。<br><strong>90 天：</strong>按 SKU role 看 GMV、毛利、评价、退货、复购和渠道冲突，关掉低质量长尾。</p></div>
+          <div><b>严重度</b><p>中高。产品信号成立，经营质量仍需 sell-out、退货与保修成本验证。</p></div>
+          <div><b>证据</b><p>官方产品、5 年保修和 2026 年评测证明产品力与定价方向。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E15]</span><span class="evidence">[E20]</span></span></p></div>
+          <div><b>业务影响</b><p>若过早扩量，高客单会放大获客、退货和服务成本。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 Iconic 的人群、竞品、材料与保修 proof matrix。<br><strong>90 天：</strong>按渠道复盘 sell-out、毛利、退货、保修与新客质量。</p></div>
         </div>
       </article><article class="issue state-amber">
-        <h3>问题 3：搜索、VOC 和内容没有形成同一个承接闭环。</h3>
+        <h3>问题 3：厨房矩阵宽度没有证明每条线都产生增量利润。</h3>
         <div class="issue-grid">
-          <div><b>严重度</b><p>中高。高意图用户会在搜索和社群里看到分散答案。</p></div>
-          <div><b>证据</b><p>搜索词、评价和 VOC 需要统一到承接页与内容 brief。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p></div>
-          <div><b>业务影响</b><p>投放和内容会增加注意力，但没有稳定降低购买犹豫。</p></div>
-          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重排搜索入口：行业词、品牌 review、竞品比较、售后词。<br><strong>90 天：</strong>把 creator brief、SEO 页面、FAQ、PDP 和 support macro 合并为一套 proof matrix。</p></div>
+          <div><b>严重度</b><p>中高。主线外推会摊薄渠道、内容和库存资源。</p></div>
+          <div><b>证据</b><p>年报与 US Store 证明水壶、烘干机和压力锅存在，公开数据不足以证明同等强度。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E13]</span></span></p></div>
+          <div><b>业务影响</b><p>团队容易同时推太多 SKU，库存、促销和内容效率被拉低。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 Hero / Validation / Add-on / Retention SKU role map。<br><strong>90 天：</strong>按品线核算增量收入、贡献利润、复购与渠道冲突。</p></div>
         </div>
       </article>
     </section>
@@ -1041,7 +1044,7 @@
         </div>
         <p class="section-note">竞品当前重点是比谁更快降低购买风险。</p>
       </div><div class="grid-4">
-
+        
         <article class="card state-red">
           <div class="card-state">P0 对比</div>
           <h3>Ninja</h3>
@@ -1063,9 +1066,9 @@
           <p>会分走不同价格带、信任来源或渠道安全感，适合放进比较页和 creator brief。</p>
         </article>
       </div></section>
-
+    
     <section id="positioning">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Positioning Path</div>
@@ -1074,7 +1077,7 @@
         <p class="section-note">英文 copy 只给可测试方向，不替代后续品牌文案打磨。</p>
       </div>
       <div class="grid-3">
-
+        
         <article class="card state-green">
           <div class="card-state">Now</div>
           <h3>当前购买理由</h3>
@@ -1100,61 +1103,61 @@
         <p><b>CTA:</b> Build the proof and support path before scaling spend.</p>
       </div>
     </section>
-
+    
     <section id="scores">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">11-Dimension Score</div>
-          <h2>11 维评分：红灯先修，黄灯进周会，绿灯继续放大。</h2>
+          <h2>11 维评分：主盘托住基本分，安全与利润证明决定上限。</h2>
         </div>
-        <p class="section-note">分数来自 v3 方向性重算和旧报告公开证据迁移，后台数据会校准权重。</p>
+        <p class="section-note">公开数据用于方向性评分；后台数据会校准渠道、毛利、退货、保修与复购。</p>
       </div>
       <div class="scoreboard">
-        <article class="score-card state-amber">
-          <div class="score-card-top"><b>64</b><span>品类购买契约</span></div>
-          <div class="mini-track"><i style="width:64%;"></i></div>
-          <p>品类购买契约 需要服务于下一步预算取舍。</p>
+        <article class="score-card state-green">
+          <div class="score-card-top"><b>70</b><span>品类购买契约</span></div>
+          <div class="mini-track"><i style="width:70%;"></i></div>
+          <p>品类需求明确，安全与售后仍是第一契约。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>78</b><span>主线产品清晰度</span></div>
+          <div class="mini-track"><i style="width:78%;"></i></div>
+          <p>TurboBlaze 与空气炸锅主线清楚。</p>
         </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>68</b><span>主线产品清晰度</span></div>
+          <div class="score-card-top"><b>61</b><span>第二品线验证</span></div>
+          <div class="mini-track"><i style="width:61%;"></i></div>
+          <p>Iconic 信号成立，其他厨房线仍待独立证明。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>68</b><span>渠道角色</span></div>
           <div class="mini-track"><i style="width:68%;"></i></div>
-          <p>主线产品清晰度 需要服务于下一步预算取舍。</p>
+          <p>Amazon 与零售成熟，DTC 角色和贡献利润待校准。</p>
         </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>57</b><span>第二品线验证</span></div>
-          <div class="mini-track"><i style="width:57%;"></i></div>
-          <p>第二品线验证 需要服务于下一步预算取舍。</p>
-        </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>62</b><span>渠道角色</span></div>
-          <div class="mini-track"><i style="width:62%;"></i></div>
-          <p>渠道角色 需要服务于下一步预算取舍。</p>
-        </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>60</b><span>搜索心智</span></div>
-          <div class="mini-track"><i style="width:60%;"></i></div>
-          <p>搜索心智 需要服务于下一步预算取舍。</p>
+          <div class="score-card-top"><b>67</b><span>搜索心智</span></div>
+          <div class="mini-track"><i style="width:67%;"></i></div>
+          <p>主盘吃掉了，安全与高端比较词只吃到一半。</p>
         </article><article class="score-card state-red">
-          <div class="score-card-top"><b>54</b><span>VOC / 售后</span></div>
-          <div class="mini-track"><i style="width:54%;"></i></div>
-          <p>安全信任 是当前重点。</p>
-        </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>68</b><span>SignalMark</span></div>
-          <div class="mini-track"><i style="width:68%;"></i></div>
-          <p>SignalMark 需要服务于下一步预算取舍。</p>
-        </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>56</b><span>CommerceFlow</span></div>
+          <div class="score-card-top"><b>56</b><span>VOC / 售后</span></div>
           <div class="mini-track"><i style="width:56%;"></i></div>
-          <p>CommerceFlow 需要服务于下一步预算取舍。</p>
+          <p>召回、保修和直购服务是当前最低项。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>72</b><span>SignalMark</span></div>
+          <div class="mini-track"><i style="width:72%;"></i></div>
+          <p>主线和 Iconic 信号清楚，安全资产需持续化。</p>
         </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>60</b><span>TideLens</span></div>
+          <div class="score-card-top"><b>60</b><span>CommerceFlow</span></div>
           <div class="mini-track"><i style="width:60%;"></i></div>
-          <p>TideLens 需要服务于下一步预算取舍。</p>
+          <p>渠道成交成立，组合利润与售后承接待修。</p>
         </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>58</b><span>预算纪律</span></div>
-          <div class="mini-track"><i style="width:58%;"></i></div>
-          <p>预算纪律 需要服务于下一步预算取舍。</p>
+          <div class="score-card-top"><b>66</b><span>TideLens</span></div>
+          <div class="mini-track"><i style="width:66%;"></i></div>
+          <p>评测内容成立，需绑定长期使用和价格合理性。</p>
         </article><article class="score-card state-amber">
-          <div class="score-card-top"><b>59</b><span>组织执行</span></div>
-          <div class="mini-track"><i style="width:59%;"></i></div>
-          <p>组织执行 需要服务于下一步预算取舍。</p>
+          <div class="score-card-top"><b>62</b><span>预算纪律</span></div>
+          <div class="mini-track"><i style="width:62%;"></i></div>
+          <p>预算应先验证 Iconic 和第二品线贡献。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>64</b><span>组织执行</span></div>
+          <div class="mini-track"><i style="width:64%;"></i></div>
+          <p>安全、产品、渠道和客服需要同一周报。</p>
         </article>
       </div>
     </section>
@@ -1166,7 +1169,7 @@
         </div>
         <p class="section-note">公开版只给方向，真实预算需要后台 GMV、毛利、CAC、退货和复购校准。</p>
       </div><div class="grid-4">
-
+        
         <article class="card state-green">
           <div class="card-state">Keep</div>
           <h3>先保留</h3>
@@ -1188,32 +1191,32 @@
           <p>当搜索承接、负面 VOC、退款/售后和渠道转化都有改善，再提高投放或渠道拓展。</p>
         </article>
       </div></section>
-
+    
     <section id="roadmap">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">90 / 180 Day Roadmap</div>
-          <h2>90 / 180 天路线：先修承接，再验证第二线。</h2>
+          <h2>90 / 180 天路线：先固化安全证明，再验证 Iconic 与第二品线利润。</h2>
         </div>
-        <p class="section-note">路线以 owner 和验收指标组织，避免只写方向。</p>
+        <p class="section-note">动作以 owner、指标和预算闸门组织。</p>
       </div>
       <div class="roadmap">
         <article class="road-card">
           <h3>0-30 天</h3>
-          <div class="road-action state-red"><b>DTC / Ecommerce｜上线 安全信任 承接页和 PDP FAQ</b><p>验收：FAQ 点击、转化、退款原因。影响：减少临门犹豫</p></div><div class="road-action state-red"><b>Support｜整理退换、保修、故障和客服 SLA</b><p>验收：首次响应、解决周期、负面主题。影响：降低售后不确定性</p></div>
+          <div class="road-action state-red"><b>Brand / Legal / Quality｜上线统一安全与召回证明中心</b><p>验收：安全词承接、召回查询、客服主题。影响：夺回安全解释权</p></div><div class="road-action state-red"><b>DTC / Support｜重做保修、订单、退换和客服 SLA</b><p>验收：首次响应、解决周期、退款原因。影响：降低直购摩擦</p></div>
         </article><article class="road-card">
           <h3>31-90 天</h3>
-          <div class="road-action state-amber"><b>Marketing｜重写 Ninja / Instant / Breville 比较页和 creator brief</b><p>验收：比较词排名、页面转化、内容复用。影响：夺回解释权</p></div><div class="road-action state-amber"><b>Product / Growth｜建立 SKU role map 和渠道看板</b><p>验收：GMV、毛利、评价、退货、复购。影响：减少资源摊薄</p></div>
+          <div class="road-action state-amber"><b>Product / Growth｜建立 Iconic 高端化 proof 与渠道看板</b><p>验收：sell-out、毛利、退货、保修、新客。影响：验证 249 美元溢价</p></div><div class="road-action state-amber"><b>Marketing｜上线 Ninja / Instant / Dreo / Typhur 比较页</b><p>验收：比较词排名、转化、内容复用。影响：承接高意图选择</p></div>
         </article><article class="road-card">
           <h3>91-180 天</h3>
-          <div class="road-action state-blue"><b>Leadership｜决定第二线是否进入预算放大</b><p>验收：独立动销、复购、渠道效率。影响：避免主线外推</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas v3 分数</b><p>验收：CAC、ROAS、TACOS、LTV、退款率。影响：把公开诊断变成经营决策</p></div>
+          <div class="road-action state-blue"><b>Leadership｜决定 Iconic 和第二品线预算放大顺序</b><p>验收：增量收入、贡献利润、复购、库存。影响：避免组合扩张摊薄</p></div><div class="road-action state-blue"><b>Data / Ops｜用后台数据重算 Atlas 分数</b><p>验收：CAC、TACOS、毛利、退货、保修、LTV。影响：把公开判断变成经营决策</p></div>
         </article>
       </div>
     </section>
-
+    
     <section id="departments">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Department RYG</div>
@@ -1269,36 +1272,36 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Risk &amp; Data Gaps</div>
-          <h2>风险和数据缺口：公开版能判断方向，不能替代后台校准。</h2>
+          <h2>风险和数据缺口：公开数据能判断方向，利润与复购仍需后台校准。</h2>
         </div>
-        <p class="section-note">上线旧 GitHub HTML 时必须保留数据缺口，避免把方向性估计写成确定财务口径。</p>
+        <p class="section-note">北美 GMV、渠道贡献利润、退货、保修、客服和 cohort 数据会决定最终预算。</p>
       </div><div class="grid-3">
-
+        
         <article class="card state-blue">
           <div class="card-state">Data</div>
-          <h3>后台数据缺口</h3>
-          <p>需要补 COSORI 的北美 GMV、渠道占比、毛利、退货、复购、客服和广告数据。</p>
+          <h3>后台经营数据</h3>
+          <p>补 Amazon ASIN、DTC、Target / Best Buy sell-out、毛利、退货、保修和复购。</p>
         </article>
-        <article class="card state-amber">
+        <article class="card state-red">
           <div class="card-state">Risk</div>
-          <h3>当前最大风险</h3>
-          <p>空气炸锅仍承担北美规模，历史安全事件尾巴和第二增长点不足让厨房生态成熟度被高估。 是当前 v3 分数封顶的核心原因。</p>
+          <h3>召回与安全</h3>
+          <p>补 replacement 完成率、当前型号事故率、供应商整改与第三方测试。</p>
         </article>
         <article class="card state-amber">
-          <div class="card-state">Scope</div>
-          <h3>上线备注</h3>
-          <p>本页是旧报告按 Atlas v3 规则重跑后的公开数据版，证据沿用旧公开来源和 2026-06-25 v3 重算结果。</p>
+          <div class="card-state">Validation</div>
+          <h3>Iconic 高端化</h3>
+          <p>补渠道 sell-out、贡献利润、退货原因、保修成本与新客质量。</p>
         </article>
       </div></section>
-
+    
     <section id="evidence">
-
+      
       <div class="section-head">
         <div>
           <div class="eyebrow">Evidence Table</div>
-          <h2>证据表：新版 v3 判断沿用旧公开来源，并标记需要后台校准的地方。</h2>
+          <h2>证据表：强判断都能追到来源、日期、用途和置信度。</h2>
         </div>
-        <p class="section-note">证据来自旧 Atlas 公开诊断与 2026-06-25 v3 重算结果；后续深诊需要重新逐源更新 Xiyou、Amazon、搜索、VOC 和后台数据。</p>
+        <p class="section-note">公开证据用于北美方向性诊断；后台接入后校准 ASIN、渠道利润、召回关闭率、退货和复购。</p>
       </div>
       <div class="table-wrap">
         <table>
@@ -1307,128 +1310,142 @@
             <tr>
               <td>E1</td>
               <td><a href="https://cosori.com/" target="_blank" rel="noopener">COSORI 官网</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；官网列出 Air Fryer、Air Fryer Oven、Multi-Cookers、Kettles、Food Dehydrators、Coffee 等产品线。；品线拆分、厨房生态判断。</td>
               <td>High</td>
             </tr><tr>
               <td>E2</td>
               <td><a href="https://cosori.com/collections/air-fryers" target="_blank" rel="noopener">COSORI Air Fryers Collection</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；空气炸锅价格带覆盖 $59.99-$249，TurboBlaze、Iconic、Dual Basket、Pro LE 等型号并存。；导购复杂度、价格带、SKU 角色判断。</td>
               <td>High</td>
             </tr><tr>
               <td>E3</td>
               <td><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0417/2025041700367.pdf" target="_blank" rel="noopener">VeSync 2024 年报</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；集团 2024 收入 $652.64M；北美 $480.489M；COSORI 品牌 $165.048M；非 Amazon 渠道 $166.244M，约占集团收入 25.5%。；规模校准、Amazon 驱动判断、渠道增长。</td>
               <td>High</td>
             </tr><tr>
               <td>E4</td>
               <td><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0417/2025041700367.pdf" target="_blank" rel="noopener">VeSync 2024 年报</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；公司称美国 Amazon 的电热水壶、食物烘干机等核心品类连续多年排名第一；年报同时提示美国关税不确定性。；壶 / 烘干机 P1、关税风险。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E5</td>
               <td><a href="https://www.amazon.com/TurboBlaze-Premium-Ceramic-Coating-90%C2%B0-450%C2%B0F/dp/B0C33CHG99" target="_blank" rel="noopener">Amazon TurboBlaze 实页</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；TurboBlaze 6 qt 标题含 PFAS-free、90°-450°F、9-in-1；4.8 分、19,654 条评价、20K+ bought in past month。；主力 SKU 动销、卖点匹配。</td>
               <td>High</td>
             </tr><tr>
               <td>E6</td>
               <td><a href="https://www.cpsc.gov/Recalls/2023/Two-Million-COSORI-Air-Fryers-Recalled-by-Atekcity-Due-to-Fire-and-Burn-Hazards" target="_blank" rel="noopener">U.S. CPSC 召回公告</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；召回日期为 2023-02-23；美国约 200 万台，另有加拿大约 25 万台、墨西哥约 2.1 万台；销售期为 2018-2022。；历史事件时间加权、搜索残留风险。</td>
               <td>High</td>
             </tr><tr>
               <td>E7</td>
               <td><a href="https://recalls-rappels.canada.ca/en/alert-recall/certain-models-cosori-branded-air-fryers-recalled-due-potential-fire-hazard" target="_blank" rel="noopener">Health Canada 召回公告</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；披露美国 2,042,631 台、加拿大 252,828 台、墨西哥 21,490 台；全球 205 起报告。；召回规模、信任风险。</td>
               <td>High</td>
             </tr><tr>
               <td>E8</td>
               <td><a href="https://cosori.com/pages/cosori-product-recall" target="_blank" rel="noopener">COSORI 官方召回页</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；COSORI 说明其与 CPSC、Health Canada、Profeco 合作进行自愿召回和更换。；品牌已处理召回，但信任表达需前置。</td>
               <td>High</td>
             </tr><tr>
               <td>E9</td>
-              <td><a href="https://www.prnewswire.com/news-releases/cosori-introduces-iconic-the-air-fryer-that-looks-as-good-as-it-cooks-302653635.html" target="_blank" rel="noopener">PRNewswire Iconic 发布</a></td>
-              <td>2026-06-13</td>
-              <td>Public source</td>
-              <td>Public source；Public source；Iconic 2026 年 1 月发布，$249，Red Dot 设计奖，不锈钢、PFAS-free / BPA-free、五年有限保修。；高端化机会、价格理由。</td>
+              <td><a href="https://cosori.com/collections/new-arrivals/products/iconic-air-fryer" target="_blank" rel="noopener">COSORI Iconic 官方产品页</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official PDP</td>
+              <td>Iconic 249 美元、不锈钢、PFAS-free 陶瓷涂层、DC motor、智能控制和 5 年保修。</td>
               <td>High</td>
             </tr><tr>
               <td>E10</td>
               <td><a href="https://www.transparencymarketresearch.com/air-fryer-market.html" target="_blank" rel="noopener">Transparency Market Research</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；全球空气炸锅 2025 年 $1.1034B；北美占 36.8%；篮式空气炸锅占 54.6%。；空气炸锅北美天花板估算。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E11</td>
               <td><a href="https://www.mordorintelligence.com/industry-reports/united-states-electric-kettles-market" target="_blank" rel="noopener">Mordor Intelligence U.S. Electric Kettle</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；美国电热水壶市场预计低于 3% CAGR，低集中度，需求来自多功能、省时、小空间厨房。；电热水壶 P1 与成熟低增速判断。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E12</td>
               <td><a href="https://www.target.com/s/cosori%2Bair%2Bfryer" target="_blank" rel="noopener">Target / Best Buy 公开零售页</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；Target 有 COSORI TurboBlaze Smart Air Fryer，Best Buy 有 Iconic SKU。；非 Amazon 渠道扩张。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E13</td>
               <td><a href="https://www.amazon.com/stores/Cosori/page/9496AE5E-EC30-4021-BF14-17357946F3FA" target="_blank" rel="noopener">Amazon COSORI Electric Kettles</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；Amazon 店铺显示 COSORI 电热水壶 20K+ bought in past month；Best Sellers 页面显示 COSORI 电热水壶排名靠前。；电热水壶动销与品类证明。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E14</td>
               <td><a href="https://tradingeconomics.com/china/currency" target="_blank" rel="noopener">Trading Economics USD / CNY</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；USD/CNY 2026-06-12 为 6.7634，并于 2026-06-13 更新。；美元 / 人民币换算。</td>
               <td>High</td>
             </tr><tr>
               <td>E15</td>
               <td><a href="https://www.bonappetit.com/story/best-air-fryers-reviewed" target="_blank" rel="noopener">媒体评测公开样本</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；2026 年评测媒体继续把 COSORI TurboBlaze 放在高性价比、高性能、易清洁的讨论中。；卖点匹配和第三方背书。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E16</td>
               <td><a href="https://www.amazon.com/TurboBlaze-Premium-Ceramic-Coating-90%C2%B0-450%C2%B0F/dp/B0C33CHG99" target="_blank" rel="noopener">Amazon TurboBlaze 近评 VOC</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；2026 年 4-5 月美国近评主要提到 powerful、easy to clean、quiet、well made、safe ceramic coating、value for money 等正向体验。；主品线卖点匹配、召回当前影响降权。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E17</td>
               <td><a href="https://www.bbb.org/us/ca/anaheim/profile/online-shopping/cosori-1126-1000107717/complaints" target="_blank" rel="noopener">BBB Cosori Complaints</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；BBB 2025-2026 投诉中仍可见 recall replacement、售后响应和服务处理问题，但样本更多代表负面投诉池，不代表整体消费者比例。；售后与召回尾部 VOC。</td>
               <td>Medium</td>
             </tr><tr>
               <td>E18</td>
               <td><a href="https://www.reddit.com/r/airfryer/comments/1lklv0s/cosori_air_fryer_recall_replacement_this_company/" target="_blank" rel="noopener">Reddit recall replacement VOC</a></td>
-              <td>2026-06-13</td>
+              <td>2026-08-27 checked</td>
               <td>Public source</td>
               <td>Public source；Public source；Reddit 讨论呈现两极：有用户抱怨替换流程，也有用户反馈 replacement 很顺利。说明召回影响仍有尾部声量，但不能直接放大为当前主矛盾。；历史事件时间加权、VOC 校验。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E19</td>
+              <td><a href="https://www.trustpilot.com/review/cosori.com" target="_blank" rel="noopener">Trustpilot COSORI</a></td>
+              <td>2026-08-27 checked</td>
+              <td>VOC</td>
+              <td>2.8 / 5、27 条低基数评价；当前主题包括订单配送、保修凭证、耐用与客服响应，不能外推整体比例。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E20</td>
+              <td><a href="https://www.tomsguide.com/home/air-fryers/cosori-iconic-air-fryer-review" target="_blank" rel="noopener">Tom's Guide COSORI Iconic review</a></td>
+              <td>2026-05-30</td>
+              <td>Independent review</td>
+              <td>验证 Iconic 的易用、烹饪表现、材料、设计、价格与 5 年保修信号。</td>
               <td>Medium</td>
             </tr>
           </tbody>
@@ -1437,7 +1454,7 @@
     </section>
     <footer class="footer">
       <span>远汐 Offing Atlas｜北美业务诊断</span>
-      <span>COSORI · 2026-06-26 · North America</span>
+      <span>COSORI · 2026-08-27 · North America</span>
     </footer>
   </main>
 </body>
