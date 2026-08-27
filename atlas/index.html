@@ -459,6 +459,12 @@
       height: 42px;
       max-width: min(82%, 286px);
     }
+    .report-logo.logo-compact-square img {
+      width: auto;
+      height: 64px;
+      max-width: min(82%, 286px);
+      max-height: 64px;
+    }
     .report-card.logo-panorama-card .report-logo img {
       max-width: min(86%, 300px);
       max-height: 54px;
@@ -598,6 +604,7 @@
       .report-card.logo-panorama-card .report-logo img { max-width: min(84%, 218px); max-height: 40px; }
       .report-logo.logo-small-source img,
       .report-card.logo-panorama-card .report-logo.logo-small-source img { max-width: min(84%, 218px); max-height: 40px; transform: scale(1.04); }
+      .report-logo.logo-compact-square img { width: auto; height: 46px; max-width: min(84%, 218px); max-height: 46px; }
       .report-wordmark { font-size: 17px; }
       .report-card h3 { margin-top: 2px; font-size: 20px; }
       .report-card p { grid-column: 1; grid-row: 3; margin-top: 0; font-size: 13px; line-height: 1.38; }
@@ -645,7 +652,7 @@
         <div class="console-body">
           <div class="eyebrow">Project Map</div>
           <div class="metric-grid">
-            <div class="metric"><b id="archivedReportMetric">21</b><span>已归档品牌诊断</span></div>
+            <div class="metric"><b id="archivedReportMetric">22</b><span>已归档品牌诊断</span></div>
             <div class="metric"><b>1</b><span>调研资料库入口</span></div>
             <div class="metric"><b class="compact">2026-08-27</b><span>最近更新日期</span></div>
             <div class="metric"><b>GitHub Pages</b><span>公开交付链接</span></div>
@@ -689,6 +696,7 @@
             <option value="tools">精密工具</option>
             <option value="furniture">办公家具</option>
             <option value="outdoor">庭院工具</option>
+            <option value="home">家居收纳</option>
           </select>
           <select class="filter" id="typeFilter" aria-label="按经营类型筛选">
             <option value="">全部类型</option>
@@ -713,14 +721,14 @@
             <option value="score-asc">总分低到高</option>
           </select>
           <button class="reset-filter" id="resetFilters" type="button">重置</button>
-          <span class="pill" id="reportCount">共 21 份报告</span>
+          <span class="pill" id="reportCount">共 22 份报告</span>
         </div>
       </div>
       <div class="active-filter-summary" id="activeFilterSummary" aria-live="polite">显示全部报告。</div>
       <div class="score-distribution" aria-label="报告总分档位分布">
         <div class="score-band score-a" data-score-band="A"><b>2</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
         <div class="score-band score-b" data-score-band="B"><b>4</b><span>B档 65-69</span><small>主线成立，但短板会吃利润。</small></div>
-        <div class="score-band score-c" data-score-band="C"><b>9</b><span>C档 55-64</span><small>有生意基础，治理优先于加码。</small></div>
+        <div class="score-band score-c" data-score-band="C"><b>10</b><span>C档 55-64</span><small>有生意基础，治理优先于加码。</small></div>
         <div class="score-band score-d" data-score-band="D"><b>4</b><span>D档 50-54</span><small>明显拖累，需要先止损。</small></div>
         <div class="score-band score-e" data-score-band="E"><b>2</b><span>E档 &lt;50</span><small>信任或成交链路未闭合。</small></div>
       </div>
@@ -764,6 +772,10 @@
         <a class="report-card" data-name="tidewe hunting waders fishing waders hunting blind heated apparel rangefinder outdoor amazon dtc" data-stage="10-100" data-category="hunting" data-type="dualchannel" data-status="latest" data-score="61" data-tier="C" href="../tidewe-offing-na-diagnosis-2026-06-16.html">
           <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/tidewe-logo-official.png" alt="TideWe logo" /></div><h3>TideWe</h3><p>waders、hunting blind、heated apparel、野外可靠和维修信任。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 61 分，C 档">61 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">狩猎户外</span></div>
+        </a>
+        <a class="report-card" data-name="iris usa iris ohyama storage pet food container woozoo fan small appliance furniture walmart target best buy retail amazon" data-stage="100+" data-category="home" data-type="allchannel" data-status="latest" data-score="60" data-tier="C" href="../iris-usa-offing-na-diagnosis-2026-08-27.html">
+          <div><div class="report-logo logo-compact-square"><img src="../assets/brand-logos/iris-usa-logo-official.jpg" alt="IRIS USA logo" /></div><h3>IRIS USA</h3><p>四座美国工厂、2,000 个 SKU、收纳主盘与 WOOZOO；宠物食品容器安全设计、破损缺件与组合利润。</p></div>
+          <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 60 分，C 档">60 · C档</span><span class="pill green">2026-08-27 v1</span><span class="pill">100+</span><span class="pill">家居收纳</span></div>
         </a>
         <a class="report-card" data-name="yvette sports bra activewear fit sizing return support" data-stage="1-10" data-category="health" data-type="dtc" data-status="latest" data-score="58" data-tier="C" href="../yvette-offing-na-diagnosis-2026-06-15.html">
           <div><div class="report-logo "><img src="../assets/brand-logos/yvette-logo-wordmark-magenta.png" alt="Yvette logo" /></div><h3>Yvette</h3><p>高支撑运动内衣、尺码信任、换码体验和 DTC 复购路径。</p></div>
@@ -818,7 +830,7 @@
         <a class="quick-card prism" href="#reports">
           <div>
             <h3>品牌报告库</h3>
-            <p>集中进入 20 个已按 Atlas v3 规则重跑的北美业务诊断报告。</p>
+            <p>集中进入 22 个已按 Atlas 最新规则完成的北美业务诊断报告。</p>
           </div>
           <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
         </a>

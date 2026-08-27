@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IRIS USA · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-08-27</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    /*
+      Offing canonical renderer baseline:
+      /Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md
+      Product family sample:
+      /Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html
+      Atlas sample:
+      /Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html
+    */
+    :root {
+      color-scheme: light;
+      --offing-ink:#101413; --offing-body:#293331; --offing-muted:#66716e; --offing-line:#dfe3e7;
+      --offing-soft:#f6f8fa; --offing-paper:#fff8ee; --offing-surface:#fff;
+      --offing-pink:#eb4aa6; --offing-violet:#6d4cff; --offing-cyan:#20c7d9; --offing-lime:#78d64b;
+      --offing-blue:#2457ff; --offing-sky:#42a5ff; --offing-green:#18b77a; --offing-teal:#00b8a9;
+      --offing-orange:#ff8a2a; --offing-coral:#ff5a3d; --offing-amber:#b77900; --offing-slate:#475569;
+      --atlas-bg:#fff; --atlas-surface:#fff; --atlas-surface-soft:#f7f8fa;
+      --atlas-ink:#101413; --atlas-body:#293331; --atlas-muted:#66716e; --atlas-line:#e0e3e5;
+      --atlas-main:#2d6261; --atlas-teal:#32d6c6; --atlas-sky:#9ed1ff; --atlas-pink:#eb4aa6;
+      --atlas-lilac:#9b7cff; --atlas-coral:#ff6b4a; --atlas-green:#70e5a8; --atlas-inverse:#111817; --atlas-inverse-2:#162321;
+      --display-font:"Avenir Next Condensed","Helvetica Neue Condensed","Arial Narrow","Roboto Condensed","Oswald",sans-serif;
+      --text-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      --bg:var(--atlas-bg); --top:#fff; --surface:var(--atlas-surface); --surface-2:var(--atlas-surface-soft);
+      --text:var(--atlas-ink); --body:var(--atlas-body); --muted:var(--atlas-muted); --line:var(--atlas-line);
+      --accent:var(--atlas-main); --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:var(--atlas-teal); --prism-b:var(--atlas-sky); --prism-c:var(--atlas-pink); --prism-d:var(--atlas-lilac); --prism-e:var(--atlas-coral);
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:var(--text-font); font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner { width:min(1432px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0; }
+    .product-lockup { display:grid; color:var(--text); font-size:13px; font-weight:850; line-height:1.08; white-space:nowrap; }
+    .product-lockup small { margin-top:4px; color:var(--accent); font-size:12px; font-weight:800; }
+    .nav { display:flex; gap:18px; overflow-x:auto; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); font-size:12px; line-height:1; font-weight:780; white-space:nowrap; }
+    main { width:min(1432px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:78px 0; }
+    .hero { position:relative; min-height:min(650px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; grid-template-rows:auto auto; gap:22px 54px; align-items:center; margin:0; padding:34px 0 30px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero-outline { position:absolute; z-index:0; right:60px; top:36px; color:transparent; -webkit-text-stroke:1.25px color-mix(in srgb,var(--prism-c) 48%,transparent); font-family:var(--display-font); font-size:clamp(72px,8vw,116px); line-height:.82; font-weight:900; pointer-events:none; }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:800px; padding-top:0; align-self:end; }
+    .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
+    .client-logo img { display:block; width:auto; height:48px; max-width:238px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
+    .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .nowrap-title { white-space:nowrap; }
+    .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
+    .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(190px,1fr)); gap:12px; max-width:760px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:88px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:14px 15px; overflow-wrap:anywhere; }
+    .metric-label { display:grid; grid-template-columns:9px minmax(0,1fr); align-items:start; column-gap:8px; row-gap:4px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { width:9px; height:9px; margin-top:3px; background:var(--prism-a); }
+    .metric-label-copy { min-width:0; }
+    .metric-evidence { grid-column:2; min-width:0; display:block; }
+    .hero-metric.state-red .metric-label i { background:var(--risk); }
+    .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
+    .hero-metric.state-green .metric-label i { background:var(--success); }
+    .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
+    .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
+    .hero-metric .evidence-list { display:flex; width:auto; max-width:100%; flex-wrap:wrap; gap:4px; overflow:visible; margin:0; padding:0; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; max-width:720px; align-self:start; margin-top:0; background:transparent; }
+    .chain-item { min-width:0; min-height:62px; padding:10px 12px; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:rgba(255,255,255,.92); overflow-wrap:anywhere; }
+    .chain-item i { display:block; margin-bottom:6px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:880; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:13px; line-height:1.25; font-weight:860; }
+    .chain-item span { display:none; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:1px solid rgba(16,20,19,.14); box-shadow:none; }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; align-self:center; overflow:hidden; min-height:0; color:var(--inverse-text); background:linear-gradient(180deg,#13211f,#101716); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:0 30px 70px rgba(16,20,19,.22); padding:0; }
+    .score-strip { height:5px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c),var(--prism-d)); }
+    .score-inner { padding:24px 24px 22px; }
+    .score-top { display:flex; justify-content:space-between; gap:20px; align-items:start; margin-bottom:18px; }
+    .score-label { color:rgba(248,250,249,.68); font-size:12px; font-weight:850; text-transform:uppercase; font-family:var(--display-font); }
+    .score-number { font-size:86px; line-height:.86; font-weight:900; }
+    .score-rating { display:grid; justify-items:end; gap:6px; }
+    .tier { display:inline-grid; place-items:center; min-height:24px; border-radius:999px; padding:0 9px; border:1px solid rgba(255,255,255,.22); color:#a8ffc5; font-size:12px; line-height:1; font-weight:900; }
+    .stars { color:var(--prism-c); font-size:22px; line-height:1; white-space:nowrap; }
+    .star-score { color:rgba(248,250,249,.88); font-size:13px; line-height:1.35; font-weight:780; }
+    .score-verdict { margin:0; color:rgba(248,250,249,.88); line-height:1.45; font-size:14px; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 20px; }
+    .score-meta div { min-height:70px; border:1px solid rgba(255,255,255,.13); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.05); }
+    .score-meta span { display:block; color:rgba(248,250,249,.6); font-size:11px; margin-bottom:8px; font-weight:760; }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:15px; line-height:1.25; overflow-wrap:anywhere; word-break:break-word; }
+    .subscore-list { display:grid; gap:12px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 34px; align-items:center; gap:10px; color:rgba(248,250,249,.78); font-size:12px; font-weight:780; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.13); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:var(--prism-a); }
+    .track i.bar-2 { background:var(--prism-c); }
+    .track i.bar-3 { background:var(--prism-e); }
+    .score-formula { display:none; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { font-size:21px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:64px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:13px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:260px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); display:flex; flex-wrap:wrap; align-content:center; justify-content:center; align-items:center; gap:12px 16px; padding:24px; overflow:hidden; }
+    .cloud span { position:relative; display:inline-flex; max-width:100%; font-weight:900; line-height:1.04; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:13px; } .w2 { font-size:16px; } .w3 { font-size:20px; } .w4 { font-size:25px; } .w5 { font-size:30px; }
+    .w5.long { font-size:26px; } .w5.extra-long { font-size:22px; }
+    .w4.long { font-size:22px; } .w4.extra-long { font-size:19px; }
+    .w3.long { font-size:18px; } .w3.extra-long { font-size:16px; }
+    .w2.long,.w2.extra-long { font-size:15px; }
+    .w1.long,.w1.extra-long { font-size:13px; }
+    .p0 { margin-top:6px; } .p1 { margin-bottom:18px; } .p2 { margin-top:22px; } .p3 { margin-bottom:6px; } .p4 { margin-left:8px; } .p5 { margin-right:12px; } .p6 { margin-top:14px; } .p7 { margin-bottom:12px; } .p8 { margin-left:14px; } .p9 { margin-top:28px; } .p10 { margin-bottom:20px; } .p11 { margin-right:20px; } .p12 { margin-top:10px; } .p13 { margin-bottom:8px; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      .hero-outline { right:0; top:18px; font-size:48px; opacity:.42; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:0; }
+      .score-inner { padding:18px; }
+      .score-top { margin-bottom:14px; }
+      .score-number { font-size:52px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:12.5px; line-height:1.25; }
+      .score-verdict { font-size:13px; }
+      .score-meta { display:grid; gap:6px; margin:12px 0; }
+      .score-meta div { min-height:54px; padding:8px; }
+      .score-meta b { font-size:13px; }
+      .score-meta span { margin-bottom:5px; font-size:10.5px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; align-content:flex-start; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .cloud .w5.long { font-size:24px; } .cloud .w5.extra-long { font-size:20px; }
+      .cloud .w4.long { font-size:21px; } .cloud .w4.extra-long { font-size:18px; }
+      .cloud .w3.long { font-size:17px; } .cloud .w3.extra-long { font-size:15px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { width:auto; height:42px; max-width:230px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body data-offing-visual-baseline="canonical" data-offing-visual-scope="full-report" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="IRIS USA logo">
+          <img src="assets/brand-logos/iris-usa-logo-official.jpg" alt="IRIS USA logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1><span class="nowrap-title">北美业务诊断</span></h1>
+        <p class="lead">IRIS USA 已经把收纳、宠物和 WOOZOO 做成北美大货架；下一步必须先处理宠物食品容器的窒息风险，再谈 2,000 个 SKU 和美国制造的组合放大。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">美国制造与配送基地。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E3]</span></span></span></span>
+            <b class="">4</b>
+          </div>
+          <div class="hero-metric state-amber">
+            <span class="metric-label"><i></i><span class="metric-label-copy">IRIS USA 披露的美国 SKU 规模。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E3]</span></span></span></span>
+            <b class="">2,000</b>
+          </div>
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">2025 年三项美国产能投资合计。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E8]</span></span></span></span>
+            <b class="">$15M</b>
+          </div>
+        </div>
+        <p class="sublead">四座美国工厂、约 2,000 个美国 SKU 和主流零售高评分托住基本盘；2025 年独立宠物安全测试、2026 年未终局诉讼与当前售后 VOC 共同构成 P0 安全封顶。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E8]</span><span class="evidence">[E12]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+        <div class="tag-row"><span class="tag green">收纳与零售主盘成立</span><span class="tag red">宠物安全设计待处理</span><span class="tag amber">WOOZOO 第二曲线成立</span></div>
+      </div>
+      <aside class="score-panel" aria-label="IRIS USA Atlas score">
+        <div class="score-strip"></div>
+        <div class="score-inner">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Total diagnosis score</div>
+              <div class="score-number">60</div>
+            </div>
+            <div class="score-rating">
+              <span class="tier green">C档</span>
+              <div class="stars" aria-label="3.0 out of 5 stars">★ ★ ★ ☆ ☆</div>
+              <div class="star-score">3.0 / 5 星 · 公开数据</div>
+            </div>
+          </div>
+          <p class="score-verdict">C档 · 制造和货架很强，宠物安全风险直接封住上限。</p>
+          <div class="score-meta">
+            <div><span>阶段判断</span><b>100+</b></div>
+            <div><span>经营类型</span><b>Retail + marketplace + DTC diversified home-goods portfolio</b></div>
+            <div><span>置信度</span><b>中高</b></div>
+          </div>
+          <div class="subscore-list">
+            
+            <div class="subscore">
+              <span>业务健康度</span>
+              <div class="track"><i class="bar-1" style="width:76%;"></i></div>
+              <b>76</b>
+            </div>
+            <div class="subscore">
+              <span>业务机会分</span>
+              <div class="track"><i class="bar-2" style="width:74%;"></i></div>
+              <b>74</b>
+            </div>
+            <div class="subscore">
+              <span>问题致命度</span>
+              <div class="track"><i class="bar-3" style="width:92%;"></i></div>
+              <b>92</b>
+            </div>
+          </div>
+          <p class="score-formula">数据采集日期：2026-08-27。</p>
+        </div>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>宠物安全</b>
+          <span>立即处理铰链盖、扣锁、警示和当前在售型号。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>货架信任</b>
+          <span>把零售高分、到货完整和缺件处理连成同一承诺。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>SKU 收束</b>
+          <span>从 2,000 个 SKU 里分出现金线、风险线、第二曲线和退出线。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>NEXT</i>
+          <b>路由</b>
+          <span>Atlas 总控；SignalMark 先修安全证据，CommerceFlow 同步修售后和 SKU 利润。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>IRIS USA</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中高 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-08-27</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>Atlas 总控；SignalMark 修安全证据，CommerceFlow 修 SKU 利润与售后。</p>
+          <span class="route-chip">最低分警报：SignalMark 56</span>
+          <span class="route-chip">分数封顶：60 · P0 宠物安全设计</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">56<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>收纳和 WOOZOO 信号存在，宠物安全证据决定品牌上限。</h3>
+              <p>SignalMark 先建安全改设、警示、测试、型号处置与法务口径。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">64<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>货架与供应很强，破损、缺件、退运和 2,000 SKU 吃利润。</h3>
+              <p>CommerceFlow 重点看包装破损、补件 SLA、渠道贡献利润、库存和 SKU 退出。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">58<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>好评与社区热度多，安全、包装和长期耐用 proof 不足。</h3>
+              <p>TideLens 后置；安全改设完成后，再把独立测试、到货完整与长期耐用变成可复用 proof。</p>
+              
+              
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>宠物食品容器安全设计已进入独立测试和未终局诉讼视野。</li><li>到货破损、缺件与补件响应会吃掉低客单大体积产品的利润。</li><li>2,000 个 SKU 缺少公开可见的现金线、风险线和退出线。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>最容易的死法：继续用四座工厂和 2,000 个 SKU 放大货架，却不先处理宠物食品容器的窒息风险。</h2>
+        </div>
+        <p class="section-note">这条风险会从宠物线穿透到收纳主盘，同时放大零售审查、法务、客服和品牌安全成本。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-red">
+          <div class="module-label">品类购买契约</div>
+          <h3>收纳买的是空间秩序，宠物食品容器还要对误入与反锁负责。</h3>
+          <p><strong>用户买的确定性：</strong>北美用户会同时判断尺寸匹配、堆叠稳定、密封、材料耐用、到货完整和替换零件。宠物线多一层无法妥协的安全契约：宠物不能进入并被盖子重新扣锁。</p>
+          <p><strong>当前匹配：</strong>WeatherPro、Stack &amp; Pull 与宠物食品容器接住了容量、透明、移动和价格；Center for Pet Safety 对两款 IRIS 铰链盖设计给出增加窒息风险的判断，当前安全契约没有完整接住。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E17]</span></span></p>
+          <p class="risk-evidence">官网产品与政策、Walmart / Target / Best Buy 评价、CPS 独立测试、联邦法院程序性裁定与 BBB 投诉共同支撑该契约。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E15]</span><span class="evidence">[E16]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">60<span>/100</span></div>
+          <h3>P0 宠物安全设计</h3>
+          <p>CPS 独立测试对两款 IRIS 容器给出增加窒息风险的判断，2026 年相关过失性不实陈述主张获准继续。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是高估本地制造与零售规模，低估单一安全设计对整个收纳信任的传导。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>四座美国工厂、2,000 个 SKU、零售星级和 WOOZOO 热度。</dd></div>
+            <div><dt>低估</dt><dd>宠物容器安全设计、警示和在售型号处置，以及到货破损与缺件成本。</dd></div>
+            <div><dt>安慰指标</dt><dd>工厂面积、SKU 数、平均星级、零售覆盖和新品数量。</dd></div>
+            <div><dt>先别做</dt><dd>先暂停宠物容器扩量和泛品线曝光；先完成安全改设、当前 SKU 处置、法务审查和零售沟通。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 60</b></div>
+            <h3>宠物食品容器安全设计疑虑</h3>
+            <p>CPS 测试认为铰链盖均增加宠物窒息风险，其中一款在强制关闭或回弹时会重新扣锁。</p>
+            <p class="risk-evidence">2025 年独立评估和 2026 年法院文件构成当前风险证据；诉讼尚未终局。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+            <span class="tag red">Atlas 总控，SignalMark 修安全证据，产品 / 法务先行</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 66</b></div>
+            <h3>到货破损和缺件吞掉低客单利润</h3>
+            <p>大体积塑料容器容易在运输中开裂、缺扣锁或脚轮，补件和退换会快速吃掉单价。</p>
+            <p class="risk-evidence">Walmart、Target、Reddit 和 BBB 都出现到货破损、缺件与响应延迟主题。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E16]</span><span class="evidence">[E20]</span></span></p>
+            <span class="tag amber">CommerceFlow 修包装、补件与渠道 SLA</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 68</b></div>
+            <h3>2,000 个 SKU 把选择和库存变成成本</h3>
+            <p>收纳、宠物、家具、小家电、食品与 WOOZOO 共存，规格、尺寸和系列重叠会抬高选择和库存成本。</p>
+            <p class="risk-evidence">IRIS USA 披露约 2,000 个 SKU，官网当前列出约 1,250 个产品。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p>
+            <span class="tag amber">Atlas 做品线角色图，CommerceFlow 做 SKU 贡献利润</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P2</span><b>封顶 70</b></div>
+            <h3>WOOZOO 热度被误读为第二曲线已完成</h3>
+            <p>WOOZOO 在 Costco、Best Buy 与 Target 有高分和用户热度，官网与社区仍有噪音、电气、遥控和耐用个案。</p>
+            <p class="risk-evidence">高分零售评价与耐用负面主题同时存在。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
+            <span class="tag amber">TideLens 转长期耐用 proof，CommerceFlow 校准保修成本</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是工厂数、SKU 数和零售平均分。</h3>
+            <p>这些信号证明供应和货架能力，无法单独证明安全、单 SKU 利润和直购服务已成立。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>供应信号</span>
+            <h3>四座美国工厂</h3>
+            <p>本地制造能降低关税与供应风险，不会自动解决产品设计、包装和售后问题。</p>
+          </article><article class="signal-card state-red">
+            <span>组合效率</span>
+            <h3>2,000 个 SKU</h3>
+            <p>组合宽度能增加货架机会，也会同时放大选择、库存、包装和客服成本。</p>
+          </article><article class="signal-card state-red">
+            <span>平均分误读</span>
+            <h3>4.5-4.9 星零售评分</h3>
+            <p>大样本好评证明主产品可用，安全风险、到货破损和缺件仍会决定负面尾部成本。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>IRIS USA 当前总分被宠物食品容器安全风险封顶在 60。</h3>
+            <p>美国制造、收纳主盘和 WOOZOO 热度托住基本盘；在售设计、风险警示、法务状态与售后证据没有被关闭前，不具备 65+ 条件。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>60</b>
+            <div><h3>宠物安全设计</h3><p>在售铰链盖和扣锁机制存在独立测试指出的窒息风险。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>66</b>
+            <div><h3>包装与缺件成本</h3><p>低客单大体积产品对破损、补件与退换成本高度敏感。</p></div>
+          </article><article class="cap-reason state-amber">
+            <b>68</b>
+            <div><h3>SKU 与品牌边界</h3><p>2,000 个 SKU 跨收纳、宠物、小家电和食品，组合角色和利润缺公开证明。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：IRIS USA 已进入 100+，下一步守产品安全、SKU 利润和零售服务。</h2>
+        </div>
+        <p class="section-note">这个阶段不缺供应和货架，缺的是跨品线安全门槛、组合退出规则和售后闭环。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>透明收纳、宠物收纳与家居需求早已验证。</p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>WeatherPro、Stack &amp; Pull 与宠物食品容器形成明确产品群。</p></div><div class="stage-step state-green"><span>10-100</span><b>多渠道扩张</b><p>Amazon、Walmart、Target、Costco 和 Best Buy 等货架已成立。</p></div><div class="stage-step state-red"><span>100+</span><b>当前阶段</b><p>用安全、利润、服务和品线角色保护本地制造优势。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">阶段动作</div>
+          <h3>先关闭 P0 再扩品线</h3>
+          <p>30 天处理宠物安全与零售口径，90 天完成 SKU 和包装利润地图。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">GMV 估算</div>
+          <h3>USD 300M-700M</h3>
+          <p>四座工厂、2,000 SKU 和全国零售覆盖支持该方向性区间；公开财务未单列美国收入，置信度中低。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心盘是空间管理，宠物安全和 WOOZOO 需要分开兑现承诺。</h2>
+        </div>
+        <p class="section-note">不同人群购买的确定性不同，同一个“Solutions for everyday living”无法承接全部风险。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>Storage</b><small>核心盘：家庭收纳与整理用户</small></div>
+            </div><div class="audience-band layer-2 state-red">
+              <span class="audience-index">L2</span>
+              <div><b>Pet</b><small>高风险盘：宠物食品与日常护理用户</small></div>
+            </div><div class="audience-band layer-3 state-green">
+              <span class="audience-index">L3</span>
+              <div><b>Maker</b><small>稳定小众盘：手工、LEGO、3D 打印与文件用户</small></div>
+            </div><div class="audience-band layer-4 state-amber">
+              <span class="audience-index">L4</span>
+              <div><b>WOOZOO</b><small>第二曲线：卧室、办公与家庭舒适用户</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：家庭收纳与整理用户</b><span>买透明可见、尺寸匹配、堆叠稳定、密封和耐用。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E12]</span></span></span></div><div class="legend-item state-red"><b>高风险盘：宠物食品与日常护理用户</b><span>买防潮、防虫、便捷和宠物无法误入反锁的安全。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E17]</span></span></span></div><div class="legend-item state-green"><b>稳定小众盘：手工、LEGO、3D 打印与文件用户</b><span>买规格、分格、密封和长期可追加的系统。<span class="evidence-list"><span class="evidence">[E20]</span></span></span></div><div class="legend-item state-amber"><b>第二曲线：卧室、办公与家庭舒适用户</b><span>买小体积、安静、强风、遥控和长期耐用。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>收纳主盘继续保护规格与稳定</h3>
+          <p>用尺寸选择器、堆叠载荷、密封测试和替换件服务收回品类解释权。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>宠物线先改设再扩量</h3>
+          <p>优先评估无铰链或无法回扣的盖子方案，同步增加警示与在售 SKU 处置。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>WOOZOO 按耐用而非季节热度管</h3>
+          <p>把长期故障率、保修、遥控与噪音变成第二曲线门槛。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>经营类型：零售与平台主导的本地制造组合，DTC 更像补货与长尾货架。</h2>
+        </div>
+        <p class="section-note">公开资料未披露渠道收入；以货架密度、官网政策和品类分布作方向性代理，需内部订单校准。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Retail + marketplace-led US manufacturing portfolio with supporting DTC.</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Mass retail</b>
+            <div class="share-track"><i class="green" style="width:42%;"></i></div>
+            <span>42%</span>
+            <small>Walmart、Target、Costco、Best Buy 等承担主流成交与退换信任；为方向性估算。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E12]</span><span class="evidence">[E14]</span><span class="evidence">[E15]</span></span></small>
+          </div><div class="share-row">
+            <b>Amazon / marketplaces</b>
+            <div class="share-track"><i class="green" style="width:35%;"></i></div>
+            <span>35%</span>
+            <small>收纳、宠物与 WOOZOO 都具有强平台评价和比较心智；为方向性估算。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E20]</span></span></small>
+          </div><div class="share-row">
+            <b>DTC</b>
+            <div class="share-track"><i class="amber" style="width:13%;"></i></div>
+            <span>13%</span>
+            <small>官网约 1,250 个产品，但运费、30 天退货和大件退运限制直购价值。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></small>
+          </div><div class="share-row">
+            <b>B2B / bulk</b>
+            <div class="share-track"><i class="amber" style="width:10%;"></i></div>
+            <span>10%</span>
+            <small>官网提供 bulk order 和零售商合作入口，公开收入未披露。<span class="evidence-list"><span class="evidence">[E5]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>零售的角色</h3>
+          <p>承担主流可得性、大件退换和用户评价；安全口径必须与官网一致。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Amazon 的角色</h3>
+          <p>承担规格搜索、比价和长尾成交；要用破损、缺件、退货与评论结构判断利润。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>官网的角色</h3>
+          <p>承担全系列选择、补件、安全证据与客户关系；当前退运和服务政策需要更强承接。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>本地制造的角色</h3>
+          <p>管关税、供应稳定与塑料大件配送；必须同时管安全设计、包装破损和库存。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：品牌词和 WOOZOO 吃掉了，收纳大词只吃到一半，宠物安全词没吃掉。</h2>
+        </div>
+        <p class="section-note">需求排序综合品类货架、SERP 密度、评价规模与购买意图；精确搜索量需 SEO 后台校准。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>plastic storage bins / storage containers / totes</h3>
+          <p>IRIS 拥有货架密度和收纳系列，但 Sterilite、Rubbermaid 和零售自有品牌共同占据默认选择。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="mind-card state-green">
+          <div class="priority"><span>P0 · 量级中高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>IRIS USA / WeatherPro / Stack &amp; Pull</h3>
+          <p>品牌词和系列词由官网、Walmart、Target 与 Amazon 货架共同承接。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E10]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture red">半吃掉</b></div>
+          <h3>airtight pet food container / dog food storage</h3>
+          <p>IRIS 拥有千级 Walmart 评价与强货架，Gamma2 / Simplehuman 用螺旋盖、材料和安全设计抢高意图用户。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E17]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级低中</span><b class="search-capture red">没吃掉</b></div>
+          <h3>IRIS pet food container safe / suffocation / latch</h3>
+          <p>CPS 测试、宠物窒息内容与当前诉讼占据该解释面，官网缺少对应安全中心。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+        </article><article class="mind-card state-green">
+          <div class="priority"><span>P1 · 量级中高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>WOOZOO fan / globe fan / air circulator</h3>
+          <p>Costco 社区、Best Buy 和 Target 高评分支撑 WOOZOO 的小体积、安静与强风心智。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>IRIS vs Sterilite / Rubbermaid / Gamma2</h3>
+          <p>比较用户会问价格、堆叠、材料、密封、安全和可得性；官网需要正式比较页。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E20]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>声誉总分 60：大样本好评支撑主盘，安全、破损、缺件和响应延迟决定信任尾部。</h2>
+        </div>
+        <p class="section-note">零售好评证明产品价值，独立安全测试和当前售后样本说明负面不能只用平均星级稀释。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Walmart 宠物食品容器</h3>
+          <p>主力页显示 4.5 / 5、1,515 个评分与 817 条评论；好评集中容量、轮子、价格和日常便利。<span class="evidence-list"><span class="evidence">[E11]</span></span></p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Target 收纳系列</h3>
+          <p>多个规格显示 4.6-4.9 星；好评集中堆叠、透明、容量和结实，负面包括塑料耐用和运输破损。<span class="evidence-list"><span class="evidence">[E12]</span></span></p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>WOOZOO 零售与社区</h3>
+          <p>Best Buy 4.8 / 5、97 条评论，Target 4.8 / 5、827 个评分；好评集中风量、安静和遥控。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>安全与售后尾部</h3>
+          <p>CPS 安全结论、未终局诉讼、BBB 的 5 起近三年投诉以及破损/缺件评论会放大首单与零售审查成本。<span class="evidence-list"><span class="evidence">[E16]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">stackable</span><span class="w5 p1 long">clear visibility</span><span class="w4 p2">airtight</span><span class="w4 p3">sturdy</span><span class="w4 p4 long">easy to organize</span><span class="w4 p5">good size</span><span class="w3 p6">smooth wheels</span><span class="w3 p7">secure latch</span><span class="w3 p8">Made in USA</span><span class="w3 p9">quiet airflow</span><span class="w3 p10">compact fan</span><span class="w3 p11">good value</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0 long">suffocation risk</span><span class="w5 p1">lid re-latch</span><span class="w5 p2">shipping damage</span><span class="w4 p3">missing latch</span><span class="w4 p4">missing wheels</span><span class="w4 p5">support delay</span><span class="w3 p6">cracked corner</span><span class="w3 p7">seal integrity</span><span class="w3 p8 long">replacement part</span><span class="w3 p9">fan durability</span><span class="w2 p10">remote failure</span><span class="w2 p11">return shipping</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向声音能支撑收纳主盘与 WOOZOO 首单。安全、破损和缺件会直接触发退货、补件、客服、法务和零售审查成本。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>分品线天花板：收纳是现金主线，宠物线先降风险，WOOZOO 再验证长期性。</h2>
+        </div>
+        <p class="section-note">公开资料未披露 IRIS USA 分品线收入，以产能、SKU、货架密度和评价量作方向性判断。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">P0 主现金线 · 领导防守期</div>
+          <h3>Storage / WeatherPro / Stack &amp; Pull</h3>
+          <b>四座美国工厂 + 全国零售</b>
+          <p>用尺寸、堆叠、密封、包装完整与补件服务保护默认选择。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">P0 风险处理线 · 改设与信任修复期</div>
+          <h3>Pet food storage / playpens</h3>
+          <b>千级评价与安全封顶并存</b>
+          <p>先处理铰链盖安全、警示、在售 SKU 和零售口径，再谈扩量。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P1 第二曲线 · 多渠道放大期</div>
+          <h3>WOOZOO</h3>
+          <b>Costco / Target / Best Buy 高评分</b>
+          <p>用长期故障率、保修成本、静音和风量证明第二曲线质量。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P2 验证组合 · 收束期</div>
+          <h3>Furniture / cleaning / food / other appliances</h3>
+          <b>货架宽度已有</b>
+          <p>每条线必须用增量收入、贡献利润、库存和客服成本证明存续价值。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：先问尺寸和密封，宠物线必须先回答安全。</h2>
+        </div>
+        <p class="section-note">搜索、零售、PDP、FAQ 和补件中心应使用同一套选择与风险语言。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Search / Retail</td><td>哪个尺寸、盖子和规格适合我的空间</td><td class="status-cell"><span class="table-status green">基本接住</span></td><td>上线空间、物品、容量、堆叠和密封选择器。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E12]</span></span></td></tr><tr><td>Comparison Search</td><td>IRIS、Sterilite 和 Rubbermaid 哪个更稳、更值</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>按堆叠载荷、温差、密封、价格和补件上线正式比较页。</td></tr><tr><td>Pet Safety Search</td><td>宠物能否打开盖子并被重新锁住</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>完成独立安全测试、改设、警示、型号查询和事件报告入口。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></td></tr><tr><td>Marketplace VOC</td><td>到货破了、缺扣锁或轮子时谁处理</td><td class="status-cell"><span class="table-status red">没接牢</span></td><td>按渠道写清补件清单、自助申请、响应 SLA 和包装改进。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E16]</span></span></td></tr><tr><td>WOOZOO Research</td><td>风量、噪音、摆头和几年后是否可靠</td><td class="status-cell"><span class="table-status amber">接住一半</span></td><td>补实测噪音、长期故障率、遥控替换和保修说明。<span class="evidence-list"><span class="evidence">[E14]</span><span class="evidence">[E15]</span><span class="evidence">[E19]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：容量、堆叠与可得性接住了，宠物安全和售后确定性没接住。</h2>
+        </div>
+        <p class="section-note">权重用于决定修复和预算顺序，需用后台转化、退货和客服数据校准。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">25%</div><div class="mini-track"><i style="width:25%;"></i></div></div>
+          <div><strong>宠物安全 / 无法误入反锁</strong><p>当前铰链盖与扣锁设计存在 CPS 明确指出的风险。</p></div>
+          <div><span class="verdict red">没接住</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">20%</div><div class="mini-track"><i style="width:20%;"></i></div></div>
+          <div><strong>尺寸 / 容量 / 透明可见</strong><p>广泛规格和透明箱体能接住家庭、手工与文件收纳。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>堆叠 / 密封 / 耐用</strong><p>WeatherPro 与 Stack &amp; Pull 有明确货架和高分基础，破损与密封个体差异仍需管理。</p></div>
+          <div><span class="verdict amber">基本接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>到货完整 / 补件</strong><p>官网提供 30 天补件与损坏处理，零售与 BBB 样本仍显示破损和响应延迟。</p></div>
+          <div><span class="verdict red">半接住</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>价格 / 零售可得性</strong><p>大零售覆盖与本地制造能支撑主流价格和可得性。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">10%</div><div class="mini-track"><i style="width:10%;"></i></div></div>
+          <div><strong>官网退换 / 服务</strong><p>大件返回需客户承担运费，只向美国本土 48 州发货，直购理由较弱。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：IRIS USA 先关闭宠物安全 P0，再放大本地制造与 WOOZOO。</h2>
+        </div>
+        <p class="section-note">公开数据支持 60 分 C档；后台收入、品线利润、退货、事故和法务数据会继续校准。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>100+ · 四座美国工厂 + retail + marketplace + DTC</p></div><div class="summary-item"><b>主线</b><p>收纳与空间管理仍是最大现金和信任面。</p></div><div class="summary-item"><b>总分</b><p>60 / 100 · C档，宠物安全设计封顶 60。</p></div><div class="summary-item"><b>最容易的死法</b><p>继续用工厂和 SKU 数放大货架，却不先处理宠物容器窒息风险。</p></div><div class="summary-item"><b>路由</b><p>Atlas 总控；SignalMark 修安全证据，CommerceFlow 修 SKU 利润与售后。</p></div><div class="summary-item"><b>预算取舍</b><p>先投安全改设、零售口径、包装和补件；暂控宠物线扩量与泛 SKU 曝光。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：SignalMark 与 CommerceFlow 并行，TideLens 只在安全证据成立后放大。</h2>
+        </div>
+        <p class="section-note">当前的业务决策杠杆是产品安全、零售信任、SKU 利润和售后闭环。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3>收纳和 WOOZOO 信号存在，宠物安全证据决定品牌上限。</h3><p>SignalMark 先建安全改设、警示、测试、型号处置与法务口径。</p></div><b>56</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>本地制造、WeatherPro 和 WOOZOO 具有可识别信号。</p></div><div><strong>做得差</strong><p>安全搜索面被独立测试与当前诉讼占据。</p></div></div>
+          
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>货架与供应很强，破损、缺件、退运和 2,000 SKU 吃利润。</h3><p>CommerceFlow 重点看包装破损、补件 SLA、渠道贡献利润、库存和 SKU 退出。</p></div><b>64</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>四座美国工厂与大零售货架已成立。</p></div><div><strong>做得差</strong><p>公开资料没有证明每条品线和渠道的增量利润。</p></div></div>
+          
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3>好评与社区热度多，安全、包装和长期耐用 proof 不足。</h3><p>TideLens 后置；安全改设完成后，再把独立测试、到货完整与长期耐用变成可复用 proof。</p></div><b>58</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>WOOZOO 在 Costco 社区和零售评价中有真实爱好。</p></div><div><strong>做得差</strong><p>安全及售后反证会直接抵消种草信任。</p></div></div>
+          
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：宠物安全、大件售后、SKU 组合效率。</h2>
+        </div>
+        <p class="section-note">三个问题分别对应总分封顶、贡献利润和组织资源效率。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：宠物食品容器安全设计已进入独立测试和未终局诉讼视野。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。宠物窒息属于可致命安全风险，将直接传导到零售审查和整体品牌信任。</p></div>
+          <div><b>证据</b><p>CPS 判断两款铰链盖都增加窒息风险；联邦法院在 2026 年 7 月允许过失性不实陈述主张继续，案件尚未终局。<span class="evidence-list"><span class="evidence">[E17]</span><span class="evidence">[E18]</span></span></p></div>
+          <div><b>业务影响</b><p>产品、法务、零售、客服与品牌成本同时上升。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>成立跨部门 P0 专案，完成在售 SKU、扣锁机制、警示、事件和零售口径清单。<br><strong>90 天：</strong>完成设计变更、独立重测、渠道处置和公开安全证据中心。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：到货破损、缺件与补件响应会吃掉低客单大体积产品的利润。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。单次重发、退运和客服时长就可能吞掉订单贡献。</p></div>
+          <div><b>证据</b><p>Walmart、Target、BBB 和 Reddit 样本反复出现裂纹、缺扣锁、缺轮子、包装不足和响应延迟。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span><span class="evidence">[E16]</span><span class="evidence">[E20]</span></span></p></div>
+          <div><b>业务影响</b><p>贡献利润下降，直购订单回流零售平台。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立破损、缺件、型号和渠道的单票根因图。<br><strong>90 天：</strong>按高风险 SKU 重做包装、补件库存和自助服务。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：2,000 个 SKU 缺少公开可见的现金线、风险线和退出线。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。品线过宽会摊薄库存、包装、内容、零售和客服资源。</p></div>
+          <div><b>证据</b><p>IRIS USA 披露 2,000 个 SKU，官网当前显示约 1,250 个产品，且横跨多个购买契约。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>用户选择成本、长尾库存和组织协调成本同时增加。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立 Hero / Cash / Risk / Validation / Exit 的 SKU 角色表。<br><strong>90 天：</strong>按品线与渠道核算增量收入、贡献利润、库存和客服成本。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：Sterilite / Rubbermaid 抢默认收纳，Gamma2 抢宠物安全，Vornado / Dreo 抢风扇专业心智。</h2>
+        </div>
+        <p class="section-note">IRIS USA 需要正面防守四种购买理由：可得性、耐用、宠物安全和小家电专业性。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">收纳主压力</div>
+          <h3>Sterilite 抢价格与线下可得性</h3>
+          <p>收纳用户会直接比尺寸、单箱价格、盖子、堆叠和门店可得性。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">耐用心智</div>
+          <h3>Rubbermaid 抢耐用与家庭默认选择</h3>
+          <p>Roughneck 等系列用耐用、车库与重物心智保护溢价。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">宠物安全</div>
+          <h3>Gamma2 / Simplehuman 抢宠物安全</h3>
+          <p>CPS 认为 Gamma2 螺旋盖在测试容器中窒息风险最低，Simplehuman 用金属材料与双动作锁扣抢高端信任。<span class="evidence-list"><span class="evidence">[E17]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">第二曲线</div>
+          <h3>Vornado / Dreo 抢风扇专业性</h3>
+          <p>WOOZOO 有小体积与静音口碑，还要持续证明风量、噪音、耐用和保修。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">价格压力</div>
+          <h3>零售自有品牌抢最短决策</h3>
+          <p>当用户只看容量、价格和当日可得性时，品牌宽度会被货架替代。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从日常生活大货架，升级为经过验证的安全收纳系统。</h2>
+        </div>
+        <p class="section-note">本地制造只是能力底座，面向用户的下一阶段理由必须是尺寸、安全、耐用、完整交付和可持续服务。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">当前理由</div>
+          <h3>当前理由</h3>
+          <p>规格多、可堆叠、透明、密封、价格可接受且零售覆盖广。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">升级理由</div>
+          <h3>下一阶段理由</h3>
+          <p>每个容器的尺寸、载荷、密封、安全、到货完整和补件路径都可验证。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">避免规模误读</div>
+          <h3>必须避免</h3>
+          <p>用工厂数、SKU 数和平均星级覆盖安全设计、破损和售后问题。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Storage certainty, made for real life.</p>
+        <p><b>Hero subhead:</b> Clear fit, tested safety, durable stacking, and replacement support across every IRIS system.</p>
+        <p><b>Product promise:</b> IRIS makes everyday storage easier to choose, safer to use, and simpler to maintain.</p>
+        <p><b>Sales opener:</b> For households comparing fit, seal, durability, and safety, IRIS turns a crowded shelf into a verifiable storage system.</p>
+        <p><b>CTA:</b> Find your safest fit</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：供应与零售强，宠物安全、售后和 SKU 收束拉低总分。</h2>
+        </div>
+        <p class="section-note">低分项按安全、利润和组合效率的顺序进入管理周会。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>32</b><span>宠物安全设计</span></div>
+          <div class="mini-track"><i style="width:32%;"></i></div>
+          <p>CPS 判断铰链盖增加窒息风险，需改设、警示和重测。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>40</b><span>风险证据架构</span></div>
+          <div class="mini-track"><i style="width:40%;"></i></div>
+          <p>安全搜索面被独立测试和未终局诉讼占据。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>52</b><span>售后 / 补件</span></div>
+          <div class="mini-track"><i style="width:52%;"></i></div>
+          <p>缺扣锁、轮子、遥控与响应延迟反复出现。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>55</b><span>包装与到货完整</span></div>
+          <div class="mini-track"><i style="width:55%;"></i></div>
+          <p>大体积塑料产品对裂纹和运输破损高度敏感。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>58</b><span>SKU 组合效率</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>2,000 SKU 缺公开可见的现金、风险、验证和退出角色。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>61</b><span>DTC 直购理由</span></div>
+          <div class="mini-track"><i style="width:61%;"></i></div>
+          <p>官网商品广，运费、退运和发货地域限制价值。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>72</b><span>WOOZOO 第二曲线</span></div>
+          <div class="mini-track"><i style="width:72%;"></i></div>
+          <p>零售高分和社区热度成立，长期耐用待校准。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>78</b><span>收纳产品力</span></div>
+          <div class="mini-track"><i style="width:78%;"></i></div>
+          <p>尺寸、透明、堆叠、密封与大样本好评成立。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>84</b><span>零售可得性</span></div>
+          <div class="mini-track"><i style="width:84%;"></i></div>
+          <p>Walmart、Target、Costco、Best Buy 等多渠道货架成立。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>88</b><span>美国供应网络</span></div>
+          <div class="mini-track"><i style="width:88%;"></i></div>
+          <p>四座工厂覆盖制造与配送，2025 年继续投资。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>90</b><span>品类需求基础</span></div>
+          <div class="mini-track"><i style="width:90%;"></i></div>
+          <p>收纳、宠物储粮与家庭舒适需求稳定。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先加安全改设与包装售后，暂停宠物线扩量和泛 SKU 曝光。</h2>
+        </div>
+        <p class="section-note">每一笔预算都要回答安全关闭、利润保护或品线验证。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：宠物安全改设</h3>
+          <p>盖子与扣锁工程、独立测试、法务审查、警示和零售同步。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：包装与补件</h3>
+          <p>重做高破损 SKU 包装，建扣锁、轮子、遥控与小件自助申请。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">设门槛</div>
+          <h3>控预算：WOOZOO 季节扩量</h3>
+          <p>没有长期故障率、保修成本和渠道利润门槛时，不按社区热度平均加量。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">立即停</div>
+          <h3>停预算：宠物容器增量投放</h3>
+          <p>在安全设计、当前 SKU 处置与零售口径关闭前，停止扩大需求。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先关闭宠物安全，再修包装、SKU 利润和第二曲线。</h2>
+        </div>
+        <p class="section-note">每个阶段都以 owner、指标和预算闸门验收。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>Product / Quality / Legal｜完成在售宠物容器安全清单与暂停规则</b><p>验收：风险 SKU、设计机制、警示覆盖、事件与渠道状态。影响：关闭 P0 暴露</p></div><div class="road-action state-red"><b>Ops / Support｜建破损、缺件与补件 SLA 看板</b><p>验收：破损率、缺件率、首响、关闭周期、重发成本。影响：减少低客单利润流失</p></div><div class="road-action state-red"><b>Data / Finance｜建品线与 SKU 贡献利润地图</b><p>验收：收入、毛利、退货、客服、库存与渠道费用。影响：停止用 SKU 数掩盖组合效率</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-red"><b>Product / Quality｜完成改设样机与独立安全重测</b><p>验收：打开力、回弹、重扣、盖子稳定与宠物误入模拟。影响：建立可验证安全证据</p></div><div class="road-action state-amber"><b>Packaging / Retail｜完成高破损 SKU 包装重构</b><p>验收：到货破损、缺件、退货和包装成本。影响：恢复订单贡献利润</p></div><div class="road-action state-amber"><b>DTC / UX｜上线尺寸选择器、安全中心和补件自助入口</b><p>验收：选择完成、安全页访问、补件自助率与客服转化。影响：提高官网价值</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-green"><b>Leadership｜按 Cash / Risk / Validation / Exit 重排 2,000 SKU</b><p>验收：增量收入、贡献利润、库存、退货与客服成本。影响：提高组合效率</p></div><div class="road-action state-green"><b>WOOZOO / Growth｜用长期耐用与渠道利润重审第二曲线</b><p>验收：12-24 月故障、保修、退货、渠道利润和新客质量。影响：决定季节放大与品类扩张</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>职能部门红黄绿灯：红灯先看产品安全、法务、包装和售后。</h2>
+        </div>
+        <p class="section-note">红灯部门先进入管理层周会，每张卡只保留最影响安全、利润或组合效率的一件事。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">30</div>
+          <h3>宠物产品部</h3>
+          <p><strong>当前拖累：</strong>铰链盖和扣锁设计存在 CPS 指出的窒息风险。</p>
+          <span class="tag red">30 天：停扩量并完成改设</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">36</div>
+          <h3>质量 / 合规部</h3>
+          <p><strong>当前拖累：</strong>安全测试、警示、事件与型号处置没有形成统一证据图。</p>
+          <span class="tag red">30 天：建 P0 安全看板</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">42</div>
+          <h3>法务部</h3>
+          <p><strong>当前拖累：</strong>相关诉讼尚未终局，过失性不实陈述主张获准继续。</p>
+          <span class="tag red">30 天：统一渠道与安全口径</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">50</div>
+          <h3>包装 / 物流部</h3>
+          <p><strong>当前拖累：</strong>大体积塑料产品的破损、缺件和重发成本缺统一管理。</p>
+          <span class="tag red">30 天：找高破损 SKU</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">54</div>
+          <h3>客服 / 售后部</h3>
+          <p><strong>当前拖累：</strong>缺扣锁、轮子、遥控与响应延迟仍在当前 VOC 出现。</p>
+          <span class="tag red">30 天：设补件 SLA</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">58</div>
+          <h3>数据 / 财务部</h3>
+          <p><strong>当前拖累：</strong>2,000 SKU 的增量收入、贡献利润、库存和客服成本需要同一看板。</p>
+          <span class="tag red">30 天：建 SKU 利润地图</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">62</div>
+          <h3>DTC 电商部</h3>
+          <p><strong>当前拖累：</strong>运费、退运、发货区域与 1,250 个在售产品抬高选择成本。</p>
+          <span class="tag amber">30 天：上线选择与补件入口</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">72</div>
+          <h3>WOOZOO 产品部</h3>
+          <p><strong>当前拖累：</strong>零售高分很强，长期故障和保修成本还需后台验证。</p>
+          <span class="tag green">30 天：建 12-24 月耐用看板</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">82</div>
+          <h3>零售渠道部</h3>
+          <p><strong>当前拖累：</strong>货架很强，安全处置、破损与补件口径需要统一。</p>
+          <span class="tag green">30 天：同步渠道风险清单</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">88</div>
+          <h3>美国制造部</h3>
+          <p><strong>当前拖累：</strong>产能与本地化很强，下一步要把安全和包装指标同步前置。</p>
+          <span class="tag green">30 天：导入设计与包装门槛</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险预警与数据缺口：公开数据能确认 P0，收入、利润和事件范围仍需后台校准。</h2>
+        </div>
+        <p class="section-note">风险区只保留会改变分数、暂停决策或预算顺序的缺口。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>宠物安全事件全量未知</h3>
+          <p>需补型号、销量、事件、伤害、客服报告、法务状态与在售渠道。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>IRIS USA 收入与品线利润未披露</h3>
+          <p>母集团 2025 年销售约 49 亿美元，美国子公司和分品线收入未单列。<span class="evidence-list"><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>渠道与 SKU 贡献利润缺口</h3>
+          <p>需补 Walmart、Target、Costco、Amazon、DTC 和 B2B 的收入、费用、退货、破损和库存。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>零售评论含促销样本</h3>
+          <p>Target 与官网部分评论来自促销或同步来源，不用其单独估算真实满意率。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：强判断都能追到来源、日期、用途和置信度。</h2>
+        </div>
+        <p class="section-note">诉讼证据按程序性裁定与尚未终局的边界表述；后台接入后补事件全量、分品线利润、退货和库存。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://www.irisusainc.com/" target="_blank" rel="noopener">IRIS USA 官网</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official site</td>
+              <td>当前品类入口、WeatherPro、会员促销、媒体引用与官方 Logo。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://www.irisusainc.com/pages/our-story" target="_blank" rel="noopener">IRIS USA Our Story</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official company</td>
+              <td>1992/1994 起步、透明收纳起家、美国制造与多品类扩张历史。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://www.irisusainc.com/pages/usa-solutions" target="_blank" rel="noopener">IRIS USA USA Solutions</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official operations</td>
+              <td>四座美国工厂、2,000 SKU、基地面积与公开员工数。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://www.irisusainc.com/collections/all" target="_blank" rel="noopener">IRIS USA All Products</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official catalog</td>
+              <td>当前官网约 1,250 个产品与跨收纳、宠物、小家电、家具等品类宽度。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://www.irisusainc.com/pages/faq" target="_blank" rel="noopener">IRIS USA FAQ</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official policy</td>
+              <td>材料、美国制造、直购、配送、30 天退换、损坏与替换件政策。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.irisusainc.com/pages/orders-shipping" target="_blank" rel="noopener">IRIS USA Orders &amp; Shipping</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official policy</td>
+              <td>运费、发货区域、损坏、缺件、补件与零售购买后的处理边界。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.irisohyama.co.jp/news/2026/amp/?date=0115" target="_blank" rel="noopener">IRIS Group 2025 决算速报</a></td>
+              <td>2026-01-15</td>
+              <td>Official financial</td>
+              <td>2025 集团销售 7,949 亿日元、经常利润率 5.7% 与 2026 全球投资方向。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://www.irisohyama.co.jp/company/pdf/pdf2026en.pdf" target="_blank" rel="noopener">IRIS Group Profile 2026 / US investment</a></td>
+              <td>Published 2026</td>
+              <td>Official profile</td>
+              <td>2025 年美国宠物垫、医用口罩和塑料成型三项投资约 1,500 万美元。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://www.irisohyama.co.jp/english/company/index.html" target="_blank" rel="noopener">IRIS OHYAMA Corporate Profile</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official company</td>
+              <td>2025 集团销售约 49 亿美元、33 家集团公司与 13,670 名员工。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.walmart.com/browse/0?facet=brand%3AIRIS+USA" target="_blank" rel="noopener">Walmart IRIS USA brand shelf</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Retail shelf</td>
+              <td>Walmart 货架当前显示约 581 个 IRIS USA 结果，覆盖收纳、宠物与家居。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://www.walmart.com/reviews/product/151420627" target="_blank" rel="noopener">Walmart IRIS Airtight Pet Food Container reviews</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Retail VOC</td>
+              <td>4.5 / 5、1,515 个评分、817 条评论；容量、轮子、价格与密封，以及缺件、破损和密封差异。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://www.target.com/p/-/A-90518666" target="_blank" rel="noopener">Target IRIS USA 19qt storage listing</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Retail VOC</td>
+              <td>多个 IRIS 收纳规格 4.6-4.9 星，好评集中堆叠、透明、容量与结实。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://www.irisusainc.com/products/woozoo-globe-fan-large-oscillating-with-remote-tilt" target="_blank" rel="noopener">IRIS USA WOOZOO Globe Fan PDP</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official PDP/VOC</td>
+              <td>WOOZOO 功能、静音和风量正评，以及电气、遥控、噪音与耐用个案。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://www.bestbuy.com/site/reviews/iris-usa-woozoo-fan-with-remote-360-oscillating-fan-desk-fan-white/6587536" target="_blank" rel="noopener">Best Buy WOOZOO reviews</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Retail VOC</td>
+              <td>4.8 / 5、97 条评论、95% 推荐；风量、整体表现与噪音主题。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://www.target.com/p/-/A-91741425" target="_blank" rel="noopener">Target WOOZOO reviews</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Retail VOC</td>
+              <td>4.8 / 5、827 个评分；风量、紧凑、安静与数月后可靠性主题。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E16</td>
+              <td><a href="https://www.bbb.org/us/az/surprise/profile/home-accessories/iris-usa-corporate-1126-1000049395/complaints" target="_blank" rel="noopener">BBB IRIS USA complaints</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Complaint VOC</td>
+              <td>近三年 5 起投诉、近十二个月 3 起关闭；破损、缺件、保修和响应延迟主题，样本小不外推比例。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E17</td>
+              <td><a href="https://www.centerforpetsafety.org/wp-content/uploads/2025/03/Pet-Food-Container-Evaluation_CenterforPetSafety_2025.pdf" target="_blank" rel="noopener">Center for Pet Safety Pet Food Container Evaluation</a></td>
+              <td>2025-03-10</td>
+              <td>Independent safety test</td>
+              <td>两款 IRIS 铰链盖容器被判定增加窒息风险；一款在关闭或回弹时会重新扣锁。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E18</td>
+              <td><a href="https://law.justia.com/cases/federal/district-courts/pennsylvania/paedce/2%3A2025cv06035/645221/17/" target="_blank" rel="noopener">Mallozzi v. IRIS USA, E.D. Pa. Document 17</a></td>
+              <td>2026-07-22</td>
+              <td>Court opinion</td>
+              <td>法院在动议驳回阶段允许 negligent misrepresentation 主张继续，驳回另两项主张；所述事实仍为未终局诉讼的指控。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E19</td>
+              <td><a href="https://www.reddit.com/r/Costco/comments/1kfu2hb" target="_blank" rel="noopener">Reddit r/Costco WOOZOO community thread</a></td>
+              <td>2025-05-06</td>
+              <td>Community VOC</td>
+              <td>WOOZOO 的多台购买、小体积、风量与长期爱好；不用于定量。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E20</td>
+              <td><a href="https://www.reddit.com/r/BuyItForLife/comments/1b8a8kd" target="_blank" rel="noopener">Reddit r/BuyItForLife storage-bin discussion</a></td>
+              <td>2024-03-08</td>
+              <td>Community VOC</td>
+              <td>IRIS 容器到货破损、塑料脆性与建议到店购买的个案；不用于定量。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E21</td>
+              <td><a href="https://www.cpsc.gov/Recalls/1999/CPSC-IRIS-USA-Announce-Recall-of-Plastic-Toy-Storage-Chests" target="_blank" rel="noopener">U.S. CPSC IRIS toy chest recall</a></td>
+              <td>1998-12-03</td>
+              <td>Historical recall</td>
+              <td>约 100,000 个玩具储物箱因窒息隐患召回，无已知伤亡；只作历史安全治理背景，不作当前单独扣分。</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>IRIS USA · 2026-08-27 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>
