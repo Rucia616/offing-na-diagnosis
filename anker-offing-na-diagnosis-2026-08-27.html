@@ -1,0 +1,1458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anker · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-08-27</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    /*
+      Offing canonical renderer baseline:
+      /Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md
+      Product family sample:
+      /Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html
+      Atlas sample:
+      /Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html
+    */
+    :root {
+      color-scheme: light;
+      --offing-ink:#101413; --offing-body:#293331; --offing-muted:#66716e; --offing-line:#dfe3e7;
+      --offing-soft:#f6f8fa; --offing-paper:#fff8ee; --offing-surface:#fff;
+      --offing-pink:#eb4aa6; --offing-violet:#6d4cff; --offing-cyan:#20c7d9; --offing-lime:#78d64b;
+      --offing-blue:#2457ff; --offing-sky:#42a5ff; --offing-green:#18b77a; --offing-teal:#00b8a9;
+      --offing-orange:#ff8a2a; --offing-coral:#ff5a3d; --offing-amber:#b77900; --offing-slate:#475569;
+      --atlas-bg:#fff; --atlas-surface:#fff; --atlas-surface-soft:#f7f8fa;
+      --atlas-ink:#101413; --atlas-body:#293331; --atlas-muted:#66716e; --atlas-line:#e0e3e5;
+      --atlas-main:#2d6261; --atlas-teal:#32d6c6; --atlas-sky:#9ed1ff; --atlas-pink:#eb4aa6;
+      --atlas-lilac:#9b7cff; --atlas-coral:#ff6b4a; --atlas-green:#70e5a8; --atlas-inverse:#111817; --atlas-inverse-2:#162321;
+      --display-font:"Avenir Next Condensed","Helvetica Neue Condensed","Arial Narrow","Roboto Condensed","Oswald",sans-serif;
+      --text-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      --bg:var(--atlas-bg); --top:#fff; --surface:var(--atlas-surface); --surface-2:var(--atlas-surface-soft);
+      --text:var(--atlas-ink); --body:var(--atlas-body); --muted:var(--atlas-muted); --line:var(--atlas-line);
+      --accent:var(--atlas-main); --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:var(--atlas-teal); --prism-b:var(--atlas-sky); --prism-c:var(--atlas-pink); --prism-d:var(--atlas-lilac); --prism-e:var(--atlas-coral);
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:var(--text-font); font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner { width:min(1432px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0; }
+    .product-lockup { display:grid; color:var(--text); font-size:13px; font-weight:850; line-height:1.08; white-space:nowrap; }
+    .product-lockup small { margin-top:4px; color:var(--accent); font-size:12px; font-weight:800; }
+    .nav { display:flex; gap:18px; overflow-x:auto; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); font-size:12px; line-height:1; font-weight:780; white-space:nowrap; }
+    main { width:min(1432px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:78px 0; }
+    .hero { position:relative; min-height:min(650px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; grid-template-rows:auto auto; gap:22px 54px; align-items:center; margin:0; padding:34px 0 30px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero-outline { position:absolute; z-index:0; right:60px; top:36px; color:transparent; -webkit-text-stroke:1.25px color-mix(in srgb,var(--prism-c) 48%,transparent); font-family:var(--display-font); font-size:clamp(72px,8vw,116px); line-height:.82; font-weight:900; pointer-events:none; }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:800px; padding-top:0; align-self:end; }
+    .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
+    .client-logo img { display:block; width:auto; height:48px; max-width:238px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
+    .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .nowrap-title { white-space:nowrap; }
+    .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
+    .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(190px,1fr)); gap:12px; max-width:760px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:88px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:14px 15px; overflow-wrap:anywhere; }
+    .metric-label { display:grid; grid-template-columns:9px minmax(0,1fr); align-items:start; column-gap:8px; row-gap:4px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { width:9px; height:9px; margin-top:3px; background:var(--prism-a); }
+    .metric-label-copy { min-width:0; }
+    .metric-evidence { grid-column:2; min-width:0; display:block; }
+    .hero-metric.state-red .metric-label i { background:var(--risk); }
+    .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
+    .hero-metric.state-green .metric-label i { background:var(--success); }
+    .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
+    .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
+    .hero-metric .evidence-list { display:flex; width:auto; max-width:100%; flex-wrap:wrap; gap:4px; overflow:visible; margin:0; padding:0; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; max-width:720px; align-self:start; margin-top:0; background:transparent; }
+    .chain-item { min-width:0; min-height:62px; padding:10px 12px; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:rgba(255,255,255,.92); overflow-wrap:anywhere; }
+    .chain-item i { display:block; margin-bottom:6px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:880; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:13px; line-height:1.25; font-weight:860; }
+    .chain-item span { display:none; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:1px solid rgba(16,20,19,.14); box-shadow:none; }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; align-self:center; overflow:hidden; min-height:0; color:var(--inverse-text); background:linear-gradient(180deg,#13211f,#101716); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:0 30px 70px rgba(16,20,19,.22); padding:0; }
+    .score-strip { height:5px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c),var(--prism-d)); }
+    .score-inner { padding:24px 24px 22px; }
+    .score-top { display:flex; justify-content:space-between; gap:20px; align-items:start; margin-bottom:18px; }
+    .score-label { color:rgba(248,250,249,.68); font-size:12px; font-weight:850; text-transform:uppercase; font-family:var(--display-font); }
+    .score-number { font-size:86px; line-height:.86; font-weight:900; }
+    .score-rating { display:grid; justify-items:end; gap:6px; }
+    .tier { display:inline-grid; place-items:center; min-height:24px; border-radius:999px; padding:0 9px; border:1px solid rgba(255,255,255,.22); color:#a8ffc5; font-size:12px; line-height:1; font-weight:900; }
+    .stars { color:var(--prism-c); font-size:22px; line-height:1; white-space:nowrap; }
+    .star-score { color:rgba(248,250,249,.88); font-size:13px; line-height:1.35; font-weight:780; }
+    .score-verdict { margin:0; color:rgba(248,250,249,.88); line-height:1.45; font-size:14px; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 20px; }
+    .score-meta div { min-height:70px; border:1px solid rgba(255,255,255,.13); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.05); }
+    .score-meta span { display:block; color:rgba(248,250,249,.6); font-size:11px; margin-bottom:8px; font-weight:760; }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:15px; line-height:1.25; overflow-wrap:anywhere; word-break:break-word; }
+    .subscore-list { display:grid; gap:12px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 34px; align-items:center; gap:10px; color:rgba(248,250,249,.78); font-size:12px; font-weight:780; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.13); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:var(--prism-a); }
+    .track i.bar-2 { background:var(--prism-c); }
+    .track i.bar-3 { background:var(--prism-e); }
+    .score-formula { display:none; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { font-size:21px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:64px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:13px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:260px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); display:flex; flex-wrap:wrap; align-content:center; justify-content:center; align-items:center; gap:12px 16px; padding:24px; overflow:hidden; }
+    .cloud span { position:relative; display:inline-flex; max-width:100%; font-weight:900; line-height:1.04; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:13px; } .w2 { font-size:16px; } .w3 { font-size:20px; } .w4 { font-size:25px; } .w5 { font-size:30px; }
+    .w5.long { font-size:26px; } .w5.extra-long { font-size:22px; }
+    .w4.long { font-size:22px; } .w4.extra-long { font-size:19px; }
+    .w3.long { font-size:18px; } .w3.extra-long { font-size:16px; }
+    .w2.long,.w2.extra-long { font-size:15px; }
+    .w1.long,.w1.extra-long { font-size:13px; }
+    .p0 { margin-top:6px; } .p1 { margin-bottom:18px; } .p2 { margin-top:22px; } .p3 { margin-bottom:6px; } .p4 { margin-left:8px; } .p5 { margin-right:12px; } .p6 { margin-top:14px; } .p7 { margin-bottom:12px; } .p8 { margin-left:14px; } .p9 { margin-top:28px; } .p10 { margin-bottom:20px; } .p11 { margin-right:20px; } .p12 { margin-top:10px; } .p13 { margin-bottom:8px; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      .hero-outline { right:0; top:18px; font-size:48px; opacity:.42; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:0; }
+      .score-inner { padding:18px; }
+      .score-top { margin-bottom:14px; }
+      .score-number { font-size:52px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:12.5px; line-height:1.25; }
+      .score-verdict { font-size:13px; }
+      .score-meta { display:grid; gap:6px; margin:12px 0; }
+      .score-meta div { min-height:54px; padding:8px; }
+      .score-meta b { font-size:13px; }
+      .score-meta span { margin-bottom:5px; font-size:10.5px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; align-content:flex-start; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .cloud .w5.long { font-size:24px; } .cloud .w5.extra-long { font-size:20px; }
+      .cloud .w4.long { font-size:21px; } .cloud .w4.extra-long { font-size:18px; }
+      .cloud .w3.long { font-size:17px; } .cloud .w3.extra-long { font-size:15px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { width:auto; height:42px; max-width:230px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body data-offing-visual-baseline="canonical" data-offing-visual-scope="full-report" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Anker logo">
+          <img src="assets/brand-logos/anker-logo-official.svg" alt="Anker logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1><span class="nowrap-title">北美业务诊断</span></h1>
+        <p class="lead">Anker 已经是北美充电领导品牌，下一阶段先把安全召回、渠道价格和多品牌组合变成一套可核验的信任秩序。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">2025 年营业收入，同比增长 23.49%。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E2]</span></span></span></span>
+            <b class="">¥30.51B</b>
+          </div>
+          <div class="hero-metric state-amber">
+            <span class="metric-label"><i></i><span class="metric-label-copy">Amazon 占公司 2025 年总营收。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E2]</span></span></span></span>
+            <b class="">52.29%</b>
+          </div>
+          <div class="hero-metric state-red">
+            <span class="metric-label"><i></i><span class="metric-label-copy">CPSC 2025 年 9 月召回涉及约 48.1 万台。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E5]</span></span></span></span>
+            <b class="">481K</b>
+          </div>
+        </div>
+        <p class="sublead">2025 年营收 305.14 亿元、Amazon 占总营收 52.29%，2026 Q1 继续增长；当前最伤长期溢价的是 2025 年移动电源召回尾部、官网与平台售后体验差异，以及 Anker / SOLIX / eufy / soundcore 的组合边界。</p>
+        <div class="tag-row"><span class="tag green">充电领导力成立</span><span class="tag red">召回尾部仍在影响信任</span><span class="tag amber">多品牌组合需收束</span></div>
+      </div>
+      <aside class="score-panel" aria-label="Anker Atlas score">
+        <div class="score-strip"></div>
+        <div class="score-inner">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Total diagnosis score</div>
+              <div class="score-number">72</div>
+            </div>
+            <div class="score-rating">
+              <span class="tier green">A档</span>
+              <div class="stars" aria-label="3.6 out of 5 stars">★ ★ ★ ★ ☆</div>
+              <div class="star-score">3.6 / 5 星 · 公开数据</div>
+            </div>
+          </div>
+          <p class="score-verdict">A档 · 规模和渠道很强，安全证明、价格纪律与品牌组合决定能否回到 80+。</p>
+          <div class="score-meta">
+            <div><span>阶段判断</span><b>100+</b></div>
+            <div><span>经营类型</span><b>Amazon + DTC + retail + multi-brand portfolio</b></div>
+            <div><span>置信度</span><b>中高</b></div>
+          </div>
+          <div class="subscore-list">
+            
+            <div class="subscore">
+              <span>业务健康度</span>
+              <div class="track"><i class="bar-1" style="width:83%;"></i></div>
+              <b>83</b>
+            </div>
+            <div class="subscore">
+              <span>业务机会分</span>
+              <div class="track"><i class="bar-2" style="width:84%;"></i></div>
+              <b>84</b>
+            </div>
+            <div class="subscore">
+              <span>问题致命度</span>
+              <div class="track"><i class="bar-3" style="width:82%;"></i></div>
+              <b>82</b>
+            </div>
+          </div>
+          <p class="score-formula">数据采集日期：2026-08-27。</p>
+        </div>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>安全信任</b>
+          <span>把召回范围、补偿、供应商整改和新产品安全证明前置。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>渠道纪律</b>
+          <span>分清 Amazon、官网、零售与品牌组合的价格和服务角色。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索防守</b>
+          <span>守住充电品类词，并主动接住 recall、review 和比较词。</span>
+        </article>
+        <article class="chain-item state-blue">
+          <i>P2</i>
+          <b>组合边界</b>
+          <span>Anker、SOLIX、eufy、soundcore 各自承担清晰购买契约。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>Anker</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中高 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-08-27</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由建议</h3>
+          <p>Atlas 总控；SignalMark 先修安全与组合信号，CommerceFlow 同步修渠道利润与售后。</p>
+          <span class="route-chip">最低分警报：CommerceFlow 72</span>
+          <span class="route-chip">分数封顶：72 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-amber">
+            <div class="specialist-score">76<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>品牌权威很强，安全与组合边界拉低信号。</h3>
+              <p>充电默认选择已成立；召回修复与多品牌路由需要更强公开证明。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">72<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>全渠道规模成立，渠道利润与召回承接需要统一。</h3>
+              <p>Amazon、官网和线下都在增长；要用贡献利润、价格纪律、退货和召回 SLA 管理。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">74<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>评测与场景素材很多，安全证明复用不足。</h3>
+              <p>创作者能讲速度、体积和场景；下一步要把第三方测试、召回整改和长期耐用变成可复用证据。</p>
+              
+              
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>召回补偿与安全整改没有被压缩成一套持续可见的购买证明。</li><li>Amazon 规模很强，但渠道贡献利润和客户关系没有被公开数据证明。</li><li>多品牌组合扩张快，但用户还缺一张清晰的品牌选择地图。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>主要风险路径：安全召回尾部削弱充电领导者的溢价与跨品类信任。</h2>
+        </div>
+        <p class="section-note">Anker 的主盘不会因一次召回消失，但领导品牌的安全事故会同时抬高首单顾虑、客服成本、渠道审查和新品证明门槛。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>充电和储能买的是安全确定性，规模只能放大这份承诺。</h3>
+          <p><strong>用户买的确定性：</strong>北美用户购买的是稳定功率、设备兼容、热管理、电芯安全、清晰召回补偿和长期售后。</p>
+          <p><strong>当前匹配：</strong>Anker 的产品、零售和品牌规模接住了性能与便利，但 2025 年召回让安全证明重新成为第一购买门槛。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+          <p class="risk-evidence">官网产品与服务页、2025 年报、2026 Q1 报告、CPSC 召回、官方召回页、Best Buy 和当前 VOC 共同支撑这个购买契约。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">72<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>召回尾部仍与当前官方处置、CPSC 记录和售后 VOC 相连。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是高估规模护城河，低估安全事故对跨品类信任的传导。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>全球第一、Amazon 规模、新品奖项和营收增速。</dd></div>
+            <div><dt>低估</dt><dd>召回补偿体验、供应商整改证明、渠道价差与多品牌边界。</dd></div>
+            <div><dt>安慰指标</dt><dd>营收增长、Amazon 排名、发布会声量和新品数量。</dd></div>
+            <div><dt>先别做</dt><dd>先不要平均扩大新品曝光；先把安全证明、召回 SLA 和渠道价格纪律做成管理层可追指标。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 72</b></div>
+            <h3>召回尾部侵蚀安全心智</h3>
+            <p>CPSC 记录约 48.1 万台召回、33 起火灾和爆炸报告；官方仍保留多型号召回入口。</p>
+            <p class="risk-evidence">CPSC 与 Anker 官方召回页仍可访问，说明补偿与处置仍是当前信任表面。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+            <span class="tag red">SignalMark 修安全证明，CommerceFlow 修召回承接</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 76</b></div>
+            <h3>Amazon 规模掩盖渠道利润质量</h3>
+            <p>Amazon 占总营收 52.29%，能证明货架强，也会放大促销、平台费用和客户关系外置。</p>
+            <p class="risk-evidence">2025 年报披露 Amazon、官网、线下渠道占比与毛利结构。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+            <span class="tag amber">CommerceFlow 校准渠道角色与利润</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 78</b></div>
+            <h3>多品牌组合稀释母品牌边界</h3>
+            <p>Anker、SOLIX、eufy、soundcore、Nebula 覆盖不同购买契约，组合扩张需要更清晰的品牌路由。</p>
+            <p class="risk-evidence">2025 年报和 2026 Q1 报告披露三大产业方向与多品牌矩阵。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+            
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P2</span><b>封顶 80</b></div>
+            <h3>新品智能化增加软件与支持负担</h3>
+            <p>Prime、充电底座与部分移动电源加入屏幕、App 和固件后，更新、连接、兼容与售后成为产品体验的一部分。</p>
+            <p class="risk-evidence">官网产品页与当前 Reddit 讨论出现固件、兼容和支持问题。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p>
+            
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是营收增长、Amazon 占比和新品数量。</h3>
+            <p>这些信号证明需求和组织能力，不能单独证明安全信任、贡献利润和多品牌组合效率。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>增长质量</span>
+            <h3>2026 Q1 增长 26.93%</h3>
+            <p>收入继续增长，但经营现金流为负、存货减值增加，增长质量需要结合现金和库存看。</p>
+          </article><article class="signal-card state-amber">
+            <span>渠道结构</span>
+            <h3>Amazon 占比 52.29%</h3>
+            <p>平台货架成立，同时意味着价格、流量和客户关系仍有较高平台暴露。</p>
+          </article><article class="signal-card state-red">
+            <span>组合效率</span>
+            <h3>多品牌新品密度</h3>
+            <p>新品和奖项能制造关注，不能替代召回修复、品线利润和售后质量。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>Anker 当前总分被安全召回尾部封顶在 72。</h3>
+            <p>领导力、营收与渠道把分数托住；只有把召回补偿、供应商整改和新产品安全证明变成公开信任链，才有资格进入 80+。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>72</b>
+            <div><h3>安全召回尾部</h3><p>48.1 万台、33 起事故记录会抬高移动电源品类的安全证明门槛。<span class="evidence-list"><span class="evidence">[E5]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>76</b>
+            <div><h3>渠道利润质量</h3><p>Amazon 52.29% 与平台费用增长需要用贡献利润和新客质量校准。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>78</b>
+            <div><h3>品牌组合边界</h3><p>三大产业与多品牌矩阵需要分别解释谁负责什么购买契约。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：Anker 已进入 100+，下一步守安全权威、渠道议价与组合利润。</h2>
+        </div>
+        <p class="section-note">领导品牌要用安全、服务和价格秩序保护默认选择权，不能继续按单品爆款逻辑平均扩张。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>需求验证</b><p>核心充电需求早已验证。</p></div><div class="stage-step state-green"><span>1-10</span><b>单点放大</b><p>Amazon 与充电主线早已跨过单点阶段。</p></div><div class="stage-step state-green"><span>10-100</span><b>多渠道扩张</b><p>官网、Amazon 和线下渠道已经形成全球规模。</p></div><div class="stage-step state-amber"><span>100+</span><b>当前阶段</b><p>守住安全权威、渠道议价、利润质量和多品牌组合。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">领导者防守</div>
+          <h3>阶段最该做的事</h3>
+          <p>把安全整改、召回补偿、渠道价格和品牌组合做成一张管理层经营图。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">规模误读</div>
+          <h3>阶段最危险的动作</h3>
+          <p>继续用新品数量和促销规模覆盖召回、售后与价格纪律问题。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">中等置信度</div>
+          <h3>北美 GMV 估算</h3>
+          <p>公开年报未单列北美收入；结合境外收入、Amazon 占比、美国零售与品牌规模，北美 GMV 方向性估算为 USD 1.6B-2.4B，需北美订单和渠道结算校准。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E4]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心盘稳定，但移动充电、家庭能源与智能家居需要分开兑现承诺。</h2>
+        </div>
+        <p class="section-note">Anker 组合覆盖的不是一团泛科技用户，每条线的购买触发、风险和服务门槛不同。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>移动充电</b><small>核心盘：高频多设备充电用户</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>SOLIX</b><small>相邻人群：家庭备电与户外能源用户</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>eufy / soundcore</b><small>外扩边界：智能家居与影音用户</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>低价替代</b><small>暂时边界：只看最低价的泛配件用户</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：高频多设备充电用户</b><span>通勤、旅行、办公和多设备用户买速度、体积、兼容与安全。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E7]</span></span></span></div><div class="legend-item state-amber"><b>相邻人群：家庭备电与户外能源用户</b><span>高客单用户买停电确定性、扩容、安装、认证和长期服务。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span></span></span></div><div class="legend-item state-amber"><b>外扩边界：智能家居与影音用户</b><span>隐私、App、音质、清洁和家庭场景需要独立证明，不能只借 Anker 充电心智。</span></div><div class="legend-item state-red"><b>暂时边界：只看最低价的泛配件用户</b><span>当用户只看瓦数和价格时，UGREEN、Belkin、Baseus 与白牌会压缩溢价。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>核心盘继续深挖安全与便携</h3>
+          <p>把温控、协议兼容、电芯与召回整改写成可验证证据。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>SOLIX 单独解释所有权价值</h3>
+          <p>按停电时长、家庭负载、安装与扩容解释为什么值得买。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>跨品牌需要明确路由</h3>
+          <p>官网和搜索要让用户知道何时选 Anker、SOLIX、eufy 或 soundcore。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>经营类型：Amazon 主导的全渠道科技组合，官网增长快但利润与客户关系仍需校准。</h2>
+        </div>
+        <p class="section-note">Amazon 是品类原生货架；真正风险来自平台占比、官网与零售的价格服务差异，以及召回体验没有统一标准。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Amazon 主导 + DTC + retail 的全渠道消费科技组合。</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="green" style="width:52%;"></i></div>
+            <span>52%</span>
+            <small>2025 年占公司总营收 52.29%。<span class="evidence-list"><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>Offline retail</b>
+            <div class="share-track"><i class="green" style="width:30%;"></i></div>
+            <span>30%</span>
+            <small>2025 年线下收入占 29.78%。<span class="evidence-list"><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>DTC</b>
+            <div class="share-track"><i class="amber" style="width:10%;"></i></div>
+            <span>10%</span>
+            <small>官网占总营收 10.27%，2026 Q1 升至 10.70%。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></small>
+          </div><div class="share-row">
+            <b>Other online</b>
+            <div class="share-track"><i class="amber" style="width:8%;"></i></div>
+            <span>8%</span>
+            <small>其他线上平台约占 7.66%。<span class="evidence-list"><span class="evidence">[E2]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Amazon 的角色</h3>
+          <p>主交易货架、品类比较和规模引擎；要用 TACOS、NTB、退货与价格纪律判断质量。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网的角色</h3>
+          <p>新品教育、套装、会员、召回补偿和客户关系；当前增长快，需证明贡献利润。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>线下零售的角色</h3>
+          <p>提供可得性和信任，但毛利率低于线上，不能只看收入增长。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>多品牌渠道的角色</h3>
+          <p>Anker、SOLIX、eufy、soundcore 需要分别定义价格、服务与零售授权边界。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：充电品类词量级最大，Anker 吃掉主盘，但安全与比较词只吃到一半。</h2>
+        </div>
+        <p class="section-note">需求排序采用品类覆盖、零售货架、SERP 密度与购买意图做代理，精确量级需 SEO 与 Google Trends 后台校准。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-green">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>USB-C charger / power bank / GaN charger</h3>
+          <p>Anker 在官网、Amazon 和零售形成强品类可见度，并以 Prime / Nano 覆盖不同功率与场景。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E4]</span></span></p>
+        </article><article class="mind-card state-green">
+          <div class="priority"><span>P1 · 量级高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>Anker charger / Anker power bank / Anker Prime</h3>
+          <p>品牌词与产品系列词已形成默认选择，200M+ 全球用户和品类第一背书强化信任。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>Anker vs UGREEN / Belkin / Baseus</h3>
+          <p>高意图用户会比较功率、体积、协议、价格和安全；官网需要正式比较页。<span class="evidence-list"><span class="evidence">[E12]</span><span class="evidence">[E13]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">半吃掉</b></div>
+          <h3>Anker recall / safe / warranty / support</h3>
+          <p>官方有召回入口与补偿流程，但需要把供应商整改、新品安全与响应 SLA 连成一条信任路径。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E8]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>portable power station / home backup</h3>
+          <p>SOLIX 能进入候选集，但 EcoFlow 与 Jackery 更集中占据家庭备电和便携储能解释权。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E14]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>声誉总分 72：产品性能能支撑首单，配送、保修和召回处理拖累直营信任。</h2>
+        </div>
+        <p class="section-note">当前 VOC 说明 Anker 仍有很强的产品默认信任，但负面主题会抬高官网首单、保修处理和高客单 SOLIX 的风险。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Best Buy</h3>
+          <p>20K 87W 移动电源 4.7 / 5、162 条评价，94% 愿意推荐；好评集中在速度、续航和整体性能。<span class="evidence-list"><span class="evidence">[E7]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Trustpilot</h3>
+          <p>www.anker.com 3.8 / 5、6,557 条评价；正向集中在可靠、快充和做工，负向集中在配送、保修和客服沟通。<span class="evidence-list"><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>CPSC / Recall</h3>
+          <p>安全事件会直接影响移动电源首单信任、渠道审查和客服成本。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Reddit</h3>
+          <p>近期可见兼容、固件和保修争议，样本不足以定量，但应进入 FAQ 与客服复盘。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">fast charging</span><span class="w5 p1">reliable</span><span class="w4 p2">build quality</span><span class="w4 p3">battery life</span><span class="w4 p4">compact</span><span class="w3 p5">built-in cable</span><span class="w3 p6">compatibility</span><span class="w3 p7">travel</span><span class="w3 p8">high output</span><span class="w3 p9">portable</span><span class="w2 p10">design</span><span class="w2 p11">value</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">recall</span><span class="w5 p1">overheating</span><span class="w4 p2">warranty</span><span class="w4 p3">shipping delay</span><span class="w4 p4 long">support response</span><span class="w3 p5">missing package</span><span class="w3 p6">compatibility</span><span class="w3 p7">firmware</span><span class="w3 p8">refund</span><span class="w2 p9">heavy</span><span class="w2 p10">price premium</span><span class="w3 p11">replacement</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">正向声音能继续支撑充电品类首单和溢价。负向声音会把官网订单推向 Amazon / Best Buy，并让高客单 SOLIX 用户要求更强的安全、安装和售后证明。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>分品线天花板：充电储能贡献一半营收，eufy 和影音线决定组合增长质量。</h2>
+        </div>
+        <p class="section-note">先看现金贡献，再看第二曲线。2025 年充电储能占 50.47%，智能创新 27.11%，智能影音 22.39%。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">P0 主现金线 · 领导者防守期</div>
+          <h3>Anker Charging + SOLIX</h3>
+          <b>2025 收入 ¥154.02B / 50.47%</b>
+          <p>移动充电继续守默认选择，SOLIX 用家庭备电、安装、认证和服务扩张高客单。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P1 高增长线 · 多品类扩张期</div>
+          <h3>eufy Smart Innovation</h3>
+          <b>2025 收入 ¥82.71B / 27.11%</b>
+          <p>智能安防、清洁、母婴与创意打印增长快，隐私、App、履约和服务门槛更高。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P1 稳定增长线 · 品牌升级期</div>
+          <h3>soundcore + Nebula</h3>
+          <b>2025 收入 ¥68.33B / 22.39%</b>
+          <p>影音线毛利较高，需要用音质、舒适、AI 与专业评价守住溢价。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P2 验证线 · 验证期</div>
+          <h3>AnkerMake / emerging lines</h3>
+          <b>创意硬件与新场景</b>
+          <p>众筹和新品热度要用交付、复购、耗材与售后数据判断，不提前占用主线资源。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：先问安全与兼容，再问价格、比较和售后。</h2>
+        </div>
+        <p class="section-note">这些意图应直接变成官网、Amazon、召回中心和帮助中心的入口结构。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>SERP / Retail</td><td>哪个充电器或移动电源适合我的设备</td><td class="status-cell"><span class="table-status green">基本接住</span></td><td>保留功率、端口、设备与场景选择器。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span></span></td></tr><tr><td>Comparison Search</td><td>Anker 与 UGREEN / Belkin 谁更安全、更值</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>上线协议、温控、保修、体积与价格比较页。</td></tr><tr><td>Recall Search</td><td>我的型号是否召回、如何赔付、还能否使用</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>合并型号查询、补偿进度、处置说明与整改证明。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></td></tr><tr><td>Support / Reddit</td><td>固件、兼容、保修和替换为什么卡住</td><td class="status-cell"><span class="table-status red">没接牢</span></td><td>把高频问题转成 FAQ、客服 SLA 和产品修复看板。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></td></tr><tr><td>SOLIX Research</td><td>停电时能带多少负载、安装和扩容是否可靠</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>按家庭负载、时长、认证、安装与服务建立教育页。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E14]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：性能与便携接住主需求，安全整改和服务证明还没完全接住。</h2>
+        </div>
+        <p class="section-note">权重是公开样本方向性判断，用来决定页面与预算优先级。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-red">
+          <div><div class="fit-weight">25%</div><div class="mini-track"><i style="width:25%;"></i></div></div>
+          <div><strong>安全 / 温控 / 电芯可靠</strong><p>ActiveShield、BMS 和温控是有效卖点，召回后必须补供应商整改与第三方验证。</p></div>
+          <div><span class="verdict red">半接住</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">20%</div><div class="mini-track"><i style="width:20%;"></i></div></div>
+          <div><strong>充电速度 / 功率 / 协议兼容</strong><p>Prime、Nano、GaN 和 PowerIQ 能支撑专业感与场景覆盖。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>体积 / 便携 / 自带线</strong><p>官网与零售评价能证明便携和自带线价值。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>价格 / 促销 / 同规格比较</strong><p>UGREEN、Belkin 和 Baseus 会把高意图用户拉进价格比较。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>保修 / 召回 / 客服响应</strong><p>官方有退货、保修和召回入口，但公开 VOC 仍显示体验不一致。</p></div>
+          <div><span class="verdict red">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">10%</div><div class="mini-track"><i style="width:10%;"></i></div></div>
+          <div><strong>App / 固件 / 长期支持</strong><p>智能化产品增加了固件、兼容和连接维护责任。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：Anker 先修安全信任与渠道纪律，再扩大组合新品预算。</h2>
+        </div>
+        <p class="section-note">管理层现在最该追召回关闭质量、渠道贡献利润和多品牌组合效率。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>100+。守安全权威、渠道议价、利润质量与多品牌组合。</p></div><div class="summary-item"><b>增长主线</b><p>移动充电守住默认选择，SOLIX、eufy 和 soundcore 按各自购买契约增长。</p></div><div class="summary-item"><b>Top 3 问题</b><p>召回尾部；Amazon 占比与渠道利润；多品牌组合边界。</p></div><div class="summary-item"><b>预算方向</b><p>加：安全证明、召回 SLA、比较页、SOLIX 教育。控：无利润门槛的新品曝光与全渠道折扣。</p></div><div class="summary-item"><b>第一修复</b><p>30 天内上线统一安全证明中心、召回看板和渠道价格地图。</p></div><div class="summary-item"><b>数据缺口</b><p>需补北美订单、渠道贡献利润、退货、召回关闭率、售后 SLA、NTB 与会员复购。</p></div><div class="summary-item"><b>路由建议</b><p>Atlas 总控；SignalMark 先修安全与组合信号，CommerceFlow 同步修渠道利润与售后。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：SignalMark 与 CommerceFlow 同时决定下一步，TideLens 只承担证明复用。</h2>
+        </div>
+        <p class="section-note">Anker 的下一步优先处理安全信任、渠道利润和多品牌购买信号。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-amber">
+          <div class="biz-top"><div><span>SignalMark</span><h3>品牌权威很强，安全与组合边界拉低信号。</h3><p>充电默认选择已成立；召回修复与多品牌路由需要更强公开证明。</p></div><b>76</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>品类第一、200M+ 用户、Prime / Nano 系列和全球零售形成强记忆。</p></div><div><strong>做得差</strong><p>召回尾部和跨品类边界会把安全与溢价问题带到其他产品线。</p></div></div>
+          
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>全渠道规模成立，渠道利润与召回承接需要统一。</h3><p>Amazon、官网和线下都在增长；要用贡献利润、价格纪律、退货和召回 SLA 管理。</p></div><b>72</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>Amazon、DTC 和零售分布广，官网增长快。</p></div><div><strong>做得差</strong><p>Amazon 占比高，线上线下毛利差异明显，售后体验仍不一致。</p></div></div>
+          
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>TideLens</span><h3>评测与场景素材很多，安全证明复用不足。</h3><p>创作者能讲速度、体积和场景；下一步要把第三方测试、召回整改和长期耐用变成可复用证据。</p></div><b>74</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>产品可演示、媒体与零售评价基础强。</p></div><div><strong>做得差</strong><p>内容容易追新品参数，较少持续回答召回后安全与长期服务。</p></div></div>
+          
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：先关闭召回信任，再修渠道利润和多品牌边界。</h2>
+        </div>
+        <p class="section-note">这三件事会直接影响溢价、客服成本、零售审查和新品预算效率。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：召回补偿与安全整改没有被压缩成一套持续可见的购买证明。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。领导品牌的安全事件会跨产品线传导。</p></div>
+          <div><b>证据</b><p>CPSC 记录 48.1 万台、33 起事故；Anker 官方仍保留多型号召回入口。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>移动电源首单顾虑、渠道审查、客服成本和新品安全门槛同时上升。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线统一安全证明中心与召回 SLA 看板。<br><strong>90 天：</strong>发布供应商整改、第三方测试和新产品安全证据包。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 2：Amazon 规模很强，但渠道贡献利润和客户关系没有被公开数据证明。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。平台占比高会放大价格和流量依赖。</p></div>
+          <div><b>证据</b><p>2025 年 Amazon 占总营收 52.29%，官网 10.27%，线下 29.78%；线上毛利高于线下。<span class="evidence-list"><span class="evidence">[E2]</span></span></p></div>
+          <div><b>业务影响</b><p>促销、平台费用和渠道价差可能吞掉表面增长，官网客户关系难以反哺组合复购。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>建立渠道价格、毛利、退货与 NTB 看板。<br><strong>90 天：</strong>按渠道角色重做 SKU、套装和促销门槛。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：多品牌组合扩张快，但用户还缺一张清晰的品牌选择地图。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。组合边界不清会抬高教育成本并稀释母品牌。</p></div>
+          <div><b>证据</b><p>公司覆盖充电储能、智能创新和智能影音三大产业，分别由 Anker / SOLIX、eufy、soundcore / Nebula 承担。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p></div>
+          <div><b>业务影响</b><p>搜索、官网导航、零售陈列和内容预算更难形成同一购买路径。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>重写品牌组合路由与首页导航。<br><strong>90 天：</strong>按品线复盘增量收入、交叉购买和客服问题。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：UGREEN 抢同规格性价比，Belkin 抢 Apple 渠道信任，EcoFlow / Jackery 抢家庭能源解释权。</h2>
+        </div>
+        <p class="section-note">Anker 需要防守的是安全、价格、生态与家庭能源四种购买理由。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">充电最大压力</div>
+          <h3>UGREEN 抢同规格性价比</h3>
+          <p>Nexode 已覆盖 45W-500W 充电器、145W-200W 移动电源、Qi2 与自带线设计，直接压缩 Anker 的参数溢价。<span class="evidence-list"><span class="evidence">[E12]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">渠道信任</div>
+          <h3>Belkin 抢 Apple 生态安全感</h3>
+          <p>BoostCharge 与 Apple 生态、零售和兼容性心智更接近主流用户的低风险选择。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">SOLIX 压力</div>
+          <h3>EcoFlow / Jackery 抢家庭能源解释权</h3>
+          <p>EcoFlow 用容量、输出、扩容和 UL 认证做清晰教育，SOLIX 必须用家庭负载与服务路径正面比较。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E14]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">默认选择</div>
+          <h3>Apple / 原厂配件抢默认选择</h3>
+          <p>原厂充电器和 MagSafe 生态用兼容与安全感降低比较成本，Anker 需要持续证明第三方品牌的额外价值。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从快速充电领导者，升级为可验证的安全能源伙伴。</h2>
+        </div>
+        <p class="section-note">下一阶段文案要把速度、安全、兼容、服务和组合边界连在一起。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">当前理由</div>
+          <h3>当前理由</h3>
+          <p>更快、更小、更多端口、更多场景，支撑移动充电默认选择。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">升级理由</div>
+          <h3>下一阶段理由</h3>
+          <p>每一瓦都可验证：设备兼容、温控、电芯、召回补偿与长期服务都清楚。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">避免规模误读</div>
+          <h3>必须避免</h3>
+          <p>用全球第一和新品数量覆盖安全、价格和服务差异。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Power you can verify, wherever life takes you.</p>
+        <p><b>Hero subhead:</b> Fast charging, transparent safety, clear compatibility, and support that stays with every product.</p>
+        <p><b>Product promise:</b> Anker gives every device the right power with visible safeguards, tested compatibility, and a clear support path.</p>
+        <p><b>Sales opener:</b> For buyers comparing speed, size, and safety, Anker makes the full ownership decision easier to verify.</p>
+        <p><b>CTA:</b> Find the right power setup</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：规模和产品领先，召回关闭、渠道利润与组合边界拉低总分。</h2>
+        </div>
+        <p class="section-note">低分项先进入经营周会，修复顺序按安全信任、利润质量和组合效率。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>召回关闭质量</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>需要公开关闭率、响应 SLA、补偿体验与供应商整改。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>56</b><span>安全证明架构</span></div>
+          <div class="mini-track"><i style="width:56%;"></i></div>
+          <p>新产品安全卖点很多，召回后的第三方与供应商证据仍不够集中。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>63</b><span>渠道利润纪律</span></div>
+          <div class="mini-track"><i style="width:63%;"></i></div>
+          <p>Amazon 占比高，线上线下毛利差异明显。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>65</b><span>售后体验</span></div>
+          <div class="mini-track"><i style="width:65%;"></i></div>
+          <p>Trustpilot 负面集中在配送、保修与客服沟通。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>67</b><span>品牌组合边界</span></div>
+          <div class="mini-track"><i style="width:67%;"></i></div>
+          <p>多品牌覆盖广，选择路由与跨品牌关系仍可更清楚。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>70</b><span>SOLIX 教育</span></div>
+          <div class="mini-track"><i style="width:70%;"></i></div>
+          <p>需要用家庭负载、安装、认证和服务对抗 EcoFlow / Jackery。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>78</b><span>DTC 增长</span></div>
+          <div class="mini-track"><i style="width:78%;"></i></div>
+          <p>官网收入增长快，需补贡献利润与复购验证。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>82</b><span>线下渠道</span></div>
+          <div class="mini-track"><i style="width:82%;"></i></div>
+          <p>线下收入增长 27.81%，提供可得性与信任。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>88</b><span>产品创新</span></div>
+          <div class="mini-track"><i style="width:88%;"></i></div>
+          <p>Prime、Nano、SOLIX 与 eufy 持续推出高密度新品。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>90</b><span>Amazon 主盘</span></div>
+          <div class="mini-track"><i style="width:90%;"></i></div>
+          <p>Amazon 占总营收 52.29%，主货架成立。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>92</b><span>品牌权威</span></div>
+          <div class="mini-track"><i style="width:92%;"></i></div>
+          <p>全球品类第一、200M+ 用户和三大产业规模形成强权威。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E6]</span></span></p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先加安全证明与召回关闭，控制无利润门槛的新品和促销扩张。</h2>
+        </div>
+        <p class="section-note">预算必须分别回答信任修复、订单获取、客户关系与组合验证。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：安全证明中心</h3>
+          <p>供应商整改、第三方测试、型号查询、补偿进度和新品安全全部可核验。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：比较与选择器</h3>
+          <p>Anker vs UGREEN / Belkin，SOLIX vs EcoFlow / Jackery，按场景和所有权成本解释。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">设门槛</div>
+          <h3>控预算：全渠道折扣</h3>
+          <p>没有贡献利润、NTB 和价格一致性门槛的促销先收紧。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先收敛</div>
+          <h3>停预算：平均分配新品曝光</h3>
+          <p>未证明 30 / 90 天转化、退货、复购或服务能力的新品停止平均加量。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线图：先关闭召回信任，再重排渠道与品牌组合。</h2>
+        </div>
+        <p class="section-note">每一步都有 owner、验收指标和业务影响。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>质量 / 客服｜上线召回关闭与安全证明中心</b><p>验收：查询成功率、响应 SLA、关闭率、重复咨询率。影响：降低首单顾虑与客服成本</p></div><div class="road-action state-red"><b>数据 / 财务｜建立北美渠道利润地图</b><p>验收：贡献毛利、退货、促销、NTB、库存周转。影响：停止用收入掩盖利润差异</p></div><div class="road-action state-amber"><b>品牌 / 官网｜上线 Anker 与主要竞品比较页</b><p>验收：比较页流量、PDP 回流、转化与售后咨询。影响：守住高意图比较</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-amber"><b>品牌架构｜重写 Anker / SOLIX / eufy / soundcore 路由</b><p>验收：导航点击、搜索回流、跨品牌跳转、客服误问。影响：降低组合教育成本</p></div><div class="road-action state-amber"><b>渠道｜按角色重做 SKU 与促销门槛</b><p>验收：渠道价差、贡献利润、套装 attach rate。影响：保护价格与渠道议价</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-green"><b>产品 / 质量｜发布季度安全与可靠性证据包</b><p>验收：第三方测试覆盖、事故率、退货与负面 VOC。影响：把召回修复转成长期权威</p></div><div class="road-action state-green"><b>组合经营｜按品线复盘增量收入与服务成本</b><p>验收：品线贡献利润、交叉购买、客服成本、库存周转。影响：提高组合资源效率</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>职能部门红黄绿灯：红灯先看质量、召回和渠道利润，绿灯继续放大产品与渠道。</h2>
+        </div>
+        <p class="section-note">红灯部门先进入管理层经营周会，每张卡只保留最影响信任、利润或组合效率的一件事。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">48</div>
+          <h3>质量 / 召回部</h3>
+          <p><strong>当前拖累：</strong>召回关闭率、供应商整改和新品安全证明没有形成一张公开信任图。</p>
+          <span class="tag red">30 天：上线安全中心</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">58</div>
+          <h3>客服 / 售后部</h3>
+          <p><strong>当前拖累：</strong>配送、保修和召回沟通仍出现在当前负面 VOC。</p>
+          <span class="tag red">30 天：设召回 SLA</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">62</div>
+          <h3>数据 / 财务部</h3>
+          <p><strong>当前拖累：</strong>北美渠道贡献利润、退货和库存风险需要统一看板。</p>
+          <span class="tag amber">30 天：补利润地图</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">65</div>
+          <h3>渠道部</h3>
+          <p><strong>当前拖累：</strong>Amazon 高占比与线上线下毛利差异需要价格和 SKU 纪律。</p>
+          <span class="tag amber">30 天：做价格地图</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">67</div>
+          <h3>品牌架构部</h3>
+          <p><strong>当前拖累：</strong>Anker、SOLIX、eufy、soundcore 的选择路由还不够清楚。</p>
+          <span class="tag amber">30 天：重写品牌路由</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">76</div>
+          <h3>DTC 电商部</h3>
+          <p><strong>当前拖累：</strong>官网增长快，但贡献利润和会员复购仍需校准。</p>
+          <span class="tag green">30 天：补 DTC 看板</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">82</div>
+          <h3>线下零售部</h3>
+          <p><strong>当前拖累：</strong>零售规模强，安全与召回口径要与官网保持一致。</p>
+          <span class="tag green">30 天：统一零售口径</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">84</div>
+          <h3>eufy / 创新产品部</h3>
+          <p><strong>当前拖累：</strong>新品密度高，隐私、App 和服务证明要跟上。</p>
+          <span class="tag green">30 天：补产品 proof</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">88</div>
+          <h3>充电产品部</h3>
+          <p><strong>当前拖累：</strong>产品创新强，召回后的第三方安全证据仍需持续发布。</p>
+          <span class="tag green">30 天：发布安全证据</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">90</div>
+          <h3>Amazon 运营部</h3>
+          <p><strong>当前拖累：</strong>主盘很强，下一步要把平台 VOC 反哺官网与产品。</p>
+          <span class="tag green">30 天：导出高频问题</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险预警与数据缺口：公开数据能判断方向，北美利润与召回关闭仍需后台校准。</h2>
+        </div>
+        <p class="section-note">风险区只写会改变分数或预算的缺口。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>北美收入与 GMV 未单列</h3>
+          <p>公开年报只披露境内外与全球渠道，北美 GMV 需订单、渠道结算与地区收入校准。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E3]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>召回关闭质量缺后台数据</h3>
+          <p>需补受影响序列号、提交量、关闭率、平均处理时长、补偿满意度与重复咨询。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Amazon 精细销量缺 Xiyou / Seller Central</h3>
+          <p>本次未使用前台 Chrome；公开财报足以证明 Amazon 规模，但 ASIN 月销、关键词和 BSR 仍需后台工具补数。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>多品牌组合利润缺口</h3>
+          <p>需补 Anker、SOLIX、eufy、soundcore 的北美收入、毛利、退货、库存和客服成本。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：强判断都能追到来源、日期、用途和置信度。</h2>
+        </div>
+        <p class="section-note">公开版保留证据 ID 和来源；后台接入后补北美订单、渠道利润、召回关闭和 ASIN 数据。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://www.anker.com/" target="_blank" rel="noopener">Anker US 官网</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official site</td>
+              <td>品类第一、146 个市场、200M+ 全球用户、Prime / Nano 产品与价格。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://dix7fd4yse9rd.cloudfront.net/dimp/en/54750157-7e3c-4cec-a9a9-c9dfcb52e5b2_2026-04-10_2025%E5%B9%B4%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf" target="_blank" rel="noopener">安克创新 2025 年年度报告</a></td>
+              <td>Published 2026-04-10</td>
+              <td>Financial filing</td>
+              <td>营收、品线、渠道占比、毛利、销量、库存与美国线下动作。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://dix7fd4yse9rd.cloudfront.net/dimp/en/6632a536-c936-43dd-9ad8-c895ec29aa47_2026-04-30_2026%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf" target="_blank" rel="noopener">安克创新 2026 年第一季度报告</a></td>
+              <td>Published 2026-04-30</td>
+              <td>Financial filing</td>
+              <td>2026 Q1 增长、现金流、存货减值、官网占比与新品。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://service.anker.com/" target="_blank" rel="noopener">Anker Support Center</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official support</td>
+              <td>30 天退款、保修、退货、服务入口与美国联系方式。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations-1" target="_blank" rel="noopener">U.S. CPSC Anker Power Banks Recall</a></td>
+              <td>2025-09-18</td>
+              <td>Regulatory recall</td>
+              <td>约 481,000 台、33 起火灾/爆炸、4 起轻微烧伤与 1 起重大财产损失。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.anker.com/product-recalls" target="_blank" rel="noopener">Anker Product Recalls</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Official recall</td>
+              <td>当前召回入口、涉及型号、补偿与安全处置说明。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.bestbuy.com/site/reviews/anker-power-bank-20k-87w-built-in-usb-c-cable-black/6644753" target="_blank" rel="noopener">Best Buy Anker 20K 87W Reviews</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Retail VOC</td>
+              <td>4.7 / 5、162 条评价、94% 推荐；速度、续航、性能和重量主题。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://www.trustpilot.com/review/www.anker.com" target="_blank" rel="noopener">Trustpilot Anker</a></td>
+              <td>2026-08-27 checked</td>
+              <td>VOC</td>
+              <td>3.8 / 5、6,557 条评价；可靠快充与配送、保修、客服主题。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://www.reddit.com/r/anker/comments/1ujqch9/anker_a1689_doesnt_charge/" target="_blank" rel="noopener">Reddit Anker A1689 compatibility thread</a></td>
+              <td>2026-06-30</td>
+              <td>Community VOC</td>
+              <td>近期兼容与支持个案，用于 FAQ 与产品反馈方向。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.reddit.com/r/UsbCHardware/comments/1vi4zby/severe_battery_failure_on_anker_10k_fusion/" target="_blank" rel="noopener">Reddit Anker 10K Fusion warranty thread</a></td>
+              <td>2026-08-07</td>
+              <td>Community VOC</td>
+              <td>近期电池与保修个案，不用于定量。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://us.ecoflow.com/collections/olddelta-series" target="_blank" rel="noopener">EcoFlow DELTA Series</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Competitor PDP</td>
+              <td>家庭备电容量、输出、扩容、UL 认证与价格解释。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://www.ugreen.com/pages/nexode-series" target="_blank" rel="noopener">UGREEN Nexode Series</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Competitor portfolio</td>
+              <td>充电器、移动电源、Qi2、自带线和高功率产品覆盖。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://www.belkin.com/products/power-banks/" target="_blank" rel="noopener">Belkin BoostCharge Power Bank</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Competitor portfolio</td>
+              <td>Apple 生态与零售信任压力。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://us.ecoflow.com/" target="_blank" rel="noopener">EcoFlow US Home Backup</a></td>
+              <td>2026-08-27 checked</td>
+              <td>Competitor site</td>
+              <td>DELTA / whole-home backup 的品类教育与促销节奏。</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Anker · 2026-08-27 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>

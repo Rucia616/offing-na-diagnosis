@@ -454,6 +454,11 @@
       max-height: 54px;
       transform: scale(1.08);
     }
+    .report-logo.logo-native-small img {
+      width: auto;
+      height: 42px;
+      max-width: min(82%, 286px);
+    }
     .report-card.logo-panorama-card .report-logo img {
       max-width: min(86%, 300px);
       max-height: 54px;
@@ -640,9 +645,9 @@
         <div class="console-body">
           <div class="eyebrow">Project Map</div>
           <div class="metric-grid">
-            <div class="metric"><b id="archivedReportMetric">20</b><span>已归档品牌诊断</span></div>
+            <div class="metric"><b id="archivedReportMetric">21</b><span>已归档品牌诊断</span></div>
             <div class="metric"><b>1</b><span>调研资料库入口</span></div>
-            <div class="metric"><b class="compact">2026-06-27</b><span>最近更新日期</span></div>
+            <div class="metric"><b class="compact">2026-08-27</b><span>最近更新日期</span></div>
             <div class="metric"><b>GitHub Pages</b><span>公开交付链接</span></div>
           </div>
           <p class="console-note">当前入口只收纳可公开展示或可发给客户的文件。内部草稿、未确认数据、客户敏感信息不放进公开 Pages。</p>
@@ -708,18 +713,22 @@
             <option value="score-asc">总分低到高</option>
           </select>
           <button class="reset-filter" id="resetFilters" type="button">重置</button>
-          <span class="pill" id="reportCount">共 20 份报告</span>
+          <span class="pill" id="reportCount">共 21 份报告</span>
         </div>
       </div>
       <div class="active-filter-summary" id="activeFilterSummary" aria-live="polite">显示全部报告。</div>
       <div class="score-distribution" aria-label="报告总分档位分布">
-        <div class="score-band score-a" data-score-band="A"><b>1</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
+        <div class="score-band score-a" data-score-band="A"><b>2</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
         <div class="score-band score-b" data-score-band="B"><b>3</b><span>B档 65-69</span><small>主线成立，但短板会吃利润。</small></div>
         <div class="score-band score-c" data-score-band="C"><b>10</b><span>C档 55-64</span><small>有生意基础，治理优先于加码。</small></div>
         <div class="score-band score-d" data-score-band="D"><b>4</b><span>D档 50-54</span><small>明显拖累，需要先止损。</small></div>
         <div class="score-band score-e" data-score-band="E"><b>2</b><span>E档 &lt;50</span><small>信任或成交链路未闭合。</small></div>
       </div>
             <div class="report-grid" id="reportGrid">
+        <a class="report-card" data-name="anker mobile charging power bank gan charger prime nano solix eufy soundcore amazon retail recall" data-stage="100+" data-category="hardware" data-type="allchannel" data-status="latest" data-score="72" data-tier="A" href="../anker-offing-na-diagnosis-2026-08-27.html">
+          <div><div class="report-logo logo-native-small"><img src="../assets/brand-logos/anker-logo-official.svg" alt="Anker logo" /></div><h3>Anker</h3><p>充电领导力、安全召回、Amazon 渠道利润、多品牌组合和 SOLIX 第二曲线。</p></div>
+          <div class="report-meta"><span class="pill score score-a" aria-label="北美业务总分 72 分，A 档">72 · A档</span><span class="pill green">2026-08-27 v1</span><span class="pill">100+</span><span class="pill">消费电子</span></div>
+        </a>
         <a class="report-card" data-name="insta360 x5 360 camera action camera luna ultra creator camera dji gopro amazon best buy" data-stage="10-100" data-category="imaging" data-type="allchannel" data-status="latest" data-score="74" data-tier="A" href="../insta360-offing-na-diagnosis-2026-06-19.html">
           <div><div class="report-logo logo-wide logo-invert"><img src="../assets/brand-logos/insta360-logo-official-dark.svg" alt="Insta360 logo" /></div><h3>Insta360</h3><p>X5 360 相机、Luna 第二曲线、官网信任和 Amazon / Best Buy 安全感。</p></div>
           <div class="report-meta"><span class="pill score score-a" aria-label="北美业务总分 74 分，A 档">74 · A档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">影像设备</span></div>
@@ -884,7 +893,7 @@
 
     <div class="footer">
       <span>Offing Atlas｜远汐·航图 · Project Hub</span>
-      <span>Last updated: 2026-06-27</span>
+      <span>Last updated: 2026-08-27</span>
     </div>
   </main>
 
