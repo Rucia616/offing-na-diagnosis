@@ -652,9 +652,9 @@
         <div class="console-body">
           <div class="eyebrow">Project Map</div>
           <div class="metric-grid">
-            <div class="metric"><b id="archivedReportMetric">22</b><span>已归档品牌诊断</span></div>
+            <div class="metric"><b id="archivedReportMetric">27</b><span>已归档品牌诊断</span></div>
             <div class="metric"><b>1</b><span>调研资料库入口</span></div>
-            <div class="metric"><b class="compact">2026-08-27</b><span>最近更新日期</span></div>
+            <div class="metric"><b class="compact">2026-09-02</b><span>最近更新日期</span></div>
             <div class="metric"><b>GitHub Pages</b><span>公开交付链接</span></div>
           </div>
           <p class="console-note">当前入口只收纳可公开展示或可发给客户的文件。内部草稿、未确认数据、客户敏感信息不放进公开 Pages。</p>
@@ -697,6 +697,8 @@
             <option value="furniture">办公家具</option>
             <option value="outdoor">庭院工具</option>
             <option value="home">家居收纳</option>
+            <option value="kitchentools">厨房工具</option>
+            <option value="petfood">宠物食品</option>
           </select>
           <select class="filter" id="typeFilter" aria-label="按经营类型筛选">
             <option value="">全部类型</option>
@@ -709,6 +711,7 @@
             <option value="socialmarketplace">TikTok + Amazon</option>
             <option value="dualchannel">DTC + Amazon</option>
             <option value="allchannel">DTC + Amazon + Retail</option>
+            <option value="dtcretail">DTC + 零售渠道</option>
           </select>
           <select class="filter" id="statusFilter" aria-label="按报告状态筛选">
             <option value="">全部状态</option>
@@ -721,16 +724,16 @@
             <option value="score-asc">总分低到高</option>
           </select>
           <button class="reset-filter" id="resetFilters" type="button">重置</button>
-          <span class="pill" id="reportCount">共 22 份报告</span>
+          <span class="pill" id="reportCount">共 27 份报告</span>
         </div>
       </div>
       <div class="active-filter-summary" id="activeFilterSummary" aria-live="polite">显示全部报告。</div>
       <div class="score-distribution" aria-label="报告总分档位分布">
         <div class="score-band score-a" data-score-band="A"><b>2</b><span>A档 70+</span><small>经营基础较强，可优先放大。</small></div>
-        <div class="score-band score-b" data-score-band="B"><b>4</b><span>B档 65-69</span><small>主线成立，但短板会吃利润。</small></div>
-        <div class="score-band score-c" data-score-band="C"><b>10</b><span>C档 55-64</span><small>有生意基础，治理优先于加码。</small></div>
-        <div class="score-band score-d" data-score-band="D"><b>4</b><span>D档 50-54</span><small>明显拖累，需要先止损。</small></div>
-        <div class="score-band score-e" data-score-band="E"><b>2</b><span>E档 &lt;50</span><small>信任或成交链路未闭合。</small></div>
+        <div class="score-band score-b" data-score-band="B"><b>5</b><span>B档 65-69</span><small>主线成立，但短板会吃利润。</small></div>
+        <div class="score-band score-c" data-score-band="C"><b>12</b><span>C档 55-64</span><small>有生意基础，治理优先于加码。</small></div>
+        <div class="score-band score-d" data-score-band="D"><b>5</b><span>D档 50-54</span><small>明显拖累，需要先止损。</small></div>
+        <div class="score-band score-e" data-score-band="E"><b>3</b><span>E档 &lt;50</span><small>信任或成交链路未闭合。</small></div>
       </div>
             <div class="report-grid" id="reportGrid">
         <a class="report-card" data-name="anker mobile charging power bank gan charger prime nano solix eufy soundcore amazon retail recall" data-stage="100+" data-category="hardware" data-type="allchannel" data-status="latest" data-score="72" data-tier="A" href="../anker-offing-na-diagnosis-2026-08-27.html">
@@ -753,9 +756,21 @@
           <div><div class="report-logo "><img src="../assets/brand-logos/medicube-logo-official.svg" alt="Medicube logo" /></div><h3>Medicube</h3><p>K-beauty 强增长、TikTok Shop、Ulta、设备边界和直购信任。</p></div>
           <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 67 分，B 档">67 · B档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">美容科技</span></div>
         </a>
+        <a class="report-card logo-panorama-card" data-name="wenoker exercise bike indoor cycling bike jc302 jc318 app subscription pedal safety fitness amazon dtc" data-stage="10-100" data-category="health" data-type="dualchannel" data-status="latest" data-score="66" data-tier="B" href="../wenoker-offing-na-diagnosis-2026-09-01.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/wenoker-logo-official.png" alt="Wenoker logo" /></div><h3>Wenoker</h3><p>入门运动单车、型号选择、体型适配、踏板安全、App 订阅和售后兑现。</p></div>
+          <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 66 分，B 档">66 · B档</span><span class="pill green">2026-09-01 v1</span><span class="pill">10-100</span><span class="pill">运动健康</span></div>
+        </a>
         <a class="report-card" data-name="cosori air fryer turboblaze iconic kitchen appliance recall warranty amazon retail vesync" data-stage="100+" data-category="kitchen" data-type="allchannel" data-status="latest" data-score="65" data-tier="B" href="../cosori-offing-na-diagnosis-2026-06-13.html">
           <div><div class="report-logo "><img src="../assets/brand-logos/cosori-logo-official.svg" alt="COSORI logo" /></div><h3>COSORI</h3><p>空气炸锅主盘、Iconic 高端化、召回后安全信任、第二品线利润和渠道承接。</p></div>
           <div class="report-meta"><span class="pill score score-b" aria-label="北美业务总分 65 分，B 档">65 · B档</span><span class="pill green">2026-08-27 v1</span><span class="pill">100+</span><span class="pill">厨房家电</span></div>
+        </a>
+        <a class="report-card logo-panorama-card" data-name="mccook kitchen knife set block mc29 amazon stainless steel rust sharpening warranty" data-stage="10-100" data-category="kitchentools" data-type="amazon" data-status="latest" data-score="64" data-tier="C" href="../mccook-offing-na-diagnosis-2026-09-01.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/mccook-logo-official.png" alt="McCook logo" /></div><h3>McCook</h3><p>Amazon 刀具主盘、折扣依赖、锈蚀养护、品牌官网与售后承接。</p></div>
+          <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 64 分，C 档">64 · C档</span><span class="pill green">2026-09-01 v1</span><span class="pill">10-100</span><span class="pill">厨房工具</span></div>
+        </a>
+        <a class="report-card logo-panorama-card" data-name="zeal pet food canada new zealand air dried dog food wet food chewy nutrition subscription" data-stage="10-100" data-category="petfood" data-type="dtcretail" data-status="latest" data-score="64" data-tier="C" href="../zeal-pet-food-offing-na-diagnosis-2026-09-02.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/zeal-pet-food-logo-official.png" alt="ZEAL Pet Food logo" /></div><h3>ZEAL Pet Food</h3><p>加拿大风干粮、新西兰湿粮、Chewy 双入口、营养证明和跨渠道复购。</p></div>
+          <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 64 分，C 档">64 · C档</span><span class="pill green">2026-09-02 v1</span><span class="pill">10-100</span><span class="pill">宠物食品</span></div>
         </a>
         <a class="report-card" data-name="ringconn smart ring health wearable no subscription app amazon" data-stage="1-10" data-category="hardware" data-type="dualchannel" data-status="latest" data-score="64" data-tier="C" href="../ringconn-offing-na-diagnosis-2026-06-25.html">
           <div><div class="report-logo logo-small-source"><img src="../assets/brand-logos/ringconn-logo-official.png" alt="RingConn logo" /></div><h3>RingConn</h3><p>智能戒指、无订阅定位、Gen 3 声量、app 评分和售后信任。</p></div>
@@ -797,6 +812,10 @@
           <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/cabevibe-logo-official-dark.png" alt="CabeVibe logo" /></div><h3>CabeVibe</h3><p>CabBase C3 人体工学椅、体型适配、退换保修、Amazon 信任和竞品比较。</p></div>
           <div class="report-meta"><span class="pill score score-c" aria-label="北美业务总分 56 分，C 档">56 · C档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">办公家具</span></div>
         </a>
+        <a class="report-card logo-panorama-card" data-name="kendo tools japan hand tools measurement cutting 2000 sku distributor professional warranty" data-stage="0-1" data-category="tools" data-type="b2b" data-status="latest" data-score="54" data-tier="D" href="../kendo-offing-na-diagnosis-2026-09-01.html">
+          <div><div class="report-logo logo-official-wide logo-native-small"><img src="../assets/brand-logos/kendo-logo-official.png" alt="KENDO logo" /></div><h3>KENDO</h3><p>2,000+ SKU 制造底盘、北美英雄货架、授权体系、第三方 proof 和本地售后。</p></div>
+          <div class="report-meta"><span class="pill score score-d" aria-label="北美业务总分 54 分，D 档">54 · D档</span><span class="pill green">2026-09-01 v1</span><span class="pill">0-1</span><span class="pill">精密工具</span></div>
+        </a>
         <a class="report-card" data-name="petpivot autoscooper automatic litter box self cleaning cat tiktok shop amazon" data-stage="10-100" data-category="pet" data-type="socialmarketplace" data-status="latest" data-score="54" data-tier="D" href="../petpivot-offing-na-diagnosis-2026-06-15.html">
           <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/petpivot-logo.png" alt="PetPivot logo" /></div><h3>PetPivot</h3><p>低价自动猫砂盆、宠物安全冗余、长期可靠和 TikTok / Amazon 承接。</p></div>
           <div class="report-meta"><span class="pill score score-d" aria-label="北美业务总分 54 分，D 档">54 · D档</span><span class="pill green">2026-06-26 v3</span><span class="pill">10-100</span><span class="pill">宠物智能</span></div>
@@ -821,6 +840,10 @@
           <div><div class="report-logo logo-wide"><img src="../assets/brand-logos/coolcovery-logo-wordmark-blue.png" alt="CoolCovery logo" /></div><h3>CoolCovery</h3><p>冷 / 热 / 压缩恢复设备、专业 proof、安全禁忌和 quote / demo 路径。</p></div>
           <div class="report-meta"><span class="pill score score-e" aria-label="北美业务总分 43 分，E 档">43 · E档</span><span class="pill green">2026-06-26 v3</span><span class="pill">1-10</span><span class="pill">运动健康</span></div>
         </a>
+        <a class="report-card logo-panorama-card" data-name="vorvorax microwave pressure cooker j2301 2l 13l kitchen appliance amazon vine cleaning safety" data-stage="0-1" data-category="kitchen" data-type="amazon" data-status="latest" data-score="42" data-tier="E" href="../vorvorax-offing-na-diagnosis-2026-09-01.html">
+          <div><div class="report-logo logo-official-wide"><img src="../assets/brand-logos/vorvorax-logo-official.svg" alt="Vorvorax logo" /></div><h3>Vorvorax</h3><p>微波压力锅、需求验证、清洁安全、Vine 评价和 SKU 收敛。</p></div>
+          <div class="report-meta"><span class="pill score score-e" aria-label="北美业务总分 42 分，E 档">42 · E档</span><span class="pill green">2026-09-01 v1</span><span class="pill">0-1</span><span class="pill">厨房家电</span></div>
+        </a>
       </div>
       <div class="empty-state" id="emptyState">没有找到匹配的报告。可以清空筛选条件重新查看。</div>
     </section>
@@ -830,7 +853,7 @@
         <a class="quick-card prism" href="#reports">
           <div>
             <h3>品牌报告库</h3>
-            <p>集中进入 22 个已按 Atlas 最新规则完成的北美业务诊断报告。</p>
+            <p>集中进入 27 个已按 Atlas 最新规则完成的北美业务诊断报告。</p>
           </div>
           <div class="tools"><span class="pill green">可外发</span><span class="pill">HTML</span></div>
         </a>
@@ -905,7 +928,7 @@
 
     <div class="footer">
       <span>Offing Atlas｜远汐·航图 · Project Hub</span>
-      <span>Last updated: 2026-08-27</span>
+      <span>Last updated: 2026-09-02</span>
     </div>
   </main>
 

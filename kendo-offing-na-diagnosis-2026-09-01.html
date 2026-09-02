@@ -1,0 +1,1469 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KENDO · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-09-01</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    /*
+      Offing canonical renderer baseline:
+      /Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md
+      Product family sample:
+      /Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html
+      Atlas sample:
+      /Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html
+    */
+    :root {
+      color-scheme: light;
+      --offing-ink:#101413; --offing-body:#293331; --offing-muted:#66716e; --offing-line:#dfe3e7;
+      --offing-soft:#f6f8fa; --offing-paper:#fff8ee; --offing-surface:#fff;
+      --offing-pink:#eb4aa6; --offing-violet:#6d4cff; --offing-cyan:#20c7d9; --offing-lime:#78d64b;
+      --offing-blue:#2457ff; --offing-sky:#42a5ff; --offing-green:#18b77a; --offing-teal:#00b8a9;
+      --offing-orange:#ff8a2a; --offing-coral:#ff5a3d; --offing-amber:#b77900; --offing-slate:#475569;
+      --atlas-bg:#fff; --atlas-surface:#fff; --atlas-surface-soft:#f7f8fa;
+      --atlas-ink:#101413; --atlas-body:#293331; --atlas-muted:#66716e; --atlas-line:#e0e3e5;
+      --atlas-main:#2d6261; --atlas-teal:#32d6c6; --atlas-sky:#9ed1ff; --atlas-pink:#eb4aa6;
+      --atlas-lilac:#9b7cff; --atlas-coral:#ff6b4a; --atlas-green:#70e5a8; --atlas-inverse:#111817; --atlas-inverse-2:#162321;
+      --display-font:"Avenir Next Condensed","Helvetica Neue Condensed","Arial Narrow","Roboto Condensed","Oswald",sans-serif;
+      --text-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      --bg:var(--atlas-bg); --top:#fff; --surface:var(--atlas-surface); --surface-2:var(--atlas-surface-soft);
+      --text:var(--atlas-ink); --body:var(--atlas-body); --muted:var(--atlas-muted); --line:var(--atlas-line);
+      --accent:var(--atlas-main); --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:var(--atlas-teal); --prism-b:var(--atlas-sky); --prism-c:var(--atlas-pink); --prism-d:var(--atlas-lilac); --prism-e:var(--atlas-coral);
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:var(--text-font); font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner { width:min(1432px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0; }
+    .product-lockup { display:grid; color:var(--text); font-size:13px; font-weight:850; line-height:1.08; white-space:nowrap; }
+    .product-lockup small { margin-top:4px; color:var(--accent); font-size:12px; font-weight:800; }
+    .nav { display:flex; gap:18px; overflow-x:auto; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); font-size:12px; line-height:1; font-weight:780; white-space:nowrap; }
+    main { width:min(1432px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:78px 0; }
+    .hero { position:relative; min-height:min(650px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; grid-template-rows:auto auto; gap:22px 54px; align-items:center; margin:0; padding:34px 0 30px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero-outline { position:absolute; z-index:0; right:60px; top:36px; color:transparent; -webkit-text-stroke:1.25px color-mix(in srgb,var(--prism-c) 48%,transparent); font-family:var(--display-font); font-size:clamp(72px,8vw,116px); line-height:.82; font-weight:900; pointer-events:none; }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:800px; padding-top:0; align-self:end; }
+    .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
+    .client-logo img { display:block; width:auto; height:48px; max-width:238px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
+    .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .nowrap-title { white-space:nowrap; }
+    .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
+    .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(190px,1fr)); gap:12px; max-width:760px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:88px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:14px 15px; overflow-wrap:anywhere; }
+    .metric-label { display:grid; grid-template-columns:9px minmax(0,1fr); align-items:start; column-gap:8px; row-gap:4px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { width:9px; height:9px; margin-top:3px; background:var(--prism-a); }
+    .metric-label-copy { min-width:0; }
+    .metric-evidence { grid-column:2; min-width:0; display:block; }
+    .hero-metric.state-red .metric-label i { background:var(--risk); }
+    .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
+    .hero-metric.state-green .metric-label i { background:var(--success); }
+    .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
+    .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
+    .hero-metric .evidence-list { display:flex; width:auto; max-width:100%; flex-wrap:wrap; gap:4px; overflow:visible; margin:0; padding:0; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; max-width:720px; align-self:start; margin-top:0; background:transparent; }
+    .chain-item { min-width:0; min-height:62px; padding:10px 12px; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:rgba(255,255,255,.92); overflow-wrap:anywhere; }
+    .chain-item i { display:block; margin-bottom:6px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:880; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:13px; line-height:1.25; font-weight:860; }
+    .chain-item span { display:none; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:1px solid rgba(16,20,19,.14); box-shadow:none; }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; align-self:center; overflow:hidden; min-height:0; color:var(--inverse-text); background:linear-gradient(180deg,#13211f,#101716); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:0 30px 70px rgba(16,20,19,.22); padding:0; }
+    .score-strip { height:5px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c),var(--prism-d)); }
+    .score-inner { padding:24px 24px 22px; }
+    .score-top { display:flex; justify-content:space-between; gap:20px; align-items:start; margin-bottom:18px; }
+    .score-label { color:rgba(248,250,249,.68); font-size:12px; font-weight:850; text-transform:uppercase; font-family:var(--display-font); }
+    .score-number { font-size:86px; line-height:.86; font-weight:900; }
+    .score-rating { display:grid; justify-items:end; gap:6px; }
+    .tier { display:inline-grid; place-items:center; min-height:24px; border-radius:999px; padding:0 9px; border:1px solid rgba(255,255,255,.22); color:#a8ffc5; font-size:12px; line-height:1; font-weight:900; }
+    .stars { color:var(--prism-c); font-size:22px; line-height:1; white-space:nowrap; }
+    .star-score { color:rgba(248,250,249,.88); font-size:13px; line-height:1.35; font-weight:780; }
+    .score-verdict { margin:0; color:rgba(248,250,249,.88); line-height:1.45; font-size:14px; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 20px; }
+    .score-meta div { min-height:70px; border:1px solid rgba(255,255,255,.13); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.05); }
+    .score-meta span { display:block; color:rgba(248,250,249,.6); font-size:11px; margin-bottom:8px; font-weight:760; }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:15px; line-height:1.25; overflow-wrap:anywhere; word-break:break-word; }
+    .subscore-list { display:grid; gap:12px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 34px; align-items:center; gap:10px; color:rgba(248,250,249,.78); font-size:12px; font-weight:780; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.13); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:var(--prism-a); }
+    .track i.bar-2 { background:var(--prism-c); }
+    .track i.bar-3 { background:var(--prism-e); }
+    .score-formula { display:none; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { font-size:21px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:64px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:13px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:260px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); display:flex; flex-wrap:wrap; align-content:center; justify-content:center; align-items:center; gap:12px 16px; padding:24px; overflow:hidden; }
+    .cloud span { position:relative; display:inline-flex; max-width:100%; font-weight:900; line-height:1.04; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:13px; } .w2 { font-size:16px; } .w3 { font-size:20px; } .w4 { font-size:25px; } .w5 { font-size:30px; }
+    .w5.long { font-size:26px; } .w5.extra-long { font-size:22px; }
+    .w4.long { font-size:22px; } .w4.extra-long { font-size:19px; }
+    .w3.long { font-size:18px; } .w3.extra-long { font-size:16px; }
+    .w2.long,.w2.extra-long { font-size:15px; }
+    .w1.long,.w1.extra-long { font-size:13px; }
+    .p0 { margin-top:6px; } .p1 { margin-bottom:18px; } .p2 { margin-top:22px; } .p3 { margin-bottom:6px; } .p4 { margin-left:8px; } .p5 { margin-right:12px; } .p6 { margin-top:14px; } .p7 { margin-bottom:12px; } .p8 { margin-left:14px; } .p9 { margin-top:28px; } .p10 { margin-bottom:20px; } .p11 { margin-right:20px; } .p12 { margin-top:10px; } .p13 { margin-bottom:8px; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      .hero-outline { right:0; top:18px; font-size:48px; opacity:.42; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:0; }
+      .score-inner { padding:18px; }
+      .score-top { margin-bottom:14px; }
+      .score-number { font-size:52px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:12.5px; line-height:1.25; }
+      .score-verdict { font-size:13px; }
+      .score-meta { display:grid; gap:6px; margin:12px 0; }
+      .score-meta div { min-height:54px; padding:8px; }
+      .score-meta b { font-size:13px; }
+      .score-meta span { margin-bottom:5px; font-size:10.5px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; align-content:flex-start; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .cloud .w5.long { font-size:24px; } .cloud .w5.extra-long { font-size:20px; }
+      .cloud .w4.long { font-size:21px; } .cloud .w4.extra-long { font-size:18px; }
+      .cloud .w3.long { font-size:17px; } .cloud .w3.extra-long { font-size:15px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { width:auto; height:42px; max-width:230px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body data-offing-visual-baseline="canonical" data-offing-visual-scope="full-report" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="KENDO Tools official logo">
+          <img src="assets/brand-logos/kendo-logo-official.png" alt="KENDO Tools official logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1><span class="nowrap-title">北美业务诊断</span></h1>
+        <p class="lead">KENDO 已经具备全球工具供应能力，北美下一步先做出一条可买、可比、可退换、可补件的主力产品闭环。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">官方样品间展示产品数量。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E3]</span></span></span></span>
+            <b class="">2,000+</b>
+          </div>
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">切削、电动与手动工具实验室。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E2]</span></span></span></span>
+            <b class="">3 labs</b>
+          </div>
+          <div class="hero-metric state-red">
+            <span class="metric-label"><i></i><span class="metric-label-copy">官网公开列名的北美授权经销商与服务中心。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E4]</span></span></span></span>
+            <b class="">0</b>
+          </div>
+        </div>
+        <p class="sublead">40+ 年工具经验、2,000+ 产品、三座测试实验室和 20,000㎡ 仓储证明了供货底盘；公开层面仍缺北美授权货架、主力 SKU、独立评测与本地售后承诺。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p>
+        <div class="tag-row"><span class="tag green">供应与质检能力成立</span><span class="tag red">北美主货架未成立</span><span class="tag amber">品牌名搜索冲突高</span></div>
+      </div>
+      <aside class="score-panel" aria-label="KENDO Atlas score">
+        <div class="score-strip"></div>
+        <div class="score-inner">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Total diagnosis score</div>
+              <div class="score-number">54</div>
+            </div>
+            <div class="score-rating">
+              <span class="tier green">D档</span>
+              <div class="stars" aria-label="2.7 out of 5 stars">★ ★ ★ ☆ ☆</div>
+              <div class="star-score">2.7 / 5 星 · 公开数据</div>
+            </div>
+          </div>
+          <p class="score-verdict">D档 · 制造底盘扎实，北美购买证明和本地承接把总分封顶在 54。</p>
+          <div class="score-meta">
+            <div><span>阶段判断</span><b>0-1</b></div>
+            <div><span>经营类型</span><b>Global distributor recruitment + inquiry catalog</b></div>
+            <div><span>置信度</span><b>中等</b></div>
+          </div>
+          <div class="subscore-list">
+            
+            <div class="subscore">
+              <span>业务健康度</span>
+              <div class="track"><i class="bar-1" style="width:66%;"></i></div>
+              <b>66</b>
+            </div>
+            <div class="subscore">
+              <span>业务机会分</span>
+              <div class="track"><i class="bar-2" style="width:74%;"></i></div>
+              <b>74</b>
+            </div>
+            <div class="subscore">
+              <span>问题致命度</span>
+              <div class="track"><i class="bar-3" style="width:79%;"></i></div>
+              <b>79</b>
+            </div>
+          </div>
+          <p class="score-formula">数据采集日期：2026-09-01。</p>
+        </div>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>主力货架</b>
+          <span>从 2,000+ SKU 中锁定 3 个北美英雄产品。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>本地承接</b>
+          <span>写清购买、退换、保修、补件和授权卖家。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>产品证明</b>
+          <span>把实验室能力转成 SKU 级测试与比较证据。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>搜索消歧</b>
+          <span>让 KENDO Tools 从剑道、美妆和同名结果中被认出。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>KENDO Tools</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中等 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-09-01</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>Atlas 总控；SignalMark 修搜索与 proof，CommerceFlow 建渠道与售后。</p>
+          <span class="route-chip">最低分警报：TideLens 39</span>
+          <span class="route-chip">分数封顶：54 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">43<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3>供应故事很完整，北美购买信号和独立 proof 很弱。</h3>
+              <p>先统一 KENDO Tools 实体、英雄 SKU、比较页和 SKU 级测试证据。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">48<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3>全球询盘能接渠道，北美交易与售后闭环未公开成立。</h3>
+              <p>先定义授权卖家、价格、库存、交付、退换、保修和补件责任。</p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">39<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3>产品可演示，独立评测和可复用 proof 资产不足。</h3>
+              <p>英雄 SKU 确定后，再用工具测试者做任务、耐用、精度与长期使用 proof。</p>
+              
+              
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>北美没有一条公开可验证的购买、退换、保修和补件闭环。</li><li>2,000+ SKU 没有被收束成北美 3 个英雄产品。</li><li>质量能力停留在公司页，尚未成为 SKU 级独立购买证明。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>最容易的死法：继续扩 2,000+ SKU，却没有北美可买、可比、可退换、可补件的主力货架。</h2>
+        </div>
+        <p class="section-note">KENDO 的供应能力可以支持北美，但 SKU 宽度会在缺少英雄产品、授权货架和售后闭环时放大选择成本与库存风险。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>工具买的是耐用、精度、安全与坏了以后有人负责。</h3>
+          <p><strong>用户买的确定性：</strong>北美用户与渠道购买的是任务适配、材料与结构可靠、可验证性能、稳定供货、清晰保修和就近退换补件。</p>
+          <p><strong>当前匹配：</strong>KENDO 的实验室、认证、品类宽度和库存接住了供应端；公开页面还没有把这些能力压缩成北美 SKU 的购买证明与服务承诺。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+          <p class="risk-evidence">官网公司与产品页证明产品和测试能力；Bob Vila 与 Home Depot 货架说明北美用户会比较耐用、有效性、舒适、规格、保修和退货。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">54<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>公开层面无法确认北美授权卖家、当前主力 SKU、退换保修与补件服务。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是高估供应能力，低估北美购买确定性。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>产品数量、认证、仓库面积、参展和经销商数量。</dd></div>
+            <div><dt>低估</dt><dd>英雄 SKU、当前授权卖家、零售评价、保修补件和搜索实体消歧。</dd></div>
+            <div><dt>安慰指标</dt><dd>询盘数、目录下载、展会名片和新品数量。</dd></div>
+            <div><dt>先别做</dt><dd>先别把完整目录搬进北美；先让 3 个英雄 SKU 形成购买、比较、评价和售后闭环。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 54</b></div>
+            <h3>北美购买与售后闭环不可验证</h3>
+            <p>官网以询盘和全球招募经销商为主，公开分销页没有列出北美授权卖家、退换、保修、补件或服务中心。</p>
+            <p class="risk-evidence">官网首页、分销网络、联系我们和产品页均指向上海询盘体系。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+            <span class="tag red">CommerceFlow 建本地交易与服务闭环</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 57</b></div>
+            <h3>2,000+ SKU 稀释北美第一选择</h3>
+            <p>品类覆盖很宽，但北美公开表面没有清楚指出主推 SKU、渠道角色和退出规则。</p>
+            <p class="risk-evidence">官方样品间展示 2,000+ 产品，导航横跨手工具、附件、园林、电动工具和 PPE。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span></span></p>
+            <span class="tag red">Atlas 锁定英雄产品与品线顺序</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 60</b></div>
+            <h3>实验室能力没有变成独立购买证明</h3>
+            <p>扭矩、硬度、盐雾等能力主要停留在公司能力页，产品页缺少统一、可比较的测试结果。</p>
+            <p class="risk-evidence">官方质量页披露实验室和测试项目；131 件套产品页主要展示组件清单。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></p>
+            <span class="tag amber">SignalMark 建 SKU proof ledger</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 62</b></div>
+            <h3>KENDO 品牌词被同名意图分流</h3>
+            <p>Kendo 同时指向日本剑道、美妆集团和其他同名实体，工具品牌需要持续使用 KENDO Tools、产品类别与组织实体消歧。</p>
+            <p class="risk-evidence">当前公开搜索结果存在明显同名实体混杂，精准产品词才更容易回到官方页。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E7]</span></span></p>
+            <span class="tag amber">SignalMark 修搜索与 AI 实体信号</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是产品数量、全球语言页和自有内容排名。</h3>
+            <p>这些信号证明组织和内容生产能力，仍需北美订单、授权货架、独立测试与售后结果验证增长质量。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>组合宽度</span>
+            <h3>2,000+ 产品</h3>
+            <p>SKU 宽度证明供货能力，也会增加选品、库存、内容、配件和售后的复杂度。</p>
+          </article><article class="signal-card state-amber">
+            <span>全球覆盖</span>
+            <h3>11+ 语言站点</h3>
+            <p>多语言覆盖增强全球招商，无法单独证明北美零售可得性和本地服务。</p>
+          </article><article class="signal-card state-red">
+            <span>自有证明</span>
+            <h3>自有 Best Tool Sets 内容</h3>
+            <p>品牌自写排名可以做 SEO 入口，证据等级低于独立测试和零售大样本。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>KENDO 当前总分被北美本地承接封顶在 54。</h3>
+            <p>供货、质检与产品宽度托住基础分；公开可验证的授权货架、保修补件和独立 proof 建立后才有资格进入 C 档。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>54</b>
+            <div><h3>本地购买与售后</h3><p>官网仍以全球经销商招募和上海询盘为主。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p></div>
+          </article><article class="cap-reason state-red">
+            <b>58</b>
+            <div><h3>独立北美证明</h3><p>公开评测和 VOC 样本稀少，自有内容无法替代第三方测试。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E9]</span><span class="evidence">[E10]</span><span class="evidence">[E15]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>62</b>
+            <div><h3>搜索实体清晰度</h3><p>品牌词被剑道、美妆和同名结果持续分流。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：KENDO 北美处于 0-1，先证明一条主力货架闭环。</h2>
+        </div>
+        <p class="section-note">历史 Amazon 痕迹和美国商标动作说明品牌尝试过市场承接，当前公开证据仍不足以判定稳定的 1-10 主盘。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-red"><span>0-1</span><b>当前阶段</b><p>锁定英雄 SKU、授权渠道、独立 proof 与本地售后。</p></div><div class="stage-step state-amber"><span>1-10</span><b>下一阶段</b><p>验证单品转化、评价质量、退货和补件成本。</p></div><div class="stage-step state-amber"><span>10-100</span><b>暂缓扩张</b><p>主盘未成立前不铺完整品类和多渠道库存。</p></div><div class="stage-step state-blue"><span>100+</span><b>远期能力</b><p>供应链能支持规模，品牌和服务基础尚未到位。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">P0 动作</div>
+          <h3>先做 3 个英雄 SKU</h3>
+          <p>家庭工具套装、测量或附件中选择证据最强、服务最清楚的切口。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">危险动作</div>
+          <h3>一次性铺满目录</h3>
+          <p>宽 SKU 会提前制造库存、内容、配件、退换和渠道冲突。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">低置信度</div>
+          <h3>北美 GMV 暂不报数</h3>
+          <p>公开资料没有可靠的当前销量、渠道结算或地区收入，数字估算会制造伪精确。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>第一批北美用户应从价值型 DIY 与渠道买手切入。</h2>
+        </div>
+        <p class="section-note">KENDO 需要先让渠道采购与最终用户对同一组英雄 SKU 形成一致的购买理由。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>家庭维修</b><small>核心盘：价值型 DIY / homeowner</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>车库维护</b><small>相邻人群：汽车家庭维护与新手技师</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>渠道买手</b><small>外扩边界：区域经销商与独立五金渠道</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>重载专业</b><small>暂时边界：高频重载专业用户</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：价值型 DIY / homeowner</b><span>买常用任务覆盖、耐用、收纳完整、价格可接受和退换方便。</span></div><div class="legend-item state-amber"><b>相邻人群：汽车家庭维护与新手技师</b><span>买规格齐全、扭矩与材料证明、替换件和随车使用。</span></div><div class="legend-item state-amber"><b>外扩边界：区域经销商与独立五金渠道</b><span>买稳定供货、利润空间、陈列支持、认证和售后责任。</span></div><div class="legend-item state-red"><b>暂时边界：高频重载专业用户</b><span>日常重载用户要求长期耐用、行业口碑、快速保修和本地服务。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>先赢具体任务</h3>
+          <p>用家庭维修、车库维护或一类附件切入，避免泛工具品牌叙事。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>渠道买手需要可卖证据</h3>
+          <p>提供毛利、补货、陈列、保修、退货和测试包。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>专业用户后置</h3>
+          <p>独立耐用测试和本地服务成立后再争夺重载专业心智。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>经营类型：全球经销商招商主导，北美零售承接仍处于验证期。</h2>
+        </div>
+        <p class="section-note">以下为公开表面的承接权重代理，不代表公司真实收入占比；后台应以订单与渠道结算替换。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Global distributor recruitment + inquiry catalog，北美公开零售与 DTC 闭环弱。</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Distributor inquiry</b>
+            <div class="share-track"><i class="green" style="width:70%;"></i></div>
+            <span>70%</span>
+            <small>官网核心路径是目录、询盘和全球经销商招募。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>Global catalog content</b>
+            <div class="share-track"><i class="amber" style="width:15%;"></i></div>
+            <span>15%</span>
+            <small>多语言站和自有文章承担产品教育与获客。</small>
+          </div><div class="share-row">
+            <b>Historical marketplace</b>
+            <div class="share-track"><i class="amber" style="width:10%;"></i></div>
+            <span>10%</span>
+            <small>可见历史 Amazon deal 痕迹，当前稳定货架未核实。<span class="evidence-list"><span class="evidence">[E8]</span></span></small>
+          </div><div class="share-row">
+            <b>North America DTC</b>
+            <div class="share-track"><i class="red" style="width:5%;"></i></div>
+            <span>5%</span>
+            <small>官网无公开零售价与美国退换保修闭环。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>经销商的角色</h3>
+          <p>负责本地备货、渠道关系与售后，但官网没有公开北美授权名单。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Amazon 的角色</h3>
+          <p>适合验证英雄 SKU 的搜索、转化、VOC 与退货，当前货架状态需后台确认。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>官网的角色</h3>
+          <p>承担实体消歧、产品证明、授权卖家、保修补件和渠道线索分发。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">需校准</div>
+          <h3>独立零售的角色</h3>
+          <p>用区域门店和专业买手验证陈列、复购、配件与服务成本。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：品类词和比较词没吃掉，精准品牌产品词只吃到一半。</h2>
+        </div>
+        <p class="section-note">需求排序参考北美工具测试媒体、零售货架与购买意图；精确量级需 SEO、Amazon 与 Google Trends 后台校准。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>home tool set / hand tools / mechanics tool set</h3>
+          <p>Stanley、WorkPro、DEWALT、Craftsman 和 GearWrench 占据测试与零售主结果，KENDO 缺稳定北美货架。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture red">没吃掉</b></div>
+          <h3>screwdriver set / pliers / tape measure / wrench set</h3>
+          <p>单品类搜索要求清楚规格、评价、保修和可得性，KENDO 官网仍以目录和询盘承接。</p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>KENDO tools</h3>
+          <p>官方站能接住精准品牌词，同名剑道、美妆和其他实体持续制造分流。</p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">没吃掉</b></div>
+          <h3>KENDO tool review / KENDO vs WorkPro / Stanley</h3>
+          <p>缺正式比较页、独立测试和足量零售评价，自有文章不能替代第三方 proof。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span><span class="evidence">[E15]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">没吃掉</b></div>
+          <h3>KENDO warranty / replacement parts / USA dealer</h3>
+          <p>公开页面没有列出美国保修、补件、服务中心或授权卖家。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P2 · 量级低</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>KENDO 131pc household tool set</h3>
+          <p>精准型号能回到官方产品页，但缺价格、库存、独立评价和购买入口。<span class="evidence-list"><span class="evidence">[E6]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>声誉样本不足：价值感能支撑试买，耐用、精度与售后证据仍弱。</h2>
+        </div>
+        <p class="section-note">当前 VOC 主要来自历史社区和弱质量评论站，只能识别主题，不能外推满意率。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Reddit r/Tools</h3>
+          <p>小样本把 KENDO 视为低价、家用可试的工具，也有人追问硬度、刀口和精度。<span class="evidence-list"><span class="evidence">[E9]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Historical Amazon trace</h3>
+          <p>2022 年可见 KENDO 延长杆套装 deal 痕迹，无法证明当前在售规模。<span class="evidence-list"><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>Independent testing</h3>
+          <p>当前未找到足量北美独立工具测试进入主流榜单，品牌自写排名不可替代。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E15]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>After-sales VOC</h3>
+          <p>北美保修、退换、补件和授权卖家样本不足，服务质量暂时无法量化。</p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">affordable</span><span class="w5 p1 long">broad assortment</span><span class="w4 p2">good value</span><span class="w4 p3">DIY friendly</span><span class="w4 p4">complete kit</span><span class="w3 p5">organized case</span><span class="w3 p6">basic repairs</span><span class="w3 p7 long">comfortable grip</span><span class="w3 p8">available stock</span><span class="w2 p9 long">no restrictive MOQ</span><span class="w2 p10">global range</span><span class="w2 p11">test capability</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0 long">professional durability</span><span class="w5 p1">precision proof</span><span class="w4 p2">hardness data</span><span class="w4 p3 long">independent reviews</span><span class="w4 p4">USA warranty</span><span class="w4 p5 long">replacement parts</span><span class="w4 p6 long">authorized dealer</span><span class="w3 p7 long">retail availability</span><span class="w3 p8">brand confusion</span><span class="w3 p9">return path</span><span class="w3 p10">heavy-duty use</span><span class="w2 p11">long-term proof</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">价值感和品类宽度可以支持第一批试买；缺少独立耐用测试、评价量和本地售后时，KENDO 很难进入专业用户与主流零售的默认候选。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>分品线天花板：先用一条英雄产品线证明北美，再扩完整目录。</h2>
+        </div>
+        <p class="section-note">公开资料未披露北美分品线收入，以下按购买证据、渠道可得性与服务复杂度判断。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-amber">
+          <div class="line-meta">P0 候选主线 · 0-1 验证期</div>
+          <h3>Household tool sets</h3>
+          <b>家庭维修与新房入门</b>
+          <p>任务组合直观、易做对比；需要价格、零售评价、缺件与保修闭环。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E11]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P0 候选证明线 · proof 验证期</div>
+          <h3>Measuring / cutting tools</h3>
+          <b>精度与专业渠道</b>
+          <p>实验室能力容易转成精度、硬度和耐用数据，适合做证据型切口。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E7]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">P1 复购线 · 渠道验证期</div>
+          <h3>Power tool accessories</h3>
+          <b>耗材复购与专业使用</b>
+          <p>可形成复购，规格兼容、寿命、材料与替换承诺必须清楚。</p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">P2 暂缓线 · 后置期</div>
+          <h3>Power tools / garden / PPE</h3>
+          <b>高服务与合规门槛</b>
+          <p>保修、配件、认证、维修和库存复杂度更高，主货架闭环成立后再扩。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：先问任务与耐用，再问保修、价格和哪里能买。</h2>
+        </div>
+        <p class="section-note">官网、渠道页、PDP、Amazon 和销售资料应使用同一套选择与证明语言。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Category Search</td><td>这套工具能否完成我的具体任务</td><td class="status-cell"><span class="table-status red">没接牢</span></td><td>按家庭、汽车、测量与附件建立英雄 SKU 选择器。</td></tr><tr><td>Comparison Search</td><td>KENDO 与 Stanley / WorkPro / DEWALT 谁更耐用、更值</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线材料、测试、规格、保修和总拥有成本比较页。<span class="evidence-list"><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></td></tr><tr><td>Product Research</td><td>扭矩、硬度、精度和寿命是否有证据</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>把实验室测试下沉到每个主力 SKU，并给出方法和结果。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E6]</span></span></td></tr><tr><td>Purchase Intent</td><td>美国哪里能买、是否授权、多久到</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线授权卖家、库存、交付、价格与地区页面。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></td></tr><tr><td>Support Intent</td><td>坏了、缺件或不合适时谁处理</td><td class="status-cell"><span class="table-status red">没接住</span></td><td>上线保修、退换、补件、服务 SLA 与产品登记。</td></tr><tr><td>Distributor Intent</td><td>利润、MOQ、备货与市场支持是否可执行</td><td class="status-cell"><span class="table-status amber">半接住</span></td><td>公开经销政策、区域权利、售后责任和首批试销包。<span class="evidence-list"><span class="evidence">[E2]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：产品范围与质量能力接住了，北美可得性和售后没接住。</h2>
+        </div>
+        <p class="section-note">权重用于决定北美首批产品、页面和渠道动作，需用订单、退货与渠道访谈校准。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-amber">
+          <div><div class="fit-weight">22%</div><div class="mini-track"><i style="width:22%;"></i></div></div>
+          <div><strong>耐用 / 材料 / 结构可靠</strong><p>实验室和质量体系提供能力底座，主力 SKU 仍需公开结果。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>任务适配 / 规格完整</strong><p>2,000+ 产品和完整套装能覆盖多种任务，选择路径仍需收束。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">17%</div><div class="mini-track"><i style="width:17%;"></i></div></div>
+          <div><strong>价格 / 价值</strong><p>官方定位 affordable price，缺北美公开价格和同规格比较。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>精度 / 安全 / 认证</strong><p>CNAS、ITS 与 CE / GS 能支持专业感，SKU 级适用标准需写清。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>保修 / 退换 / 补件</strong><p>公开北美服务入口与承诺不可见。</p></div>
+          <div><span class="verdict red">没接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">13%</div><div class="mini-track"><i style="width:13%;"></i></div></div>
+          <div><strong>现货 / 授权卖家 / 交付</strong><p>全球库存能力成立，北美公开授权货架未成立。</p></div>
+          <div><span class="verdict red">没接住</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页看懂：KENDO 先把供应能力压缩成北美 3 个英雄 SKU。</h2>
+        </div>
+        <p class="section-note">公开证据支持 54 分 D 档；后台订单、经销商、库存、退货与售后数据会继续校准。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>0-1。先证明英雄 SKU、授权货架、独立 proof 与本地售后。</p></div><div class="summary-item"><b>主线</b><p>家庭工具套装或测量切削线中选择最能验证质量的切口。</p></div><div class="summary-item"><b>总分</b><p>54 / 100 · D档，本地购买与售后闭环封顶。</p></div><div class="summary-item"><b>最容易的死法</b><p>继续扩 2,000+ SKU，却没有北美可买、可比、可退换、可补件的主力货架。</p></div><div class="summary-item"><b>路由</b><p>Atlas 总控；SignalMark 修搜索与 proof，CommerceFlow 建渠道与售后。</p></div><div class="summary-item"><b>预算取舍</b><p>加英雄 SKU、第三方测试、授权页和售后；停完整目录铺货与泛品牌曝光。</p></div><div class="summary-item"><b>数据缺口</b><p>需补北美订单、授权经销商、渠道利润、库存、退货、保修与补件。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>专项分数：SignalMark 先修实体与证明，CommerceFlow 再把订单接住。</h2>
+        </div>
+        <p class="section-note">当前决策杠杆是英雄产品、北美搜索实体、授权货架和本地服务。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3>供应故事很完整，北美购买信号和独立 proof 很弱。</h3><p>先统一 KENDO Tools 实体、英雄 SKU、比较页和 SKU 级测试证据。</p></div><b>43</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>品牌历史、质量体系、完整品类与多语言资产成立。</p></div><div><strong>做得差</strong><p>同名搜索冲突高，第三方测试与零售评价稀少。</p></div></div>
+          
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3>全球询盘能接渠道，北美交易与售后闭环未公开成立。</h3><p>先定义授权卖家、价格、库存、交付、退换、保修和补件责任。</p></div><b>48</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>库存、仓储、低 MOQ 与经销支持有供应优势。</p></div><div><strong>做得差</strong><p>当前北美购买入口、渠道利润与本地服务不可验证。</p></div></div>
+          
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3>产品可演示，独立评测和可复用 proof 资产不足。</h3><p>英雄 SKU 确定后，再用工具测试者做任务、耐用、精度与长期使用 proof。</p></div><b>39</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p>工具天然适合演示任务完成、强度和对比。</p></div><div><strong>做得差</strong><p>现有内容主要是官方自述，缺少北美专业创作者与长期测试。</p></div></div>
+          
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 关键问题：先做英雄 SKU，再建立北美本地承接与独立证明。</h2>
+        </div>
+        <p class="section-note">这三件事直接决定渠道是否愿意上架、用户是否敢下单，以及 2,000+ SKU 会不会提前吃掉现金。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：北美没有一条公开可验证的购买、退换、保修和补件闭环。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。它直接阻断首单、渠道信任和长期复购。</p></div>
+          <div><b>证据</b><p>官网分销、联系和产品页仍以全球招商与上海询盘为主。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p></div>
+          <div><b>业务影响</b><p>用户转向有本地货架和保修的 Stanley、DEWALT、Craftsman、WorkPro 与 GearWrench。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>上线美国授权卖家、保修退换、补件和服务 SLA 页面。<br><strong>90 天：</strong>完成 1-2 个渠道试销并复盘交付、退货、补件与贡献利润。</p></div>
+        </div>
+      </article><article class="issue state-red">
+        <h3>问题 2：2,000+ SKU 没有被收束成北美 3 个英雄产品。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>高。宽目录会提前制造库存、内容和服务复杂度。</p></div>
+          <div><b>证据</b><p>官方披露 2,000+ 产品并横跨多种工具与 PPE 品类。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span></span></p></div>
+          <div><b>业务影响</b><p>渠道无法理解第一选择，预算被平均分配，团队用询盘和上新掩盖单品未验证。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>按任务强度、证据、服务和利润筛出 3 个英雄 SKU。<br><strong>90 天：</strong>只给达到转化、退货、评价与补件门槛的 SKU 扩量。</p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：质量能力停留在公司页，尚未成为 SKU 级独立购买证明。</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p>中高。它压低溢价并让品牌停留在低价备选。</p></div>
+          <div><b>证据</b><p>官方披露三座实验室和多项测试；独立北美评测与大样本评价不足。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E9]</span><span class="evidence">[E11]</span><span class="evidence">[E15]</span></span></p></div>
+          <div><b>业务影响</b><p>专业用户无法判断硬度、精度、寿命和长期可靠，比较时回到知名品牌。</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong>为英雄 SKU 建 torque / hardness / salt-spray / life-cycle proof ledger。<br><strong>90 天：</strong>完成独立工具媒体与创作者对比测试，并回写官网、渠道和销售资料。</p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞品压力：KENDO 需要先赢一个价值型任务，不要同时挑战所有工具心智。</h2>
+        </div>
+        <p class="section-note">北美工具购买同时受零售可得性、专业口碑、价格、保修和任务适配影响。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">大众默认</div>
+          <h3>Stanley / Craftsman / Husky / Kobalt</h3>
+          <p>大众家庭与主流零售心智强，货架、规格、评价和保修透明。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">价值竞争</div>
+          <h3>WorkPro / Harbor Freight house brands</h3>
+          <p>价值型套装和低价试用强，KENDO 需要用测试与服务拉开差距。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">专业上压</div>
+          <h3>DEWALT / Milwaukee / GearWrench</h3>
+          <p>专业与机械工具信任强，规格、耐用、系统和零售证明完整。</p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">高端标杆</div>
+          <h3>Wera / Wiha / Knipex / Klein</h3>
+          <p>在精度、材料和专业口碑上占据高端解释权。</p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从全球工具目录，升级为有实验室证据的价值型任务工具。</h2>
+        </div>
+        <p class="section-note">第一阶段只承诺能被英雄 SKU、独立测试和本地售后共同证明的价值。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">供应理由</div>
+          <h3>当前理由</h3>
+          <p>产品范围完整、价格可接受、库存与低 MOQ 对经销商友好。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">购买理由</div>
+          <h3>下一阶段理由</h3>
+          <p>每个英雄 SKU 都有任务适配、测试结果、授权购买和本地售后。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">避免能力空转</div>
+          <h3>必须避免</h3>
+          <p>用德国标准、实验室和产品数量覆盖北美货架与服务空白。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> Proven tools for the jobs that matter.</p>
+        <p><b>Hero subhead:</b> Task-ready selection, lab-backed performance, authorized availability, and support you can reach.</p>
+        <p><b>Product promise:</b> KENDO helps DIYers and trade starters choose dependable tools with proof behind every hero product.</p>
+        <p><b>Sales opener:</b> For retailers seeking value tools with real testing and disciplined assortment, KENDO brings a focused hero-SKU program backed by 40+ years of tool experience.</p>
+        <p><b>CTA:</b> Choose your proven tool</p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：供应与质检强，本地货架、搜索、售后和独立 proof 拉低总分。</h2>
+        </div>
+        <p class="section-note">低分项先进入北美周会，修复顺序按购买承接、英雄 SKU、独立证明和搜索实体推进。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>24</b><span>北美售后闭环</span></div>
+          <div class="mini-track"><i style="width:24%;"></i></div>
+          <p>公开保修、退换、补件与服务中心不可见。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>28</b><span>北美授权货架</span></div>
+          <div class="mini-track"><i style="width:28%;"></i></div>
+          <p>分销页没有公开列名的北美授权卖家。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>32</b><span>品类搜索承接</span></div>
+          <div class="mini-track"><i style="width:32%;"></i></div>
+          <p>高量级工具词由既有零售品牌占据。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>35</b><span>独立北美证明</span></div>
+          <div class="mini-track"><i style="width:35%;"></i></div>
+          <p>主流评测与零售大样本不足。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>38</b><span>零售转化证据</span></div>
+          <div class="mini-track"><i style="width:38%;"></i></div>
+          <p>当前价格、库存、评价和退货数据不可验证。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>42</b><span>品牌实体清晰度</span></div>
+          <div class="mini-track"><i style="width:42%;"></i></div>
+          <p>Kendo 同名意图多，工具实体需要持续消歧。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>英雄 SKU 收束</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>2,000+ 产品尚未形成北美第一选择。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>68</b><span>经销商准备度</span></div>
+          <div class="mini-track"><i style="width:68%;"></i></div>
+          <p>低 MOQ、库存和市场支持对经销商有吸引力。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>82</b><span>供应与履约能力</span></div>
+          <div class="mini-track"><i style="width:82%;"></i></div>
+          <p>20,000㎡ 仓储、库存与交付能力构成底盘。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>86</b><span>质量控制能力</span></div>
+          <div class="mini-track"><i style="width:86%;"></i></div>
+          <p>三座实验室、28+ QA/QC 与 CNAS / ITS 支撑质量。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>90</b><span>产品覆盖能力</span></div>
+          <div class="mini-track"><i style="width:90%;"></i></div>
+          <p>2,000+ 产品覆盖手工具、切削测量和附件等品类。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算取舍：先投英雄 SKU、独立 proof 与本地售后，暂停完整目录铺货。</h2>
+        </div>
+        <p class="section-note">每笔预算都要回答首单、渠道利润、售后成本或单品验证。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：3 个英雄 SKU</h3>
+          <p>完成任务选择、样品、价格、库存、PDP、渠道和售后。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：独立测试</h3>
+          <p>把扭矩、硬度、精度、盐雾和寿命变成第三方对比 proof。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">设门槛</div>
+          <h3>控预算：经销商扩张</h3>
+          <p>只有能承担价格、库存、陈列与售后 SLA 的伙伴进入试销。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">立即停</div>
+          <h3>停预算：完整目录搬运</h3>
+          <p>英雄 SKU 未通过转化、退货和补件门槛前，不铺 2,000+ 产品。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先完成北美主力货架，再扩产品和渠道。</h2>
+        </div>
+        <p class="section-note">每个阶段都用 owner、指标、售后成本和预算闸门验收。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>Leadership / Product｜锁定 3 个北美英雄 SKU</b><p>验收：任务强度、证据、价格、毛利、配件与服务复杂度。影响：停止平均铺货</p></div><div class="road-action state-red"><b>Channel / Legal｜上线美国授权卖家与政策页</b><p>验收：授权名单、价格、地区、退换、保修与责任边界。影响：建立购买确定性</p></div><div class="road-action state-amber"><b>Quality / Content｜建立英雄 SKU proof ledger</b><p>验收：测试方法、结果、标准、对比与适用边界。影响：把实验室能力变成购买理由</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-red"><b>Commerce / Distributor｜启动 1-2 个渠道试销</b><p>验收：转化、退货、补件、毛利、库存周转与评价。影响：验证真实交易闭环</p></div><div class="road-action state-amber"><b>Signal / SEO｜完成 KENDO Tools 实体消歧</b><p>验收：品牌词占位、知识图谱、产品词排名与授权页点击。影响：减少同名流量损失</p></div><div class="road-action state-amber"><b>Creator / PR｜完成独立任务与耐用测试</b><p>验收：测试完成率、引用、PDP 回写与辅助转化。影响：建立第三方 proof</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-green"><b>Finance / Data｜按 SKU 与渠道复盘贡献利润</b><p>验收：收入、毛利、退货、补件、库存、促销和 CAC。影响：决定扩量与退出</p></div><div class="road-action state-green"><b>Leadership / Channel｜扩第二条英雄产品线</b><p>验收：首线复购、渠道补货、服务 SLA 与现金周转。影响：从 0-1 进入 1-10</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>职能部门红黄绿灯：红灯先看北美渠道、售后、品牌信号与英雄 SKU。</h2>
+        </div>
+        <p class="section-note">红灯部门先进入北美经营周会，每张卡只保留最影响购买、利润或服务的一件事。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">24</div>
+          <h3>北美售后部</h3>
+          <p><strong>当前拖累：</strong>公开保修、退换、补件和服务 SLA 未建立。</p>
+          <span class="tag red">30 天：上线售后政策</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">28</div>
+          <h3>北美渠道部</h3>
+          <p><strong>当前拖累：</strong>授权卖家、价格、库存和地区责任不可验证。</p>
+          <span class="tag red">30 天：建授权货架</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">34</div>
+          <h3>品牌 / SEO 部</h3>
+          <p><strong>当前拖累：</strong>KENDO Tools 实体被同名意图分流。</p>
+          <span class="tag red">30 天：完成实体消歧</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">38</div>
+          <h3>零售电商部</h3>
+          <p><strong>当前拖累：</strong>当前 PDP、价格、评价、退货和转化数据缺口大。</p>
+          <span class="tag red">30 天：完成英雄 PDP</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">48</div>
+          <h3>产品组合部</h3>
+          <p><strong>当前拖累：</strong>2,000+ SKU 没有北美 Cash / Proof / Service / Exit 角色。</p>
+          <span class="tag red">30 天：筛 3 个英雄 SKU</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">52</div>
+          <h3>内容 / PR 部</h3>
+          <p><strong>当前拖累：</strong>自有内容多，独立测试与专业引用不足。</p>
+          <span class="tag red">30 天：启动第三方测试</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">56</div>
+          <h3>数据 / 财务部</h3>
+          <p><strong>当前拖累：</strong>北美渠道贡献利润、退货、补件和库存不可见。</p>
+          <span class="tag amber">30 天：建试销看板</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">68</div>
+          <h3>经销商支持部</h3>
+          <p><strong>当前拖累：</strong>招商优势清楚，北美区域政策和售后责任需产品化。</p>
+          <span class="tag amber">30 天：做试销包</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">82</div>
+          <h3>供应链部</h3>
+          <p><strong>当前拖累：</strong>供货能力强，需与英雄 SKU 和北美库存门槛绑定。</p>
+          <span class="tag green">30 天：设首批库存闸门</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">86</div>
+          <h3>质量 / 实验室</h3>
+          <p><strong>当前拖累：</strong>测试能力强，SKU 级公开结果和独立验证仍需补。</p>
+          <span class="tag green">30 天：输出 proof ledger</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险预警与数据缺口：公开数据能判断方向，北美销量和服务质量需后台校准。</h2>
+        </div>
+        <p class="section-note">这里只保留会改变阶段、分数、品线选择或预算顺序的缺口。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>当前北美销量不可验证</h3>
+          <p>Amazon 前台受验证页阻断，公开资料没有地区收入、稳定 ASIN 或渠道结算；历史 listing 不用于估算当前销量。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>授权经销商名单缺口</h3>
+          <p>官网分销页没有公开北美伙伴名称，需补合同状态、地区、库存、价格和售后责任。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>VOC 样本很小</h3>
+          <p>Reddit 与弱质量评论只能识别价值、耐用和精度主题，不能外推满意率。<span class="evidence-list"><span class="evidence">[E9]</span><span class="evidence">[E10]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>认证适用边界需逐 SKU 核验</h3>
+          <p>CE、GS、CNAS 与 ITS 是能力证明；北美每个产品仍需确认适用标准、证书和声明范围。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：强判断都能追到来源、日期、用途和置信度。</h2>
+        </div>
+        <p class="section-note">品牌自述、社区个案和独立测试分开定级；后台接入后补北美订单、授权渠道、退货、保修与库存。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://www.kendo.com/" target="_blank" rel="noopener">KENDO official website</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official site</td>
+              <td>产品导航、全球销售叙事、最新产品、多语言站点、上海联系方式和官方 Logo。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://www.kendo.com/Why-Choose-KENDO.html" target="_blank" rel="noopener">Why Choose KENDO</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official company</td>
+              <td>40+ 年经验、全球经销招募、认证、三座实验室、260+ 员工、28+ QA/QC、20,000㎡ 仓储。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://www.kendo.com/KENDO-New-Showroom-id3810288.html" target="_blank" rel="noopener">KENDO New Showroom</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official company</td>
+              <td>样品间展示 2,000+ 产品与品类宽度。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://www.kendo.com/Distribition-Network.html" target="_blank" rel="noopener">KENDO Distribution Network</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official distribution</td>
+              <td>全球分销网络表面与未公开列名的北美授权伙伴。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://www.kendo.com/contactus.html" target="_blank" rel="noopener">KENDO Contact Us</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official contact</td>
+              <td>上海地址、电话、邮箱和询盘路径；未见北美本地服务入口。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.kendo.com/131pc-Household-tool-set-pd515644548.html" target="_blank" rel="noopener">KENDO 131pc Household Tool Set</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official PDP</td>
+              <td>型号 90628、组件清单、询盘式产品页与缺少公开零售价/库存/评价。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.kendo.com/How-to-Choose-the-Best-Caliper-Supplier-for-Your-Needs-id49732765.html" target="_blank" rel="noopener">KENDO caliper supplier article</a></td>
+              <td>Published 2026</td>
+              <td>Official content</td>
+              <td>精度、认证、交付、售后和渠道购买契约；属于品牌自述。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://www.reddit.com/r/Amazon__Deals_/comments/tf40ss" target="_blank" rel="noopener">Reddit historical Amazon deal trace</a></td>
+              <td>2022-03-16</td>
+              <td>Historical marketplace trace</td>
+              <td>KENDO 3-piece extension bar set 的历史 Amazon 痕迹，不证明当前在售规模。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://www.reddit.com/r/Tools/comments/lw2agd" target="_blank" rel="noopener">Reddit r/Tools KENDO screwdriver thread</a></td>
+              <td>2021-03-02</td>
+              <td>Community VOC</td>
+              <td>低价试用、家用价值、硬度与精度疑问；小样本不用于定量。</td>
+              <td>Low</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.opinionesmalas.com/63414/" target="_blank" rel="noopener">OpinionesMalas KENDO review</a></td>
+              <td>2026 checked</td>
+              <td>Secondary review</td>
+              <td>价值型、DIY/偶用与专业耐用边界的弱质量方向性样本。</td>
+              <td>Low</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://www.bobvila.com/reviews/best-hand-tools-2026/" target="_blank" rel="noopener">Bob Vila Best Hand Tools 2026</a></td>
+              <td>2026-05-18</td>
+              <td>Independent test</td>
+              <td>北美工具购买契约与 Stanley、WorkPro、Craftsman、Milwaukee 等测试榜单压力。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://www.homedepot.com/p/318393713" target="_blank" rel="noopener">Home Depot DEWALT 131-piece set</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Retail PDP</td>
+              <td>同件数机械工具套装的价格、规格、评价、90 天退货与保修信息基准。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://windowware.co.uk/media/contentmanager/content/kendo_tools_you_can_trust.pdf" target="_blank" rel="noopener">Window Ware KENDO catalogue</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Distributor catalogue</td>
+              <td>KENDO 在英国经销渠道可建立专业目录与产品证明，说明模式可复制。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://www.kendo.com/Company-Profile.html" target="_blank" rel="noopener">KENDO official company profile</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official company</td>
+              <td>SAAME Tools、1979 年起点与全球工具业务背景。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://www.kendo.com/Best-Tool-Sets-of-2025-Tested-Rated-id47807575.html" target="_blank" rel="noopener">KENDO Best Tool Sets of 2025</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Brand-authored editorial</td>
+              <td>品牌自有内容把 KENDO 131 件套列为 Best Overall；只作内容资产，不作独立评测证据。</td>
+              <td>Medium-low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>KENDO · 2026-09-01 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>

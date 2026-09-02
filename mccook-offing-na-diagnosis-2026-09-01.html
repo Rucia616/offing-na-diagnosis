@@ -1,0 +1,1474 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>McCook · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-09-01</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    /*
+      Offing canonical renderer baseline:
+      /Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md
+      Product family sample:
+      /Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html
+      Atlas sample:
+      /Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html
+    */
+    :root {
+      color-scheme: light;
+      --offing-ink:#101413; --offing-body:#293331; --offing-muted:#66716e; --offing-line:#dfe3e7;
+      --offing-soft:#f6f8fa; --offing-paper:#fff8ee; --offing-surface:#fff;
+      --offing-pink:#eb4aa6; --offing-violet:#6d4cff; --offing-cyan:#20c7d9; --offing-lime:#78d64b;
+      --offing-blue:#2457ff; --offing-sky:#42a5ff; --offing-green:#18b77a; --offing-teal:#00b8a9;
+      --offing-orange:#ff8a2a; --offing-coral:#ff5a3d; --offing-amber:#b77900; --offing-slate:#475569;
+      --atlas-bg:#fff; --atlas-surface:#fff; --atlas-surface-soft:#f7f8fa;
+      --atlas-ink:#101413; --atlas-body:#293331; --atlas-muted:#66716e; --atlas-line:#e0e3e5;
+      --atlas-main:#2d6261; --atlas-teal:#32d6c6; --atlas-sky:#9ed1ff; --atlas-pink:#eb4aa6;
+      --atlas-lilac:#9b7cff; --atlas-coral:#ff6b4a; --atlas-green:#70e5a8; --atlas-inverse:#111817; --atlas-inverse-2:#162321;
+      --display-font:"Avenir Next Condensed","Helvetica Neue Condensed","Arial Narrow","Roboto Condensed","Oswald",sans-serif;
+      --text-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      --bg:var(--atlas-bg); --top:#fff; --surface:var(--atlas-surface); --surface-2:var(--atlas-surface-soft);
+      --text:var(--atlas-ink); --body:var(--atlas-body); --muted:var(--atlas-muted); --line:var(--atlas-line);
+      --accent:var(--atlas-main); --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:var(--atlas-teal); --prism-b:var(--atlas-sky); --prism-c:var(--atlas-pink); --prism-d:var(--atlas-lilac); --prism-e:var(--atlas-coral);
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:var(--text-font); font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner { width:min(1432px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0; }
+    .product-lockup { display:grid; color:var(--text); font-size:13px; font-weight:850; line-height:1.08; white-space:nowrap; }
+    .product-lockup small { margin-top:4px; color:var(--accent); font-size:12px; font-weight:800; }
+    .nav { display:flex; gap:18px; overflow-x:auto; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); font-size:12px; line-height:1; font-weight:780; white-space:nowrap; }
+    main { width:min(1432px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:78px 0; }
+    .hero { position:relative; min-height:min(650px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; grid-template-rows:auto auto; gap:22px 54px; align-items:center; margin:0; padding:34px 0 30px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero-outline { position:absolute; z-index:0; right:60px; top:36px; color:transparent; -webkit-text-stroke:1.25px color-mix(in srgb,var(--prism-c) 48%,transparent); font-family:var(--display-font); font-size:clamp(72px,8vw,116px); line-height:.82; font-weight:900; pointer-events:none; }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:800px; padding-top:0; align-self:end; }
+    .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
+    .client-logo img { display:block; width:auto; height:48px; max-width:238px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
+    .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .nowrap-title { white-space:nowrap; }
+    .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
+    .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(190px,1fr)); gap:12px; max-width:760px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:88px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:14px 15px; overflow-wrap:anywhere; }
+    .metric-label { display:grid; grid-template-columns:9px minmax(0,1fr); align-items:start; column-gap:8px; row-gap:4px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { width:9px; height:9px; margin-top:3px; background:var(--prism-a); }
+    .metric-label-copy { min-width:0; }
+    .metric-evidence { grid-column:2; min-width:0; display:block; }
+    .hero-metric.state-red .metric-label i { background:var(--risk); }
+    .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
+    .hero-metric.state-green .metric-label i { background:var(--success); }
+    .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
+    .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
+    .hero-metric .evidence-list { display:flex; width:auto; max-width:100%; flex-wrap:wrap; gap:4px; overflow:visible; margin:0; padding:0; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; max-width:720px; align-self:start; margin-top:0; background:transparent; }
+    .chain-item { min-width:0; min-height:62px; padding:10px 12px; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:rgba(255,255,255,.92); overflow-wrap:anywhere; }
+    .chain-item i { display:block; margin-bottom:6px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:880; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:13px; line-height:1.25; font-weight:860; }
+    .chain-item span { display:none; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:1px solid rgba(16,20,19,.14); box-shadow:none; }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; align-self:center; overflow:hidden; min-height:0; color:var(--inverse-text); background:linear-gradient(180deg,#13211f,#101716); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:0 30px 70px rgba(16,20,19,.22); padding:0; }
+    .score-strip { height:5px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c),var(--prism-d)); }
+    .score-inner { padding:24px 24px 22px; }
+    .score-top { display:flex; justify-content:space-between; gap:20px; align-items:start; margin-bottom:18px; }
+    .score-label { color:rgba(248,250,249,.68); font-size:12px; font-weight:850; text-transform:uppercase; font-family:var(--display-font); }
+    .score-number { font-size:86px; line-height:.86; font-weight:900; }
+    .score-rating { display:grid; justify-items:end; gap:6px; }
+    .tier { display:inline-grid; place-items:center; min-height:24px; border-radius:999px; padding:0 9px; border:1px solid rgba(255,255,255,.22); color:#a8ffc5; font-size:12px; line-height:1; font-weight:900; }
+    .stars { color:var(--prism-c); font-size:22px; line-height:1; white-space:nowrap; }
+    .star-score { color:rgba(248,250,249,.88); font-size:13px; line-height:1.35; font-weight:780; }
+    .score-verdict { margin:0; color:rgba(248,250,249,.88); line-height:1.45; font-size:14px; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 20px; }
+    .score-meta div { min-height:70px; border:1px solid rgba(255,255,255,.13); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.05); }
+    .score-meta span { display:block; color:rgba(248,250,249,.6); font-size:11px; margin-bottom:8px; font-weight:760; }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:15px; line-height:1.25; overflow-wrap:anywhere; word-break:break-word; }
+    .subscore-list { display:grid; gap:12px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 34px; align-items:center; gap:10px; color:rgba(248,250,249,.78); font-size:12px; font-weight:780; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.13); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:var(--prism-a); }
+    .track i.bar-2 { background:var(--prism-c); }
+    .track i.bar-3 { background:var(--prism-e); }
+    .score-formula { display:none; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { font-size:21px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:64px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:13px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:260px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); display:flex; flex-wrap:wrap; align-content:center; justify-content:center; align-items:center; gap:12px 16px; padding:24px; overflow:hidden; }
+    .cloud span { position:relative; display:inline-flex; max-width:100%; font-weight:900; line-height:1.04; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:13px; } .w2 { font-size:16px; } .w3 { font-size:20px; } .w4 { font-size:25px; } .w5 { font-size:30px; }
+    .w5.long { font-size:26px; } .w5.extra-long { font-size:22px; }
+    .w4.long { font-size:22px; } .w4.extra-long { font-size:19px; }
+    .w3.long { font-size:18px; } .w3.extra-long { font-size:16px; }
+    .w2.long,.w2.extra-long { font-size:15px; }
+    .w1.long,.w1.extra-long { font-size:13px; }
+    .p0 { margin-top:6px; } .p1 { margin-bottom:18px; } .p2 { margin-top:22px; } .p3 { margin-bottom:6px; } .p4 { margin-left:8px; } .p5 { margin-right:12px; } .p6 { margin-top:14px; } .p7 { margin-bottom:12px; } .p8 { margin-left:14px; } .p9 { margin-top:28px; } .p10 { margin-bottom:20px; } .p11 { margin-right:20px; } .p12 { margin-top:10px; } .p13 { margin-bottom:8px; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      .hero-outline { right:0; top:18px; font-size:48px; opacity:.42; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:0; }
+      .score-inner { padding:18px; }
+      .score-top { margin-bottom:14px; }
+      .score-number { font-size:52px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:12.5px; line-height:1.25; }
+      .score-verdict { font-size:13px; }
+      .score-meta { display:grid; gap:6px; margin:12px 0; }
+      .score-meta div { min-height:54px; padding:8px; }
+      .score-meta b { font-size:13px; }
+      .score-meta span { margin-bottom:5px; font-size:10.5px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; align-content:flex-start; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .cloud .w5.long { font-size:24px; } .cloud .w5.extra-long { font-size:20px; }
+      .cloud .w4.long { font-size:21px; } .cloud .w4.extra-long { font-size:18px; }
+      .cloud .w3.long { font-size:17px; } .cloud .w3.extra-long { font-size:15px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { width:auto; height:42px; max-width:230px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body data-offing-visual-baseline="canonical" data-offing-visual-scope="full-report" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="McCook official logo">
+          <img src="assets/brand-logos/mccook-logo-official.png" alt="McCook official logo" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1><span class="nowrap-title">北美业务诊断</span></h1>
+        <p class="lead">McCook 的 Amazon 主盘已经成立，下一步先把 36K+ 评价资产变成统一官网、可验证售后和跨渠道品牌信任。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">MC29 Amazon 公开评分数。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E1]</span></span></span></span>
+            <b class="">36,161</b>
+          </div>
+          <div class="hero-metric state-green">
+            <span class="metric-label"><i></i><span class="metric-label-copy">Amazon Block Knife Sets 类目排名。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E1]</span></span></span></span>
+            <b class="">#2</b>
+          </div>
+          <div class="hero-metric state-red">
+            <span class="metric-label"><i></i><span class="metric-label-copy">公开出现的 McCook 品牌域名。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E8]</span><span class="evidence">[E15]</span></span></span></span>
+            <b class="">3+</b>
+          </div>
+        </div>
+        <p class="sublead">MC29 当前显示 4.6 星、36,161 条评分、近月 1K+ bought，并位列 Amazon Block Knife Sets #2；官网多域名、政策模板残留和售后入口分裂正在消耗这份成交资产。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E8]</span></span></p>
+        <div class="tag-row"><span class="tag green">Amazon 主盘成立</span><span class="tag red">品牌官网信任分裂</span><span class="tag amber">锈蚀与养护边界需前置</span></div>
+      </div>
+      <aside class="score-panel" aria-label="McCook Atlas score">
+        <div class="score-strip"></div>
+        <div class="score-inner">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Total diagnosis score</div>
+              <div class="score-number">64</div>
+            </div>
+            <div class="score-rating">
+              <span class="tier green">C档</span>
+              <div class="stars" aria-label="3.2 out of 5 stars">★ ★ ★ ☆ ☆</div>
+              <div class="star-score">3.2 / 5 星 · 公开数据</div>
+            </div>
+          </div>
+          <p class="score-verdict">C档 · Amazon 成交证明很强，品牌信任、售后承接与渠道结构把总分封顶在 64。</p>
+          <div class="score-meta">
+            <div><span>阶段判断</span><b>10-100</b></div>
+            <div><span>经营类型</span><b>Amazon-led value cutlery brand</b></div>
+            <div><span>置信度</span><b>中高</b></div>
+          </div>
+          <div class="subscore-list">
+            
+            <div class="subscore">
+              <span>业务健康度</span>
+              <div class="track"><i class="bar-1" style="width:72%;"></i></div>
+              <b>72</b>
+            </div>
+            <div class="subscore">
+              <span>业务机会分</span>
+              <div class="track"><i class="bar-2" style="width:78%;"></i></div>
+              <b>78</b>
+            </div>
+            <div class="subscore">
+              <span>问题致命度</span>
+              <div class="track"><i class="bar-3" style="width:74%;"></i></div>
+              <b>74</b>
+            </div>
+          </div>
+          <p class="score-formula">数据采集日期：2026-09-01。</p>
+        </div>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>统一品牌入口</b>
+          <span>确定一个北美官方域名、官方商店与客服身份。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>修售后承诺</b>
+          <span>清理模板占位，写清退换、保修、锈蚀与响应 SLA。</span>
+        </article>
+        <article class="chain-item state-green">
+          <i>P1</i>
+          <b>守住英雄 ASIN</b>
+          <span>维护 MC29 的排名、评价、价格纪律与变体质量。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>扩第二货架</b>
+          <span>把 Amazon proof 带到 Walmart 与可控 DTC，而非复制低价。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>McCook</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中高 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-09-01</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>Atlas 总控；SignalMark 统一品牌 proof，CommerceFlow 修售后与第二货架。</p>
+          <span class="route-chip">最低分警报：TideLens 49</span>
+          <span class="route-chip">分数封顶：64 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">58<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3></h3>
+              <p></p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-amber">
+            <div class="specialist-score">65<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3></h3>
+              <p></p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">49<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3></h3>
+              <p></p>
+              
+              
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>统一官方身份与售后政策</li><li>逐 SKU 统一防锈与洗碗机边界</li><li>把 Amazon proof 带到第二货架</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>最容易的死法：继续靠 Amazon 排名和大折扣出货，却让多套官网、占位政策和养护争议耗掉品牌信任。</h2>
+        </div>
+        <p class="section-note">MC29 已经证明用户愿意买；最危险的路径是把 36K+ 评价当成永久护城河，却没有把正品入口、产品边界和售后结果沉淀到品牌自己手里。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-amber">
+          <div class="module-label">品类购买契约</div>
+          <h3>刀具套装买的是开箱锋利、长期好养、使用安全和坏了以后有人负责。</h3>
+          <p><strong>用户买的确定性：</strong>北美家庭用户购买的是一盒配齐、切得顺手、容易保持锋利、不会因错误养护快速锈蚀，并且退换保修路径清楚。</p>
+          <p><strong>当前匹配：</strong>McCook 用完整套装、轻量平衡与刀座内置磨刀器接住了便利和价值；养护边界、官网身份和售后政策仍未形成同一份购买契约。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E6]</span><span class="evidence">[E9]</span></span></p>
+          <p class="risk-evidence">Amazon 大样本与独立测试证明初始锋利、平衡和价值感；公开评论也持续出现手洗、锈点、涂层与长期刃口顾虑。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">64<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>官网身份、退款保修与养护边界没有形成可信的一套北美承诺。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是把 Amazon proof 当成品牌 proof。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>累计评分、类目排名、促销峰值、piece count 和颜色变体。</dd></div>
+            <div><dt>低估</dt><dd>官方域名、正品识别、政策完整度、锈蚀教育、响应 SLA 与跨渠道价格纪律。</dd></div>
+            <div><dt>安慰指标</dt><dd>总评论数、BSR、coupon 后销量和站内广告排名。</dd></div>
+            <div><dt>先别做</dt><dd>先别继续堆颜色与件数；先修官方入口、售后政策和 MC29 的长期质量证据。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 64</b></div>
+            <h3>品牌身份与售后入口分裂</h3>
+            <p>公开页面同时出现多个 McCook 域名，联系、保修和购买路径不一致，用户难以判断哪个入口代表品牌。</p>
+            <p class="risk-evidence">mccookcutlery.com、mccookknives.com 与其他品牌词域名并存。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E8]</span><span class="evidence">[E15]</span></span></p>
+            <span class="tag red">SignalMark 统一实体与官方 proof</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 64</b></div>
+            <h3>政策模板残留直接伤害信任</h3>
+            <p>退款页保留 support@xxxx.com，条款页仍有未替换政策链接；这类错误出现在高风险售后场景。</p>
+            <p class="risk-evidence">公开退款与服务条款页面可直接看到占位内容。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E7]</span></span></p>
+            <span class="tag red">CommerceFlow 重建售后承接</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 68</b></div>
+            <h3>锈蚀与手洗边界没有统一讲透</h3>
+            <p>不同页面和型号对 dishwasher safe、手洗、及时擦干的表达不统一，容易把使用错误转成质量投诉。</p>
+            <p class="risk-evidence">独立测试、品牌 FAQ 与用户评论均反复出现养护边界。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E8]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
+            <span class="tag amber">SignalMark 建使用 proof 与 FAQ</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 69</b></div>
+            <h3>单一平台证明没有变成跨渠道资产</h3>
+            <p>Amazon 已经形成强评价与类目排名，Walmart 和官网的产品、卖家、售后与内容仍缺统一标准。</p>
+            <p class="risk-evidence">MC29 Amazon 主盘显著强于 Walmart 与官网承接。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span></span></p>
+            <span class="tag amber">Atlas 管品线，CommerceFlow 管货架</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是评价总量、类目排名和大额折扣。</h3>
+            <p>这些信号证明历史成交与当前流量，仍要用贡献利润、退货、锈蚀投诉、售后成本和跨渠道复购判断增长质量。</p>
+          </div>
+          <article class="signal-card state-amber">
+            <span>成交资产</span>
+            <h3>36K+ Amazon 评分</h3>
+            <p>大样本是强 proof，也会掩盖变体质量、近端差评与平台依赖。</p>
+          </article><article class="signal-card state-amber">
+            <span>类目位置</span>
+            <h3>Block Knife Sets #2</h3>
+            <p>排名证明主力 ASIN 有竞争力，无法替代品牌官网、客服与第二货架。</p>
+          </article><article class="signal-card state-red">
+            <span>促销质量</span>
+            <h3>$79.95 划线价到 $32.99</h3>
+            <p>Walmart 大折扣能刺激转化，也可能压低价格锚点并增加渠道冲突。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>McCook 当前总分被品牌信任与售后承接封顶在 64。</h3>
+            <p>Amazon 排名、评价和独立测试托住 C 档；统一官网、可执行政策与跨渠道正品承接建立后才有资格进入 B 档。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>64</b>
+            <div><h3>官方身份与客服</h3><p>多个域名与不同购买路径并存，官方关系没有公开讲清。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E8]</span><span class="evidence">[E15]</span></span></p></div>
+          </article><article class="cap-reason state-red">
+            <b>64</b>
+            <div><h3>退换保修可执行性</h3><p>退款与条款页仍保留占位邮箱和模板链接。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E7]</span></span></p></div>
+          </article><article class="cap-reason state-amber">
+            <b>68</b>
+            <div><h3>产品养护一致性</h3><p>手洗、洗碗机与防锈表达在不同产品和页面间不一致。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E8]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：McCook 北美处于 10-100，主力货架成立，品牌基础设施落后。</h2>
+        </div>
+        <p class="section-note">Amazon 已有大样本、稳定排名和持续购买信号；下一阶段目标是降低单平台依赖并把成交 proof 变成品牌资产。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-green"><span>0-1</span><b>已通过</b><p>MC29 已证明价值型完整刀具套装有人买。</p></div><div class="stage-step state-green"><span>1-10</span><b>已通过</b><p>Amazon 评价和榜位形成持续成交证据。</p></div><div class="stage-step state-amber"><span>10-100</span><b>当前阶段</b><p>修品牌、售后、变体质量和第二渠道。</p></div><div class="stage-step state-blue"><span>100+</span><b>升级门槛</b><p>多渠道价格、库存、服务和品牌资产可统一管理。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 动作</div>
+          <h3>统一北美品牌入口</h3>
+          <p>一个域名、一套客服、一份保修、一套授权卖家。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 动作</div>
+          <h3>做长期耐用 proof</h3>
+          <p>把 90 天、12 个月刃口与锈蚀边界写清。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">危险动作</div>
+          <h3>继续只靠低价扩变体</h3>
+          <p>会加大质量、评论合并、库存与价格纪律风险。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心盘是第一次配齐刀具的家庭用户，价值来自省选择、省养护和一盒配齐。</h2>
+        </div>
+        <p class="section-note">McCook 最强人群是希望用可控预算把厨房基础刀具一次配齐的家庭用户。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>首次配齐</b><small>核心盘：新家庭 / 新公寓 / 第一套刀具</small></div>
+            </div><div class="audience-band layer-2 state-green">
+              <span class="audience-index">L2</span>
+              <div><b>日常备餐</b><small>相邻人群：高频家庭做饭者</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>礼赠焕新</b><small>外扩边界：礼赠与厨房焕新</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>专业重载</b><small>暂时边界：专业厨师与重载餐饮</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：新家庭 / 新公寓 / 第一套刀具</b><span>看件数、价格、开箱锋利、收纳完整和不用另买磨刀器。</span></div><div class="legend-item state-green"><b>相邻人群：高频家庭做饭者</b><span>看平衡、舒适、刃口保持、手洗成本和刀型覆盖。</span></div><div class="legend-item state-amber"><b>外扩边界：礼赠与厨房焕新</b><span>看外观、包装、完整度、颜色和退换方便。</span></div><div class="legend-item state-red"><b>暂时边界：专业厨师与重载餐饮</b><span>更看钢材透明度、刃口寿命、可修复性和长期专业口碑。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>第一选择来自完整度</h3>
+          <p>15 件套、牛排刀、剪刀和刀座降低首次配置成本。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>复购阻力来自低频品类</h3>
+          <p>刀具套装天然低复购，需要配件、替换与礼赠场景延长价值。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>专业人群后置</h3>
+          <p>先用家庭长期测试守住价值心智，再争夺专业评价。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>经营类型：Amazon 主导的价值型刀具品牌，第二货架与自有承接偏弱。</h2>
+        </div>
+        <p class="section-note">以下是公开表面的承接权重代理，不代表真实收入占比；应以渠道结算、退货和贡献利润替换。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Amazon-led value cutlery，Walmart 有成交表面，自有品牌与售后入口分裂。</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="green" style="width:75%;"></i></div>
+            <span>75%</span>
+            <small>MC29 评分、购买与类目排名形成主盘。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>Walmart Marketplace</b>
+            <div class="share-track"><i class="amber" style="width:15%;"></i></div>
+            <span>15%</span>
+            <small>有 Best seller 与评价，但价格折扣和卖家角色需统一。<span class="evidence-list"><span class="evidence">[E4]</span></span></small>
+          </div><div class="share-row">
+            <b>Owned web / DTC</b>
+            <div class="share-track"><i class="red" style="width:5%;"></i></div>
+            <span>5%</span>
+            <small>多个域名、政策模板和跳转购买削弱自有承接。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E8]</span></span></small>
+          </div><div class="share-row">
+            <b>Social / Other</b>
+            <div class="share-track"><i class="red" style="width:5%;"></i></div>
+            <span>5%</span>
+            <small>公开搜索未形成清楚的官方社媒购买与 proof 入口。<span class="evidence-list"><span class="evidence">[E14]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Amazon 的角色</h3>
+          <p>守住 MC29 搜索、评价、价格、变体与售后，是现金主盘。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>Walmart 的角色</h3>
+          <p>验证第二货架，但必须统一卖家、价格、退换和产品版本。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>官网的角色</h3>
+          <p>承担官方身份、产品教育、正品识别、保修登记与客服分流。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>内容与社媒的角色</h3>
+          <p>把开箱锋利转成长周期养护、刃口与防锈 proof。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：品牌产品词吃掉了，通用品类词、比较词和售后词没有完整吃掉。</h2>
+        </div>
+        <p class="section-note">Amazon 强势承接交易词；Google 与开放网络需要统一官方实体、长期 proof 和售后答案。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-green">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture green">吃掉了</b></div>
+          <h3>McCook knife set / McCook MC29</h3>
+          <p>Amazon Store、36K+ 评分和 #2 类目排名稳住精准品牌购买词。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>knife set with built-in sharpener</h3>
+          <p>功能记忆成立，但 Astercook、Hunter.Dual 等同类产品持续分流。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>best knife block set / kitchen knife set</h3>
+          <p>McCook 有独立测试与媒体露出，通用榜单仍被 Henckels、Cuisinart 等强实体占据。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E12]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>McCook review / McCook rust / dishwasher safe</h3>
+          <p>评价量很大，品牌对型号差异、手洗与锈蚀边界的统一答案不够强。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">没吃掉</b></div>
+          <h3>McCook vs Henckels / Cuisinart / Astercook</h3>
+          <p>缺官方比较矩阵、钢材边界、长期测试和总拥有成本页面。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E8]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture red">没吃掉</b></div>
+          <h3>McCook warranty / return / official site</h3>
+          <p>多域名与政策占位让售后词无法形成单一可信答案。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>好评集中在锋利、完整、平衡和性价比；抱怨集中在锈点、手洗、刃口与页面承诺。</h2>
+        </div>
+        <p class="section-note">Amazon 大样本支撑总体满意方向；开放社区与独立测试用于识别长期风险，不外推投诉比例。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>集中好评</h3>
+          <p>开箱锋利、轻量平衡、刀型齐全、木质刀座和内置磨刀器最能支持下单。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E10]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>集中抱怨</h3>
+          <p>锈点、必须手洗、表面刮花、湿手握持和长期刃口保持影响信任。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>售后正向信号</h3>
+          <p>公开评论样本出现品牌补发与退款后扭转评价，说明响应能力可被产品化。<span class="evidence-list"><span class="evidence">[E13]</span></span></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>承诺冲突</h3>
+          <p>部分型号强调 dishwasher safe，品牌 FAQ 又建议手洗；必须按 SKU 统一边界。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E8]</span><span class="evidence">[E10]</span></span></p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">razor sharp</span><span class="w5 p1 long">built-in sharpener</span><span class="w5 p2">complete set</span><span class="w5 p3">good value</span><span class="w5 p4">well balanced</span><span class="w4 p5 long">comfortable grip</span><span class="w4 p6">lightweight</span><span class="w4 p7">gift ready</span><span class="w4 p8 long">attractive block</span><span class="w3 p9">easy prep</span><span class="w3 p10">full tang</span><span class="w3 p11">steak knives</span><span class="w2 p12 long">organized counter</span><span class="w2 p13">first kitchen</span><span class="w2 p0">daily cooking</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">rust spots</span><span class="w5 p1">hand wash only</span><span class="w5 p2 long">dishwasher conflict</span><span class="w5 p3">edge retention</span><span class="w4 p4">scratches</span><span class="w4 p5">wet grip</span><span class="w4 p6">coating wear</span><span class="w3 p7">block mismatch</span><span class="w3 p8 long">serrated dulling</span><span class="w3 p9 long">official site confusion</span><span class="w3 p10">warranty path</span><span class="w3 p11">variant quality</span><span class="w2 p12 long">price volatility</span><span class="w2 p13">long-term proof</span><span class="w2 p0 long">professional boundary</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">锋利与完整度已经支持首单；统一养护边界、长期测试与售后路径后，McCook 才能把平台好评转成品牌复述与跨渠道信任。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>分品线天花板：MC29 守现金，颜色变体控复杂度，第二主线用耐用 proof 立住。</h2>
+        </div>
+        <p class="section-note">公开资料未披露分品线收入，以下按评价资产、功能差异、售后复杂度与渠道可复制性判断。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">Cash 主线 · 成熟守盘</div>
+          <h3>MC29 15-piece stainless set</h3>
+          <b>价值型家庭刀具默认候选</b>
+          <p>36K+ 评分和 #2 排名最强；重点守变体一致性、评价质量和价格纪律。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">Growth 线 · 验证扩张</div>
+          <h3>MC21 / titanium color sets</h3>
+          <b>礼赠与厨房焕新</b>
+          <p>颜色与涂层提高视觉差异，也增加刮花、掉色和版本解释成本。<span class="evidence-list"><span class="evidence">[E8]</span><span class="evidence">[E10]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">Proof 线 · 边界验证</div>
+          <h3>MC69 / dishwasher-safe sets</h3>
+          <b>省维护家庭</b>
+          <p>需求强，但必须给出逐型号洗碗机测试、锈蚀条件和保修边界。<span class="evidence-list"><span class="evidence">[E4]</span><span class="evidence">[E13]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">Traffic 线 · 促销控制</div>
+          <h3>26-piece value bundles</h3>
+          <b>大套装低价流量</b>
+          <p>Walmart 大折扣能拉量，需防价格锚点、低毛利与多配件缺失风险。<span class="evidence-list"><span class="evidence">[E4]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：品牌词接住成交，比较、养护与售后意图仍需统一答案。</h2>
+        </div>
+        <p class="section-note">官网、Amazon、Walmart、包装与客服应使用同一套产品版本、养护和售后语言。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Amazon / Brand Search</td><td>McCook 是否值得买、哪套最适合我</td><td class="status-cell"><span class="table-status green">吃掉</span></td><td>守住 MC29 页面，并上线按家庭、刀型、件数与养护方式选择器。</td></tr><tr><td>Category Search</td><td>一百美元内哪套刀具最完整、最锋利</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>用独立测试、长期刃口和总拥有成本进入通用品类页。<span class="evidence-list"><span class="evidence">[E3]</span></span></td></tr><tr><td>Comparison Search</td><td>McCook 与 Henckels / Cuisinart / Astercook 差在哪</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>上线钢材、重量、磨刀、手洗、保修和价格比较矩阵。</td></tr><tr><td>Care Search</td><td>能否进洗碗机、为什么会锈、怎么磨</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>按 SKU 写清手洗、擦干、可磨刀型与锈点处理。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E8]</span></span></td></tr><tr><td>Support Search</td><td>缺件、锈蚀、退货或保修找谁</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>统一客服域名、表单、凭证、时效、补发与退款 SLA。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E9]</span></span></td></tr><tr><td>Walmart / Other Retail</td><td>是不是正品、与 Amazon 是否同款</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>公开授权卖家、UPC、型号映射、价格和售后责任。<span class="evidence-list"><span class="evidence">[E4]</span></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：完整与锋利接住了，长期养护、官方身份和售后没有完全接住。</h2>
+        </div>
+        <p class="section-note">权重用于决定页面与预算动作，需用退货、差评主题、售后工单和贡献利润校准。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-green">
+          <div><div class="fit-weight">22%</div><div class="mini-track"><i style="width:22%;"></i></div></div>
+          <div><strong>开箱锋利 / 切割表现</strong><p>独立测试与大样本评价支持初始锋利和轻量控制。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">19%</div><div class="mini-track"><i style="width:19%;"></i></div></div>
+          <div><strong>完整套装 / 一次配齐</strong><p>15 件套、牛排刀、剪刀和刀座降低选择成本。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">17%</div><div class="mini-track"><i style="width:17%;"></i></div></div>
+          <div><strong>磨刀便利 / 长期锋利</strong><p>刀座内置磨刀器形成强记忆，锯齿刀与深度钝化边界需讲清。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">16%</div><div class="mini-track"><i style="width:16%;"></i></div></div>
+          <div><strong>防锈 / 清洁 / 洗碗机</strong><p>型号之间的 dishwasher safe 与手洗表达不统一。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-green">
+          <div><div class="fit-weight">14%</div><div class="mini-track"><i style="width:14%;"></i></div></div>
+          <div><strong>价格 / 性价比</strong><p>Amazon 与 Walmart 强价格支持试买，大折扣会损伤锚点与利润。</p></div>
+          <div><span class="verdict green">接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>退换 / 保修 / 正品</strong><p>官网多入口与政策占位削弱高风险问题的确定性。</p></div>
+          <div><span class="verdict red">没接住</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页总结：守住 Amazon 现金盘，先修品牌信任，再扩第二货架。</h2>
+        </div>
+        <p class="section-note">McCook 已过产品市场验证，下一轮增长取决于能否把平台成交变成品牌资产和可复制承接。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>10-100。Amazon 主盘成立，品牌与渠道基础设施补课。</p></div><div class="summary-item"><b>主线</b><p>MC29 守现金，颜色变体控复杂度，第二主线用长期 proof 立住。</p></div><div class="summary-item"><b>总分</b><p>64 / 100 · C档，品牌信任与售后承接封顶。</p></div><div class="summary-item"><b>最容易的死法</b><p>继续靠 Amazon 排名和大折扣出货，却让多套官网、占位政策和养护争议耗掉品牌信任。</p></div><div class="summary-item"><b>路由</b><p>Atlas 总控；SignalMark 统一品牌 proof，CommerceFlow 修售后与第二货架。</p></div><div class="summary-item"><b>预算取舍</b><p>加官网、售后和长期测试；控折扣、件数与颜色变体扩张。</p></div><div class="summary-item"><b>数据缺口</b><p>需补 SKU 利润、退货、锈蚀工单、补发成本、批次质量和渠道结算。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>三项专项评分：先修信号与售后承接，TideLens 暂不抢主预算。</h2>
+        </div>
+        <p class="section-note">最低专项分只是预警；当前最能改变经营结果的是统一品牌 proof 与交易后承接。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3></h3><p></p></div><b>58</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p></p></div><div><strong>做得差</strong><p></p></div></div>
+          
+        </article><article class="biz-card state-amber">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3></h3><p></p></div><b>65</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p></p></div><div><strong>做得差</strong><p></p></div></div>
+          
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3></h3><p></p></div><b>49</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p></p></div><div><strong>做得差</strong><p></p></div></div>
+          
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 问题：官网信任、养护边界、单平台依赖。</h2>
+        </div>
+        <p class="section-note">三项都直接影响转化、退货、差评、客服成本或跨渠道扩张。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：统一官方身份与售后政策</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p></p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span><span class="evidence">[E8]</span></span></p></div>
+          <div><b>业务影响</b><p>影响正品判断、退换、保修与品牌搜索</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong><br><strong>90 天：</strong></p></div>
+        </div>
+      </article><article class="issue state-red">
+        <h3>问题 2：逐 SKU 统一防锈与洗碗机边界</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p></p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E10]</span><span class="evidence">[E13]</span></span></p></div>
+          <div><b>业务影响</b><p>降低误用、差评、退款与补发成本</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong><br><strong>90 天：</strong></p></div>
+        </div>
+      </article><article class="issue state-amber">
+        <h3>问题 3：把 Amazon proof 带到第二货架</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p></p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E4]</span></span></p></div>
+          <div><b>业务影响</b><p>降低平台依赖并守住价格纪律</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong><br><strong>90 天：</strong></p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞争压力来自四种心智：专业德国、零售熟牌、Amazon 价值套装和单刀升级。</h2>
+        </div>
+        <p class="section-note">McCook 需要守住一盒配齐与磨刀便利，同时避免把自己锁死在低价件数竞争。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3></h3>
+          <p></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3></h3>
+          <p></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3></h3>
+          <p></p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">需校准</div>
+          <h3></h3>
+          <p></p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从低价大套装，升级为随时锋利、一次配齐的家庭刀具起点。</h2>
+        </div>
+        <p class="section-note">不要争夺专业锻造历史；把完整、好用、易养和有售后压成可复述的购买理由。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>第一次配置完整厨房、预算敏感但不想买杂牌的人。</p>
+        </article>
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>用一盒刀具完成日常备餐，并降低选刀与磨刀负担。</p>
+        </article>
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>36K+ 评分、独立测试、全钢结构、平衡手感与内置磨刀器。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span></span></p>
+        </article>
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>明确手洗、擦干、锯齿刀不可使用内置磨刀器及保修条件。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> </p>
+        <p><b>Hero subhead:</b> </p>
+        <p><b>Product promise:</b> A complete knife block that stays ready for everyday cooking.</p>
+        <p><b>Sales opener:</b> McCook combines a proven Amazon hero set with built-in sharpening convenience and a clearer care-and-support promise for everyday households.</p>
+        <p><b>CTA:</b> </p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：Amazon 与产品托底，品牌信任、售后和开放网络 proof 拉低总分。</h2>
+        </div>
+        <p class="section-note">低分项先进入经营周会；后台订单、利润、退货与客服数据接入后再校准。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>32</b><span>官方身份清晰度</span></div>
+          <div class="mini-track"><i style="width:32%;"></i></div>
+          <p>多域名与不同购买路径没有公开讲清关系。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E8]</span><span class="evidence">[E15]</span></span></p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>36</b><span>售后政策可信度</span></div>
+          <div class="mini-track"><i style="width:36%;"></i></div>
+          <p>退款与条款页仍有占位内容。<span class="evidence-list"><span class="evidence">[E6]</span><span class="evidence">[E7]</span></span></p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>44</b><span>长期使用 proof</span></div>
+          <div class="mini-track"><i style="width:44%;"></i></div>
+          <p>锈蚀、刃口与涂层缺统一长周期证明。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>49</b><span>Creator proof</span></div>
+          <div class="mini-track"><i style="width:49%;"></i></div>
+          <p>公开长期测评与可复用内容资产不足。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>58</b><span>渠道结构</span></div>
+          <div class="mini-track"><i style="width:58%;"></i></div>
+          <p>Amazon 主导，Walmart 与 DTC 未形成同一标准。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>60</b><span>养护边界</span></div>
+          <div class="mini-track"><i style="width:60%;"></i></div>
+          <p>手洗、洗碗机与防锈表达需逐 SKU 统一。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>68</b><span>搜索承接</span></div>
+          <div class="mini-track"><i style="width:68%;"></i></div>
+          <p>品牌产品词强，比较与售后词弱。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>70</b><span>价格纪律</span></div>
+          <div class="mini-track"><i style="width:70%;"></i></div>
+          <p>强促销支持成交，也会压低锚点和利润。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>80</b><span>产品价值</span></div>
+          <div class="mini-track"><i style="width:80%;"></i></div>
+          <p>完整、锋利、平衡和内置磨刀有独立支持。<span class="evidence-list"><span class="evidence">[E3]</span></span></p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>88</b><span>Amazon 主盘</span></div>
+          <div class="mini-track"><i style="width:88%;"></i></div>
+          <p>MC29 评价、购买与类目位置强。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>90</b><span>用户验证规模</span></div>
+          <div class="mini-track"><i style="width:90%;"></i></div>
+          <p>36K+ 评分提供强成交与满意度样本。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算重排：加官网与售后 proof，守英雄 ASIN，控制折扣与变体。</h2>
+        </div>
+        <p class="section-note">预算先投能降低退货、提升信任和复制渠道的资产，再考虑扩大流量。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：官方品牌入口</h3>
+          <p>统一域名、客服、正品识别、保修登记和授权卖家。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：长期产品测试</h3>
+          <p>做 90 天 / 12 个月刃口、锈蚀、涂层和洗碗机边界 proof。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">设门槛</div>
+          <h3>控预算：Walmart 扩张</h3>
+          <p>只有型号、卖家、价格、库存和售后一致时才加量。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">立即停</div>
+          <h3>停预算：无证据的颜色与件数扩张</h3>
+          <p>先收敛质量、评论与库存复杂度，再开新变体。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先统一信任，再复制 Amazon 主盘。</h2>
+        </div>
+        <p class="section-note">每个阶段用转化、退货、锈蚀工单、响应时效、贡献利润和跨渠道价格验收。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>Brand / Legal｜确定唯一北美官方域名与实体说明</b><p>验收：域名、公司、Amazon Store、Walmart 卖家和客服映射。影响：消除官方身份分裂</p></div><div class="road-action state-red"><b>CX / Legal｜重写退款、保修与锈蚀政策</b><p>验收：无占位、可提交、时效清楚、按 SKU 区分。影响：降低售后信任风险</p></div><div class="road-action state-amber"><b>Product / QA｜完成 MC29 养护与质量 proof ledger</b><p>验收：手洗、擦干、刃口、磨刀、锈蚀与涂层测试。影响：减少误用和争议</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-green"><b>Amazon / Data｜守住英雄 ASIN 与变体质量</b><p>验收：近端星级、差评主题、退货、补发、coupon 与利润。影响：保护现金主盘</p></div><div class="road-action state-amber"><b>Web / Signal｜上线比较、care 与官方售后页面</b><p>验收：品牌词、售后词、页面转化与客服分流。影响：把平台 proof 变成品牌资产</p></div><div class="road-action state-amber"><b>Retail / Commerce｜校准 Walmart 型号与价格</b><p>验收：UPC、卖家、价差、库存、退货与服务责任。影响：建立第二货架</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-green"><b>Creator / PR｜发布家庭长期使用测试</b><p>验收：90 天 / 12 个月刃口、锈蚀、舒适与养护完成率。影响：建立开放网络 proof</p></div><div class="road-action state-green"><b>Finance / Leadership｜按 SKU 与渠道复盘贡献利润</b><p>验收：毛利、广告、折扣、退货、补发、库存和现金周期。影响：决定扩品与退出</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>职能部门红黄绿灯：官网、售后、品牌信号与变体质量先进入经营周会。</h2>
+        </div>
+        <p class="section-note">每个部门只保留最影响购买、退货、利润或跨渠道复制的一件事。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">28</div>
+          <h3>官网 / 法务</h3>
+          <p><strong>当前拖累：</strong>政策页存在占位邮箱和模板链接。</p>
+          <span class="tag red">30 天：清理并发布正式政策</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">36</div>
+          <h3>品牌 / SEO</h3>
+          <p><strong>当前拖累：</strong>多个域名与官方关系没有清楚说明。</p>
+          <span class="tag red">30 天：统一品牌实体</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">42</div>
+          <h3>北美售后</h3>
+          <p><strong>当前拖累：</strong>保修、退换、锈蚀与补发 SLA 分散。</p>
+          <span class="tag red">30 天：建立售后承诺</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">44</div>
+          <h3>Creator / PR</h3>
+          <p><strong>当前拖累：</strong>长期使用与养护 proof 不足。</p>
+          <span class="tag red">30 天：启动长期测试</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">58</div>
+          <h3>零售渠道</h3>
+          <p><strong>当前拖累：</strong>Walmart 型号、卖家和价格需与 Amazon 统一。</p>
+          <span class="tag amber">30 天：做渠道映射</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">60</div>
+          <h3>数据 / 财务</h3>
+          <p><strong>当前拖累：</strong>公开层面看不到变体利润、退货和补发成本。</p>
+          <span class="tag amber">30 天：建贡献利润表</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">66</div>
+          <h3>产品组合</h3>
+          <p><strong>当前拖累：</strong>颜色、涂层、件数与 dishwasher 声明增加复杂度。</p>
+          <span class="tag amber">30 天：设变体闸门</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">70</div>
+          <h3>内容 / PDP</h3>
+          <p><strong>当前拖累：</strong>功能卖点强，适用边界与长期 proof 不够统一。</p>
+          <span class="tag amber">30 天：重写 care FAQ</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">82</div>
+          <h3>产品 / 供应链</h3>
+          <p><strong>当前拖累：</strong>完整度和初始体验强，长期一致性仍需后台验证。</p>
+          <span class="tag green">30 天：做批次追踪</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">86</div>
+          <h3>Amazon 运营</h3>
+          <p><strong>当前拖累：</strong>主盘强，需防近端差评、价格波动和变体污染。</p>
+          <span class="tag green">30 天：守英雄 ASIN</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险预警与数据缺口：公开数据能判断主盘，利润、退货和批次质量需后台校准。</h2>
+        </div>
+        <p class="section-note">这里只保留会改变阶段、分数、品线选择或预算顺序的缺口。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>贡献利润不可验证</h3>
+          <p>公开折扣、广告与销量信号很强，缺 SKU 级毛利、退货、补发与平台费用。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>变体与批次质量缺口</h3>
+          <p>颜色、涂层、件数和 dishwasher 声明不同，需按 ASIN、批次与供应商追踪。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网归属需品牌确认</h3>
+          <p>公开域名呈现不同购买、公司与政策路径，报告只判断用户可见的一致性，不推断内部控制权。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>VOC 主题不可外推比例</h3>
+          <p>Amazon 总评分是大样本；开放社区与镜像评论只识别锈蚀、养护和刃口主题。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：强判断都能追到来源、日期、用途和置信度。</h2>
+        </div>
+        <p class="section-note">Amazon 与零售前台、品牌页面、独立测试和社区样本分开定级；后台接入后补利润、退货、批次与售后工单。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://www.amazon.com/dp/B07RTH8LM7" target="_blank" rel="noopener">Amazon McCook MC29 PDP</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace PDP</td>
+              <td>4.6 星、36,161 评分、近月 1K+ bought、Block Knife Sets #2、Amazon Store、ASIN 与产品主张。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://www.amazon.com/stores/McCook/page/1C64B4F1-C482-44EB-B4D3-ED81C1DD8DCA" target="_blank" rel="noopener">Amazon McCook Brand Store</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Official marketplace store</td>
+              <td>品牌商店与 Amazon 官方购买入口。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://bestreviews.com/kitchen/cutlery-knife-accessories/mccook-knife-set" target="_blank" rel="noopener">BestReviews McCook test</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Independent product test</td>
+              <td>一周实测、初始锋利、平衡、舒适、刮花、湿手握持、手洗和内置磨刀器边界。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://www.walmart.com/ip/8342810701" target="_blank" rel="noopener">Walmart McCook 26-piece PDP</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Retail marketplace PDP</td>
+              <td>Best seller、4.5 星、155 评分、$32.99 对比 $79.95、90 天退货与第二货架表面。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://mccookcutlery.com/pages/about-us" target="_blank" rel="noopener">McCook Cutlery About</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Brand-owned page</td>
+              <td>美国品牌叙事、中国生产线、深圳公司名称、电话与 Shopify 路径。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://mccookcutlery.com/policies/refund-policy" target="_blank" rel="noopener">McCook Cutlery Refund Policy</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Brand-owned policy</td>
+              <td>退款流程、10 个工作日与公开残留 support@xxxx.com 占位邮箱。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://mccookcutlery.com/policies/terms-of-service" target="_blank" rel="noopener">McCook Cutlery Terms and Privacy</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Brand-owned policy</td>
+              <td>未替换政策链接模板；隐私页列出 +86 电话与 support@mccook.com。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://mccookknives.com/" target="_blank" rel="noopener">McCook Knives product site</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Brand-affiliated public site</td>
+              <td>MC29 / MC21 等型号、内置磨刀器、Amazon 跳转、手洗与防锈 FAQ；页面含 affiliate tag，归属需品牌确认。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://mccookknives.com/warranty/" target="_blank" rel="noopener">McCook Knives Warranty</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Brand-affiliated warranty page</td>
+              <td>缺陷保修、授权 Amazon 卖家范围、+86 电话与 Amazon claims 跳转。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.reddit.com/r/readbeforebuying/comments/1hcw3w5/" target="_blank" rel="noopener">Reddit McCook review thread</a></td>
+              <td>2024-12-12</td>
+              <td>Community VOC</td>
+              <td>锋利、平衡、内置磨刀器、手洗、锈蚀与长期刃口主题；小样本不用于定量。</td>
+              <td>Low</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://www.reddit.com/r/cookingtonight/comments/z59o53/" target="_blank" rel="noopener">Reddit budget knife-set discussion</a></td>
+              <td>2022-11-26</td>
+              <td>Category community VOC</td>
+              <td>北美刀具套装购买中的整套低价、单把好刀、锈蚀与长期耐用争议。</td>
+              <td>Low</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://www.eonline.com/news/1378080/25-000-amazon-shoppers-say-this-15-piece-knife-set-is-the-best-save-63-on-it-ahead-of-prime-day" target="_blank" rel="noopener">E! Online McCook deal article</a></td>
+              <td>2023 checked</td>
+              <td>Media commerce article</td>
+              <td>历史 25,000+ Amazon 五星评论叙事与 Prime Day 折扣传播。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://home.woot.com/review/B0DPF66VGH" target="_blank" rel="noopener">Woot Amazon review mirror</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Verified-purchase review mirror</td>
+              <td>锈蚀、手洗与客服补发退款后的满意度修复；单品变体样本。</td>
+              <td>Medium-low</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://shop.tiktok.com/us/k/mccook-kitchen-knives" target="_blank" rel="noopener">TikTok Shop McCook query</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Social commerce search</td>
+              <td>品牌词下未形成清晰官方 McCook 货架，搜索结果由泛刀具占据。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://mccookset.com/" target="_blank" rel="noopener">McCook Set public site</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Affiliate-style public site</td>
+              <td>另一品牌词域名、Amazon affiliate 跳转、保修与养护叙事；用于判断用户可见的域名分裂。</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>McCook · 2026-09-01 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>

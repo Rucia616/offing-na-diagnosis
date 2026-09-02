@@ -1,0 +1,1474 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vorvorax · 远汐 Offing Atlas 北美业务诊断（免费版） · 2026-09-01</title>
+  <meta name="offing-canonical-visual-baseline" content="/Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md" />
+  <meta name="offing-canonical-product-family-demo" content="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" />
+  <meta name="offing-canonical-atlas-demo" content="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/offing-atlas-favicon.svg" />
+  <style>
+    /*
+      Offing canonical renderer baseline:
+      /Users/rucia/Documents/不间断学习/output/offing-report-design-learning/OFFING_CANONICAL_VISUAL_BASELINE.md
+      Product family sample:
+      /Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html
+      Atlas sample:
+      /Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html
+    */
+    :root {
+      color-scheme: light;
+      --offing-ink:#101413; --offing-body:#293331; --offing-muted:#66716e; --offing-line:#dfe3e7;
+      --offing-soft:#f6f8fa; --offing-paper:#fff8ee; --offing-surface:#fff;
+      --offing-pink:#eb4aa6; --offing-violet:#6d4cff; --offing-cyan:#20c7d9; --offing-lime:#78d64b;
+      --offing-blue:#2457ff; --offing-sky:#42a5ff; --offing-green:#18b77a; --offing-teal:#00b8a9;
+      --offing-orange:#ff8a2a; --offing-coral:#ff5a3d; --offing-amber:#b77900; --offing-slate:#475569;
+      --atlas-bg:#fff; --atlas-surface:#fff; --atlas-surface-soft:#f7f8fa;
+      --atlas-ink:#101413; --atlas-body:#293331; --atlas-muted:#66716e; --atlas-line:#e0e3e5;
+      --atlas-main:#2d6261; --atlas-teal:#32d6c6; --atlas-sky:#9ed1ff; --atlas-pink:#eb4aa6;
+      --atlas-lilac:#9b7cff; --atlas-coral:#ff6b4a; --atlas-green:#70e5a8; --atlas-inverse:#111817; --atlas-inverse-2:#162321;
+      --display-font:"Avenir Next Condensed","Helvetica Neue Condensed","Arial Narrow","Roboto Condensed","Oswald",sans-serif;
+      --text-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      --bg:var(--atlas-bg); --top:#fff; --surface:var(--atlas-surface); --surface-2:var(--atlas-surface-soft);
+      --text:var(--atlas-ink); --body:var(--atlas-body); --muted:var(--atlas-muted); --line:var(--atlas-line);
+      --accent:var(--atlas-main); --accent-fill:#eaf1f0;
+      --success:#157a38; --success-bg:#eaf6ee;
+      --warning:#9a5b00; --warning-bg:#fff3df;
+      --risk:#d70015; --risk-bg:#fff0f1;
+      --blue:#2b67a0; --blue-bg:#eaf3ff;
+      --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+      --prism-a:var(--atlas-teal); --prism-b:var(--atlas-sky); --prism-c:var(--atlas-pink); --prism-d:var(--atlas-lilac); --prism-e:var(--atlas-coral);
+      --radius:8px; --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: light;
+        --bg:#fff; --top:#fff; --surface:#fff; --surface-2:#fff;
+        --text:#101413; --body:#293331; --muted:#66716e; --line:#e0e3e5;
+        --accent:#2d6261; --accent-fill:#eaf1f0;
+        --success:#157a38; --success-bg:#eaf6ee;
+        --warning:#9a5b00; --warning-bg:#fff3df;
+        --risk:#d70015; --risk-bg:#fff0f1;
+        --blue:#2b67a0; --blue-bg:#eaf3ff;
+        --inverse-bg:#13211f; --inverse-text:#f8faf9; --inverse-muted:rgba(248,250,249,.78);
+        --shadow:0 10px 30px rgba(16,20,19,.055); --result-shadow:0 26px 72px rgba(16,20,19,.10);
+      }
+    }
+    * { box-sizing:border-box; letter-spacing:0; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:#fff; color:var(--body); font-family:var(--text-font); font-size:15.5px; line-height:1.66; overflow-x:hidden; }
+    a { color:var(--accent); text-decoration:none; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(18px); }
+    .topbar-inner { width:min(1432px,calc(100vw - 68px)); margin:0 auto; min-height:66px; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:0; }
+    .product-lockup { display:grid; color:var(--text); font-size:13px; font-weight:850; line-height:1.08; white-space:nowrap; }
+    .product-lockup small { margin-top:4px; color:var(--accent); font-size:12px; font-weight:800; }
+    .nav { display:flex; gap:18px; overflow-x:auto; scrollbar-width:none; }
+    .nav a { display:inline-flex; align-items:center; min-height:30px; color:var(--muted); font-size:12px; line-height:1; font-weight:780; white-space:nowrap; }
+    main { width:min(1432px,calc(100vw - 68px)); margin:0 auto; }
+    section { scroll-margin-top:88px; margin:78px 0; }
+    .hero { position:relative; min-height:min(650px,calc(100vh - 66px)); display:grid; grid-template-columns:minmax(0,1fr) 420px; grid-template-rows:auto auto; gap:22px 54px; align-items:center; margin:0; padding:34px 0 30px; overflow:hidden; border-bottom:1px solid var(--line); }
+    .hero-outline { position:absolute; z-index:0; right:60px; top:36px; color:transparent; -webkit-text-stroke:1.25px color-mix(in srgb,var(--prism-c) 48%,transparent); font-family:var(--display-font); font-size:clamp(72px,8vw,116px); line-height:.82; font-weight:900; pointer-events:none; }
+    .hero-copy,.score-panel,.diagnosis-chain { position:relative; z-index:1; }
+    .hero-copy { max-width:800px; padding-top:0; align-self:end; }
+    .client-logo { width:max-content; max-width:min(260px,100%); padding:0; border:0; border-radius:var(--radius); background:transparent; box-shadow:none; margin-bottom:28px; }
+    .client-logo img { display:block; width:auto; height:48px; max-width:238px; object-fit:contain; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:var(--accent); font-size:12px; font-weight:880; text-transform:uppercase; margin-bottom:16px; }
+    .eyebrow::before { content:""; width:38px; height:3px; border-radius:99px; background:linear-gradient(90deg,var(--prism-a),var(--prism-c)); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:780px; color:var(--text); font-size:clamp(54px,5.3vw,72px); line-height:.98; font-weight:900; }
+    .nowrap-title { white-space:nowrap; }
+    .lead { max-width:720px; margin-top:18px; color:var(--body); font-size:18px; line-height:1.55; font-weight:660; }
+    .sublead { max-width:720px; margin-top:12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .metric-strip { display:grid; grid-template-columns:repeat(3,minmax(190px,1fr)); gap:12px; max-width:760px; margin-top:22px; }
+    .hero-metric { min-width:0; min-height:88px; display:grid; align-content:space-between; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:#fff; padding:14px 15px; overflow-wrap:anywhere; }
+    .metric-label { display:grid; grid-template-columns:9px minmax(0,1fr); align-items:start; column-gap:8px; row-gap:4px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:780; }
+    .metric-label i { width:9px; height:9px; margin-top:3px; background:var(--prism-a); }
+    .metric-label-copy { min-width:0; }
+    .metric-evidence { grid-column:2; min-width:0; display:block; }
+    .hero-metric.state-red .metric-label i { background:var(--risk); }
+    .hero-metric.state-amber .metric-label i { background:var(--prism-c); }
+    .hero-metric.state-green .metric-label i { background:var(--success); }
+    .hero-metric b { display:block; color:var(--text); font-size:31px; line-height:1; font-weight:880; }
+    .hero-metric b.compact-value { font-size:20px; line-height:1.18; }
+    .hero-metric .evidence-list { display:flex; width:auto; max-width:100%; flex-wrap:wrap; gap:4px; overflow:visible; margin:0; padding:0; }
+    .hero-metric .evidence { display:inline-flex; flex:0 0 auto; }
+    .hero-metric.state-red b { color:var(--risk); }
+    .hero-metric.state-amber b { color:var(--warning); }
+    .hero-metric.state-green b { color:var(--success); }
+    .diagnosis-chain { grid-column:1; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; max-width:720px; align-self:start; margin-top:0; background:transparent; }
+    .chain-item { min-width:0; min-height:62px; padding:10px 12px; border:1px solid rgba(16,20,19,.14); border-radius:var(--radius); background:rgba(255,255,255,.92); overflow-wrap:anywhere; }
+    .chain-item i { display:block; margin-bottom:6px; color:var(--accent); font-style:normal; font-size:11px; line-height:1; font-weight:880; text-transform:uppercase; }
+    .chain-item b { display:block; color:var(--text); font-size:13px; line-height:1.25; font-weight:860; }
+    .chain-item span { display:none; }
+    .chain-item.state-red,.chain-item.state-amber,.chain-item.state-green,.chain-item.state-blue { border-top:1px solid rgba(16,20,19,.14); box-shadow:none; }
+    .chain-item.state-red i { color:var(--risk); }
+    .chain-item.state-amber i { color:var(--warning); }
+    .chain-item.state-green i { color:var(--success); }
+    .chain-item.state-blue i { color:var(--blue); }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .tag { display:inline-flex; align-items:center; width:max-content; max-width:100%; border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:12px; line-height:1.15; font-weight:850; white-space:normal; }
+    .tag.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 28%,var(--line)); }
+    .tag.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 28%,var(--line)); }
+    .tag.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 28%,var(--line)); }
+    .tag.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 28%,var(--line)); }
+    .tag.neutral { color:var(--muted); background:var(--surface-2); }
+    .score-panel { position:relative; align-self:center; overflow:hidden; min-height:0; color:var(--inverse-text); background:linear-gradient(180deg,#13211f,#101716); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:0 30px 70px rgba(16,20,19,.22); padding:0; }
+    .score-strip { height:5px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c),var(--prism-d)); }
+    .score-inner { padding:24px 24px 22px; }
+    .score-top { display:flex; justify-content:space-between; gap:20px; align-items:start; margin-bottom:18px; }
+    .score-label { color:rgba(248,250,249,.68); font-size:12px; font-weight:850; text-transform:uppercase; font-family:var(--display-font); }
+    .score-number { font-size:86px; line-height:.86; font-weight:900; }
+    .score-rating { display:grid; justify-items:end; gap:6px; }
+    .tier { display:inline-grid; place-items:center; min-height:24px; border-radius:999px; padding:0 9px; border:1px solid rgba(255,255,255,.22); color:#a8ffc5; font-size:12px; line-height:1; font-weight:900; }
+    .stars { color:var(--prism-c); font-size:22px; line-height:1; white-space:nowrap; }
+    .star-score { color:rgba(248,250,249,.88); font-size:13px; line-height:1.35; font-weight:780; }
+    .score-verdict { margin:0; color:rgba(248,250,249,.88); line-height:1.45; font-size:14px; }
+    .score-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:18px 0 20px; }
+    .score-meta div { min-height:70px; border:1px solid rgba(255,255,255,.13); border-radius:var(--radius); padding:10px; background:rgba(255,255,255,.05); }
+    .score-meta span { display:block; color:rgba(248,250,249,.6); font-size:11px; margin-bottom:8px; font-weight:760; }
+    .score-meta b { display:block; color:var(--inverse-text); font-size:15px; line-height:1.25; overflow-wrap:anywhere; word-break:break-word; }
+    .subscore-list { display:grid; gap:12px; }
+    .subscore { display:grid; grid-template-columns:92px 1fr 34px; align-items:center; gap:10px; color:rgba(248,250,249,.78); font-size:12px; font-weight:780; }
+    .track,.mini-track { height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.13); }
+    .track i,.mini-track i { display:block; height:100%; border-radius:inherit; background:var(--prism-a); }
+    .track i.bar-2 { background:var(--prism-c); }
+    .track i.bar-3 { background:var(--prism-e); }
+    .score-formula { display:none; }
+    @media (max-width: 1300px) and (min-width: 901px) {
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:72px; }
+      .stars { font-size:21px; }
+      .score-meta { margin-top:12px; }
+      .score-meta div { min-height:58px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .score-formula { display:none; }
+    }
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .hero { grid-template-columns:minmax(0,1fr) minmax(330px,400px); gap:32px; }
+      .score-panel { min-height:0; padding:0; }
+      .score-inner { padding:20px; }
+      .score-number { font-size:64px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:13px; }
+      .score-meta { margin-top:14px; gap:7px; }
+      .score-meta div { padding:8px; }
+      .score-meta b { font-size:14px; }
+      .score-meta span { font-size:11px; }
+      .subscore-list { margin-top:14px; gap:8px; }
+      .subscore { grid-template-columns:86px 1fr 24px; gap:8px; font-size:12.5px; }
+      .score-formula { margin-top:12px; padding-top:12px; }
+    }
+    .section-head { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr); gap:52px; align-items:end; margin-bottom:24px; }
+    h2 { color:var(--text); font-size:clamp(30px,4vw,44px); line-height:1.12; font-weight:900; }
+    .section-note { color:var(--muted); font-size:15px; align-self:center; }
+    .wide-note { margin-top:18px; }
+    section,.grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { min-width:0; }
+    .grid-3,.grid-4,.mind-grid,.line-grid,.business-grid,.dept-grid,.scoreboard,.wordcloud-wrap,.roadmap,.audience-grid,.onepage,.budget-grid,.routing-system,.specialist-ledger,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { display:grid; gap:12px; }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card,.mind-card,.line-card,.biz-card,.issue,.comp-card,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; overflow-wrap:anywhere; }
+    .state-green { border-top:3px solid color-mix(in srgb,var(--success) 68%,var(--line)); }
+    .state-amber { border-top:3px solid color-mix(in srgb,var(--warning) 68%,var(--line)); }
+    .state-red { border-top:3px solid color-mix(in srgb,var(--risk) 68%,var(--line)); }
+    .state-blue { border-top:3px solid color-mix(in srgb,var(--blue) 68%,var(--line)); }
+    .routing-system { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:stretch; }
+    .route-intake { border-top:4px solid var(--accent); }
+    .route-decision { color:var(--inverse-text); background:var(--inverse-bg); border-color:color-mix(in srgb,var(--inverse-bg) 70%,white); position:relative; overflow:hidden; }
+    .route-decision::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--prism-a),var(--prism-b),var(--prism-c)); }
+    .route-decision h3,.route-decision p { color:var(--inverse-text); }
+    .route-decision p { margin-top:10px; color:var(--inverse-muted); }
+    .module-label,.specialist-name { color:var(--accent); font-size:12px; line-height:1.1; font-weight:950; text-transform:uppercase; letter-spacing:0; }
+    .route-facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 0; }
+    .route-facts div { border-top:1px solid var(--line); padding-top:10px; }
+    .route-facts dt { color:var(--muted); font-size:12px; font-weight:850; }
+    .route-facts dd { margin:4px 0 0; color:var(--text); font-weight:850; }
+    .route-chip { display:inline-flex; margin-top:16px; margin-right:8px; border:1px solid rgba(255,255,255,.22); border-radius:999px; padding:7px 10px; color:var(--inverse-text); background:rgba(255,255,255,.08); font-size:12px; font-weight:900; }
+    .specialist-ledger { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .specialist-card { display:grid; grid-template-columns:88px 1fr; gap:16px; align-items:start; border-top-width:1px; }
+    .specialist-card.state-green { border-left:4px solid var(--success); }
+    .specialist-card.state-amber { border-left:4px solid var(--warning); }
+    .specialist-card.state-red { border-left:4px solid var(--risk); }
+    .specialist-score { color:var(--text); font-size:42px; line-height:1; font-weight:950; }
+    .specialist-score span { display:block; margin-top:4px; color:var(--muted); font-size:13px; font-weight:850; }
+    .route-top3 { grid-column:1/-1; display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start; border-top:4px solid var(--accent); }
+    .route-top3 ol { display:grid; gap:10px; margin:0; padding-left:22px; }
+    .route-top3 li { color:var(--body); font-weight:780; }
+    .risk-system { grid-template-columns:repeat(12,minmax(0,1fr)); align-items:stretch; }
+    .contract-card,.score-cap,.decision-blindspot { grid-column:span 4; }
+    .risk-path-list { grid-column:1/-1; grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .signal-ledger { grid-column:1 / span 7; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .cap-ledger { grid-column:8 / -1; align-content:start; }
+    .module-label { margin-bottom:10px; }
+    .contract-card p,.score-cap p,.decision-blindspot p,.risk-path-card p,.signal-card p,.cap-reason p,.ledger-head p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .risk-evidence { color:var(--muted) !important; font-size:13.5px !important; }
+    .cap-number { color:var(--text); font-size:58px; line-height:1; font-weight:950; margin-bottom:8px; }
+    .cap-number span { color:var(--muted); font-size:18px; }
+    .decision-blindspot dl { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 0; }
+    .decision-blindspot dt { color:var(--muted); font-size:12px; font-weight:900; }
+    .decision-blindspot dd { margin:4px 0 0; color:var(--text); font-size:13.5px; font-weight:760; }
+    .risk-card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; font-weight:950; margin-bottom:10px; }
+    .risk-card-top span { display:inline-flex; border-radius:999px; padding:5px 8px; color:var(--inverse-text); background:var(--inverse-bg); }
+    .signal-ledger .ledger-head { grid-column:1/-1; }
+    .cap-ledger .ledger-head { margin-bottom:0; }
+    .signal-card > span { color:var(--muted); font-size:12px; font-weight:900; }
+    .cap-reason { display:grid; grid-template-columns:62px 1fr; gap:14px; align-items:start; box-shadow:none; }
+    .cap-reason b { color:var(--text); font-size:36px; line-height:1; font-weight:950; }
+    .card-state,.priority,.line-meta { color:var(--muted); font-size:12px; font-weight:850; margin-bottom:10px; }
+    .priority { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .search-capture { flex:0 0 auto; display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:12px; line-height:1; font-weight:950; }
+    .search-capture.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .search-capture.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .search-capture.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .search-capture.blue { color:var(--blue); background:var(--blue-bg); border-color:color-mix(in srgb,var(--blue) 30%,var(--line)); }
+    h3 { color:var(--text); font-size:20px; line-height:1.25; font-weight:900; }
+    .card p,.mind-card p,.line-card p,.biz-card p,.issue p,.score-card p,.dept-card p,.road-card p,.copy-block p,.specialist-card p { margin-top:10px; color:var(--body); font-size:14.5px; }
+    .stage-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .stage-step { min-width:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; overflow-wrap:anywhere; }
+    .stage-step span { color:var(--muted); font-size:12px; font-weight:850; }
+    .stage-step b { display:block; margin-top:8px; color:var(--text); font-size:20px; }
+    .stage-step p { margin-top:8px; color:var(--muted); font-size:13.5px; }
+    .audience-grid { grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr); align-items:stretch; margin-bottom:12px; }
+    .audience-map { min-height:360px; display:grid; align-content:center; gap:14px; border-radius:var(--radius); background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%); border:1px solid var(--line); padding:18px; overflow:hidden; }
+    .audience-axis { display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; font-weight:900; }
+    .audience-axis::before { content:""; flex:1; height:2px; margin:0 12px; order:2; background:linear-gradient(90deg,var(--success),var(--warning),var(--risk)); border-radius:999px; opacity:.72; }
+    .audience-axis span:first-child { order:1; }
+    .audience-axis span:last-child { order:3; }
+    .audience-bands { display:grid; gap:10px; align-items:center; }
+    .audience-band { display:grid; grid-template-columns:42px 1fr; gap:12px; align-items:center; min-height:74px; margin:0 auto; border:1px solid var(--line); border-left-width:5px; border-radius:var(--radius); background:var(--surface); box-shadow:0 10px 26px rgba(16,20,19,.06); padding:13px 15px; }
+    .audience-band.layer-1 { width:68%; }
+    .audience-band.layer-2 { width:80%; }
+    .audience-band.layer-3 { width:92%; }
+    .audience-band.layer-4 { width:100%; }
+    .audience-band.state-green { border-top-width:1px; border-left-color:var(--success); }
+    .audience-band.state-amber { border-top-width:1px; border-left-color:var(--warning); }
+    .audience-band.state-red { border-top-width:1px; border-left-color:var(--risk); }
+    .audience-band.state-blue { border-top-width:1px; border-left-color:var(--blue); }
+    .audience-index { display:grid; place-items:center; width:38px; height:38px; border-radius:999px; color:var(--accent); background:var(--accent-fill); font-size:12px; font-weight:950; }
+    .audience-band b { display:block; color:var(--text); font-size:18px; line-height:1.2; }
+    .audience-band small { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.35; font-weight:760; }
+    .legend-list { display:grid; gap:10px; }
+    .legend-item { border-left:4px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:14px 16px; }
+    .legend-item.state-green { border-left-color:var(--success); border-top:0; }
+    .legend-item.state-amber { border-left-color:var(--warning); border-top:0; }
+    .legend-item.state-red { border-left-color:var(--risk); border-top:0; }
+    .legend-item b { display:block; color:var(--text); }
+    .legend-item > span { display:block; color:var(--muted); font-size:14px; margin-top:4px; }
+    .dark-panel { background:var(--inverse-bg); color:var(--inverse-text); margin-bottom:12px; }
+    .dark-panel h3 { color:var(--inverse-text); }
+    .share-list { display:grid; gap:12px; margin-top:18px; }
+    .share-row { display:grid; grid-template-columns:110px minmax(0,1fr) 44px minmax(0,1fr); gap:12px; align-items:center; color:var(--inverse-text); }
+    .share-row small { color:var(--inverse-muted); }
+    .share-track { height:12px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.14); }
+    .share-track i { display:block; height:100%; border-radius:inherit; background:var(--accent); }
+    .share-track i.green { background:var(--success); }
+    .share-track i.amber { background:var(--warning); }
+    .share-track i.red { background:var(--risk); }
+    .mind-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .mind-card { grid-column:span 2; }
+    .mind-card:nth-child(n+4) { grid-column:span 3; }
+    .wordcloud-wrap { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+    .cloud { min-height:260px; margin-top:16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface-2); display:flex; flex-wrap:wrap; align-content:center; justify-content:center; align-items:center; gap:12px 16px; padding:24px; overflow:hidden; }
+    .cloud span { position:relative; display:inline-flex; max-width:100%; font-weight:900; line-height:1.04; white-space:nowrap; }
+    .positive span { color:var(--success); }
+    .negative span { color:var(--risk); }
+    .w1 { font-size:13px; } .w2 { font-size:16px; } .w3 { font-size:20px; } .w4 { font-size:25px; } .w5 { font-size:30px; }
+    .w5.long { font-size:26px; } .w5.extra-long { font-size:22px; }
+    .w4.long { font-size:22px; } .w4.extra-long { font-size:19px; }
+    .w3.long { font-size:18px; } .w3.extra-long { font-size:16px; }
+    .w2.long,.w2.extra-long { font-size:15px; }
+    .w1.long,.w1.extra-long { font-size:13px; }
+    .p0 { margin-top:6px; } .p1 { margin-bottom:18px; } .p2 { margin-top:22px; } .p3 { margin-bottom:6px; } .p4 { margin-left:8px; } .p5 { margin-right:12px; } .p6 { margin-top:14px; } .p7 { margin-bottom:12px; } .p8 { margin-left:14px; } .p9 { margin-top:28px; } .p10 { margin-bottom:20px; } .p11 { margin-right:20px; } .p12 { margin-top:10px; } .p13 { margin-bottom:8px; }
+    .line-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); contain:inline-size; }
+    table { width:100%; min-width:min(900px,100%); table-layout:fixed; border-collapse:collapse; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:13.5px; overflow-wrap:anywhere; }
+    th { background:var(--surface-2); color:var(--text); font-size:12px; font-weight:900; }
+    tr:last-child td { border-bottom:0; }
+    .status-head,.status-cell { width:126px; min-width:126px; }
+    .status-head { white-space:nowrap; }
+    .table-status { display:inline-flex; align-items:center; justify-content:center; min-width:82px; border:1px solid var(--line); border-radius:6px; padding:8px 10px; font-size:12px; line-height:1; font-weight:950; white-space:nowrap; }
+    .table-status.green { color:var(--success); background:var(--success-bg); border-color:color-mix(in srgb,var(--success) 30%,var(--line)); }
+    .table-status.amber { color:var(--warning); background:var(--warning-bg); border-color:color-mix(in srgb,var(--warning) 30%,var(--line)); }
+    .table-status.red { color:var(--risk); background:var(--risk-bg); border-color:color-mix(in srgb,var(--risk) 30%,var(--line)); }
+    .table-status.neutral { color:var(--muted); background:var(--surface-2); }
+    .fit-list { display:grid; gap:10px; }
+    .fit-row { display:grid; grid-template-columns:120px minmax(0,1fr) 130px; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; }
+    .fit-weight { color:var(--text); font-size:28px; line-height:1; font-weight:900; }
+    .fit-row p { margin-top:4px; color:var(--muted); }
+    .verdict { display:inline-flex; border-radius:999px; padding:8px 10px; font-size:12px; font-weight:900; }
+    .verdict.green { color:var(--success); background:var(--success-bg); }
+    .verdict.amber { color:var(--warning); background:var(--warning-bg); }
+    .verdict.red { color:var(--risk); background:var(--risk-bg); }
+    .onepage { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .summary-item { border-top:4px solid var(--accent); background:var(--surface); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    .summary-item b { color:var(--text); }
+    .summary-item p { color:var(--body); margin-top:8px; }
+    .business-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .biz-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; }
+    .biz-top span { color:var(--muted); font-size:12px; font-weight:850; }
+    .biz-top b { color:var(--text); font-size:46px; line-height:1; }
+    .biz-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .issue { margin-top:12px; }
+    .issue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .issue-grid div { background:var(--surface-2); border-radius:var(--radius); padding:14px; }
+    .copy-block { margin-top:12px; }
+    .scoreboard { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .score-card-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .score-card-top b { color:var(--text); font-size:34px; line-height:1; }
+    .score-card-top span { color:var(--text); font-weight:900; }
+    .budget-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .roadmap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .road-action { margin-top:12px; border-left:4px solid var(--line); padding:12px; background:var(--surface-2); border-radius:var(--radius); }
+    .road-action.state-green { border-left-color:var(--success); border-top:0; }
+    .road-action.state-amber { border-left-color:var(--warning); border-top:0; }
+    .road-action.state-red { border-left-color:var(--risk); border-top:0; }
+    .dept-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .dept-card.red { border-top-color:var(--risk); }
+    .dept-card.amber { border-top-color:var(--warning); }
+    .dept-card.green { border-top-color:var(--success); }
+    .dept-score { color:var(--text); font-size:38px; line-height:1; font-weight:900; }
+    .evidence-list { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:6px; vertical-align:baseline; }
+    .evidence { display:inline-flex; align-items:center; min-height:18px; color:var(--accent); background:var(--accent-fill); border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line)); border-radius:999px; padding:1px 6px; font-size:11px; line-height:1.2; font-weight:900; white-space:nowrap; }
+    .footer { display:flex; justify-content:space-between; gap:24px; border-top:1px solid var(--line); padding:28px 0 42px; color:var(--muted); font-size:12px; }
+    @media (max-width: 900px) {
+      .topbar-inner,main { width:calc(100vw - 36px); }
+      .topbar-inner { display:grid; gap:0; padding:14px 0; min-height:76px; }
+      .nav { display:none; }
+      .hero { min-height:auto; display:grid; grid-template-columns:1fr; gap:22px; padding:36px 0 42px; }
+      .hero-outline { right:0; top:18px; font-size:48px; opacity:.42; }
+      h1 { font-size:clamp(32px,9vw,38px); line-height:1.04; }
+      .lead { margin-top:18px; font-size:17px; line-height:1.36; }
+      .sublead { margin-top:12px; font-size:14.5px; line-height:1.56; }
+      h2 { font-size:clamp(24px,7vw,30px); }
+      section { margin:64px 0; }
+      .section-head,.audience-grid,.grid-3,.grid-4,.mind-grid,.wordcloud-wrap,.line-grid,.business-grid,.onepage,.scoreboard,.roadmap,.dept-grid,.routing-system,.specialist-ledger,.route-top3,.risk-system,.risk-path-list,.signal-ledger,.cap-ledger { grid-template-columns:1fr; }
+      .score-panel { min-height:auto; padding:0; }
+      .score-inner { padding:18px; }
+      .score-top { margin-bottom:14px; }
+      .score-number { font-size:52px; }
+      .stars { font-size:20px; }
+      .star-score { font-size:12.5px; line-height:1.25; }
+      .score-verdict { font-size:13px; }
+      .score-meta { display:grid; gap:6px; margin:12px 0; }
+      .score-meta div { min-height:54px; padding:8px; }
+      .score-meta b { font-size:13px; }
+      .score-meta span { margin-bottom:5px; font-size:10.5px; }
+      .subscore-list { margin-top:12px; gap:7px; }
+      .subscore { grid-template-columns:80px 1fr 24px; gap:8px; font-size:12.5px; }
+      .track,.mini-track { height:7px; }
+      .score-formula { display:none; }
+      .stage-track { grid-template-columns:1fr 1fr; }
+      .cloud { min-height:auto; align-content:flex-start; gap:10px 12px; padding:16px; overflow:hidden; }
+      .cloud span { line-height:1.05; }
+      .cloud .w1 { font-size:14px; } .cloud .w2 { font-size:16px; } .cloud .w3 { font-size:19px; } .cloud .w4 { font-size:23px; } .cloud .w5 { font-size:28px; }
+      .cloud .w5.long { font-size:24px; } .cloud .w5.extra-long { font-size:20px; }
+      .cloud .w4.long { font-size:21px; } .cloud .w4.extra-long { font-size:18px; }
+      .cloud .w3.long { font-size:17px; } .cloud .w3.extra-long { font-size:15px; }
+      .audience-map { min-height:auto; padding:14px; }
+      .audience-band { width:100% !important; min-height:68px; grid-template-columns:38px 1fr; padding:12px; }
+      .audience-band b { font-size:16px; }
+      .share-row,.fit-row,.biz-top,.biz-body,.issue-grid { grid-template-columns:1fr; }
+      .client-logo { max-width:min(260px,100%); margin-bottom:22px; }
+      .client-logo img { width:auto; height:42px; max-width:230px; }
+      .eyebrow { margin-bottom:14px; }
+      .hero-copy .sublead, .hero-copy .tag-row { display:none; }
+      .metric-strip { display:none; }
+      .diagnosis-chain { grid-template-columns:1fr; margin-top:12px; }
+      .chain-item { min-height:auto; padding:14px 16px; border-right:0; border-bottom:1px solid var(--line); }
+      .chain-item:last-child { border-bottom:0; }
+      .tag-row { margin-top:16px; gap:6px; }
+      .tag { font-size:11px; padding:5px 8px; }
+      .evidence-list { max-width:100%; flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:2px; vertical-align:middle; }
+      .evidence { flex:0 0 auto; padding:1px 5px; font-size:10.5px; }
+      .route-facts { grid-template-columns:1fr; }
+      .specialist-card { grid-template-columns:72px 1fr; }
+      .specialist-score { font-size:34px; }
+      .card,.mind-card,.line-card,.biz-card,.issue,.score-card,.dept-card,.road-card,.wordcloud,.copy-block,.dark-panel,.route-intake,.route-decision,.specialist-card,.route-top3,.contract-card,.score-cap,.decision-blindspot,.risk-path-card,.signal-card,.cap-reason { padding:16px; }
+      .contract-card,.score-cap,.decision-blindspot,.risk-path-list,.signal-ledger,.cap-ledger { grid-column:auto; }
+      .cap-number { font-size:48px; }
+      .decision-blindspot dl { grid-template-columns:1fr; }
+      .mind-card,.mind-card:nth-child(n+4) { grid-column:auto; }
+      .footer { display:grid; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .client-logo { padding:0; border:0; background:transparent; box-shadow:none; }
+    }
+  </style>
+</head>
+<body data-offing-visual-baseline="canonical" data-offing-visual-scope="full-report" data-offing-product="Atlas" data-atlas-renderer="strict-sample-v1" data-offing-product-family-demo="/Users/rucia/Documents/不间断学习/output/offing-product-visual-demo/offing-product-family-demo.html" data-offing-atlas-demo="/Users/rucia/Documents/不间断学习/output/offing-atlas-visual-demo/atlas-single-page-demo.html">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="product-lockup">远汐 Offing<small>Atlas 北美业务诊断（免费版）</small></div>
+      <nav class="nav" aria-label="报告导航">
+        <a href="#stage">阶段</a><a href="#audience">人群</a><a href="#channel">渠道</a><a href="#search">搜索</a><a href="#voc">VOC</a><a href="#ceiling">品线</a><a href="#issues">问题</a><a href="#roadmap">路线</a><a href="#evidence">证据</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="hero" id="top">
+      <div class="hero-outline" aria-hidden="true">NORTH<br>AMERICA<br>DIAGNOSIS</div>
+      <div class="hero-copy">
+        <div class="client-logo" aria-label="Vorvorax product wordmark">
+          <img src="assets/brand-logos/vorvorax-logo-official.svg" alt="Vorvorax product wordmark" />
+        </div>
+        <div class="eyebrow">North America Diagnosis</div>
+        <h1><span class="nowrap-title">北美业务诊断</span></h1>
+        <p class="lead">Vorvorax 已经把 6 个加湿器 ASIN 推上 Amazon，下一步先集中一个英雄款拿到真实评价、清洁安全 proof 和可验证售后。</p>
+        <div class="metric-strip" aria-label="首屏关键证据数字">
+          
+          <div class="hero-metric state-amber">
+            <span class="metric-label"><i></i><span class="metric-label-copy">Amazon 品牌搜索公开结果数。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E1]</span></span></span></span>
+            <b class="">6</b>
+          </div>
+          <div class="hero-metric state-red">
+            <span class="metric-label"><i></i><span class="metric-label-copy">搜索页可见的公开评分资产。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E1]</span></span></span></span>
+            <b class="">0</b>
+          </div>
+          <div class="hero-metric state-red">
+            <span class="metric-label"><i></i><span class="metric-label-copy">2L 主力款当前 Humidifiers 排名。</span><span class="metric-evidence"><span class="evidence-list"><span class="evidence">[E2]</span></span></span></span>
+            <b class="">#1,400</b>
+          </div>
+        </div>
+        <p class="sublead">公开货架仍是 0-1 测试盘：6 个结果均显示为近期上新，未形成可见评分资产；2L 小机与 13L 大机同时铺开，标题重复、型号角色模糊，保修与换新口径也没有完全统一。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E7]</span><span class="evidence">[E8]</span></span></p>
+        <div class="tag-row"><span class="tag amber">6 个新 ASIN</span><span class="tag red">公开评分未形成</span><span class="tag red">清洁安全待证明</span></div>
+      </div>
+      <aside class="score-panel" aria-label="Vorvorax Atlas score">
+        <div class="score-strip"></div>
+        <div class="score-inner">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Total diagnosis score</div>
+              <div class="score-number">42</div>
+            </div>
+            <div class="score-rating">
+              <span class="tier green">E档</span>
+              <div class="stars" aria-label="2.1 out of 5 stars">★ ★ ☆ ☆ ☆</div>
+              <div class="star-score">2.1 / 5 星 · 公开数据</div>
+            </div>
+          </div>
+          <p class="score-verdict">E档 · 货架已上线，真实需求、评价质量、品牌入口和售后兑现尚未过关。</p>
+          <div class="score-meta">
+            <div><span>阶段判断</span><b>0-1</b></div>
+            <div><span>经营类型</span><b>Amazon-only early-stage humidifier brand</b></div>
+            <div><span>置信度</span><b>中</b></div>
+          </div>
+          <div class="subscore-list">
+            
+            <div class="subscore">
+              <span>业务健康度</span>
+              <div class="track"><i class="bar-1" style="width:35%;"></i></div>
+              <b>35</b>
+            </div>
+            <div class="subscore">
+              <span>业务机会分</span>
+              <div class="track"><i class="bar-2" style="width:72%;"></i></div>
+              <b>72</b>
+            </div>
+            <div class="subscore">
+              <span>问题致命度</span>
+              <div class="track"><i class="bar-3" style="width:81%;"></i></div>
+              <b>81</b>
+            </div>
+          </div>
+          <p class="score-formula">数据采集日期：2026-09-01。</p>
+        </div>
+      </aside>
+      <div class="diagnosis-chain" aria-label="Atlas strict diagnosis chain">
+        
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>只留一个英雄 ASIN</b>
+          <span>先用 2L 小机完成价格、页面与首批评价验证。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>补清洁安全合同</b>
+          <span>写清每日换水、每三天清洁、蒸馏水与精油边界。</span>
+        </article>
+        <article class="chain-item state-red">
+          <i>P0</i>
+          <b>统一售后口径</b>
+          <span>统一 120 天换新、1 年保修、邮箱和响应时效。</span>
+        </article>
+        <article class="chain-item state-amber">
+          <i>P1</i>
+          <b>验证后再扩 13L</b>
+          <span>大机先过漏水、噪声、湿度控制和退货成本闸门。</span>
+        </article>
+      </div>
+    </section>
+    
+    <section id="free-diagnosis">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Atlas Routing</div>
+          <h2>Atlas 先给总分和三项经营短板，再判断下一步专项路线。</h2>
+        </div>
+        <p class="section-note">先确认输入口径和公开数据范围，再把三项专项分数、Top 3 优先级和下一步路线放在同一张决策面。</p>
+      </div>
+      <div class="routing-system" data-strict-module="atlas-routing">
+        <article class="route-intake">
+          <div class="module-label">客户输入</div>
+          <h3>Vorvorax</h3>
+          <dl class="route-facts">
+            <div><dt>启动方式</dt><dd>只给品牌名</dd></div>
+            <div><dt>市场</dt><dd>North America</dd></div>
+            <div><dt>数据口径</dt><dd>中 · 公开数据版</dd></div>
+            <div><dt>产品锁定</dt><dd>2026-09-01</dd></div>
+          </dl>
+        </article>
+        <article class="route-decision">
+          <div class="module-label">路由建议</div>
+          <h3>路由</h3>
+          <p>Atlas 收敛 SKU；SignalMark 建安全 proof；CommerceFlow 统一售后。</p>
+          <span class="route-chip">最低分警报：TideLens 28</span>
+          <span class="route-chip">分数封顶：42 · v3 主封顶</span>
+        </article>
+        <div class="specialist-ledger" aria-label="Atlas 三个专项分数">
+          <article class="specialist-card state-red">
+            <div class="specialist-score">31<span>/100</span></div>
+            <div>
+              <div class="specialist-name">SignalMark</div>
+              <h3></h3>
+              <p></p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">36<span>/100</span></div>
+            <div>
+              <div class="specialist-name">CommerceFlow</div>
+              <h3></h3>
+              <p></p>
+              
+              
+            </div>
+          </article><article class="specialist-card state-red">
+            <div class="specialist-score">28<span>/100</span></div>
+            <div>
+              <div class="specialist-name">TideLens</div>
+              <h3></h3>
+              <p></p>
+              
+              
+            </div>
+          </article>
+        </div>
+        <article class="route-top3">
+          <div>
+            <div class="module-label">Top 3</div>
+            <h3>当前最先处理的三件事</h3>
+          </div>
+          <ol>
+            <li>把 6 个 ASIN 收敛成 1+1</li><li>把清洁与水质变成第一卖点</li><li>统一 120 天换新与 1 年保修</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    
+    <section id="death-path">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Score-Cap &amp; Risk</div>
+          <h2>最容易的死法：在没有评论、清洁证明和品牌售后入口前，同时铺 6 个近似 ASIN，把本来就少的流量和评价拆散。</h2>
+        </div>
+        <p class="section-note">Vorvorax 当前最需要的是一个可验证的胜利样本；过早铺开白色、黑色、2L、13L 与冷暖雾版本，会让广告、库存、评论和售后都失去焦点。</p>
+      </div>
+      <div class="risk-system" data-strict-module="atlas-risk">
+        <article class="contract-card state-red">
+          <div class="module-label">品类购买契约</div>
+          <h3>加湿器买的是干净的湿度、好清洁、不过湿，并且夜间和婴儿房使用让人放心。</h3>
+          <p><strong>用户买的确定性：</strong>用户需要在干燥季缓解不适，同时避免水箱细菌、霉菌、矿物白尘、湿度过高、漏水、噪声和维护负担。</p>
+          <p><strong>当前匹配：</strong>Vorvorax 用 25dB、2L、28 小时、顶部加水、自动断电和 300 ft² 接住了基础功能；当前页面没有把每日换水、每三天清洁、低矿物水和 50% 湿度上限讲成核心购买合同。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p>
+          <p class="risk-evidence">EPA 明确要求便携加湿器每日换水、每三天清洁，并建议低矿物水和不超过 50% 相对湿度；婴儿房使用还要强调冷雾与频繁清洁。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span></span></p>
+        </article>
+        <article class="score-cap state-red">
+          <div class="module-label">分数封顶原因</div>
+          <div class="cap-number">42<span>/100</span></div>
+          <h3>v3 主封顶</h3>
+          <p>公开面没有评分资产、独立测评、官网与统一售后入口。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E8]</span></span></p>
+        </article>
+        <article class="decision-blindspot state-red">
+          <div class="module-label">管理层决策盲区</div>
+          <h3>管理层最危险的是把上架完成当成市场验证完成。</h3>
+          <dl>
+            <div><dt>高估</dt><dd>ASIN 数、标题关键词、容量、夜灯、精油、运行时长和功能清单。</dd></div>
+            <div><dt>低估</dt><dd>单 ASIN 转化、广告效率、真实评价、清洁完成率、漏水、白尘、退货与售后响应。</dd></div>
+            <div><dt>安慰指标</dt><dd>曝光、点击、广告排名、上架数和页面收录。</dd></div>
+            <div><dt>先别做</dt><dd>先别继续扩颜色和容量；先让 2L 小机拿到 30-50 条真实评价并稳定 60 天。</dd></div>
+          </dl>
+        </article>
+        <div class="risk-path-list">
+          <article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 42</b></div>
+            <h3>六个新 ASIN 分走首批流量</h3>
+            <p>搜索页同时出现 6 个近期上新结果，多个标题和图片高度相似，英雄款不清楚。</p>
+            <p class="risk-evidence">Amazon 品牌搜索显示 6 个结果。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E5]</span><span class="evidence">[E6]</span><span class="evidence">[E7]</span></span></p>
+            <span class="tag red">Atlas 收敛英雄 SKU</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 42</b></div>
+            <h3>清洁安全没有成为主 proof</h3>
+            <p>页面强调夜灯、精油和长续航，对水质、每日换水、清洁频率、白尘与过湿边界着墨不足。</p>
+            <p class="risk-evidence">页面主张与 EPA / AAP 使用要求之间存在信息缺口。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E10]</span><span class="evidence">[E11]</span></span></p>
+            <span class="tag red">SignalMark 建安全 proof</span>
+          </article><article class="risk-path-card state-red">
+            <div class="risk-card-top"><span>P0</span><b>封顶 44</b></div>
+            <h3>售后口径内部冲突</h3>
+            <p>同一 PDP 同时出现 12 个月保修、24 小时响应、30 天退货、120 天换新与 7×24 客服。</p>
+            <p class="risk-evidence">Amazon 详情表与 bullet 表述不完全一致。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+            <span class="tag red">CommerceFlow 统一承诺</span>
+          </article><article class="risk-path-card state-amber">
+            <div class="risk-card-top"><span>P1</span><b>封顶 48</b></div>
+            <h3>13L 大机拉高履约风险</h3>
+            <p>大容量冷暖雾机客单更高，也会放大漏水、运输、清洁、噪声和退货运费风险。</p>
+            <p class="risk-evidence">两个 13L 冷暖雾 ASIN 和一个 13L 冷雾 ASIN 同期上线。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E7]</span></span></p>
+            <span class="tag amber">CommerceFlow 先算退货与利润</span>
+          </article>
+        </div>
+        <div class="signal-ledger">
+          <div class="ledger-head">
+            <div class="module-label">假增长信号</div>
+            <h3>最容易被高估的是 ASIN 数、功能词密度和长续航数字。</h3>
+            <p>这些信号能占页面位置，不能证明用户愿意买、能轻松清洁、会持续使用或愿意推荐。</p>
+          </div>
+          <article class="signal-card state-red">
+            <span>货架宽度</span>
+            <h3>6 个 Amazon 结果</h3>
+            <p>说明铺货完成，也意味着首批预算和评价被拆散。</p>
+          </article><article class="signal-card state-amber">
+            <span>性能主张</span>
+            <h3>25dB / 28H / 300 ft²</h3>
+            <p>功能数字清楚，缺第三方测试、真实房间湿度变化和长期清洁 proof。</p>
+          </article><article class="signal-card state-amber">
+            <span>功能装饰</span>
+            <h3>夜灯 + 精油</h3>
+            <p>能增加点击理由，也会把用户注意力从水质、清洁和湿度控制移开。</p>
+          </article>
+        </div>
+        <div class="cap-ledger">
+          <div class="ledger-head">
+            <div class="module-label">分数封顶项</div>
+            <h3>Vorvorax 当前总分被需求验证与清洁安全 proof 封顶在 42。</h3>
+            <p>上架速度和基础功能托住 E 档；一个英雄 ASIN形成稳定转化、真实评价与低退货后，才有资格进入 D 档。</p>
+          </div>
+          <article class="cap-reason state-red">
+            <b>42</b>
+            <div><h3>真实需求验证</h3><p>6 个结果均为近期上新，尚无可见评分样本。<span class="evidence-list"><span class="evidence">[E1]</span></span></p></div>
+          </article><article class="cap-reason state-red">
+            <b>42</b>
+            <div><h3>清洁与健康边界</h3><p>页面没有把 EPA 级维护要求做成核心 proof。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E10]</span><span class="evidence">[E12]</span></span></p></div>
+          </article><article class="cap-reason state-red">
+            <b>44</b>
+            <div><h3>品牌与售后可信度</h3><p>无官网，客服使用 Outlook，承诺口径分散。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E8]</span></span></p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="stage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Stage Judgment</div>
+          <h2>阶段判断：Vorvorax 北美处于 0-1，货架上线，需求与评价验证尚未完成。</h2>
+        </div>
+        <p class="section-note">当前目标是找到一款能持续转化、低退货、低售后并形成真实口碑的英雄产品。</p>
+      </div>
+      <div class="stage-track" aria-label="阶段判断">
+        <div class="stage-step state-red"><span>0-1</span><b>当前阶段</b><p>验证 2L 小机的真实需求、评价与退货。</p></div><div class="stage-step state-amber"><span>1-10</span><b>下一门槛</b><p>一个英雄 ASIN 稳定转化并形成评价护城河。</p></div><div class="stage-step state-blue"><span>10-100</span><b>暂不进入</b><p>没有英雄款前不扩大产品盘与渠道。</p></div><div class="stage-step state-blue"><span>100+</span><b>远期门槛</b><p>品牌、服务、合规与多渠道可规模复制。</p></div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-red">
+          <div class="card-state">P0 动作</div>
+          <h3>收敛到 2L 英雄款</h3>
+          <p>集中广告、库存、页面、Vine 与客服。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">P1 动作</div>
+          <h3>建立清洁 proof</h3>
+          <p>把每日换水、清洁和水质做成图文与视频。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">危险动作</div>
+          <h3>继续同时测 13L 与多变体</h3>
+          <p>会放大预算稀释和重件售后风险。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="audience">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Audience Layers</div>
+          <h2>核心盘是冬季干燥、婴儿房和卧室夜间使用者，购买障碍来自清洁与安全。</h2>
+        </div>
+        <p class="section-note">Vorvorax 应先服务需要安静、小空间、易加水的家庭用户，再验证大空间和冷暖雾人群。</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-map" aria-label="核心人群层级">
+          <div class="audience-axis"><span>核心用户</span><span>适用边界</span></div>
+          <div class="audience-bands">
+            <div class="audience-band layer-1 state-green">
+              <span class="audience-index">L1</span>
+              <div><b>安静安心</b><small>核心盘：卧室 / 婴儿房夜间使用</small></div>
+            </div><div class="audience-band layer-2 state-amber">
+              <span class="audience-index">L2</span>
+              <div><b>小空间补湿</b><small>相邻人群：小户型与植物养护</small></div>
+            </div><div class="audience-band layer-3 state-amber">
+              <span class="audience-index">L3</span>
+              <div><b>13L 大容量</b><small>外扩边界：大房间长续航</small></div>
+            </div><div class="audience-band layer-4 state-red">
+              <span class="audience-index">L4</span>
+              <div><b>医疗边界</b><small>暂时边界：呼吸疾病与医疗诉求</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="legend-list">
+          <div class="legend-item state-green"><b>核心盘：卧室 / 婴儿房夜间使用</b><span>看噪声、冷雾、自动断电、清洁和夜间灯光。</span></div><div class="legend-item state-amber"><b>相邻人群：小户型与植物养护</b><span>看覆盖面积、出雾方向、续航和台面占地。</span></div><div class="legend-item state-amber"><b>外扩边界：大房间长续航</b><span>看湿度控制、清洁、漏水、移动和能耗。</span></div><div class="legend-item state-red"><b>暂时边界：呼吸疾病与医疗诉求</b><span>避免未经验证的治疗暗示，敏感人群需遵循医生建议。</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>首单来自安静与好加水</h3>
+          <p>25dB、顶部加水和自动断电是入门理由。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>信任来自可清洁</h3>
+          <p>水箱结构、死角、刷具和清洁频率决定长期口碑。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>大容量后置</h3>
+          <p>先证明小机，再验证 13L 的履约和退货。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="channel">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business Type &amp; Channel</div>
+          <h2>经营类型：Amazon 单渠道新品牌，官网、零售与开放网络 proof 尚未建立。</h2>
+        </div>
+        <p class="section-note">以下是公开承接面代理，不代表真实收入占比；后台需补广告、订单、退货和贡献利润。</p>
+      </div>
+      <div class="dark-panel">
+        <h3>Amazon-only early-stage humidifier brand，当前由同名 seller 承接 6 个新 ASIN。</h3>
+        <div class="share-list">
+          <div class="share-row">
+            <b>Amazon</b>
+            <div class="share-track"><i class="amber" style="width:96%;"></i></div>
+            <span>96%</span>
+            <small>唯一清楚的交易与品牌搜索入口。<span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span></span></small>
+          </div><div class="share-row">
+            <b>Owned web / DTC</b>
+            <div class="share-track"><i class="red" style="width:0%;"></i></div>
+            <span>0%</span>
+            <small>公开搜索未发现品牌官网、说明中心或独立售后入口。<span class="evidence-list"><span class="evidence">[E8]</span></span></small>
+          </div><div class="share-row">
+            <b>Walmart / Retail</b>
+            <div class="share-track"><i class="red" style="width:0%;"></i></div>
+            <span>0%</span>
+            <small>未发现 Vorvorax 独立零售货架。</small>
+          </div><div class="share-row">
+            <b>Social / Other</b>
+            <div class="share-track"><i class="red" style="width:4%;"></i></div>
+            <span>4%</span>
+            <small>公开社媒、媒体与社区没有形成可验证品牌 proof。<span class="evidence-list"><span class="evidence">[E8]</span></span></small>
+          </div>
+        </div>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>Amazon 的角色</h3>
+          <p>集中验证一个英雄 ASIN，保留真实评价与退货信号。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>官网的角色</h3>
+          <p>先做轻量品牌与清洁知识库，不急着自建交易。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>零售的角色</h3>
+          <p>0-1 未过前暂缓，避免把售后问题扩到多渠道。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>内容的角色</h3>
+          <p>证明清洁、白尘、湿度控制、漏水和真实夜间噪声。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="search">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Search Mindshare</div>
+          <h2>搜索心智：品牌词吃掉了，通用品类、比较、清洁与售后词基本没吃掉。</h2>
+        </div>
+        <p class="section-note">精准品牌词由 Amazon 承接；大需求入口被 Dreo、LEVOIT、Vicks、Safety 1st 与成熟榜单占据。</p>
+      </div>
+      <div class="mind-grid">
+        <article class="mind-card state-green">
+          <div class="priority"><span>P0 · 量级低</span><b class="search-capture green">吃掉了</b></div>
+          <h3>Vorvorax humidifier</h3>
+          <p>Amazon 品牌搜索返回 6 个相关结果和 Vorvorax seller 过滤项。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>humidifier for baby bedroom</h3>
+          <p>标题匹配需求，缺评分、儿科清洁建议与婴儿房安全 proof。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E11]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P0 · 量级高</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>quiet cool mist humidifier under $50</h3>
+          <p>25dB、2L、28H 与自动断电覆盖基础词，成熟竞品的评价和榜单更强。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E13]</span><span class="evidence">[E14]</span></span></p>
+        </article><article class="mind-card state-amber">
+          <div class="priority"><span>P1 · 量级中</span><b class="search-capture amber">半吃掉</b></div>
+          <h3>13L large room humidifier</h3>
+          <p>三个大容量结果已上线，缺评分、湿度精度、漏水与清洁 proof。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span><span class="evidence">[E7]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级低</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Vorvorax review / warranty / customer service</h3>
+          <p>公开网络没有独立评价或品牌服务中心，售后主要依赖 PDP 与 Outlook 邮箱。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E8]</span></span></p>
+        </article><article class="mind-card state-red">
+          <div class="priority"><span>P1 · 量级低</span><b class="search-capture red">没吃掉</b></div>
+          <h3>Vorvorax vs Dreo / LEVOIT / Vicks</h3>
+          <p>缺清洁、白尘、滤芯、噪声、湿度控制、保修和长期成本比较。</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="voc">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">VOC &amp; Reputation</div>
+          <h2>Vorvorax 尚未形成品牌 VOC；类目好评看安静与易清洁，抱怨会从白尘、霉菌、漏水和难清洁开始。</h2>
+        </div>
+        <p class="section-note">以下词云是类目预警，不冒充 Vorvorax 用户评价；品牌首批 30-50 条真实评论上线后必须重跑。</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>品牌好评样本</h3>
+          <p>当前搜索页未显示公开评分，无法判断稳定好评主题。<span class="evidence-list"><span class="evidence">[E1]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>品牌抱怨样本</h3>
+          <p>当前没有足够品牌 VOC，不能估计故障、漏水或清洁问题比例。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">已成立</div>
+          <h3>类目支持首单</h3>
+          <p>安静、顶部加水、自动断电、易清洁和低维护最能支持购买。<span class="evidence-list"><span class="evidence">[E2]</span><span class="evidence">[E13]</span><span class="evidence">[E14]</span></span></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>类目影响信任</h3>
+          <p>脏水箱、霉菌、白尘、过湿和清洁死角会直接伤害健康与长期使用。<span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E12]</span></span></p>
+        </article>
+      </div>
+      <div class="wordcloud-wrap">
+        <article class="wordcloud">
+          <h3>集中好评主题 <span class="tag green">支持首单</span></h3>
+          <div class="cloud positive"><span class="w5 p0">quiet</span><span class="w5 p1">easy to clean</span><span class="w5 p2">top fill</span><span class="w5 p3">auto shutoff</span><span class="w5 p4">long runtime</span><span class="w4 p5">cool mist</span><span class="w4 p6">no filter</span><span class="w4 p7">easy refill</span><span class="w4 p8">night mode</span><span class="w3 p9">room coverage</span><span class="w3 p10">mist control</span><span class="w3 p11">compact</span><span class="w2 p12">nursery safe</span><span class="w2 p13">low maintenance</span><span class="w2 p0">good value</span></div>
+        </article>
+        <article class="wordcloud">
+          <h3>集中抱怨主题 <span class="tag red">影响信任</span></h3>
+          <div class="cloud negative"><span class="w5 p0">mold risk</span><span class="w5 p1">white dust</span><span class="w5 p2">hard to clean</span><span class="w5 p3">leaking</span><span class="w5 p4">wet surfaces</span><span class="w4 p5">weak mist</span><span class="w4 p6">runtime gap</span><span class="w4 p7">no humidistat</span><span class="w4 p8">oil boundary</span><span class="w4 p9">no reviews</span><span class="w3 p10 long">warranty conflict</span><span class="w3 p11">Outlook support</span><span class="w3 p12">duplicate ASINs</span><span class="w2 p13">no manual hub</span><span class="w2 p0">brand unknown</span></div>
+        </article>
+      </div>
+      <p class="section-note wide-note">当前最重要的 VOC 结论是样本不足；先集中一个英雄 ASIN获取真实评价，再决定扩品与预算。</p>
+    </section>
+    
+    <section id="ceiling">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Product-Line Ceiling</div>
+          <h2>分品线天花板：2L 小机做验证，13L 大机只保留一个测试位。</h2>
+        </div>
+        <p class="section-note">当前没有销量、评分和利润证明，天花板判断以需求清晰度、竞争强度、履约风险和服务复杂度为准。</p>
+      </div>
+      <div class="line-grid">
+        <article class="line-card state-green">
+          <div class="line-meta">Test / Hero 候选 · 集中验证</div>
+          <h3>2L white J2301</h3>
+          <b>卧室与婴儿房入门款</b>
+          <p>25dB、28H、顶部加水和 300 ft² 最容易形成清楚购买理由。<span class="evidence-list"><span class="evidence">[E2]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">重复测试线 · 收敛</div>
+          <h3>2L color / title variants</h3>
+          <b>同类小机流量</b>
+          <p>近似标题和主图会拆广告、评价与库存。<span class="evidence-list"><span class="evidence">[E5]</span><span class="evidence">[E6]</span></span></p>
+        </article><article class="line-card state-amber">
+          <div class="line-meta">高客单测试线 · 单款验证</div>
+          <h3>13L cool &amp; warm mist</h3>
+          <b>大房间长续航</b>
+          <p>容量与冷暖雾有差异，但清洁、漏水、运输与退货成本更高。<span class="evidence-list"><span class="evidence">[E3]</span><span class="evidence">[E4]</span></span></p>
+        </article><article class="line-card state-red">
+          <div class="line-meta">高风险扩展线 · 暂缓</div>
+          <h3>13L cool mist</h3>
+          <b>80H 大空间使用</b>
+          <p>没有英雄款和售后数据前不应继续扩大重件复杂度。<span class="evidence-list"><span class="evidence">[E7]</span></span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="intent">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">User Intent Map</div>
+          <h2>用户意图地图：品牌购买词接住，类目选择、清洁、安全和售后意图没有完整答案。</h2>
+        </div>
+        <p class="section-note">PDP、A+、包装、说明书和客服应使用同一套水质、清洁、湿度、精油和保修语言。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="intent-table">
+          <thead><tr><th class="">入口</th><th class="">用户真正想判断</th><th class="status-head">当前状态</th><th class="">应补页面动作</th></tr></thead>
+          <tbody>
+            <tr><td>Amazon Brand Search</td><td>Vorvorax 有哪些型号</td><td class="status-cell"><span class="table-status green">吃掉</span></td><td>把 6 个结果收敛成 2L 英雄款与 13L 测试款。</td></tr><tr><td>Category Search</td><td>哪台安静、易清洁、适合婴儿房</td><td class="status-cell"><span class="table-status amber">半吃掉</span></td><td>用可拆洗结构、清洁时间、冷雾安全和真实噪声证明。</td></tr><tr><td>Cleaning Search</td><td>多久换水、怎么除垢、如何避免霉菌</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>上线每日换水、每三天清洁、刷洗与季末储存页。<span class="evidence-list"><span class="evidence">[E10]</span></span></td></tr><tr><td>Water / White Dust</td><td>能否用自来水、为什么有白尘</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>解释低矿物水、蒸馏水、结垢和白尘边界。<span class="evidence-list"><span class="evidence">[E10]</span></span></td></tr><tr><td>Comparison Search</td><td>Vorvorax 与 Dreo / LEVOIT / Vicks 差在哪</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>比较容量、清洁、湿控、滤芯、噪声、保修和成本。</td></tr><tr><td>Support Search</td><td>漏水、不出雾、坏了找谁</td><td class="status-cell"><span class="table-status red">没吃掉</span></td><td>统一邮箱、响应 SLA、故障树、换新与保修凭证。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section id="fit">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Message-Market Fit</div>
+          <h2>卖点匹配：基础功能接住了，清洁、湿度控制、信任和售后没有接住。</h2>
+        </div>
+        <p class="section-note">权重用于决定 0-1 验证动作，需用广告转化、真实评价、退货与工单校准。</p>
+      </div>
+      <div class="fit-list">
+        <div class="fit-row state-amber">
+          <div><div class="fit-weight">20%</div><div class="mini-track"><i style="width:20%;"></i></div></div>
+          <div><strong>安静 / 夜间使用</strong><p>页面提出低于 25dB，缺第三方与真实卧室测试。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">19%</div><div class="mini-track"><i style="width:19%;"></i></div></div>
+          <div><strong>易加水 / 易清洁</strong><p>顶部加水有明确表达，清洁死角和实际耗时未证明。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">18%</div><div class="mini-track"><i style="width:18%;"></i></div></div>
+          <div><strong>水质 / 白尘 / 霉菌</strong><p>页面没有突出低矿物水、每日换水和每三天清洁。</p></div>
+          <div><span class="verdict red">没接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">16%</div><div class="mini-track"><i style="width:16%;"></i></div></div>
+          <div><strong>安全 / 自动断电</strong><p>缺水自动断电有主张，婴儿房与过湿边界仍需补。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-amber">
+          <div><div class="fit-weight">15%</div><div class="mini-track"><i style="width:15%;"></i></div></div>
+          <div><strong>覆盖 / 续航</strong><p>300 ft²、28H 与 13L / 80H 形成数字主张，缺实测。</p></div>
+          <div><span class="verdict amber">半接住</span></div>
+        </div><div class="fit-row state-red">
+          <div><div class="fit-weight">12%</div><div class="mini-track"><i style="width:12%;"></i></div></div>
+          <div><strong>评价 / 保修 / 品牌</strong><p>新品牌无公开评分，售后口径分散且无官网。</p></div>
+          <div><span class="verdict red">没接住</span></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="onepage">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">One-Page Summary</div>
+          <h2>一页总结：收敛六个新 ASIN，用一个英雄款完成 0-1。</h2>
+        </div>
+        <p class="section-note">Vorvorax 当前的增长任务是证明一款产品有人买、用得住、清得动，并愿意留下真实评价。</p>
+      </div>
+      <div class="onepage">
+        <div class="summary-item"><b>阶段</b><p>0-1。货架已上线，需求、评价和退货尚未验证。</p></div><div class="summary-item"><b>主线</b><p>集中 2L J2301；13L 只留一个测试位，其余变体暂缓。</p></div><div class="summary-item"><b>总分</b><p>42 / 100 · E档，需求验证与清洁安全 proof 封顶。</p></div><div class="summary-item"><b>最容易的死法</b><p>在没有评论、清洁证明和品牌售后入口前，同时铺 6 个近似 ASIN，把本来就少的流量和评价拆散。</p></div><div class="summary-item"><b>路由</b><p>Atlas 收敛 SKU；SignalMark 建安全 proof；CommerceFlow 统一售后。</p></div><div class="summary-item"><b>预算取舍</b><p>加英雄款页面、Vine、清洁测试与客服；停重复变体和 13L 扩量。</p></div><div class="summary-item"><b>数据缺口</b><p>需补广告、订单、转化、Vine、退货、漏水、工单、换新和贡献利润。</p></div>
+      </div>
+    </section>
+    
+    <section id="blocks">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Specialist Scorecard</div>
+          <h2>三项专项评分：先补 SignalMark 与 CommerceFlow，TideLens 只做首批验证内容。</h2>
+        </div>
+        <p class="section-note">当前重点是可信产品合同与低成本交付，不是扩大内容数量。</p>
+      </div>
+      <div class="business-grid">
+        <article class="biz-card state-red">
+          <div class="biz-top"><div><span>SignalMark</span><h3></h3><p></p></div><b>31</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p></p></div><div><strong>做得差</strong><p></p></div></div>
+          
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>CommerceFlow</span><h3></h3><p></p></div><b>36</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p></p></div><div><strong>做得差</strong><p></p></div></div>
+          
+        </article><article class="biz-card state-red">
+          <div class="biz-top"><div><span>TideLens</span><h3></h3><p></p></div><b>28</b></div>
+          <div class="biz-body"><div><strong>做得好</strong><p></p></div><div><strong>做得差</strong><p></p></div></div>
+          
+        </article>
+      </div>
+    </section>
+    
+    <section id="issues">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Top 3 Issues</div>
+          <h2>Top 3 问题：SKU 分散、清洁安全 proof、售后可信度。</h2>
+        </div>
+        <p class="section-note">三项都会直接改变广告效率、评价速度、退货、工单和扩品决策。</p>
+      </div>
+      <article class="issue state-red">
+        <h3>问题 1：把 6 个 ASIN 收敛成 1+1</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p></p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E1]</span><span class="evidence">[E2]</span><span class="evidence">[E3]</span><span class="evidence">[E7]</span></span></p></div>
+          <div><b>业务影响</b><p>集中流量、评价、库存与学习速度</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong><br><strong>90 天：</strong></p></div>
+        </div>
+      </article><article class="issue state-red">
+        <h3>问题 2：把清洁与水质变成第一卖点</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p></p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E10]</span><span class="evidence">[E11]</span><span class="evidence">[E12]</span></span></p></div>
+          <div><b>业务影响</b><p>降低白尘、霉菌、退货与健康信任风险</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong><br><strong>90 天：</strong></p></div>
+        </div>
+      </article><article class="issue state-red">
+        <h3>问题 3：统一 120 天换新与 1 年保修</h3>
+        <div class="issue-grid">
+          <div><b>严重度</b><p></p></div>
+          <div><b>证据</b><p><span class="evidence-list"><span class="evidence">[E2]</span></span></p></div>
+          <div><b>业务影响</b><p>提高转化并降低售后争议</p></div>
+          <div><b>30 / 90 天动作</b><p><strong>30 天：</strong><br><strong>90 天：</strong></p></div>
+        </div>
+      </article>
+    </section>
+    <section id="competitors">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Competitor Pressure</div>
+          <h2>竞争压力来自四种心智：智能性价比、儿科信任、药房熟牌和易清洁生活方式。</h2>
+        </div>
+        <p class="section-note">Vorvorax 无法只靠 25dB、夜灯和长续航突围，必须用清洁 proof 与售后确定性建立差异。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3></h3>
+          <p></p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3></h3>
+          <p></p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3></h3>
+          <p></p>
+        </article>
+        <article class="card state-blue">
+          <div class="card-state">需校准</div>
+          <h3></h3>
+          <p></p>
+        </article>
+      </div></section>
+    
+    <section id="positioning">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Positioning Path</div>
+          <h2>定位升级：从功能堆叠的小家电，升级为每天都能放心清洁的卧室加湿器。</h2>
+        </div>
+        <p class="section-note">不要争医疗功效和智能生态；把安静、易洗、低白尘、不过湿和售后确定性压成一个购买理由。</p>
+      </div>
+      <div class="grid-3">
+        
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>冬季干燥、在卧室或婴儿房夜间使用的小家庭。</p>
+        </article>
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>用一台安静、好加水、好清洁的冷雾机保持舒适湿度。</p>
+        </article>
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>水箱可视结构、清洁实拍、25dB 实测、湿度变化、自动断电与 30 天使用。</p>
+        </article>
+        <article class="card state-neutral">
+          <div class="card-state">记录</div>
+          <h3></h3>
+          <p>不承诺治疗；写清蒸馏水、每日换水、每三天清洁、精油和湿度上限。</p>
+        </article>
+      </div>
+      <div class="copy-block">
+        <h3>Copy-ready English</h3>
+        <p><b>Homepage headline:</b> </p>
+        <p><b>Hero subhead:</b> </p>
+        <p><b>Product promise:</b> Quiet moisture with a tank you can see, refill and clean with confidence.</p>
+        <p><b>Sales opener:</b> Vorvorax is testing a clearer bedroom-humidifier promise built around quiet operation, visible cleaning, low-mineral water guidance and straightforward support.</p>
+        <p><b>CTA:</b> </p>
+      </div>
+    </section>
+    
+    <section id="scores">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">11-Dimension Score</div>
+          <h2>11 维评分：上架与基础功能托底，评价、品牌、清洁 proof 和售后拉低总分。</h2>
+        </div>
+        <p class="section-note">低分项先进入每周验证；订单、广告、退货、工单和真实评价接入后再校准。</p>
+      </div>
+      <div class="scoreboard">
+        <article class="score-card state-red">
+          <div class="score-card-top"><b>5</b><span>品牌 VOC</span></div>
+          <div class="mini-track"><i style="width:5%;"></i></div>
+          <p>搜索页未形成公开评分样本。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>8</b><span>独立 proof</span></div>
+          <div class="mini-track"><i style="width:8%;"></i></div>
+          <p>未发现独立测评、媒体或社区验证。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>10</b><span>DTC / 品牌入口</span></div>
+          <div class="mini-track"><i style="width:10%;"></i></div>
+          <p>公开搜索未发现官网与知识中心。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>28</b><span>清洁安全表达</span></div>
+          <div class="mini-track"><i style="width:28%;"></i></div>
+          <p>页面未突出 EPA 级水质与清洁要求。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>35</b><span>售后可信度</span></div>
+          <div class="mini-track"><i style="width:35%;"></i></div>
+          <p>Outlook 邮箱与多套换新、保修口径并存。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>38</b><span>搜索承接</span></div>
+          <div class="mini-track"><i style="width:38%;"></i></div>
+          <p>品牌词能找到，通用品类与比较词弱。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>40</b><span>产品组合纪律</span></div>
+          <div class="mini-track"><i style="width:40%;"></i></div>
+          <p>6 个新 ASIN 同期上线，角色高度重叠。</p>
+        </article><article class="score-card state-red">
+          <div class="score-card-top"><b>48</b><span>页面表达</span></div>
+          <div class="mini-track"><i style="width:48%;"></i></div>
+          <p>关键词密集，标题与 bullet 重复且语法粗糙。</p>
+        </article><article class="score-card state-amber">
+          <div class="score-card-top"><b>62</b><span>功能完整度</span></div>
+          <div class="mini-track"><i style="width:62%;"></i></div>
+          <p>安静、顶部加水、夜灯、自动断电与续航齐全。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>70</b><span>Amazon 上架执行</span></div>
+          <div class="mini-track"><i style="width:70%;"></i></div>
+          <p>品牌筛选、同名 seller 与 6 个结果已建立。</p>
+        </article><article class="score-card state-green">
+          <div class="score-card-top"><b>74</b><span>类目机会</span></div>
+          <div class="mini-track"><i style="width:74%;"></i></div>
+          <p>卧室、婴儿房与干燥季有明确需求。</p>
+        </article>
+      </div>
+    </section>
+    <section id="budget">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Budget Trade-Off</div>
+          <h2>预算重排：集中英雄 ASIN、真实评价和清洁 proof，停止重复变体扩张。</h2>
+        </div>
+        <p class="section-note">0-1 预算只投能提高学习速度、真实转化和低退货确定性的动作。</p>
+      </div><div class="grid-4">
+        
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：2L 英雄 ASIN</h3>
+          <p>集中广告、库存、页面、Vine 与首批客服。</p>
+        </article>
+        <article class="card state-green">
+          <div class="card-state">立即加</div>
+          <h3>加预算：清洁安全 proof</h3>
+          <p>做每日换水、三天清洁、白尘、湿控、漏水和 30 天测试。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">设门槛</div>
+          <h3>控预算：13L 大机</h3>
+          <p>只保留一款小规模验证退货、物流和售后。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">立即停</div>
+          <h3>停预算：近似标题与颜色变体</h3>
+          <p>没有英雄款前停止重复 ASIN 的广告与补货。</p>
+        </article>
+      </div></section>
+    
+    <section id="roadmap">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">90 / 180 Day Roadmap</div>
+          <h2>90 / 180 天路线：先完成单品验证，再决定品牌化和扩品。</h2>
+        </div>
+        <p class="section-note">用广告转化、Vine、星级、退货、漏水、清洁、工单、换新和贡献利润验收。</p>
+      </div>
+      <div class="roadmap">
+        <article class="road-card">
+          <h3>0-30 天</h3>
+          <div class="road-action state-red"><b>Founder / Amazon｜收敛为 2L 英雄款 + 13L 测试款</b><p>验收：广告、库存和评价集中度。影响：提高学习速度</p></div><div class="road-action state-red"><b>Product / QA｜完成清洁、水质与安全 proof</b><p>验收：每日换水、三天清洁、白尘、漏水、湿度和断电。影响：建立购买信任</p></div><div class="road-action state-red"><b>CX / Legal｜统一换新、保修与客服口径</b><p>验收：一套邮箱、SLA、凭证、故障树和政策。影响：降低售后争议</p></div>
+        </article><article class="road-card">
+          <h3>31-90 天</h3>
+          <div class="road-action state-green"><b>Amazon / Data｜完成首批 30-50 条真实评价</b><p>验收：评分、主题、退货、广告转化与客服工单。影响：判断是否进入 1-10</p></div><div class="road-action state-amber"><b>Creator / Signal｜做 5-10 个家庭 30 天测试</b><p>验收：清洁时间、噪声、湿度、白尘和持续使用。影响：建立开放网络 proof</p></div><div class="road-action state-amber"><b>Finance / Supply｜算清两个候选 SKU 的贡献利润</b><p>验收：毛利、广告、物流、退货、换新与库存。影响：决定留存和退出</p></div>
+        </article><article class="road-card">
+          <h3>91-180 天</h3>
+          <div class="road-action state-green"><b>Leadership｜按闸门决定扩品或停盘</b><p>验收：稳定星级、退货率、售后成本和贡献利润。影响：避免低质量放大</p></div><div class="road-action state-green"><b>Brand / Web｜通过 1-10 后再建轻量官网</b><p>验收：清洁知识、保修登记、说明书与品牌词搜索。影响：沉淀品牌信任</p></div>
+        </article>
+      </div>
+    </section>
+    
+    <section id="departments">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Department RYG</div>
+          <h2>职能部门红黄绿灯：商品、QA、售后、数据与利润先进入每周验证。</h2>
+        </div>
+        <p class="section-note">每个部门只保留最影响 0-1 是否成立的一件事。</p>
+      </div>
+      <div class="dept-grid">
+        <article class="dept-card red">
+          <div class="dept-score">5</div>
+          <h3>VOC / Research</h3>
+          <p><strong>当前拖累：</strong>没有品牌评价样本。</p>
+          <span class="tag red">30 天：启动 Vine 与访谈</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">10</div>
+          <h3>品牌 / SEO</h3>
+          <p><strong>当前拖累：</strong>无官网与品牌知识入口。</p>
+          <span class="tag red">30 天：先建轻量说明页</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">12</div>
+          <h3>Creator / PR</h3>
+          <p><strong>当前拖累：</strong>无独立长期使用 proof。</p>
+          <span class="tag red">30 天：做家庭 30 天测试</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">28</div>
+          <h3>产品 / QA</h3>
+          <p><strong>当前拖累：</strong>清洁、白尘、漏水与湿控 proof 不足。</p>
+          <span class="tag red">30 天：完成安全测试</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">32</div>
+          <h3>北美售后</h3>
+          <p><strong>当前拖累：</strong>多套换新和响应口径并存。</p>
+          <span class="tag red">30 天：统一售后合同</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">34</div>
+          <h3>数据 / 财务</h3>
+          <p><strong>当前拖累：</strong>缺广告、退货、换新与利润数据。</p>
+          <span class="tag red">30 天：建 SKU 验证表</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">38</div>
+          <h3>产品组合</h3>
+          <p><strong>当前拖累：</strong>6 个新 ASIN 同期分流。</p>
+          <span class="tag red">30 天：收敛到 1+1</span>
+        </article><article class="dept-card red">
+          <div class="dept-score">48</div>
+          <h3>Amazon 页面</h3>
+          <p><strong>当前拖累：</strong>标题和 bullet 重复、语法粗糙。</p>
+          <span class="tag red">30 天：重写英雄 PDP</span>
+        </article><article class="dept-card amber">
+          <div class="dept-score">58</div>
+          <h3>供应链</h3>
+          <p><strong>当前拖累：</strong>大机履约与退货成本不可见。</p>
+          <span class="tag amber">30 天：做小批量压力测试</span>
+        </article><article class="dept-card green">
+          <div class="dept-score">70</div>
+          <h3>Amazon 上架</h3>
+          <p><strong>当前拖累：</strong>执行快，需从铺货转向验证。</p>
+          <span class="tag green">30 天：集中英雄款</span>
+        </article>
+      </div>
+    </section>
+    <section id="risk">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Risk &amp; Data Gaps</div>
+          <h2>风险预警与数据缺口：公开面只能判断货架，真实订单、评价、退货和利润必须接后台。</h2>
+        </div>
+        <p class="section-note">这里只保留会改变阶段、分数、SKU 去留与预算顺序的缺口。</p>
+      </div><div class="grid-3">
+        
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>0 评分不等于 0 订单</h3>
+          <p>公开搜索未显示评分，仍需 Seller Central 核对订单、Vine 和评价延迟。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>类目风险不可外推为品牌问题</h3>
+          <p>EPA 与 Mayo 说明超声波加湿器的共性风险，不代表 Vorvorax 已发生事故。</p>
+        </article>
+        <article class="card state-amber">
+          <div class="card-state">需补强</div>
+          <h3>价格受访问地区影响</h3>
+          <p>Amazon 抓取显示跨境币种，报告不使用该价格判断北美定价。</p>
+        </article>
+        <article class="card state-red">
+          <div class="card-state">先修复</div>
+          <h3>商标状态仍在早期</h3>
+          <p>VORVORAX 美国商标于 2026-04-24 申请，公开记录为 pending。</p>
+        </article>
+      </div></section>
+    
+    <section id="evidence">
+      
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Evidence Table</div>
+          <h2>证据表：强判断都能追到来源、日期、用途和置信度。</h2>
+        </div>
+        <p class="section-note">Amazon 页面、商标记录、官方健康指导与竞品零售页面分开定级；后台接入后补订单、广告、评价、退货和利润。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>来源</th><th>日期</th><th>类型</th><th>用途</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>E1</td>
+              <td><a href="https://www.amazon.com/s?k=vorvorax" target="_blank" rel="noopener">Amazon Vorvorax search</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace search</td>
+              <td>6 个搜索结果、近期上新、同名 seller 筛选、白黑颜色与 Home &amp; Kitchen 类目。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E2</td>
+              <td><a href="https://www.amazon.com/dp/B0H8RX8SS1" target="_blank" rel="noopener">Amazon Vorvorax 2L J2301 PDP</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace PDP</td>
+              <td>2L、25dB、28H、300 ft²、自动断电、精油、J2301、#1,400、售后与保修口径。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E3</td>
+              <td><a href="https://www.amazon.com/dp/B0HDY3P4DY" target="_blank" rel="noopener">Amazon Vorvorax 13L black listing</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace listing</td>
+              <td>13L 黑色冷暖雾大房间型号。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E4</td>
+              <td><a href="https://www.amazon.com/dp/B0HDXV6VVP" target="_blank" rel="noopener">Amazon Vorvorax 13L listing</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace listing</td>
+              <td>第二个 13L 冷暖雾结果与型号重叠。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E5</td>
+              <td><a href="https://www.amazon.com/dp/B0H8T4YQLR" target="_blank" rel="noopener">Amazon Vorvorax 2L variant</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace listing</td>
+              <td>2L 婴儿房、25dB、顶部加水、夜灯与精油近似变体。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E6</td>
+              <td><a href="https://www.amazon.com/dp/B0H93QPK3Q" target="_blank" rel="noopener">Amazon Vorvorax 2L variant 2</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace listing</td>
+              <td>第二个 2L 婴儿房近似标题结果。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E7</td>
+              <td><a href="https://www.amazon.com/dp/B0H8XZ4JV5" target="_blank" rel="noopener">Amazon Vorvorax 13L cool-mist listing</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Marketplace listing</td>
+              <td>13L、80H、顶部加水、夜灯与大空间冷雾型号。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E8</td>
+              <td><a href="https://www.google.com/search?q=%22Vorvorax%22" target="_blank" rel="noopener">Vorvorax open-web query</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Open-web search</td>
+              <td>公开搜索未发现品牌官网、独立评价、社媒或品牌服务中心。</td>
+              <td>Medium</td>
+            </tr><tr>
+              <td>E9</td>
+              <td><a href="https://trademarks.justia.com/owners/qingdaocongyuanjingmaoyouxiangongsi-6706050/" target="_blank" rel="noopener">VORVORAX trademark record</a></td>
+              <td>2026-04-24 filed</td>
+              <td>Trademark record</td>
+              <td>美国申请号 99784701、Class 011、申请主体与加湿器等商品范围。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E10</td>
+              <td><a href="https://www.epa.gov/indoor-air-quality-iaq/use-and-care-home-humidifiers" target="_blank" rel="noopener">US EPA humidifier use and care</a></td>
+              <td>2026-04-29 updated</td>
+              <td>Government guidance</td>
+              <td>每日换水、每三天清洁、低矿物水、白尘、微生物与不超过 50% 湿度。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E11</td>
+              <td><a href="https://www.healthychildren.org/English/ages-stages/prenatal/decisions-to-make/Pages/Buying-Furniture-and-Baby-Equipment.aspx" target="_blank" rel="noopener">HealthyChildren cool-mist guidance</a></td>
+              <td>2026-09-01 checked</td>
+              <td>AAP guidance</td>
+              <td>婴儿房优先冷雾、频繁清洁、静置水霉菌细菌与避免蒸汽烫伤。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E12</td>
+              <td><a href="https://www.mayoclinic.org/diseases-conditions/common-cold/in-depth/humidifiers/art-20048021" target="_blank" rel="noopener">Mayo Clinic humidifier guidance</a></td>
+              <td>2026-07-12</td>
+              <td>Medical guidance</td>
+              <td>脏水箱、霉菌细菌、过湿、哮喘过敏与维护风险。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E13</td>
+              <td><a href="https://www.wired.com/gallery/the-best-humidifier/" target="_blank" rel="noopener">WIRED best humidifiers 2026</a></td>
+              <td>2026-04-02</td>
+              <td>Independent product roundup</td>
+              <td>Blueair、Dreo、易清洁、白尘与成熟竞品心智。</td>
+              <td>Medium-high</td>
+            </tr><tr>
+              <td>E14</td>
+              <td><a href="https://www.target.com/p/-/A-85028028" target="_blank" rel="noopener">Target Safety 1st smart humidifier</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Retail PDP</td>
+              <td>4.4 星、258 评分、App、湿度显示、500 ft² 与 1 年保修竞品基准。</td>
+              <td>High</td>
+            </tr><tr>
+              <td>E15</td>
+              <td><a href="https://getcanopy.co/products/canopy" target="_blank" rel="noopener">Canopy Bedside Humidifier</a></td>
+              <td>2026-09-01 checked</td>
+              <td>Competitor DTC PDP</td>
+              <td>4.6 星、6,605 评价、防霉、可洗部件、订阅、60 天退货与 1 年保修。</td>
+              <td>High</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">
+      <span>远汐 Offing Atlas｜北美业务诊断</span>
+      <span>Vorvorax · 2026-09-01 · North America</span>
+    </footer>
+  </main>
+</body>
+</html>
